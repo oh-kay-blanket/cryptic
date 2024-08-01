@@ -1,4 +1,5 @@
 import React from 'react'
+import Anagram from 'react-anagram-animation';
 
 class App extends React.Component {
   constructor() {
@@ -8,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <h1>Hi there, partner!</h1>
+      <h1>Learn Cryptic.</h1>
       </>
     )
   }
