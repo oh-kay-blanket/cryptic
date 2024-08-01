@@ -5,34 +5,35 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve | open http://localhost:8080/",
+    "start": "webpack serve",
     "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
     "babel-loader": "^8.3.0",
     "babel-preset-env": "^0.0.0",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^6.7.3",
-    "csv-loader": "^3.0.3",
+    "css-loader": "^6.11.0",
+    "csv-loader": "^3.0.5",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "papaparse": "^5.2.0",
-    "sass": "^1.26.10",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^1.2.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
+    "html-webpack-plugin": "^5.6.0",
+    "papaparse": "^5.4.1",
+    "sass": "^1.77.8",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^1.3.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^18.3.1",
+    "react-anagram-animation": "^1.4.0",
+    "react-dom": "^18.3.1"
   }
 }
