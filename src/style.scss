@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:800|Roboto);
+@import url(http://fonts.googleapis.com/css?family=Gelasio);
 
 body {
-  font-family: 'Roboto';
+  font-family: 'Gelasio';
   background-color: #f8f8f8;
   color: #555;
 }
@@ -13,4 +13,9 @@ body {
 
 .icon {
   width: 50px;
+}
+
+
+.anagram-swap {
+	color:red;
 }
