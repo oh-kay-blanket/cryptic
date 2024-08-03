@@ -5,7 +5,8 @@ html, body, #root {
 
 body {
     display: flex;
-	font-family:Georgia, 'Times New Roman', Times, serif
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	overflow: hidden;
 }
 
 #root {
@@ -19,31 +20,4 @@ body {
     margin: 0 auto;
     text-align: center;
 	text-transform: uppercase;
-}
-
-.show-btn {
-    outline: none;
-    width: calc(100% + 4px);
-    border: none;
-    padding: 4px;
-    margin: 20px -2px;
-    cursor: pointer;
-	border-radius: 50px;
-}
-
-.w1, .w2 {
-    position: relative;
-	min-height: 50px;
-}
-
-.letter {
-    z-index: 10;
-}
-
-.w2 .letter {
-	color: transparent;
-}
-
-.disabled {
-    cursor: default;
 }

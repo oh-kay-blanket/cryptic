@@ -1,0 +1,35 @@
+@use "../base/var" as *;
+
+.clue {
+   
+	.w1, .w2 {
+		position: relative;
+		min-height: 50px;
+	}
+
+	.letter {
+		z-index: 10;
+	}
+
+	.w2 .letter {
+		color: $lc-text;
+		opacity: 0;
+		transition: opacity 1s;
+	}
+
+	.disabled {
+		cursor: default;
+	}
+
+	&.solution {
+		.w1 .letter {
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		.w2 .letter {
+			opacity: 1;
+			transition: opacity 1s;
+		}
+	}
+}
