@@ -1,18 +1,15 @@
 import React from 'react'
+import ClueContainer from './ClueContainer'
+import TopBar from './components/TopBar'
 
-class App extends React.Component {
-  constructor() {
-    super()
-  }
+const App = () => {
 
-  render() {
     return (
-      <>
-      <h1>Learn Cryptic.</h1>
-		
-      </>
-    )
-  }
+		<>
+			<TopBar />
+			<ClueContainer />
+		</>
+	)
 }
 
 export default App

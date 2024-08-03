@@ -1,0 +1,108 @@
+$xs: 575px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin xs {
+    @media (max-width: $xs) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: $xl) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width: $xxl) {
+        @content;
+    }
+}
+
+//$size: strings ["medium", "large", "max", "tablet"] or PX value as min-width. Defaults to 768px.
+@mixin desktop($size: $md) {
+    @if ($size == "tablet") {
+        @media (min-width: $md) {
+            @content;
+        }
+    } @else if ($size == "medium") {
+        @media (min-width: $md) {
+            @content;
+        }
+    } @else if ($size == "large") {
+        @media (min-width: $lg) {
+            @content;
+        }
+    } @else if ($size == "max") {
+        @media (min-width: $xl) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $size) {
+            @content;
+        }
+    }
+}
+
+//$size: PX value as min-width. Defaults to 769px.
+@mixin tablet($size: $md) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+//$size: strings ["tiny", "standard"] or PX Value as max-width. Defaults to 544px.
+@mixin mobile($size: $md) {
+    @if ($size == "tiny") {
+        @media (max-width: $sm) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $size) {
+            @content;
+        }
+    }
+}
+
+//$min: PX value as min-width.
+@mixin min($min) {
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+//$max: PX value as max-width.
+@mixin max($max) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+//($min, $max) PX values as min-width and max-width.
+@mixin minmax($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
