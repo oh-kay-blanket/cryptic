@@ -1,0 +1,24 @@
+@use "../base/var" as *;
+
+.show-btn {
+    outline: none;
+    width: calc(100% + 4px);
+    border: none;
+    padding: 4px;
+    margin: 20px -2px;
+    cursor: pointer;
+	border-radius: 50px;
+
+	&.primary {
+		background-color: $lc-primary;
+	}
+
+	&.alt {
+		background-color: $lc-secondary;
+	}
+
+	&.secondary {
+		background-color: $lc-gray-light;
+		border: 1px solid $lc-text;
+	}
+}

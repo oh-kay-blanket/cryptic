@@ -4,6 +4,9 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: $lc-gray;
 	height: 45px;
 	width: 100vw;
