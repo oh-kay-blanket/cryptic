@@ -73,25 +73,12 @@ body {
 
 <script>
 
-	// // anagrams
-	// const W1 = "Tom Marvolo Riddle";
-	// const W2 = "I am Lord Voldemort";
-
 	// // containers
 	const wordContainer1 = $(`.w1`);
 	const wordContainer2 = $(`.w2`);
 
 	// // button
 	const showBtn = $('.show-btn');
-
-	// // wrap letters in span
-	// for(const letter of W1) {
-	// 	wordContainer1.append(`<span class="letter">${letter}</span>`);
-	// }
-	
-	// for(const letter of W2) {
-	// 	wordContainer2.append(`<span class="letter">${letter}</span>`);
-	// }
 
 	// find object function
 	function findObjectInArray(array, key, val) {
@@ -137,11 +124,14 @@ body {
 			if(!letter.textContent.trim())
 				continue;
 			letter = $(letter);
+
+			
 			p1.push(Object.assign({}, letter.position(), {
 				name: letter.text(),
 				element: letter
 			}));
 		}
+		console.log(p1);
 
 		// populate p2 array
 		for(let letter of w2.children()) {
@@ -171,7 +161,7 @@ body {
 		for(const l1 of p1) {
 			const l2Index = findObjectInArray(p2, 'name', l1.name);
 			const l2 = p2.splice(l2Index, 1)[0];
-			console.log(l2)
+			// console.log(l2)
 			setTimeout(
 				animate.bind(null, l1.element, {
 					top: l2.top + yDiff,
