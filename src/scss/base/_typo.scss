@@ -1,0 +1,13 @@
+@use './var' as *;
+
+@import url(http://fonts.googleapis.com/css?family=Gelasio);
+
+body {
+	font-family: 'Georgia', 'Gelasio', 'Times New Roman', serif;
+	font-size: 16px;
+  	color: $lc-text;
+}
+
+p {
+	margin: .25rem;
+}
