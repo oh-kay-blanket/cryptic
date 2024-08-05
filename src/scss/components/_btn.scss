@@ -4,10 +4,11 @@
     outline: none;
     width: calc(100% + 4px);
     border: none;
-    padding: 4px;
-    margin: 20px -2px;
+    padding: .5rem;
+    margin: 1rem auto;
     cursor: pointer;
 	border-radius: 50px;
+	max-width: 200px;
 
 	&.primary {
 		background-color: $lc-primary;

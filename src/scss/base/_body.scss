@@ -1,23 +1,31 @@
-html, body, #root {
+html, body {
     height: 100%;
-	font-size: 18px;
+	// width: 100%;
+	font-size: 16px;
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
     display: flex;
 	font-family:Georgia, 'Times New Roman', Times, serif;
-	overflow: hidden;
 }
 
 #root {
     display: flex;
-    flex: 0 0 auto;
     flex-direction: column;
 	justify-content: center;
     align-self: center;
+	width: 100%;
     max-width: 800px;
     height: 500px;
     margin: 0 auto;
-    text-align: center;
-	text-transform: uppercase;
+	padding: 0 2rem;
+}
+
+img {
+	max-width: 100%;
 }

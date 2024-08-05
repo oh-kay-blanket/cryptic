@@ -1,10 +1,12 @@
 import React from 'react';
+import logo from '../img/lc-logo2.png';
 
 const TopBar = () => {
 
+
   return(
     <div className='top-bar'>
-		<p>Learn Cryptic</p>
+		<img src={logo} />
     </div>
   )
 }
