@@ -5,9 +5,10 @@
 	top: 0;
 	left: 0;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content:flex-end;
+	align-items: cener;
 	background-color: $lc-gray;
-	height: 45px;
-	width: 100vw;
+	height: 60px;
+	width: 100%;
+	padding: .5rem;
 }

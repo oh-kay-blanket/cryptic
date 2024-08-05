@@ -1,46 +1,35 @@
-import React from 'react';
+import React, { useState, useRef, createRef, useEffect } from 'react'
 
 const C1 = ({ solution }) => {
+
+	const [letterTop, setLetterTop] = useState(4);
+
+	let clue = {
+		w1: "Satin Raga Man".split(""),
+		w2: "Its an Anagram".split(""),
+		range: [0,14]
+	}
+
+	const elementsRef = useRef(clue.w1.map(() => createRef()));
+
+	// useEffect(() => {
+	// 	const lTop = elementsRef.current.map(
+	// 	  ref => ref.current.getBoundingClientRect().y
+	// 	)
+	// 	setLetterTop(lTop);
+	//   }, []);
+
+
+	const w1Insert = clue.w1.map((letter, index) => <span key={index} ref={elementsRef.current[index]} className="letter">{`${letter} - top:${letterTop}  `}</span>)
+	const w2Insert = clue.w2.map((letter, index) => (<span key={index} className="letter">{letter}</span>))
 
 	let className = `clue`;
 	if (solution) className += ' solution'; 
 
-	return(
+	return (
 		<div className={className}>
-			<div className='w2'>
-				<span className='letter'>I</span>
-				<span className='letter'>t</span>
-				<span className='letter'>s</span>
-				<span className='letter'> </span>
-				<span className='letter'>a</span>
-				<span className='letter'>n</span>
-				<span className='letter'> </span>
-				<span className='letter'>A</span>
-				<span className='letter'>n</span>
-				<span className='letter'>a</span>
-				<span className='letter'>g</span>
-				<span className='letter'>r</span>
-				<span className='letter'>a</span>
-				<span className='letter'>m</span>
-			</div>
-			
-			<div className='w1'>
-				<span className='letter'>S</span>
-				<span className='letter'>a</span>
-				<span className='letter'>t</span>
-				<span className='letter'>i</span>
-				<span className='letter'>n</span>
-				<span className='letter'> </span>
-				<span className='letter'>R</span>
-				<span className='letter'>a</span>
-				<span className='letter'>g</span>
-				<span className='letter'>a</span>
-				<span className='letter'> </span>
-				<span className='letter'>M</span>
-				<span className='letter'>a</span>
-				<span className='letter'>n</span>
-			</div>
-
+			<div className='w2'>{w2Insert}</div>			
+			<div className='w1'>{w1Insert}</div>
 		</div>
 	)
 }
