@@ -1,15 +1,26 @@
 import React from 'react';
-import C1 from '../clues/C1'
+import Anagram from '../clues/Anagram'
 
-const ClueContainer = ({ solution }) => {
+const ClueContainer = ({ activeClue, solution }) => {
 
-  return(
-	<div id='clue-container'>
-		<C1 
-			solution={solution}
-		/>
-	</div>
-  )
+
+	function checkClueType(type){
+		switch(type){
+			case 'anagram':
+				return <Anagram activeClue={activeClue} />
+			default: 
+				return `Clue type ${type} not found`;
+		}
+	}
+	
+	const clueType = checkClueType(activeClue.type.toLowerCase());
+
+	let className = 'clue';
+	if (solution) className += ' solution'; 
+
+	return(
+		<div id='clue-container' className={className}>{clueType}</div>
+	)
 }
 
 export default ClueContainer;
