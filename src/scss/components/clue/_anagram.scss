@@ -1,35 +1,33 @@
-@use "../base/var" as *;
+@use "../../base/var" as *;
 
-.clue {
-	text-align: center;
-   
-	.w1, .w2 {
-		position: relative;
+#clue-container {
+
+	> div {
 		min-height: 50px;
 	}
 
-	.letter {
-		z-index: 10;
+	.clue {	
+		.letter {
+			z-index: 10;
+		}
 	}
 
-	.w2 .letter {
+	.solution .letter {
 		color: $lc-text;
 		opacity: 0;
 		transition: opacity 1s;
 	}
-
-	.disabled {
-		cursor: default;
-	}
+	
 
 	&.solution {
-		.w1 .letter {
+		.clue .letter {
 			opacity: 0;
 			transition: opacity 1s;
 		}
 
-		.w2 .letter {
+		.solution .letter {
 			opacity: 1;
+			color: pink;
 			transition: opacity 1s;
 		}
 	}

@@ -5,4 +5,5 @@
 // Components
 @use './components/top-bar';
 @use './components/btn';
-@use './components/clue';
+@use './components/clue/clue-container';
+@use './components/clue/anagram';

@@ -1,24 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, act } from 'react'
 import ClueContainer from './components/ClueContainer'
 import TopBar from './components/TopBar'
 import Button from './components/Button'
-import solveAnagram from './fn/SolveAnagram'
-import solveInitialism from './fn/solveInitialism'
 
 const App = () => {
 
+	const clues = [
+		{
+			clue: "Satin Raga Man",
+			solution: "Its an Anagram",
+			type: "anagram",
+			range: [0,14],
+			answerLetters: 12,
+			id: 0
+		}
+	]
+
 	// state
 	const [solution, setSolution] = useState(false);
+	const [activeClue, setActiveClue] = useState(clues[0]);
 
 	const buttonClick = () => {
-		solveAnagram();
 		setSolution(true);
 	}
 
     return (
 		<>
 			<TopBar />
-			<ClueContainer solution={solution} />
+			<ClueContainer activeClue={activeClue} solution={solution} />
 			<Button
 				name={"Solve"}
 				btnStyle={"alt"}
