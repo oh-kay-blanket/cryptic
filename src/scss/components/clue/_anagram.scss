@@ -1,5 +1,7 @@
 @use "../../base/var" as *;
 
+
+
 #clue-container {
 
 	> div {
@@ -7,28 +9,20 @@
 	}
 
 	.clue {	
-		.letter {
-			z-index: 10;
-		}
-	}
+		transition: opacity $lc-transition--short;
 
-	.solution .letter {
-		color: $lc-text;
-		opacity: 0;
-		transition: opacity 1s;
+		.letter {
+			transition: top $lc-transition, left $lc-transition;
+		}
 	}
 	
+	.solution {
+		z-index: 10;
+		opacity: 0;
+		transition: opacity $lc-transition--short;
 
-	&.solution {
-		.clue .letter {
-			// opacity: 0;
-			transition: top 1.5s;
+		.letter {
+			text-transform: uppercase;
 		}
-
-		.solution .letter {
-			opacity: 1;
-			color: pink;
-			transition: opacity 1s;
-		}
-	}
+	} 
 }
