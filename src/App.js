@@ -20,19 +20,18 @@ const App = () => {
 	const [solution, setSolution] = useState(false);
 	const [activeClue, setActiveClue] = useState(clues[0]);
 
-	const buttonClick = () => {
-		setSolution(true);
-	}
-
     return (
 		<>
 			<TopBar />
-			<ClueContainer activeClue={activeClue} solution={solution} />
+			<ClueContainer 
+				activeClue={activeClue} 
+				solution={solution} 
+			/>
 			<Button
 				name={"Solve"}
 				btnStyle={"alt"}
 				solution={solution}
-				buttonClick={() => buttonClick()}
+				setSolution={setSolution}
 			/>
 		</>
 	)

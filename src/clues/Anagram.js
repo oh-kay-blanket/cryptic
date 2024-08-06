@@ -1,6 +1,6 @@
 import React, { useState, useRef, createRef, useEffect } from 'react'
 
-const Anagram = ({ activeClue }) => {
+const Anagram = ({ activeClue, solution }) => {
 
 	// make local clone of clue object
 	let clue = structuredClone(activeClue)
@@ -16,33 +16,45 @@ const Anagram = ({ activeClue }) => {
 	// set refs
 	const clueLettersRef = useRef(clue.clue.map(() => createRef()))
 	const solutionLettersRef = useRef(clue.solution.map(() => createRef()))
-	const clueRef = useRef(null)
-	const solRef = useRef(null)
 
 	// look for position once set
 	useEffect(() => {
 
 		// clue
-		const getClueLPos = clueLettersRef.current.map( ref => {
-			let x = ref.current.getBoundingClientRect().x
-			let y = ref.current.getBoundingClientRect().y
-			ref.current.style.left = `${x}px`
-			ref.current.style.top = `${y}px`
-			return [ref.current.left, ref.current.top]
+		const getClueLPos = clueLettersRef.current.forEach( ref => {
+			let left = ref.current.getBoundingClientRect().left
+			let top = ref.current.getBoundingClientRect().top
+			ref.current.style.left = `${left}px`
+			ref.current.style.top = `${top}px`
+			return [left, top]
 		})
 		setClueLPos(getClueLPos);
 
+		clueLettersRef.current.forEach( ref => {
+			ref.current.style.position = 'fixed'
+		})
+		
 		// solution
-		const getSolLPos = solutionLettersRef.current.map( ref => {
-			let x = ref.current.getBoundingClientRect().x
-			let y = ref.current.getBoundingClientRect().y
-			ref.current.style.left = `${x}px`
-			ref.current.style.top = `${y}px`
-			return [ref.current.left, ref.current.top]
+		const getSolLPos = solutionLettersRef.current.forEach( ref => {
+			let left = ref.current.getBoundingClientRect().left
+			let top = ref.current.getBoundingClientRect().top
+			ref.current.style.left = `${left}px`
+			ref.current.style.top = `${top}px`
+			return [left, top]
 		})
 		setSolLPos(getSolLPos);
-
+		
+		solutionLettersRef.current.forEach( ref => {
+			ref.current.style.position = 'fixed'
+		})
+		
 	}, []);	
+	
+	useEffect(() => {
+		clueLettersRef.current.forEach( ref => {
+			ref.current.style.top = '380px'
+		})
+	}, [solution]);	
 
 	// build clue HTML
 	const clueInsert = clue.clue.map((letter, index) => <span key={index} ref={clueLettersRef.current[index]} className="letter">{letter}</span>)
