@@ -7,7 +7,7 @@ const ClueContainer = ({ activeClue, solution }) => {
 	function checkClueType(type){
 		switch(type){
 			case 'anagram':
-				return <Anagram activeClue={activeClue} />
+				return <Anagram activeClue={activeClue} solution={solution} />
 			default: 
 				return `Clue type ${type} not found`;
 		}

@@ -21,8 +21,8 @@
 
 	&.solution {
 		.clue .letter {
-			opacity: 0;
-			transition: opacity 1s;
+			// opacity: 0;
+			transition: top 1.5s;
 		}
 
 		.solution .letter {
