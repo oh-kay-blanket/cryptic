@@ -10,7 +10,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Welcome',
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+	  favicon: "./public/favicon.ico"
     }),
   ],
   output: {
