@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ name, btnStyle="alt", setSolution }) => {
+const Button = ({ name, btnStyle="alt", setSolution, handleButtonClick }) => {
 
 	let className = `show-btn ${btnStyle}`;
 
