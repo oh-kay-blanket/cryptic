@@ -11,36 +11,35 @@ const Anagram = ({ activeClue, solution }) => {
 
 	// set refs
 	const clueLettersRef = useRef(clue.clue.map(() => createRef()))
+	let clueAnagramLettersRef = clueLettersRef.current.slice(clue.range[0], clue.range[1]);
 	const solutionLettersRef = useRef(clue.solution.map(() => createRef()))
 	const clueSection = useRef()
 	const solutionSection = useRef()
-
+	
 	// look for position once set
 	useEffect(() => {
 
 		// clue
-		const getClueLPos = clueLettersRef.current.forEach( ref => {
+		clueLettersRef.current.forEach( ref => {
 			let left = ref.current.getBoundingClientRect().left
 			let top = ref.current.getBoundingClientRect().top
 			ref.current.style.left = `${left}px`
 			ref.current.style.top = `${top}px`
 			return [left, top]
 		})
-		// setClueLPos(getClueLPos);
 
 		clueLettersRef.current.forEach( ref => {
 			ref.current.style.position = 'fixed'
 		})
 		
 		// solution
-		const getSolLPos = solutionLettersRef.current.forEach( ref => {
+		solutionLettersRef.current.forEach( ref => {
 			let left = ref.current.getBoundingClientRect().left
 			let top = ref.current.getBoundingClientRect().top
 			ref.current.style.left = `${left}px`
 			ref.current.style.top = `${top}px`
 			return [left, top]
 		})
-		// setSolLPos(getSolLPos);
 		
 		solutionLettersRef.current.forEach( ref => {
 			ref.current.style.position = 'fixed'
@@ -50,8 +49,12 @@ const Anagram = ({ activeClue, solution }) => {
 	
 	// move letters when solution is true
 	useEffect(() => {
-		console.log('running effect')
-		solution && clueLettersRef.current.forEach( ref => {
+
+		clueAnagramLettersRef = clueAnagramLettersRef.filter(ref => {
+			return ref.current.textContent !== " "
+		})
+		
+		solution && clueAnagramLettersRef.forEach( ref => {
 			const currentSol = solutionLettersRef.current.find(sol => {
 				return sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
 			})
@@ -60,20 +63,26 @@ const Anagram = ({ activeClue, solution }) => {
 
 			ref.current.style.top = currentSol.current.style.top
 			ref.current.style.left = currentSol.current.style.left
+			ref.current.style.transitionDelay = `${(750 * Math.random()) + 250}ms`
 			ref.current.style.textTransform = 'lowercase'
 		})
 
 		const morphToUppercase = () => {
-			clueSection.current.style.opacity = 0
+			clueAnagramLettersRef.forEach( ref => {
+				ref.current.style.opacity = 0
+			})
+			// clueSection.current.style.opacity = 0
 			solutionSection.current.style.opacity = 1
 		}
 
-
-		solution && setTimeout(morphToUppercase, 3000)
+		solution && setTimeout(morphToUppercase, 4000)
 	}, [solution]);
 
 	// build clue HTML
-	const clueInsert = clue.clue.map((letter, index) => <span key={index} ref={clueLettersRef.current[index]} className="letter">{letter}</span>)
+	const clueInsert = clue.clue.map((letter, index) => {
+		const withinRange = (index >= clue.range[0] && index < clue.range[1]) ? ' sol-anagram' : ''
+		return <span key={index} ref={clueLettersRef.current[index]} className={`letter`}>{letter}</span>
+	})
 
 	// build solution HTML
 	const solInsert = clue.solution.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter">{letter}</span>))

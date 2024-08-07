@@ -9,17 +9,17 @@
 	}
 
 	.clue {	
-		transition: opacity $lc-transition--short;
+		transition: opacity $lc-transition--short linear;
 
 		.letter {
-			transition: top $lc-transition, left $lc-transition;
+			transition: top $lc-transition ease, left $lc-transition ease, opacity $lc-transition--short linear;
 		}
 	}
 	
 	.solution {
 		z-index: 10;
 		opacity: 0;
-		transition: opacity $lc-transition--short;
+		transition: opacity $lc-transition--short linear;
 
 		.letter {
 			text-transform: uppercase;
