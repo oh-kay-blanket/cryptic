@@ -44,6 +44,8 @@ const Anagram = ({ activeClue, solution }) => {
 		solutionLettersRef.current.forEach( ref => {
 			ref.current.style.position = 'fixed'
 		})
+
+		solutionSection.current.style.transform = 'none'
 		
 	}, []);	
 	
@@ -60,9 +62,8 @@ const Anagram = ({ activeClue, solution }) => {
 			})
 			const solIndex = solutionLettersRef.current.findIndex(sol => sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
 			solutionLettersRef.current.splice(solIndex, 1)
-
-			ref.current.style.top = currentSol.current.style.top
-			ref.current.style.left = currentSol.current.style.left
+			ref.current.style.top = `${Number(currentSol.current.style.top.slice(0,-2))+8}px`
+			ref.current.style.left = `${Number(currentSol.current.style.left.slice(0,-2))+8}px`
 			ref.current.style.transitionDelay = `${(750 * Math.random()) + 250}ms`
 			ref.current.style.textTransform = 'lowercase'
 		})
@@ -89,8 +90,8 @@ const Anagram = ({ activeClue, solution }) => {
 
 	return (
 		<>
-			<div className='solution' ref={solutionSection}>{solInsert}</div>			
 			<div className='clue' ref={clueSection}>{clueInsert}</div>
+			<div className='solution' ref={solutionSection}>{solInsert}</div>			
 		</>
 	)
 }

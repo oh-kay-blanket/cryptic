@@ -3,10 +3,7 @@
 
 
 #clue-container {
-
-	> div {
-		min-height: 50px;
-	}
+	position: relative;
 
 	.clue {	
 		transition: opacity $lc-transition--short linear;
@@ -17,12 +14,21 @@
 	}
 	
 	.solution {
+		position: absolute;
+		bottom: 25%;
+		left: 50%;
+		transform: translate(-50%,50%);
+		font-family: "Rock Salt", cursive;
+		letter-spacing: 1rem;
 		z-index: 10;
 		opacity: 0;
 		transition: opacity $lc-transition--short linear;
+		text-align: center;
+		margin: 0 auto;
 
 		.letter {
 			text-transform: uppercase;
+			// border: 1px solid $lc-black;
 		}
 	} 
 }

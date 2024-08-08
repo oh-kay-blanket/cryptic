@@ -1,8 +1,9 @@
-html, body {
+html, body, #root {
     height: 100%;
-	// width: 100%;
+	width: 100%;
 	font-size: 16px;
 	overflow: hidden;
+	margin: 0;
 }
 
 * {
@@ -12,18 +13,6 @@ html, body {
 body {
     display: flex;
 	font-family:Georgia, 'Times New Roman', Times, serif;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-    align-self: center;
-	width: 100%;
-    max-width: 800px;
-    height: 500px;
-    margin: 0 auto;
-	padding: 0 2rem;
 }
 
 img {
