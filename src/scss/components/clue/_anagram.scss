@@ -1,7 +1,5 @@
 @use "../../base/var" as *;
 
-
-
 #clue-container {
 	position: relative;
 
@@ -18,7 +16,7 @@
 		bottom: 25%;
 		left: 50%;
 		transform: translate(-50%,50%);
-		font-family: "Rock Salt", cursive;
+		font-family: $lc-font--alt;
 		letter-spacing: 1rem;
 		z-index: 10;
 		opacity: 0;

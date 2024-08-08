@@ -1,0 +1,479 @@
+[
+  {
+    "id": "1",
+    "clue": "Grunted when ball got tattooed",
+    "definition": "Grunted",
+    "definition2": "",
+    "type": "Charade",
+    "indicator": "",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "oinked",
+    "solutionLetters": "6",
+    "source": "Minute Cryptic"
+  },
+  {
+    "id": "2",
+    "clue": "Espresso drink held by hospital attendant",
+    "definition": "Espresso drink",
+    "definition2": "",
+    "type": "Hidden word",
+    "indicator": "held by",
+    "indicatorEndPoint": "l atte",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "held by",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "latte",
+    "solutionLetters": "5",
+    "source": "Fraz"
+  },
+  {
+    "id": "3",
+    "clue": "Repeatedly retain host",
+    "definition": "host",
+    "definition2": "",
+    "type": "Letter Bank",
+    "indicator": "Repeatedly",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "Repeatedly",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "Entertainer",
+    "solutionLetters": "11",
+    "source": "Fraz"
+  },
+  {
+    "id": "4",
+    "clue": "Burn prophet, we hear",
+    "definition": "burn",
+    "definition2": "",
+    "type": "Homophone",
+    "indicator": "hear",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "hear",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "sear",
+    "solutionLetters": "4",
+    "source": "Fraz"
+  },
+  {
+    "id": "5",
+    "clue": "Hear Leo's wonky audio receiver",
+    "definition": "audio receiver",
+    "definition2": "",
+    "type": "anagram",
+	"range": [0,8],
+    "indicator": "wonky",
+    "indicatorEndPoint": "Hear Leo's",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "wonky",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "earhole",
+    "solutionLetters": "7",
+    "source": "Ucaoimhu"
+  },
+  {
+    "id": "6",
+    "clue": "Uranium buried in a neat courtyard",
+    "definition": "courtyard",
+    "definition2": "",
+    "type": "Container",
+    "indicator": "buried",
+    "indicatorEndPoint": "Uranium",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "buried",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "atrium",
+    "solutionLetters": "6",
+    "source": "Hex"
+  },
+  {
+    "id": "7",
+    "clue": "Starting with a core of knowledge, gain deeper understanding!",
+    "definition": "starting with a core of knowledge, gain deeper understanding",
+    "definition2": "",
+    "type": "& Lit.",
+    "indicator": "core",
+    "indicatorEndPoint": "knowledge",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "core",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "learn",
+    "solutionLetters": "5",
+    "source": "Midas"
+  },
+  {
+    "id": "8",
+    "clue": "Different parent starts late",
+    "definition": "different",
+    "definition2": "",
+    "type": "Deletion",
+    "indicator": "starts",
+    "indicatorEndPoint": "late",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "starts",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "other",
+    "solutionLetters": "5",
+    "source": "Kegler"
+  },
+  {
+    "id": "9",
+    "clue": "Wears out swings, sometimes",
+    "definition": "wears out",
+    "definition2": "swings, sometimes",
+    "type": "Double Definition",
+    "indicator": "",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "tires",
+    "solutionLetters": "5",
+    "source": "Kegler"
+  },
+  {
+    "id": "10",
+    "clue": "Spanish gentlemen taking interest in old people",
+    "definition": "old people",
+    "definition2": "",
+    "type": "Container",
+    "indicator": "taking",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "taking",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "seniors",
+    "solutionLetters": "7",
+    "source": "Kegler"
+  },
+  {
+    "id": "11",
+    "clue": "Wearing fewer clothes around Rhode Island is an impediment",
+    "definition": "impediment",
+    "definition2": "",
+    "type": "Container",
+    "indicator": "around",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "around",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "barrier",
+    "solutionLetters": "7",
+    "source": "Kegler"
+  },
+  {
+    "id": "12",
+    "clue": "No, fear not traveling between morning and night",
+    "definition": "between morning and night",
+    "definition2": "",
+    "type": "anagram",
+    "indicator": "traveling",
+    "indicatorEndPoint": "No, fear not",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "traveling",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "afternoon",
+    "solutionLetters": "9",
+    "source": "Kegler"
+  },
+  {
+    "id": "13",
+    "clue": "Idly chat with actor Neeson, returning post office worker’ s gear",
+    "definition": "post office worker's gear",
+    "definition2": "",
+    "type": "Reversal",
+    "indicator": "returning",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "returning",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "mailbag",
+    "solutionLetters": "7",
+    "source": "Kegler"
+  },
+  {
+    "id": "14",
+    "clue": "Arizona boomer starts to talk up city situated over Nogales",
+    "definition": "Arizona boomer",
+    "definition2": "",
+    "type": "Initialism",
+    "indicator": "starts",
+    "indicatorEndPoint": "to",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "starts",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "Tucson",
+    "solutionLetters": "6",
+    "source": "Midas"
+  },
+  {
+    "id": "15",
+    "clue": "Sounds like Fleetwood Mac frontwoman went after compensation in her hometown",
+    "definition": "her hometown",
+    "definition2": "",
+    "type": "Homophone",
+    "indicator": "sounds like",
+    "indicatorEndPoint": "Fleetwood Mac frontwoman",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      "compensation"
+    ],
+    "indicator2": "went after",
+    "indicatorEndPoint2": "compensation",
+    "type2": "",
+    "indicator3": "sounds like",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      "compensation"
+    ],
+    "indicator4": "went after",
+    "indicatorEndPoint4": "compensation",
+    "solution": "Phoenix",
+    "solutionLetters": "7",
+    "source": "Midas"
+  },
+  {
+    "id": "16",
+    "clue": "South Mountain, say",
+    "definition": "say",
+    "definition2": "",
+    "type": "Charade",
+    "indicator": "",
+    "indicatorEndPoint": "",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      ""
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "",
+    "indicator3": "",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "speak",
+    "solutionLetters": "5",
+    "source": "Hex"
+  },
+  {
+    "id": "17",
+    "clue": "Eyeglasses initially broken by liberal in terrible fiasco",
+    "definition": "Eyeglasses",
+    "definition2": "",
+    "type": "Initialism",
+    "indicator": "initially",
+    "indicatorEndPoint": "broken",
+    "indicatorEndPoint1": [
+      null,
+      null,
+      "liberal"
+    ],
+    "indicator2": "",
+    "indicatorEndPoint2": "",
+    "type2": "anagram",
+    "indicator3": "terrible",
+    "indicatorEndPoint3": [
+      null,
+      null,
+      ""
+    ],
+    "indicator4": "",
+    "indicatorEndPoint4": "",
+    "solution": "bifocals",
+    "solutionLetters": "8",
+    "source": "Fraz"
+  }
+]

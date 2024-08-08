@@ -7,8 +7,11 @@
 	width: 100%;
 	height: $lc-bottom-height;
 	background-color: $lc-gray--light;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }

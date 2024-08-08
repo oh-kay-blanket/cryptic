@@ -1,32 +1,17 @@
 import React, { useState, useEffect, useRef, act } from 'react'
 import ClueContainer from './components/ClueContainer'
 import TopBar from './components/TopBar'
-import Bottom from './components/Bottom'
+import Bottom from './components/bottom/Bottom'
+
+import clues from './clues.json';
 
 const App = () => {
 
-	const clues = [
-		{
-			clue: "Satin Raga Man",
-			solution: "It's an Anagram",
-			type: "anagram",
-			range: [0,14],
-			answerLetters: 12,
-			id: 0
-		},
-		{
-			clue: "Hear Leo's wonky audio receiver",
-			solution: "earhole",
-			type: "anagram",
-			range: [0,8],
-			answerLetters: 7,
-			id: 1
-		},
-	]
+	console.log(clues)
 
 	// state
 	const [solution, setSolution] = useState(false);
-	const [activeClue, setActiveClue] = useState(clues[1]);
+	const [activeClue, setActiveClue] = useState(clues[4]);
 
     return (
 		<>
