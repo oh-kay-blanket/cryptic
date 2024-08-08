@@ -1,4 +1,4 @@
-@use '../base/var' as *;
+@use '../../base/var' as *;
 
 .bottom {
 	position: fixed;
@@ -8,10 +8,10 @@
 	height: $lc-bottom-height;
 	background-color: $lc-gray--light;
 	
-	.container {
+	& > .container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 	}
 }

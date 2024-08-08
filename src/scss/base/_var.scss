@@ -8,8 +8,10 @@ $lc-secondary--light: #FFCBAB;
 // Grays
 $lc-text: #222;
 $lc-black: #222;
-$lc-gray: #F3F3F3;
-$lc-gray--light: #F9F9F9;
+$lc-gray: #E2E2E2;
+$lc-gray--light: #F3F3F3;
+$lc-gray--v-light: #F9F9F9;
+$lc-gray--dark: #d2d2d2;
 
 // Transition
 $lc-transition: 2.5s;
@@ -19,6 +21,9 @@ $lc-transition--short: 1s;
 $lc-top-height: 60px;
 $lc-bottom-height: 45%;
 $lc-clue-container-height: calc((100% - $lc-bottom-height) - $lc-top-height);
+$lc-keyboard-height: 178px;
 
 // Font
-$lc-font--alt: 'Helvetica', sans-serif;
+$lc-font-serif: 'Gelasio', 'Times New Roman', serif;
+$lc-font-sans: 'Helvetica', 'Arial', 'Open Sans', sans;
+$lc-font--alt: 'Rock Salt', sans-serif;
