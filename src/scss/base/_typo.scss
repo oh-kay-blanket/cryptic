@@ -4,10 +4,13 @@
 
 body {
 	font-family: $lc-font-serif;
-	font-size: 16px;
   	color: $lc-text;
 }
 
 p {
 	margin: .25rem;
+}
+
+button {
+	font-size: 1rem;
 }

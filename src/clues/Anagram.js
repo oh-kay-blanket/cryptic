@@ -4,10 +4,15 @@ const Anagram = ({ activeClue, solution }) => {
 
 	// make local clone of clue object
 	let clue = structuredClone(activeClue)
+	
+	// get range of anagram letters
+	clue.range = [clue.clue.indexOf(clue.type[0].indicator[0].end[0]), clue.type[0].indicator[0].end[0].length]
+	console.log(clue.range)
 
 	// split letters into array
 	clue.clue = clue.clue.split("")
 	clue.solution = clue.solution.split("")
+
 
 	// set refs
 	const clueLettersRef = useRef(clue.clue.map(() => createRef()))
@@ -15,6 +20,7 @@ const Anagram = ({ activeClue, solution }) => {
 	const solutionLettersRef = useRef(clue.solution.map(() => createRef()))
 	const clueSection = useRef()
 	const solutionSection = useRef()
+	const solutionLettersCount = useRef()
 	
 	// look for position once set
 	useEffect(() => {
@@ -28,9 +34,15 @@ const Anagram = ({ activeClue, solution }) => {
 			return [left, top]
 		})
 
+		// solutionLettersCount
+		solutionLettersCount.current.style.left = `${solutionLettersCount.current.getBoundingClientRect().left}px`
+		solutionLettersCount.current.style.top = `${solutionLettersCount.current.getBoundingClientRect().top}px`
+
+		// fix positions
 		clueLettersRef.current.forEach( ref => {
 			ref.current.style.position = 'fixed'
 		})
+		solutionLettersCount.current.style.position = 'fixed'
 		
 		// solution
 		solutionLettersRef.current.forEach( ref => {
@@ -88,9 +100,12 @@ const Anagram = ({ activeClue, solution }) => {
 	// build solution HTML
 	const solInsert = clue.solution.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter">{letter}</span>))
 
+	// add solution letters
+	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters}</span>
+
 	return (
 		<>
-			<div className='clue' ref={clueSection}>{clueInsert}</div>
+			<div className='clue' ref={clueSection}>{clueInsert}{solutionLetters}</div>
 			<div className='solution' ref={solutionSection}>{solInsert}</div>			
 		</>
 	)

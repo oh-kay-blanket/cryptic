@@ -6,14 +6,14 @@ const ClueContainer = ({ activeClue, solution }) => {
 
 	function checkClueType(type){
 		switch(type){
-			case 'anagram':
+			case 'Anagram':
 				return <Anagram activeClue={activeClue} solution={solution} />
 			default: 
 				return `Clue type ${type} not found`;
 		}
 	}
 	
-	const clueType = checkClueType(activeClue.type.toLowerCase());
+	const clueType = checkClueType(activeClue.type[0].name);
 
 	let className = 'clue container';
 	if (solution) className += ' solution'; 

@@ -14,5 +14,6 @@
 // Bottom
 @use './components/bottom/bottom';
 @use './components/bottom/input';
-@use './components/bottom/btn';
+@use './components/bottom/button-container';
+@use './components/bottom/button';
 @use './components/bottom/keyboard';

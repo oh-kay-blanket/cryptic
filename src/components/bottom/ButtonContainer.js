@@ -4,12 +4,14 @@ import Button from './Button'
 const ButtonContainer = ({ name, btnStyle, solution, setSolution }) => {
 
   return(
-    <Button
-		name={"Solve"}
-		btnStyle={"alt"}
-		solution={solution}
-		setSolution={setSolution}
-	/>
+	<div className='button-container'>
+		<Button
+			name={name}
+			btnStyle={btnStyle}
+			solution={solution}
+			setSolution={setSolution}
+		/>
+	</div>
   )
 }
 

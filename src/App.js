@@ -7,11 +7,15 @@ import clues from './clues.json';
 
 const App = () => {
 
-	console.log(clues)
-
 	// state
 	const [solution, setSolution] = useState(false);
-	const [activeClue, setActiveClue] = useState(clues[4]);
+	const [activeClue, setActiveClue] = useState(clues[3]);
+
+	// get solution letters
+	const getSolutionLetters = solution => `(${solution.split(' ').map(word => word.length).join(' ')})`
+	activeClue.solutionLetters = getSolutionLetters(activeClue.solution)
+
+	console.log(activeClue);
 
     return (
 		<>
@@ -21,7 +25,7 @@ const App = () => {
 				solution={solution} 
 			/>
 			<Bottom
-				name={"Solve"}
+				name={"Reveal solution"}
 				btnStyle={"alt"}
 				solution={solution}
 				setSolution={setSolution}
