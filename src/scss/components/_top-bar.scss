@@ -4,11 +4,12 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 10;
 	display: flex;
 	justify-content:flex-end;
 	align-items: cener;
-	background-color: $lc-gray;
-	height: 60px;
+	background-color: $lc-gray--light;
+	height: $lc-top-height;
 	width: 100%;
 	padding: .5rem;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, act } from 'react'
 import ClueContainer from './components/ClueContainer'
 import TopBar from './components/TopBar'
-import Button from './components/Button'
+import Bottom from './components/Bottom'
 
 const App = () => {
 
@@ -35,7 +35,7 @@ const App = () => {
 				activeClue={activeClue} 
 				solution={solution} 
 			/>
-			<Button
+			<Bottom
 				name={"Solve"}
 				btnStyle={"alt"}
 				solution={solution}
