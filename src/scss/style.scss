@@ -3,8 +3,16 @@
 @use './base/typo';
 
 // Components
+
+// Top
 @use './components/top-bar';
-@use './components/btn';
+
+// Clue
 @use './components/clue/clue-container';
 @use './components/clue/anagram';
-@use './components/bottom';
+
+// Bottom
+@use './components/bottom/bottom';
+@use './components/bottom/input';
+@use './components/bottom/btn';
+@use './components/bottom/keyboard';

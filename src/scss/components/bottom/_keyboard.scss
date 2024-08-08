@@ -1,0 +1,37 @@
+@use '../../base/var' as *;
+
+.keyboard {
+	width: 100%;
+	height: $lc-keyboard-height;
+	padding: .5rem;
+	font-family: $lc-font-sans;
+	text-align: center;
+
+	.k-row {
+		display: flex;
+		justify-content: space-evenly;
+		margin: .5rem 0;
+
+		div {
+			position: relative;
+			background-color: $lc-gray;
+			width: 100%;
+			height: 44px;
+			border-radius: 8px;
+			margin: 0 .25rem;
+
+			&#backspace {
+				width: 150%;
+				background-color: $lc-gray--dark;
+			}
+
+			span, img {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				display: block;
+			}
+		}
+	}
+}
