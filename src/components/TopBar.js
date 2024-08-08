@@ -6,7 +6,9 @@ const TopBar = () => {
 
   return(
     <div className='top-bar'>
-		<img src={logo} />
+		<div className='container'>
+			<img src={logo} />
+		</div>
     </div>
   )
 }

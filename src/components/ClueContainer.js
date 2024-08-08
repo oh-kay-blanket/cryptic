@@ -15,7 +15,7 @@ const ClueContainer = ({ activeClue, solution }) => {
 	
 	const clueType = checkClueType(activeClue.type.toLowerCase());
 
-	let className = 'clue';
+	let className = 'clue container';
 	if (solution) className += ' solution'; 
 
 	return(
