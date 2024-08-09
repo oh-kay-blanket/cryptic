@@ -1,5 +1,5 @@
 import React from 'react';
-import Anagram from '../clues/Anagram'
+import Anagram from './clues/Anagram'
 
 const ClueContainer = ({ activeClue, solution }) => {
 
