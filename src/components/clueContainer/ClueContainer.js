@@ -9,7 +9,7 @@ const ClueContainer = ({ activeClue, solution }) => {
 			case 'Anagram':
 				return <Anagram activeClue={activeClue} solution={solution} />
 			default: 
-				return `Clue type ${type} not found`;
+				return `${activeClue.clue} ${activeClue.solutionLetters}`;
 		}
 	}
 	
