@@ -7,7 +7,6 @@ const Anagram = ({ activeClue, solution }) => {
 	
 	// get range of anagram letters
 	clue.range = [clue.clue.indexOf(clue.type[0].indicator[0].end[0]), clue.type[0].indicator[0].end[0].length]
-	console.log(clue.range)
 
 	// split letters into array
 	clue.clue = clue.clue.split("")
