@@ -1,10 +1,7 @@
 import React from 'react';
 import Anagram from './clues/Anagram'
 
-const ClueContainer = ({ activeClue, nextHint }) => {
-
-	console.log(activeClue.hints[nextHint])
-
+const ClueContainer = ({ activeClue }) => {
 
 	// function checkClueType(type){
 	// 	switch(type){

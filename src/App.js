@@ -8,18 +8,18 @@ import Bottom from './components/bottom/Bottom'
 
 // hooks
 import useActiveClue from './hooks/useActiveClue'
+import useNextHint from './hooks/useNextHint'
 
 const App = () => {
 
 	// set mode & clue
 	let { activeClue, nextActiveClue } = useActiveClue()	
+	let { nextHint, showHint } = useNextHint(activeClue)
 	const [mode, setMode] = useState('title');
 
 	useEffect(() => {
 		console.log(activeClue ? activeClue : mode)
 	}, [])
-
-	const [nextHint, setNextHint] = useState(0);
 
 	// const [completedClues, setCompletedClues] = useState([]);
 	// const [openClues, setOpenClues] = useState([]);
@@ -43,7 +43,7 @@ const App = () => {
 						nextActiveClue={nextActiveClue}
 						activeClue={activeClue}
 						nextHint={nextHint}
-						setNextHint={setNextHint}
+						showHint={showHint}
 					/>
 				</>
 			}

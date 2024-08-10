@@ -1,24 +1,16 @@
 import React from 'react';
 import Button from './Button'
 
-const ButtonContainer = ({ mode, setMode, activeClue, nextActiveClue, nextHint, setNextHint }) => {
-
-	// console.log(nextHint, activeClue.hints.length)
+const ButtonContainer = ({ mode, setMode, activeClue, nextActiveClue, nextHint, showHint }) => {
 
 	const getHint = {
 		name: 'Get hint',
 		btnStyle: 'secondary',
-		onClick: function() {
-			setNextHint(nextHint + 1)
-		}
 	}
 
 	const solveClue = {
 		name: 'Reveal solution',
 		btnStyle: 'alt',
-		onClick: function() {
-			setNextHint(nextHint + 1)
-		}
 	}
 
   return(
@@ -27,14 +19,14 @@ const ButtonContainer = ({ mode, setMode, activeClue, nextActiveClue, nextHint, 
 			<Button
 				name={getHint.name}
 				btnStyle={getHint.btnStyle}
-				onClick={getHint.onClick}
+				onClick={showHint}
 				setMode={setMode}
 				nextActiveClue={nextActiveClue}
 			/> :
 			<Button
 				name={solveClue.name}
 				btnStyle={solveClue.btnStyle}
-				onClick={solveClue.onClick}
+				onClick={showHint}
 				setMode={setMode}
 				nextActiveClue={nextActiveClue}
 			/>
