@@ -1,13 +1,11 @@
 import React from "react";
 
-const Button = ({ name, btnStyle="alt", setSolution, handleButtonClick }) => {
+const Button = ({ name, btnStyle="secondary", onClick }) => {
 
 	let className = `show-btn ${btnStyle}`;
 
-	const buttonClick = () => setSolution(true)
-
   return(
-    <button className={className} type='button' onClick={buttonClick}>{name}</button>
+    <button className={className} type='button' onClick={onClick}>{name}</button>
   )
 }
 

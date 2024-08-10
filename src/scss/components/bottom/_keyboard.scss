@@ -1,6 +1,7 @@
 @use '../../base/var' as *;
 
 .keyboard {
+	visibility: hidden;
 	width: 100%;
 	height: $lc-keyboard-height;
 	padding: .5rem;
