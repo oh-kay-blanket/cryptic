@@ -2,13 +2,12 @@
 
 .show-btn {
     outline: none;
-    width: calc(100% + 4px);
     border: none;
-    padding: .5rem;
+    padding: .75rem 1.5rem;
     margin: .5rem 1rem;
     cursor: pointer;
 	border-radius: 50px;
-	max-width: 200px;
+	max-width: 300px;
 
 	&.primary {
 		background-color: $lc-primary;

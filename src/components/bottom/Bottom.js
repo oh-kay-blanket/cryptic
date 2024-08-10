@@ -3,17 +3,19 @@ import Input from './Input'
 import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 
-const Bottom = ({ name, btnStyle, solution, setSolution }) => {
+const Bottom = ({ mode, setMode, activeClue, setActiveClue, nextHint, setNextHint }) => {
 
   return(
     <div className='bottom'>
 		<div className='container'>
 			<Input />
 			<ButtonContainer
-				name={name}
-				btnStyle={btnStyle}
-				solution={solution}
-				setSolution={setSolution}
+				mode={mode}
+				setMode={setMode}
+				setActiveClue={setActiveClue}
+				activeClue={activeClue}
+				nextHint={nextHint}
+				setNextHint={setNextHint}
 			/>
 			<Keyboard />
 		</div>
