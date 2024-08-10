@@ -3,7 +3,7 @@ import Input from './Input'
 import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 
-const Bottom = ({ mode, setMode, activeClue, setActiveClue, nextHint, setNextHint }) => {
+const Bottom = ({ mode, setMode, activeClue, setActiveClue, nextHint, showHint }) => {
 
   return(
     <div className='bottom'>
@@ -15,7 +15,7 @@ const Bottom = ({ mode, setMode, activeClue, setActiveClue, nextHint, setNextHin
 				setActiveClue={setActiveClue}
 				activeClue={activeClue}
 				nextHint={nextHint}
-				setNextHint={setNextHint}
+				showHint={showHint}
 			/>
 			<Keyboard />
 		</div>

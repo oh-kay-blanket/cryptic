@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import clues from '../clues.json';
 
 const useActiveClue = () => {
+	
 	// state
 	const [activeClue, setActiveClue] = useState(clues[3]);
 	
@@ -15,7 +16,7 @@ const useActiveClue = () => {
 		// clean active clue //
 
 		// get solution letters
-		const getSolutionLetters = solution => `(${solution.split(' ').map(word => word.length).join(' ')})`
+		const getSolutionLetters = solution => `(${solution.split(' ').map(word => word.length).join(', ')})`
 		activeClue.solutionLetters = getSolutionLetters(activeClue.solution)
 
 		// trim definitions
