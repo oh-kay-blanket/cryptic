@@ -8,7 +8,7 @@ const Title = ({ setMode, nextActiveClue }) => {
 	// play archive
 	const playArchive = {
 		name: "Play today's clue",
-		btnStyle: 'primary',
+		style: 'primary',
 		onClick: function() {
 			setMode('today')
 			nextActiveClue()
@@ -21,11 +21,7 @@ const Title = ({ setMode, nextActiveClue }) => {
 			<img className='title-gif' src={gif} />
 			<div className='button-container'>
 			<Button
-				name={playArchive.name}
-				btnStyle={playArchive.btnStyle}
-				onClick={playArchive.onClick}
-				setMode={setMode}
-				nextActiveClue={nextActiveClue}
+				btnInfo={playArchive}
 			/>
 		</div>
 	</div>

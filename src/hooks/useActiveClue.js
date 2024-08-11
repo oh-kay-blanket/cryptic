@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import clues from '../clues.json';
 
@@ -46,6 +46,12 @@ const useActiveClue = () => {
 
 		activeClue.hints.push({ hintType: 'solution', value: activeClue.solution })
 	}
+
+	// list activeClue
+	useEffect(() => {
+		console.log(activeClue ? activeClue : mode)
+	}, [activeClue])
+
 	return { activeClue, nextActiveClue }
 }
 

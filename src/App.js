@@ -14,15 +14,8 @@ const App = () => {
 
 	// set mode & clue
 	let { activeClue, nextActiveClue } = useActiveClue()	
-	let { nextHint, showHint } = useNextHint(activeClue)
+	let { nextHint, showHint, btnArr, setBtnArr, message, buttons } = useNextHint(activeClue)
 	const [mode, setMode] = useState('title');
-
-	useEffect(() => {
-		console.log(activeClue ? activeClue : mode)
-	}, [])
-
-	// const [completedClues, setCompletedClues] = useState([]);
-	// const [openClues, setOpenClues] = useState([]);
 
     return (
 		<>
@@ -38,12 +31,8 @@ const App = () => {
 						nextHint={nextHint}
 					/>
 					<Bottom
-						mode={mode}
-						setMode={setMode}
-						nextActiveClue={nextActiveClue}
-						activeClue={activeClue}
-						nextHint={nextHint}
-						showHint={showHint}
+						message={message}
+						btnArr={buttons}
 					/>
 				</>
 			}
