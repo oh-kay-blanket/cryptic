@@ -1,12 +1,10 @@
 import React from "react";
 
-const Button = ({ name, btnStyle="secondary", onClick }) => {
+const Button = ({ btnInfo }) => {
 
-	let className = `show-btn ${btnStyle}`;
-
-  return(
-    <button className={className} type='button' onClick={onClick}>{name}</button>
-  )
+	return(
+		<button className={`show-btn ${btnInfo.style}`} type='button' onClick={btnInfo.onClick}>{btnInfo.name}</button>
+	)
 }
 
 export default Button

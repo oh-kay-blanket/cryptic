@@ -1,26 +1,26 @@
 import React from 'react'
+
 import Input from './Input'
 import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
+import Message from './Message'
 
-const Bottom = ({ mode, setMode, activeClue, setActiveClue, nextHint, showHint }) => {
+const Bottom = ({ message, btnArr }) => {
 
-  return(
-    <div className='bottom'>
-		<div className='container'>
-			<Input />
-			<ButtonContainer
-				mode={mode}
-				setMode={setMode}
-				setActiveClue={setActiveClue}
-				activeClue={activeClue}
-				nextHint={nextHint}
-				showHint={showHint}
-			/>
-			<Keyboard />
+	return(
+		<div className='bottom'>
+			<div className='container'>
+				<Input />
+				<ButtonContainer
+					btnArr={btnArr}
+				/>
+				<Keyboard />
+				<Message
+					message={message}
+				/>
+			</div>
 		</div>
-    </div>
-  )
+	)
 }
 
 export default Bottom;

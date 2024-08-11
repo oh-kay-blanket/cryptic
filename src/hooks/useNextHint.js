@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 
+import Button from '../components/bottom/Button'
+
 const useNextHint = activeClue => {
 
 	// state
-	const [nextHint, setNextHint] = useState(0);
+	const [nextHint, setNextHint] = useState(0)
+	const [message, setMessage] = useState('')
+	const [btnArr, setBtnArr] = useState([{ name:'Show hint', style: 'secondary', onClick: function(){showHint()} }])
 
 	const showHint = () => {
 
 		console.log(activeClue.hints[nextHint])
+
 
 		const dialogueCopy = () => {
 
@@ -30,7 +35,9 @@ const useNextHint = activeClue => {
 		setNextHint(nextHint + 1)
 	}
 
-	return { nextHint, showHint }
+	const buttons = btnArr.map((btnInfo, index) => <Button key={index} btnInfo={btnInfo} />)
+
+	return { nextHint, showHint, btnArr, setBtnArr, message, buttons }
 }
 
 export default useNextHint
