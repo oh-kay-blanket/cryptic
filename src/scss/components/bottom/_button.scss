@@ -18,7 +18,11 @@
 	}
 
 	&.secondary {
-		background-color: $lc-gray--light;
+		background: none;
 		border: 1px solid $lc-text;
+	}
+
+	&.gray {
+		background-color: $lc-gray--light;
 	}
 }

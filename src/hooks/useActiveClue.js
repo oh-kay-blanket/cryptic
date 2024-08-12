@@ -7,7 +7,7 @@ const useActiveClue = () => {
 	// state
 	const [activeClue, setActiveClue] = useState(clues[3]);
 	
-	const nextActiveClue = () => {
+	const nextActiveClue = activeClue => {
 		const rndm = Math.floor(Math.random() * clues.length)
 		setActiveClue(clues[rndm])
 	}
@@ -45,6 +45,25 @@ const useActiveClue = () => {
 		})
 
 		activeClue.hints.push({ hintType: 'solution', value: activeClue.solution })
+
+		// hint message
+		const getMessage = hint => {
+
+			switch(hint.hintType){
+				case 'definition':
+					return `"${hint.value}" is the definition.`
+				case 'indicator':
+					return `"${hint.value}" incicates there is a/an ${hint.hintCategory}.`
+				case 'indicated':
+					return `"${hint.value[0]}" is where we will find the ${hint.hintCategory}.`
+				case 'solution':
+					return `"${hint.value}" is the solution.`
+				default: 
+					return hint.value
+			}
+		}
+
+		activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
 	}
 
 	// list activeClue

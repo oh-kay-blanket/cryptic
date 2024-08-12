@@ -1,0 +1,19 @@
+@use '../../base/var' as *;
+
+.message {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc($lc-bottom-height - $lc-clue-input-height);
+	background-color: $lc-secondary;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+
+	&.solution {
+		height: calc($lc-bottom-height);
+		background-color: $lc-gray--light;
+	}
+}

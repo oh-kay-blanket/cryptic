@@ -2,8 +2,10 @@ import React from "react";
 
 const Button = ({ btnInfo }) => {
 
+	const { name, style, onClick } = btnInfo
+
 	return(
-		<button className={`show-btn ${btnInfo.style}`} type='button' onClick={btnInfo.onClick}>{btnInfo.name}</button>
+		<button className={`show-btn ${style}`} type='button' onClick={onClick}>{name}</button>
 	)
 }
 
