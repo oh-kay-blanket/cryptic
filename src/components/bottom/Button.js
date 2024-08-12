@@ -4,8 +4,11 @@ const Button = ({ btnInfo }) => {
 
 	const { name, style, onClick } = btnInfo
 
+	// let addFocus = autofocus ? 'autofocus' : ""
+
 	return(
-		<button className={`show-btn ${style}`} type='button' onClick={onClick}>{name}</button>
+		<button className={`show-btn ${style}`} type='button' onClick={onClick} autoFocus
+		>{name}</button>
 	)
 }
 

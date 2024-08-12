@@ -19,7 +19,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 	
 	const clueEndButton = [
 		{
-			name: 'Do another',
+			name: 'Play another',
 			style: 'primary',
 			onClick: function(){
 				console.log(activeClue.hints[nextHint])

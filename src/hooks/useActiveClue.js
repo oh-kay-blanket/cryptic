@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import clues from '../clues.json';
 
@@ -49,15 +49,19 @@ const useActiveClue = () => {
 		// hint message
 		const getMessage = hint => {
 
+			const vowels = ['a', 'e', 'i', 'o', 'u']
+
+			let aAn = hint.hintCategory && hint.hintCategory.slice(0, 1).includes(vowels) ? 'a' : 'a'
+
 			switch(hint.hintType){
 				case 'definition':
-					return `"${hint.value}" is the definition.`
+					return `"${hint.value}" is the definition`
 				case 'indicator':
-					return `"${hint.value}" incicates there is a/an ${hint.hintCategory}.`
+					return `"${hint.value}" incicates there is ${aAn} ${hint.hintCategory}`
 				case 'indicated':
-					return `"${hint.value[0]}" is where we will find the ${hint.hintCategory}.`
+					return `"${hint.value[0]}" is where we will find the ${hint.hintCategory}`
 				case 'solution':
-					return `"${hint.value}" is the solution.`
+					return `"${hint.value}" is the solution`
 				default: 
 					return hint.value
 			}
