@@ -9,6 +9,10 @@
 	border-radius: 50px;
 	max-width: 300px;
 
+	&:hover, &:focus {
+		filter: brightness(.95);
+	}
+
 	&.primary {
 		background-color: $lc-primary;
 	}
@@ -20,9 +24,22 @@
 	&.secondary {
 		background: none;
 		border: 1px solid $lc-text;
+
+		&:hover, &:focus {
+			filter: brightness(.95);
+			background-color: $lc-gray;
+			border: none;
+		}
+
 	}
 
 	&.gray {
 		background-color: $lc-gray--light;
+
+		&:hover, &:focus {
+			filter: brightness(.95);
+			background-color: $lc-gray;
+			border: none;
+		}
 	}
 }

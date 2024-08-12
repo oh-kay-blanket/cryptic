@@ -15,7 +15,7 @@ const App = () => {
 	// set mode & clue
 	let { activeClue, nextActiveClue } = useActiveClue()	
 	let { nextHint, setNextHint, showHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
-	const [mode, setMode] = useState('titl');
+	const [mode, setMode] = useState('title');
 
     return (
 		<>
