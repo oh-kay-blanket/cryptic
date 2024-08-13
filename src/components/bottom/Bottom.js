@@ -17,7 +17,7 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 		}
 	]
 
-	console.log(activeClue.hints[nextHint].hintType)
+	// console.log(activeClue.hints[nextHint].hintType)
 	
 	btnArr = activeClue.hints[nextHint].hintType == 'solution' ? reavealSolutionButton : btnArr
 
@@ -25,18 +25,21 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 		<div className='bottom'>
 			<div className='container'>
 				<Input />
-				<ButtonContainer
-					btnArr={btnArr}
-				/>
-				<Keyboard />
-				{showMessage && 
+				
+				{showMessage ? 
 					<Message
 						setShowMessage={setShowMessage}
 						activeClue={activeClue}
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						nextActiveClue={nextActiveClue}
-					/>
+					/> :
+					<>
+						<ButtonContainer
+							btnArr={btnArr}
+						/>
+						<Keyboard />
+					</>
 				}
 			</div>
 		</div>
