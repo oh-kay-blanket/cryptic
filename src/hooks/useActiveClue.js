@@ -19,6 +19,10 @@ const useActiveClue = () => {
 		const getSolutionLetters = solution => `(${solution.split(' ').map(word => word.length).join(', ')})`
 		activeClue.solutionLetters = getSolutionLetters(activeClue.solution)
 
+		// build clue and solution arrays
+		activeClue.clueArr = activeClue.clue.split("")
+		activeClue.solArr = activeClue.solution.split("")
+
 		// trim definitions
 		activeClue.definition = activeClue.definition.filter(def => def !== "")
 

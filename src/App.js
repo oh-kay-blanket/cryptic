@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 // components
 import Title from './components/Title'
@@ -14,8 +14,10 @@ const App = () => {
 
 	// set mode & clue
 	let { activeClue, nextActiveClue } = useActiveClue()	
-	let { nextHint, setNextHint, showHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
-	const [mode, setMode] = useState('title');
+	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
+	const [mode, setMode] = useState('titl');
+
+	console.log(activeClue)
 
     return (
 		<>

@@ -10,7 +10,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			name: 'Continue',
 			style: 'gray',
 			onClick: function(){
-				console.log(activeClue.hints[nextHint])
+				// console.log(activeClue.hints[nextHint])
 				setShowMessage(false)
 				setNextHint(nextHint + 1)
 			}
@@ -22,7 +22,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			name: 'Play another',
 			style: 'primary',
 			onClick: function(){
-				console.log(activeClue.hints[nextHint])
+				// console.log(activeClue.hints[nextHint])
 				setShowMessage(false)
 				setNextHint(0)
 				nextActiveClue(activeClue)
