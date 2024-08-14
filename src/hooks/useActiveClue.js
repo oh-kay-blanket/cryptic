@@ -4,14 +4,14 @@ import clues from '../clues.json';
 
 const useActiveClue = () => {
 
-	clues = clues.filter(clue => clue.id == 5)
+	const filteredClues = clues.filter(clue => clue.id == 5)
 	
 	// state
-	const [activeClue, setActiveClue] = useState(clues[0]);
+	const [activeClue, setActiveClue] = useState(filteredClues[0]);
 	
 	const nextActiveClue = activeClue => {
-		const rndm = Math.floor(Math.random() * clues.length)
-		setActiveClue(clues[rndm])
+		const rndm = Math.floor(Math.random() * filteredClues.length)
+		setActiveClue(filteredClues[rndm])
 	}
 
 	if (activeClue) {
