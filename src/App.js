@@ -31,6 +31,7 @@ const App = () => {
 					<ClueContainer 
 						activeClue={activeClue}
 						nextHint={nextHint}
+						showMessage={showMessage}
 					/>
 					<Bottom
 						showMessage={showMessage}
