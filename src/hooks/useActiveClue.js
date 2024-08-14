@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import clues from '../clues.json';
 
 const useActiveClue = () => {
+
+	clues = clues.filter(clue => clue.type[0].name == "Anagram")
 	
 	// state
-	const [activeClue, setActiveClue] = useState(clues[3]);
+	const [activeClue, setActiveClue] = useState(clues[0]);
 	
 	const nextActiveClue = activeClue => {
 		const rndm = Math.floor(Math.random() * clues.length)

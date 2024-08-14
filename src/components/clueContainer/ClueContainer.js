@@ -1,19 +1,22 @@
 import React, { useRef, createRef, useEffect } from 'react';
 
-const ClueContainer = ({ activeClue, nextHint }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 
 	// make local clone of clue object
-	let clue = sructuredClone(activeClue)
-	const isSolution = clue.hints[nextHint].hintType == 'solution'
+	let clue = activeClue
+	const isSolution = clue.hints[nextHint].hintType == 'solution' && showMessage
 
 	const getMovementLetters = () => {
-		const movementLetters = clue.hints.find(hint => hint.hintType == "indicated").value[0]
+
+		let movementLetters = clue.hints.find(hint => hint.hintType == "indicated").value[0]
 
 		const movementLettersStart = clue.clue.indexOf(movementLetters)
 
-		return clueLettersRef.current.slice(movementLettersStart, movementLetters.length - 1)
-	}
+		return movementLetters ? clueLettersRef.current.slice(movementLettersStart, movementLetters.length
+		) : false
 
+	}
+	
 	// set refs
 	let clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
 	let clueMovementLettersRef = getMovementLetters()
@@ -68,6 +71,7 @@ const ClueContainer = ({ activeClue, nextHint }) => {
 			return ref.current.textContent !== " "
 		})
 		
+		
 		isSolution && clueMovementLettersRef.forEach( ref => {
 			const currentSol = solutionLettersRef.current.find(sol => {
 				return sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
@@ -84,14 +88,14 @@ const ClueContainer = ({ activeClue, nextHint }) => {
 			clueMovementLettersRef.forEach( ref => {
 				ref.current.style.opacity = 0
 			})
-			// clueSection.current.style.opacity = 0
+			clueSection.current.style.opacity = 0
 			solutionSection.current.style.opacity = 1
 		}
 
 		isSolution && setTimeout(morphToUppercase, 4000)
-	}, [activeClue]);
+	}, [showMessage]);
 
-	useEffect({
+	// useEffect({
 		// set refs
 		// let clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
 		// // let clueMovementLettersRef = clueLettersRef.current.slice(clue.range[0], clue.range[1]);
@@ -99,7 +103,7 @@ const ClueContainer = ({ activeClue, nextHint }) => {
 		// let solutionSection = useRef()
 		// let solutionLettersCount = useRef()
 		// let clueSection = useRef()
-	},[activeClue])
+	// },[activeClue])
 
 	// build clue HTML
 	const clueInsert = clue.clueArr.map((letter, index) => {
