@@ -19,13 +19,13 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 	
 	const clueEndButton = [
 		{
-			name: 'Play another',
+			name: 'Come back later for more',
 			style: 'primary',
 			onClick: function(){
 				// console.log(activeClue.hints[nextHint])
-				setShowMessage(false)
-				setNextHint(0)
-				nextActiveClue(activeClue)
+				// setShowMessage(false)
+				// setNextHint(0)
+				// nextActiveClue(activeClue)
 			}
 		}
 	]

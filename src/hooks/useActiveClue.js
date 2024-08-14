@@ -4,7 +4,7 @@ import clues from '../clues.json';
 
 const useActiveClue = () => {
 
-	clues = clues.filter(clue => clue.type[0].name == "Anagram")
+	clues = clues.filter(clue => clue.id == 5)
 	
 	// state
 	const [activeClue, setActiveClue] = useState(clues[0]);
