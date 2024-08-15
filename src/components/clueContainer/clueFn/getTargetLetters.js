@@ -22,7 +22,7 @@ const getTargetLetters = (hType, clue, clueLettersRef) => {
 	// Just a string value
 	} else {
 		const targetLettersStart = clue.clue.indexOf(targetLetters.value)			
-		return clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + targetLetters.value``.length))
+		return clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + targetLetters.value.length))
 
 	}
 }
