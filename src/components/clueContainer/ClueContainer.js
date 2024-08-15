@@ -1,6 +1,12 @@
-import React, { useRef, createRef, useEffect } from 'react';
+import React, { useRef, createRef, useEffect } from 'react'
 
-import clueFn from './clueFn';
+import getTargetLetters from './clueFn/getTargetLetters'
+import fixLetters from './clueFn/fixLetters'
+import underline from './clueFn/underline'
+import highlight from './clueFn/highlight'
+import colorChange from './clueFn/colorChange'
+import moveLetters from './clueFn/moveLetters'
+
 
 const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 
@@ -8,88 +14,38 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	// make local clone of clue object
 	let clue = activeClue
 	
-	const getMovementLetters = () => {
-		
-		let movementLetters = clue.hints.find(hint => hint.hintType == "indicated").value[0]
-		
-		const movementLettersStart = clue.clue.indexOf(movementLetters)
-		
-		return movementLetters ? clueLettersRef.current.slice(movementLettersStart, movementLetters.length
-		) : false
-		
-	}
-	
 	// set refs
 	let clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
-	let clueMovementLettersRef = getMovementLetters()
+	let defintionLettersRef = getTargetLetters('definition', clue, clueLettersRef)
+	let indicatorLettersRef = getTargetLetters('indicator', clue, clueLettersRef)
+	let indicatedLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
+	let movementLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
 	let solutionLettersRef = useRef(clue.solArr.map(() => createRef()))
 	let solutionSection = useRef()
 	let solutionLettersCount = useRef()
 	let clueSection = useRef()
-
-	let { fixLetters } = clueFn(clueLettersRef, solutionLettersRef, solutionLettersCount, solutionSection)
 	
 	// look for position once set
 	useEffect(() => {
-		fixLetters()
+		fixLetters(clueLettersRef, solutionLettersRef, solutionLettersCount, solutionSection)
 	}, []);	
 	
-	// move letters when solution is true
+	// runs every change of showMessage
 	useEffect(() => {
-
-		const underline = () => {
-
-		}
-
-		const highLight = () => {
-
-		}
-
-		const changeLetterColor = () => {
-
-		}
-
-		const moveLetters = () => {
-			clueMovementLettersRef = clueMovementLettersRef.filter(ref => {
-				return ref.current.textContent !== " "
-			})
-			
-			clueMovementLettersRef.forEach( ref => {
-				const currentSol = solutionLettersRef.current.find(sol => {
-					return sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
-				})
-				const solIndex = solutionLettersRef.current.findIndex(sol => sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
-				solutionLettersRef.current.splice(solIndex, 1)
-				ref.current.style.top = `${Number(currentSol.current.style.top.slice(0,-2))+8}px`
-				ref.current.style.left = `${Number(currentSol.current.style.left.slice(0,-2))+8}px`
-				ref.current.style.transitionDelay = `${(750 * Math.random()) + 250}ms`
-				ref.current.style.textTransform = 'lowercase'
-			})
-	
-			const morphToUppercase = () => {
-				clueMovementLettersRef.forEach( ref => {
-					ref.current.style.opacity = 0
-				})
-				clueSection.current.style.opacity = 0
-				solutionSection.current.style.opacity = 1
-			}
-	
-			setTimeout(morphToUppercase, 4000)
-		}
 
 		if (showMessage) {
 			switch(clue.hints[nextHint].hintType) {
 				case 'definition':
-					return underline()
+					return underline(defintionLettersRef)
 				case 'indicator':
-					return highLight()
+					return highlight(indicatorLettersRef)
 				case 'indicated':
-					return changeLetterColor()
+					return colorChange(indicatedLettersRef)
 				case 'solution':
-					return moveLetters()
+					return moveLetters(movementLettersRef, solutionLettersRef, solutionSection)
 				default: 
 					return 
-			}
+				}
 		}
 
 	}, [showMessage])
@@ -97,7 +53,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	// useEffect(() => {
 		// set refs
 		// clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
-		// clueMovementLettersRef = clueLettersRef.current.slice(clue.range[0], clue.range[1])
+		// movementLettersRef = clueLettersRef.current.slice(clue.range[0], clue.range[1])
 		// solutionLettersRef = useRef(clue.solArr.map(() => createRef()))
 		// solutionSection = useRef()
 		// solutionLettersCount = useRef()
@@ -113,7 +69,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	const solInsert = clue.solArr.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter">{letter}</span>))
 
 	// add solution letters
-	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solArrLetters}</span>
+	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters}</span>
 	
 
 	return(
