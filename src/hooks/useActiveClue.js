@@ -4,7 +4,7 @@ import clues from '../clues.json';
 
 const useActiveClue = () => {
 
-	const filteredClues = clues.filter(clue => clue.id == 5)
+	const filteredClues = clues.filter(clue => clue.id == 31)
 	
 	// state
 	const [activeClue, setActiveClue] = useState(filteredClues[0]);

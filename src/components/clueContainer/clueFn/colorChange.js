@@ -1,12 +1,7 @@
-// moves letters from movementLettersRef to solutionLettersRef
-const colorChange = (indicatorLettersRef) => {
-
-	// console.log(indicatorLettersRef)
-	
-	indicatorLettersRef.forEach( ref => {
-		ref.current.style.color = '#C94F03'
+const colorChange = (toChange, hex = '#C94F03') => {
+	toChange.forEach( ref => {
+		ref.current.style.color = hex
 	})
-
 }
 
 export default colorChange

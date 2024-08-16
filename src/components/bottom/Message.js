@@ -1,7 +1,7 @@
 import React from 'react'
 import ButtonContainer from './ButtonContainer';
 
-const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActiveClue }) => {
+const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActiveClue, setMode }) => {
 
 	const message = activeClue.hints[nextHint].message
 	
@@ -19,13 +19,13 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 	
 	const clueEndButton = [
 		{
-			name: 'Come back later for more',
+			name: 'Home',
 			style: 'primary',
 			onClick: function(){
-				// console.log(activeClue.hints[nextHint])
-				// setShowMessage(false)
-				// setNextHint(0)
-				// nextActiveClue(activeClue)
+				console.log(activeClue.hints[nextHint])
+				setShowMessage(false)
+				setNextHint(0)
+				setMode('title')
 			}
 		}
 	]

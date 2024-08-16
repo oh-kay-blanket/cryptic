@@ -5,7 +5,7 @@ import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
-const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, setNextHint, nextActiveClue }) => {
+const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, setNextHint, nextActiveClue, setMode }) => {
 
 	const reavealSolutionButton = [
 		{ 
@@ -33,6 +33,7 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						nextActiveClue={nextActiveClue}
+						setMode={setMode}
 					/> :
 					<>
 						<ButtonContainer
