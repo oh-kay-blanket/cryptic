@@ -39,6 +39,7 @@ const App = () => {
 						setNextHint={setNextHint}
 						activeClue={activeClue}
 						nextActiveClue={nextActiveClue}
+						setMode={setMode}
 					/>
 				</>
 			}

@@ -1,13 +1,11 @@
+import removeSpecial from "./removeSpecial"
 
 // moves letters from movementLettersRef to solutionLettersRef
 const moveLetters = (movementLettersRef, solutionLettersRef, solutionSection) => {
 
 	// console.log(movementLettersRef)
 	
-	movementLettersRef = movementLettersRef.filter(ref => {
-		console.log(ref.current.textContent)
-		return ref.current.textContent !== " "
-	})
+	movementLettersRef = removeSpecial(movementLettersRef)
 	
 	movementLettersRef.forEach( ref => {
 		const currentSol = solutionLettersRef.current.find(sol => {

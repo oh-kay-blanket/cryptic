@@ -5,7 +5,7 @@ import fixLetters from './clueFn/fixLetters'
 import underline from './clueFn/underline'
 import highlight from './clueFn/highlight'
 import colorChange from './clueFn/colorChange'
-import moveLetters from './clueFn/moveLetters'
+import showSolution from './clueFn/showSolution'
 
 
 const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
@@ -42,7 +42,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 				case 'indicated':
 					return colorChange(indicatedLettersRef)
 				case 'solution':
-					return moveLetters(movementLettersRef, solutionLettersRef, solutionSection)
+					return showSolution(clue, movementLettersRef, solutionLettersRef, solutionSection, indicatedLettersRef)
 				default: 
 					return 
 				}

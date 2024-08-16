@@ -11,6 +11,8 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+	text-align: center;
+	text-wrap: balance;
 
 	&.solution {
 		height: calc($lc-bottom-height);
