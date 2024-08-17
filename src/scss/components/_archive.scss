@@ -12,12 +12,17 @@
 
 	.archive-tile {
 		display: flex;
-		margin: 1rem 0;
+		margin: .5rem 0;
 		padding: 1rem;
 		border: 1px solid $lc-gray--dark;
 		overflow: hidden;
 		border-radius: .5rem;
 		cursor: pointer;
+
+		&.completed {
+			background-color: $lc-primary;
+			border: 1px solid $lc-gray;
+		}
 		
 		&:hover, &:focus {
 			background-color: $lc-gray--light;

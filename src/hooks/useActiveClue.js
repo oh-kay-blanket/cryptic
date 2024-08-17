@@ -7,7 +7,9 @@ const useActiveClue = () => {
 	// state
 	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => (clue.type[0].name == "Hidden word" || clue.type[0].name == "Anagram")))
 	const [activeClue, setActiveClue] = useState(filteredClues[Math.floor(Math.random() * filteredClues.length)]);
+	const [completedClues, setCompletedClues] = useState([])
 	
+	// fn to change to new clue
 	const nextActiveClue = (clueId) => {
 		if (clueId == 'random') {
 			const rndm = Math.floor(Math.random() * filteredClues.length)
@@ -16,6 +18,12 @@ const useActiveClue = () => {
 			setActiveClue(filteredClues.find(clue => clue.id == clueId))
 		}
 	}
+
+	// fn to add new completed clue
+	const addCompletedClue = (newID) => {
+		setCompletedClues([...completedClues, Number(newID)])
+	}
+
 
 	if (activeClue) {
 		// clean active clue //
@@ -84,7 +92,7 @@ const useActiveClue = () => {
 		console.log(activeClue ? activeClue : mode)
 	}, [activeClue])
 
-	return { activeClue, nextActiveClue, filteredClues }
+	return { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue }
 }
 
 export default useActiveClue
