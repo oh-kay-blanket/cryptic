@@ -52,6 +52,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			<ButtonContainer
 				btnArr={messageButton}
 				isSolution={isSolution}
+				stack={isSolution}
 			/>
 		</div>
 	)
