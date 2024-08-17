@@ -10,7 +10,6 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			name: 'Continue',
 			style: 'gray',
 			onClick: function(){
-				// console.log(activeClue.hints[nextHint])
 				setShowMessage(false)
 				setNextHint(nextHint + 1)
 			}
@@ -22,10 +21,18 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			name: 'Home',
 			style: 'primary',
 			onClick: function(){
-				console.log(activeClue.hints[nextHint])
 				setShowMessage(false)
 				setNextHint(0)
 				setMode('title')
+			}
+		},
+		{
+			name: 'Archive',
+			style: 'secondary',
+			onClick: function(){
+				setShowMessage(false)
+				setNextHint(0)
+				setMode('archive')
 			}
 		}
 	]
@@ -34,7 +41,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 	const isSolution = activeClue.hints[nextHint].hintType == 'solution'
 	
 	// choose message button
-	let messageButton = isSolution ? clueEndButton : continueButton	
+	let messageButton = isSolution ? clueEndButton : continueButton
 	
 	// style message
 	let messageStyle = isSolution? 'solution' : 'continue'
@@ -44,6 +51,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActive
 			<div className={'message-copy'}>{message}</div>
 			<ButtonContainer
 				btnArr={messageButton}
+				isSolution={isSolution}
 			/>
 		</div>
 	)

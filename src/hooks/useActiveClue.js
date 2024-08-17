@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react'
 import clues from '../clues.json';
 
 const useActiveClue = () => {
-
-	const filteredClues = clues.filter(clue => clue.id == 31)
 	
 	// state
-	const [activeClue, setActiveClue] = useState(filteredClues[0]);
+	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => (clue.type[0].name == "Hidden word" || clue.type[0].name == "Anagram")))
+	const [activeClue, setActiveClue] = useState(filteredClues[Math.floor(Math.random() * filteredClues.length)]);
 	
-	const nextActiveClue = activeClue => {
-		const rndm = Math.floor(Math.random() * filteredClues.length)
-		setActiveClue(filteredClues[rndm])
+	const nextActiveClue = (clueId) => {
+		if (clueId == 'random') {
+			const rndm = Math.floor(Math.random() * filteredClues.length)
+			setActiveClue(filteredClues[rndm])
+		} else {
+			setActiveClue(filteredClues.find(clue => clue.id == clueId))
+		}
 	}
 
 	if (activeClue) {
@@ -81,7 +84,7 @@ const useActiveClue = () => {
 		console.log(activeClue ? activeClue : mode)
 	}, [activeClue])
 
-	return { activeClue, nextActiveClue }
+	return { activeClue, nextActiveClue, filteredClues }
 }
 
 export default useActiveClue

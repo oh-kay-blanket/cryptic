@@ -15,10 +15,12 @@
 
 	&.primary {
 		background-color: $lc-primary;
+		border: 1px solid $lc-primary;
 	}
 
 	&.alt {
 		background-color: $lc-secondary;
+		border: 1px solid $lc-secondary;
 	}
 
 	&.secondary {
@@ -28,18 +30,19 @@
 		&:hover, &:focus {
 			filter: brightness(.95);
 			background-color: $lc-gray;
-			border: none;
+			border: 1px solid $lc-gray;
 		}
 
 	}
 
 	&.gray {
 		background-color: $lc-gray--light;
+		border: 1px solid $lc-gray--light;
 
 		&:hover, &:focus {
 			filter: brightness(.95);
 			background-color: $lc-gray;
-			border: none;
+			border: 1px solid $lc-gray;
 		}
 	}
 }

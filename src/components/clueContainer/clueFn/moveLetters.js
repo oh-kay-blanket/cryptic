@@ -13,8 +13,8 @@ const moveLetters = (movementLettersRef, solutionLettersRef, solutionSection) =>
 		})
 		const solIndex = solutionLettersRef.current.findIndex(sol => sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
 		solutionLettersRef.current.splice(solIndex, 1)
-		ref.current.style.top = `${Number(currentSol.current.style.top.slice(0,-2))+8}px`
-		ref.current.style.left = `${Number(currentSol.current.style.left.slice(0,-2))+8}px`
+		ref.current.style.top = `${Number(currentSol.current.style.top.slice(0,-2)) + 4}px`
+		ref.current.style.left = `${Number(currentSol.current.style.left.slice(0,-2)) + 4}px`
 		ref.current.style.transitionDelay = `${(750 * Math.random()) + 250}ms`
 		ref.current.style.textTransform = 'lowercase'
 	})
