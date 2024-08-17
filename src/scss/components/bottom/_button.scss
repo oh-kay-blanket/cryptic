@@ -1,5 +1,13 @@
 @use "../../base/var" as *;
 
+.button-container {
+	&.stack {
+		.show-btn {
+			width: 34%;
+		}
+	}
+}
+
 .show-btn {
     outline: none;
     border: none;
@@ -9,7 +17,7 @@
 	border-radius: 50px;
 	max-width: 300px;
 
-	&:hover, &:focus {
+	&:hover, &:active {
 		filter: brightness(.95);
 	}
 
@@ -27,7 +35,7 @@
 		background: none;
 		border: 1px solid $lc-text;
 
-		&:hover, &:focus {
+		&:hover, &:active {
 			filter: brightness(.95);
 			background-color: $lc-gray;
 			border: 1px solid $lc-gray;
@@ -39,7 +47,7 @@
 		background-color: $lc-gray--light;
 		border: 1px solid $lc-gray--light;
 
-		&:hover, &:focus {
+		&:hover, &:active {
 			filter: brightness(.95);
 			background-color: $lc-gray;
 			border: 1px solid $lc-gray;

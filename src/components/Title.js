@@ -32,6 +32,7 @@ const Title = ({ setMode, nextActiveClue }) => {
 			<div className='button-container'>
 			<ButtonContainer
 				btnArr={btnArr}
+				stack={true}
 			/>
 		</div>
 	</div>

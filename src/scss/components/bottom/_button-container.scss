@@ -4,6 +4,10 @@
 	justify-content: center;
 	align-items: center;
 
+	&.stack {
+		flex-direction: column;
+	}
+
 	&.solution {
 		opacity: 0;
 		visibility: hidden;
