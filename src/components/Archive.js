@@ -1,6 +1,6 @@
 import React, { useRef, createRef, useEffect } from 'react'
 
-const Archive = ({ filteredClues, nextActiveClue, setMode }) => {
+const Archive = ({ filteredClues, nextActiveClue, setMode, completedClues }) => {
 
 	let tilesRef = useRef(filteredClues.map(() => createRef()))
 
@@ -10,7 +10,10 @@ const Archive = ({ filteredClues, nextActiveClue, setMode }) => {
 	}
 
 	const archiveTiles = filteredClues.map((clue, index) => {
-		return <div key={clue.id} id={clue.id} className='archive-tile' ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
+
+		const isComplete = completedClues.includes(Number(clue.id)) ? ' completed' : ''
+
+		return <div key={clue.id} id={clue.id} className={`archive-tile${isComplete}`} ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
 			<span className='tile-name'>{clue.clue}</span>
 		</div>
 	})

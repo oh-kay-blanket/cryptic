@@ -3,7 +3,9 @@
 .button-container {
 	&.stack {
 		.show-btn {
-			width: 34%;
+			min-width: fit-content;
+			width: 60%;
+			max-width: 300px;
 		}
 	}
 }

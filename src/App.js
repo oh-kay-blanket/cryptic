@@ -14,7 +14,7 @@ import useNextHint from './hooks/useNextHint'
 const App = () => {
 
 	// set mode & clue
-	let { activeClue, nextActiveClue, filteredClues } = useActiveClue()	
+	let { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue } = useActiveClue()	
 	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
 	const [mode, setMode] = useState('title');
 
@@ -33,6 +33,7 @@ const App = () => {
 						filteredClues={filteredClues}
 						nextActiveClue={nextActiveClue}
 						setMode={setMode}
+						completedClues={completedClues}
 					/>
 				</>:
 				<>
@@ -53,6 +54,7 @@ const App = () => {
 						activeClue={activeClue}
 						nextActiveClue={nextActiveClue}
 						setMode={setMode}
+						addCompletedClue={addCompletedClue}
 					/>
 				</>
 			}
