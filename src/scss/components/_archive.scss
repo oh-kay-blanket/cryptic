@@ -1,0 +1,35 @@
+@use '../base/var' as *;
+
+.archive {
+	position: relative;
+	top: $lc-top-height;
+	padding: 1rem 1rem;
+
+	h1 {
+		font-family: $lc-font-sans;
+
+	}
+
+	.archive-tile {
+		display: flex;
+		margin: 1rem 0;
+		padding: 1rem;
+		border: 1px solid $lc-gray--dark;
+		overflow: hidden;
+		border-radius: .5rem;
+		cursor: pointer;
+		
+		&:hover, &:focus {
+			background-color: $lc-gray--light;
+			border: 1px solid $lc-gray--light;
+		}
+		
+		.tile-name {
+			display: b;
+			overflow: hidden;
+			// max-width: 40px;
+			text-wrap:nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}

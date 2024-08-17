@@ -5,6 +5,7 @@ import Title from './components/Title'
 import TopBar from './components/TopBar'
 import ClueContainer from './components/clueContainer/ClueContainer'
 import Bottom from './components/bottom/Bottom'
+import Archive from './components/Archive'
 
 // hooks
 import useActiveClue from './hooks/useActiveClue'
@@ -13,9 +14,9 @@ import useNextHint from './hooks/useNextHint'
 const App = () => {
 
 	// set mode & clue
-	let { activeClue, nextActiveClue } = useActiveClue()	
+	let { activeClue, nextActiveClue, filteredClues } = useActiveClue()	
 	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
-	const [mode, setMode] = useState('title');
+	const [mode, setMode] = useState('archive');
 
     return (
 		<>
@@ -23,9 +24,21 @@ const App = () => {
 				<Title
 					setMode={setMode}
 					nextActiveClue={nextActiveClue}
-				/> :
+				/> : mode == 'archive' ?
 				<>
-					<TopBar />
+					<TopBar
+						setMode={setMode}
+					/>
+					<Archive
+						filteredClues={filteredClues}
+						nextActiveClue={nextActiveClue}
+						setMode={setMode}
+					/>
+				</>:
+				<>
+					<TopBar
+						setMode={setMode}
+					/>
 					<ClueContainer 
 						activeClue={activeClue}
 						nextHint={nextHint}

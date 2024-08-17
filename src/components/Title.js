@@ -7,14 +7,23 @@ import gif from '../img/learn-cryptic.gif';
 const Title = ({ setMode, nextActiveClue }) => {
 
 	// buttons
-	const btnArr = [{
-		name: "Play today's clue",
-		style: 'primary',
-		onClick: function() {
-			setMode('today')
-			nextActiveClue()
-		}
-	}]
+	const btnArr = [
+		{
+			name: "Play today's clue",
+			style: 'primary',
+			onClick: function() {
+				setMode('today')
+				nextActiveClue('random')
+			}
+		},
+		{
+			name: "Archive",
+			style: 'secondary',
+			onClick: function() {
+				setMode('archive')
+			}
+		},
+	]
 
   return(
 	<div className='title container'>

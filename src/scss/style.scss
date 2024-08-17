@@ -7,11 +7,14 @@
 // Title
 @use './components/title.scss';
 
+// Archive
+@use './components/archive';
+
 // Top
 @use './components/top-bar';
 
 // Clue
-@use './components/clue/clue-container';
+@use './components/clue-container';
 
 // Bottom
 @use './components/bottom/bottom';
@@ -20,3 +23,9 @@
 @use './components/bottom/button';
 @use './components/bottom/keyboard';
 @use './components/bottom/message';
+
+// Fonts
+@font-face {
+	font-family: 'Caveat';
+	src: local('Caveat'), url(../fonts/Caveat-VariableFont_wght.ttf) format('ttf');
+}
