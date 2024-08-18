@@ -5,11 +5,11 @@ import removeSpecial from "./removeSpecial"
 const showSolution = (clue, movementLettersRef, solutionLettersRef, solutionSection, indicatedLettersRef) => {
 
 	if (clue.type.length == 1) {
-
-		switch(clue.type[0].name) {
+		
+		switch(clue.type[0].name) { 
 			case 'Anagram':
 				moveLetters(movementLettersRef, solutionLettersRef, solutionSection)
-				return 
+				break 
 			case 'Hidden word':
 
 				// get index of solution within indicated
@@ -18,11 +18,19 @@ const showSolution = (clue, movementLettersRef, solutionLettersRef, solutionSect
 				indicatedLettersRef = removeSpecial(indicatedLettersRef)
 				colorChange(indicatedLettersRef.splice(0, solIndex), '#ccc')
 				colorChange(indicatedLettersRef.splice(clue.solution.length), '#ccc')
-				return 
+				break 
 			default: 
-				return 
+			break 
 		}
 	}
+	console.log('revealing')
+
+	// reveal solution large
+	const revealSolutionLarge = () => {
+		solutionSection.current.style.opacity = 1
+	}
+
+	setTimeout(revealSolutionLarge, 4000)
 }
 
 export default showSolution
