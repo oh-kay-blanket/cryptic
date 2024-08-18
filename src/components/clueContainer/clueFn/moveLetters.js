@@ -2,8 +2,6 @@ import removeSpecial from "./removeSpecial"
 
 // moves letters from movementLettersRef to solutionLettersRef
 const moveLetters = (movementLettersRef, solutionLettersRef, solutionSection) => {
-
-	// console.log(movementLettersRef)
 	
 	movementLettersRef = removeSpecial(movementLettersRef)
 	
@@ -19,15 +17,14 @@ const moveLetters = (movementLettersRef, solutionLettersRef, solutionSection) =>
 		ref.current.style.textTransform = 'lowercase'
 	})
 
-	const morphToUppercase = () => {
+	// reveal solution large
+	const revealSolutionLarge = () => {
 		movementLettersRef.forEach( ref => {
 			ref.current.style.opacity = 0
 		})
-		// clueSection.current.style.opacity = 0
-		solutionSection.current.style.opacity = 1
 	}
 
-	setTimeout(morphToUppercase, 4000)
+	setTimeout(revealSolutionLarge, 4000)
 }
 
 export default moveLetters

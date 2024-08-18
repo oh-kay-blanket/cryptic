@@ -21,10 +21,10 @@
 	}
 
 	.clue {	
-		transition: opacity $lc-transition--short linear;
+		transition: opacity .25s ease;
 
 		.letter {
-			transition: top $lc-transition ease, left $lc-transition ease, opacity $lc-transition--short linear;
+			transition: top $lc-transition ease, left $lc-transition ease, opacity .15s ease, color .15s ease, background-color .15s ease;
 		}
 	}
 	
@@ -37,7 +37,7 @@
 		letter-spacing: 1rem;
 		z-index: 10;
 		opacity: 0;
-		transition: opacity $lc-transition--short linear;
+		transition: opacity $lc-transition--short ease;
 		text-align: center;
 		margin: 0 auto;
 		font-size: 1.5rem;
