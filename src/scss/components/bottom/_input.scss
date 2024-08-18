@@ -1,5 +1,32 @@
 @use '../../base/var' as *;
 
 .input {
-	height: 100px;
+	height: $lc-clue-input-height;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: min-content;
+
+		.word {
+			margin: 0 .5rem;
+			text-wrap: nowrap;
+	
+			.cell {
+				height: 36px;
+				width: 36px;
+				border: 1px solid $lc-text;
+				border-right: none;
+
+				&:last-child {
+					border-right: 1px solid $lc-text;;
+				}
+			}
+		}
+	}
+
 }

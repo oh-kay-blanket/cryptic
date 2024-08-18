@@ -69,7 +69,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	const solInsert = clue.solArr.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter">{letter}</span>))
 
 	// add solution letters
-	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters}</span>
+	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters.str}</span>
 	
 
 	return(

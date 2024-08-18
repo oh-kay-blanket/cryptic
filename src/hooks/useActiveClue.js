@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import clues from '../clues.json';
 
 const useActiveClue = () => {
+
+	let currentClueTypes = ['Anagram', 'Hidden word']
 	
 	// state
-	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => (clue.type[0].name == "Hidden word" || clue.type[0].name == "Anagram")))
+	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => currentClueTypes.includes(clue.type[0].name)))
 	const [activeClue, setActiveClue] = useState(filteredClues[Math.floor(Math.random() * filteredClues.length)]);
 	const [completedClues, setCompletedClues] = useState([])
 	
@@ -29,8 +31,11 @@ const useActiveClue = () => {
 		// clean active clue //
 
 		// get solution letters
-		const getSolutionLetters = solution => `(${solution.split(' ').map(word => word.length).join(', ')})`
-		activeClue.solutionLetters = getSolutionLetters(activeClue.solution)
+		const getSolutionLetters = solution => solution.split(' ').map(word => word.length)
+		activeClue.solutionLetters = {
+			str: `(${getSolutionLetters(activeClue.solution).join(', ')})`,
+			arr: getSolutionLetters(activeClue.solution)
+		}
 
 		// build clue and solution arrays
 		activeClue.clueArr = activeClue.clue.split("")

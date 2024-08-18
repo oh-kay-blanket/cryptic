@@ -2,11 +2,12 @@
 
 .archive {
 	position: relative;
-	top: $lc-top-height;
-	padding: 1rem 1rem;
+	overflow-y: auto;
+	padding: $lc-top-height 1rem 1rem;
 
 	h1 {
-		font-family: $lc-font-sans;
+		font-family: $lc-font--alt;
+		font-size: 2rem;
 
 	}
 

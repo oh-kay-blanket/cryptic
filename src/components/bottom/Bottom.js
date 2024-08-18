@@ -25,7 +25,9 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 	return(
 		<div className='bottom'>
 			<div className='container'>
-				<Input />
+				<Input
+					activeClue={activeClue}
+				/>
 				
 				{showMessage ? 
 					<Message

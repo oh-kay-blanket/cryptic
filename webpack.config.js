@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Welcome',
+      title: 'Learn Cryptic',
       template: "./src/index.html",
       filename: "./index.html",
 	  favicon: "./public/favicon.ico"
@@ -21,7 +21,8 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './',
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+	hot: true
   },
   module: {
     rules: [

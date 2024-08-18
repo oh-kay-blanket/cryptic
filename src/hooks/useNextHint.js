@@ -13,7 +13,6 @@ const useNextHint = activeClue => {
 		setShowMessage(true)
 	}
 
-
 	return { nextHint, setNextHint, showHint, showMessage, setShowMessage, btnArr }
 }
 

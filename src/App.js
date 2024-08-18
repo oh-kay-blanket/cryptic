@@ -28,6 +28,8 @@ const App = () => {
 				<>
 					<TopBar
 						setMode={setMode}
+						setShowMessage={setShowMessage}
+						setNextHint={setNextHint}
 					/>
 					<Archive
 						filteredClues={filteredClues}
@@ -39,6 +41,8 @@ const App = () => {
 				<>
 					<TopBar
 						setMode={setMode}
+						setShowMessage={setShowMessage}
+						setNextHint={setNextHint}
 					/>
 					<ClueContainer 
 						activeClue={activeClue}
