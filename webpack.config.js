@@ -22,7 +22,8 @@ module.exports = {
   devServer: {
     static: './',
     host: '0.0.0.0',
-	hot: true
+	hot: true,
+	watchFiles: ['src/**/*']
   },
   module: {
     rules: [

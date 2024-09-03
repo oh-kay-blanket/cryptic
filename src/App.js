@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Title from './components/Title'
 import TopBar from './components/TopBar'
 import ClueContainer from './components/clueContainer/ClueContainer'
+import Input from './components/bottom/Input'
 import Bottom from './components/bottom/Bottom'
 import Archive from './components/Archive'
 
@@ -16,7 +17,7 @@ const App = () => {
 	// set mode & clue
 	let { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue } = useActiveClue()	
 	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
-	const [mode, setMode] = useState('title');
+	const [mode, setMode] = useState('titl');
 
     return (
 		<>
@@ -49,6 +50,7 @@ const App = () => {
 						nextHint={nextHint}
 						showMessage={showMessage}
 					/>
+					{/* <Input activeClue={activeClue} /> */}
 					<Bottom
 						showMessage={showMessage}
 						setShowMessage={setShowMessage}

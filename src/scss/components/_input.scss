@@ -1,11 +1,11 @@
-@use '../../base/var' as *;
+@use '../base/var' as *;
 
 .input {
 	height: $lc-clue-input-height;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	
+
 	.container {
 		display: flex;
 		flex-wrap: wrap;
@@ -15,15 +15,17 @@
 		.word {
 			margin: 0 .5rem;
 			text-wrap: nowrap;
-	
+
 			.cell {
 				height: 36px;
 				width: 36px;
 				border: 1px solid $lc-text;
 				border-right: none;
+				background: none;
 
 				&:last-child {
-					border-right: 1px solid $lc-text;;
+					border-right: 1px solid $lc-text;
+					;
 				}
 			}
 		}

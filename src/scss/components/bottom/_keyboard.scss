@@ -1,12 +1,12 @@
 @use '../../base/var' as *;
 
 .keyboard {
-	opacity: .25;
 	width: 100%;
 	height: $lc-keyboard-height;
-	padding: .5rem;
+	padding: 0 .25rem .25rem;
 	font-family: $lc-font--sans;
 	text-align: center;
+	align-self: flex-end;
 
 	.k-row {
 		display: flex;
@@ -26,7 +26,8 @@
 				background-color: $lc-gray--dark;
 			}
 
-			span, img {
+			span,
+			img {
 				position: absolute;
 				left: 50%;
 				top: 50%;

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Input from './Input'
 import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
@@ -17,18 +16,12 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 			} 
 		}
 	]
-
-	// console.log(activeClue.hints[nextHint].hintType)
 	
 	btnArr = activeClue.hints[nextHint].hintType == 'solution' ? reavealSolutionButton : btnArr
 
 	return(
 		<div className='bottom'>
-			<div className='container'>
-				<Input
-					activeClue={activeClue}
-				/>
-				
+			<div className='container'>				
 				{showMessage ? 
 					<Message
 						setShowMessage={setShowMessage}
