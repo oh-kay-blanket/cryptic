@@ -1,18 +1,13 @@
 @use '../base/var' as *;
 
 .top-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
 	background-color: $lc-gray--light;
 	height: $lc-top-height;
-	width: 100%;
 	padding: .5rem;
-	
+
 	.container {
 		display: flex;
-		justify-content:flex-end;
+		justify-content: flex-end;
 		align-items: center;
 	}
 }

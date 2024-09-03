@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Input = ({ activeClue }) => {
 
 	const inputWords = activeClue.solution.split(" ")
 
 	const inputCells = inputWords.map(word => {
-		const inputLetters = word.split('').map((letter, index) => <button key={index} className={`cell ${letter}`}></button>)
+		const inputLetters = word.split('').map((letter, index) => <button key={index} className={`cell ${letter}`}>{letter}</button>)
 		return <span className='word'>{inputLetters}</span>
 	})
 

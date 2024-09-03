@@ -50,23 +50,14 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 
 	}, [showMessage])
 
-	// useEffect(() => {
-		// set refs
-		// clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
-		// movementLettersRef = clueLettersRef.current.slice(clue.range[0], clue.range[1])
-		// solutionLettersRef = useRef(clue.solArr.map(() => createRef()))
-		// solutionSection = useRef()
-		// solutionLettersCount = useRef()
-		// clueSection = useRef()
-	// },[activeClue])
-
 	// build clue HTML
 	const clueInsert = clue.clueArr.map((letter, index) => {
-		return <span key={index} ref={clueLettersRef.current[index]} className={`letter`}>{letter}</span>
+		return <span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>
 	})
 
 	// build solution HTML
-	const solInsert = clue.solArr.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter">{letter}</span>))
+	const solInsert = clue.solArr.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter"><span className='solLetter'>{letter}</span>
+	<span className='typeLetter'></span></span>))
 
 	// add solution letters
 	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters.str}</span>

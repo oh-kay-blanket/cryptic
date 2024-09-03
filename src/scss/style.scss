@@ -16,9 +16,11 @@
 // Clue
 @use './components/clue-container';
 
+// Input
+@use './components/input';
+
 // Bottom
 @use './components/bottom/bottom';
-@use './components/bottom/input';
 @use './components/bottom/button-container';
 @use './components/bottom/button';
 @use './components/bottom/keyboard';

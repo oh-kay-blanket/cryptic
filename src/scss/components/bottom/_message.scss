@@ -5,7 +5,7 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: calc($lc-bottom-height - $lc-clue-input-height);
+	height: $lc-bottom-height;
 	background-color: $lc-secondary;
 	display: flex;
 	flex-direction: column;
