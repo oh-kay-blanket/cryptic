@@ -2,13 +2,13 @@ import moveLetters from "./moveLetters"
 import colorChange from './colorChange'
 import removeSpecial from "./removeSpecial"
 
-const showSolution = (clue, movementLettersRef, solutionLettersRef, solutionSection, indicatedLettersRef) => {
+const showSolution = (clue, movementLettersRef, solLettersRef, solSectionRef, indicatedLettersRef) => {
 
 	if (clue.type.length == 1) {
 		
 		switch(clue.type[0].name) { 
 			case 'Anagram':
-				moveLetters(movementLettersRef, solutionLettersRef, solutionSection)
+				moveLetters(movementLettersRef, solLettersRef, solSectionRef)
 				break 
 			case 'Hidden word':
 
@@ -23,11 +23,13 @@ const showSolution = (clue, movementLettersRef, solutionLettersRef, solutionSect
 			break 
 		}
 	}
-	console.log('revealing')
-
+	
 	// reveal solution large
 	const revealSolutionLarge = () => {
-		solutionSection.current.style.opacity = 1
+		console.log('revealing', solLettersRef.current)
+		solLettersRef.current.forEach(ref => {
+			ref.current.style.opacity = 1
+		})
 	}
 
 	setTimeout(revealSolutionLarge, 4000)

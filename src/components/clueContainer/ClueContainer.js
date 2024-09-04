@@ -20,14 +20,14 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	let indicatorLettersRef = getTargetLetters('indicator', clue, clueLettersRef)
 	let indicatedLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
 	let movementLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
-	let solutionLettersRef = useRef(clue.solArr.map(() => createRef()))
-	let solutionSection = useRef()
-	let solutionLettersCount = useRef()
-	let clueSection = useRef()
+	let solLettersRef = useRef(clue.solArr.map(() => createRef()))
+	let solSectionRef = useRef()
+	let solLengthRef = useRef()
+	let clueSectionRef = useRef()
 	
 	// look for position once set
 	useEffect(() => {
-		fixLetters(clueLettersRef, solutionLettersRef, solutionLettersCount, solutionSection)
+		fixLetters(clueLettersRef, solLettersRef, solLengthRef, solSectionRef)
 	}, []);	
 	
 	// runs every change of showMessage
@@ -42,7 +42,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 				case 'indicated':
 					return colorChange(indicatedLettersRef)
 				case 'solution':
-					return showSolution(clue, movementLettersRef, solutionLettersRef, solutionSection, indicatedLettersRef)
+					return showSolution(clue, movementLettersRef, solLettersRef, solSectionRef, indicatedLettersRef)
 				default: 
 					return 
 				}
@@ -50,23 +50,21 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 
 	}, [showMessage])
 
-	// build clue HTML
-	const clueInsert = clue.clueArr.map((letter, index) => {
-		return <span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>
-	})
+	// clue HTML
+	const clueInsert = clue.clueArr.map((letter, index) => (<span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>))
 
-	// build solution HTML
-	const solInsert = clue.solArr.map((letter, index) => (<span key={index} ref={solutionLettersRef.current[index]} className="letter"><span className='solLetter'>{letter}</span>
+	// solution HTML
+	const solInsert = clue.solArr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span>
 	<span className='typeLetter'></span></span>))
 
-	// add solution letters
-	const solutionLetters = <span className='solution-letters' ref={solutionLettersCount}>&nbsp;{clue.solutionLetters.str}</span>
+	// solution length
+	const solLength = <span id='solLengthRef' ref={solLengthRef} className='solution-letters'>&nbsp;{clue.solLength.str}</span>
 	
 
 	return(
 		<div id='clue-container' className='clue container'>
-			<div className='clue' ref={clueSection}>{clueInsert} {solutionLetters}</div>
-			<div className='solution' ref={solutionSection}>{solInsert}</div>
+			<div id='clueSectionRef' ref={clueSectionRef} className='clue'>{clueInsert} {solLength}</div>
+			<div id='solSectionRef' ref={solSectionRef} className='solution'>{solInsert}</div>
 		</div>
 	)
 }

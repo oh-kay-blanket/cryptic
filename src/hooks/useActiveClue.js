@@ -32,7 +32,7 @@ const useActiveClue = () => {
 
 		// get solution letters
 		const getSolutionLetters = solution => solution.split(' ').map(word => word.length)
-		activeClue.solutionLetters = {
+		activeClue.solLength = {
 			str: `(${getSolutionLetters(activeClue.solution).join(', ')})`,
 			arr: getSolutionLetters(activeClue.solution)
 		}
