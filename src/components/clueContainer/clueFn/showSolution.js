@@ -20,16 +20,13 @@ const showSolution = (clue, movementLettersRef, solLettersRef, solSectionRef, in
 				colorChange(indicatedLettersRef.splice(clue.solution.length), '#ccc')
 				break 
 			default: 
-			break 
+				break 
 		}
 	}
 	
 	// reveal solution large
 	const revealSolutionLarge = () => {
-		console.log('revealing', solLettersRef.current)
-		solLettersRef.current.forEach(ref => {
-			ref.current.style.opacity = 1
-		})
+		solSectionRef.current.classList.add('reveal-solution')
 	}
 
 	setTimeout(revealSolutionLarge, 4000)

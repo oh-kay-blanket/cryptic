@@ -23,7 +23,10 @@
 		transition: opacity .25s ease;
 
 		.letter {
-			transition: top $lc-transition ease, left $lc-transition ease, opacity .15s ease, color .15s ease, background-color .15s ease;
+			transition:
+				opacity .5s ease 0s,
+				color .5s ease 0s,
+				background-color .5s ease;
 		}
 	}
 
@@ -51,7 +54,13 @@
 
 			.solLetter {
 				opacity: 0;
+				transition: opacity $lc-transition--short ease;
 			}
+		}
+
+		&.reveal-solution .letter .solLetter {
+			opacity: 1;
+			transition: opacity $lc-transition--short ease;
 		}
 	}
 }
