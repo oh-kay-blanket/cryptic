@@ -4,7 +4,10 @@ import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
-const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, setNextHint, setMode, addCompletedClue, handleInput, setInput }) => {
+const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns }) => {
+
+	// set initial btns
+	let btnArr = btnArr || [{ name:'Show hint', style: 'secondary', onClick: function(){setCheckAns(false);setShowMessage(true)} }]
 
 	const reavealSolutionButton = [
 		{ 
@@ -17,8 +20,25 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 			} 
 		}
 	]
+
+	const checkAnsButton = [
+		{ 
+			name:'Check answer', 
+			style: 'primary', 
+			onClick: function() {
+				setCheckAns(true)
+				setShowMessage(true)
+			} 
+		}
+	]
 	
-	btnArr = activeClue.hints[nextHint].hintType == 'solution' ? reavealSolutionButton : btnArr
+	if (activeClue.hints[nextHint].hintType == 'solution') {
+		btnArr = reavealSolutionButton
+	}
+	
+	if (input.length === activeClue.solArr.length) {
+		btnArr.push(...checkAnsButton)
+	}
 
 	return(
 		<div className='bottom'>
@@ -30,6 +50,9 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						setMode={setMode}
+						input={input}
+						checkAns={checkAns}
+						setCheckAns={setCheckAns}
 					/> :
 					<>
 						<ButtonContainer

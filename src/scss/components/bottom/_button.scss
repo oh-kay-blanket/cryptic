@@ -1,4 +1,5 @@
 @use "../../base/var" as *;
+@use "../../base/media" as *;
 
 .button-container {
 	&.stack {
@@ -13,11 +14,15 @@
 .show-btn {
     outline: none;
     border: none;
-    padding: .75rem 1.5rem;
-    margin: .5rem 1rem;
+    padding: .5rem 1rem;
+    margin: .5rem;
     cursor: pointer;
 	border-radius: 50px;
 	max-width: 300px;
+
+	@include max(390px) {
+		font-size: 16px;
+	}
 
 	&:hover, &:active {
 		filter: brightness(.95);
@@ -29,8 +34,8 @@
 	}
 
 	&.alt {
-		background-color: $lc-secondary;
-		border: 1px solid $lc-secondary;
+		background-color: $lc-secondary--light;
+		border: 1px solid $lc-secondary--light;
 	}
 
 	&.secondary {
