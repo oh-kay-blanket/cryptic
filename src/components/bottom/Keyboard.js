@@ -1,8 +1,25 @@
-import React, { useState } from "react"
+import React, { useEffect } from "react"
 
 import backspace from '../../img/backspace.svg'
 
 const Keyboard = ({ handleInput }) => {
+
+	// handle keyboard hardware press
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+			if (/^[a-zA-Z]$/.test(e.key)) {
+				handleInput(e.key.toLowerCase())
+			} else if (e.key === 'Backspace' || e.key === 'Delete') {
+				handleInput('del')
+			}
+        }
+
+        document.addEventListener("keydown", handleKeyDown)
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown)
+        }
+    }, [])
 
 	return(
 		<div className='container keyboard'>

@@ -19,7 +19,12 @@
 		background-color: $lc-gray--light;
 	}
 
+	&.is-correct-ans {
+		height: calc($lc-bottom-height);
+		background-color: $lc-primary;
+	}
+
 	.message-copy {
-		margin: 0 1rem;
+		margin: 0 1.5rem;
 	}
 }

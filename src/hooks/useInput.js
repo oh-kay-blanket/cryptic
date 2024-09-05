@@ -8,7 +8,8 @@ const useInput = activeClue => {
 
     // handle input
     const handleInput = (press) => {
-        setInput((prevInput) => {
+		setInput((prevInput) => {
+			console.log(prevInput.length, activeClue.solArr.length)
             if (press !== 'del' && (prevInput.length < activeClue.solArr.length)) {
                 return [...prevInput, press];
             } else if (press === 'del') {
@@ -18,23 +19,6 @@ const useInput = activeClue => {
 			}
         })
     }
-
-    // handle keyboard hardware press
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-			if (/^[a-zA-Z]$/.test(e.key)) {
-				handleInput(e.key.toLowerCase())
-			} else if (e.key === 'Backspace' || e.key === 'Delete') {
-				handleInput('del')
-			}
-        }
-
-        document.addEventListener("keydown", handleKeyDown)
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown)
-        }
-    }, [])
 
     return { input, setInput, handleInput, checkAns, setCheckAns }
 }
