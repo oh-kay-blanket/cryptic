@@ -25,7 +25,7 @@ const fixLetters = (clueLettersRef, solutionLettersRef, solutionLettersCount, so
 		let left = ref.current.getBoundingClientRect().left
 		let top = ref.current.getBoundingClientRect().top
 		ref.current.style.left = `${left}px`
-		ref.current.style.top = `${top}px`
+		ref.current.style.top = `${top -3}px`
 		return [left, top]
 	})
 	
