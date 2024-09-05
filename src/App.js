@@ -5,7 +5,7 @@ import Title from './components/Title'
 import TopBar from './components/TopBar'
 import ClueContainer from './components/clueContainer/ClueContainer'
 import Bottom from './components/bottom/Bottom'
-import Archive from './components/Archive'
+import Archive from './components/Archive' 
 
 // hooks
 import useActiveClue from './hooks/useActiveClue'
@@ -19,7 +19,7 @@ const App = () => {
 	let { nextHint, setNextHint, showMessage, setShowMessage } = useNextHint(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = useInput(activeClue)
 
-	const [mode, setMode] = useState('titl');
+	const [mode, setMode] = useState('title');
 
     return (
 		<>

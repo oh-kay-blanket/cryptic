@@ -15,7 +15,6 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint
 			style: 'alt', 
 			onClick: function() {
 				setShowMessage(true)
-				addCompletedClue(activeClue.id)
 				setInput([])
 			} 
 		}
@@ -53,6 +52,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint
 						input={input}
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
+						addCompletedClue={addCompletedClue}
 					/> :
 					<>
 						<ButtonContainer
