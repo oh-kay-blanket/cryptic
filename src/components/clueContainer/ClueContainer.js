@@ -8,7 +8,7 @@ import colorChange from './clueFn/colorChange'
 import showSolution from './clueFn/showSolution'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage, input }) => {
 
 	
 	// make local clone of clue object
@@ -54,8 +54,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage }) => {
 	const clueInsert = clue.clueArr.map((letter, index) => (<span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>))
 
 	// solution HTML
-	const solInsert = clue.solArr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span>
-	<span className='typeLetter'></span></span>))
+	const solInsert = clue.solArr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))
 
 	// solution length
 	const solLength = <span id='solLengthRef' ref={solLengthRef} className='solution-letters'>&nbsp;{clue.solLength.str}</span>

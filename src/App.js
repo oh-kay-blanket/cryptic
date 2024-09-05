@@ -4,19 +4,21 @@ import React, { useState } from 'react'
 import Title from './components/Title'
 import TopBar from './components/TopBar'
 import ClueContainer from './components/clueContainer/ClueContainer'
-import Input from './components/bottom/Input'
 import Bottom from './components/bottom/Bottom'
 import Archive from './components/Archive'
 
 // hooks
 import useActiveClue from './hooks/useActiveClue'
 import useNextHint from './hooks/useNextHint'
+import useInput from './hooks/useInput'
 
 const App = () => {
 
 	// set mode & clue
 	let { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue } = useActiveClue()	
 	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
+	let { input, setInput, handleInput } = useInput(activeClue)
+
 	const [mode, setMode] = useState('titl');
 
     return (
@@ -37,6 +39,7 @@ const App = () => {
 						nextActiveClue={nextActiveClue}
 						setMode={setMode}
 						completedClues={completedClues}
+						setInput={setInput}
 					/>
 				</>:
 				<>
@@ -49,8 +52,8 @@ const App = () => {
 						activeClue={activeClue}
 						nextHint={nextHint}
 						showMessage={showMessage}
+						input={input}
 					/>
-					{/* <Input activeClue={activeClue} /> */}
 					<Bottom
 						showMessage={showMessage}
 						setShowMessage={setShowMessage}
@@ -61,6 +64,8 @@ const App = () => {
 						nextActiveClue={nextActiveClue}
 						setMode={setMode}
 						addCompletedClue={addCompletedClue}
+						handleInput={handleInput}
+						setInput={setInput}
 					/>
 				</>
 			}

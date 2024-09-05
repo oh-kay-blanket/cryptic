@@ -4,7 +4,7 @@ import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
-const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, setNextHint, nextActiveClue, setMode, addCompletedClue }) => {
+const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, setNextHint, setMode, addCompletedClue, handleInput, setInput }) => {
 
 	const reavealSolutionButton = [
 		{ 
@@ -13,6 +13,7 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 			onClick: function() {
 				setShowMessage(true)
 				addCompletedClue(activeClue.id)
+				setInput([])
 			} 
 		}
 	]
@@ -28,14 +29,15 @@ const Bottom = ({ showMessage, setShowMessage, btnArr, activeClue, nextHint, set
 						activeClue={activeClue}
 						nextHint={nextHint}
 						setNextHint={setNextHint}
-						nextActiveClue={nextActiveClue}
 						setMode={setMode}
 					/> :
 					<>
 						<ButtonContainer
 							btnArr={btnArr}
 						/>
-						<Keyboard />
+						<Keyboard
+							handleInput={handleInput}
+						/>
 					</>
 				}
 			</div>

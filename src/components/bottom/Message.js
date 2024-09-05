@@ -1,7 +1,7 @@
 import React from 'react'
 import ButtonContainer from './ButtonContainer';
 
-const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, nextActiveClue, setMode }) => {
+const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode }) => {
 
 	const message = activeClue.hints[nextHint].message
 	
