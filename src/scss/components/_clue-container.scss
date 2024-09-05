@@ -40,6 +40,7 @@
 		font-size: 1.25rem;
 
 		.letter {
+			position: relative;
 			text-align: center;
 			display: inline-block;
 			width: 30px;
@@ -56,6 +57,18 @@
 				opacity: 0;
 				transition: opacity $lc-transition--short ease;
 			}
+
+			.typeLetter {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		&.hide-input .letter .typeLetter {
+			opacity: 0;
+			transition: opacity $lc-transition--short ease;
 		}
 
 		&.reveal-solution .letter .solLetter {

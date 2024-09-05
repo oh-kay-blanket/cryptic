@@ -26,6 +26,7 @@ const showSolution = (clue, movementLettersRef, solLettersRef, solSectionRef, in
 	
 	// reveal solution large
 	const revealSolutionLarge = () => {
+		solSectionRef.current.classList.add('hide-input')
 		solSectionRef.current.classList.add('reveal-solution')
 	}
 
