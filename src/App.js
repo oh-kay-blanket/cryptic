@@ -16,8 +16,8 @@ const App = () => {
 
 	// set mode & clue
 	let { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue } = useActiveClue()	
-	let { nextHint, setNextHint, showMessage, setShowMessage, btnArr } = useNextHint(activeClue)
-	let { input, setInput, handleInput } = useInput(activeClue)
+	let { nextHint, setNextHint, showMessage, setShowMessage } = useNextHint(activeClue, setCheckAns)
+	let { input, setInput, handleInput, checkAns, setCheckAns } = useInput(activeClue)
 
 	const [mode, setMode] = useState('titl');
 
@@ -27,6 +27,8 @@ const App = () => {
 				<Title
 					setMode={setMode}
 					nextActiveClue={nextActiveClue}
+					setInput={setInput}
+					setCheckAns={setCheckAns}
 				/> : mode == 'archive' ?
 				<>
 					<TopBar
@@ -40,6 +42,7 @@ const App = () => {
 						setMode={setMode}
 						completedClues={completedClues}
 						setInput={setInput}
+						setCheckAns={setCheckAns}
 					/>
 				</>:
 				<>
@@ -53,11 +56,11 @@ const App = () => {
 						nextHint={nextHint}
 						showMessage={showMessage}
 						input={input}
+						checkAns={checkAns}
 					/>
 					<Bottom
 						showMessage={showMessage}
 						setShowMessage={setShowMessage}
-						btnArr={btnArr}
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						activeClue={activeClue}
@@ -65,7 +68,10 @@ const App = () => {
 						setMode={setMode}
 						addCompletedClue={addCompletedClue}
 						handleInput={handleInput}
+						input={input}
 						setInput={setInput}
+						checkAns={checkAns}
+						setCheckAns={setCheckAns}
 					/>
 				</>
 			}

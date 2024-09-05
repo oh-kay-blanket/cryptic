@@ -8,7 +8,7 @@ import colorChange from './clueFn/colorChange'
 import showSolution from './clueFn/showSolution'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
 
 	
 	// make local clone of clue object
@@ -33,7 +33,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input }) => {
 	// runs every change of showMessage
 	useEffect(() => {
 
-		if (showMessage) {
+		if (showMessage && !checkAns) {
 			switch(clue.hints[nextHint].hintType) {
 				case 'definition':
 					return underline(defintionLettersRef)

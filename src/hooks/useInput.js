@@ -4,6 +4,7 @@ const useInput = activeClue => {
 
     // state
     const [input, setInput] = useState([])
+	const [checkAns, setCheckAns] = useState(false)
 
     // handle input
     const handleInput = (press) => {
@@ -17,17 +18,14 @@ const useInput = activeClue => {
 			}
         })
     }
-    console.log(input)
 
     // handle keyboard hardware press
     useEffect(() => {
         const handleKeyDown = (e) => {
 			if (/^[a-zA-Z]$/.test(e.key)) {
-				handleInput(e.key)
+				handleInput(e.key.toLowerCase())
 			} else if (e.key === 'Backspace' || e.key === 'Delete') {
 				handleInput('del')
-			} else {
-				console.log(`Non-alphabet key pressed: ${e.key}`)
 			}
         }
 
@@ -38,7 +36,7 @@ const useInput = activeClue => {
         }
     }, [])
 
-    return { input, setInput, handleInput }
+    return { input, setInput, handleInput, checkAns, setCheckAns }
 }
 
 export default useInput

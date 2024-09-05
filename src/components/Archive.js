@@ -1,12 +1,13 @@
 import React, { useRef, createRef, useEffect } from 'react'
 
-const Archive = ({ filteredClues, nextActiveClue, setMode, completedClues, setInput }) => {
+const Archive = ({ filteredClues, nextActiveClue, setMode, completedClues, setInput, setCheckAns }) => {
 
 	let tilesRef = useRef(filteredClues.map(() => createRef()))
 
 	const handleClick = (e) => {
 		nextActiveClue(e.current.id)
 		setInput([])
+		setCheckAns(false)
 		setMode('playing')
 	}
 

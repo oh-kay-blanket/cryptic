@@ -1,9 +1,13 @@
 import React from 'react'
 import ButtonContainer from './ButtonContainer';
 
-const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode }) => {
+const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode, input, checkAns, setCheckAns }) => {
 
-	const message = activeClue.hints[nextHint].message
+	const checkAnsFn = (input, activeClue) => {
+		return input.join('').toLowerCase() === activeClue.solArr.join('').toLowerCase() ? "You got it. Nice work!" : `"${input.join("")}" is not the correct answer.`
+	}
+
+	const message = checkAns ? checkAnsFn(input, activeClue) : activeClue.hints[nextHint].message
 	
 	const continueButton = [
 		{
@@ -11,7 +15,8 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode })
 			style: 'gray',
 			onClick: function(){
 				setShowMessage(false)
-				setNextHint(nextHint + 1)
+				!checkAns && setNextHint(nextHint + 1)
+				setCheckAns(false)
 			}
 		}
 	]
@@ -38,7 +43,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode })
 	]
 	
 	// if current message displaying solution
-	const isSolution = activeClue.hints[nextHint].hintType == 'solution'
+	const isSolution = activeClue.hints[nextHint].hintType == 'solution' && !checkAns
 	
 	// choose message button
 	let messageButton = isSolution ? clueEndButton : continueButton

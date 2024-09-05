@@ -6,7 +6,7 @@
 	left: 0;
 	width: 100%;
 	height: $lc-bottom-height;
-	background-color: $lc-secondary;
+	background-color: $lc-secondary--light;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -17,5 +17,9 @@
 	&.solution {
 		height: calc($lc-bottom-height);
 		background-color: $lc-gray--light;
+	}
+
+	.message-copy {
+		margin: 0 1rem;
 	}
 }
