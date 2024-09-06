@@ -7,7 +7,7 @@ const useActiveClue = () => {
 	let currentClueTypes = ['Anagram', 'Hidden word', 'Double Definition']
 	
 	// state
-	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => currentClueTypes.includes(clue.type[0].name)))
+	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => currentClueTypes.includes(clue.hints[0].category)))
 	const [activeClue, setActiveClue] = useState(filteredClues[Math.floor(Math.random() * filteredClues.length)]);
 	const [completedClues, setCompletedClues] = useState([])
 	
@@ -26,66 +26,66 @@ const useActiveClue = () => {
 		setCompletedClues([...completedClues, Number(newID)])
 	}
 
-
-	if (activeClue) {
+	// list activeClue
+	useEffect(() => {
 		// clean active clue //
 
 		// get solution letters
-		const getSolutionLetters = solution => solution.split(' ').map(word => word.length)
-		activeClue.solLength = {
-			str: `(${getSolutionLetters(activeClue.solution).join(', ')})`,
+		const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
+		activeClue.solution.length = {
+			value: `(${getSolutionLetters(activeClue.solution).join(', ')})`,
 			arr: getSolutionLetters(activeClue.solution)
 		}
 
 		// build clue and solution arrays
-		activeClue.clueArr = activeClue.clue.split("")
-		activeClue.solArr = activeClue.solution.split("")
+		activeClue.clue.arr = activeClue.clue.value.split("")
+		activeClue.solution.arr = activeClue.solution.value.split("")
 
 		// trim definitions
 		activeClue.definition = activeClue.definition.filter(def => def !== "")
 
-		// trim types
-		activeClue.type = activeClue.type.filter(ty => ty.name !== "")
-
-		// trim type indicators
-		activeClue.type.forEach(ty => ty.indicator = ty.indicator.filter(ind => ind.start !== ""))
-		// activeClue.type = activeClue.type.forEach(ty => ty.indicator.filter(ind => ind.start !== ""))
+		// trim hints
+		activeClue.hints = activeClue.hints.filter(hint => hint.category !== "" && hint.value !== "")
 		
 		// trim indicator ends
-		activeClue.type.forEach(ty => ty.indicator.forEach(ind => ind.end = ind.end.filter(end => end !== "")))
-
-
-		// build hints //
-		
-		activeClue.hints = []
-		activeClue.hints.push({ hintType: 'definition', value: activeClue.definition })
-		activeClue.type.forEach(type => {
-			type.indicator.forEach((ind) => {
-				activeClue.hints.push({ hintType: 'indicator', value: ind.start, hintCategory: type.name })
-				ind.end.length > 0 && activeClue.hints.push({ hintType: 'indicated', value: ind.end, hintCategory: type.name })
-			})
+		activeClue.hints.forEach(hint => {
+			if (hint.end) hint.end.value = hint.end.value.filter(val => val !== "")
 		})
 
-		activeClue.hints.push({ hintType: 'solution', value: activeClue.solution })
+		// add type
+		activeClue.hints.map(hint => hint.type = 'indicator')
+
+		// build hints //
+		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
+		activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
 
 		// hint message
 		const getMessage = hint => {
 
 			const vowels = ['a', 'e', 'i', 'o', 'u']
 
-			let aAn = hint.hintCategory && hint.hintCategory.slice(0, 1).includes(vowels) ? 'a' : 'a'
+			let aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'a'
 
-			switch(hint.hintType){
+			switch(hint.type) {
 				case 'definition':
-					if (hint.value.length > 1) {
-						return `Both <strong>${hint.value[0]}</strong> and <strong>${hint.value[1]}</strong> are definitions`
-					} else {
+					// Single definition
+					if (hint.value.length == 1) {
 						return `<strong>${hint.value}</strong> is the definition`
+
+						// Double definition
+					} else {
+						return `Both <strong>${hint.value[0]}</strong> and <strong>${hint.value[1]}</strong> are definitions`
 					}
 				case 'indicator':
-					return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.hintCategory}`
-				case 'indicated':
-					return `<strong>${hint.value[0]}</strong> is where we will find the ${hint.hintCategory}`
+
+					// One end point
+					if (hint.end.value.length == 1) {
+						return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong>` 
+						
+						// Two end points
+					} else {
+						return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
+					}
 				case 'solution':
 					return `<strong>${hint.value}</strong> is the solution`
 				default: 
@@ -94,10 +94,7 @@ const useActiveClue = () => {
 		}
 
 		activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
-	}
 
-	// list activeClue
-	useEffect(() => {
 		console.log(activeClue ? activeClue : mode)
 	}, [activeClue])
 

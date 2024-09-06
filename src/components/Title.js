@@ -4,7 +4,7 @@ import ButtonContainer from './bottom/ButtonContainer';
 import logo from '../img/favicon.png';
 import gif from '../img/learn-cryptic.gif';
 
-const Title = ({ setMode, nextActiveClue, setCheckAns }) => {
+const Title = ({ setMode, nextActiveClue, setCheckAns, setInput }) => {
 
 	// buttons
 	const btnArr = [

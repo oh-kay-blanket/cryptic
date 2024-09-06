@@ -1,30 +1,27 @@
 // returns an array of refs for clue letter that match with a string or array of strings of target(s)
-const getTargetLetters = (hType, clue, clueLettersRef) => {
-		
-	// let targetLetters = clue.hints.find(hint => hint.hintType == hType).value[0]
-	let targetLetters = clue.hints.find(hint => hint.hintType == hType)
+const getTargetLetters = (hint, clue, clueLettersRef) => {
 	
 	// If an array of values
-	if (targetLetters) {
-		if (Array.isArray(targetLetters.value)) {
+	if (hint) {
+		if (Array.isArray(hint.value)) {
 
 	
 			// Get each index in clue of val
-			const targetLettersStartArr = targetLetters.value.map(val => {
-				return clue.clue.indexOf(val)
+			const targetLettersStartArr = hint.value.map(val => {
+				return clue.clue.value.indexOf(val)
 			})
 	
 			// get each range of clue refs
 			let clueLetters = []
 			targetLettersStartArr.forEach((targetLettersStart, index) => {
-				clueLetters.push(...clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + targetLetters.value[index].length)))
+				clueLetters.push(...clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + hint.value[index].length)))
 			})
 			return clueLetters 
 	
 		// Just a string value
 		} else {
-			const targetLettersStart = clue.clue.indexOf(targetLetters.value)			
-			return clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + targetLetters.value.length))
+			const targetLettersStart = clue.clue.value.indexOf(hint.value)			
+			return clueLettersRef.current.slice(targetLettersStart, (targetLettersStart + hint.value.length))
 	
 		}
 	}
