@@ -22,7 +22,7 @@ const Archive = ({ filteredClues, nextActiveClue, setMode, completedClues, setIn
 
 	return(
 		<div className='archive container'>
-				<h1>Archive</h1>
+				<h1>Arkive</h1>
 				{archiveTiles}
 		</div>
 	)

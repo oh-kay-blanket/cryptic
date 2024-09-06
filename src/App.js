@@ -19,7 +19,7 @@ const App = () => {
 	let { nextHint, setNextHint, showMessage, setShowMessage } = useNextHint(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = useInput(activeClue)
 
-	const [mode, setMode] = useState('title');
+	const [mode, setMode] = useState('archive');
 
     return (
 		<>
