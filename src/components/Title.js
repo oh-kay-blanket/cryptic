@@ -9,7 +9,7 @@ const Title = ({ setMode, nextActiveClue, setCheckAns }) => {
 	// buttons
 	const btnArr = [
 		{
-			name: "Play today's clue",
+			name: "Random clue",
 			style: 'primary',
 			onClick: function() {
 				setMode('today')
@@ -19,7 +19,7 @@ const Title = ({ setMode, nextActiveClue, setCheckAns }) => {
 			}
 		},
 		{
-			name: "Archive",
+			name: "All clues",
 			style: 'secondary',
 			onClick: function() {
 				setMode('archive')
