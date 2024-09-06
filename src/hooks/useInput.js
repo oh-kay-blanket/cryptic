@@ -9,7 +9,6 @@ const useInput = activeClue => {
     // handle input
     const handleInput = (press) => {
 		setInput((prevInput) => {
-			console.log(prevInput.length, activeClue.solArr.length)
             if (press !== 'del' && (prevInput.length < activeClue.solArr.length)) {
                 return [...prevInput, press];
             } else if (press === 'del') {
