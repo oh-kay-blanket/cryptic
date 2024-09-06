@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d build --cname learncryptic.com"
+    "deploy": "gh-pages -d dist --cname learncryptic.com"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "css-loader": "^6.11.0",
     "csv-loader": "^3.0.5",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "papaparse": "^5.4.1",
     "sass": "^1.77.8",
@@ -33,7 +34,6 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-anagram-animation": "^1.4.0",
     "react-dom": "^18.3.1"
