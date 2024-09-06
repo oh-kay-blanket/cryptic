@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useNextHint = (activeClue, setCheckAns) => {
+const useNextHint = () => {
 
 	// state
 	const [nextHint, setNextHint] = useState(0)

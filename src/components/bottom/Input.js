@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 const Input = ({ activeClue }) => {
 
-	const inputWords = activeClue.solution.split(" ")
+	const inputWords = activeClue.solution.value.split(" ")
 
 	const inputCells = inputWords.map(word => {
 		const inputLetters = word.split('').map((letter, index) => <button key={index} className={`cell ${letter}`}>{letter}</button>)

@@ -31,11 +31,11 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint
 		}
 	]
 	
-	if (activeClue.hints[nextHint].hintType == 'solution') {
+	if (activeClue.hints[nextHint].type == 'solution') {
 		btnArr = reavealSolutionButton
 	}
 	
-	if (input.length === activeClue.solArr.length) {
+	if (input.length === activeClue.solution.arr.length) {
 		btnArr.push(...checkAnsButton)
 	}
 

@@ -4,14 +4,14 @@ import ButtonContainer from './ButtonContainer';
 const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
 
 	const isCorrectAns = () => {
-		return input.join('').toLowerCase() === activeClue.solArr.join('').toLowerCase()
+		return input.join('').toLowerCase() === activeClue.solution.arr.join('').toLowerCase()
 	}
 
 	// figure out which text to display
 	const message = checkAns ? 
 		isCorrectAns() ? 
-			`"${input.join("")}" is the correct answer. Nice work!` :
-			`"${input.join("")}" is not the correct answer.` :
+			`<strong>${input.join("")}</strong> is the correct answer. Nice work!` :
+			`<strong>${input.join("")}</strong> is not the correct answer.` :
 		activeClue.hints[nextHint].message
 	
 	const continueButton = [
@@ -40,7 +40,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode, i
 	]
 	
 	// if current message displaying solution
-	const isSolution = activeClue.hints[nextHint].hintType == 'solution' && !checkAns
+	const isSolution = activeClue.hints[nextHint].type == 'solution' && !checkAns
 	
 	// choose message button
 	let messageButton = isSolution || (checkAns && isCorrectAns()) ? clueEndButton : continueButton

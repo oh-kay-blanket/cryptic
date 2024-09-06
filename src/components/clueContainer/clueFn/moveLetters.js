@@ -1,12 +1,11 @@
 import removeSpecial from "./removeSpecial"
 
-// moves letters from movementLettersRef to solLettersRef
-const moveLetters = (movementLettersRef, solLettersRef) => {
+// moves letters from indicatedLettersRef to solLettersRef
+const moveLetters = (indicatedLettersRef, solLettersRef) => {
 	
-	movementLettersRef = removeSpecial(movementLettersRef)
+	indicatedLettersRef = removeSpecial(indicatedLettersRef)
 	
-	console.log(solLettersRef.current)
-	movementLettersRef.forEach( ref => {
+	indicatedLettersRef.forEach( ref => {
 		const currentSol = solLettersRef.current.find(sol => {
 			return sol.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
 		})
@@ -20,7 +19,7 @@ const moveLetters = (movementLettersRef, solLettersRef) => {
 
 	// reveal solution large 
 	const revealSolutionLarge = () => {
-		movementLettersRef.forEach( ref => {
+		indicatedLettersRef.forEach( ref => {
 			ref.current.style.opacity = 0
 		})
 	}

@@ -9,18 +9,22 @@ import showSolution from './clueFn/showSolution'
 
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
-
+	console.log(activeClue)
 	
 	// make local clone of clue object
 	let clue = activeClue
 	
 	// set refs
-	let clueLettersRef = useRef(clue.clueArr.map(() => createRef()))
-	let defintionLettersRef = getTargetLetters('definition', clue, clueLettersRef)
-	let indicatorLettersRef = getTargetLetters('indicator', clue, clueLettersRef)
-	let indicatedLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
-	let movementLettersRef = getTargetLetters('indicated', clue, clueLettersRef)
-	let solLettersRef = useRef(clue.solArr.map(() => createRef()))
+	let clueLettersRef = useRef(clue.clue.arr.map(() => createRef()))
+	// build refs for each hint value
+	clue.hints.forEach(hint => {
+		hint.ref = getTargetLetters(hint, clue, clueLettersRef)
+
+		if (!!hint.end) {
+			hint.end.ref = getTargetLetters(hint.end, clue, clueLettersRef)
+		}
+	})
+	let solLettersRef = useRef(clue.solution.arr.map(() => createRef()))
 	let solSectionRef = useRef()
 	let solLengthRef = useRef()
 	let clueSectionRef = useRef()
@@ -34,15 +38,13 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 	useEffect(() => {
 
 		if (showMessage && !checkAns) {
-			switch(clue.hints[nextHint].hintType) {
+			switch(clue.hints[nextHint].type) {
 				case 'definition':
-					return underline(defintionLettersRef)
+					return underline(clue.hints[nextHint].ref)
 				case 'indicator':
-					return highlight(indicatorLettersRef)
-				case 'indicated':
-					return colorChange(indicatedLettersRef)
+					return highlight(clue.hints[nextHint].ref), colorChange(clue.hints[nextHint].end.ref)
 				case 'solution':
-					return showSolution(clue, movementLettersRef, solLettersRef, solSectionRef, indicatedLettersRef)
+					return showSolution(clue, nextHint, solLettersRef, solSectionRef)
 				default: 
 					return 
 				}
@@ -51,13 +53,13 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 	}, [showMessage])
 
 	// clue HTML
-	const clueInsert = clue.clueArr.map((letter, index) => (<span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>))
+	const clueInsert = clue.clue.arr.map((letter, index) => (<span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>))
 
 	// solution HTML
-	const solInsert = clue.solArr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))
+	const solInsert = clue.solution.arr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))
 
 	// solution length
-	const solLength = <span id='solLengthRef' ref={solLengthRef} className='solution-letters'>&nbsp;{clue.solLength.str}</span>
+	const solLength = <span id='solLengthRef' ref={solLengthRef} className='solution-letters'>&nbsp;{clue.solution.length.value}</span>
 	
 
 	return(

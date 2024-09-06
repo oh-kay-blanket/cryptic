@@ -9,7 +9,7 @@ const useInput = activeClue => {
     // handle input
     const handleInput = (press) => {
 		setInput((prevInput) => {
-            if (press !== 'del' && (prevInput.length < activeClue.solArr.length)) {
+            if (press !== 'del' && (prevInput.length < activeClue.solution.arr.length)) {
                 return [...prevInput, press];
             } else if (press === 'del') {
                 return prevInput.slice(0, -1); // `slice` creates a new array without the last element
