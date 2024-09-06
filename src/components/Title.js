@@ -13,6 +13,7 @@ const Title = ({ setMode, nextActiveClue, setCheckAns }) => {
 			style: 'primary',
 			onClick: function() {
 				setMode('today')
+				setInput([])
 				setCheckAns(false)
 				nextActiveClue('random')
 			}
