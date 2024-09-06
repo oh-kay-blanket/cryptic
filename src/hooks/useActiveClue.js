@@ -4,7 +4,7 @@ import clues from '../clues.json';
 
 const useActiveClue = () => {
 
-	let currentClueTypes = ['Anagram', 'Hidden word']
+	let currentClueTypes = ['Anagram', 'Hidden word', 'Double Definition']
 	
 	// state
 	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => currentClueTypes.includes(clue.type[0].name)))
@@ -58,7 +58,7 @@ const useActiveClue = () => {
 		// build hints //
 		
 		activeClue.hints = []
-		activeClue.definition.forEach(def => activeClue.hints.push({ hintType: 'definition', value: def }))
+		activeClue.hints.push({ hintType: 'definition', value: activeClue.definition })
 		activeClue.type.forEach(type => {
 			type.indicator.forEach((ind) => {
 				activeClue.hints.push({ hintType: 'indicator', value: ind.start, hintCategory: type.name })
@@ -77,13 +77,17 @@ const useActiveClue = () => {
 
 			switch(hint.hintType){
 				case 'definition':
-					return `"${hint.value}" is the definition`
+					if (hint.value.length > 1) {
+						return `Both <strong>${hint.value[0]}</strong> and <strong>${hint.value[1]}</strong> are definitions`
+					} else {
+						return `<strong>${hint.value}</strong> is the definition`
+					}
 				case 'indicator':
-					return `"${hint.value}" incicates there is ${aAn} ${hint.hintCategory}`
+					return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.hintCategory}`
 				case 'indicated':
-					return `"${hint.value[0]}" is where we will find the ${hint.hintCategory}`
+					return `<strong>${hint.value[0]}</strong> is where we will find the ${hint.hintCategory}`
 				case 'solution':
-					return `"${hint.value}" is the solution`
+					return `<strong>${hint.value}</strong> is the solution`
 				default: 
 					return hint.value
 			}
