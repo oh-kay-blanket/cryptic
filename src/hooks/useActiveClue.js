@@ -2,24 +2,13 @@ import { useState, useEffect } from 'react'
 
 import clues from '../clues.json';
 
-const useActiveClue = () => {
-
-	let currentClueTypes = ['Anagram', 'Hidden word', 'Double Definition']
+const useActiveClue = (mode) => {
 	
 	// state
-	const [filteredClues, setFilteredClues] = useState(clues.filter(clue => currentClueTypes.includes(clue.hints[0].category)))
-	const [activeClue, setActiveClue] = useState(filteredClues[Math.floor(Math.random() * filteredClues.length)]);
+	const [clueId, setclueId] = useState();
 	const [completedClues, setCompletedClues] = useState([])
-	
-	// fn to change to new clue
-	const nextActiveClue = (clueId) => {
-		if (clueId == 'random') {
-			const rndm = Math.floor(Math.random() * filteredClues.length)
-			setActiveClue(filteredClues[rndm])
-		} else {
-			setActiveClue(filteredClues.find(clue => clue.id == clueId))
-		}
-	}
+
+	let activeClue = !!clueId ? structuredClone(clues.find(clue => clue.id == clueId)) : false
 
 	// fn to add new completed clue
 	const addCompletedClue = (newID) => {
@@ -27,8 +16,7 @@ const useActiveClue = () => {
 	}
 
 	// list activeClue
-	useEffect(() => {
-		// clean active clue //
+	if (activeClue) {
 
 		// get solution letters
 		const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
@@ -95,10 +83,13 @@ const useActiveClue = () => {
 
 		activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
 
-		console.log(activeClue ? activeClue : mode)
-	}, [activeClue])
+	}
 
-	return { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue }
+	useEffect(() => {
+		activeClue && console.log(activeClue)
+	}, [clueId]);
+
+	return { clues, activeClue, setclueId, completedClues, addCompletedClue }
 }
 
 export default useActiveClue

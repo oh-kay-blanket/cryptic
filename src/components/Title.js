@@ -4,23 +4,13 @@ import ButtonContainer from './bottom/ButtonContainer';
 import logo from '../img/favicon.png';
 import gif from '../img/learn-cryptic.gif';
 
-const Title = ({ setMode, nextActiveClue, setCheckAns, setInput }) => {
+const Title = ({ setMode }) => {
 
 	// buttons
 	const btnArr = [
 		{
-			name: "Random clue",
+			name: "View clues",
 			style: 'primary',
-			onClick: function() {
-				setMode('today')
-				setInput([])
-				setCheckAns(false)
-				nextActiveClue('random')
-			}
-		},
-		{
-			name: "All clues",
-			style: 'secondary',
 			onClick: function() {
 				setMode('archive')
 			}

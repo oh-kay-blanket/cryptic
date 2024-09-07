@@ -13,8 +13,9 @@
 
 	.archive-tile {
 		display: flex;
+		justify-content: space-between;
 		margin: .5rem 0;
-		padding: 1rem;
+		padding: .75rem 1rem;
 		border: 1px solid $lc-gray--dark;
 		overflow: hidden;
 		border-radius: .5rem;
@@ -31,11 +32,19 @@
 		}
 		
 		.tile-name {
-			display: b;
 			overflow: hidden;
-			// max-width: 40px;
 			text-wrap:nowrap;
 			text-overflow: ellipsis;
+			line-height: 1;
+			font-size: 16px;
+		}
+
+		.tile-source {
+			font-family: $lc-font--sans;
+			font-size: 14px;
+			color: $lc-text--light;
+			line-height: 1;
+			margin-left: .5rem;
 		}
 	}
 }

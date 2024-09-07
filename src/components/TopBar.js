@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from '../img/lc-logo2.png';
 
-const TopBar = ({ setMode, setNextHint, setShowMessage }) => {
+const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput }) => {
 
 	const clickTitle = () => {
 		setShowMessage(false)
 		setNextHint(0)
 		setMode('title')
+		setclueId()
+		setInput([])
 	}
 
   return(
