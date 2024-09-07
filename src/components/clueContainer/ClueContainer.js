@@ -9,7 +9,6 @@ import showSolution from './clueFn/showSolution'
 
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
-	console.log(activeClue)
 	
 	// make local clone of clue object
 	let clue = activeClue

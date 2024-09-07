@@ -1,7 +1,7 @@
 import React from 'react'
 import ButtonContainer from './ButtonContainer';
 
-const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
+const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
 
 	const isCorrectAns = () => {
 		return input.join('').toLowerCase() === activeClue.solution.arr.join('').toLowerCase()
@@ -34,6 +34,7 @@ const Message = ({ setShowMessage, activeClue, nextHint, setNextHint, setMode, i
 				addCompletedClue(activeClue.id)
 				setShowMessage(false)
 				setNextHint(0)
+				setclueId(false)
 				setMode('archive')
 			}
 		}

@@ -15,43 +15,38 @@ import useInput from './hooks/useInput'
 const App = () => {
 
 	// set mode & clue
-	let { activeClue, nextActiveClue, filteredClues, completedClues, addCompletedClue } = useActiveClue()	
+	const [mode, setMode] = useState('archive');
+	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = useActiveClue(mode)	
 	let { nextHint, setNextHint, showMessage, setShowMessage } = useNextHint(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = useInput(activeClue)
 
-	const [mode, setMode] = useState('archive');
 
     return (
-		<>
-			{ mode == 'title' ? 
-				<Title
-					setMode={setMode}
-					nextActiveClue={nextActiveClue}
-					setInput={setInput}
-					setCheckAns={setCheckAns}
-				/> : mode == 'archive' ?
+		<>	
+			{ mode == 'title' && <Title setMode={setMode} /> }
+			<TopBar
+				setMode={setMode}
+				setShowMessage={setShowMessage}
+				setNextHint={setNextHint}
+				setclueId={setclueId}
+				setInput={setInput}
+			/>
+			{ mode == 'archive' &&
 				<>
-					<TopBar
-						setMode={setMode}
-						setShowMessage={setShowMessage}
-						setNextHint={setNextHint}
-					/>
 					<Archive
-						filteredClues={filteredClues}
-						nextActiveClue={nextActiveClue}
+						clues={clues}
+						setclueId={setclueId}
 						setMode={setMode}
 						completedClues={completedClues}
 						setInput={setInput}
 						setCheckAns={setCheckAns}
 					/>
-				</>:
+				</>
+			}
+			{ mode == 'playing' &&
 				<>
-					<TopBar
-						setMode={setMode}
-						setShowMessage={setShowMessage}
-						setNextHint={setNextHint}
-					/>
 					<ClueContainer 
+						clues={clues}
 						activeClue={activeClue}
 						nextHint={nextHint}
 						showMessage={showMessage}
@@ -64,7 +59,7 @@ const App = () => {
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						activeClue={activeClue}
-						nextActiveClue={nextActiveClue}
+						setclueId={setclueId}
 						setMode={setMode}
 						addCompletedClue={addCompletedClue}
 						handleInput={handleInput}

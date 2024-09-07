@@ -4,7 +4,7 @@ import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
-const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns }) => {
+const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns }) => {
 
 	// set initial btns
 	let btnArr = btnArr || [{ name:'Show hint', style: 'secondary', onClick: function(){setCheckAns(false);setShowMessage(true)} }]
@@ -46,6 +46,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint
 					<Message
 						setShowMessage={setShowMessage}
 						activeClue={activeClue}
+						setclueId={setclueId}
 						nextHint={nextHint}
 						setNextHint={setNextHint}
 						setMode={setMode}
