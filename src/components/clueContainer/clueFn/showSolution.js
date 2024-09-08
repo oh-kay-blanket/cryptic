@@ -2,21 +2,21 @@ import moveLetters from "./moveLetters"
 import colorChange from './colorChange'
 import removeSpecial from "./removeSpecial"
 
-const showSolution = (clue, nextHint, solLettersRef, solSectionRef) => {
+const showSolution = (activeClue, nextHint) => {
 		
-	switch(clue.hints[nextHint-1].category) { 
-		case 'Anagram':
+	switch(activeClue.hints[nextHint-1].category) { 
+		case 'anagram':
 			
-			moveLetters(clue.hints[nextHint-1].end.ref, solLettersRef, solSectionRef)
+			moveLetters(activeClue.hints[nextHint-1].end.ref, activeClue.solution.ref, activeClue.solution.sectionRef)
 			break 
-		case 'Hidden word':
+		case 'hidden word':
 
 			// get index of solution within indicated
-			let solIndex = removeSpecial(clue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(clue.solution.value)				
+			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)				
 			
-			clue.hints[nextHint-1].end.ref = removeSpecial(clue.hints[nextHint-1].end.ref)
-			colorChange(clue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
-			colorChange(clue.hints[nextHint-1].end.ref.splice(clue.solution.length), '#ccc')
+			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
+			colorChange(activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
+			colorChange(activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
 			break 
 		default: 
 			break 
@@ -24,8 +24,8 @@ const showSolution = (clue, nextHint, solLettersRef, solSectionRef) => {
 	
 	// reveal solution large
 	const revealSolutionLarge = () => {
-		solSectionRef.current.classList.add('hide-input')
-		solSectionRef.current.classList.add('reveal-solution')
+		activeClue.solution.sectionRef.current.classList.add('hide-input')
+		activeClue.solution.sectionRef.current.classList.add('reveal-solution')
 	}
 
 	setTimeout(revealSolutionLarge, 4000)

@@ -6,6 +6,8 @@ import gif from '../img/learn-cryptic.gif';
 
 const Title = ({ setMode, clues, setclueId }) => {
 
+	const today = new Date();
+
 	const todayClue = clues.find(clue => {
 
 		const date1 = new Date(clue.release);
@@ -39,9 +41,14 @@ const Title = ({ setMode, clues, setclueId }) => {
 
   return(
 	<div className='title container'>
-			<img src={logo} />
-			<img className='title-gif' src={gif} />
-			<div className='button-container'>
+		<img src={logo} />
+		<img className='title-gif' src={gif} />
+		<div className='title-actions'>
+			<div className='title-date'>
+				<span>{today.toLocaleString('en-us', { month: 'long' })}</span>&nbsp;
+				<span>{today.getDate()}</span>,&nbsp;
+				<span>{today.getFullYear()}</span>
+			</div>
 			<ButtonContainer
 				btnArr={btnArr}
 				stack={true}
