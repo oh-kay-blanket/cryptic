@@ -10,40 +10,46 @@ import showSolution from './clueFn/showSolution'
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
 	
-	// make local clone of clue object
-	let clue = activeClue
-	
-	// set refs
-	let clueLettersRef = useRef(clue.clue.arr.map(() => createRef()))
-	// build refs for each hint value
-	clue.hints.forEach(hint => {
-		hint.ref = getTargetLetters(hint, clue, clueLettersRef)
+	// clue letter refs
+	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef()))
+
+	// hint target refs
+	activeClue.hints.forEach(hint => {
+		hint.ref = getTargetLetters(hint, activeClue)
 
 		if (!!hint.end) {
-			hint.end.ref = getTargetLetters(hint.end, clue, clueLettersRef)
+			hint.end.ref = getTargetLetters(hint.end, activeClue)
 		}
 	})
-	let solLettersRef = useRef(clue.solution.arr.map(() => createRef()))
-	let solSectionRef = useRef()
-	let solLengthRef = useRef()
-	let clueSectionRef = useRef()
+
+	// clue section ref
+	activeClue.clue.sectionRef = useRef()
+
+	// solution letter refs
+	activeClue.solution.ref = useRef(activeClue.solution.arr.map(() => createRef()))
+
+	// solution section ref
+	activeClue.solution.sectionRef = useRef()
+
+	// solution length ref
+	activeClue.solution.length.ref = useRef()
 	
 	// look for position once set
 	useEffect(() => {
-		fixLetters(clueLettersRef, solLettersRef, solLengthRef, solSectionRef)
+		fixLetters(activeClue)
 	}, []);	
 	
 	// runs every change of showMessage
 	useEffect(() => {
 
 		if (showMessage && !checkAns) {
-			switch(clue.hints[nextHint].type) {
+			switch(activeClue.hints[nextHint].type) {
 				case 'definition':
-					return underline(clue.hints[nextHint].ref)
+					return underline(activeClue.hints[nextHint].ref)
 				case 'indicator':
-					return highlight(clue.hints[nextHint].ref), colorChange(clue.hints[nextHint].end.ref)
+					return highlight(activeClue.hints[nextHint].ref), colorChange(activeClue.hints[nextHint].end.ref)
 				case 'solution':
-					return showSolution(clue, nextHint, solLettersRef, solSectionRef)
+					return showSolution(activeClue, nextHint)
 				default: 
 					return 
 				}
@@ -52,19 +58,19 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 	}, [showMessage])
 
 	// clue HTML
-	const clueInsert = clue.clue.arr.map((letter, index) => (<span key={index} ref={clueLettersRef.current[index]} className='letter'>{letter}</span>))
+	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
 
 	// solution HTML
-	const solInsert = clue.solution.arr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={solLettersRef.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))
+	const solInsert = activeClue.solution.arr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={activeClue.solution.ref.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))
 
 	// solution length
-	const solLength = <span id='solLengthRef' ref={solLengthRef} className='solution-letters'>&nbsp;{clue.solution.length.value}</span>
+	const solLength = <span id='solLengthRef' ref={activeClue.solution.length.ref} className='solution-letters'>&nbsp;{activeClue.solution.length.value}</span>
 	
 
 	return(
 		<div id='clue-container' className='clue container'>
-			<div id='clueSectionRef' ref={clueSectionRef} className='clue'>{clueInsert} {solLength}</div>
-			<div id='solSectionRef' ref={solSectionRef} className='solution'>{solInsert}</div>
+			<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>{clueInsert} {solLength}</div>
+			<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
 		</div>
 	)
 }

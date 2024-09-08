@@ -1,8 +1,8 @@
 // locks letters into a fixed position based on their initial render position
 
-const fixLetters = (clueLettersRef, solutionLettersRef, solutionLettersCount, solutionSection) => {
+const fixLetters = (activeClue) => {
 	// clue
-	clueLettersRef.current.forEach( ref => {
+	activeClue.clue.ref.current.forEach( ref => {
 		let left = ref.current.getBoundingClientRect().left
 		let top = ref.current.getBoundingClientRect().top
 		ref.current.style.left = `${left}px`
@@ -10,18 +10,18 @@ const fixLetters = (clueLettersRef, solutionLettersRef, solutionLettersCount, so
 		return [left, top]
 	})
 
-	// solutionLettersCount
-	solutionLettersCount.current.style.left = `${solutionLettersCount.current.getBoundingClientRect().left}px`
-	solutionLettersCount.current.style.top = `${solutionLettersCount.current.getBoundingClientRect().top}px`
+	// activeClue.solution.length.ref
+	activeClue.solution.length.ref.current.style.left = `${activeClue.solution.length.ref.current.getBoundingClientRect().left}px`
+	activeClue.solution.length.ref.current.style.top = `${activeClue.solution.length.ref.current.getBoundingClientRect().top}px`
 
 	// fix positions
-	clueLettersRef.current.forEach( ref => {
+	activeClue.clue.ref.current.forEach( ref => {
 		ref.current.style.position = 'fixed'
 	})
-	solutionLettersCount.current.style.position = 'fixed'
+	activeClue.solution.length.ref.current.style.position = 'fixed'
 	
 	// solution
-	solutionLettersRef.current.forEach( ref => {
+	activeClue.solution.ref.current.forEach( ref => {
 		let left = ref.current.getBoundingClientRect().left
 		let top = ref.current.getBoundingClientRect().top
 		ref.current.style.left = `${left}px`
@@ -29,11 +29,11 @@ const fixLetters = (clueLettersRef, solutionLettersRef, solutionLettersCount, so
 		return [left, top]
 	})
 	
-	solutionLettersRef.current.forEach( ref => {
+	activeClue.solution.ref.current.forEach( ref => {
 		ref.current.style.position = 'fixed'
 	})
 
-	solutionSection.current.style.transform = 'none'
+	activeClue.solution.sectionRef.current.style.transform = 'none'
 }
 
 export default fixLetters

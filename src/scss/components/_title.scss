@@ -9,4 +9,19 @@
 	.title-gif {
 		max-width: 350px;
 	}
+
+	.title-actions {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		.title-date {
+			margin: .5rem auto;
+			font-family: $lc-font--sans;
+			font-size: 16px;
+			color: $lc-text--light;
+		}
+	}
 }

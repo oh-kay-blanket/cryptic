@@ -68,11 +68,11 @@ const useActiveClue = (mode) => {
 
 					// One end point
 					if (hint.end.value.length == 1) {
-						return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong>` 
+						return `<strong>${hint.value}</strong> incicates there is ${aAn} <em>${hint.category}</em> at <strong>${hint.end.value[0]}</strong>` 
 						
 						// Two end points
 					} else {
-						return `<strong>${hint.value}</strong> incicates there is ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
+						return `<strong>${hint.value}</strong> incicates there is ${aAn} </em>${hint.category}</em> at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
 					}
 				case 'solution':
 					return `<strong>${hint.value}</strong> is the solution`
