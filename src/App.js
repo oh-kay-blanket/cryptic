@@ -15,7 +15,7 @@ import useInput from './hooks/useInput'
 const App = () => {
 
 	// set mode & clue
-	const [mode, setMode] = useState('archive');
+	const [mode, setMode] = useState('title');
 	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = useActiveClue(mode)	
 	let { nextHint, setNextHint, showMessage, setShowMessage } = useNextHint(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = useInput(activeClue)
@@ -23,7 +23,13 @@ const App = () => {
 
     return (
 		<>	
-			{ mode == 'title' && <Title setMode={setMode} /> }
+			{ mode == 'title' && 
+				<Title 
+					setMode={setMode}
+					clues={clues}
+					setclueId={setclueId}
+				/> 
+			}
 			<TopBar
 				setMode={setMode}
 				setShowMessage={setShowMessage}

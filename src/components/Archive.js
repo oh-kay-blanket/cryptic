@@ -17,11 +17,34 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 		setMode('playing')
 	}
 
-	const archiveTiles = clues.map((clue, index) => {
+	// only past clues
+	let archiveTiles = clues.filter(clue => {
 
-		const getRelease = (release) => {
+		function isTodayOrBefore(date1Str) {
 
+			const date1 = new Date(date1Str);
+    		const date2 = new Date();
+
+			// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
+			const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
+			const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+		
+			// Compare the two dates
+			if (d1.getTime() === d2.getTime()) {
+				return true; // Same day
+			} else if (d1.getTime() < d2.getTime()) {
+				return true; // date1 is before date2
+			} else {
+				return false; // date1 is after date2
+			}
 		}
+
+		return isTodayOrBefore(clue.release)
+	})
+
+	archiveTiles = archiveTiles.map((clue, index) => {
+
+		const getRelease = (release) => new Date(release)
 
 		const getImg = (difficulty) => {
 			switch (Number(difficulty)) {
@@ -41,14 +64,19 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 		const isComplete = completedClues.includes(Number(clue.id)) ? ' completed' : ''
 
 		return (
-		<div className='archive-clue' key={clue.id}>
-			<div className='archive-release'>{clue.release}</div>
-			<div id={clue.id} className={`archive-tile${isComplete}`} ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
+		<div className={`archive-clue${isComplete}`} key={clue.id}>
+			<div className='archive-release'>
+				<span>
+					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
+					<span>{getRelease(clue.release).getDate()}</span>,
+				</span>
+				<br></br>
+				<span>{getRelease(clue.release).getFullYear()}</span>
+			</div>
+			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
+				<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
 				<span className='tile-name'>{clue.clue.value}</span>
-				<div className='tile-info'>
-					<img className='tile-difficulty' src={getImg(clue.difficulty)} />
-					<span className='tile-source'>{clue.source}</span>
-				</div>
+				<span className='tile-source'>{clue.source}</span>
 			</div>
 		</div>
 		)
