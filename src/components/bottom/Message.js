@@ -10,7 +10,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	// figure out which text to display
 	const message = checkAns ? 
 		isCorrectAns() ? 
-			`<strong>${input.join("")}</strong> is the correct answer. Nice work!` :
+			`<strong>${input.join("")}</strong> is correct.<br>Nice work!` :
 			`<strong>${input.join("")}</strong> is not the correct answer.` :
 		activeClue.hints[nextHint].message
 	

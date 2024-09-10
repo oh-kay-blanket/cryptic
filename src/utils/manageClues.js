@@ -60,20 +60,59 @@ const manageClues = (mode) => {
 					if (hint.value.length == 1) {
 						return `<strong>${hint.value}</strong> is the definition`
 
-						// Double definition
+					// Double definition
 					} else {
 						return `Both <strong>${hint.value[0]}</strong> and <strong>${hint.value[1]}</strong> are definitions`
 					}
 				case 'indicator':
+					switch(hint.category) {
+						case 'charade':
+							return `<strong>${hint.value}</strong> can give us <strong>${hint.end.value[0]}</strong>`
+						case 'container':
+							return `<strong>${hint.value}</strong>, indicates <strong>${hint.end.value[1]}</strong>, will go inside <strong>${hint.end.value[0]}</strong>`
+						case 'deletion':
+							return `<strong>${hint.value}</strong>, indicates a deletion on <strong>${hint.end.value[0]}</strong>, giving us <strong>${hint.end.value[1]}</strong>`
+						case 'direct':
+							return `<strong>${hint.value}</strong> is part of the answer`
+						case 'hidden word':
+							return `<strong>${hint.value}</strong> indicates a hidden word within <strong>${hint.end.value[0]}</strong>`
+						case 'homophone':
 
-					// One end point
-					if (hint.end.value.length == 1) {
-						return `<strong>${hint.value}</strong> incicates there is ${aAn} <em>${hint.category}</em> at <strong>${hint.end.value[0]}</strong>` 
-						
-						// Two end points
-					} else {
-						return `<strong>${hint.value}</strong> incicates there is ${aAn} </em>${hint.category}</em> at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
+							// indicator only
+							if (hint.end.value.length == 0) {
+								return `<strong>${hint.value}</strong> indicates there is a homophone`
+
+							// indicate and reveal
+							} else if (hint.end.value.length == 2) {
+								return `<strong>${hint.end.value[0]}</strong> is a homophone for <strong>${hint.end.value[1]}</strong>`
+							
+							// multiple end points
+							} else {
+								return `<strong>${hint.end.value[0]}</strong> + <strong>${hint.end.value[1]}</strong> = <strong>${hint.end.value[2]}</strong>`
+							}
+						case 'initialism':
+							return `<strong>${hint.value}</strong> indicates we should take the beginning of one or more words`
+						case 'letter bank':
+							return `<strong>${hint.value}</strong> indicates <strong>${hint.end.value[0]}</strong> is a letter bank<br><em class='helper'>(an anagram where letters can be used more than once)</em>`
+						case 'particle':
+							return `<strong>${hint.value}</strong>, when applied to <strong>${hint.end.value[0]}</strong>, can give us <strong>${hint.end.value[1]}</strong>`
+						case 'reversal':
+							return `<strong>${hint.value[0]}</strong>, indicates a reversal on <strong>${hint.end.value[1]}</strong>, giving us <strong>${hint.end.value[2]}</strong>`
+						case 'synonym':
+							return `Another word for <strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
+						case 'symbol':
+							return `<strong>${hint.value}</strong> can give us <strong>${hint.end.value[0]}</strong>`
+						default:
+							// One end point
+							if (hint.end.value.length == 1) {
+								return `<strong>${hint.value}</strong> incicates ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong>` 
+								
+								// Two end points
+							} else {
+								return `<strong>${hint.value}</strong> incicates ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
+							}
 					}
+					
 				case 'solution':
 					return `<strong>${hint.value}</strong> is the solution`
 				default: 
