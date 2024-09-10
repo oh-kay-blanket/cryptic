@@ -1,6 +1,6 @@
 
 // moves letters from movementLettersRef to solutionLettersRef
-const highlight = (indicatedLettersRef) => {
+const highlightLetters = (indicatedLettersRef) => {
 	
 	indicatedLettersRef.forEach( ref => {
 		ref.current.style.backgroundColor = '#FFCBAB'
@@ -8,4 +8,4 @@ const highlight = (indicatedLettersRef) => {
 
 }
 
-export default highlight
+export default highlightLetters

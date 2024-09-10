@@ -1,6 +1,6 @@
 import moveLetters from "./moveLetters"
-import colorChange from './colorChange'
-import removeSpecial from "./removeSpecial"
+import changeColor from './changeColor'
+import removeSpecial from "./removeSpecialChar"
 
 const showSolution = (activeClue, nextHint) => {
 		
@@ -15,8 +15,8 @@ const showSolution = (activeClue, nextHint) => {
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)				
 			
 			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
-			colorChange(activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
-			colorChange(activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
+			changeColor(activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
+			changeColor(activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
 			break 
 		default: 
 			break 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useNextHint = () => {
+const manageHints = () => {
 
 	// state
 	const [nextHint, setNextHint] = useState(0)
@@ -9,4 +9,4 @@ const useNextHint = () => {
 	return { nextHint, setNextHint, showMessage, setShowMessage }
 }
 
-export default useNextHint
+export default manageHints

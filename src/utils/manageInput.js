@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const useInput = activeClue => {
+const manageInput = activeClue => {
 
     // state
     const [input, setInput] = useState([])
@@ -22,4 +22,4 @@ const useInput = activeClue => {
     return { input, setInput, handleInput, checkAns, setCheckAns }
 }
 
-export default useInput
+export default manageInput

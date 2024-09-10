@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonContainer from './ButtonContainer';
+import ButtonContainer from '../ButtonContainer';
 
 const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
 

@@ -1,9 +1,9 @@
 import React, { useRef, createRef, useEffect } from 'react'
 
-import d1 from '../img/difficulty/1.svg';
-import d2 from '../img/difficulty/2.svg';
-import d3 from '../img/difficulty/3.svg';
-import d4 from '../img/difficulty/4.svg';
+import d1 from '../assets/img/difficulty/1.svg';
+import d2 from '../assets/img/difficulty/2.svg';
+import d3 from '../assets/img/difficulty/3.svg';
+import d4 from '../assets/img/difficulty/4.svg';
 
 const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
 

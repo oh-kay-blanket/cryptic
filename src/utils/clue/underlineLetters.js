@@ -1,6 +1,6 @@
 
 // moves letters from movementLettersRef to solutionLettersRef
-const underline = (defintionLettersRef) => {
+const underlineLetters = (defintionLettersRef) => {
 	
 	defintionLettersRef.forEach( ref => {
 		ref.current.style.textDecoration = 'underline'
@@ -8,4 +8,4 @@ const underline = (defintionLettersRef) => {
 
 }
 
-export default underline
+export default underlineLetters

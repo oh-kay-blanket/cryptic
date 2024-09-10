@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
-import clues from '../clues.json';
+import clues from '../assets/clues.json';
 
-const useActiveClue = (mode) => {
+const manageClues = (mode) => {
 	
 	// state
 	const [clueId, setclueId] = useState();
@@ -92,4 +92,4 @@ const useActiveClue = (mode) => {
 	return { clues, activeClue, setclueId, completedClues, addCompletedClue }
 }
 
-export default useActiveClue
+export default manageClues
