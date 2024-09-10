@@ -1,11 +1,11 @@
 import React, { useRef, createRef, useEffect } from 'react'
 
-import getTargetLetters from './clueFn/getTargetLetters'
-import fixLetters from './clueFn/fixLetters'
-import underline from './clueFn/underline'
-import highlight from './clueFn/highlight'
-import colorChange from './clueFn/colorChange'
-import showSolution from './clueFn/showSolution'
+import getTargetLetters from '../utils/clue/getTargetLetters'
+import fixLetters from '../utils/clue/fixLetters'
+import underlineLetters from '../utils/clue/underlineLetters'
+import highlightLetters from '../utils/clue/highlightLetters'
+import changeColor from '../utils/clue/changeColor'
+import showSolution from '../utils/clue/showSolution'
 
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
@@ -45,9 +45,9 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 		if (showMessage && !checkAns) {
 			switch(activeClue.hints[nextHint].type) {
 				case 'definition':
-					return underline(activeClue.hints[nextHint].ref)
+					return underlineLetters(activeClue.hints[nextHint].ref)
 				case 'indicator':
-					return highlight(activeClue.hints[nextHint].ref), colorChange(activeClue.hints[nextHint].end.ref)
+					return highlightLetters(activeClue.hints[nextHint].ref), changeColor(activeClue.hints[nextHint].end.ref)
 				case 'solution':
 					return showSolution(activeClue, nextHint)
 				default: 

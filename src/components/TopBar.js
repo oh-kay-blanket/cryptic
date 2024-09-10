@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../img/lc-logo2.png';
+import logo from '../assets/img/lc-logo2.png';
 
 const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput }) => {
 

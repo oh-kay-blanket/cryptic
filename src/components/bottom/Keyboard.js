@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 
-import backspace from '../../img/backspace.svg'
+import backspace from '../../assets/img/backspace.svg'
 
 const Keyboard = ({ handleInput }) => {
 

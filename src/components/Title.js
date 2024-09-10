@@ -1,8 +1,8 @@
 import React from 'react';
-import ButtonContainer from './bottom/ButtonContainer';
+import ButtonContainer from './ButtonContainer';
 
-import logo from '../img/favicon.png';
-import gif from '../img/learn-cryptic.gif';
+import logo from '../assets/img/favicon.png';
+import gif from '../assets/img/learn-cryptic.gif';
 
 const Title = ({ setMode, clues, setclueId }) => {
 

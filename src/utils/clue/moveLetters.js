@@ -1,4 +1,4 @@
-import removeSpecial from "./removeSpecial"
+import removeSpecial from "./removeSpecialChar"
 
 // moves letters from indicatedLettersRef to solLettersRef
 const moveLetters = (indicatedLettersRef, solLettersRef) => {
