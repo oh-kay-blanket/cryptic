@@ -26,5 +26,10 @@
 
 	.message-copy {
 		margin: 0 1.5rem;
+
+		.helper {
+			font-size: 16px;
+			// color: $lc-text--light;
+		}
 	}
 }
