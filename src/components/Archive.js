@@ -84,8 +84,7 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 
 	return(
 		<div className='archive container'>
-				<h1>All clues</h1>
-				{archiveTiles}
+			{archiveTiles}
 		</div>
 	)
 }

@@ -1,6 +1,6 @@
 [
 	{
-	  "release": "9/14/2024",
+	  "release": "9/20/2024",
 	  "clue": {
 		"value": "Nitrogen rank within the first day from misheard song lyrics"
 	  },
@@ -18,6 +18,7 @@
 		  "end": {
 			"value": [
 			  "n",
+			  "",
 			  ""
 			]
 		  }
@@ -39,6 +40,7 @@
 		  "end": {
 			"value": [
 			  "mon",
+			  "",
 			  ""
 			]
 		  }
@@ -61,7 +63,7 @@
 	  "source": "plunk it"
 	},
 	{
-	  "release": "9/13/2024",
+	  "release": "9/19/2024",
 	  "clue": {
 		"value": "Garland has looked over knot after weather event"
 	  },
@@ -79,6 +81,7 @@
 		  "end": {
 			"value": [
 			  "bow",
+			  "",
 			  ""
 			]
 		  }
@@ -99,6 +102,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -122,7 +126,7 @@
 	  "source": "plunk it"
 	},
 	{
-	  "release": "9/12/2024",
+	  "release": "9/18/2024",
 	  "clue": {
 		"value": "Punk primates going after half of Cougar's gold piece"
 	  },
@@ -140,6 +144,7 @@
 		  "end": {
 			"value": [
 			  "jack and diane",
+			  "",
 			  ""
 			]
 		  }
@@ -161,6 +166,7 @@
 		  "end": {
 			"value": [
 			  "apes",
+			  "",
 			  ""
 			]
 		  }
@@ -183,7 +189,7 @@
 	  "source": "plunk it"
 	},
 	{
-	  "release": "9/11/2024",
+	  "release": "9/17/2024",
 	  "clue": {
 		"value": "In Boston, commuting T trains as a way to get around!"
 	  },
@@ -201,6 +207,7 @@
 		  "end": {
 			"value": [
 			  "T trains",
+			  "",
 			  ""
 			]
 		  }
@@ -221,6 +228,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -244,7 +252,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/10/2024",
+	  "release": "9/16/2024",
 	  "clue": {
 		"value": "King with a golden touch is unhappy I'm returning"
 	  },
@@ -262,6 +270,7 @@
 		  "end": {
 			"value": [
 			  "sad",
+			  "",
 			  ""
 			]
 		  }
@@ -272,7 +281,7 @@
 		  "end": {
 			"value": [
 			  "sad I'm",
-			  "",
+			  "midas",
 			  ""
 			]
 		  }
@@ -282,6 +291,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -305,7 +315,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/9/2024",
+	  "release": "9/15/2024",
 	  "clue": {
 		"value": "Starts to dream about living large amid suburban Texas metropolis"
 	  },
@@ -323,6 +333,7 @@
 		  "end": {
 			"value": [
 			  "dream about living large amid suburban",
+			  "",
 			  ""
 			]
 		  }
@@ -343,6 +354,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -366,7 +378,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/8/2024",
+	  "release": "9/14/2024",
 	  "clue": {
 		"value": "Computer industry dude, after transitioning, declared Dallas home"
 	  },
@@ -384,6 +396,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -400,21 +413,22 @@
 		  }
 		},
 		{
-		  "category": "synonym",
+		  "category": "charade",
 		  "value": "dude, after transitioning",
 		  "end": {
 			"value": [
 			  "sis",
+			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "tech sis",
 		  "end": {
 			"value": [
-			  "",
+			  "Texas",
 			  "",
 			  ""
 			]
@@ -427,7 +441,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/7/2024",
+	  "release": "9/13/2024",
 	  "clue": {
 		"value": "Buried in Tucson or another arid region"
 	  },
@@ -445,6 +459,7 @@
 		  "end": {
 			"value": [
 			  "Tucson or another",
+			  "",
 			  ""
 			]
 		  }
@@ -465,6 +480,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -488,7 +504,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/6/2024",
+	  "release": "9/12/2024",
 	  "clue": {
 		"value": "Leave the better part of Southern Arizona"
 	  },
@@ -506,6 +522,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -526,6 +543,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -549,7 +567,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/5/2024",
+	  "release": "9/11/2024",
 	  "clue": {
 		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
 	  },
@@ -567,6 +585,7 @@
 		  "end": {
 			"value": [
 			  "slam nicer",
+			  "",
 			  ""
 			]
 		  }
@@ -587,6 +606,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -610,7 +630,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/4/2024",
+	  "release": "9/10/2024",
 	  "clue": {
 		"value": "Legacy carrier is never mentioned, ignoring the speed of light"
 	  },
@@ -628,6 +648,7 @@
 		  "end": {
 			"value": [
 			  "uncited",
+			  "",
 			  ""
 			]
 		  }
@@ -645,11 +666,12 @@
 		},
 		{
 		  "category": "deletion",
-		  "value": "ignoring the",
+		  "value": "ignoring the c",
 		  "end": {
 			"value": [
-			  "c",
-			  "uncited"
+			  "uncited",
+			  "united",
+			  ""
 			]
 		  }
 		},
@@ -671,7 +693,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "9/3/2024",
+	  "release": "9/9/2024",
 	  "clue": {
 		"value": "After middle of season, each lost"
 	  },
@@ -689,7 +711,8 @@
 		  "end": {
 			"value": [
 			  "season",
-			  "as"
+			  "as",
+			  ""
 			]
 		  }
 		},
@@ -709,6 +732,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -732,7 +756,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "9/2/2024",
+	  "release": "9/8/2024",
 	  "clue": {
 		"value": "Large, empty apartment took off"
 	  },
@@ -750,6 +774,7 @@
 		  "end": {
 			"value": [
 			  "l",
+			  "",
 			  ""
 			]
 		  }
@@ -767,9 +792,10 @@
 		},
 		{
 		  "category": "symbol",
-		  "value": "apt",
+		  "value": "apartment",
 		  "end": {
 			"value": [
+			  "apt",
 			  "",
 			  ""
 			]
@@ -793,7 +819,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "9/1/2024",
+	  "release": "9/7/2024",
 	  "clue": {
 		"value": "Come to AT&T objective"
 	  },
@@ -811,6 +837,7 @@
 		  "end": {
 			"value": [
 			  "att",
+			  "",
 			  ""
 			]
 		  }
@@ -831,6 +858,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -854,7 +882,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/31/2024",
+	  "release": "9/6/2024",
 	  "clue": {
 		"value": "Doesn't debate grease must be changed"
 	  },
@@ -872,6 +900,7 @@
 		  "end": {
 			"value": [
 			  "grease",
+			  "",
 			  ""
 			]
 		  }
@@ -892,6 +921,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -915,7 +945,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/30/2024",
+	  "release": "9/5/2024",
 	  "clue": {
 		"value": "Fatally drew blood at front of Room Y"
 	  },
@@ -933,6 +963,7 @@
 		  "end": {
 			"value": [
 			  "let",
+			  "",
 			  ""
 			]
 		  }
@@ -953,6 +984,7 @@
 		  "value": "Y",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -976,7 +1008,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/29/2024",
+	  "release": "9/4/2024",
 	  "clue": {
 		"value": "Again espouses study with orator's first points"
 	  },
@@ -994,6 +1026,7 @@
 		  "end": {
 			"value": [
 			  "read",
+			  "",
 			  ""
 			]
 		  }
@@ -1015,6 +1048,7 @@
 		  "end": {
 			"value": [
 			  "pts",
+			  "",
 			  ""
 			]
 		  }
@@ -1037,7 +1071,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/28/2024",
+	  "release": "9/3/2024",
 	  "clue": {
 		"value": "African country engaged in \"beginning of life\" ceremony"
 	  },
@@ -1055,6 +1089,7 @@
 		  "end": {
 			"value": [
 			  "forty",
+			  "",
 			  ""
 			]
 		  }
@@ -1076,7 +1111,8 @@
 		  "end": {
 			"value": [
 			  "forty",
-			  "mali"
+			  "mali",
+			  ""
 			]
 		  }
 		},
@@ -1098,7 +1134,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/27/2024",
+	  "release": "9/2/2024",
 	  "clue": {
 		"value": "Lawyer recalled gossip about corruption"
 	  },
@@ -1116,6 +1152,7 @@
 		  "end": {
 			"value": [
 			  "yenta",
+			  "",
 			  ""
 			]
 		  }
@@ -1137,17 +1174,18 @@
 		  "end": {
 			"value": [
 			  "yenta",
-			  "rot"
+			  "rot",
+			  ""
 			]
 		  }
 		},
 		{
 		  "category": "reversal",
-		  "value": "yenrotta",
+		  "value": "recalled",
 		  "end": {
 			"value": [
-			  "",
-			  "",
+			  "yenrotta",
+			  "attorney",
 			  ""
 			]
 		  }
@@ -1159,7 +1197,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/26/2024",
+	  "release": "9/1/2024",
 	  "clue": {
 		"value": "Severely criticized turning at end of tricky childbirth"
 	  },
@@ -1177,6 +1215,7 @@
 		  "end": {
 			"value": [
 			  "reviled",
+			  "",
 			  ""
 			]
 		  }
@@ -1187,7 +1226,7 @@
 		  "end": {
 			"value": [
 			  "reviled",
-			  "",
+			  "deliver",
 			  ""
 			]
 		  }
@@ -1198,7 +1237,8 @@
 		  "end": {
 			"value": [
 			  "tricky",
-			  "y"
+			  "y",
+			  ""
 			]
 		  }
 		},
@@ -1220,7 +1260,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/25/2024",
+	  "release": "8/31/2024",
 	  "clue": {
 		"value": "List clue she'd anagrammed"
 	  },
@@ -1238,6 +1278,7 @@
 		  "end": {
 			"value": [
 			  "clue she'd",
+			  "",
 			  ""
 			]
 		  }
@@ -1258,6 +1299,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -1281,7 +1323,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/24/2024",
+	  "release": "8/30/2024",
 	  "clue": {
 		"value": "Male dogs check laundry soap"
 	  },
@@ -1299,6 +1341,7 @@
 		  "end": {
 			"value": [
 			  "gent",
+			  "",
 			  ""
 			]
 		  }
@@ -1320,6 +1363,7 @@
 		  "end": {
 			"value": [
 			  "deter",
+			  "",
 			  ""
 			]
 		  }
@@ -1342,7 +1386,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/23/2024",
+	  "release": "8/29/2024",
 	  "clue": {
 		"value": "Daddy's eating last of raw fruit"
 	  },
@@ -1360,6 +1404,7 @@
 		  "end": {
 			"value": [
 			  "papas",
+			  "",
 			  ""
 			]
 		  }
@@ -1381,7 +1426,8 @@
 		  "end": {
 			"value": [
 			  "papas",
-			  "w"
+			  "w",
+			  ""
 			]
 		  }
 		},
@@ -1403,7 +1449,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/22/2024",
+	  "release": "8/28/2024",
 	  "clue": {
 		"value": "Cargo said \"moo!\" in our ears"
 	  },
@@ -1421,6 +1467,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -1437,10 +1484,11 @@
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "lowed",
 		  "end": {
 			"value": [
+			  "load",
 			  "",
 			  ""
 			]
@@ -1464,7 +1512,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/21/2024",
+	  "release": "8/27/2024",
 	  "clue": {
 		"value": "Magic Pan pitches battle"
 	  },
@@ -1482,6 +1530,7 @@
 		  "end": {
 			"value": [
 			  "Magic Pan",
+			  "",
 			  ""
 			]
 		  }
@@ -1502,6 +1551,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -1525,7 +1575,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/20/2024",
+	  "release": "8/26/2024",
 	  "clue": {
 		"value": "Dietary components, including copyright info"
 	  },
@@ -1543,6 +1593,7 @@
 		  "end": {
 			"value": [
 			  "fats",
+			  "",
 			  ""
 			]
 		  }
@@ -1564,7 +1615,8 @@
 		  "end": {
 			"value": [
 			  "fats",
-			  "c"
+			  "c",
+			  ""
 			]
 		  }
 		},
@@ -1586,7 +1638,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/19/2024",
+	  "release": "8/25/2024",
 	  "clue": {
 		"value": "Digests cheese on Friday and Saturday"
 	  },
@@ -1604,6 +1656,7 @@
 		  "end": {
 			"value": [
 			  "brie",
+			  "",
 			  ""
 			]
 		  }
@@ -1613,7 +1666,7 @@
 		  "value": "Friday",
 		  "end": {
 			"value": [
-			  "f",
+			  "F",
 			  "",
 			  ""
 			]
@@ -1624,7 +1677,8 @@
 		  "value": "Saturday",
 		  "end": {
 			"value": [
-			  "s",
+			  "S",
+			  "",
 			  ""
 			]
 		  }
@@ -1647,7 +1701,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/18/2024",
+	  "release": "8/24/2024",
 	  "clue": {
 		"value": "Actor Grant and pair of Athenians identify carved column"
 	  },
@@ -1665,6 +1719,7 @@
 		  "end": {
 			"value": [
 			  "cary",
+			  "",
 			  ""
 			]
 		  }
@@ -1686,6 +1741,7 @@
 		  "end": {
 			"value": [
 			  "id",
+			  "",
 			  ""
 			]
 		  }
@@ -1708,7 +1764,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/17/2024",
+	  "release": "8/23/2024",
 	  "clue": {
 		"value": "Least outgoing member of pushy establishment"
 	  },
@@ -1726,6 +1782,7 @@
 		  "end": {
 			"value": [
 			  "pushy establishment",
+			  "",
 			  ""
 			]
 		  }
@@ -1746,6 +1803,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -1769,7 +1827,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/16/2024",
+	  "release": "8/22/2024",
 	  "clue": {
 		"value": "Sure happy in the end, especially with rent"
 	  },
@@ -1787,7 +1845,8 @@
 		  "end": {
 			"value": [
 			  "happy",
-			  "y"
+			  "y",
+			  ""
 			]
 		  }
 		},
@@ -1808,6 +1867,7 @@
 		  "end": {
 			"value": [
 			  "lease",
+			  "",
 			  ""
 			]
 		  }
@@ -1830,7 +1890,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/15/2024",
+	  "release": "8/21/2024",
 	  "clue": {
 		"value": "Group of lions was snoopy, we hear"
 	  },
@@ -1848,6 +1908,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -1864,10 +1925,11 @@
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "pried",
 		  "end": {
 			"value": [
+			  "pride",
 			  "",
 			  ""
 			]
@@ -1891,7 +1953,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/14/2024",
+	  "release": "8/20/2024",
 	  "clue": {
 		"value": "Swiss cabin fit inside court"
 	  },
@@ -1909,6 +1971,7 @@
 		  "end": {
 			"value": [
 			  "ct",
+			  "",
 			  ""
 			]
 		  }
@@ -1930,7 +1993,8 @@
 		  "end": {
 			"value": [
 			  "ct",
-			  "hale"
+			  "hale",
+			  ""
 			]
 		  }
 		},
@@ -1952,7 +2016,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/13/2024",
+	  "release": "8/19/2024",
 	  "clue": {
 		"value": "Listless doctor becoming more mature about big bill"
 	  },
@@ -1970,6 +2034,7 @@
 		  "end": {
 			"value": [
 			  "dr",
+			  "",
 			  ""
 			]
 		  }
@@ -1991,6 +2056,7 @@
 		  "end": {
 			"value": [
 			  "g",
+			  "",
 			  ""
 			]
 		  }
@@ -2013,7 +2079,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/12/2024",
+	  "release": "8/18/2024",
 	  "clue": {
 		"value": "Oldest person born in early April into baking"
 	  },
@@ -2031,6 +2097,7 @@
 		  "end": {
 			"value": [
 			  "hot",
+			  "",
 			  ""
 			]
 		  }
@@ -2052,7 +2119,8 @@
 		  "end": {
 			"value": [
 			  "hot",
-			  "aries"
+			  "aries",
+			  ""
 			]
 		  }
 		},
@@ -2074,7 +2142,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/11/2024",
+	  "release": "8/17/2024",
 	  "clue": {
 		"value": "Goofs up broadcast from a reporter"
 	  },
@@ -2092,6 +2160,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -2108,10 +2177,11 @@
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "airs",
 		  "end": {
 			"value": [
+			  "errs",
 			  "",
 			  ""
 			]
@@ -2135,7 +2205,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/10/2024",
+	  "release": "8/16/2024",
 	  "clue": {
 		"value": "E.g., breakfast grain ground up"
 	  },
@@ -2153,6 +2223,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -2173,6 +2244,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2196,7 +2268,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/9/2024",
+	  "release": "8/15/2024",
 	  "clue": {
 		"value": "Runner Hugo's content with it in late afternoon"
 	  },
@@ -2214,6 +2286,7 @@
 		  "end": {
 			"value": [
 			  "five",
+			  "",
 			  ""
 			]
 		  }
@@ -2234,6 +2307,7 @@
 		  "value": "it",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2257,7 +2331,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/8/2024",
+	  "release": "8/14/2024",
 	  "clue": {
 		"value": "Produced blooms covered with white powder, say"
 	  },
@@ -2275,6 +2349,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -2291,10 +2366,11 @@
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "synonym",
+		  "value": "covered with white powder",
 		  "end": {
 			"value": [
+			  "floured",
 			  "",
 			  ""
 			]
@@ -2318,7 +2394,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/7/2024",
+	  "release": "8/13/2024",
 	  "clue": {
 		"value": "Financial failure is not entirely peaceful"
 	  },
@@ -2336,12 +2412,13 @@
 		  "end": {
 			"value": [
 			  "f",
+			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "Direct",
+		  "category": "direct",
 		  "value": "is",
 		  "end": {
 			"value": [
@@ -2357,6 +2434,7 @@
 		  "end": {
 			"value": [
 			  "calm",
+			  "",
 			  ""
 			]
 		  }
@@ -2379,7 +2457,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/6/2024",
+	  "release": "8/12/2024",
 	  "clue": {
 		"value": "Throw black goo"
 	  },
@@ -2397,6 +2475,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -2417,6 +2496,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2440,7 +2520,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/5/2024",
+	  "release": "8/11/2024",
 	  "clue": {
 		"value": "Hotel accommodates brief pause with Dee acting as boss"
 	  },
@@ -2458,6 +2538,7 @@
 		  "end": {
 			"value": [
 			  "inn",
+			  "",
 			  ""
 			]
 		  }
@@ -2479,7 +2560,8 @@
 		  "end": {
 			"value": [
 			  "inn",
-			  "comma"
+			  "comma",
+			  ""
 			]
 		  }
 		},
@@ -2501,7 +2583,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/4/2024",
+	  "release": "8/10/2024",
 	  "clue": {
 		"value": "Held by clasp, a designer suit"
 	  },
@@ -2519,6 +2601,7 @@
 		  "end": {
 			"value": [
 			  "clasp, a designer",
+			  "",
 			  ""
 			]
 		  }
@@ -2539,6 +2622,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2562,7 +2646,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/3/2024",
+	  "release": "8/9/2024",
 	  "clue": {
 		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
 	  },
@@ -2580,7 +2664,8 @@
 		  "end": {
 			"value": [
 			  "broken",
-			  "liberal"
+			  "liberal",
+			  ""
 			]
 		  }
 		},
@@ -2600,6 +2685,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2623,7 +2709,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "8/2/2024",
+	  "release": "8/8/2024",
 	  "clue": {
 		"value": "South Mountain, say"
 	  },
@@ -2641,6 +2727,7 @@
 		  "end": {
 			"value": [
 			  "s",
+			  "",
 			  ""
 			]
 		  }
@@ -2661,6 +2748,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2684,7 +2772,7 @@
 	  "source": "Hex"
 	},
 	{
-	  "release": "8/1/2024",
+	  "release": "8/7/2024",
 	  "clue": {
 		"value": "Sounds like Fleetwood Mac frontwoman went after compensation in her hometown"
 	  },
@@ -2701,7 +2789,8 @@
 		  "value": "Sounds like",
 		  "end": {
 			"value": [
-			  "fee nix",
+			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -2723,17 +2812,18 @@
 		  "end": {
 			"value": [
 			  "nicks",
+			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "fee",
 		  "end": {
 			"value": [
-			  "",
-			  "",
+			  "nicks",
+			  "Phoenix",
 			  ""
 			]
 		  }
@@ -2745,7 +2835,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "7/31/2024",
+	  "release": "8/6/2024",
 	  "clue": {
 		"value": "Arizona boomer starts to talk up city situated over Nogales"
 	  },
@@ -2763,6 +2853,7 @@
 		  "end": {
 			"value": [
 			  "talk up city situated over Nogales",
+			  "",
 			  ""
 			]
 		  }
@@ -2783,6 +2874,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2806,7 +2898,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "7/30/2024",
+	  "release": "8/5/2024",
 	  "clue": {
 		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
 	  },
@@ -2824,6 +2916,7 @@
 		  "end": {
 			"value": [
 			  "gab",
+			  "",
 			  ""
 			]
 		  }
@@ -2845,7 +2938,8 @@
 		  "end": {
 			"value": [
 			  "gab liam",
-			  "mailbag"
+			  "mailbag",
+			  ""
 			]
 		  }
 		},
@@ -2867,7 +2961,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/29/2024",
+	  "release": "8/4/2024",
 	  "clue": {
 		"value": "No, fear not traveling between morning and night"
 	  },
@@ -2885,6 +2979,7 @@
 		  "end": {
 			"value": [
 			  "No, fear not",
+			  "",
 			  ""
 			]
 		  }
@@ -2905,6 +3000,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -2928,7 +3024,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/28/2024",
+	  "release": "8/3/2024",
 	  "clue": {
 		"value": "Wearing fewer clothes around Rhode Island is an impediment"
 	  },
@@ -2946,6 +3042,7 @@
 		  "end": {
 			"value": [
 			  "barer",
+			  "",
 			  ""
 			]
 		  }
@@ -2967,7 +3064,8 @@
 		  "end": {
 			"value": [
 			  "barer",
-			  "ri"
+			  "ri",
+			  ""
 			]
 		  }
 		},
@@ -2989,7 +3087,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/27/2024",
+	  "release": "8/2/2024",
 	  "clue": {
 		"value": "Spanish gentlemen taking interest in old people"
 	  },
@@ -3007,6 +3105,7 @@
 		  "end": {
 			"value": [
 			  "senors",
+			  "",
 			  ""
 			]
 		  }
@@ -3028,7 +3127,8 @@
 		  "end": {
 			"value": [
 			  "senors",
-			  "i"
+			  "i",
+			  ""
 			]
 		  }
 		},
@@ -3050,7 +3150,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/26/2024",
+	  "release": "8/1/2024",
 	  "clue": {
 		"value": "Wears out swings, sometimes"
 	  },
@@ -3068,6 +3168,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -3088,6 +3189,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3111,7 +3213,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/25/2024",
+	  "release": "7/31/2024",
 	  "clue": {
 		"value": "Different parent starts late"
 	  },
@@ -3129,6 +3231,7 @@
 		  "end": {
 			"value": [
 			  "mother",
+			  "",
 			  ""
 			]
 		  }
@@ -3149,6 +3252,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3172,7 +3276,7 @@
 	  "source": "Kegler"
 	},
 	{
-	  "release": "7/24/2024",
+	  "release": "7/30/2024",
 	  "clue": {
 		"value": "Starting with a core of knowledge, gain deeper understanding!"
 	  },
@@ -3190,7 +3294,8 @@
 		  "end": {
 			"value": [
 			  "knowledge",
-			  "l"
+			  "l",
+			  ""
 			]
 		  }
 		},
@@ -3210,6 +3315,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3233,7 +3339,7 @@
 	  "source": "Midas"
 	},
 	{
-	  "release": "7/23/2024",
+	  "release": "7/29/2024",
 	  "clue": {
 		"value": "Uranium buried in a neat courtyard"
 	  },
@@ -3250,6 +3356,7 @@
 		  "value": "a",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3272,7 +3379,8 @@
 		  "end": {
 			"value": [
 			  "a trim",
-			  "u"
+			  "u",
+			  ""
 			]
 		  }
 		},
@@ -3294,7 +3402,7 @@
 	  "source": "Hex"
 	},
 	{
-	  "release": "7/22/2024",
+	  "release": "7/28/2024",
 	  "clue": {
 		"value": "Hear Leo's wonky audio receiver"
 	  },
@@ -3312,6 +3420,7 @@
 		  "end": {
 			"value": [
 			  "Hear Leo",
+			  "",
 			  ""
 			]
 		  }
@@ -3332,6 +3441,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3355,7 +3465,7 @@
 	  "source": "Ucaoimhu"
 	},
 	{
-	  "release": "7/21/2024",
+	  "release": "7/27/2024",
 	  "clue": {
 		"value": "Burn prophet, we hear"
 	  },
@@ -3373,6 +3483,7 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
 			  ""
 			]
 		  }
@@ -3389,10 +3500,11 @@
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "homophone",
+		  "value": "seer",
 		  "end": {
 			"value": [
+			  "sear",
 			  "",
 			  ""
 			]
@@ -3416,7 +3528,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "7/20/2024",
+	  "release": "7/26/2024",
 	  "clue": {
 		"value": "Repeatedly retain host"
 	  },
@@ -3434,6 +3546,7 @@
 		  "end": {
 			"value": [
 			  "retain",
+			  "",
 			  ""
 			]
 		  }
@@ -3454,6 +3567,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3477,7 +3591,7 @@
 	  "source": "Fraz"
 	},
 	{
-	  "release": "7/19/2024",
+	  "release": "7/25/2024",
 	  "clue": {
 		"value": "Espresso drink held by hospital attendant"
 	  },
@@ -3495,6 +3609,7 @@
 		  "end": {
 			"value": [
 			  "hospital attendant",
+			  "",
 			  ""
 			]
 		  }
@@ -3515,6 +3630,7 @@
 		  "value": "",
 		  "end": {
 			"value": [
+			  "",
 			  "",
 			  ""
 			]
