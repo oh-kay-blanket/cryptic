@@ -28,6 +28,7 @@ const manageClues = (mode) => {
 		// build clue and solution arrays
 		activeClue.clue.arr = activeClue.clue.value.split("")
 		activeClue.solution.arr = activeClue.solution.value.split("")
+		activeClue.solution.arr = activeClue.solution.arr.filter(ltr => ltr !== " ")
 
 		// trim definitions
 		activeClue.definition = activeClue.definition.filter(def => def !== "")

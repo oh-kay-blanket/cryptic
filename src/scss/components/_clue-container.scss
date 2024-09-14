@@ -30,6 +30,15 @@
 		}
 	}
 
+	.addLetters {
+		color: $lc-secondary--dark;
+		position: fixed;
+
+		.letter {
+			// position: fixed;
+		}
+	}
+
 	.solution {
 		font-family: $lc-font--alt;
 		z-index: 10;
