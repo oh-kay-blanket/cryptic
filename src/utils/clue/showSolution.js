@@ -15,8 +15,8 @@ const showSolution = (activeClue, nextHint) => {
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)				
 			
 			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
-			changeColor(activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
-			changeColor(activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
+			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
+			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
 			break 
 		default: 
 			break 
