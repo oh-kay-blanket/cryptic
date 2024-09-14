@@ -9,7 +9,7 @@ import showSolution from '../utils/clue/showSolution'
 import addLetters from '../utils/clue/addLetters'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hintColor, setHintColor }) => {
 	
 	// clue letter refs
 	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef()))
@@ -52,20 +52,20 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 				case 'definition':
 					return underlineLetters(activeClue.hints[nextHint].ref)
 				case 'indicator': 
+					setHintColor(prevHintColor => prevHintColor +1)
 					switch(activeClue.hints[nextHint].category) {
 						case 'anagram':
 							console.log('anagram')
-							return highlightLetters(activeClue.hints[nextHint].ref), changeColor(activeClue.hints[nextHint].end.ref)
+							return highlightLetters(hintColor, activeClue.hints[nextHint].ref), changeColor(hintColor, activeClue.hints[nextHint].end.ref)
 						default:
-							return highlightLetters(activeClue.hints[nextHint].ref), changeColor(activeClue.hints[nextHint].end.ref)
+							return highlightLetters(hintColor, activeClue.hints[nextHint].ref), changeColor(hintColor, activeClue.hints[nextHint].end.ref)
 					}
 				case 'solution':
 					return showSolution(activeClue, nextHint)
 				default: 
 					return false
-				}
+			}
 		}
-
 	}, [showMessage])
 
 	// clue HTML

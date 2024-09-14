@@ -122,7 +122,6 @@ const manageClues = (mode) => {
 		}
 
 		activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
-
 	}
 
 	useEffect(() => {
