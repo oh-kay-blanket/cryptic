@@ -50,7 +50,7 @@
 		align-items: flex-end;
 		justify-content: space-between;
 		margin: .5rem 0;
-		padding: 1rem .75rem;
+		padding: 15px .75rem;
 		border: 1px solid $lc-gray--dark;
 		overflow: hidden;
 		border-radius: .5rem;
@@ -76,6 +76,7 @@
 			line-height: 1;
 			font-size: 14px;
 			flex-shrink: 10;
+			padding: 2px 0;
 		}
 	
 		.tile-source {

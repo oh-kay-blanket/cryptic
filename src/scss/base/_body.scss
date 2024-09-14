@@ -1,4 +1,5 @@
 @use './var' as *;
+@use './media' as *;
 
 html, body, #root {
     height: 100%;
@@ -6,6 +7,10 @@ html, body, #root {
 	font-size: 18px;
 	overflow: hidden;
 	margin: 0;
+
+	@include desktop {
+		font-size: 20px;
+	}
 }
 
 * {

@@ -15,7 +15,7 @@ import manageInput from './utils/manageInput'
 const App = () => {
 
 	// set mode & clue
-	const [mode, setMode] = useState('title');
+	const [mode, setMode] = useState('archive');
 	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = manageClues(mode)	
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
