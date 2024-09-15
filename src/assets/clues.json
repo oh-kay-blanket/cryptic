@@ -644,7 +644,7 @@
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "never mentioned",
+		  "value": "is never mentioned",
 		  "end": {
 			"value": [
 			  "uncited",
@@ -707,7 +707,7 @@
 	  "hints": [
 		{
 		  "category": "particle",
-		  "value": "middle",
+		  "value": "middle of",
 		  "end": {
 			"value": [
 			  "season",

@@ -57,16 +57,21 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 				case 'indicator': 
 					setHintColor(prevHintColor => prevHintColor +1)
 					switch(activeClue.hints[nextHint].category) {
-						case 'anagram':
-							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
-							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
-							break
-						case 'synonym':
 						case 'charade':
 						case 'symbol':
+						case 'synonym':
 							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
 							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
 							break
+						case 'direct':
+							changeColor(hintColor, activeClue.hints[nextHint].ref, '#ccc')
+							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							break
+						case 'initialism':
+							changeColor(hintColor, activeClue.hints[nextHint].ref, '#ccc')
+							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							break
+						case 'anagram':
 						case 'particle':
 							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
 							changeColor(hintColor, activeClue.hints[nextHint].end.ref, '#ccc')
@@ -91,9 +96,11 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
 
 	// addLetters HTML
-	const addInsert = activeClue.hints.map(hint => {
+	const addInsert = activeClue.hints.map((hint, index) => {
 			if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
-				return hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
+				const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
+
+				return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}</span>
 			}
 		}
 	)

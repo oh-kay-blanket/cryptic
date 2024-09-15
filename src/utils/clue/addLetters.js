@@ -30,6 +30,7 @@ const addLetters = (activeClue, hint) => {
 
 		if (hint.addLetters.value) {
 			hint.addLetters.ref = useRef(hint.addLetters.value.map(() => createRef()))
+			hint.addLetters.wordRef = useRef()
 		}
 	}
 }
