@@ -49,21 +49,40 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 
 		if (showMessage && !checkAns) {
 			switch(activeClue.hints[nextHint].type) {
+
 				case 'definition':
-					return underlineLetters(activeClue.hints[nextHint].ref)
+					underlineLetters(activeClue.hints[nextHint].ref)
+					break
+
 				case 'indicator': 
 					setHintColor(prevHintColor => prevHintColor +1)
 					switch(activeClue.hints[nextHint].category) {
 						case 'anagram':
-							console.log('anagram')
-							return highlightLetters(hintColor, activeClue.hints[nextHint].ref), changeColor(hintColor, activeClue.hints[nextHint].end.ref)
+							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
+							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
+							break
+						case 'synonym':
+						case 'charade':
+						case 'symbol':
+							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
+							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							break
+						case 'particle':
+							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
+							changeColor(hintColor, activeClue.hints[nextHint].end.ref, '#ccc')
+							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							break
 						default:
-							return highlightLetters(hintColor, activeClue.hints[nextHint].ref), changeColor(hintColor, activeClue.hints[nextHint].end.ref)
+							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
+							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
+							break
 					}
+					break
 				case 'solution':
-					return showSolution(activeClue, nextHint)
+					showSolution(activeClue, nextHint, hintColor)
+					break
 				default: 
-					return false
+					break
 			}
 		}
 	}, [showMessage])
@@ -73,7 +92,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 
 	// addLetters HTML
 	const addInsert = activeClue.hints.map(hint => {
-			if (hint.type == 'indicator' && !!hint.addLetters) {
+			if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
 				return hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
 			}
 		}
