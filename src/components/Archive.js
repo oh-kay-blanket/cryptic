@@ -5,7 +5,7 @@ import d2 from '../assets/img/difficulty/2.svg';
 import d3 from '../assets/img/difficulty/3.svg';
 import d4 from '../assets/img/difficulty/4.svg';
 
-const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
+const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns, setHintColor }) => {
 
 
 	let tilesRef = useRef(clues.map(() => createRef()))
@@ -13,6 +13,7 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 	const handleClick = (e) => {
 		setclueId(e.current.id)
 		setInput([])
+		setHintColor(0)
 		setCheckAns(false)
 		setMode('playing')
 	}

@@ -36,6 +36,7 @@ const App = () => {
 				setNextHint={setNextHint}
 				setclueId={setclueId}
 				setInput={setInput}
+				setHintColor={setHintColor}
 			/>
 			{ mode == 'archive' &&
 				<>
@@ -46,6 +47,7 @@ const App = () => {
 						completedClues={completedClues}
 						setInput={setInput}
 						setCheckAns={setCheckAns}
+						setHintColor={setHintColor}
 					/>
 				</>
 			}
@@ -75,6 +77,7 @@ const App = () => {
 						setInput={setInput}
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
+						setHintColor={setHintColor}
 					/>
 				</>
 			}

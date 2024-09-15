@@ -17,7 +17,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	const continueButton = [
 		{
 			name: 'Continue',
-			style: 'gray',
+			style: 'secondary',
 			onClick: function(){
 				setShowMessage(false)
 				!checkAns && setNextHint(nextHint + 1)
