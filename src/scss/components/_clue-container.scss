@@ -32,12 +32,15 @@
 
 	.addLetters {
 		position: fixed;
-		
-		.letter {
-			color: transparent;
-			opacity: 0;
-			transition: opacity .5s ease;
-			// position: fixed;
+
+		.word {
+			
+			.letter {
+				color: transparent;
+				opacity: 0;
+				transition: opacity .5s ease;
+				// position: fixed;
+			}
 		}
 	}
 

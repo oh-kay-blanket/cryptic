@@ -3,8 +3,6 @@ import changeColor from './changeColor'
 import removeSpecial from "./removeSpecialChar"
 
 const showSolution = (activeClue, nextHint, hintColor) => {
-
-	console.log('showing solution')
 		
 	switch(activeClue.hints[nextHint-1].category) { 
 		case 'anagram':

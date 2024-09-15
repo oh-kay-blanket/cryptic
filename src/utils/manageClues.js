@@ -84,8 +84,8 @@ const manageClues = (mode) => {
 								return `<strong>${hint.value}</strong> indicates there is a homophone`
 
 							// indicate and reveal
-							} else if (hint.end.value.length == 2) {
-								return `<strong>${hint.end.value[0]}</strong> is a homophone for <strong>${hint.end.value[1]}</strong>`
+							} else if (hint.end.value.length == 1) {
+								return `<strong>${hint.value}</strong> is a homophone for <strong>${hint.end.value[0]}</strong>`
 							
 							// multiple end points
 							} else {
