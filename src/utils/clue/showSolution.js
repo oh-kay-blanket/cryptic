@@ -17,7 +17,9 @@ const showSolution = (activeClue, nextHint, hintColor) => {
 			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
 			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
 			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
-			break 
+			break
+		case 'initialism':
+			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref, '#ccc')
 		default: 
 			break 
 	}

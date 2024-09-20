@@ -1,8 +1,6 @@
 // remove special characters from ref
 
 const removeSpecial = (charArr) => {
-
-	console.log(charArr)
 	
 	const specialChar = [' ', ',', '-', '_', ':', ':', '"', "'"]
 

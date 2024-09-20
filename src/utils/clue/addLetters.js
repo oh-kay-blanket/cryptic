@@ -1,6 +1,4 @@
-import  { useRef, createRef } from 'react'
-
-import removeSpecial from './removeSpecialChar'
+import { useRef, createRef } from 'react'
 
 // adds letters that will be needed as either duplicates or are not within the original clue
 const addLetters = (activeClue, hint) => {
