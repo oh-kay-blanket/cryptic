@@ -7,6 +7,7 @@ import highlightLetters from '../utils/clue/highlightLetters'
 import changeColor from '../utils/clue/changeColor'
 import showSolution from '../utils/clue/showSolution'
 import addLetters from '../utils/clue/addLetters'
+import getLines from '../utils/clue/getLines'
 
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hintColor, setHintColor }) => {
@@ -41,6 +42,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 	
 	// look for position once set
 	useEffect(() => {
+		activeClue.clue.lines = getLines(activeClue.clue.ref.current)		
 		fixLetters(activeClue)
 	}, []);
 	
@@ -56,6 +58,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 
 				case 'indicator': 
 					setHintColor(prevHintColor => prevHintColor +1)
+					
 					switch(activeClue.hints[nextHint].category) {
 						case 'charade':
 						case 'symbol':
@@ -68,7 +71,8 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'initialism':
-							changeColor(hintColor, activeClue.hints[nextHint].ref, '#ccc')
+							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
+							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
 							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'anagram':
