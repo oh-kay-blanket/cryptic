@@ -12,33 +12,25 @@ import getLines from '../utils/clue/getLines'
 
 const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hintColor, setHintColor }) => {
 	
-	// clue letter refs
-	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef()))
-
+	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef())) // clue letter refs
+	activeClue.clue.sectionRef = useRef() // clue section ref
+	activeClue.solution.ref = useRef(activeClue.solution.arr.map(() => createRef())) // solution letter refs
+	activeClue.solution.sectionRef = useRef() // solution section ref
+	activeClue.solution.length.ref = useRef() // solution length ref
+	
 	// hint target refs
 	activeClue.hints.forEach(hint => {
-
+		
 		// add extra letters needed
 		addLetters(activeClue, hint)
-
+		
 		// indicator letters
-		hint.ref = getTargetLetters(hint, activeClue)
-
+		hint.ref = getTargetLetters(hint.value, activeClue, hint)
+		
 		// indicator end letters
-		if (!!hint.end) {hint.end.ref = getTargetLetters(hint.end, activeClue)}
+		if (!!hint.end) {hint.end.ref = getTargetLetters(hint.end.value, activeClue, hint)}
 	})
-
-	// clue section ref
-	activeClue.clue.sectionRef = useRef()
-
-	// solution letter refs
-	activeClue.solution.ref = useRef(activeClue.solution.arr.map(() => createRef()))
-
-	// solution section ref
-	activeClue.solution.sectionRef = useRef()
-
-	// solution length ref
-	activeClue.solution.length.ref = useRef()
+	
 	
 	// look for position once set
 	useEffect(() => {

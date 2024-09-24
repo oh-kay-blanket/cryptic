@@ -18,21 +18,30 @@ const Title = ({ setMode, clues, setclueId }) => {
 		const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
 
 		return d1.getTime() === d2.getTime()
-	}).id
+	})
 
 	// buttons
-	const btnArr = [
+	const btnArr = todayClue ? [
 		{
 			name: "Today's clue",
 			style: 'primary',
 			onClick: function() {
-				setclueId(todayClue)
+				setclueId(todayClue.id)
 				setMode('playing')
 			}
 		},
 		{
 			name: "All clues",
 			style: 'secondary',
+			onClick: function() {
+				setMode('archive')
+			}
+		},
+	] :
+	[
+		{
+			name: "View clues",
+			style: 'primary',
 			onClick: function() {
 				setMode('archive')
 			}
