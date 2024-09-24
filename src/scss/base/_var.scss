@@ -1,12 +1,19 @@
 // Main colors
-$lc-primary: #B0D236;
-$lc-primary--dark: #648000;
-$lc-secondary: #F1AB7F;
-$lc-secondary--dark: #C94F03;
-$lc-secondary--light: #FFCBAB;
+// $lc-primary: #B0D236;
+// $lc-primary--dark: #648000;
+// $lc-secondary: #F1AB7F;
+// $lc-secondary--dark: #C94F03;
+// $lc-secondary--light: #FFCBAB;
 
-$lc-hint0: $lc-secondary;
-$lc-hint0--dark: $lc-secondary--dark;
+$lc-primary: #F1AB7F;
+$lc-primary--light: #FFCBAB;
+$lc-primary--dark: #C94F03;
+$lc-secondary: #e1d8ff;
+$lc-secondary--dark: #7457d6;
+$lc-secondary--light: #e1d8ff;
+
+$lc-hint0: $lc-primary;
+$lc-hint0--dark: $lc-primary--dark;
 $lc-hint1: #e1d8ff;
 $lc-hint1--dark: #7457d6;
 $lc-hint2: #febde3;

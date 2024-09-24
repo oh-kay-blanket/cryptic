@@ -19,6 +19,8 @@ const changeColor = (hintColor, toChange, color = false) => {
 		}
 	}
 
+	// console.log(toChange)
+
 	toChange.forEach( ref => {
 		ref.current.style.color = getHex()
 		ref.current.style.opacity = 1;
