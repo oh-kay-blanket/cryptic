@@ -72,7 +72,7 @@ const manageClues = (mode) => {
 						case 'container':
 							return `<strong>${hint.value}</strong>, indicates <strong>${hint.end.value[1]}</strong>, will go inside <strong>${hint.end.value[0]}</strong>`
 						case 'deletion':
-							return `<strong>${hint.value}</strong>, indicates a deletion on <strong>${hint.end.value[0]}</strong>, giving us <strong>${hint.end.value[1]}</strong>`
+							return `<strong>${hint.value}</strong>, indicates a deletion on <strong>${hint.end.value[0]}</strong>, making <strong>${hint.end.value[1]}</strong>`
 						case 'direct':
 							return `<strong>${hint.value}</strong> is part of the answer`
 						case 'hidden word':
@@ -92,17 +92,17 @@ const manageClues = (mode) => {
 								return `<strong>${hint.end.value[0]}</strong> + <strong>${hint.end.value[1]}</strong> = <strong>${hint.end.value[2]}</strong>`
 							}
 						case 'initialism':
-							return `<strong>${hint.value}</strong> indicates we should take the beginning of one or more words`
+							return `<strong>${hint.value}</strong> indicates the beginning of one or more words`
 						case 'letter bank':
 							return `<strong>${hint.value}</strong> indicates <strong>${hint.end.value[0]}</strong> is a letter bank<br><em class='helper'>(an anagram where letters can be used more than once)</em>`
 						case 'particle':
-							return `<strong>${hint.value}</strong>, when applied to <strong>${hint.end.value[0]}</strong>, can give us <strong>${hint.end.value[1]}</strong>`
+							return `<strong>${hint.value}</strong>, when applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
 						case 'reversal':
-							return `<strong>${hint.value[0]}</strong>, indicates a reversal on <strong>${hint.end.value[1]}</strong>, giving us <strong>${hint.end.value[2]}</strong>`
+							return `<strong>${hint.value[0]}</strong>, indicates a reversal on <strong>${hint.end.value[1]}</strong>, making it <strong>${hint.end.value[2]}</strong>`
 						case 'synonym':
 							return `Another word for <strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						case 'symbol':
-							return `<strong>${hint.value}</strong> can give us <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						default:
 							// One end point
 							if (hint.end.value.length == 1) {
