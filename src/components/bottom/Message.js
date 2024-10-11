@@ -29,7 +29,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	const clueEndButton = [
 		{
 			name: 'Play more',
-			style: isCorrectAns() ? 'gray' : 'primary',
+			style: isCorrectAns() ? 'gray' : 'secondary',
 			onClick: function(){
 				addCompletedClue(activeClue.id)
 				setShowMessage(false)

@@ -1,11 +1,11 @@
-import React, { useRef, createRef, useEffect } from 'react'
+import React, { useRef, createRef } from 'react'
 
 import d1 from '../assets/img/difficulty/1.svg';
 import d2 from '../assets/img/difficulty/2.svg';
 import d3 from '../assets/img/difficulty/3.svg';
 import d4 from '../assets/img/difficulty/4.svg';
 
-const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns, setHintColor }) => {
+const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
 
 
 	let tilesRef = useRef(clues.map(() => createRef()))
@@ -13,7 +13,6 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 	const handleClick = (e) => {
 		setclueId(e.current.id)
 		setInput([])
-		setHintColor(0)
 		setCheckAns(false)
 		setMode('playing')
 	}
@@ -77,7 +76,7 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
 				<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
 				<span className='tile-name'>{clue.clue.value}</span>
-				<span className='tile-source'>{clue.source}</span>
+				<span className='tile-source'>{clue.source.value}</span>
 			</div>
 		</div>
 		)

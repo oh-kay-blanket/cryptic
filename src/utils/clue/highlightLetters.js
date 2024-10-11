@@ -1,28 +1,21 @@
 
 // moves letters from movementLettersRef to solutionLettersRef
-const highlightLetters = (hintColor, indicatedLettersRef, color = false) => {
+const highlightLetters = (indicatedLettersRef, color = false, recheck) => {
 
 	const getHex = () => {
 		if (color) {
 			return color
 		} else {
-			switch(hintColor) {
-				case 0:
-					return '#FFCBAB'
-				case 1:
-					return '#e1d8ff'
-				case 2:
-					return '#febde3'
-				case 3:
-					return '#bcdbfb'
-				default: 
-					return '#FFCBAB'
-			}
+			return '#FFCBAB'
 		}
 	}
 	
 	indicatedLettersRef.forEach( ref => {
-		ref.current.style.backgroundColor = getHex()
+		if (recheck) {
+			if (ref.current.style.backgroundColor == 'rgb(255, 203, 171)') ref.current.style.backgroundColor = '#E2E2E2'
+		} else {
+			ref.current.style.backgroundColor = getHex()
+		}
 	})
 
 }

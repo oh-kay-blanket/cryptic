@@ -50,7 +50,7 @@ const fixLetters = (activeClue) => {
 	// Fix hint letters //
 	//
 
-	const fixHints = (hint) => {
+	const fixHints = (hint) => { 
 
 		const placeRelational = (type, hint) => {
 
@@ -160,15 +160,15 @@ const fixLetters = (activeClue) => {
 			case 'symbol':
 			case 'homophone':
 				// Place hint letters adjacent to other
-				placeRelational('adjacent', hint)
+				// placeRelational('adjacent', hint)
 				break
-			case 'anagram':
-			case 'particle':
-			case 'letter bank':
-			case 'direct':
+			// case 'anagram':
+			// case 'particle':
+			// case 'letter bank':
+			// case 'direct':
 			case 'hidden word':
 			case 'initialism':
-			case 'reversal':
+			// case 'reversal':
 				// Place hint letters over other
 				placeRelational('overlay', hint)
 				break

@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../assets/img/lc-logo2.png';
 
-const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput, setHintColor }) => {
+const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput }) => {
 
 	const clickTitle = () => {
 		setShowMessage(false)
@@ -9,7 +9,6 @@ const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput, set
 		setMode('title')
 		setclueId()
 		setInput([])
-		setHintColor(0)
 	}
 
   return(

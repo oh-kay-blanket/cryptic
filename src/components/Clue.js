@@ -10,16 +10,17 @@ import addLetters from '../utils/clue/addLetters'
 import getLines from '../utils/clue/getLines'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hintColor, setHintColor }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
 	
 	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef())) // clue letter refs
 	activeClue.clue.sectionRef = useRef() // clue section ref
 	activeClue.solution.ref = useRef(activeClue.solution.arr.map(() => createRef())) // solution letter refs
 	activeClue.solution.sectionRef = useRef() // solution section ref
 	activeClue.solution.length.ref = useRef() // solution length ref
+	activeClue.source.ref = useRef() // source ref
 	
 	// hint target refs
-	activeClue.hints.forEach(hint => {
+	activeClue.hints.forEach(hint => { 
 		
 		// add extra letters needed
 		addLetters(activeClue, hint)
@@ -42,6 +43,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 	useEffect(() => {
 
 		if (showMessage && !checkAns) {
+
 			switch(activeClue.hints[nextHint].type) {
 
 				case 'definition':
@@ -49,41 +51,50 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 					break
 
 				case 'indicator': 
-					setHintColor(prevHintColor => prevHintColor +1)
-					
 					switch(activeClue.hints[nextHint].category) {
 						case 'charade':
 						case 'symbol':
 						case 'synonym':
-							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
-							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							highlightLetters(activeClue.hints[nextHint].ref)
+							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'direct':
-							changeColor(hintColor, activeClue.hints[nextHint].ref, '#ccc')
-							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							changeColor(activeClue.hints[nextHint].ref, '#ccc')
+							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'initialism':
-							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
-							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
-							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							highlightLetters(activeClue.hints[nextHint].ref)
+							changeColor(activeClue.hints[nextHint].end.ref)
+							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'anagram':
 						case 'particle':
-							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
-							changeColor(hintColor, activeClue.hints[nextHint].end.ref, '#ccc')
-							changeColor(hintColor, activeClue.hints[nextHint].addLetters.ref.current)
+							highlightLetters(activeClue.hints[nextHint].ref)
+							changeColor(activeClue.hints[nextHint].end.ref, '#ccc')
+							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						default:
-							highlightLetters(hintColor, activeClue.hints[nextHint].ref)
-							changeColor(hintColor, activeClue.hints[nextHint].end.ref)
+							highlightLetters(activeClue.hints[nextHint].ref)
+							changeColor(activeClue.hints[nextHint].end.ref)
 							break
 					}
 					break
 				case 'solution':
-					showSolution(activeClue, nextHint, hintColor)
+					showSolution(activeClue, nextHint)
 					break
 				default: 
 					break
+			}
+		} else if (!showMessage) {
+			// change last hint to gray
+			if (nextHint > 1){
+				try {
+					highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)
+					changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
+					changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
+				} catch(err) {
+					console.log(err)
+				}
 			}
 		}
 	}, [showMessage])
@@ -96,7 +107,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 			if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
 				const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
 
-				return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}</span>
+				return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
 			}
 		}
 	)
@@ -106,13 +117,19 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, hin
 
 	// solution length
 	const solLength = <span id='solLengthRef' ref={activeClue.solution.length.ref} className='solution-letters'>&nbsp;{activeClue.solution.length.value}</span>
-	
+
+	// source HTML
+	const sourceInsert = activeClue.source.href ? 
+		<a target='_blank' href={activeClue.source.href} >{activeClue.source.value}</a> : <span>{activeClue.source.value}</span>
 
 	return(
 		<div id='clue-container' className='clue container'>
 			<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>{clueInsert} {solLength}</div>
 			<div className='addLetters'>{addInsert}</div>
-			<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
+			<div style={{position:'relative'}}>
+				<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
+				<div id='sourceRef' ref={activeClue.source.ref} className='source'>by {sourceInsert}</div>
+			</div>
 		</div>
 	)
 }
