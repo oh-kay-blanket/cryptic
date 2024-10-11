@@ -17,7 +17,7 @@ const App = () => {
 	// set mode & clue
 	const [mode, setMode] = useState('archive');
 	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = manageClues(mode)	
-	let { nextHint, setNextHint, showMessage, setShowMessage, hintColor, setHintColor } = manageHints(activeClue, setCheckAns)
+	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
 
@@ -36,7 +36,6 @@ const App = () => {
 				setNextHint={setNextHint}
 				setclueId={setclueId}
 				setInput={setInput}
-				setHintColor={setHintColor}
 			/>
 			{ mode == 'archive' &&
 				<>
@@ -47,7 +46,6 @@ const App = () => {
 						completedClues={completedClues}
 						setInput={setInput}
 						setCheckAns={setCheckAns}
-						setHintColor={setHintColor}
 					/>
 				</>
 			}
@@ -60,8 +58,6 @@ const App = () => {
 						showMessage={showMessage}
 						input={input}
 						checkAns={checkAns}
-						hintColor={hintColor}
-						setHintColor={setHintColor}
 					/>
 					<Bottom
 						showMessage={showMessage}
@@ -77,7 +73,6 @@ const App = () => {
 						setInput={setInput}
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
-						setHintColor={setHintColor}
 					/>
 				</>
 			}

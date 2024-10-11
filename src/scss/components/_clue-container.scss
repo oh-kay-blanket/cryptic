@@ -32,8 +32,8 @@
 
 	.addLetters {
 		position: fixed;
-		// left: 50%;
-		// transform: translateX(-50%);
+		left: 50%;
+		transform: translateX(-50%);
 
 		.word {
 			// margin: 0 4px;
@@ -92,5 +92,14 @@
 			opacity: 1;
 			transition: opacity $lc-transition--short ease;
 		}
+	}
+
+	.source {
+		position: absolute;
+		top: 60px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 14px;
+		font-family: $lc-font--sans;
 	}
 }

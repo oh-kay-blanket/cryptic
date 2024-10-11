@@ -2,7 +2,7 @@ import moveLetters from "./moveLetters"
 import changeColor from './changeColor'
 import removeSpecial from "./removeSpecialChar"
 
-const showSolution = (activeClue, nextHint, hintColor) => {
+const showSolution = (activeClue, nextHint) => {
 		
 	switch(activeClue.hints[nextHint-1].category) { 
 		case 'anagram':
@@ -15,11 +15,11 @@ const showSolution = (activeClue, nextHint, hintColor) => {
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)				
 			
 			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
-			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
-			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
+			changeColor(activeClue.hints[nextHint-1].end.ref.splice(0, solIndex), '#ccc')
+			changeColor(activeClue.hints[nextHint-1].end.ref.splice(activeClue.solution.arr.length), '#ccc')
 			break
 		case 'initialism':
-			changeColor(hintColor, activeClue.hints[nextHint-1].end.ref, '#ccc')
+			changeColor(activeClue.hints[nextHint-1].end.ref, '#ccc')
 		default: 
 			break 
 	}
