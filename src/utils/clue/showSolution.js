@@ -24,13 +24,19 @@ const showSolution = (activeClue, nextHint) => {
 			break 
 	}
 	
-	// reveal solution large
-	const revealSolutionLarge = () => {
+	// reveal solution
+	const revealSolution = () => {
 		activeClue.solution.sectionRef.current.classList.add('hide-input')
 		activeClue.solution.sectionRef.current.classList.add('reveal-solution')
 	}
 
-	setTimeout(revealSolutionLarge, 4000)
+	// reveal solution
+	const revealSource = () => {
+		activeClue.source.ref.current.classList.add('show')
+	}
+
+	setTimeout(revealSolution, 2000)
+	setTimeout(revealSource, 2200)
 }
 
 export default showSolution
