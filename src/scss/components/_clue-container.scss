@@ -95,11 +95,18 @@
 	}
 
 	.source {
+		opacity: 0;
+		transition: opacity $lc-transition--short ease;
 		position: absolute;
 		top: 60px;
 		left: 50%;
 		transform: translateX(-50%);
 		font-size: 14px;
 		font-family: $lc-font--sans;
+
+		&.show {
+			opacity: 1;
+			transition: opacity $lc-transition--short ease;
+		}
 	}
 }
