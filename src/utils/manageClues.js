@@ -92,6 +92,8 @@ const manageClues = (mode) => {
 					}
 				case 'indicator':
 					switch(hint.category) {
+						case 'anagram':
+							return `<strong>${hint.value}</strong> indicates an anagram`
 						case 'charade':
 							return `<strong>${hint.value}</strong> can give us <strong>${hint.end.value[0]}</strong>`
 						case 'container':
