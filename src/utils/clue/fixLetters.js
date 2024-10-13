@@ -105,7 +105,6 @@ const fixLetters = (activeClue) => {
 
 					// can use word ref to find match
 					} else {
-						console.log(anchor)
 						
 						if (!anchor) {
 							// get new anchor
@@ -118,7 +117,7 @@ const fixLetters = (activeClue) => {
 						
 						// get index of overlay word within anchor
 						let anchorIndex = 0
-						if (hint.category !== 'anagram' || hint.category !== 'reversal') anchorIndex = hint.end.value[0].indexOf(hint.end.value[1])
+						// if (hint.category !== 'anagram' || hint.category !== 'reversal') anchorIndex = hint.end.value[0].indexOf(hint.end.value[1])
 						
 						console.log(anchor, moving)
 						
@@ -162,14 +161,14 @@ const fixLetters = (activeClue) => {
 				// Place hint letters adjacent to other
 				// placeRelational('adjacent', hint)
 				break
-			// case 'anagram':
+			case 'anagram':
 			// case 'particle':
 			// case 'letter bank':
 			// case 'direct':
-			case 'hidden word':
-			case 'initialism':
+			// case 'hidden word':
+			// case 'initialism':
 			// case 'reversal':
-				// Place hint letters over other
+			// 	// Place hint letters over other
 				placeRelational('overlay', hint)
 				break
 		}

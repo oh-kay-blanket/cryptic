@@ -68,7 +68,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 						case 'initialism':
 							highlightLetters(activeClue.hints[nextHint].ref)
 							changeColor(activeClue.hints[nextHint].end.ref)
-							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
+							// changeColor(activeClue.hints[nextHint].addLetters.ref.current)
 							break
 						case 'anagram':
 						case 'particle':
@@ -105,9 +105,8 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 
 	// type HTML
 	const pillList = activeClue.type.map((t, index) => <li key={index} className='type-pill'>{t}</li>)
-
 	const typeInsert = showType ? <><li onClick={()=>setShowType(false)}><img src={eyeClosed}/></li>{pillList}</> : 
-		<li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li>
+		<><li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li><li className='type-text' onClick={()=>setShowType(true)}>See type</li></>
 
 	// clue HTML
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
