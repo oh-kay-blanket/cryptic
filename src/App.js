@@ -16,6 +16,7 @@ const App = () => {
 
 	// set mode & clue
 	const [mode, setMode] = useState('archive');
+	const [showType, setShowType] = useState(true);
 	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = manageClues(mode)	
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
@@ -58,6 +59,8 @@ const App = () => {
 						showMessage={showMessage}
 						input={input}
 						checkAns={checkAns}
+						showType={showType}
+						setShowType={setShowType}
 					/>
 					<Bottom
 						showMessage={showMessage}

@@ -35,8 +35,8 @@ const showSolution = (activeClue, nextHint) => {
 		activeClue.source.ref.current.classList.add('show')
 	}
 
-	setTimeout(revealSolution, 2000)
-	setTimeout(revealSource, 2200)
+	revealSolution()
+	setTimeout(revealSource, 1000)
 }
 
 export default showSolution

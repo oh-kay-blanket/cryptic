@@ -1,4 +1,4 @@
-import React, { useRef, createRef, useEffect } from 'react'
+import React, { useState, useRef, createRef, useEffect } from 'react'
 
 import getTargetLetters from '../utils/clue/getTargetLetters'
 import fixLetters from '../utils/clue/fixLetters'
@@ -9,8 +9,11 @@ import showSolution from '../utils/clue/showSolution'
 import addLetters from '../utils/clue/addLetters'
 import getLines from '../utils/clue/getLines'
 
+import eyeOpen from '../assets/img/eye--open.svg';
+import eyeClosed from '../assets/img/eye--closed.svg';
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) => {
+
+const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, showType, setShowType }) => {
 	
 	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef())) // clue letter refs
 	activeClue.clue.sectionRef = useRef() // clue section ref
@@ -99,6 +102,13 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 		}
 	}, [showMessage])
 
+
+	// type HTML
+	const pillList = activeClue.type.map((t, index) => <li key={index} className='type-pill'>{t}</li>)
+
+	const typeInsert = showType ? <><li onClick={()=>setShowType(false)}><img src={eyeClosed}/></li>{pillList}</> : 
+		<li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li>
+
 	// clue HTML
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
 
@@ -124,6 +134,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns }) =
 
 	return(
 		<div id='clue-container' className='clue container'>
+			<ul className='type'>{typeInsert}</ul>
 			<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>{clueInsert} {solLength}</div>
 			<div className='addLetters'>{addInsert}</div>
 			<div style={{position:'relative'}}>
