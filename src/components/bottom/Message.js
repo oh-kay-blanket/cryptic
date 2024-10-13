@@ -55,7 +55,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 
 	return(
 		<div className={`message ${messageStyle}`}>
-			<div className={'message-copy'} dangerouslySetInnerHTML={{__html: message}}/>
+			{message && <div className={'message-copy'} dangerouslySetInnerHTML={{__html: message}}/>}
 			<ButtonContainer
 				btnArr={messageButton}
 				isSolution={isSolution}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, act } from 'react'
 
 import clues from '../assets/clues.json';
 
@@ -30,25 +30,13 @@ const manageClues = (mode) => {
 		activeClue.solution.arr = activeClue.solution.value.split("")
 		activeClue.solution.arr = activeClue.solution.arr.filter(ltr => ltr !== " ")
 
+		// build type array
+		activeClue.type = activeClue.type.split(', ')
+
 		// trim definitions
 		activeClue.definition = activeClue.definition.filter(def => def !== "")
 
-		// trim hints
-		activeClue.hints = activeClue.hints.filter(hint => hint.category !== "" && hint.value !== "")
-		
-		// trim indicator ends
-		activeClue.hints.forEach(hint => {
-			if (hint.end) hint.end.value = hint.end.value.filter(val => val !== "")
-		})
-
-		// add type
-		activeClue.hints.map(hint => hint.type = 'indicator')
-
-		// build hints //
-		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
-		activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
-
-		// hint source
+		// clue source
 		switch(activeClue.source.value) {
 			case 'Fraz':
 				activeClue.source.href = 'https://www.theglobeandmail.com/puzzles-and-crosswords/article-how-to-solve-the-cryptic-crossword-fraser-simson/'
@@ -69,6 +57,21 @@ const manageClues = (mode) => {
 				activeClue.source.href = false
 				break
 		}
+
+		// trim hints
+		activeClue.hints = activeClue.hints.filter(hint => hint.category !== "" && hint.value !== "")
+		
+		// trim indicator ends
+		activeClue.hints.forEach(hint => {
+			if (hint.end) hint.end.value = hint.end.value.filter(val => val !== "")
+		})
+
+		// add hint type
+		activeClue.hints.map(hint => hint.type = 'indicator')
+
+		// build hints //
+		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
+		activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
 
 		// hint message
 		const getMessage = hint => {
@@ -98,12 +101,12 @@ const manageClues = (mode) => {
 						case 'direct':
 							return `<strong>${hint.value}</strong> is part of the answer`
 						case 'hidden word':
-							return `<strong>${hint.value}</strong> indicates a hidden word within <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong> indicates a hidden word`
 						case 'homophone':
 
 							// indicator only
 							if (hint.end.value.length == 0) {
-								return `<strong>${hint.value}</strong> indicates there is a homophone`
+								return `<strong>${hint.value}</strong> indicates a homophone`
 
 							// indicate and reveal
 							} else if (hint.end.value.length == 1) {
@@ -118,11 +121,11 @@ const manageClues = (mode) => {
 						case 'letter bank':
 							return `<strong>${hint.value}</strong> indicates <strong>${hint.end.value[0]}</strong> is a letter bank<br><em class='helper'>(an anagram where letters can be used more than once)</em>`
 						case 'particle':
-							return `<strong>${hint.value}</strong>, when applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
+							return `<strong>${hint.value}</strong>, applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
 						case 'reversal':
 							return `<strong>${hint.value[0]}</strong>, indicates a reversal on <strong>${hint.end.value[1]}</strong>, making it <strong>${hint.end.value[2]}</strong>`
 						case 'synonym':
-							return `Another word for <strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						case 'symbol':
 							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						default:
@@ -137,7 +140,7 @@ const manageClues = (mode) => {
 					}
 					
 				case 'solution':
-					return `<strong>${hint.value}</strong> is the solution`
+					return false
 				default: 
 					return hint.value
 			}
