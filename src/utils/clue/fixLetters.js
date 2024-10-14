@@ -8,7 +8,8 @@ const fixLetters = (activeClue) => {
 	//
 
 	const fixInitial = activeClue => {
-		// clue
+
+		// clue letters
 		activeClue.clue.ref.current.forEach( ref => {
 			let left = ref.current.getBoundingClientRect().left
 			let top = ref.current.getBoundingClientRect().top
@@ -17,17 +18,16 @@ const fixLetters = (activeClue) => {
 			return [left, top]
 		})
 
-		// activeClue.solution.length.ref
+		// clue sol count
 		activeClue.solution.length.ref.current.style.left = `${activeClue.solution.length.ref.current.getBoundingClientRect().left}px`
 		activeClue.solution.length.ref.current.style.top = `${activeClue.solution.length.ref.current.getBoundingClientRect().top}px`
 
-		// fix positions
 		activeClue.clue.ref.current.forEach( ref => {
 			ref.current.style.position = 'fixed'
 		})
 		activeClue.solution.length.ref.current.style.position = 'fixed'
 		
-		// solution
+		// solution boxes
 		activeClue.solution.ref.current.forEach( ref => {
 			let left = ref.current.getBoundingClientRect().left
 			let top = ref.current.getBoundingClientRect().top
@@ -62,70 +62,59 @@ const fixLetters = (activeClue) => {
 
 				case 'overlay':
 					anchor = hint.end.ref
-
-					// need to reference letters individually
-					if (hint.category == 'letter bank') {
-						moving = hint.addLetters.ref.current
 						
-						// find ref for each moving letter
-						moving.forEach(ref => {
-
-							// find match in anchor
-							let anchorMatch = anchor.find(anchorLetter => {
-								return anchorLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
-							})
-
-							// if no match in anchor, check other hint adLetters for ref
-							if (!anchorMatch) {
-
-								// get new anchor
-								anchor = activeClue.hints.find(h => {
-									if (!!h.end && h.end.value[0] === hint.end.value[0]) {
-										return h.addLetters.ref.current
-									}
-								}).addLetters.ref.current
-
-								// find match in anchor
-								anchorMatch = anchor.find(anchorLetter => {
-									return anchorLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
-								})
+					if (!anchor) {
+						// get new anchor
+						anchor = activeClue.hints.find(h => {
+							if (!!h.end && h.end.value[0] === hint.end.value[0]) {
+								return h.addLetters.ref.current
 							}
-							
-							// get index of overlay letters within anchor
-							const anchorIndex = anchor.findIndex(anchorLetter => anchorLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
-
-							// begin anchor from match point
-							anchor.splice(anchorIndex, 1)
-
-							// position move letters over anchor letters
-							ref.current.style.position = 'fixed'
-							ref.current.style.top = `${Number(anchorMatch.current.style.top.slice(0,-2))}px`
-							ref.current.style.left = `${Number(anchorMatch.current.style.left.slice(0,-2))}px`
-						})
-
-					// can use word ref to find match
-					} else {
-						
-						if (!anchor) {
-							// get new anchor
-							anchor = activeClue.hints.find(h => {
-								if (!!h.end && h.end.value[0] === hint.end.value[0]) {
-									return h.addLetters.ref.current
-								}
-							}).addLetters.ref.current
-						}
-						
-						// get index of overlay word within anchor
-						let anchorIndex = 0
-						// if (hint.category !== 'anagram' || hint.category !== 'reversal') anchorIndex = hint.end.value[0].indexOf(hint.end.value[1])
-						
-						console.log(anchor, moving)
-						
-						// position move letters over anchor letters
-						moving.style.position = 'fixed'
-						moving.style.top = `${Number(anchor[anchorIndex].current.style.top.slice(0,-2))}px`
-						moving.style.left = `${Number(anchor[anchorIndex].current.style.left.slice(0,-2))}px`
+						}).addLetters.ref.current
 					}
+
+					// Move moving letters into place
+					moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length)
+					let unMoving = hint.addLetters.ref.current.slice(hint.end.value[0].length)
+					
+					// get index of overlay word within anchor
+					let anchorIndex = 0
+					if (hint.category !== 'anagram' || hint.category !== 'reversal') anchorIndex = hint.end.value[0].indexOf(hint.end.value[1])
+					
+					
+					// position move letters over anchor letters
+					if (Array.isArray(moving)) {
+						moving.forEach(ref => {
+							const currentDestLetter = anchor.find(destLetter => {
+								return destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
+							})
+							const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
+							anchor.splice(destIndex, 1)
+							console.log(currentDestLetter.current.textContent)
+							ref.current.style.top = `${Number(currentDestLetter.current.style.top.slice(0,-2))}px`
+							ref.current.style.left = `${Number(currentDestLetter.current.style.left.slice(0,-2))}px`
+						})
+						moving.forEach(ltr => {
+							ltr.current.style.position = 'fixed'
+						})
+					} else {
+						moving.current.style.position = 'fixed'
+						moving.current.style.top = `${Number(anchor[0].current.style.top.slice(0,-2))}px`
+						moving.current.style.left = `${Number(anchor[0].current.style.left.slice(0,-2))}px`
+					}
+
+					// lock unmoved letters into place
+					// clue letters
+					unMoving.forEach(ltr => {
+						let left = ltr.current.getBoundingClientRect().left
+						let top = ltr.current.getBoundingClientRect().top
+						ltr.current.style.left = `${left}px`
+						ltr.current.style.top = `${top}px`
+						return [left, top]
+					})
+					
+					unMoving.forEach( ref => {
+						ref.current.style.position = 'fixed'
+					})
 
 					break
 

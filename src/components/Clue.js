@@ -2,12 +2,9 @@ import React, { useState, useRef, createRef, useEffect } from 'react'
 
 import getTargetLetters from '../utils/clue/getTargetLetters'
 import fixLetters from '../utils/clue/fixLetters'
-import underlineLetters from '../utils/clue/underlineLetters'
-import highlightLetters from '../utils/clue/highlightLetters'
-import changeColor from '../utils/clue/changeColor'
-import showSolution from '../utils/clue/showSolution'
 import addLetters from '../utils/clue/addLetters'
 import getLines from '../utils/clue/getLines'
+import handleHint from '../utils/clue/handleHint'
 
 import eyeOpen from '../assets/img/eye--open.svg';
 import eyeClosed from '../assets/img/eye--closed.svg';
@@ -44,62 +41,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 	
 	// runs every change of showMessage
 	useEffect(() => {
-
-		if (showMessage && !checkAns) {
-
-			switch(activeClue.hints[nextHint].type) {
-
-				case 'definition':
-					underlineLetters(activeClue.hints[nextHint].ref)
-					break
-
-				case 'indicator': 
-					switch(activeClue.hints[nextHint].category) {
-						case 'charade':
-						case 'symbol':
-						case 'synonym':
-							highlightLetters(activeClue.hints[nextHint].ref)
-							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
-							break
-						case 'direct':
-							changeColor(activeClue.hints[nextHint].ref, '#ccc')
-							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
-							break
-						case 'initialism':
-							highlightLetters(activeClue.hints[nextHint].ref)
-							changeColor(activeClue.hints[nextHint].end.ref)
-							// changeColor(activeClue.hints[nextHint].addLetters.ref.current)
-							break
-						case 'anagram':
-						case 'particle':
-							highlightLetters(activeClue.hints[nextHint].ref)
-							changeColor(activeClue.hints[nextHint].end.ref, '#ccc')
-							changeColor(activeClue.hints[nextHint].addLetters.ref.current)
-							break
-						default:
-							highlightLetters(activeClue.hints[nextHint].ref)
-							changeColor(activeClue.hints[nextHint].end.ref)
-							break
-					}
-					break
-				case 'solution':
-					showSolution(activeClue, nextHint)
-					break
-				default: 
-					break
-			}
-		} else if (!showMessage) {
-			// change last hint to gray
-			if (nextHint > 1){
-				try {
-					highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)
-					changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
-					changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
-				} catch(err) {
-					console.log(err)
-				}
-			}
-		}
+		handleHint(activeClue, nextHint, showMessage, checkAns)
 	}, [showMessage])
 
 
