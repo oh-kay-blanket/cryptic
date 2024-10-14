@@ -3,29 +3,31 @@ import changeColor from './changeColor'
 import removeSpecial from "./removeSpecialChar"
 
 const showSolution = (activeClue, nextHint) => {
+
+	const prevHint = activeClue.hints[nextHint-1]
 		
-	switch(activeClue.hints[nextHint-1].category) { 
+	switch(prevHint.category) { 
 		case 'anagram':
-			moveLetters(activeClue.hints[nextHint-1].end.ref, activeClue.solution.ref, activeClue.solution.sectionRef)
+			moveLetters(prevHint.addLetters.ref.current.slice(0,prevHint.end.value[0].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[0].length))
 			break 
 		case 'hidden word':
 			// get index of solution within indicated
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)
 
-			activeClue.hints[nextHint-1].end.ref = removeSpecial(activeClue.hints[nextHint-1].end.ref)
-			changeColor(activeClue.hints[nextHint-1].end.ref, '#ccc')
-			changeColor(activeClue.hints[nextHint-1].end.ref.splice(solIndex, activeClue.solution.arr.length))
+			prevHint.end.ref = removeSpecial(prevHint.end.ref)
+			changeColor(prevHint.end.ref, '#ccc')
+			changeColor(prevHint.end.ref.splice(solIndex, activeClue.solution.arr.length))
 			break
 		case 'initialism':
-			changeColor(activeClue.hints[nextHint-1].end.ref, '#ccc')
+			changeColor(prevHint.end.ref, '#ccc')
 			// build arrary of first letters
-			let firstLetters = activeClue.hints[nextHint-1].end.value[0].split(' ').map(wrd => wrd.length +1)
+			let firstLetters = prevHint.end.value[0].split(' ').map(wrd => wrd.length +1)
 			firstLetters.pop()
 			firstLetters = [0, ...firstLetters]
 
 			firstLetters.forEach(startLetter => {
-				changeColor(activeClue.hints[nextHint-1].end.ref[startLetter])
-				activeClue.hints[nextHint-1].end.ref.splice(0, startLetter)
+				changeColor(prevHint.end.ref[startLetter])
+				prevHint.end.ref.splice(0, startLetter)
 			})
 		default: 
 			break 
