@@ -23,14 +23,33 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						highlightLetters(hint.ref)
 						changeColor(hint.addLetters.ref.current)
 						break
+					case 'deletion':
+						highlightLetters(hint.ref)
+						changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, '#ccc')
+
+						// see if shorter word exists within last hint addLetters
+						const delIndex = activeClue.hints[nextHint - 1].addLetters.value.join('').indexOf(hint.end.value[1])
+
+						// if so, highlight short word in longer
+						if (hint.end.value.length > 2) {
+							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(0, hint.end.value[1].length), '#0b0b0b')
+
+							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(-hint.end.value[2].length), '#0b0b0b')
+						} else if (delIndex >= 0) {
+							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
+						}
+						break
 					case 'direct':
 						changeColor(hint.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
+					case 'homophone':
+						highlightLetters(hint.ref)
+						changeColor(hint.addLetters.ref.current[0])
+						break
 					case 'initialism':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref)
-						// changeColor(hint.addLetters.ref.current)
 						break
 					case 'anagram':
 						highlightLetters(hint.ref)
@@ -56,11 +75,16 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		}
 	} else if (!showMessage) {
 		// change last hint to gray
-		if (nextHint > 1){
+		if (nextHint > 1) {
 			try {
 				highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)
 				changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
-				changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
+				
+				if (activeClue.hints[nextHint - 1].category !== 'deletion') {
+					changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
+				} else {
+					changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
+				}
 			} catch(err) {
 				console.log(err)
 			}

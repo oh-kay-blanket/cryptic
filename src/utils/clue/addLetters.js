@@ -11,15 +11,19 @@ const addLetters = (activeClue, hint) => {
 			case 'particle':
 				hint.addLetters.value = hint.end.value[1].split('')
 				break
+			case 'deletion':
+				// hint.addLetters.value = hint.end.value[1].split('')
+				break
 			case 'direct':
 				hint.addLetters.value = hint.value.split('')
+				break
+			case 'homophone':
+				hint.addLetters.value = ['= ', activeClue.solution.value]
 				break
 			case 'initialism':
 				hint.addLetters.value = hint.end.value.map(endPt => {
 					return endPt.split(' ').map(word => word.split('')[0]).flat()
 				}).flat()
-				break
-			case 'deletion':
 				break
 			default:
 				hint.addLetters.value = hint.end.value.map(endPt => endPt.split('')).flat()

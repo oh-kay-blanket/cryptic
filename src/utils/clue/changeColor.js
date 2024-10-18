@@ -1,4 +1,4 @@
-const changeColor = (toChange, color = false, recheck) => {
+const changeColor = (toChange, color = false, recheck = false) => {
 
 	const getHex = () => {
 		if (color) {

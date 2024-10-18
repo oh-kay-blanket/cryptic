@@ -1,25 +1,58 @@
 [
 	{
-	  "release": "10/7/2024",
+	  "release": "8/18/2024",
 	  "clue": {
-		"value": "Buried in Tucson or another arid region"
+		"value": "Financial failure is not entirely peaceful"
 	  },
-	  "id": "52",
-	  "difficulty": "1",
+	  "id": "21",
+	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "hidden word",
+	  "type": "charade, deletion",
 	  "definition": [
-		"arid region",
+		"Financial",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "hidden word",
-		  "value": "Buried in",
+		  "category": "symbol",
+		  "value": "failure",
 		  "end": {
 			"value": [
-			  "Tucson or another",
-			  "son or an",
+			  "F",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "is",
+		  "end": {
+			"value": [
+			  "is",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "peaceful",
+		  "end": {
+			"value": [
+			  "calm",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "not entirely",
+		  "end": {
+			"value": [
+			  "calm",
+			  "cal",
 			  ""
 			]
 		  }
@@ -29,29 +62,6 @@
 		  "value": "",
 		  "end": {
 			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
 			  "",
 			  ""
 			]
@@ -59,10 +69,1682 @@
 		}
 	  ],
 	  "solution": {
-		"value": "sonoran"
+		"value": "fiscal"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/4/2024",
+	  "clue": {
+		"value": "Legacy carrier is never mentioned, ignoring the speed of light"
+	  },
+	  "id": "49",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Legacy carrier",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "is never mentioned",
+		  "end": {
+			"value": [
+			  "uncited",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "ignoring the speed of light",
+		  "end": {
+			"value": [
+			  "united",
+			  "un",
+			  "ited"
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "united"
 	  },
 	  "source": {
 		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "8/12/2024",
+	  "clue": {
+		"value": "Different parent starts late"
+	  },
+	  "id": "8",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"different",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "parent",
+		  "end": {
+			"value": [
+			  "mother",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "starts late",
+		  "end": {
+			"value": [
+			  "mother",
+			  "other",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "other"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/27/2024",
+	  "clue": {
+		"value": "Poisonous snakes beheading stinging insects"
+	  },
+	  "id": "104",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "deletion",
+	  "definition": [
+		"Poisonous snakes",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "stinging insects",
+		  "end": {
+			"value": [
+			  "wasps",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "beheading",
+		  "end": {
+			"value": [
+			  "wasps",
+			  "asps",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "asps"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/21/2024",
+	  "clue": {
+		"value": "Margaret and Susan nearly backing a horse that really took off?"
+	  },
+	  "id": "80",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"a horse that really took off",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Margaret",
+		  "end": {
+			"value": [
+			  "Peg",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "nearly",
+		  "end": {
+			"value": [
+			  "Susan",
+			  "Susa",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "susa",
+			  "asus",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "Peg",
+		  "end": {
+			"value": [
+			  "asus",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pegasus"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/29/2024",
+	  "clue": {
+		"value": "Moving in a mass of loot, including trimmed ermine"
+	  },
+	  "id": "72",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, deletion",
+	  "definition": [
+		"Moving in a mass",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "loot",
+		  "end": {
+			"value": [
+			  "swag",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "trimmed",
+		  "end": {
+			"value": [
+			  "ermine",
+			  "rmin",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "including",
+		  "end": {
+			"value": [
+			  "swag",
+			  "rmin",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "swarming"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/11/2024",
+	  "clue": {
+		"value": "Multitudes of African predators consuming half of eggs"
+	  },
+	  "id": "90",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, deletion",
+	  "definition": [
+		"Multitudes",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "African predators",
+		  "end": {
+			"value": [
+			  "lions",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "half of",
+		  "end": {
+			"value": [
+			  "eggs",
+			  "eg",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "consuming",
+		  "end": {
+			"value": [
+			  "lions",
+			  "eg",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legions"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/30/2024",
+	  "clue": {
+		"value": "Lawyer recalled gossip about corruption"
+	  },
+	  "id": "41",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Lawyer",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "gossip",
+		  "end": {
+			"value": [
+			  "yenta",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "corruption",
+		  "end": {
+			"value": [
+			  "rot",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "yenta",
+			  "rot",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "recalled",
+		  "end": {
+			"value": [
+			  "yenrotta",
+			  "attorney",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "attorney"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "attorney"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/11/2024",
+	  "clue": {
+		"value": "Starting with a core of knowledge, gain deeper understanding!"
+	  },
+	  "id": "7",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "& Lit.",
+	  "definition": [
+		"starting with a core of knowledge, gain deeper understanding",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "core of",
+		  "end": {
+			"value": [
+			  "knowledge",
+			  "l",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "gain",
+		  "end": {
+			"value": [
+			  "earn",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "learn"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/29/2024",
+	  "clue": {
+		"value": "Hear Leo's wonky audio receiver"
+	  },
+	  "id": "5",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"audio receiver",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "wonky",
+		  "end": {
+			"value": [
+			  "Hear Leo",
+			  "earhole",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "earhole"
+	  },
+	  "source": {
+		"value": "Ucaoimhu"
+	  }
+	},
+	{
+	  "release": "9/24/2024",
+	  "clue": {
+		"value": "Magic Pan pitches battle"
+	  },
+	  "id": "35",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"battle",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "pitches",
+		  "end": {
+			"value": [
+			  "Magic Pan",
+			  "campaign",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "campaign"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/8/2024",
+	  "clue": {
+		"value": "In Boston, commuting T trains as a way to get around!"
+	  },
+	  "id": "56",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"way to get around",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "commuting",
+		  "end": {
+			"value": [
+			  "T trains",
+			  "transit",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "transit"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/3/2024",
+	  "clue": {
+		"value": "Doesn't debate grease must be changed"
+	  },
+	  "id": "45",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Doesn't debate",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "must be changed",
+		  "end": {
+			"value": [
+			  "grease",
+			  "agrees",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "agrees"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/28/2024",
+	  "clue": {
+		"value": "List clue she'd anagrammed"
+	  },
+	  "id": "39",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"List",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "anagrammed",
+		  "end": {
+			"value": [
+			  "clue she'd",
+			  "schedule",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "schedule"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/14/2024",
+	  "clue": {
+		"value": "No, fear not traveling between morning and night"
+	  },
+	  "id": "12",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"between morning and night",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "traveling",
+		  "end": {
+			"value": [
+			  "No, fear not",
+			  "afternoon",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "afternoon"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/30/2024",
+	  "clue": {
+		"value": "Chilled, a mud wren shivers"
+	  },
+	  "id": "71",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"Chillled",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "shivers",
+		  "end": {
+			"value": [
+			  "a mud wren",
+			  "unwarmed",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "unwarmed"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/17/2024",
+	  "clue": {
+		"value": "Pal Rob freaks out"
+	  },
+	  "id": "84",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"Pal",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "freaks out",
+		  "end": {
+			"value": [
+			  "Rob",
+			  "bro",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bro"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/14/2024",
+	  "clue": {
+		"value": "Element of exotic isle menu"
+	  },
+	  "id": "87",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"Element",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "exotic",
+		  "end": {
+			"value": [
+			  "isle menu",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "selenium"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/10/2024",
+	  "clue": {
+		"value": "Net near to fancy aquarium fish"
+	  },
+	  "id": "91",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"aquarium fish",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "fancy",
+		  "end": {
+			"value": [
+			  "net near to",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "neon tetra"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/4/2024",
+	  "clue": {
+		"value": "Towels off baby birds"
+	  },
+	  "id": "97",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"baby birds",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "off",
+		  "end": {
+			"value": [
+			  "Towels",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "owlets"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/2/2024",
+	  "clue": {
+		"value": "Ed's busy working with composer Claude"
+	  },
+	  "id": "99",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"composer Claude",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "working",
+		  "end": {
+			"value": [
+			  "Ed's busy",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "debussy"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/3/2024",
+	  "clue": {
+		"value": "Experience shifting ground around start of earthquake"
+	  },
+	  "id": "98",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram, container",
+	  "definition": [
+		"Experience",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "shifting",
+		  "end": {
+			"value": [
+			  "ground",
+			  "undrgo",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "start of",
+		  "end": {
+			"value": [
+			  "earthquake",
+			  "e",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "around",
+		  "end": {
+			"value": [
+			  "undrgo",
+			  "e",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "undergo"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/29/2024",
+	  "clue": {
+		"value": "Rightfully, girl admitted to wild yell"
+	  },
+	  "id": "102",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "anagram, container",
+	  "definition": [
+		"Rightfully",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "girl",
+		  "end": {
+			"value": [
+			  "gal",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "wild",
+		  "end": {
+			"value": [
+			  "yell",
+			  "lely",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "lely",
+		  "end": {
+			"value": [
+			  "gal",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legally"
+	  },
+	  "source": {
+		"value": "Kegler"
 	  }
 	},
 	{
@@ -118,6 +1800,16 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
 			  "",
 			  ""
 			]
@@ -188,6 +1880,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -254,6 +1956,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -261,204 +1973,6 @@
 	  },
 	  "source": {
 		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/3/2024",
-	  "clue": {
-		"value": "Goofs up broadcast from a reporter"
-	  },
-	  "id": "25",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Goofs up",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "broadcast",
-		  "end": {
-			"value": [
-			  "airs",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "from a reporter",
-		  "end": {
-			"value": [
-			  "airs",
-			  "errs",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "errs"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/2/2024",
-	  "clue": {
-		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
-	  },
-	  "id": "17",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Eyeglasses",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "initially",
-		  "end": {
-			"value": [
-			  "broken",
-			  "liberal",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "anagram",
-		  "value": "terrible",
-		  "end": {
-			"value": [
-			  "fiasco",
-			  "b",
-			  "l"
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "bifocals"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/1/2024",
-	  "clue": {
-		"value": "South Mountain, say"
-	  },
-	  "id": "16",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"say",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "south",
-		  "end": {
-			"value": [
-			  "S",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "Mountain",
-		  "end": {
-			"value": [
-			  "peak",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "speak"
-	  },
-	  "source": {
-		"value": "Hex"
 	  }
 	},
 	{
@@ -518,6 +2032,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -528,534 +2052,6 @@
 	  }
 	},
 	{
-	  "release": "9/29/2024",
-	  "clue": {
-		"value": "Hear Leo's wonky audio receiver"
-	  },
-	  "id": "5",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram",
-	  "definition": [
-		"audio receiver",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "wonky",
-		  "end": {
-			"value": [
-			  "Hear Leo",
-			  "earhole",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "earhole"
-	  },
-	  "source": {
-		"value": "Ucaoimhu"
-	  }
-	},
-	{
-	  "release": "9/28/2024",
-	  "clue": {
-		"value": "Burn prophet, we hear"
-	  },
-	  "id": "4",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Burn",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "phophet",
-		  "end": {
-			"value": [
-			  "seer",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "we hear",
-		  "end": {
-			"value": [
-			  "seer",
-			  "sear",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "sear"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/27/2024",
-	  "clue": {
-		"value": "Espresso drink held by hospital attendant"
-	  },
-	  "id": "2",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Espresso drink",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "held by",
-		  "end": {
-			"value": [
-			  "hospital attendant",
-			  "l atte",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "latte"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/26/2024",
-	  "clue": {
-		"value": "Starts to dream about living large amid suburban Texas metropolis"
-	  },
-	  "id": "54",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Texas metropolis",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "Starts to",
-		  "end": {
-			"value": [
-			  "dream about living large amid suburban",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "Dallas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/25/2024",
-	  "clue": {
-		"value": "Computer industry dude, after transitioning, declared Dallas home"
-	  },
-	  "id": "53",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Dallas home",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Computer industry",
-		  "end": {
-			"value": [
-			  "tech",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "dude, after transitioning",
-		  "end": {
-			"value": [
-			  "sis",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "Texas",
-		  "end": {
-			"value": [
-			  "tech",
-			  "sis",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "Texas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/24/2024",
-	  "clue": {
-		"value": "Magic Pan pitches battle"
-	  },
-	  "id": "35",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"battle",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "pitches",
-		  "end": {
-			"value": [
-			  "Magic Pan",
-			  "campaign",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "campaign"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/23/2024",
-	  "clue": {
-		"value": "Group of lions was snoopy, we hear"
-	  },
-	  "id": "29",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Group of lions",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "was snoopy",
-		  "end": {
-			"value": [
-			  "pried",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "we hear",
-		  "end": {
-			"value": [
-			  "pried",
-			  "pride",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "pride"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/22/2024",
-	  "clue": {
-		"value": "Swiss cabin fit inside court"
-	  },
-	  "id": "28",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"Swiss cabin",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "court",
-		  "end": {
-			"value": [
-			  "ct",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "fit",
-		  "end": {
-			"value": [
-			  "hale",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "inside",
-		  "end": {
-			"value": [
-			  "ct",
-			  "hale",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "chalet"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "release": "9/21/2024",
 	  "clue": {
 		"value": "Oldest person born in early April into baking"
@@ -1063,7 +2059,7 @@
 	  "id": "26",
 	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "charade",
 	  "definition": [
 		"Oldest",
 		""
@@ -1112,6 +2108,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -1119,468 +2125,6 @@
 	  },
 	  "source": {
 		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/20/2024",
-	  "clue": {
-		"value": "E.g., breakfast grain ground up"
-	  },
-	  "id": "24",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "double definition",
-	  "definition": [
-		"E.g., breakfast",
-		"grain ground up"
-	  ],
-	  "hints": [
-		{
-		  "category": "double definition",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "meal"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/19/2024",
-	  "clue": {
-		"value": "Held by clasp, a designer suit"
-	  },
-	  "id": "18",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"suit",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "Held by",
-		  "end": {
-			"value": [
-			  "clasp, a designer",
-			  "sp, a de",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "spades"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/18/2024",
-	  "clue": {
-		"value": "Sounds like Fleetwood Mac frontwoman went after compensation in her hometown"
-	  },
-	  "id": "15",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"her hometown",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "compensation",
-		  "end": {
-			"value": [
-			  "fee",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "Fleetwood Mac frontwoman",
-		  "end": {
-			"value": [
-			  "Nicks",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "Phoenix",
-		  "end": {
-			"value": [
-			  "fee",
-			  "Nicks",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "Phoenix"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/17/2024",
-	  "clue": {
-		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
-	  },
-	  "id": "13",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"post office worker's gear",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Idly chat",
-		  "end": {
-			"value": [
-			  "gab",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "actor Neeson",
-		  "end": {
-			"value": [
-			  "Liam",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "gab Liam",
-			  "mailbag",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "mailbag"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "9/16/2024",
-	  "clue": {
-		"value": "Wears out swings, sometimes"
-	  },
-	  "id": "9",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Wears out",
-		"swings, sometimes"
-	  ],
-	  "hints": [
-		{
-		  "category": "double definition",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "tires"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "9/15/2024",
-	  "clue": {
-		"value": "Listless doctor becoming more mature about big bill"
-	  },
-	  "id": "27",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Listless",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "doctor",
-		  "end": {
-			"value": [
-			  "Dr",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "becoming more mature",
-		  "end": {
-			"value": [
-			  "aging",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "big bill",
-		  "end": {
-			"value": [
-			  "G",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "about",
-		  "end": {
-			"value": [
-			  "aging",
-			  "G",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "dragging"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/14/2024",
-	  "clue": {
-		"value": "Uranium buried in a neat courtyard"
-	  },
-	  "id": "6",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"courtyard",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "a",
-		  "end": {
-			"value": [
-			  "a",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "neat",
-		  "end": {
-			"value": [
-			  "trim",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "buried",
-		  "end": {
-			"value": [
-			  "a trim",
-			  "u",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "atrium"
-	  },
-	  "source": {
-		"value": "Hex"
 	  }
 	},
 	{
@@ -1640,6 +2184,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -1647,72 +2201,6 @@
 	  },
 	  "source": {
 		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/12/2024",
-	  "clue": {
-		"value": "Pop star to hum quietly while slowly passing gas, we hear"
-	  },
-	  "id": "",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Pop star",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "homophone",
-		  "value": "hum quietly while slowly passing gas",
-		  "end": {
-			"value": [
-			  "idle",
-			  "idol",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "idol"
-	  },
-	  "source": {
-		"value": "plunk it"
 	  }
 	},
 	{
@@ -1768,6 +2256,16 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
 			  "",
 			  ""
 			]
@@ -1838,6 +2336,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -1848,468 +2356,6 @@
 	  }
 	},
 	{
-	  "release": "9/9/2024",
-	  "clue": {
-		"value": "Anti-tech DD and I are really into lute"
-	  },
-	  "id": "57",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"Anti-tech",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "DD",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "I",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "really into",
-		  "end": {
-			"value": [
-			  "lute",
-			  "DD",
-			  "I"
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "luddite"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "release": "9/8/2024",
-	  "clue": {
-		"value": "In Boston, commuting T trains as a way to get around!"
-	  },
-	  "id": "56",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram, deletion",
-	  "definition": [
-		"way to get around",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "commuting",
-		  "end": {
-			"value": [
-			  "T trains",
-			  "transit",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "transit"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/7/2024",
-	  "clue": {
-		"value": "King with a golden touch is unhappy I'm returning"
-	  },
-	  "id": "55",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"King with a golden touch",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "unhappy",
-		  "end": {
-			"value": [
-			  "sad",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "I'm",
-		  "end": {
-			"value": [
-			  "I'm",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "sad I'm",
-			  "midas",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "Midas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/6/2024",
-	  "clue": {
-		"value": "Leave the better part of Southern Arizona"
-	  },
-	  "id": "51",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Leave",
-		"the better part of Southern Arizona"
-	  ],
-	  "hints": [
-		{
-		  "category": "double definition",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "desert"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/5/2024",
-	  "clue": {
-		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
-	  },
-	  "id": "50",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"way to get to London or Tokyo?",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "letter bank",
-		  "value": "Repeatedly",
-		  "end": {
-			"value": [
-			  "slam nicer",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "American Airlines"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/4/2024",
-	  "clue": {
-		"value": "Legacy carrier is never mentioned, ignoring the speed of light"
-	  },
-	  "id": "49",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "deletion",
-	  "definition": [
-		"Legacy carrier",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "is never mentioned",
-		  "end": {
-			"value": [
-			  "uncited",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "speed of light",
-		  "end": {
-			"value": [
-			  "c",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "deletion",
-		  "value": "ignoring the c",
-		  "end": {
-			"value": [
-			  "uncited",
-			  "united",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "United"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/3/2024",
-	  "clue": {
-		"value": "Doesn't debate grease must be changed"
-	  },
-	  "id": "45",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Doesn't debate",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "must be changed",
-		  "end": {
-			"value": [
-			  "grease",
-			  "agrees",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "agrees"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "release": "9/2/2024",
 	  "clue": {
 		"value": "Fatally drew blood at front of Room Y"
@@ -2317,7 +2363,7 @@
 	  "id": "44",
 	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "charade",
 	  "definition": [
 		"Fatally",
 		""
@@ -2362,6 +2408,16 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
 			  "",
 			  ""
 			]
@@ -2432,6 +2488,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2439,6 +2505,1450 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/27/2024",
+	  "clue": {
+		"value": "Daddy's eating last of raw fruit"
+	  },
+	  "id": "37",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"fruit",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Daddy's",
+		  "end": {
+			"value": [
+			  "papas",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "last of",
+		  "end": {
+			"value": [
+			  "raw",
+			  "w",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "eating",
+		  "end": {
+			"value": [
+			  "papas",
+			  "w",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "papaws"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/24/2024",
+	  "clue": {
+		"value": "Digests cheese on Friday and Saturday"
+	  },
+	  "id": "33",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Digests",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "cheese",
+		  "end": {
+			"value": [
+			  "brie",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Friday",
+		  "end": {
+			"value": [
+			  "F",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Saturday",
+		  "end": {
+			"value": [
+			  "S",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "briefs"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/23/2024",
+	  "clue": {
+		"value": "Actor Grant and pair of Athenians identify carved column"
+	  },
+	  "id": "32",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"carved column",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Actor Grant",
+		  "end": {
+			"value": [
+			  "cary",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Athenians",
+		  "end": {
+			"value": [
+			  "at",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "identify",
+		  "end": {
+			"value": [
+			  "ID",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "caryatid"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/21/2024",
+	  "clue": {
+		"value": "Sure happy in the end, especially with rent"
+	  },
+	  "id": "30",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Sure",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "in the end",
+		  "end": {
+			"value": [
+			  "happy",
+			  "y",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "especially",
+		  "end": {
+			"value": [
+			  "esp",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "rent",
+		  "end": {
+			"value": [
+			  "lease",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "yes please"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/8/2024",
+	  "clue": {
+		"value": "Starting after first of January working at home?"
+	  },
+	  "id": "62",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Starting",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "January",
+		  "end": {
+			"value": [
+			  "j",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "working from home",
+		  "end": {
+			"value": [
+			  "umping",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "jumping",
+		  "end": {
+			"value": [
+			  "j",
+			  "umping",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "jumping"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/28/2024",
+	  "clue": {
+		"value": "Coffee servers initially upset nurses"
+	  },
+	  "id": "73",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Coffee servers",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "upset",
+			  "u",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "nurses",
+		  "end": {
+			"value": [
+			  "rns",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "u",
+		  "end": {
+			"value": [
+			  "rns",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "urns"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/26/2024",
+	  "clue": {
+		"value": "That girl's beginning to bother Ginger, among others"
+	  },
+	  "id": "75",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Ginger, among others",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "That girl",
+		  "end": {
+			"value": [
+			  "her",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "beginning to",
+		  "end": {
+			"value": [
+			  "bother",
+			  "b",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "her",
+		  "end": {
+			"value": [
+			  "b",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "herb"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/23/2024",
+	  "clue": {
+		"value": "One hands out cards with goals"
+	  },
+	  "id": "78",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"goals",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "One",
+		  "end": {
+			"value": [
+			  "i",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "hands out cards",
+		  "end": {
+			"value": [
+			  "deals",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "i",
+		  "end": {
+			"value": [
+			  "deals",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ideals"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/1/2024",
+	  "clue": {
+		"value": "Hurt most unusual rodents"
+	  },
+	  "id": "69",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, anagram",
+	  "definition": [
+		"rodents",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "hurt",
+		  "end": {
+			"value": [
+			  "mar",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "unusual",
+		  "end": {
+			"value": [
+			  "most",
+			  "mots",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "mar",
+		  "end": {
+			"value": [
+			  "mots",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "marmots"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/9/2024",
+	  "clue": {
+		"value": "Fixate on ring Bess gets Sunday"
+	  },
+	  "id": "61",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, container",
+	  "definition": [
+		"Fixate on",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "ring",
+		  "end": {
+			"value": [
+			  "o",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Sunday",
+		  "end": {
+			"value": [
+			  "s",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "gets",
+		  "end": {
+			"value": [
+			  "Bess",
+			  "s",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "obsess"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/15/2024",
+	  "clue": {
+		"value": "Tell the authorities about one lieutenant adding dirt to a riverbed"
+	  },
+	  "id": "86",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, container",
+	  "definition": [
+		"adding dirt to a riverbed",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Tell the authorities",
+		  "end": {
+			"value": [
+			  "sing",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "i",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "lieutenant",
+		  "end": {
+			"value": [
+			  "lt",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "sing",
+			  "ilt",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "ilt"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "silting"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/1/2024",
+	  "clue": {
+		"value": "Chicken Little, having wings, is in Montana"
+	  },
+	  "id": "100",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, container",
+	  "definition": [
+		"Chicken Little",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "having wings",
+		  "end": {
+			"value": [
+			  "alar",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Montana",
+		  "end": {
+			"value": [
+			  "MT",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "is",
+		  "end": {
+			"value": [
+			  "is",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "in",
+		  "end": {
+			"value": [
+			  "MT",
+			  "is",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "alar",
+		  "end": {
+			"value": [
+			  "mist",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "alarmist"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/13/2024",
+	  "clue": {
+		"value": "On the way back, spots unsatisfactory stamp found on some meat"
+	  },
+	  "id": "88",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"stamp found on some meat",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "spots",
+		  "end": {
+			"value": [
+			  "ads",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "unsatisfactory",
+		  "end": {
+			"value": [
+			  "u",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "On the way back",
+		  "end": {
+			"value": [
+			  "ads u",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "usda"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/12/2024",
+	  "clue": {
+		"value": "Father and staff upset former airline"
+	  },
+	  "id": "89",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"former airline",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Father",
+		  "end": {
+			"value": [
+			  "pa",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "staff",
+		  "end": {
+			"value": [
+			  "man",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upset",
+		  "end": {
+			"value": [
+			  "man",
+			  "nam",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "pa",
+		  "end": {
+			"value": [
+			  "nam",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pan am"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/9/2024",
+	  "clue": {
+		"value": "Tabloid recalled NY baseball team receiving new attire"
+	  },
+	  "id": "92",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, reversal, container",
+	  "definition": [
+		"attire",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Tabloid",
+		  "end": {
+			"value": [
+			  "rag",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "NY baseball team",
+		  "end": {
+			"value": [
+			  "Mets",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "n",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "receiving",
+		  "end": {
+			"value": [
+			  "Mets",
+			  "n",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "gar",
+		  "end": {
+			"value": [
+			  "ments",
+			  "n"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "garments"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "9/22/2024",
+	  "clue": {
+		"value": "Swiss cabin fit inside court"
+	  },
+	  "id": "28",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Swiss cabin",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "court",
+		  "end": {
+			"value": [
+			  "ct",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "fit",
+		  "end": {
+			"value": [
+			  "hale",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "ct",
+			  "hale",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "chalet"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/15/2024",
+	  "clue": {
+		"value": "Listless doctor becoming more mature about big bill"
+	  },
+	  "id": "27",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Listless",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "doctor",
+		  "end": {
+			"value": [
+			  "Dr",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "becoming more mature",
+		  "end": {
+			"value": [
+			  "aging",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "big bill",
+		  "end": {
+			"value": [
+			  "G",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "aging",
+			  "G",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "G"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dragging"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/14/2024",
+	  "clue": {
+		"value": "Uranium buried in a neat courtyard"
+	  },
+	  "id": "6",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"courtyard",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "a",
+		  "end": {
+			"value": [
+			  "a",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "neat",
+		  "end": {
+			"value": [
+			  "trim",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "buried",
+		  "end": {
+			"value": [
+			  "a trim",
+			  "u",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "atrium"
+	  },
+	  "source": {
+		"value": "Hex"
+	  }
+	},
+	{
+	  "release": "9/9/2024",
+	  "clue": {
+		"value": "Anti-tech DD and I are really into lute"
+	  },
+	  "id": "57",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Anti-tech",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "DD",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "I",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "really into",
+		  "end": {
+			"value": [
+			  "lute",
+			  "DD",
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "luddite"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -2498,134 +4008,12 @@
 			  ""
 			]
 		  }
-		}
-	  ],
-	  "solution": {
-		"value": "formality"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/30/2024",
-	  "clue": {
-		"value": "Lawyer recalled gossip about corruption"
-	  },
-	  "id": "41",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container, reversal",
-	  "definition": [
-		"Lawyer",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "gossip",
-		  "end": {
-			"value": [
-			  "yenta",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "corruption",
-		  "end": {
-			"value": [
-			  "rot",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "about",
-		  "end": {
-			"value": [
-			  "yenta",
-			  "rot",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "recalled",
-		  "end": {
-			"value": [
-			  "yenrotta",
-			  "attorney",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "attorney"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/29/2024",
-	  "clue": {
-		"value": "Severely criticized turning at end of tricky childbirth"
-	  },
-	  "id": "40",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"childbirth",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Severely criticized",
-		  "end": {
-			"value": [
-			  "reviled",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "turning",
-		  "end": {
-			"value": [
-			  "reviled",
-			  "deliver",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "end of",
-		  "end": {
-			"value": [
-			  "tricky",
-			  "y",
-			  ""
-			]
-		  }
 		},
 		{
 		  "category": "",
 		  "value": "",
 		  "end": {
 			"value": [
-			  "",
 			  "",
 			  ""
 			]
@@ -2633,205 +4021,7 @@
 		}
 	  ],
 	  "solution": {
-		"value": "delivery"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/28/2024",
-	  "clue": {
-		"value": "List clue she'd anagrammed"
-	  },
-	  "id": "39",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"List",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "anagrammed",
-		  "end": {
-			"value": [
-			  "clue she'd",
-			  "schedule",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "schedule"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/27/2024",
-	  "clue": {
-		"value": "Daddy's eating last of raw fruit"
-	  },
-	  "id": "37",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"fruit",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Daddy's",
-		  "end": {
-			"value": [
-			  "papas",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "last of",
-		  "end": {
-			"value": [
-			  "raw",
-			  "w",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "eating",
-		  "end": {
-			"value": [
-			  "papas",
-			  "w",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "papaws"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/26/2024",
-	  "clue": {
-		"value": "Cargo said \"moo!\" in our ears"
-	  },
-	  "id": "36",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Cargo",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "said \"moo!\"",
-		  "end": {
-			"value": [
-			  "lowed",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "in our ears",
-		  "end": {
-			"value": [
-			  "lowed",
-			  "load",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "load"
+		"value": "formality"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -2845,7 +4035,7 @@
 	  "id": "34",
 	  "difficulty": "2",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "container",
 	  "definition": [
 		"info",
 		""
@@ -2894,68 +4084,12 @@
 			  ""
 			]
 		  }
-		}
-	  ],
-	  "solution": {
-		"value": "facts"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/24/2024",
-	  "clue": {
-		"value": "Digests cheese on Friday and Saturday"
-	  },
-	  "id": "33",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Digests",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "cheese",
-		  "end": {
-			"value": [
-			  "brie",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "Friday",
-		  "end": {
-			"value": [
-			  "F",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "Saturday",
-		  "end": {
-			"value": [
-			  "S",
-			  "",
-			  ""
-			]
-		  }
 		},
 		{
 		  "category": "",
 		  "value": "",
 		  "end": {
 			"value": [
-			  "",
 			  "",
 			  ""
 			]
@@ -2963,205 +4097,7 @@
 		}
 	  ],
 	  "solution": {
-		"value": "briefs"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/23/2024",
-	  "clue": {
-		"value": "Actor Grant and pair of Athenians identify carved column"
-	  },
-	  "id": "32",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"carved column",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Actor Grant",
-		  "end": {
-			"value": [
-			  "cary",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "Athenians",
-		  "end": {
-			"value": [
-			  "at",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "identify",
-		  "end": {
-			"value": [
-			  "ID",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "caryatid"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/22/2024",
-	  "clue": {
-		"value": "Least outgoing member of pushy establishment"
-	  },
-	  "id": "31",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Least outgoing",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "member of",
-		  "end": {
-			"value": [
-			  "pushy establishment",
-			  "shy est",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "shyest"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/21/2024",
-	  "clue": {
-		"value": "Sure happy in the end, especially with rent"
-	  },
-	  "id": "30",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"Sure",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "in the end",
-		  "end": {
-			"value": [
-			  "happy",
-			  "y",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "especially",
-		  "end": {
-			"value": [
-			  "esp",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "rent",
-		  "end": {
-			"value": [
-			  "lease",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "yes please"
+		"value": "facts"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -3175,7 +4111,7 @@
 	  "id": "23",
 	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "container",
 	  "definition": [
 		"Runner",
 		""
@@ -3224,6 +4160,16 @@
 			  "it"
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "ug"
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3234,37 +4180,59 @@
 	  }
 	},
 	{
-	  "release": "8/19/2024",
+	  "release": "8/16/2024",
 	  "clue": {
-		"value": "Produced blooms covered with white powder, say"
+		"value": "Hotel accommodates brief pause with Dee acting as boss"
 	  },
-	  "id": "22",
-	  "difficulty": "2",
+	  "id": "19",
+	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "container",
 	  "definition": [
-		"Produced blooms",
+		"acting as boss",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "covered with white powder",
+		  "value": "Hotel",
 		  "end": {
 			"value": [
-			  "floured",
+			  "inn",
 			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "homophone",
-		  "value": "say",
+		  "category": "synonym",
+		  "value": "brief pause",
 		  "end": {
 			"value": [
-			  "floured",
-			  "flowered",
+			  "comma",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "accommodates",
+		  "end": {
+			"value": [
+			  "inn",
+			  "comma",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Dee",
+		  "end": {
+			"value": [
+			  "D",
+			  "",
 			  ""
 			]
 		  }
@@ -3274,18 +4242,6 @@
 		  "value": "",
 		  "end": {
 			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
 			  "",
 			  ""
 			]
@@ -3293,54 +4249,65 @@
 		}
 	  ],
 	  "solution": {
-		"value": "flowered"
+		"value": "in command"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "release": "8/18/2024",
+	  "release": "8/13/2024",
 	  "clue": {
-		"value": "Financial failure is not entirely peaceful"
+		"value": "Spanish gentlemen taking interest in old people"
 	  },
-	  "id": "21",
-	  "difficulty": "3",
+	  "id": "10",
+	  "difficulty": "2",
 	  "ready": "TRUE",
-	  "type": "charade, deletion",
+	  "type": "container",
 	  "definition": [
-		"Financial",
+		"old people",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "symbol",
-		  "value": "failure",
-		  "end": {
-			"value": [
-			  "F",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "is",
-		  "end": {
-			"value": [
-			  "is",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
 		  "category": "synonym",
-		  "value": "peaceful",
+		  "value": "Spanish gentlemen",
 		  "end": {
 			"value": [
-			  "calm",
+			  "senors",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "interest",
+		  "end": {
+			"value": [
+			  "i",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "taking",
+		  "end": {
+			"value": [
+			  "senors",
+			  "i",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -3348,10 +4315,9 @@
 		},
 		{
 		  "category": "",
-		  "value": "not entirely",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "calm",
 			  "",
 			  ""
 			]
@@ -3359,10 +4325,1150 @@
 		}
 	  ],
 	  "solution": {
-		"value": "fiscal"
+		"value": "seniors"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/6/2024",
+	  "clue": {
+		"value": "Former Secretary of State's survey involving our group"
+	  },
+	  "id": "64",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Former Secretary of State",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "survey",
+		  "end": {
+			"value": [
+			  "poll",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "our group",
+		  "end": {
+			"value": [
+			  "we",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "poll",
+		  "end": {
+			"value": [
+			  "we",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "powell"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/5/2024",
+	  "clue": {
+		"value": "Don eats Ann's brand of yogurt"
+	  },
+	  "id": "65",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"brand of yogurt",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "container",
+		  "value": "eats",
+		  "end": {
+			"value": [
+			  "Don",
+			  "Ann",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dannon"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/3/2024",
+	  "clue": {
+		"value": "Son insinuating desire did not exist"
+	  },
+	  "id": "67",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"did not exist",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Son",
+		  "end": {
+			"value": [
+			  "s",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "desire",
+		  "end": {
+			"value": [
+			  "want",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "insinuating",
+		  "end": {
+			"value": [
+			  "want",
+			  "s",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "wasn't"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/2/2024",
+	  "clue": {
+		"value": "Stories of general breaking alphanumeric display components"
+	  },
+	  "id": "68",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Stories",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "general",
+		  "end": {
+			"value": [
+			  "gen",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "alphanumeric display components",
+		  "end": {
+			"value": [
+			  "leds",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "breaking",
+		  "end": {
+			"value": [
+			  "leds",
+			  "gen",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legends"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/24/2024",
+	  "clue": {
+		"value": "Confederate general carries gun for ambassador"
+	  },
+	  "id": "77",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"ambassador",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Confederate general",
+		  "end": {
+			"value": [
+			  "lee",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "gun",
+		  "end": {
+			"value": [
+			  "gat",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "lee",
+		  "end": {
+			"value": [
+			  "gat",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/22/2024",
+	  "clue": {
+		"value": "Believes in supporting device holding ton"
+	  },
+	  "id": "79",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Believes in",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "supporting device",
+		  "end": {
+			"value": [
+			  "truss",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "ton",
+		  "end": {
+			"value": [
+			  "t",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "truss",
+		  "end": {
+			"value": [
+			  "t",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "trusts"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/18/2024",
+	  "clue": {
+		"value": "C in C enthralled by brief opportunities to use power unjustly"
+	  },
+	  "id": "83",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"to use power unjustly",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "C in C",
+		  "end": {
+			"value": [
+			  "pres",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "brief",
+		  "end": {
+			"value": [
+			  "opportunities",
+			  "opps",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "enthralled by",
+		  "end": {
+			"value": [
+			  "opps",
+			  "pres",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "oppress"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/8/2024",
+	  "clue": {
+		"value": "Unfavorable criticism about wife, a potential queen?"
+	  },
+	  "id": "93",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"a potential queen",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Unfavorable criticism",
+		  "end": {
+			"value": [
+			  "pan",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "wife",
+		  "end": {
+			"value": [
+			  "w",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "pan",
+			  "w",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pawn"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/5/2024",
+	  "clue": {
+		"value": "Speak with difficulty about Republican braggart"
+	  },
+	  "id": "96",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"braggart",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Speak with difficulty",
+		  "end": {
+			"value": [
+			  "stutter",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Republican",
+		  "end": {
+			"value": [
+			  "r",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "stutter",
+			  "r",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "strutter"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/26/2024",
+	  "clue": {
+		"value": "Sticky stuff found around a U.S. territory"
+	  },
+	  "id": "105",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"U.S. territory",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Sticky stuff",
+		  "end": {
+			"value": [
+			  "gum",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "around",
+		  "end": {
+			"value": [
+			  "gum",
+			  "a",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "guam"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/7/2024",
+	  "clue": {
+		"value": "Inquires nosily about despicable general's perks"
+	  },
+	  "id": "63",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, charade",
+	  "definition": [
+		"perks",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "despicable",
+		  "end": {
+			"value": [
+			  "vile",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "general",
+		  "end": {
+			"value": [
+			  "g",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Inquires nosily",
+		  "end": {
+			"value": [
+			  "pries",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "pries",
+			  "vile g",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "vile g"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "privileges"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/7/2024",
+	  "clue": {
+		"value": "Just passing soldier wearing small shoe"
+	  },
+	  "id": "94",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, charade",
+	  "definition": [
+		"shoe",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Just passing",
+		  "end": {
+			"value": [
+			  "d",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "solder",
+		  "end": {
+			"value": [
+			  "GI",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "small",
+		  "end": {
+			"value": [
+			  "wee",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "wearing",
+		  "end": {
+			"value": [
+			  "wee",
+			  "dgi",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "dgi"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "wedgie"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "9/20/2024",
+	  "clue": {
+		"value": "E.g., breakfast grain ground up"
+	  },
+	  "id": "24",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"E.g., breakfast",
+		"grain ground up"
+	  ],
+	  "hints": [
+		{
+		  "category": "double definition",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "meal"
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/16/2024",
+	  "clue": {
+		"value": "Wears out swings, sometimes"
+	  },
+	  "id": "9",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Wears out",
+		"swings, sometimes"
+	  ],
+	  "hints": [
+		{
+		  "category": "double definition",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tires"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "9/6/2024",
+	  "clue": {
+		"value": "Leave the better part of Southern Arizona"
+	  },
+	  "id": "51",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Leave",
+		"the better part of Southern Arizona"
+	  ],
+	  "hints": [
+		{
+		  "category": "double definition",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "desert"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -3422,6 +5528,16 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3432,58 +5548,68 @@
 	  }
 	},
 	{
-	  "release": "8/16/2024",
+	  "release": "7/20/2024",
 	  "clue": {
-		"value": "Hotel accommodates brief pause with Dee acting as boss"
+		"value": "Tightens up verb forms"
 	  },
-	  "id": "19",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "",
+	  "id": "81",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "double definition",
 	  "definition": [
-		"acting as boss",
-		""
+		"Tightens up",
+		"verb forms"
 	  ],
 	  "hints": [
 		{
-		  "category": "synonym",
-		  "value": "Hotel",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "inn",
+			  "",
 			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "synonym",
-		  "value": "brief pause",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "comma",
+			  "",
 			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "container",
-		  "value": "accommodates",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "inn",
-			  "comma",
+			  "",
+			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "synonym",
-		  "value": "Dee",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "D",
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
 			  "",
 			  ""
 			]
@@ -3491,10 +5617,1682 @@
 		}
 	  ],
 	  "solution": {
-		"value": "in command"
+		"value": "tenses"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/30/2024",
+	  "clue": {
+		"value": "Closes up aquatic animals"
+	  },
+	  "id": "101",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"Closes up",
+		"aquatic animals"
+	  ],
+	  "hints": [
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "seals"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "10/7/2024",
+	  "clue": {
+		"value": "Buried in Tucson or another arid region"
+	  },
+	  "id": "52",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"arid region",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "Buried in",
+		  "end": {
+			"value": [
+			  "Tucson or another",
+			  "son or an",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sonoran"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/27/2024",
+	  "clue": {
+		"value": "Espresso drink held by hospital attendant"
+	  },
+	  "id": "2",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"Espresso drink",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "held by",
+		  "end": {
+			"value": [
+			  "hospital attendant",
+			  "l atte",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "latte"
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/19/2024",
+	  "clue": {
+		"value": "Held by clasp, a designer suit"
+	  },
+	  "id": "18",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"suit",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "Held by",
+		  "end": {
+			"value": [
+			  "clasp, a designer",
+			  "sp, a de",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "spades"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/22/2024",
+	  "clue": {
+		"value": "Least outgoing member of pushy establishment"
+	  },
+	  "id": "31",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"Least outgoing",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "member of",
+		  "end": {
+			"value": [
+			  "pushy establishment",
+			  "shy est",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "shyest"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/4/2024",
+	  "clue": {
+		"value": "Fulminate against providing drink"
+	  },
+	  "id": "66",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "hidden word",
+	  "definition": [
+		"drink",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "providing",
+		  "end": {
+			"value": [
+			  "Fulminate against",
+			  "t ea",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tea"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/25/2024",
+	  "clue": {
+		"value": "Unfluctuating feature of muzzle velocity"
+	  },
+	  "id": "76",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "hidden word",
+	  "definition": [
+		"Unfluctuating",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "feature of",
+		  "end": {
+			"value": [
+			  "muzzle velocity",
+			  "level",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "level"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/19/2024",
+	  "clue": {
+		"value": "Retro gym ran a mortuary section for centurions, et al"
+	  },
+	  "id": "82",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "hidden word, reversal",
+	  "definition": [
+		"centurions, et al",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "section",
+		  "end": {
+			"value": [
+			  "gym ran a mortuary",
+			  "ymranamor",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "Retro",
+		  "end": {
+			"value": [
+			  "ymranamor",
+			  "Roman army",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Roman army"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "10/3/2024",
+	  "clue": {
+		"value": "Goofs up broadcast from a reporter"
+	  },
+	  "id": "25",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Goofs up",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "broadcast",
+		  "end": {
+			"value": [
+			  "airs",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "from a reporter",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "errs"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/2/2024",
+	  "clue": {
+		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
+	  },
+	  "id": "17",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Eyeglasses",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "initialism",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "broken",
+			  "liberal",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "terrible",
+		  "end": {
+			"value": [
+			  "fiasco",
+			  "b",
+			  "l"
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bifocals"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/1/2024",
+	  "clue": {
+		"value": "South Mountain, say"
+	  },
+	  "id": "16",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"say",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "South",
+		  "end": {
+			"value": [
+			  "S",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Mountain",
+		  "end": {
+			"value": [
+			  "peak",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "speak"
+	  },
+	  "source": {
+		"value": "Hex"
+	  }
+	},
+	{
+	  "release": "9/28/2024",
+	  "clue": {
+		"value": "Burn prophet, we hear"
+	  },
+	  "id": "4",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Burn",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "prophet",
+		  "end": {
+			"value": [
+			  "seer",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sear"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/25/2024",
+	  "clue": {
+		"value": "Computer industry dude, after transitioning, declared Dallas home"
+	  },
+	  "id": "53",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Dallas home",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Computer industry",
+		  "end": {
+			"value": [
+			  "tech",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "dude, after transitioning",
+		  "end": {
+			"value": [
+			  "sis",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "declared",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "texas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/23/2024",
+	  "clue": {
+		"value": "Group of lions was snoopy, we hear"
+	  },
+	  "id": "29",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Group of lions",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "was snoopy",
+		  "end": {
+			"value": [
+			  "pried",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pride"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/18/2024",
+	  "clue": {
+		"value": "Sounds like Fleetwood Mac frontwoman went after compensation in her hometown"
+	  },
+	  "id": "15",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"her hometown",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "compensation",
+		  "end": {
+			"value": [
+			  "fee",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Fleetwood Mac frontwoman",
+		  "end": {
+			"value": [
+			  "Nicks",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Sounds like",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "phoenix"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/12/2024",
+	  "clue": {
+		"value": "Pop star to hum quietly while slowly passing gas, we hear"
+	  },
+	  "id": "60",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Pop star",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "homophone",
+		  "value": "hum quietly while slowly passing gas",
+		  "end": {
+			"value": [
+			  "idle",
+			  "idol",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "idol"
+	  },
+	  "source": {
+		"value": "plunk it"
+	  }
+	},
+	{
+	  "release": "8/26/2024",
+	  "clue": {
+		"value": "Cargo said \"moo!\" in our ears"
+	  },
+	  "id": "36",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Cargo",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "said \"moo!\"",
+		  "end": {
+			"value": [
+			  "lowed",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "in our ears",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "load"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/19/2024",
+	  "clue": {
+		"value": "Produced blooms covered with white powder, say"
+	  },
+	  "id": "22",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Produced blooms",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "covered with white powder",
+		  "end": {
+			"value": [
+			  "floured",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "say",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "flowered"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "7/31/2024",
+	  "clue": {
+		"value": "Discussed minor problem with certain fabric"
+	  },
+	  "id": "70",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "homophone",
+	  "definition": [
+		"certain fabric",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "minor problem",
+		  "end": {
+			"value": [
+			  "nit",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Discussed",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "knit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/27/2024",
+	  "clue": {
+		"value": "Claims a shelf is mentioned"
+	  },
+	  "id": "74",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "homophone",
+	  "definition": [
+		"Alleges",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "a shelf is",
+		  "end": {
+			"value": [
+			  "a ledge is",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "mentioned",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "alleges"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/28/2024",
+	  "clue": {
+		"value": "Described haughty streak"
+	  },
+	  "id": "103",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "homophone",
+	  "definition": [
+		"streak",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "haughty",
+		  "end": {
+			"value": [
+			  "vain",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Described",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "vein"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "9/26/2024",
+	  "clue": {
+		"value": "Starts to dream about living large amid suburban Texas metropolis"
+	  },
+	  "id": "54",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "initialism",
+	  "definition": [
+		"Texas metropolis",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "initialism",
+		  "value": "Starts to",
+		  "end": {
+			"value": [
+			  "dream about living large amid suburban",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dallas"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -3505,7 +7303,7 @@
 	  "id": "14",
 	  "difficulty": "2",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "initialism",
 	  "definition": [
 		"Arizona boomer",
 		""
@@ -3554,36 +7352,46 @@
 			  ""
 			]
 		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
 		}
 	  ],
 	  "solution": {
-		"value": "Tucson"
+		"value": "tucson"
 	  },
 	  "source": {
 		"value": "Midas"
 	  }
 	},
 	{
-	  "release": "8/14/2024",
+	  "release": "9/5/2024",
 	  "clue": {
-		"value": "No, fear not traveling between morning and night"
+		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
 	  },
-	  "id": "12",
-	  "difficulty": "2",
+	  "id": "50",
+	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "letter bank",
 	  "definition": [
-		"between morning and night",
+		"way to get to London or Tokyo?",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "anagram",
-		  "value": "traveling",
+		  "category": "letter bank",
+		  "value": "Repeatedly",
 		  "end": {
 			"value": [
-			  "No, fear not",
-			  "afternoon",
+			  "slam nicer",
+			  "",
 			  ""
 			]
 		  }
@@ -3616,6 +7424,16 @@
 		  "end": {
 			"value": [
 			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
 			  "",
 			  ""
 			]
@@ -3623,32 +7441,488 @@
 		}
 	  ],
 	  "solution": {
-		"value": "afternoon"
+		"value": "american airlines"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "8/10/2024",
+	  "clue": {
+		"value": "Repeatedly retain host"
+	  },
+	  "id": "3",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "letter bank",
+	  "definition": [
+		"host",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "letter bank",
+		  "value": "Repeatedly",
+		  "end": {
+			"value": [
+			  "retain",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "entertainer"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/17/2024",
+	  "clue": {
+		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
+	  },
+	  "id": "13",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"post office worker's gear",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Idly chat",
+		  "end": {
+			"value": [
+			  "gab",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "actor Neeson",
+		  "end": {
+			"value": [
+			  "Liam",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "gab Liam",
+			  "mailbag",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "mailbag"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "release": "8/13/2024",
+	  "release": "9/7/2024",
 	  "clue": {
-		"value": "Spanish gentlemen taking interest in old people"
+		"value": "King with a golden touch is unhappy I'm returning"
 	  },
-	  "id": "10",
+	  "id": "55",
 	  "difficulty": "2",
 	  "ready": "TRUE",
-	  "type": "",
+	  "type": "reversal",
 	  "definition": [
-		"old people",
+		"King with a golden touch",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Spanish gentlemen",
+		  "value": "unhappy",
 		  "end": {
 			"value": [
-			  "senors",
+			  "sad",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "I'm",
+		  "end": {
+			"value": [
+			  "I'm",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "sad I'm",
+			  "midas",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "midas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "8/29/2024",
+	  "clue": {
+		"value": "Severely criticized turning at end of tricky childbirth"
+	  },
+	  "id": "40",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"childbirth",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Severely criticized",
+		  "end": {
+			"value": [
+			  "reviled",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "turning",
+		  "end": {
+			"value": [
+			  "reviled",
+			  "deliver",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "end of",
+		  "end": {
+			"value": [
+			  "tricky",
+			  "y",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "delivery"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "7/16/2024",
+	  "clue": {
+		"value": "Tied actress Campbell up"
+	  },
+	  "id": "85",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "reversal",
+	  "definition": [
+		"Tied",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "actress Campbell",
+		  "end": {
+			"value": [
+			  "Neve",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "up",
+		  "end": {
+			"value": [
+			  "Neve",
+			  "even",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "even"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "6/25/2024",
+	  "clue": {
+		"value": "Fanatic raised alcoholic container"
+	  },
+	  "id": "106",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "reversal",
+	  "definition": [
+		"alcoholic container",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Fanatic",
+		  "end": {
+			"value": [
+			  "nut",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "raised",
+		  "end": {
+			"value": [
+			  "nut",
+			  "tun",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  }
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  ""
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tun"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/6/2024",
+	  "clue": {
+		"value": "Awareness of policy expert turned up large advantage"
+	  },
+	  "id": "95",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "reversal, charade",
+	  "definition": [
+		"Awareness",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "policy expert",
+		  "end": {
+			"value": [
+			  "wonk",
 			  "",
 			  ""
 			]
@@ -3656,175 +7930,53 @@
 		},
 		{
 		  "category": "symbol",
-		  "value": "interest",
+		  "value": "large",
 		  "end": {
 			"value": [
-			  "i",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "taking",
-		  "end": {
-			"value": [
-			  "senors",
-			  "i",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "seniors"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "8/12/2024",
-	  "clue": {
-		"value": "Different parent starts late"
-	  },
-	  "id": "8",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "",
-	  "definition": [
-		"different",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "parent",
-		  "end": {
-			"value": [
-			  "mother",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "deletion",
-		  "value": "starts late",
-		  "end": {
-			"value": [
-			  "mother",
-			  "other",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "other"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "8/11/2024",
-	  "clue": {
-		"value": "Starting with a core of knowledge, gain deeper understanding!"
-	  },
-	  "id": "7",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "& Lit.",
-	  "definition": [
-		"starting with a core of knowledge, gain deeper understanding",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "core of",
-		  "end": {
-			"value": [
-			  "knowledge",
 			  "l",
+			  "",
 			  ""
 			]
 		  }
 		},
 		{
 		  "category": "synonym",
-		  "value": "gain",
+		  "value": "advantage",
 		  "end": {
 			"value": [
-			  "earn",
+			  "edge",
 			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "reversal",
+		  "value": "wonk",
 		  "end": {
 			"value": [
-			  "",
+			  "know",
 			  "",
 			  ""
 			]
 		  }
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "charade",
+		  "value": "know",
 		  "end": {
 			"value": [
-			  "",
-			  "",
-			  ""
+			  "l",
+			  "edge"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "learn"
+		"value": "knowledge"
 	  },
 	  "source": {
-		"value": "Midas"
+		"value": "Kegler"
 	  }
 	}
   ]
