@@ -33,6 +33,7 @@
 			display: flex;
 			align-items: center;
 			margin: 0 .25rem;
+			cursor: pointer;
 			
 			&.type-pill {
 				padding: .25rem .5rem;
@@ -56,7 +57,11 @@
 	}
 
 	.clue {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 		transition: opacity .25s ease;
+		flex-grow: 1;
 
 		.letter {
 			transition:
@@ -67,6 +72,10 @@
 	}
 
 	.addLetters {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		// position: fixed;
 		// left: 50%;
 		// transform: translateX(-50%);
@@ -83,66 +92,73 @@
 		}
 	}
 
-	.solution {
-		font-family: $lc-font--alt;
-		z-index: 10;
-		// opacity: 0;
-		transition: opacity $lc-transition--short ease;
-		text-align: center;
-		margin: 0 auto;
-		font-size: 1.25rem;
+	.sol-section {
+		flex-grow: 1;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
 
-		.letter {
-			position: relative;
+		.solution {
+			font-family: $lc-font--alt;
+			z-index: 10;
+			// opacity: 0;
+			transition: opacity $lc-transition--short ease;
 			text-align: center;
-			display: inline-block;
-			width: 30px;
-			height: 30px;
-			// text-transform: uppercase;
-			border: 1px solid $lc-text;
-			border-right: none;
+			margin: 0 auto;
+			font-size: 1.25rem;
 
-			&:last-child {
-				border-right: 1px solid $lc-text;
+			.letter {
+				position: relative;
+				text-align: center;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				// text-transform: uppercase;
+				border: 1px solid $lc-text;
+				border-right: none;
+
+				&:last-child {
+					border-right: 1px solid $lc-text;
+				}
+
+				.solLetter {
+					opacity: 0;
+					transition: opacity $lc-transition--short ease;
+				}
+
+				.typeLetter {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
 			}
 
-			.solLetter {
+			&.hide-input .letter .typeLetter {
 				opacity: 0;
 				transition: opacity $lc-transition--short ease;
 			}
 
-			.typeLetter {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+			&.reveal-solution .letter .solLetter {
+				opacity: 1;
+				transition: opacity $lc-transition--short ease;
 			}
 		}
 
-		&.hide-input .letter .typeLetter {
+		.source {
 			opacity: 0;
 			transition: opacity $lc-transition--short ease;
-		}
+			position: absolute;
+			top: 60px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 14px;
+			font-family: $lc-font--sans;
 
-		&.reveal-solution .letter .solLetter {
-			opacity: 1;
-			transition: opacity $lc-transition--short ease;
-		}
-	}
-
-	.source {
-		opacity: 0;
-		transition: opacity $lc-transition--short ease;
-		position: absolute;
-		top: 60px;
-		left: 50%;
-		transform: translateX(-50%);
-		font-size: 14px;
-		font-family: $lc-font--sans;
-
-		&.show {
-			opacity: 1;
-			transition: opacity $lc-transition--short ease;
+			&.show {
+				opacity: 1;
+				transition: opacity $lc-transition--short ease;
+			}
 		}
 	}
 }

@@ -10,6 +10,7 @@ const showSolution = (activeClue, nextHint) => {
 		case 'anagram':
 			moveLetters(prevHint.addLetters.ref.current.slice(0,prevHint.end.value[0].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[0].length))
 			break 
+
 		case 'hidden word':
 			// get index of solution within indicated
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)
@@ -18,6 +19,11 @@ const showSolution = (activeClue, nextHint) => {
 			changeColor(prevHint.end.ref, '#ccc')
 			changeColor(prevHint.end.ref.splice(solIndex, activeClue.solution.arr.length))
 			break
+
+		case 'homophone':
+			changeColor(prevHint.addLetters.ref.current[1])
+			break
+
 		case 'initialism':
 			changeColor(prevHint.end.ref, '#ccc')
 			// build arrary of first letters
@@ -29,6 +35,8 @@ const showSolution = (activeClue, nextHint) => {
 				changeColor(prevHint.end.ref[startLetter])
 				prevHint.end.ref.splice(0, startLetter)
 			})
+			break
+
 		default: 
 			break 
 	}

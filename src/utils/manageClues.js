@@ -99,7 +99,7 @@ const manageClues = (mode) => {
 						case 'container':
 							return `<strong>${hint.value}</strong>, indicates <strong>${hint.end.value[1]}</strong>, will go inside <strong>${hint.end.value[0]}</strong>`
 						case 'deletion':
-							return `<strong>${hint.value}</strong>, indicates a deletion on <strong>${hint.end.value[0]}</strong>, making <strong>${hint.end.value[1]}</strong>`
+							return `<strong>${hint.value}</strong>, indicates a deletion at <strong>${hint.end.value[0]}</strong>`
 						case 'direct':
 							return `<strong>${hint.value}</strong> is part of the answer`
 						case 'hidden word':
@@ -107,17 +107,17 @@ const manageClues = (mode) => {
 						case 'homophone':
 
 							// indicator only
-							if (hint.end.value.length == 0) {
+							// if (hint.end.value.length == 0) {
 								return `<strong>${hint.value}</strong> indicates a homophone`
 
 							// indicate and reveal
-							} else if (hint.end.value.length == 1) {
-								return `<strong>${hint.value}</strong> is a homophone for <strong>${hint.end.value[0]}</strong>`
+							// } else if (hint.end.value.length == 1) {
+							// 	return `<strong>${hint.value}</strong> is a homophone for <strong>${hint.end.value[0]}</strong>`
 							
-							// multiple end points
-							} else {
-								return `<strong>${hint.end.value[0]}</strong> + <strong>${hint.end.value[1]}</strong> = <strong>${hint.end.value[2]}</strong>`
-							}
+							// // multiple end points
+							// } else {
+							// 	return `<strong>${hint.end.value[0]}</strong> + <strong>${hint.end.value[1]}</strong> = <strong>${hint.end.value[2]}</strong>`
+							// }
 						case 'initialism':
 							return `<strong>${hint.value}</strong> indicates the beginning of one or more words`
 						case 'letter bank':
@@ -125,7 +125,7 @@ const manageClues = (mode) => {
 						case 'particle':
 							return `<strong>${hint.value}</strong>, applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
 						case 'reversal':
-							return `<strong>${hint.value[0]}</strong>, indicates a reversal on <strong>${hint.end.value[1]}</strong>, making it <strong>${hint.end.value[2]}</strong>`
+							return `<strong>${hint.value}</strong>, indicates a reversal on <strong>${hint.end.value[0]}</strong>, making it <strong>${hint.end.value[1]}</strong>`
 						case 'synonym':
 							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						case 'symbol':
