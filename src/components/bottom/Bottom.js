@@ -31,7 +31,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 		}
 	]
 	
-	if (activeClue.hints[nextHint].type == 'solution') {
+	if (activeClue.hints[nextHint].type == 'solution' || activeClue.hints[nextHint].reveals == "TRUE") {
 		btnArr = reavealSolutionButton
 	}
 	

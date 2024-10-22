@@ -5,6 +5,15 @@ import showSolution from './showSolution'
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
+	const revealSolution = () => {
+		activeClue.solution.sectionRef.current.classList.add('hide-input')
+		activeClue.solution.sectionRef.current.classList.add('reveal-solution')
+	}
+
+	const revealSource = () => {
+		activeClue.source.ref.current.classList.add('show')
+	}
+
 	if (showMessage && !checkAns) {
 
 		const hint = activeClue.hints[nextHint]
@@ -38,6 +47,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						} else if (delIndex >= 0) {
 							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
 						}
+
+						if (hint.reveals) {
+							console.log('reveal')
+							setTimeout(revealSolution, 2000)
+							setTimeout(revealSource, 3000)
+						}
 						break
 					case 'direct':
 						changeColor(hint.ref, '#ccc')
@@ -68,13 +83,14 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 				}
 				break
 			case 'solution':
-				showSolution(activeClue, nextHint)
+				showSolution(activeClue, nextHint, revealSolution, revealSource)
 				break
 			default: 
 				break
 		}
+
+	// change last hint to gray
 	} else if (!showMessage) {
-		// change last hint to gray
 		if (nextHint > 1) {
 			try {
 				highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)

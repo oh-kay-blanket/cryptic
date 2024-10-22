@@ -55,13 +55,12 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 
 	// addLetters HTML
 	const addInsert = activeClue.hints.map((hint, index) => {
-			if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
-				const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
+		if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
+			const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
 
-				return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
-			}
+			return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
 		}
-	)
+	})
 
 	// solution HTML
 	const solInsert = activeClue.solution.arr.map((letter, index) => (<span key={index} id={`i${index}`} className="letter"><span id={`sl${index}`} ref={activeClue.solution.ref.current[index]} className='solLetter'>{letter}</span><span className='typeLetter'>{input[index]}</span></span>))

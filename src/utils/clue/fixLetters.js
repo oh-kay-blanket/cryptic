@@ -89,7 +89,6 @@ const fixLetters = (activeClue) => {
 							})
 							const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
 							anchor.splice(destIndex, 1)
-							console.log(currentDestLetter.current.textContent)
 							ref.current.style.top = `${Number(currentDestLetter.current.style.top.slice(0,-2))}px`
 							ref.current.style.left = `${Number(currentDestLetter.current.style.left.slice(0,-2))}px`
 						})
