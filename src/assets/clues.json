@@ -1,24 +1,36 @@
 [
 	{
-	  "release": "8/18/2024",
+	  "release": "8/10/2024",
 	  "clue": {
-		"value": "Financial failure is not entirely peaceful"
+		"value": "Repeatedly retain host"
 	  },
-	  "id": "21",
-	  "difficulty": "3",
+	  "id": "3",
+	  "difficulty": "2",
 	  "ready": "TRUE",
-	  "type": "charade, deletion",
+	  "type": "letter bank",
 	  "definition": [
-		"Financial",
+		"host",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "symbol",
-		  "value": "failure",
+		  "category": "letter bank",
+		  "value": "Repeatedly",
 		  "end": {
 			"value": [
-			  "F",
+			  "retain",
+			  "entertainer",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -26,11 +38,11 @@
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "direct",
-		  "value": "is",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "is",
+			  "",
 			  "",
 			  ""
 			]
@@ -38,28 +50,16 @@
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "synonym",
-		  "value": "peaceful",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "calm",
+			  "",
 			  "",
 			  ""
 			]
 		  },
 		  "reveals": "FALSE"
-		},
-		{
-		  "category": "deletion",
-		  "value": "not entirely",
-		  "end": {
-			"value": [
-			  "calm",
-			  "cal",
-			  ""
-			]
-		  },
-		  "reveals": "TRUE"
 		},
 		{
 		  "category": "",
@@ -75,49 +75,49 @@
 		}
 	  ],
 	  "solution": {
-		"value": "fiscal"
+		"value": "entertainer"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "release": "9/4/2024",
+	  "release": "9/5/2024",
 	  "clue": {
-		"value": "Legacy carrier is never mentioned, ignoring the speed of light"
+		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
 	  },
-	  "id": "49",
+	  "id": "50",
 	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "deletion",
+	  "type": "letter bank",
 	  "definition": [
-		"Legacy carrier",
+		"way to get to London or Tokyo?",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "synonym",
-		  "value": "is never mentioned",
+		  "category": "letter bank",
+		  "value": "Repeatedly",
 		  "end": {
 			"value": [
-			  "uncited",
-			  "",
+			  "slam nicer",
+			  "american airlines",
 			  ""
 			]
 		  },
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "deletion",
-		  "value": "ignoring the speed of light",
+		  "category": "",
+		  "value": "",
 		  "end": {
 			"value": [
-			  "united",
-			  "un",
-			  "ited"
+			  "",
+			  "",
+			  ""
 			]
 		  },
-		  "reveals": "TRUE"
+		  "reveals": "FALSE"
 		},
 		{
 		  "category": "",
@@ -157,233 +157,45 @@
 		}
 	  ],
 	  "solution": {
-		"value": "united"
+		"value": "american airlines"
 	  },
 	  "source": {
 		"value": "Midas"
 	  }
 	},
 	{
-	  "release": "8/12/2024",
+	  "release": "9/5/2024",
 	  "clue": {
-		"value": "Different parent starts late"
+		"value": "Auto-canibalizing serpent often robs you last"
 	  },
-	  "id": "8",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "deletion",
-	  "definition": [
-		"Different",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "parent",
-		  "end": {
-			"value": [
-			  "mother",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "deletion",
-		  "value": "starts late",
-		  "end": {
-			"value": [
-			  "mother",
-			  "other",
-			  ""
-			]
-		  },
-		  "reveals": "TRUE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "other"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "6/27/2024",
-	  "clue": {
-		"value": "Poisonous snakes beheading stinging insects"
-	  },
-	  "id": "104",
-	  "difficulty": "2",
+	  "id": "107",
+	  "difficulty": "3",
 	  "ready": "FALSE",
-	  "type": "deletion",
+	  "type": "letter bank",
 	  "definition": [
-		"Poisonous snakes",
+		"Auto-canibalizing serpent",
 		""
 	  ],
 	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "stinging insects",
-		  "end": {
-			"value": [
-			  "wasps",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "deletion",
-		  "value": "beheading",
-		  "end": {
-			"value": [
-			  "wasps",
-			  "asps",
-			  ""
-			]
-		  },
-		  "reveals": "TRUE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "asps"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "7/21/2024",
-	  "clue": {
-		"value": "Margaret and Susan nearly backing a horse that really took off?"
-	  },
-	  "id": "80",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, deletion, reversal",
-	  "definition": [
-		"a horse that really took off",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Margaret",
-		  "end": {
-			"value": [
-			  "Peg",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
 		{
 		  "category": "particle",
-		  "value": "nearly",
+		  "value": "last",
 		  "end": {
 			"value": [
-			  "Susan",
-			  "Susa",
+			  "you",
+			  "u",
 			  ""
 			]
 		  },
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "reversal",
-		  "value": "backing",
+		  "category": "letter bank",
+		  "value": "often",
 		  "end": {
 			"value": [
-			  "susa",
-			  "asus",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "charade",
-		  "value": "Peg",
-		  "end": {
-			"value": [
-			  "asus",
-			  "",
+			  "robs you",
+			  "ouroboros",
 			  ""
 			]
 		  },
@@ -396,64 +208,6 @@
 			"value": [
 			  "",
 			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "pegasus"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "7/29/2024",
-	  "clue": {
-		"value": "Moving in a mass of loot, including trimmed ermine"
-	  },
-	  "id": "72",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, deletion",
-	  "definition": [
-		"Moving in a mass",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "loot",
-		  "end": {
-			"value": [
-			  "swag",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "particle",
-		  "value": "trimmed",
-		  "end": {
-			"value": [
-			  "ermine",
-			  "rmin",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "including",
-		  "end": {
-			"value": [
-			  "swag",
-			  "rmin",
 			  ""
 			]
 		  },
@@ -485,174 +239,10 @@
 		}
 	  ],
 	  "solution": {
-		"value": "swarming"
+		"value": "ouroboros"
 	  },
 	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "7/11/2024",
-	  "clue": {
-		"value": "Multitudes of African predators consuming half of eggs"
-	  },
-	  "id": "90",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, deletion",
-	  "definition": [
-		"Multitudes",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "African predators",
-		  "end": {
-			"value": [
-			  "lions",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "particle",
-		  "value": "half of",
-		  "end": {
-			"value": [
-			  "eggs",
-			  "eg",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "consuming",
-		  "end": {
-			"value": [
-			  "lions",
-			  "eg",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "legions"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "8/30/2024",
-	  "clue": {
-		"value": "Lawyer recalled gossip about corruption"
-	  },
-	  "id": "41",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container, reversal",
-	  "definition": [
-		"Lawyer",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "gossip",
-		  "end": {
-			"value": [
-			  "yenta",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "corruption",
-		  "end": {
-			"value": [
-			  "rot",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "about",
-		  "end": {
-			"value": [
-			  "yenta",
-			  "rot",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "recalled",
-		  "end": {
-			"value": [
-			  "yenrotta",
-			  "attorney",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "attorney"
-	  },
-	  "source": {
-		"value": "Fraz"
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -820,6 +410,88 @@
 	  }
 	},
 	{
+	  "release": "8/14/2024",
+	  "clue": {
+		"value": "No, fear not traveling between morning and night"
+	  },
+	  "id": "12",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"between morning and night",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "traveling",
+		  "end": {
+			"value": [
+			  "No, fear not",
+			  "afternoon",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "afternoon"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
 	  "release": "9/24/2024",
 	  "clue": {
 		"value": "Magic Pan pitches battle"
@@ -896,170 +568,6 @@
 	  ],
 	  "solution": {
 		"value": "campaign"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/8/2024",
-	  "clue": {
-		"value": "In Boston, commuting T trains as a way to get around!"
-	  },
-	  "id": "56",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram",
-	  "definition": [
-		"way to get around",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "commuting",
-		  "end": {
-			"value": [
-			  "T trains",
-			  "transit",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "transit"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/3/2024",
-	  "clue": {
-		"value": "Doesn't debate grease must be changed"
-	  },
-	  "id": "45",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram",
-	  "definition": [
-		"Doesn't debate",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "must be changed",
-		  "end": {
-			"value": [
-			  "grease",
-			  "agrees",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "agrees"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -1148,26 +656,26 @@
 	  }
 	},
 	{
-	  "release": "8/14/2024",
+	  "release": "9/3/2024",
 	  "clue": {
-		"value": "No, fear not traveling between morning and night"
+		"value": "Doesn't debate grease must be changed"
 	  },
-	  "id": "12",
+	  "id": "45",
 	  "difficulty": "2",
 	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
-		"between morning and night",
+		"Doesn't debate",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "anagram",
-		  "value": "traveling",
+		  "value": "must be changed",
 		  "end": {
 			"value": [
-			  "No, fear not",
-			  "afternoon",
+			  "grease",
+			  "agrees",
 			  ""
 			]
 		  },
@@ -1223,10 +731,92 @@
 		}
 	  ],
 	  "solution": {
-		"value": "afternoon"
+		"value": "agrees"
 	  },
 	  "source": {
-		"value": "Kegler"
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/8/2024",
+	  "clue": {
+		"value": "In Boston, commuting T trains as a way to get around!"
+	  },
+	  "id": "56",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"way to get around",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "commuting",
+		  "end": {
+			"value": [
+			  "T trains",
+			  "transit",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "transit"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -1413,7 +1003,7 @@
 		  "end": {
 			"value": [
 			  "isle menu",
-			  "",
+			  "selenium",
 			  ""
 			]
 		  },
@@ -1495,7 +1085,7 @@
 		  "end": {
 			"value": [
 			  "net near to",
-			  "",
+			  "neon tetra",
 			  ""
 			]
 		  },
@@ -1577,7 +1167,7 @@
 		  "end": {
 			"value": [
 			  "Towels",
-			  "",
+			  "owlets",
 			  ""
 			]
 		  },
@@ -1659,7 +1249,7 @@
 		  "end": {
 			"value": [
 			  "Ed's busy",
-			  "",
+			  "debussy",
 			  ""
 			]
 		  },
@@ -1886,252 +1476,6 @@
 	  }
 	},
 	{
-	  "release": "10/6/2024",
-	  "clue": {
-		"value": "Large, empty apartment took off"
-	  },
-	  "id": "47",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"took off",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "Large",
-		  "end": {
-			"value": [
-			  "L",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "empty",
-		  "end": {
-			"value": [
-			  "E",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "apartment",
-		  "end": {
-			"value": [
-			  "apt",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "leapt"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/5/2024",
-	  "clue": {
-		"value": "Come to AT&T objective"
-	  },
-	  "id": "46",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Come to",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "AT&T",
-		  "end": {
-			"value": [
-			  "att",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "objective",
-		  "end": {
-			"value": [
-			  "end",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "attend"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/4/2024",
-	  "clue": {
-		"value": "Male dogs check laundry soap"
-	  },
-	  "id": "38",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"laundry soap",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Male",
-		  "end": {
-			"value": [
-			  "gent",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "dogs",
-		  "end": {
-			"value": [
-			  "goes after",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "check",
-		  "end": {
-			"value": [
-			  "deter",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "detergent"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "release": "9/30/2024",
 	  "clue": {
 		"value": "Wearing fewer clothes around Rhode Island is an impediment"
@@ -2296,26 +1640,26 @@
 	  }
 	},
 	{
-	  "release": "9/13/2024",
+	  "release": "8/21/2024",
 	  "clue": {
-		"value": "After middle of season, each lost"
+		"value": "Sure happy in the end, especially with rent"
 	  },
-	  "id": "48",
+	  "id": "30",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"lost",
+		"Sure",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "particle",
-		  "value": "middle of",
+		  "value": "in the end",
 		  "end": {
 			"value": [
-			  "season",
-			  "as",
+			  "happy",
+			  "y",
 			  ""
 			]
 		  },
@@ -2323,10 +1667,10 @@
 		},
 		{
 		  "category": "symbol",
-		  "value": "each",
+		  "value": "especially",
 		  "end": {
 			"value": [
-			  "ea",
+			  "esp",
 			  "",
 			  ""
 			]
@@ -2334,11 +1678,11 @@
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "synonym",
+		  "value": "rent",
 		  "end": {
 			"value": [
-			  "",
+			  "lease",
 			  "",
 			  ""
 			]
@@ -2371,499 +1715,7 @@
 		}
 	  ],
 	  "solution": {
-		"value": "asea"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/11/2024",
-	  "clue": {
-		"value": "Frogs saw poison fungus"
-	  },
-	  "id": "59",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"poison fungus",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Frogs",
-		  "end": {
-			"value": [
-			  "toads",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "saw",
-		  "end": {
-			"value": [
-			  "tool",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "toadstool"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "release": "9/10/2024",
-	  "clue": {
-		"value": "Garland has looked over knot after weather event"
-	  },
-	  "id": "58",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Garland has looked over",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "knot",
-		  "end": {
-			"value": [
-			  "bow",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "weather event",
-		  "end": {
-			"value": [
-			  "rain",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "rainbow"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "release": "9/2/2024",
-	  "clue": {
-		"value": "Fatally drew blood at front of Room Y"
-	  },
-	  "id": "44",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Fatally",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "drew blood",
-		  "end": {
-			"value": [
-			  "let",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "Room",
-		  "end": {
-			"value": [
-			  "hall",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "direct",
-		  "value": "Y",
-		  "end": {
-			"value": [
-			  "Y",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "lethally"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/1/2024",
-	  "clue": {
-		"value": "Again espouses study with orator's first points"
-	  },
-	  "id": "43",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Again espouses",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "study",
-		  "end": {
-			"value": [
-			  "read",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "initialism",
-		  "value": "first",
-		  "end": {
-			"value": [
-			  "orator's",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "points",
-		  "end": {
-			"value": [
-			  "pts",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "readopts"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/27/2024",
-	  "clue": {
-		"value": "Daddy's eating last of raw fruit"
-	  },
-	  "id": "37",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"fruit",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Daddy's",
-		  "end": {
-			"value": [
-			  "papas",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "particle",
-		  "value": "last of",
-		  "end": {
-			"value": [
-			  "raw",
-			  "w",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "eating",
-		  "end": {
-			"value": [
-			  "papas",
-			  "w",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "papaws"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/24/2024",
-	  "clue": {
-		"value": "Digests cheese on Friday and Saturday"
-	  },
-	  "id": "33",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Digests",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "cheese",
-		  "end": {
-			"value": [
-			  "brie",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "Friday",
-		  "end": {
-			"value": [
-			  "F",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "Saturday",
-		  "end": {
-			"value": [
-			  "S",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "briefs"
+		"value": "yes please"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -2952,37 +1804,25 @@
 	  }
 	},
 	{
-	  "release": "8/21/2024",
+	  "release": "8/24/2024",
 	  "clue": {
-		"value": "Sure happy in the end, especially with rent"
+		"value": "Digests cheese on Friday and Saturday"
 	  },
-	  "id": "30",
+	  "id": "33",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"Sure",
+		"Digests",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "particle",
-		  "value": "in the end",
+		  "category": "synonym",
+		  "value": "cheese",
 		  "end": {
 			"value": [
-			  "happy",
-			  "y",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "symbol",
-		  "value": "especially",
-		  "end": {
-			"value": [
-			  "esp",
+			  "brie",
 			  "",
 			  ""
 			]
@@ -2990,11 +1830,23 @@
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "synonym",
-		  "value": "rent",
+		  "category": "symbol",
+		  "value": "Friday",
 		  "end": {
 			"value": [
-			  "lease",
+			  "F",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "Saturday",
+		  "end": {
+			"value": [
+			  "S",
 			  "",
 			  ""
 			]
@@ -3027,10 +1879,748 @@
 		}
 	  ],
 	  "solution": {
-		"value": "yes please"
+		"value": "briefs"
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/27/2024",
+	  "clue": {
+		"value": "Daddy's eating last of raw fruit"
+	  },
+	  "id": "37",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"fruit",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Daddy's",
+		  "end": {
+			"value": [
+			  "papas",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "last of",
+		  "end": {
+			"value": [
+			  "raw",
+			  "w",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "eating",
+		  "end": {
+			"value": [
+			  "papas",
+			  "w",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "papaws"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/4/2024",
+	  "clue": {
+		"value": "Male dogs check laundry soap"
+	  },
+	  "id": "38",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"laundry soap",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Male",
+		  "end": {
+			"value": [
+			  "gent",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "dogs",
+		  "end": {
+			"value": [
+			  "goes after",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "check",
+		  "end": {
+			"value": [
+			  "deter",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "detergent"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/1/2024",
+	  "clue": {
+		"value": "Again espouses study with orator's first points"
+	  },
+	  "id": "43",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Again espouses",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "study",
+		  "end": {
+			"value": [
+			  "read",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "initialism",
+		  "value": "first",
+		  "end": {
+			"value": [
+			  "orator's",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "points",
+		  "end": {
+			"value": [
+			  "pts",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "readopts"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/2/2024",
+	  "clue": {
+		"value": "Fatally drew blood at front of Room Y"
+	  },
+	  "id": "44",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Fatally",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "drew blood",
+		  "end": {
+			"value": [
+			  "let",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "Room",
+		  "end": {
+			"value": [
+			  "hall",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "Y",
+		  "end": {
+			"value": [
+			  "Y",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "lethally"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/5/2024",
+	  "clue": {
+		"value": "Come to AT&T objective"
+	  },
+	  "id": "46",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Come to",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "AT&T",
+		  "end": {
+			"value": [
+			  "att",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "objective",
+		  "end": {
+			"value": [
+			  "end",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "attend"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/6/2024",
+	  "clue": {
+		"value": "Large, empty apartment took off"
+	  },
+	  "id": "47",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"took off",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Large",
+		  "end": {
+			"value": [
+			  "L",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "empty",
+		  "end": {
+			"value": [
+			  "E",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "apartment",
+		  "end": {
+			"value": [
+			  "apt",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "leapt"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/13/2024",
+	  "clue": {
+		"value": "After middle of season, each lost"
+	  },
+	  "id": "48",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"lost",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "middle of",
+		  "end": {
+			"value": [
+			  "season",
+			  "as",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "each",
+		  "end": {
+			"value": [
+			  "ea",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "asea"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/10/2024",
+	  "clue": {
+		"value": "Garland has looked over knot after weather event"
+	  },
+	  "id": "58",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Garland has looked over",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "knot",
+		  "end": {
+			"value": [
+			  "bow",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "weather event",
+		  "end": {
+			"value": [
+			  "rain",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "rainbow"
+	  },
+	  "source": {
+		"value": "plunk it"
+	  }
+	},
+	{
+	  "release": "9/11/2024",
+	  "clue": {
+		"value": "Frogs saw poison fungus"
+	  },
+	  "id": "59",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"poison fungus",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Frogs",
+		  "end": {
+			"value": [
+			  "toads",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "saw",
+		  "end": {
+			"value": [
+			  "tool",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "toadstool"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -3690,6 +3280,170 @@
 	  }
 	},
 	{
+	  "release": "8/18/2024",
+	  "clue": {
+		"value": "Financial failure is not entirely peaceful"
+	  },
+	  "id": "21",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Financial",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "failure",
+		  "end": {
+			"value": [
+			  "F",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "is",
+		  "end": {
+			"value": [
+			  "is",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "peaceful",
+		  "end": {
+			"value": [
+			  "calm",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "deletion",
+		  "value": "not entirely",
+		  "end": {
+			"value": [
+			  "calm",
+			  "cal",
+			  ""
+			]
+		  },
+		  "reveals": "TRUE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "fiscal"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "7/21/2024",
+	  "clue": {
+		"value": "Margaret and Susan nearly backing a horse that really took off?"
+	  },
+	  "id": "80",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"a horse that really took off",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Margaret",
+		  "end": {
+			"value": [
+			  "Peg",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "nearly",
+		  "end": {
+			"value": [
+			  "Susan",
+			  "Susa",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "susa",
+			  "asus",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "charade",
+		  "value": "Peg",
+		  "end": {
+			"value": [
+			  "asus",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "pegasus"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
 	  "release": "7/13/2024",
 	  "clue": {
 		"value": "On the way back, spots unsatisfactory stamp found on some meat"
@@ -3936,170 +3690,6 @@
 	  }
 	},
 	{
-	  "release": "9/22/2024",
-	  "clue": {
-		"value": "Swiss cabin fit inside court"
-	  },
-	  "id": "28",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"Swiss cabin",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "court",
-		  "end": {
-			"value": [
-			  "ct",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "fit",
-		  "end": {
-			"value": [
-			  "hale",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "inside",
-		  "end": {
-			"value": [
-			  "ct",
-			  "hale",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "chalet"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/15/2024",
-	  "clue": {
-		"value": "Listless doctor becoming more mature about big bill"
-	  },
-	  "id": "27",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"Listless",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "doctor",
-		  "end": {
-			"value": [
-			  "Dr",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "becoming more mature",
-		  "end": {
-			"value": [
-			  "aging",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "big bill",
-		  "end": {
-			"value": [
-			  "G",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "about",
-		  "end": {
-			"value": [
-			  "aging",
-			  "G",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "G",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "dragging"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "release": "9/14/2024",
 	  "clue": {
 		"value": "Uranium buried in a neat courtyard"
@@ -4182,189 +3772,25 @@
 	  }
 	},
 	{
-	  "release": "9/9/2024",
+	  "release": "8/13/2024",
 	  "clue": {
-		"value": "Anti-tech DD and I are really into lute"
+		"value": "Spanish gentlemen taking interest in old people"
 	  },
-	  "id": "57",
+	  "id": "10",
 	  "difficulty": "2",
 	  "ready": "TRUE",
 	  "type": "container",
 	  "definition": [
-		"Anti-tech",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "DD",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "direct",
-		  "value": "I",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "really into",
-		  "end": {
-			"value": [
-			  "lute",
-			  "DD",
-			  "I"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "luddite"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "release": "8/31/2024",
-	  "clue": {
-		"value": "African country engaged in \"beginning of life\" ceremony"
-	  },
-	  "id": "42",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"ceremony",
+		"old people",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "begining of life",
+		  "value": "Spanish gentlemen",
 		  "end": {
 			"value": [
-			  "forty",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "African country",
-		  "end": {
-			"value": [
-			  "Mali",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "container",
-		  "value": "engaged in",
-		  "end": {
-			"value": [
-			  "forty",
-			  "mali",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "formality"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "8/25/2024",
-	  "clue": {
-		"value": "Dietary components, including copyright info"
-	  },
-	  "id": "34",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"info",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Dietary components",
-		  "end": {
-			"value": [
-			  "fats",
+			  "senors",
 			  "",
 			  ""
 			]
@@ -4373,10 +3799,10 @@
 		},
 		{
 		  "category": "symbol",
-		  "value": "copyright",
+		  "value": "interest",
 		  "end": {
 			"value": [
-			  "c",
+			  "i",
 			  "",
 			  ""
 			]
@@ -4385,11 +3811,11 @@
 		},
 		{
 		  "category": "container",
-		  "value": "including",
+		  "value": "taking",
 		  "end": {
 			"value": [
-			  "fats",
-			  "c",
+			  "senors",
+			  "i",
 			  ""
 			]
 		  },
@@ -4421,7 +3847,89 @@
 		}
 	  ],
 	  "solution": {
-		"value": "facts"
+		"value": "seniors"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/16/2024",
+	  "clue": {
+		"value": "Hotel accommodates brief pause with Dee acting as boss"
+	  },
+	  "id": "19",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"acting as boss",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Hotel",
+		  "end": {
+			"value": [
+			  "inn",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "brief pause",
+		  "end": {
+			"value": [
+			  "comma",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "accommodates",
+		  "end": {
+			"value": [
+			  "inn",
+			  "comma",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "Dee",
+		  "end": {
+			"value": [
+			  "D",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "in command"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -4510,25 +4018,25 @@
 	  }
 	},
 	{
-	  "release": "8/16/2024",
+	  "release": "9/15/2024",
 	  "clue": {
-		"value": "Hotel accommodates brief pause with Dee acting as boss"
+		"value": "Listless doctor becoming more mature about big bill"
 	  },
-	  "id": "19",
-	  "difficulty": "3",
+	  "id": "27",
+	  "difficulty": "4",
 	  "ready": "TRUE",
 	  "type": "container",
 	  "definition": [
-		"acting as boss",
+		"Listless",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "synonym",
-		  "value": "Hotel",
+		  "category": "symbol",
+		  "value": "doctor",
 		  "end": {
 			"value": [
-			  "inn",
+			  "Dr",
 			  "",
 			  ""
 			]
@@ -4537,10 +4045,22 @@
 		},
 		{
 		  "category": "synonym",
-		  "value": "brief pause",
+		  "value": "becoming more mature",
 		  "end": {
 			"value": [
-			  "comma",
+			  "aging",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "big bill",
+		  "end": {
+			"value": [
+			  "G",
 			  "",
 			  ""
 			]
@@ -4549,11 +4069,57 @@
 		},
 		{
 		  "category": "container",
-		  "value": "accommodates",
+		  "value": "about",
 		  "end": {
 			"value": [
-			  "inn",
-			  "comma",
+			  "aging",
+			  "G",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "G",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "dragging"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/22/2024",
+	  "clue": {
+		"value": "Swiss cabin fit inside court"
+	  },
+	  "id": "28",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Swiss cabin",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "court",
+		  "end": {
+			"value": [
+			  "ct",
+			  "",
 			  ""
 			]
 		  },
@@ -4561,10 +4127,34 @@
 		},
 		{
 		  "category": "synonym",
-		  "value": "Dee",
+		  "value": "fit",
 		  "end": {
 			"value": [
-			  "D",
+			  "hale",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "ct",
+			  "hale",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
 			  "",
 			  ""
 			]
@@ -4585,32 +4175,32 @@
 		}
 	  ],
 	  "solution": {
-		"value": "in command"
+		"value": "chalet"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "release": "8/13/2024",
+	  "release": "8/25/2024",
 	  "clue": {
-		"value": "Spanish gentlemen taking interest in old people"
+		"value": "Dietary components, including copyright info"
 	  },
-	  "id": "10",
+	  "id": "34",
 	  "difficulty": "2",
 	  "ready": "TRUE",
 	  "type": "container",
 	  "definition": [
-		"old people",
+		"info",
 		""
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Spanish gentlemen",
+		  "value": "Dietary components",
 		  "end": {
 			"value": [
-			  "senors",
+			  "fats",
 			  "",
 			  ""
 			]
@@ -4619,10 +4209,10 @@
 		},
 		{
 		  "category": "symbol",
-		  "value": "interest",
+		  "value": "copyright",
 		  "end": {
 			"value": [
-			  "i",
+			  "c",
 			  "",
 			  ""
 			]
@@ -4631,11 +4221,11 @@
 		},
 		{
 		  "category": "container",
-		  "value": "taking",
+		  "value": "including",
 		  "end": {
 			"value": [
-			  "senors",
-			  "i",
+			  "fats",
+			  "c",
 			  ""
 			]
 		  },
@@ -4667,10 +4257,174 @@
 		}
 	  ],
 	  "solution": {
-		"value": "seniors"
+		"value": "facts"
 	  },
 	  "source": {
-		"value": "Kegler"
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/31/2024",
+	  "clue": {
+		"value": "African country engaged in \"beginning of life\" ceremony"
+	  },
+	  "id": "42",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"ceremony",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "begining of life",
+		  "end": {
+			"value": [
+			  "forty",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "African country",
+		  "end": {
+			"value": [
+			  "Mali",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "engaged in",
+		  "end": {
+			"value": [
+			  "forty",
+			  "mali",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "formality"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/9/2024",
+	  "clue": {
+		"value": "Anti-tech DD and I are really into lute"
+	  },
+	  "id": "57",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Anti-tech",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "DD",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "I",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "really into",
+		  "end": {
+			"value": [
+			  "lute",
+			  "DD",
+			  "I"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "luddite"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -5658,21 +5412,57 @@
 	  }
 	},
 	{
-	  "release": "9/20/2024",
+	  "release": "7/29/2024",
 	  "clue": {
-		"value": "E.g., breakfast grain ground up"
+		"value": "Moving in a mass of loot, including trimmed ermine"
 	  },
-	  "id": "24",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "double definition",
+	  "id": "72",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, deletion",
 	  "definition": [
-		"E.g., breakfast",
-		"grain ground up"
+		"Moving in a mass",
+		""
 	  ],
 	  "hints": [
 		{
-		  "category": "double definition",
+		  "category": "synonym",
+		  "value": "loot",
+		  "end": {
+			"value": [
+			  "swag",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "trimmed",
+		  "end": {
+			"value": [
+			  "ermine",
+			  "rmin",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "including",
+		  "end": {
+			"value": [
+			  "swag",
+			  "rmin",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
 		  "value": "",
 		  "end": {
 			"value": [
@@ -5694,6 +5484,216 @@
 			]
 		  },
 		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "swarming"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "7/11/2024",
+	  "clue": {
+		"value": "Multitudes of African predators consuming half of eggs"
+	  },
+	  "id": "90",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "container, deletion",
+	  "definition": [
+		"Multitudes",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "African predators",
+		  "end": {
+			"value": [
+			  "lions",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "half of",
+		  "end": {
+			"value": [
+			  "eggs",
+			  "eg",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "consuming",
+		  "end": {
+			"value": [
+			  "lions",
+			  "eg",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "legions"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "8/30/2024",
+	  "clue": {
+		"value": "Lawyer recalled gossip about corruption"
+	  },
+	  "id": "41",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Lawyer",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "gossip",
+		  "end": {
+			"value": [
+			  "yenta",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "corruption",
+		  "end": {
+			"value": [
+			  "rot",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "yenta",
+			  "rot",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "recalled",
+		  "end": {
+			"value": [
+			  "yenrotta",
+			  "attorney",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "attorney"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/12/2024",
+	  "clue": {
+		"value": "Different parent starts late"
+	  },
+	  "id": "8",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Different",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "parent",
+		  "end": {
+			"value": [
+			  "mother",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "deletion",
+		  "value": "starts late",
+		  "end": {
+			"value": [
+			  "mother",
+			  "other",
+			  ""
+			]
+		  },
+		  "reveals": "TRUE"
 		},
 		{
 		  "category": "",
@@ -5733,10 +5733,174 @@
 		}
 	  ],
 	  "solution": {
-		"value": "meal"
+		"value": "other"
 	  },
 	  "source": {
-		"value": "Fraz"
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "release": "9/4/2024",
+	  "clue": {
+		"value": "Legacy carrier is never mentioned, ignoring the speed of light"
+	  },
+	  "id": "49",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Legacy carrier",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "is never mentioned",
+		  "end": {
+			"value": [
+			  "uncited",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "deletion",
+		  "value": "ignoring the speed of light",
+		  "end": {
+			"value": [
+			  "united",
+			  "un",
+			  "ited"
+			]
+		  },
+		  "reveals": "TRUE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "united"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "6/27/2024",
+	  "clue": {
+		"value": "Poisonous snakes beheading stinging insects"
+	  },
+	  "id": "104",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "deletion",
+	  "definition": [
+		"Poisonous snakes",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "stinging insects",
+		  "end": {
+			"value": [
+			  "wasps",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "deletion",
+		  "value": "beheading",
+		  "end": {
+			"value": [
+			  "wasps",
+			  "asps",
+			  ""
+			]
+		  },
+		  "reveals": "TRUE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "asps"
+	  },
+	  "source": {
+		"value": "Kegler"
 	  }
 	},
 	{
@@ -5822,88 +5986,6 @@
 	  }
 	},
 	{
-	  "release": "9/6/2024",
-	  "clue": {
-		"value": "Leave the better part of Southern Arizona"
-	  },
-	  "id": "51",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "double definition",
-	  "definition": [
-		"Leave",
-		"the better part of Southern Arizona"
-	  ],
-	  "hints": [
-		{
-		  "category": "double definition",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "desert"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
 	  "release": "8/17/2024",
 	  "clue": {
 		"value": "Throw black goo"
@@ -5983,6 +6065,170 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/20/2024",
+	  "clue": {
+		"value": "E.g., breakfast grain ground up"
+	  },
+	  "id": "24",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"E.g., breakfast",
+		"grain ground up"
+	  ],
+	  "hints": [
+		{
+		  "category": "double definition",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "meal"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/6/2024",
+	  "clue": {
+		"value": "Leave the better part of Southern Arizona"
+	  },
+	  "id": "51",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Leave",
+		"the better part of Southern Arizona"
+	  ],
+	  "hints": [
+		{
+		  "category": "double definition",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "desert"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -6147,88 +6393,6 @@
 	  },
 	  "source": {
 		"value": "Kegler"
-	  }
-	},
-	{
-	  "release": "10/7/2024",
-	  "clue": {
-		"value": "Buried in Tucson or another arid region"
-	  },
-	  "id": "52",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "hidden word",
-	  "definition": [
-		"arid region",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "Buried in",
-		  "end": {
-			"value": [
-			  "Tucson or another",
-			  "son or an",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "sonoran"
-	  },
-	  "source": {
-		"value": "Midas"
 	  }
 	},
 	{
@@ -6478,6 +6642,88 @@
 	  }
 	},
 	{
+	  "release": "10/7/2024",
+	  "clue": {
+		"value": "Buried in Tucson or another arid region"
+	  },
+	  "id": "52",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"arid region",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "Buried in",
+		  "end": {
+			"value": [
+			  "Tucson or another",
+			  "son or an",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "sonoran"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
 	  "release": "8/4/2024",
 	  "clue": {
 		"value": "Fulminate against providing drink"
@@ -6724,252 +6970,6 @@
 	  }
 	},
 	{
-	  "release": "10/3/2024",
-	  "clue": {
-		"value": "Goofs up broadcast from a reporter"
-	  },
-	  "id": "25",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Goofs up",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "broadcast",
-		  "end": {
-			"value": [
-			  "airs",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "homophone",
-		  "value": "from a reporter",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "errs"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/2/2024",
-	  "clue": {
-		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
-	  },
-	  "id": "17",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Eyeglasses",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "initially",
-		  "end": {
-			"value": [
-			  "broken",
-			  "liberal",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "anagram",
-		  "value": "terrible",
-		  "end": {
-			"value": [
-			  "fiasco",
-			  "b",
-			  "l"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "bifocals"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "10/1/2024",
-	  "clue": {
-		"value": "South Mountain, say"
-	  },
-	  "id": "16",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"say",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "South",
-		  "end": {
-			"value": [
-			  "S",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "Mountain",
-		  "end": {
-			"value": [
-			  "peak",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "speak"
-	  },
-	  "source": {
-		"value": "Hex"
-	  }
-	},
-	{
 	  "release": "9/28/2024",
 	  "clue": {
 		"value": "Burn prophet, we hear"
@@ -7046,170 +7046,6 @@
 	  ],
 	  "solution": {
 		"value": "sear"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "release": "9/25/2024",
-	  "clue": {
-		"value": "Computer industry dude, after transitioning, declared Dallas home"
-	  },
-	  "id": "53",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Dallas home",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Computer industry",
-		  "end": {
-			"value": [
-			  "tech",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "dude, after transitioning",
-		  "end": {
-			"value": [
-			  "sis",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "homophone",
-		  "value": "declared",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "texas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "9/23/2024",
-	  "clue": {
-		"value": "Group of lions was snoopy, we hear"
-	  },
-	  "id": "29",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Group of lions",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "was snoopy",
-		  "end": {
-			"value": [
-			  "pried",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "homophone",
-		  "value": "we hear",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "pride"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -7298,37 +7134,37 @@
 	  }
 	},
 	{
-	  "release": "9/12/2024",
+	  "release": "10/1/2024",
 	  "clue": {
-		"value": "Pop star to hum quietly while slowly passing gas, we hear"
+		"value": "South Mountain, say"
 	  },
-	  "id": "60",
-	  "difficulty": "2",
+	  "id": "16",
+	  "difficulty": "1",
 	  "ready": "TRUE",
 	  "type": "homophone",
 	  "definition": [
-		"Pop star",
+		"say",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "homophone",
-		  "value": "hum quietly while slowly passing gas",
+		  "category": "symbol",
+		  "value": "South",
 		  "end": {
 			"value": [
-			  "idle",
-			  "idol",
+			  "S",
+			  "",
 			  ""
 			]
 		  },
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "",
-		  "value": "",
+		  "category": "synonym",
+		  "value": "Mountain",
 		  "end": {
 			"value": [
-			  "",
+			  "peak",
 			  "",
 			  ""
 			]
@@ -7373,46 +7209,46 @@
 		}
 	  ],
 	  "solution": {
-		"value": "idol"
+		"value": "speak"
 	  },
 	  "source": {
-		"value": "plunk it"
+		"value": "Hex"
 	  }
 	},
 	{
-	  "release": "8/26/2024",
+	  "release": "10/2/2024",
 	  "clue": {
-		"value": "Cargo said \"moo!\" in our ears"
+		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
 	  },
-	  "id": "36",
-	  "difficulty": "2",
+	  "id": "17",
+	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "homophone",
 	  "definition": [
-		"Cargo",
+		"Eyeglasses",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "synonym",
-		  "value": "said \"moo!\"",
+		  "category": "initialism",
+		  "value": "initially",
 		  "end": {
 			"value": [
-			  "lowed",
-			  "",
+			  "broken",
+			  "liberal",
 			  ""
 			]
 		  },
 		  "reveals": "FALSE"
 		},
 		{
-		  "category": "homophone",
-		  "value": "in our ears",
+		  "category": "anagram",
+		  "value": "terrible",
 		  "end": {
 			"value": [
-			  "",
-			  "",
-			  ""
+			  "fiasco",
+			  "b",
+			  "l"
 			]
 		  },
 		  "reveals": "FALSE"
@@ -7455,7 +7291,7 @@
 		}
 	  ],
 	  "solution": {
-		"value": "load"
+		"value": "bifocals"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -7541,6 +7377,416 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "10/3/2024",
+	  "clue": {
+		"value": "Goofs up broadcast from a reporter"
+	  },
+	  "id": "25",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Goofs up",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "broadcast",
+		  "end": {
+			"value": [
+			  "airs",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "homophone",
+		  "value": "from a reporter",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "errs"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/23/2024",
+	  "clue": {
+		"value": "Group of lions was snoopy, we hear"
+	  },
+	  "id": "29",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Group of lions",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "was snoopy",
+		  "end": {
+			"value": [
+			  "pried",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "pride"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "8/26/2024",
+	  "clue": {
+		"value": "Cargo said \"moo!\" in our ears"
+	  },
+	  "id": "36",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Cargo",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "said \"moo!\"",
+		  "end": {
+			"value": [
+			  "lowed",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "homophone",
+		  "value": "in our ears",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "load"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/25/2024",
+	  "clue": {
+		"value": "Computer industry dude, after transitioning, declared Dallas home"
+	  },
+	  "id": "53",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Dallas home",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Computer industry",
+		  "end": {
+			"value": [
+			  "tech",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "dude, after transitioning",
+		  "end": {
+			"value": [
+			  "sis",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "homophone",
+		  "value": "declared",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "texas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "release": "9/12/2024",
+	  "clue": {
+		"value": "Pop star to hum quietly while slowly passing gas, we hear"
+	  },
+	  "id": "60",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Pop star",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "homophone",
+		  "value": "hum quietly while slowly passing gas",
+		  "end": {
+			"value": [
+			  "idle",
+			  "idol",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "idol"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -7790,88 +8036,6 @@
 	  }
 	},
 	{
-	  "release": "9/26/2024",
-	  "clue": {
-		"value": "Starts to dream about living large amid suburban Texas metropolis"
-	  },
-	  "id": "54",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "initialism",
-	  "definition": [
-		"Texas metropolis",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "Starts to",
-		  "end": {
-			"value": [
-			  "dream about living large amid suburban",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "dallas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
 	  "release": "8/15/2024",
 	  "clue": {
 		"value": "Arizona boomer starts to talk up city situated over Nogales"
@@ -7954,25 +8118,25 @@
 	  }
 	},
 	{
-	  "release": "9/5/2024",
+	  "release": "9/26/2024",
 	  "clue": {
-		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
+		"value": "Starts to dream about living large amid suburban Texas metropolis"
 	  },
-	  "id": "50",
-	  "difficulty": "3",
+	  "id": "54",
+	  "difficulty": "1",
 	  "ready": "TRUE",
-	  "type": "letter bank",
+	  "type": "initialism",
 	  "definition": [
-		"way to get to London or Tokyo?",
+		"Texas metropolis",
 		""
 	  ],
 	  "hints": [
 		{
-		  "category": "letter bank",
-		  "value": "Repeatedly",
+		  "category": "initialism",
+		  "value": "Starts to",
 		  "end": {
 			"value": [
-			  "slam nicer",
+			  "dream about living large amid suburban",
 			  "",
 			  ""
 			]
@@ -8029,92 +8193,10 @@
 		}
 	  ],
 	  "solution": {
-		"value": "american airlines"
+		"value": "dallas"
 	  },
 	  "source": {
 		"value": "Midas"
-	  }
-	},
-	{
-	  "release": "8/10/2024",
-	  "clue": {
-		"value": "Repeatedly retain host"
-	  },
-	  "id": "3",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "letter bank",
-	  "definition": [
-		"host",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "letter bank",
-		  "value": "Repeatedly",
-		  "end": {
-			"value": [
-			  "retain",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "entertainer"
-	  },
-	  "source": {
-		"value": "Fraz"
 	  }
 	},
 	{
@@ -8200,88 +8282,6 @@
 	  }
 	},
 	{
-	  "release": "9/7/2024",
-	  "clue": {
-		"value": "King with a golden touch is unhappy I'm returning"
-	  },
-	  "id": "55",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"King with a golden touch",
-		""
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "unhappy",
-		  "end": {
-			"value": [
-			  "sad",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "direct",
-		  "value": "I'm",
-		  "end": {
-			"value": [
-			  "I'm",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "sad I'm",
-			  "midas",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "",
-		  "value": "",
-		  "end": {
-			"value": [
-			  "",
-			  "",
-			  ""
-			]
-		  },
-		  "reveals": "FALSE"
-		}
-	  ],
-	  "solution": {
-		"value": "midas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
 	  "release": "8/29/2024",
 	  "clue": {
 		"value": "Severely criticized turning at end of tricky childbirth"
@@ -8361,6 +8361,88 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "release": "9/7/2024",
+	  "clue": {
+		"value": "King with a golden touch is unhappy I'm returning"
+	  },
+	  "id": "55",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"King with a golden touch",
+		""
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "unhappy",
+		  "end": {
+			"value": [
+			  "sad",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "I'm",
+		  "end": {
+			"value": [
+			  "I'm",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "sad I'm",
+			  "midas",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "",
+		  "value": "",
+		  "end": {
+			"value": [
+			  "",
+			  "",
+			  ""
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "midas"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{

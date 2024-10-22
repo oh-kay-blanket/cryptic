@@ -105,23 +105,11 @@ const manageClues = (mode) => {
 						case 'hidden word':
 							return `<strong>${hint.value}</strong> indicates a hidden word`
 						case 'homophone':
-
-							// indicator only
-							// if (hint.end.value.length == 0) {
-								return `<strong>${hint.value}</strong> indicates a homophone`
-
-							// indicate and reveal
-							// } else if (hint.end.value.length == 1) {
-							// 	return `<strong>${hint.value}</strong> is a homophone for <strong>${hint.end.value[0]}</strong>`
-							
-							// // multiple end points
-							// } else {
-							// 	return `<strong>${hint.end.value[0]}</strong> + <strong>${hint.end.value[1]}</strong> = <strong>${hint.end.value[2]}</strong>`
-							// }
+							return `<strong>${hint.value}</strong> indicates a homophone`
 						case 'initialism':
 							return `<strong>${hint.value}</strong> indicates the beginning of one or more words`
 						case 'letter bank':
-							return `<strong>${hint.value}</strong> indicates <strong>${hint.end.value[0]}</strong> is a letter bank<br><em class='helper'>(an anagram where letters can be used more than once)</em>`
+							return `<strong>${hint.value}</strong> indicates a letter bank`
 						case 'particle':
 							return `<strong>${hint.value}</strong>, applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
 						case 'reversal':
