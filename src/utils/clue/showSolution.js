@@ -2,13 +2,15 @@ import moveLetters from "./moveLetters"
 import changeColor from './changeColor'
 import removeSpecial from "./removeSpecialChar"
 
-const showSolution = (activeClue, nextHint) => {
+const showSolution = (activeClue, nextHint, revealSolution, revealSource) => { 
 
 	const prevHint = activeClue.hints[nextHint-1]
 		
 	switch(prevHint.category) { 
 		case 'anagram':
 			moveLetters(prevHint.addLetters.ref.current.slice(0,prevHint.end.value[0].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[0].length))
+			setTimeout(revealSolution, 2500)
+			setTimeout(revealSource, 3000)
 			break 
 
 		case 'hidden word':
@@ -18,10 +20,15 @@ const showSolution = (activeClue, nextHint) => {
 			prevHint.end.ref = removeSpecial(prevHint.end.ref)
 			changeColor(prevHint.end.ref, '#ccc')
 			changeColor(prevHint.end.ref.splice(solIndex, activeClue.solution.arr.length))
+			setTimeout(revealSolution, 2000)
+			setTimeout(revealSource, 3000)
 			break
 
 		case 'homophone':
 			changeColor(prevHint.addLetters.ref.current[1])
+			setTimeout(revealSolution, 2000)
+			setTimeout(revealSource, 3000)
+
 			break
 
 		case 'initialism':
@@ -35,25 +42,18 @@ const showSolution = (activeClue, nextHint) => {
 				changeColor(prevHint.end.ref[startLetter])
 				prevHint.end.ref.splice(0, startLetter)
 			})
+
+			setTimeout(revealSolution, 2000)
+			setTimeout(revealSource, 3000)
+
 			break
 
 		default: 
+			revealSolution()
+			setTimeout(revealSource, 1000)
 			break 
 	}
-	
-	// reveal solution
-	const revealSolution = () => {
-		activeClue.solution.sectionRef.current.classList.add('hide-input')
-		activeClue.solution.sectionRef.current.classList.add('reveal-solution')
-	}
 
-	// reveal solution
-	const revealSource = () => {
-		activeClue.source.ref.current.classList.add('show')
-	}
-
-	revealSolution()
-	setTimeout(revealSource, 1000)
 }
 
 export default showSolution

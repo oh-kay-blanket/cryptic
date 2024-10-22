@@ -41,7 +41,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	]
 	
 	// if current message displaying solution
-	const isSolution = activeClue.hints[nextHint].type == 'solution' && !checkAns
+	const isSolution = (activeClue.hints[nextHint].type == 'solution' || activeClue.hints[nextHint].reveals == "TRUE") && !checkAns
 	
 	// choose message button
 	let messageButton = isSolution || (checkAns && isCorrectAns()) ? clueEndButton : continueButton
