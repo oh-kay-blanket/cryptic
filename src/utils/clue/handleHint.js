@@ -49,7 +49,6 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						}
 
 						if (hint.reveals) {
-							console.log('reveal')
 							setTimeout(revealSolution, 2000)
 							setTimeout(revealSource, 3000)
 						}
@@ -70,10 +69,14 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length))
+					case 'letter bank':
+						highlightLetters(hint.ref)
+						changeColor(hint.end.ref, '#ccc')
+						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length))
 						break
 					case 'particle':
 						highlightLetters(hint.ref)
-						changeColor(hint.end.ref, '#ccc')
+						changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
 					default:

@@ -13,6 +13,12 @@ const showSolution = (activeClue, nextHint, revealSolution, revealSource) => {
 			setTimeout(revealSource, 3000)
 			break 
 
+		case 'letter bank':
+			moveLetters(prevHint.addLetters.ref.current.slice(0, prevHint.end.value[1].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[1].length))
+			setTimeout(revealSolution, 2500)
+			setTimeout(revealSource, 3000)
+			break 
+
 		case 'hidden word':
 			// get index of solution within indicated
 			let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)

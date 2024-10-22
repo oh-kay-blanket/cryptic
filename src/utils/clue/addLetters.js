@@ -11,8 +11,8 @@ const addLetters = (activeClue, hint) => {
 			case 'particle':
 				hint.addLetters.value = hint.end.value[1].split('')
 				break
-			case 'deletion':
-				// hint.addLetters.value = hint.end.value[1].split('')
+			case 'letter bank':
+				hint.addLetters.value = [...hint.end.value[1].split(''), ...hint.end.value[1].split('')]
 				break
 			case 'direct':
 				hint.addLetters.value = hint.value.split('')
