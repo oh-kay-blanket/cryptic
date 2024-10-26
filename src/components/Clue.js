@@ -58,7 +58,12 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 		if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
 			const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
 
-			return <span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
+			let addBr = (hint.category =='container' || hint.category =='reversal')
+
+			return <>
+				{addBr && <span style={{flexBasis: '100%'}}></span>}
+				<span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
+			</>
 		}
 	})
 

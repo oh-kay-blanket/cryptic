@@ -95,13 +95,13 @@ const manageClues = (mode) => {
 						case 'anagram':
 							return `<strong>${hint.value}</strong> indicates an anagram`
 						case 'charade':
-							return `<strong>${hint.value}</strong> can give us <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						case 'container':
-							return `<strong>${hint.value}</strong>, indicates <strong>${hint.end.value[1]}</strong>, will go inside <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong>, indicates a container`
 						case 'deletion':
-							return `<strong>${hint.value}</strong>, indicates a deletion at <strong>${hint.end.value[0]}</strong>`
+							return `<strong>${hint.value}</strong>, indicates a deletion`
 						case 'direct':
-							return `<strong>${hint.value}</strong> is part of the answer`
+							return `<strong>${hint.value}</strong> is used`
 						case 'hidden word':
 							return `<strong>${hint.value}</strong> indicates a hidden word`
 						case 'homophone':

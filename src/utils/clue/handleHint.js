@@ -79,7 +79,27 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
-					default:
+					case 'container':
+						highlightLetters(hint.ref)
+						// changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
+						changeColor(hint.addLetters.ref.current)
+						
+						if (hint.reveals) {
+							setTimeout(revealSolution, 2000)
+							setTimeout(revealSource, 3000)
+						}
+						break
+					case 'reversal':
+						highlightLetters(hint.ref)
+						// changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
+						changeColor(hint.addLetters.ref.current)
+						
+						if (hint.reveals) {
+							setTimeout(revealSolution, 2000)
+							setTimeout(revealSource, 3000)
+						}
+						break
+					default: 
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref)
 						break
