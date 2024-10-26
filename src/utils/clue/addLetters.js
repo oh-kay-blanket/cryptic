@@ -14,6 +14,9 @@ const addLetters = (activeClue, hint) => {
 			case 'letter bank':
 				hint.addLetters.value = [...hint.end.value[1].split(''), ...hint.end.value[1].split('')]
 				break
+			case 'container':
+				hint.addLetters.value = [hint.end.value.join(" ")]
+				break
 			case 'direct':
 				hint.addLetters.value = hint.value.split('')
 				break
