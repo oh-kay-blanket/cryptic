@@ -2,6 +2,7 @@ import underlineLetters from './underlineLetters'
 import highlightLetters from './highlightLetters'
 import changeColor from './changeColor'
 import showSolution from './showSolution'
+import moveLetters from "./moveLetters"
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
@@ -76,13 +77,17 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						break
 					case 'particle':
 						highlightLetters(hint.ref)
-						changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
+						changeColor(hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
 					case 'container':
 						highlightLetters(hint.ref)
-						// changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
-						changeColor(hint.addLetters.ref.current)
+						let a1 = activeClue.hints.find(h => {return (h.type == 'indicator' && h.end) && h.end.value[0] == hint.end.value[1]}).addLetters.ref.current
+						let a2 = activeClue.hints.find(h => {return (h.type == 'indicator' && h.end) && (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))}).addLetters.ref.current
+						changeColor(a1, '#ccc')
+						changeColor(a2, '#ccc')
+						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
+						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
 						
 						if (hint.reveals) {
 							setTimeout(revealSolution, 2000)

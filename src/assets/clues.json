@@ -242,8 +242,8 @@
 		  "value": "buried",
 		  "end": {
 			"value": [
-			  "atri",
-			  "u",
+			  "tri",
+			  "U",
 			  "m"
 			]
 		  },
@@ -623,7 +623,7 @@
 			  "ive"
 			]
 		  },
-		  "reveals": "FALSE"
+		  "reveals": "TRUE"
 		},
 		{
 		  "category": "",

@@ -51,7 +51,7 @@ const fixLetters = (activeClue) => {
 
 	const fixHints = (hint) => { 
 
-		if (hint.category == 'anagram' || hint.category == 'letter bank') {
+		if (hint.category == 'anagram' || hint.category == 'letter bank' || hint.category == 'container') {
 			let anchor, moving, endPt
 
 			if (hint.category == 'anagram') {
@@ -62,20 +62,30 @@ const fixLetters = (activeClue) => {
 				anchor = hint.end.ref // anchor letters
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value[1].length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[1].length) // staging area letters
-			}
+			} else if (hint.category == 'container') {
+				let a1 = activeClue.hints.find(h => {
+					return (h.type == 'indicator' && h.end) && h.end.value[0] == hint.end.value[1]
+				}).addLetters.ref.current
+				let a2 = activeClue.hints.find(h => {
+					return (h.type == 'indicator' && h.end) && (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))
+				}).addLetters.ref.current
 
+				anchor = [...a1, ...a2]
+				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length) // moving letters
+				endPt = hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length) // staging area letters
+			}
 			
 			// position move letters over anchor letters
 			if (Array.isArray(moving)) {
 				moving.forEach(ref => {
 					
 					// Matching letter in anchor
-					const currentDestLetter = anchor.find(destLetter => {
+					let currentDestLetter = anchor.find(destLetter => {
 						return destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
 					})
 
-					ref.current.style.top = `${Number(currentDestLetter.current.style.top.slice(0,-2))}px`
-					ref.current.style.left = `${Number(currentDestLetter.current.style.left.slice(0,-2))}px`
+					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
+					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
 
 					if (hint.category == 'anagram') {
 						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
