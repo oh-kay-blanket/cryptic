@@ -33,9 +33,6 @@ const manageClues = (mode) => {
 		// build type array
 		activeClue.type = activeClue.type.split(', ')
 
-		// trim definitions
-		activeClue.definition = activeClue.definition.filter(def => def !== "")
-
 		// clue source
 		switch(activeClue.source.value) {
 			case 'Fraz':
@@ -57,14 +54,6 @@ const manageClues = (mode) => {
 				activeClue.source.href = false
 				break
 		}
-
-		// trim hints
-		activeClue.hints = activeClue.hints.filter(hint => hint.category !== "" && hint.value !== "")
-		
-		// trim indicator ends
-		activeClue.hints.forEach(hint => {
-			if (hint.end) hint.end.value = hint.end.value.filter(val => val !== "")
-		})
 
 		// add hint type
 		activeClue.hints.map(hint => hint.type = 'indicator')
