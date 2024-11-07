@@ -63,14 +63,73 @@ const fixLetters = (activeClue) => {
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value[1].length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[1].length) // staging area letters
 			} else if (hint.category == 'container') {
-				let a1 = activeClue.hints.find(h => {
-					return (h.type == 'indicator' && h.end) && h.end.value[0] == hint.end.value[1]
-				}).addLetters.ref.current
-				let a2 = activeClue.hints.find(h => {
-					return (h.type == 'indicator' && h.end) && (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))
-				}).addLetters.ref.current
 
-				anchor = [...a1, ...a2]
+				// get index in arr of word that is split
+				let joinIndex
+
+				// find word that is split
+				let splitWord = activeClue.hints.find(h => {
+					// only search indicators
+					if ((h.type == 'indicator') && h.end) {
+						
+						// standard container
+						if (hint.end.value.length == 3 || h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join('')) {
+							joinIndex = [0,2]
+							return (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))
+
+						// complex containers w/more than 3 parts
+						} else if (h.end.value[0] == [hint.end.value[0], hint.end.value[3]].join('')) {
+							joinIndex = [0,3]
+							return (h.end.value[0] == [hint.end.value[0], hint.end.value[3]].join(''))
+
+						} else if (h.end.value[0] == [hint.end.value[1], hint.end.value[3]].join('')) {
+							joinIndex = [1,3]
+							return (h.end.value[0] == [hint.end.value[1], hint.end.value[3]].join(''))
+						} else {
+							joinIndex = false
+						}
+					}
+				})
+				splitWord = splitWord ? splitWord.addLetters.ref.current : false
+
+				// find non-split words/letters
+				let otherLtrs = []
+				hint.end.value.forEach((hend, index) => {
+					if (joinIndex && !joinIndex.includes(index) || !joinIndex) {
+
+						const thisMatch = activeClue.hints.find(h => {
+
+							if (h.category !== 'container') {
+								let rightValue
+								if (h.type == 'indicator') {
+									switch(h.category) {
+										case 'direct':
+											rightValue = h.value
+											break
+										case 'particle':
+											rightValue = h.end.value[1]
+											break
+										default:
+											rightValue = h.end.value[0]
+											break
+									}
+	
+									console.log(joinIndex, hend, rightValue)
+									return rightValue == hend
+								} else {
+									return false
+								}
+							} else {
+								return false
+							}
+						})
+						thisMatch && otherLtrs.push(...thisMatch.addLetters.ref.current)
+					}
+				})
+
+				console.log(otherLtrs)
+
+				anchor = [...otherLtrs, ...splitWord]
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length) // staging area letters
 			}
@@ -78,12 +137,12 @@ const fixLetters = (activeClue) => {
 			// position move letters over anchor letters
 			if (Array.isArray(moving)) {
 				moving.forEach(ref => {
+
 					
 					// Matching letter in anchor
 					let currentDestLetter = anchor.find(destLetter => {
 						return destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
 					})
-
 					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
 					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
 
@@ -115,38 +174,7 @@ const fixLetters = (activeClue) => {
 			endPt.forEach( ref => {
 				ref.current.style.position = 'fixed'
 			})
-
 		}
-
-		//
-		// UNUSED CODE FOR PLACING ADDLETTERS ABOVE/BELOW CLUE //
-		//
-		
-		// case 'adjacent':
-		// 	let anchor = hint.ref
-		// 	let moving = hint.addLetters.wordRef.current
-
-		// 	// get anchor pos
-		// 	const indLeft = anchor[0].current.getBoundingClientRect().left
-		// 	const indRight = anchor[anchor.length -1].current.getBoundingClientRect().right
-		// 	const indTop = anchor[0].current.getBoundingClientRect().top
-		// 	const indBottom = anchor[anchor.length -1].current.getBoundingClientRect().bottom
-
-		// 	// 1-2 lines or bottom line
-		// 	if (activeClue.clue.lines == 1 || (activeClue.clue.lines == 2 && (activeClue.clue.ref.current[0].current.getBoundingClientRect().top !== anchor[0].current.getBoundingClientRect().top))) {
-		// 		moving.style.left = `${(indLeft + indRight)/2}px`
-		// 		moving.style.transform = `translateX(-50%)`
-		// 		moving.style.top = `${indBottom + 4}px`
-		// 		moving.style.position = 'fixed'
-
-		// 	// top line
-		// 	} else if (activeClue.clue.lines == 2 && (activeClue.clue.ref.current[0].current.getBoundingClientRect().top === anchor[0].current.getBoundingClientRect().top)) {
-		// 		moving.style.left = `${(indLeft + indRight)/2}px`
-		// 		moving.style.transform = `translateX(-50%)`
-		// 		moving.style.top = `${indTop - 28}px`
-		// 		moving.style.position = 'fixed'
-		// 	}
-		// }
 	}
 
 	// Logic to run fixHints
