@@ -70,21 +70,35 @@ const fixLetters = (activeClue) => {
 				// find word that is split
 				let splitWord = activeClue.hints.find(h => {
 					// only search indicators
-					if ((h.type == 'indicator') && h.end) {
+					if (h.type == 'indicator' && h.category !== 'container') {
+
+						// get cell to use for split word
+						let rightValue
+						switch(h.category) {
+							case 'direct':
+								rightValue = h.value
+								break
+							case 'particle':
+								rightValue = h.end.value[1]
+								break
+							default:
+								rightValue = h.end.value[0]
+								break
+						}
 						
 						// standard container
-						if (hint.end.value.length == 3 || h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join('')) {
+						if (hint.end.value.length == 3 || rightValue == [hint.end.value[0], hint.end.value[2]].join('')) {
 							joinIndex = [0,2]
-							return (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))
+							return (rightValue == [hint.end.value[0], hint.end.value[2]].join(''))
 
 						// complex containers w/more than 3 parts
-						} else if (h.end.value[0] == [hint.end.value[0], hint.end.value[3]].join('')) {
+						} else if (rightValue == [hint.end.value[0], hint.end.value[3]].join('')) {
 							joinIndex = [0,3]
-							return (h.end.value[0] == [hint.end.value[0], hint.end.value[3]].join(''))
+							return (rightValue == [hint.end.value[0], hint.end.value[3]].join(''))
 
-						} else if (h.end.value[0] == [hint.end.value[1], hint.end.value[3]].join('')) {
+						} else if (rightValue == [hint.end.value[1], hint.end.value[3]].join('')) {
 							joinIndex = [1,3]
-							return (h.end.value[0] == [hint.end.value[1], hint.end.value[3]].join(''))
+							return (rightValue == [hint.end.value[1], hint.end.value[3]].join(''))
 						} else {
 							joinIndex = false
 						}
@@ -114,7 +128,6 @@ const fixLetters = (activeClue) => {
 											break
 									}
 	
-									console.log(joinIndex, hend, rightValue)
 									return rightValue == hend
 								} else {
 									return false
@@ -127,7 +140,7 @@ const fixLetters = (activeClue) => {
 					}
 				})
 
-				console.log(otherLtrs)
+				console.log(splitWord)
 
 				anchor = [...otherLtrs, ...splitWord]
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length) // moving letters
