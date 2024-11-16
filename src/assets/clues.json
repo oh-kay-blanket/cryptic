@@ -1,63 +1,71 @@
 [
 	{
-	  "id": "27",
+	  "id": "92",
 	  "clue": {
-		"value": "Listless doctor becoming more mature about big bill"
+		"value": "Tabloid recalled NY baseball team receiving new attire"
 	  },
-	  "release": "9/15/2024",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container",
+	  "release": "7/9/2024",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "charade, reversal, container",
 	  "definition": [
-		"Listless"
+		"attire"
 	  ],
 	  "hints": [
 		{
+		  "category": "synonym",
+		  "value": "Tabloid",
+		  "end": {
+			"value": [
+			  "rag"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "NY baseball team",
+		  "end": {
+			"value": [
+			  "mets"
+			]
+		  }
+		},
+		{
 		  "category": "symbol",
-		  "value": "doctor",
+		  "value": "new",
 		  "end": {
 			"value": [
-			  "dr"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "becoming more mature",
-		  "end": {
-			"value": [
-			  "aging"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "big bill",
-		  "end": {
-			"value": [
-			  "g"
+			  "n"
 			]
 		  }
 		},
 		{
 		  "category": "container",
-		  "value": "about",
+		  "value": "receiving",
 		  "end": {
 			"value": [
-			  "dr",
-			  "ag",
-			  "g",
-			  "ing"
+			  "me",
+			  "n",
+			  "ts"
 			]
-		  },
-		  "reveals": "TRUE"
+		  }
+		},
+		{
+		  "category": "charade",
+		  "value": "gar",
+		  "end": {
+			"value": [
+			  "ments",
+			  "n"
+			]
+		  }
 		}
 	  ],
 	  "solution": {
-		"value": "dragging"
+		"value": "garments"
 	  },
 	  "source": {
-		"value": "Fraz"
+		"value": "Kegler"
 	  }
 	},
 	{
@@ -117,213 +125,54 @@
 	  }
 	},
 	{
-	  "id": "57",
+	  "id": "10",
 	  "clue": {
-		"value": "Anti-tech DD and I are really into lute"
+		"value": "Spanish gentlemen taking interest in old people"
 	  },
-	  "release": "9/9/2024",
+	  "release": "8/13/2024",
 	  "difficulty": "2",
 	  "ready": "TRUE",
 	  "type": "container",
 	  "definition": [
-		"Anti-tech"
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "dd"
-		},
-		{
-		  "category": "direct",
-		  "value": "i"
-		},
-		{
-		  "category": "direct",
-		  "value": "lute",
-		  "end": {
-			"value": [
-			  "lute"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "really into",
-		  "end": {
-			"value": [
-			  "lu",
-			  "dd",
-			  "i",
-			  "te"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "luddite"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "id": "42",
-	  "clue": {
-		"value": "African country engaged in \"beginning of life\" ceremony"
-	  },
-	  "release": "8/31/2024",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"ceremony"
+		"old people"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "African country",
+		  "value": "Spanish gentlemen",
 		  "end": {
 			"value": [
-			  "mali"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "beginning of life",
-		  "end": {
-			"value": [
-			  "forty"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "engaged in",
-		  "end": {
-			"value": [
-			  "for",
-			  "mali",
-			  "ty"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "formality"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "34",
-	  "clue": {
-		"value": "Dietary components, including copyright info"
-	  },
-	  "release": "8/25/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"info"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Dietary components",
-		  "end": {
-			"value": [
-			  "fats"
+			  "senors"
 			]
 		  }
 		},
 		{
 		  "category": "symbol",
-		  "value": "copyright",
+		  "value": "interest",
 		  "end": {
 			"value": [
-			  "c"
+			  "i"
 			]
 		  }
 		},
 		{
 		  "category": "container",
-		  "value": "including",
+		  "value": "taking",
 		  "end": {
 			"value": [
-			  "fa",
-			  "c",
-			  "ts"
+			  "sen",
+			  "i",
+			  "ors"
 			]
 		  },
 		  "reveals": "TRUE"
 		}
 	  ],
 	  "solution": {
-		"value": "facts"
+		"value": "seniors"
 	  },
 	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "23",
-	  "clue": {
-		"value": "Runner Hugo's content with it in late afternoon"
-	  },
-	  "release": "8/20/2024",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "container",
-	  "definition": [
-		"Runner"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "content",
-		  "end": {
-			"value": [
-			  "Hugo",
-			  "ug"
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "it"
-		},
-		{
-		  "category": "synonym",
-		  "value": "late afternoon",
-		  "end": {
-			"value": [
-			  "five"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "in",
-		  "end": {
-			"value": [
-			  "f",
-			  "ug",
-			  "it",
-			  "ive"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "fugitive"
-	  },
-	  "source": {
-		"value": "Fraz"
+		"value": "Kegler"
 	  }
 	},
 	{
@@ -388,54 +237,325 @@
 	  }
 	},
 	{
-	  "id": "10",
+	  "id": "23",
 	  "clue": {
-		"value": "Spanish gentlemen taking interest in old people"
+		"value": "Runner Hugo's content with it in late afternoon"
 	  },
-	  "release": "8/13/2024",
-	  "difficulty": "2",
+	  "release": "8/20/2024",
+	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "container",
 	  "definition": [
-		"old people"
+		"Runner"
 	  ],
 	  "hints": [
 		{
-		  "category": "synonym",
-		  "value": "Spanish gentlemen",
+		  "category": "particle",
+		  "value": "content",
 		  "end": {
 			"value": [
-			  "senors"
+			  "Hugo",
+			  "ug"
 			]
 		  }
 		},
 		{
-		  "category": "symbol",
-		  "value": "interest",
+		  "category": "direct",
+		  "value": "it"
+		},
+		{
+		  "category": "synonym",
+		  "value": "late afternoon",
 		  "end": {
 			"value": [
-			  "i"
+			  "five"
 			]
 		  }
 		},
 		{
 		  "category": "container",
-		  "value": "taking",
+		  "value": "in",
 		  "end": {
 			"value": [
-			  "sen",
-			  "i",
-			  "ors"
+			  "f",
+			  "ug",
+			  "it",
+			  "ive"
 			]
 		  },
 		  "reveals": "TRUE"
 		}
 	  ],
 	  "solution": {
-		"value": "seniors"
+		"value": "fugitive"
 	  },
 	  "source": {
-		"value": "Kegler"
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "27",
+	  "clue": {
+		"value": "Listless doctor becoming more mature about big bill"
+	  },
+	  "release": "9/15/2024",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Listless"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "doctor",
+		  "end": {
+			"value": [
+			  "dr"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "becoming more mature",
+		  "end": {
+			"value": [
+			  "aging"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "big bill",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "dr",
+			  "ag",
+			  "g",
+			  "ing"
+			]
+		  },
+		  "reveals": "TRUE"
+		}
+	  ],
+	  "solution": {
+		"value": "dragging"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "28",
+	  "clue": {
+		"value": "Swiss cabin fit inside court"
+	  },
+	  "release": "9/22/2024",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Swiss cabin"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "fit",
+		  "end": {
+			"value": [
+			  "hale"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "court",
+		  "end": {
+			"value": [
+			  "ct"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "c",
+			  "hale",
+			  "t"
+			]
+		  },
+		  "reveals": "TRUE"
+		}
+	  ],
+	  "solution": {
+		"value": "chalet"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "34",
+	  "clue": {
+		"value": "Dietary components, including copyright info"
+	  },
+	  "release": "8/25/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"info"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Dietary components",
+		  "end": {
+			"value": [
+			  "fats"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "copyright",
+		  "end": {
+			"value": [
+			  "c"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "including",
+		  "end": {
+			"value": [
+			  "fa",
+			  "c",
+			  "ts"
+			]
+		  },
+		  "reveals": "TRUE"
+		}
+	  ],
+	  "solution": {
+		"value": "facts"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "42",
+	  "clue": {
+		"value": "African country engaged in \"beginning of life\" ceremony"
+	  },
+	  "release": "8/31/2024",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"ceremony"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "African country",
+		  "end": {
+			"value": [
+			  "mali"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "beginning of life",
+		  "end": {
+			"value": [
+			  "forty"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "engaged in",
+		  "end": {
+			"value": [
+			  "for",
+			  "mali",
+			  "ty"
+			]
+		  },
+		  "reveals": "TRUE"
+		}
+	  ],
+	  "solution": {
+		"value": "formality"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "57",
+	  "clue": {
+		"value": "Anti-tech DD and I are really into lute"
+	  },
+	  "release": "9/9/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Anti-tech"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "dd"
+		},
+		{
+		  "category": "direct",
+		  "value": "i"
+		},
+		{
+		  "category": "direct",
+		  "value": "lute",
+		  "end": {
+			"value": [
+			  "lute"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "really into",
+		  "end": {
+			"value": [
+			  "lu",
+			  "dd",
+			  "i",
+			  "te"
+			]
+		  },
+		  "reveals": "TRUE"
+		}
+	  ],
+	  "solution": {
+		"value": "luddite"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -1107,6 +1227,10 @@
 		  }
 		},
 		{
+		  "category": "direct",
+		  "value": "a"
+		},
+		{
 		  "category": "particle",
 		  "value": "couple of",
 		  "end": {
@@ -1118,11 +1242,13 @@
 		},
 		{
 		  "category": "container",
-		  "value": "qu",
+		  "value": "describing",
 		  "end": {
 			"value": [
-			  "aria",
-			  "aquaria"
+			  "a",
+			  "qu",
+			  "a",
+			  "ria"
 			]
 		  },
 		  "reveals": "TRUE"
@@ -1136,6 +1262,7 @@
 	  }
 	},
 	{
+	  "id": "143",
 	  "clue": {
 		"value": "Ordered document receives half-credit"
 	  },
@@ -1157,7 +1284,7 @@
 		},
 		{
 		  "category": "particle",
-		  "value": "half",
+		  "value": "half-credit",
 		  "end": {
 			"value": [
 			  "credit",
@@ -1167,9 +1294,10 @@
 		},
 		{
 		  "category": "container",
-		  "value": "de",
+		  "value": "receives",
 		  "end": {
 			"value": [
+			  "de",
 			  "cre",
 			  "ed"
 			]
@@ -1184,6 +1312,7 @@
 	  }
 	},
 	{
+	  "id": "144",
 	  "clue": {
 		"value": "Bauble from hockey venue seen in Asian celebration"
 	  },
@@ -1208,15 +1337,16 @@
 		  "value": "Asian celebration",
 		  "end": {
 			"value": [
-			  "Tet"
+			  "tet"
 			]
 		  }
 		},
 		{
 		  "category": "container",
-		  "value": "t",
+		  "value": "in",
 		  "end": {
 			"value": [
+			  "t",
 			  "rink",
 			  "et"
 			]
@@ -1231,6 +1361,7 @@
 	  }
 	},
 	{
+	  "id": "145",
 	  "clue": {
 		"value": "Men taking interest in races"
 	  },
@@ -1279,6 +1410,7 @@
 	  }
 	},
 	{
+	  "id": "146",
 	  "clue": {
 		"value": "For each ingénue ultimately smothered by hype"
 	  },
@@ -1328,6 +1460,7 @@
 	  }
 	},
 	{
+	  "id": "147",
 	  "clue": {
 		"value": "References describing one of Indonesia’s metropolitan areas"
 	  },
@@ -1377,6 +1510,7 @@
 	  }
 	},
 	{
+	  "id": "148",
 	  "clue": {
 		"value": "Carry on a cup holding a spot of tea"
 	  },
@@ -1416,6 +1550,7 @@
 	  }
 	},
 	{
+	  "id": "182",
 	  "clue": {
 		"value": "Certain servers stop, interrupting trades"
 	  },
@@ -1465,6 +1600,7 @@
 	  }
 	},
 	{
+	  "id": "223",
 	  "clue": {
 		"value": "Barrel maker tosses piece of pie for dove sometimes"
 	  },
@@ -1516,6 +1652,7 @@
 	  }
 	},
 	{
+	  "id": "234",
 	  "clue": {
 		"value": "Drunk grabbing prostitute’s film"
 	  },
@@ -1547,9 +1684,10 @@
 		},
 		{
 		  "category": "container",
-		  "value": "s",
+		  "value": "grabbing",
 		  "end": {
 			"value": [
+			  "s",
 			  "ho",
 			  "ot"
 			]
@@ -1788,6 +1926,7 @@
 	  }
 	},
 	{
+	  "id": "241",
 	  "clue": {
 		"value": "Pictures taken by St. Leo endlessly surprise"
 	  },
@@ -1950,6 +2089,7 @@
 	  }
 	},
 	{
+	  "id": "207",
 	  "clue": {
 		"value": "Ron comes up with one dark film"
 	  },
@@ -2000,6 +2140,7 @@
 	  }
 	},
 	{
+	  "id": "210",
 	  "clue": {
 		"value": "Again talk about returning that lady’s tree"
 	  },
@@ -2048,6 +2189,7 @@
 	  }
 	},
 	{
+	  "id": "242",
 	  "clue": {
 		"value": "Explosive rabble penetrates outskirts of Bangladesh from the south"
 	  },
@@ -2180,6 +2322,37 @@
 	  }
 	},
 	{
+	  "id": "12",
+	  "clue": {
+		"value": "No, fear not traveling between morning and night"
+	  },
+	  "release": "8/14/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"between morning and night"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "traveling",
+		  "end": {
+			"value": [
+			  "No, fear not",
+			  "afternoon"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "afternoon"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
 	  "id": "35",
 	  "clue": {
 		"value": "Magic Pan pitches battle"
@@ -2205,68 +2378,6 @@
 	  ],
 	  "solution": {
 		"value": "campaign"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "56",
-	  "clue": {
-		"value": "In Boston, commuting T trains as a way to get around!"
-	  },
-	  "release": "9/8/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram",
-	  "definition": [
-		"way to get around"
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "commuting",
-		  "end": {
-			"value": [
-			  "T trains",
-			  "transit"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "transit"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "id": "45",
-	  "clue": {
-		"value": "Doesn't debate grease must be changed"
-	  },
-	  "release": "9/3/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "anagram",
-	  "definition": [
-		"Doesn't debate"
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "must be changed",
-		  "end": {
-			"value": [
-			  "grease",
-			  "agrees"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "agrees"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -2304,34 +2415,65 @@
 	  }
 	},
 	{
-	  "id": "12",
+	  "id": "45",
 	  "clue": {
-		"value": "No, fear not traveling between morning and night"
+		"value": "Doesn't debate grease must be changed"
 	  },
-	  "release": "8/14/2024",
+	  "release": "9/3/2024",
 	  "difficulty": "2",
 	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
-		"between morning and night"
+		"Doesn't debate"
 	  ],
 	  "hints": [
 		{
 		  "category": "anagram",
-		  "value": "traveling",
+		  "value": "must be changed",
 		  "end": {
 			"value": [
-			  "No, fear not",
-			  "afternoon"
+			  "grease",
+			  "agrees"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "afternoon"
+		"value": "agrees"
 	  },
 	  "source": {
-		"value": "Kegler"
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "56",
+	  "clue": {
+		"value": "In Boston, commuting T trains as a way to get around!"
+	  },
+	  "release": "9/8/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"way to get around"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "commuting",
+		  "end": {
+			"value": [
+			  "T trains",
+			  "transit"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "transit"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -2738,6 +2880,7 @@
 	  }
 	},
 	{
+	  "id": "149",
 	  "clue": {
 		"value": "Horrific fad lured Rocky"
 	  },
@@ -2767,6 +2910,7 @@
 	  }
 	},
 	{
+	  "id": "150",
 	  "clue": {
 		"value": "GOP argues inanely for generations"
 	  },
@@ -2796,6 +2940,7 @@
 	  }
 	},
 	{
+	  "id": "151",
 	  "clue": {
 		"value": "Strip of grass thaws out"
 	  },
@@ -2825,6 +2970,7 @@
 	  }
 	},
 	{
+	  "id": "152",
 	  "clue": {
 		"value": "Caribbean island vines spread"
 	  },
@@ -2854,6 +3000,7 @@
 	  }
 	},
 	{
+	  "id": "153",
 	  "clue": {
 		"value": "Stood up awkwardly, sore"
 	  },
@@ -2883,6 +3030,7 @@
 	  }
 	},
 	{
+	  "id": "154",
 	  "clue": {
 		"value": "Makes real cut as Eliza’s treated"
 	  },
@@ -2912,6 +3060,7 @@
 	  }
 	},
 	{
+	  "id": "155",
 	  "clue": {
 		"value": "Uptight teens milling around"
 	  },
@@ -2941,6 +3090,7 @@
 	  }
 	},
 	{
+	  "id": "156",
 	  "clue": {
 		"value": "Crown Prince of Denmark irked ref badly"
 	  },
@@ -2970,6 +3120,7 @@
 	  }
 	},
 	{
+	  "id": "157",
 	  "clue": {
 		"value": "Sculpted swan shaped with a blade"
 	  },
@@ -2999,6 +3150,7 @@
 	  }
 	},
 	{
+	  "id": "185",
 	  "clue": {
 		"value": "Notably, Omar Khayyam met Ken, Art, Dotty"
 	  },
@@ -3029,6 +3181,7 @@
 	  }
 	},
 	{
+	  "id": "187",
 	  "clue": {
 		"value": "Erica’s stirring words of sympathy"
 	  },
@@ -3059,6 +3212,7 @@
 	  }
 	},
 	{
+	  "id": "191",
 	  "clue": {
 		"value": "Relative cooked tuna"
 	  },
@@ -3089,6 +3243,7 @@
 	  }
 	},
 	{
+	  "id": "195",
 	  "clue": {
 		"value": "Shattering broadcast put things right"
 	  },
@@ -3119,6 +3274,7 @@
 	  }
 	},
 	{
+	  "id": "196",
 	  "clue": {
 		"value": "Yeomen react badly to Japanese rite"
 	  },
@@ -3149,6 +3305,7 @@
 	  }
 	},
 	{
+	  "id": "202",
 	  "clue": {
 		"value": "Caramel kept melting in bazaar"
 	  },
@@ -3179,6 +3336,7 @@
 	  }
 	},
 	{
+	  "id": "203",
 	  "clue": {
 		"value": "Actress Campbell-Martin hits a drunk"
 	  },
@@ -3209,6 +3367,7 @@
 	  }
 	},
 	{
+	  "id": "204",
 	  "clue": {
 		"value": "One unusual role in “The Matrix”"
 	  },
@@ -3239,6 +3398,7 @@
 	  }
 	},
 	{
+	  "id": "211",
 	  "clue": {
 		"value": "Easy job is sure nice, Dotty"
 	  },
@@ -3269,6 +3429,7 @@
 	  }
 	},
 	{
+	  "id": "213",
 	  "clue": {
 		"value": "Snarling lips creating speech problem"
 	  },
@@ -3299,6 +3460,7 @@
 	  }
 	},
 	{
+	  "id": "214",
 	  "clue": {
 		"value": "Brace for broken-down horse"
 	  },
@@ -3329,6 +3491,7 @@
 	  }
 	},
 	{
+	  "id": "218",
 	  "clue": {
 		"value": "Awful pain in palm"
 	  },
@@ -3359,6 +3522,7 @@
 	  }
 	},
 	{
+	  "id": "226",
 	  "clue": {
 		"value": "Altering odd three-sided figure"
 	  },
@@ -3389,6 +3553,7 @@
 	  }
 	},
 	{
+	  "id": "239",
 	  "clue": {
 		"value": "Rome redefined Hebrew unit"
 	  },
@@ -3419,6 +3584,7 @@
 	  }
 	},
 	{
+	  "id": "243",
 	  "clue": {
 		"value": "Early sci-fi writer’s incredible nerve"
 	  },
@@ -3449,6 +3615,7 @@
 	  }
 	},
 	{
+	  "id": "244",
 	  "clue": {
 		"value": "Crazy loon’s brief plea"
 	  },
@@ -3480,6 +3647,7 @@
 	  }
 	},
 	{
+	  "id": "232",
 	  "clue": {
 		"value": "Contort a sphere!"
 	  },
@@ -3510,6 +3678,7 @@
 	  }
 	},
 	{
+	  "id": "158",
 	  "clue": {
 		"value": "IRS forms, true, upset hospital personnel"
 	  },
@@ -3558,6 +3727,7 @@
 	  }
 	},
 	{
+	  "id": "217",
 	  "clue": {
 		"value": "New era: love of aircraft"
 	  },
@@ -3700,6 +3870,7 @@
 	  }
 	},
 	{
+	  "id": "228",
 	  "clue": {
 		"value": "Caressed, Don excitedly bolted outside"
 	  },
@@ -3747,141 +3918,6 @@
 	  },
 	  "source": {
 		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "47",
-	  "clue": {
-		"value": "Large, empty apartment took off"
-	  },
-	  "release": "10/6/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"took off"
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "Large",
-		  "end": {
-			"value": [
-			  "L"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "empty",
-		  "end": {
-			"value": [
-			  "E"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "apartment",
-		  "end": {
-			"value": [
-			  "apt"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "leapt"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "46",
-	  "clue": {
-		"value": "Come to AT&T objective"
-	  },
-	  "release": "10/5/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Come to"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "AT&T",
-		  "end": {
-			"value": [
-			  "att"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "objective",
-		  "end": {
-			"value": [
-			  "end"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "attend"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "38",
-	  "clue": {
-		"value": "Male dogs check laundry soap"
-	  },
-	  "release": "10/4/2024",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"laundry soap"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Male",
-		  "end": {
-			"value": [
-			  "gent"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "dogs",
-		  "end": {
-			"value": [
-			  "goes after"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "check",
-		  "end": {
-			"value": [
-			  "deter"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "detergent"
-	  },
-	  "source": {
-		"value": "Fraz"
 	  }
 	},
 	{
@@ -3985,215 +4021,145 @@
 	  }
 	},
 	{
-	  "id": "48",
+	  "id": "30",
 	  "clue": {
-		"value": "After middle of season, each lost"
+		"value": "Sure happy in the end, especially with rent"
 	  },
-	  "release": "9/13/2024",
+	  "release": "8/21/2024",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"lost"
+		"Sure"
 	  ],
 	  "hints": [
 		{
 		  "category": "particle",
-		  "value": "middle of",
+		  "value": "in the end",
 		  "end": {
 			"value": [
-			  "season",
-			  "as"
+			  "happy",
+			  "y"
 			]
 		  }
 		},
 		{
 		  "category": "symbol",
-		  "value": "each",
+		  "value": "especially",
 		  "end": {
 			"value": [
-			  "ea"
+			  "esp"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "rent",
+		  "end": {
+			"value": [
+			  "lease"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "asea"
+		"value": "yes please"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "id": "59",
+	  "id": "32",
 	  "clue": {
-		"value": "Frogs saw poison fungus"
+		"value": "Actor Grant and pair of Athenians identify carved column"
 	  },
-	  "release": "9/11/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"poison fungus"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Frogs",
-		  "end": {
-			"value": [
-			  "toads"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "saw",
-		  "end": {
-			"value": [
-			  "tool"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "toadstool"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "id": "58",
-	  "clue": {
-		"value": "Garland has looked over knot after weather event"
-	  },
-	  "release": "9/10/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "charade",
-	  "definition": [
-		"Garland has looked over"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "knot",
-		  "end": {
-			"value": [
-			  "bow"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "weather event",
-		  "end": {
-			"value": [
-			  "rain"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "rainbow"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "id": "44",
-	  "clue": {
-		"value": "Fatally drew blood at front of Room Y"
-	  },
-	  "release": "9/2/2024",
+	  "release": "8/23/2024",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"Fatally"
+		"carved column"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "drew blood",
+		  "value": "Actor Grant",
 		  "end": {
 			"value": [
-			  "let"
+			  "cary"
 			]
 		  }
 		},
 		{
-		  "category": "synonym",
-		  "value": "Room",
+		  "category": "symbol",
+		  "value": "Athenians",
 		  "end": {
 			"value": [
-			  "hall"
+			  "at"
 			]
 		  }
 		},
 		{
-		  "category": "direct",
-		  "value": "Y",
+		  "category": "symbol",
+		  "value": "identify",
 		  "end": {
 			"value": [
-			  "Y"
+			  "ID"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "lethally"
+		"value": "caryatid"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "id": "43",
+	  "id": "33",
 	  "clue": {
-		"value": "Again espouses study with orator's first points"
+		"value": "Digests cheese on Friday and Saturday"
 	  },
-	  "release": "9/1/2024",
-	  "difficulty": "4",
+	  "release": "8/24/2024",
+	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"Again espouses"
+		"Digests"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "study",
+		  "value": "cheese",
 		  "end": {
 			"value": [
-			  "read"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "first",
-		  "end": {
-			"value": [
-			  "orator's",
-			  "o"
+			  "brie"
 			]
 		  }
 		},
 		{
 		  "category": "symbol",
-		  "value": "points",
+		  "value": "Friday",
 		  "end": {
 			"value": [
-			  "pts"
+			  "F"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Saturday",
+		  "end": {
+			"value": [
+			  "S"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "readopts"
+		"value": "briefs"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -4251,148 +4217,353 @@
 	  }
 	},
 	{
-	  "id": "33",
+	  "id": "38",
 	  "clue": {
-		"value": "Digests cheese on Friday and Saturday"
+		"value": "Male dogs check laundry soap"
 	  },
-	  "release": "8/24/2024",
+	  "release": "10/4/2024",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"Digests"
+		"laundry soap"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "cheese",
+		  "value": "Male",
 		  "end": {
 			"value": [
-			  "brie"
+			  "gent"
 			]
 		  }
 		},
 		{
-		  "category": "symbol",
-		  "value": "Friday",
+		  "category": "synonym",
+		  "value": "dogs",
 		  "end": {
 			"value": [
-			  "F"
+			  "goes after"
 			]
 		  }
 		},
 		{
-		  "category": "symbol",
-		  "value": "Saturday",
+		  "category": "synonym",
+		  "value": "check",
 		  "end": {
 			"value": [
-			  "S"
+			  "deter"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "briefs"
+		"value": "detergent"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "id": "32",
+	  "id": "43",
 	  "clue": {
-		"value": "Actor Grant and pair of Athenians identify carved column"
+		"value": "Again espouses study with orator's first points"
 	  },
-	  "release": "8/23/2024",
-	  "difficulty": "3",
+	  "release": "9/1/2024",
+	  "difficulty": "4",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"carved column"
+		"Again espouses"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Actor Grant",
+		  "value": "study",
 		  "end": {
 			"value": [
-			  "cary"
+			  "read"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "first",
+		  "end": {
+			"value": [
+			  "orator's",
+			  "o"
 			]
 		  }
 		},
 		{
 		  "category": "symbol",
-		  "value": "Athenians",
+		  "value": "points",
 		  "end": {
 			"value": [
-			  "at"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "identify",
-		  "end": {
-			"value": [
-			  "ID"
+			  "pts"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "caryatid"
+		"value": "readopts"
 	  },
 	  "source": {
 		"value": "Fraz"
 	  }
 	},
 	{
-	  "id": "30",
+	  "id": "44",
 	  "clue": {
-		"value": "Sure happy in the end, especially with rent"
+		"value": "Fatally drew blood at front of Room Y"
 	  },
-	  "release": "8/21/2024",
+	  "release": "9/2/2024",
 	  "difficulty": "3",
 	  "ready": "TRUE",
 	  "type": "charade",
 	  "definition": [
-		"Sure"
+		"Fatally"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "drew blood",
+		  "end": {
+			"value": [
+			  "let"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Room",
+		  "end": {
+			"value": [
+			  "hall"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Y",
+		  "end": {
+			"value": [
+			  "Y"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lethally"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "46",
+	  "clue": {
+		"value": "Come to AT&T objective"
+	  },
+	  "release": "10/5/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Come to"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "AT&T",
+		  "end": {
+			"value": [
+			  "att"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "objective",
+		  "end": {
+			"value": [
+			  "end"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "attend"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "47",
+	  "clue": {
+		"value": "Large, empty apartment took off"
+	  },
+	  "release": "10/6/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"took off"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Large",
+		  "end": {
+			"value": [
+			  "L"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "empty",
+		  "end": {
+			"value": [
+			  "E"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "apartment",
+		  "end": {
+			"value": [
+			  "apt"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "leapt"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "48",
+	  "clue": {
+		"value": "After middle of season, each lost"
+	  },
+	  "release": "9/13/2024",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"lost"
 	  ],
 	  "hints": [
 		{
 		  "category": "particle",
-		  "value": "in the end",
+		  "value": "middle of",
 		  "end": {
 			"value": [
-			  "happy",
-			  "y"
+			  "season",
+			  "as"
 			]
 		  }
 		},
 		{
 		  "category": "symbol",
-		  "value": "especially",
+		  "value": "each",
 		  "end": {
 			"value": [
-			  "esp"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "rent",
-		  "end": {
-			"value": [
-			  "lease"
+			  "ea"
 			]
 		  }
 		}
 	  ],
 	  "solution": {
-		"value": "yes please"
+		"value": "asea"
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "58",
+	  "clue": {
+		"value": "Garland has looked over knot after weather event"
+	  },
+	  "release": "9/10/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Garland has looked over"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "knot",
+		  "end": {
+			"value": [
+			  "bow"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "weather event",
+		  "end": {
+			"value": [
+			  "rain"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "rainbow"
+	  },
+	  "source": {
+		"value": "plunk it"
+	  }
+	},
+	{
+	  "id": "59",
+	  "clue": {
+		"value": "Frogs saw poison fungus"
+	  },
+	  "release": "9/11/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"poison fungus"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Frogs",
+		  "end": {
+			"value": [
+			  "toads"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "saw",
+		  "end": {
+			"value": [
+			  "tool"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "toadstool"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -5055,6 +5226,7 @@
 	  }
 	},
 	{
+	  "id": "159",
 	  "clue": {
 		"value": "Loud noise of red propeller"
 	  },
@@ -5101,6 +5273,7 @@
 	  }
 	},
 	{
+	  "id": "160",
 	  "clue": {
 		"value": "Snag Hanks’ first desire"
 	  },
@@ -5148,6 +5321,7 @@
 	  }
 	},
 	{
+	  "id": "161",
 	  "clue": {
 		"value": "Ran with brio, initially, and was in front"
 	  },
@@ -5195,6 +5369,7 @@
 	  }
 	},
 	{
+	  "id": "162",
 	  "clue": {
 		"value": "Sleep at noon (twelve)"
 	  },
@@ -5241,6 +5416,7 @@
 	  }
 	},
 	{
+	  "id": "163",
 	  "clue": {
 		"value": "Girls with large butts"
 	  },
@@ -5287,6 +5463,7 @@
 	  }
 	},
 	{
+	  "id": "184",
 	  "clue": {
 		"value": "Spanish adult resort"
 	  },
@@ -5325,6 +5502,7 @@
 	  }
 	},
 	{
+	  "id": "190",
 	  "clue": {
 		"value": "Beg in Low Church"
 	  },
@@ -5363,6 +5541,7 @@
 	  }
 	},
 	{
+	  "id": "197",
 	  "clue": {
 		"value": "Impala, perhaps, runs after Chip"
 	  },
@@ -5401,6 +5580,7 @@
 	  }
 	},
 	{
+	  "id": "200",
 	  "clue": {
 		"value": "Former English Conservative’s suit"
 	  },
@@ -5448,6 +5628,7 @@
 	  }
 	},
 	{
+	  "id": "201",
 	  "clue": {
 		"value": "Son cut top of chestnut tree for extra money"
 	  },
@@ -5505,6 +5686,7 @@
 	  }
 	},
 	{
+	  "id": "215",
 	  "clue": {
 		"value": "Rude person runs, after scary yell"
 	  },
@@ -5553,6 +5735,7 @@
 	  }
 	},
 	{
+	  "id": "221",
 	  "clue": {
 		"value": "Genetically limits variation with trendy second-rate instruments"
 	  },
@@ -5600,6 +5783,7 @@
 	  }
 	},
 	{
+	  "id": "233",
 	  "clue": {
 		"value": "Catches last of cottonmouth snakes"
 	  },
@@ -5639,6 +5823,7 @@
 	  }
 	},
 	{
+	  "id": "235",
 	  "clue": {
 		"value": "That woman’s a goddess"
 	  },
@@ -5677,6 +5862,7 @@
 	  }
 	},
 	{
+	  "id": "245",
 	  "clue": {
 		"value": "Fix movie’s introduction and finale"
 	  },
@@ -5716,6 +5902,7 @@
 	  }
 	},
 	{
+	  "id": "246",
 	  "clue": {
 		"value": "Took advantage of “Us” editor"
 	  },
@@ -6057,6 +6244,7 @@
 	  }
 	},
 	{
+	  "id": "164",
 	  "clue": {
 		"value": "Marsh full of grass hides male ex-slaves"
 	  },
@@ -6123,6 +6311,7 @@
 	  }
 	},
 	{
+	  "id": "209",
 	  "clue": {
 		"value": "Way out, very loud gold-plated concert gear"
 	  },
@@ -6184,6 +6373,7 @@
 	  }
 	},
 	{
+	  "id": "216",
 	  "clue": {
 		"value": "Large number unhappy about greeting PLO"
 	  },
@@ -6243,6 +6433,7 @@
 	  }
 	},
 	{
+	  "id": "224",
 	  "clue": {
 		"value": "Designated hitter gets one single, a good-looking one"
 	  },
@@ -6302,6 +6493,7 @@
 	  }
 	},
 	{
+	  "id": "231",
 	  "clue": {
 		"value": "Stubborn one catches celebrity with dress primarily having slender vertical decorative strips"
 	  },
@@ -6361,6 +6553,7 @@
 	  }
 	},
 	{
+	  "id": "236",
 	  "clue": {
 		"value": "Sister has married husband from Stockholm, perhaps"
 	  },
@@ -6419,6 +6612,7 @@
 	  }
 	},
 	{
+	  "id": "240",
 	  "clue": {
 		"value": "Alleged experts from United Nations starting to dig in mines"
 	  },
@@ -6479,6 +6673,7 @@
 	  }
 	},
 	{
+	  "id": "238",
 	  "clue": {
 		"value": "From a certain continent, a supporter welcomes Rick briefly"
 	  },
@@ -6727,6 +6922,7 @@
 	  }
 	},
 	{
+	  "id": "165",
 	  "clue": {
 		"value": "When interrupted, start to talk in Polish"
 	  },
@@ -6775,6 +6971,7 @@
 	  }
 	},
 	{
+	  "id": "166",
 	  "clue": {
 		"value": "Mean and unhappy, I stick almost to the end"
 	  },
@@ -6832,6 +7029,7 @@
 	  }
 	},
 	{
+	  "id": "167",
 	  "clue": {
 		"value": "Like a no-good member of royalty"
 	  },
@@ -6888,6 +7086,7 @@
 	  }
 	},
 	{
+	  "id": "206",
 	  "clue": {
 		"value": "Mecca traveler fooled Jim, for the most part"
 	  },
@@ -6986,6 +7185,7 @@
 	  }
 	},
 	{
+	  "id": "168",
 	  "clue": {
 		"value": "Prepared a salad dish, originally, then flipped over endless dessert"
 	  },
@@ -7327,6 +7527,7 @@
 	  }
 	},
 	{
+	  "id": "169",
 	  "clue": {
 		"value": "Recalling complaints, drink certain protein"
 	  },
@@ -7383,6 +7584,7 @@
 	  }
 	},
 	{
+	  "id": "170",
 	  "clue": {
 		"value": "Female friend left in commotion"
 	  },
@@ -7439,6 +7641,7 @@
 	  }
 	},
 	{
+	  "id": "171",
 	  "clue": {
 		"value": "Identify leader of employees’ and staff’s revolt"
 	  },
@@ -7496,6 +7699,7 @@
 	  }
 	},
 	{
+	  "id": "172",
 	  "clue": {
 		"value": "I ran into upstanding couple in the tabloids"
 	  },
@@ -7552,6 +7756,7 @@
 	  }
 	},
 	{
+	  "id": "212",
 	  "clue": {
 		"value": "Plain covering everything westward"
 	  },
@@ -7610,6 +7815,7 @@
 	  }
 	},
 	{
+	  "id": "222",
 	  "clue": {
 		"value": "Islamic ruler eventually gave wheel mount back"
 	  },
@@ -7660,6 +7866,7 @@
 	  }
 	},
 	{
+	  "id": "230",
 	  "clue": {
 		"value": "Republican rejecting one city in Nevada"
 	  },
@@ -7699,123 +7906,44 @@
 	  }
 	},
 	{
-	  "id": "92",
+	  "id": "8",
 	  "clue": {
-		"value": "Tabloid recalled NY baseball team receiving new attire"
+		"value": "Different parent starts late"
 	  },
-	  "release": "7/9/2024",
+	  "release": "8/12/2024",
 	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal, container",
-	  "definition": [
-		"attire"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Tabloid",
-		  "end": {
-			"value": [
-			  "rag"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "NY baseball team",
-		  "end": {
-			"value": [
-			  "mets"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "new",
-		  "end": {
-			"value": [
-			  "n"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "receiving",
-		  "end": {
-			"value": [
-			  "me",
-			  "n",
-			  "ts"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "gar",
-		  "end": {
-			"value": [
-			  "ments",
-			  "n"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "garments"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "28",
-	  "clue": {
-		"value": "Swiss cabin fit inside court"
-	  },
-	  "release": "9/22/2024",
-	  "difficulty": "3",
 	  "ready": "TRUE",
-	  "type": "container",
+	  "type": "deletion",
 	  "definition": [
-		"Swiss cabin"
+		"Different"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "fit",
+		  "value": "parent",
 		  "end": {
 			"value": [
-			  "hale"
+			  "mother"
 			]
 		  }
 		},
 		{
-		  "category": "symbol",
-		  "value": "court",
+		  "category": "deletion",
+		  "value": "starts late",
 		  "end": {
 			"value": [
-			  "ct"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "inside",
-		  "end": {
-			"value": [
-			  "c",
-			  "hale",
-			  "t"
+			  "mother",
+			  "other"
 			]
 		  },
 		  "reveals": "TRUE"
 		}
 	  ],
 	  "solution": {
-		"value": "chalet"
+		"value": "other"
 	  },
 	  "source": {
-		"value": "Fraz"
+		"value": "Kegler"
 	  }
 	},
 	{
@@ -7858,47 +7986,6 @@
 	  },
 	  "source": {
 		"value": "Midas"
-	  }
-	},
-	{
-	  "id": "8",
-	  "clue": {
-		"value": "Different parent starts late"
-	  },
-	  "release": "8/12/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "deletion",
-	  "definition": [
-		"Different"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "parent",
-		  "end": {
-			"value": [
-			  "mother"
-			]
-		  }
-		},
-		{
-		  "category": "deletion",
-		  "value": "starts late",
-		  "end": {
-			"value": [
-			  "mother",
-			  "other"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "other"
-	  },
-	  "source": {
-		"value": "Kegler"
 	  }
 	},
 	{
@@ -8083,6 +8170,7 @@
 	  }
 	},
 	{
+	  "id": "173",
 	  "clue": {
 		"value": "Messes up chores and departs"
 	  },
@@ -8121,6 +8209,7 @@
 	  }
 	},
 	{
+	  "id": "198",
 	  "clue": {
 		"value": "Run into limitless drama"
 	  },
@@ -8151,6 +8240,7 @@
 	  }
 	},
 	{
+	  "id": "205",
 	  "clue": {
 		"value": "Academic institution in Honshu ignoring the odds"
 	  },
@@ -8181,6 +8271,7 @@
 	  }
 	},
 	{
+	  "id": "220",
 	  "clue": {
 		"value": "Talk show hostess spitting out bit of raw fish"
 	  },
@@ -8299,6 +8390,7 @@
 	  }
 	},
 	{
+	  "id": "174",
 	  "clue": {
 		"value": "One leaving Scottish monster back in German city"
 	  },
@@ -8356,26 +8448,6 @@
 	  }
 	},
 	{
-	  "id": "24",
-	  "clue": {
-		"value": "E.g., breakfast grain ground up"
-	  },
-	  "release": "9/20/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "double definition",
-	  "definition": [
-		"E.g., breakfast",
-		"grain ground up"
-	  ],
-	  "solution": {
-		"value": "meal"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "id": "9",
 	  "clue": {
 		"value": "Wears out swings, sometimes"
@@ -8396,26 +8468,6 @@
 	  }
 	},
 	{
-	  "id": "51",
-	  "clue": {
-		"value": "Leave the better part of Southern Arizona"
-	  },
-	  "release": "9/6/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "double definition",
-	  "definition": [
-		"Leave",
-		"the better part of Southern Arizona"
-	  ],
-	  "solution": {
-		"value": "desert"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
 	  "id": "20",
 	  "clue": {
 		"value": "Throw black goo"
@@ -8433,6 +8485,46 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "24",
+	  "clue": {
+		"value": "E.g., breakfast grain ground up"
+	  },
+	  "release": "9/20/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"E.g., breakfast",
+		"grain ground up"
+	  ],
+	  "solution": {
+		"value": "meal"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "51",
+	  "clue": {
+		"value": "Leave the better part of Southern Arizona"
+	  },
+	  "release": "9/6/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Leave",
+		"the better part of Southern Arizona"
+	  ],
+	  "solution": {
+		"value": "desert"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -8476,6 +8568,7 @@
 	  }
 	},
 	{
+	  "id": "183",
 	  "clue": {
 		"value": "Brings home fishermen’s equipment"
 	  },
@@ -8499,6 +8592,7 @@
 	  }
 	},
 	{
+	  "id": "186",
 	  "clue": {
 		"value": "Monthly payment is torn"
 	  },
@@ -8522,6 +8616,7 @@
 	  }
 	},
 	{
+	  "id": "189",
 	  "clue": {
 		"value": "View bishopric"
 	  },
@@ -8542,37 +8637,6 @@
 	  },
 	  "source": {
 		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "52",
-	  "clue": {
-		"value": "Buried in Tucson or another arid region"
-	  },
-	  "release": "10/7/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "hidden word",
-	  "definition": [
-		"arid region"
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "Buried in",
-		  "end": {
-			"value": [
-			  "Tucson or another",
-			  "son or an"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "sonoran"
-	  },
-	  "source": {
-		"value": "Midas"
 	  }
 	},
 	{
@@ -8669,6 +8733,37 @@
 	  }
 	},
 	{
+	  "id": "52",
+	  "clue": {
+		"value": "Buried in Tucson or another arid region"
+	  },
+	  "release": "10/7/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"arid region"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "Buried in",
+		  "end": {
+			"value": [
+			  "Tucson or another",
+			  "son or an"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sonoran"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
 	  "id": "66",
 	  "clue": {
 		"value": "Fulminate against providing drink"
@@ -8762,6 +8857,7 @@
 	  }
 	},
 	{
+	  "id": "175",
 	  "clue": {
 		"value": "UPS Store stocks attention-getter"
 	  },
@@ -8790,6 +8886,7 @@
 	  }
 	},
 	{
+	  "id": "176",
 	  "clue": {
 		"value": "Field in Far East"
 	  },
@@ -8818,6 +8915,7 @@
 	  }
 	},
 	{
+	  "id": "193",
 	  "clue": {
 		"value": "Originally called some telephone extension"
 	  },
@@ -8848,6 +8946,7 @@
 	  }
 	},
 	{
+	  "id": "219",
 	  "clue": {
 		"value": "Certain tide seen in Minneapolis"
 	  },
@@ -8878,6 +8977,7 @@
 	  }
 	},
 	{
+	  "id": "227",
 	  "clue": {
 		"value": "Focus too much on portion of job session"
 	  },
@@ -8990,6 +9090,7 @@
 	  }
 	},
 	{
+	  "id": "177",
 	  "clue": {
 		"value": "Religious sect member, repulsed, beats a retreat inside"
 	  },
@@ -9028,6 +9129,7 @@
 	  }
 	},
 	{
+	  "id": "199",
 	  "clue": {
 		"value": "Plastic pet ate carelessly partly thrown up"
 	  },
@@ -9067,121 +9169,6 @@
 	  }
 	},
 	{
-	  "id": "25",
-	  "clue": {
-		"value": "Goofs up broadcast from a reporter"
-	  },
-	  "release": "10/3/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Goofs up"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "broadcast",
-		  "end": {
-			"value": [
-			  "airs"
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "from a reporter"
-		}
-	  ],
-	  "solution": {
-		"value": "errs"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "17",
-	  "clue": {
-		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
-	  },
-	  "release": "10/2/2024",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Eyeglasses"
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "initially",
-		  "end": {
-			"value": [
-			  "broken",
-			  "liberal"
-			]
-		  }
-		},
-		{
-		  "category": "anagram",
-		  "value": "terrible",
-		  "end": {
-			"value": [
-			  "fiasco",
-			  "b",
-			  "l"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "bifocals"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "16",
-	  "clue": {
-		"value": "South Mountain, say"
-	  },
-	  "release": "10/1/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"say"
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "South",
-		  "end": {
-			"value": [
-			  "S"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "Mountain",
-		  "end": {
-			"value": [
-			  "peak"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "speak"
-	  },
-	  "source": {
-		"value": "Hex"
-	  }
-	},
-	{
 	  "id": "4",
 	  "clue": {
 		"value": "Burn prophet, we hear"
@@ -9210,83 +9197,6 @@
 	  ],
 	  "solution": {
 		"value": "sear"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "53",
-	  "clue": {
-		"value": "Computer industry dude, after transitioning, declared Dallas home"
-	  },
-	  "release": "9/25/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Dallas home"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Computer industry",
-		  "end": {
-			"value": [
-			  "tech"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "dude, after transitioning",
-		  "end": {
-			"value": [
-			  "sis"
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "declared"
-		}
-	  ],
-	  "solution": {
-		"value": "texas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "id": "29",
-	  "clue": {
-		"value": "Group of lions was snoopy, we hear"
-	  },
-	  "release": "9/23/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Group of lions"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "was snoopy",
-		  "end": {
-			"value": [
-			  "pried"
-			]
-		  }
-		},
-		{
-		  "category": "homophone",
-		  "value": "we hear"
-		}
-	  ],
-	  "solution": {
-		"value": "pride"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -9336,65 +9246,81 @@
 	  }
 	},
 	{
-	  "id": "60",
+	  "id": "16",
 	  "clue": {
-		"value": "Pop star to hum quietly while slowly passing gas, we hear"
+		"value": "South Mountain, say"
 	  },
-	  "release": "9/12/2024",
-	  "difficulty": "2",
+	  "release": "10/1/2024",
+	  "difficulty": "1",
 	  "ready": "TRUE",
 	  "type": "homophone",
 	  "definition": [
-		"Pop star"
+		"say"
 	  ],
 	  "hints": [
 		{
-		  "category": "homophone",
-		  "value": "hum quietly while slowly passing gas",
+		  "category": "symbol",
+		  "value": "South",
 		  "end": {
 			"value": [
-			  "idle",
-			  "idol"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "idol"
-	  },
-	  "source": {
-		"value": "plunk it"
-	  }
-	},
-	{
-	  "id": "36",
-	  "clue": {
-		"value": "Cargo said \"moo!\" in our ears"
-	  },
-	  "release": "8/26/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "homophone",
-	  "definition": [
-		"Cargo"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "said \"moo!\"",
-		  "end": {
-			"value": [
-			  "lowed"
+			  "S"
 			]
 		  }
 		},
 		{
-		  "category": "homophone",
-		  "value": "in our ears"
+		  "category": "synonym",
+		  "value": "Mountain",
+		  "end": {
+			"value": [
+			  "peak"
+			]
+		  }
 		}
 	  ],
 	  "solution": {
-		"value": "load"
+		"value": "speak"
+	  },
+	  "source": {
+		"value": "Hex"
+	  }
+	},
+	{
+	  "id": "17",
+	  "clue": {
+		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
+	  },
+	  "release": "10/2/2024",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Eyeglasses"
+	  ],
+	  "hints": [
+		{
+		  "category": "initialism",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "broken",
+			  "liberal"
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "terrible",
+		  "end": {
+			"value": [
+			  "fiasco",
+			  "b",
+			  "l"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bifocals"
 	  },
 	  "source": {
 		"value": "Fraz"
@@ -9432,6 +9358,182 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "25",
+	  "clue": {
+		"value": "Goofs up broadcast from a reporter"
+	  },
+	  "release": "10/3/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Goofs up"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "broadcast",
+		  "end": {
+			"value": [
+			  "airs"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "from a reporter"
+		}
+	  ],
+	  "solution": {
+		"value": "errs"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "29",
+	  "clue": {
+		"value": "Group of lions was snoopy, we hear"
+	  },
+	  "release": "9/23/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Group of lions"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "was snoopy",
+		  "end": {
+			"value": [
+			  "pried"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear"
+		}
+	  ],
+	  "solution": {
+		"value": "pride"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "36",
+	  "clue": {
+		"value": "Cargo said \"moo!\" in our ears"
+	  },
+	  "release": "8/26/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Cargo"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "said \"moo!\"",
+		  "end": {
+			"value": [
+			  "lowed"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "in our ears"
+		}
+	  ],
+	  "solution": {
+		"value": "load"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "53",
+	  "clue": {
+		"value": "Computer industry dude, after transitioning, declared Dallas home"
+	  },
+	  "release": "9/25/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Dallas home"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Computer industry",
+		  "end": {
+			"value": [
+			  "tech"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "dude, after transitioning",
+		  "end": {
+			"value": [
+			  "sis"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "declared"
+		}
+	  ],
+	  "solution": {
+		"value": "texas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "id": "60",
+	  "clue": {
+		"value": "Pop star to hum quietly while slowly passing gas, we hear"
+	  },
+	  "release": "9/12/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Pop star"
+	  ],
+	  "hints": [
+		{
+		  "category": "homophone",
+		  "value": "hum quietly while slowly passing gas",
+		  "end": {
+			"value": [
+			  "idle",
+			  "idol"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "idol"
+	  },
+	  "source": {
+		"value": "plunk it"
 	  }
 	},
 	{
@@ -9537,6 +9639,7 @@
 	  }
 	},
 	{
+	  "id": "178",
 	  "clue": {
 		"value": "Settlement reportedly stuffed in a suitcase"
 	  },
@@ -9575,6 +9678,7 @@
 	  }
 	},
 	{
+	  "id": "179",
 	  "clue": {
 		"value": "We hear four couples had dinner"
 	  },
@@ -9613,6 +9717,7 @@
 	  }
 	},
 	{
+	  "id": "188",
 	  "clue": {
 		"value": "You mentioned sheep"
 	  },
@@ -9643,6 +9748,7 @@
 	  }
 	},
 	{
+	  "id": "194",
 	  "clue": {
 		"value": "Watches for favorable votes, we hear"
 	  },
@@ -9682,6 +9788,7 @@
 	  }
 	},
 	{
+	  "id": "225",
 	  "clue": {
 		"value": "Reportedly detect small change"
 	  },
@@ -9721,36 +9828,6 @@
 	  }
 	},
 	{
-	  "id": "54",
-	  "clue": {
-		"value": "Starts to dream about living large amid suburban Texas metropolis"
-	  },
-	  "release": "9/26/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "initialism",
-	  "definition": [
-		"Texas metropolis"
-	  ],
-	  "hints": [
-		{
-		  "category": "initialism",
-		  "value": "Starts to",
-		  "end": {
-			"value": [
-			  "dream about living large amid suburban"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "dallas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
 	  "id": "14",
 	  "clue": {
 		"value": "Arizona boomer starts to talk up city situated over Nogales"
@@ -9781,6 +9858,37 @@
 	  }
 	},
 	{
+	  "id": "54",
+	  "clue": {
+		"value": "Starts to dream about living large amid suburban Texas metropolis"
+	  },
+	  "release": "9/26/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "initialism",
+	  "definition": [
+		"Texas metropolis"
+	  ],
+	  "hints": [
+		{
+		  "category": "initialism",
+		  "value": "Starts to",
+		  "end": {
+			"value": [
+			  "dream about living large amid suburban"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dallas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "id": "229",
 	  "clue": {
 		"value": "European capital starts to open some legislative offices"
 	  },
@@ -9808,6 +9916,37 @@
 	  },
 	  "source": {
 		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "3",
+	  "clue": {
+		"value": "Repeatedly retain host"
+	  },
+	  "release": "8/10/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "letter bank",
+	  "definition": [
+		"host"
+	  ],
+	  "hints": [
+		{
+		  "category": "letter bank",
+		  "value": "Repeatedly",
+		  "end": {
+			"value": [
+			  "retain",
+			  "entertainer"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "entertainer"
+	  },
+	  "source": {
+		"value": "Fraz"
 	  }
 	},
 	{
@@ -9883,37 +10022,6 @@
 	  }
 	},
 	{
-	  "id": "3",
-	  "clue": {
-		"value": "Repeatedly retain host"
-	  },
-	  "release": "8/10/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "letter bank",
-	  "definition": [
-		"host"
-	  ],
-	  "hints": [
-		{
-		  "category": "letter bank",
-		  "value": "Repeatedly",
-		  "end": {
-			"value": [
-			  "retain",
-			  "entertainer"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "entertainer"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
 	  "id": "13",
 	  "clue": {
 		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
@@ -9960,55 +10068,6 @@
 	  },
 	  "source": {
 		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "55",
-	  "clue": {
-		"value": "King with a golden touch is unhappy I'm returning"
-	  },
-	  "release": "9/7/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"King with a golden touch"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "unhappy",
-		  "end": {
-			"value": [
-			  "sad"
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "I'm",
-		  "end": {
-			"value": [
-			  "I'm"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "sad I'm",
-			  "midas"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "midas"
-	  },
-	  "source": {
-		"value": "Midas"
 	  }
 	},
 	{
@@ -10059,6 +10118,55 @@
 	  },
 	  "source": {
 		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "55",
+	  "clue": {
+		"value": "King with a golden touch is unhappy I'm returning"
+	  },
+	  "release": "9/7/2024",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"King with a golden touch"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "unhappy",
+		  "end": {
+			"value": [
+			  "sad"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "I'm",
+		  "end": {
+			"value": [
+			  "I'm"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "sad I'm",
+			  "midas"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "midas"
+	  },
+	  "source": {
+		"value": "Midas"
 	  }
 	},
 	{
@@ -10182,6 +10290,7 @@
 	  }
 	},
 	{
+	  "id": "180",
 	  "clue": {
 		"value": "Storyteller’s train heading back"
 	  },
@@ -10220,6 +10329,7 @@
 	  }
 	},
 	{
+	  "id": "181",
 	  "clue": {
 		"value": "Rejected Rod’s suggestions"
 	  },
@@ -10258,6 +10368,7 @@
 	  }
 	},
 	{
+	  "id": "208",
 	  "clue": {
 		"value": "Actress Ryan’s jewelry returned"
 	  },
@@ -10297,6 +10408,7 @@
 	  }
 	},
 	{
+	  "id": "237",
 	  "clue": {
 		"value": "Talk show host bringing up book by Turow"
 	  },
@@ -10452,6 +10564,7 @@
 	  }
 	},
 	{
+	  "id": "192",
 	  "clue": {
 		"value": "Cut short sharp criticism, per Rev. Spooner’s plan"
 	  },
@@ -10494,6 +10607,1835 @@
 	  ],
 	  "solution": {
 		"value": "road map"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "247",
+	  "clue": {
+		"value": "Said party rejected quantity of less than 100 shares"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"quantity of less than 100 shares"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Said",
+		  "end": {
+			"value": [
+			  "told"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "party",
+		  "end": {
+			"value": [
+			  "do"
+			]
+		  },
+		  "explainer": "Do\" is an old-fashioned (and/or chiefly British) word for \"party"
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejected",
+		  "end": {
+			"value": [
+			  "tolddo",
+			  "odd lot"
+			]
+		  },
+		  "explainer": "In stock trading, a quantity under 100 shares is an \"odd lot\""
+		}
+	  ],
+	  "solution": {
+		"value": "odd lot"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "248",
+	  "clue": {
+		"value": "Gram meets uncle inside with specialized clothing"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, container",
+	  "definition": [
+		"specialized clothing"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Gram",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "meets",
+		  "end": {
+			"value": [
+			  "sits"
+			]
+		  },
+		  "explainer": "As in, the legislature sits (meets)"
+		},
+		{
+		  "category": "symbol",
+		  "value": "uncle",
+		  "end": {
+			"value": [
+			  "u"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "g s",
+			  "u",
+			  "its"
+			]
+		  },
+		  "explainer": "A G-suit is worn by fighter pilots to counteract extreme forces"
+		}
+	  ],
+	  "solution": {
+		"value": "G suits"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "249",
+	  "clue": {
+		"value": "Amazing sherpas, heaven-bound beings?"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"heaven-bound beings"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Amazing",
+		  "end": {
+			"value": [
+			  "sherpas",
+			  "seraphs"
+			]
+		  },
+		  "explainer": "A seraph (plural seraphs or seraphim) is a type of angel mentioned in the Bible",
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "seraphs"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "250",
+	  "clue": {
+		"value": "Crazy son employs one cleaning crew"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, container",
+	  "definition": [
+		"cleaning crew"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Crazy",
+		  "end": {
+			"value": [
+			  "mad"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "son",
+		  "end": {
+			"value": [
+			  "s"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "i"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "employs",
+		  "end": {
+			"value": [
+			  "ma",
+			  "i",
+			  "ds"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "maids"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "251",
+	  "clue": {
+		"value": "A drunk settled"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"settled"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "A",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "drunk",
+		  "end": {
+			"value": [
+			  "lit"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "alit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "252",
+	  "clue": {
+		"value": "Coffee contains ice"
+	  },
+	  "ready": "FALSE",
+	  "type": "hidden word",
+	  "definition": [
+		"ice"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "contains",
+		  "end": {
+			"value": [
+			  "Coffee",
+			  "off"
+			]
+		  },
+		  "explainer": "Ice\" and \"off\" are both slang terms (mafia-derived?) for \"kill",
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "off"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "253",
+	  "clue": {
+		"value": "For example, Pat’s backing star, perhaps"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"star, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "For example",
+		  "end": {
+			"value": [
+			  "eg"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "Pat",
+		  "end": {
+			"value": [
+			  "dab"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "egdab",
+			  "badge"
+			]
+		  },
+		  "explainer": "Many badges (e.g., police) are in the shape of a star"
+		}
+	  ],
+	  "solution": {
+		"value": "badge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "254",
+	  "clue": {
+		"value": "Corners reporter finally among athletic supporters?"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Corners"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "finally",
+		  "end": {
+			"value": [
+			  "reporter",
+			  "r"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "athletic supporters",
+		  "end": {
+			"value": [
+			  "tees"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "among",
+		  "end": {
+			"value": [
+			  "t",
+			  "r",
+			  "ees"
+			]
+		  },
+		  "explainer": "To \"tree\" is to corner, a reference to hunting tree-climbing animals with hounds"
+		}
+	  ],
+	  "solution": {
+		"value": "trees"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "255",
+	  "clue": {
+		"value": "Northwestern state’s hospital area"
+	  },
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"Northwestern state",
+		"hospital area"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Northwestern state",
+		  "end": {
+			"value": [
+			  "OR"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "OR"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "256",
+	  "clue": {
+		"value": "Angry singer that is outside"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Angry"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "singer",
+		  "end": {
+			"value": [
+			  "rat"
+			]
+		  },
+		  "explainer": "In criminal justice, to \"rat\" or \"sing\" means to betray your accomplices",
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "that is",
+		  "end": {
+			"value": [
+			  "ie"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "outside",
+		  "end": {
+			"value": [
+			  "i",
+			  "rat",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "irate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "257",
+	  "clue": {
+		"value": "Win, capturing opposition’s last man"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"man"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "win",
+		  "end": {
+			"value": [
+			  "get"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "last",
+		  "end": {
+			"value": [
+			  "opposition",
+			  "n"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "capturing",
+		  "end": {
+			"value": [
+			  "ge",
+			  "n",
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "gent"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "258",
+	  "clue": {
+		"value": "Carol’s wrong, ultimately wrong"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Carol"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "wrong",
+		  "end": {
+			"value": [
+			  "sin"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "ultimately",
+		  "end": {
+			"value": [
+			  "wrong",
+			  "g"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sing"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "259",
+	  "clue": {
+		"value": "Avert wary Aunt Dotty"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"Avert"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Dotty",
+		  "end": {
+			"value": [
+			  "wary Aunt",
+			  "turn away"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "turn away"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "260",
+	  "clue": {
+		"value": "A good laugh with Muslim official"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Muslim official"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "A",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "good",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "laugh",
+		  "end": {
+			"value": [
+			  "ha"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "agha"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "261",
+	  "clue": {
+		"value": "I had papers"
+	  },
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"I had",
+		"papers"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "I had",
+		  "end": {
+			"value": [
+			  "I'd"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "ID"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "262",
+	  "clue": {
+		"value": "Train the Spanish"
+	  },
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"Train",
+		"the Spanish"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Train",
+		  "end": {
+			"value": [
+			  "el"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "el"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "263",
+	  "clue": {
+		"value": "Wrath of Israel evens out"
+	  },
+	  "ready": "FALSE",
+	  "type": "deletion",
+	  "definition": [
+		"Wrath"
+	  ],
+	  "hints": [
+		{
+		  "category": "deletion",
+		  "value": "evens out",
+		  "end": {
+			"value": [
+			  "Israel",
+			  "ire"
+			]
+		  },
+		  "explainer": "Here, \"evens out\" means \"delete the even-numbered letters\"",
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "ire"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "264",
+	  "clue": {
+		"value": "Expensive ruby initially misplaced by actress Meryl"
+	  },
+	  "ready": "FALSE",
+	  "type": "deletion",
+	  "definition": [
+		"Expensive"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "ruby",
+			  "r"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "actress Meryl",
+		  "end": {
+			"value": [
+			  "Streep"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "misplaced",
+		  "end": {
+			"value": [
+			  "Streep",
+			  "steep"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "streep"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "265",
+	  "clue": {
+		"value": "French city park is excluding kids, at first"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"French city"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "at first",
+		  "end": {
+			"value": [
+			  "kids",
+			  "k"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "deletion",
+		  "value": "park is",
+		  "end": {
+			"value": [
+			  "k",
+			  "Paris"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Paris"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "266",
+	  "clue": {
+		"value": "Black and gray protective covering"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"protective covering"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Black",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "and",
+		  "end": {
+			"value": [
+			  "and"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "gray",
+		  "end": {
+			"value": [
+			  "age"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bandage"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "267",
+	  "clue": {
+		"value": "Set off at eight, initially, for property"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram, charade",
+	  "definition": [
+		"property"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "off",
+		  "end": {
+			"value": [
+			  "set",
+			  "est"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "direct",
+		  "value": "at",
+		  "end": {
+			"value": [
+			  "at"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "eight",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "estate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "268",
+	  "clue": {
+		"value": "From USC, a teacher exhibits wine"
+	  },
+	  "ready": "FALSE",
+	  "type": "hidden word",
+	  "definition": [
+		"wine"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "exhibits",
+		  "end": {
+			"value": [
+			  "From USC, a teacher",
+			  "muscat"
+			]
+		  },
+		  "explainer": "The muscat is possibly the oldest variety of cultivated grape",
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "muscat"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "269",
+	  "clue": {
+		"value": "“Cosmo” sisterhood features learning without trying?"
+	  },
+	  "ready": "FALSE",
+	  "type": "hidden word",
+	  "definition": [
+		"learning without trying?"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "features",
+		  "end": {
+			"value": [
+			  "\"Cosmo\" sisterhood",
+			  "osmosis"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "osmosis"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "270",
+	  "clue": {
+		"value": "Fade out, giving no heed"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"giving no heed"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "out",
+		  "end": {
+			"value": [
+			  "Fade",
+			  "deaf"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "deaf"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "271",
+	  "clue": {
+		"value": "Doctor provided temperature deviation"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"deviation"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Doctor",
+		  "end": {
+			"value": [
+			  "dr"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "provided",
+		  "end": {
+			"value": [
+			  "if"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "temperature",
+		  "end": {
+			"value": [
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "drift"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "272",
+	  "clue": {
+		"value": "Cover one entering outskirts of Leningrad"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"Cover"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "i"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "outskirts of",
+		  "end": {
+			"value": [
+			  "Leningrad",
+			  "ld"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "entering",
+		  "end": {
+			"value": [
+			  "l",
+			  "i",
+			  "d"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lid"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "273",
+	  "clue": {
+		"value": "“Doonesbury” author, Democrat, wearing real gold"
+	  },
+	  "ready": "FALSE",
+	  "type": "container, charade",
+	  "definition": [
+		"\"Doonesbury\" author"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Democrat",
+		  "end": {
+			"value": [
+			  "d"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "real",
+		  "end": {
+			"value": [
+			  "true"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "wearing",
+		  "end": {
+			"value": [
+			  "tru",
+			  "d",
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "gold",
+		  "end": {
+			"value": [
+			  "au"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "trudeau"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "274",
+	  "clue": {
+		"value": "Jokes about Navy work crews"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"work crews"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Jokes",
+		  "end": {
+			"value": [
+			  "gags"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "Navy",
+		  "end": {
+			"value": [
+			  "n"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "ga",
+			  "n",
+			  "gs"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "gangs"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "275",
+	  "clue": {
+		"value": "Range of influence of salt and pepper on this planet"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Range of influence"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "salt",
+		  "end": {
+			"value": [
+			  "s"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "symbol",
+		  "value": "pepper",
+		  "end": {
+			"value": [
+			  "p"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "on this planet",
+		  "end": {
+			"value": [
+			  "here"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sphere"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "276",
+	  "clue": {
+		"value": "Lies about tropical getaway, perhaps"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"tropical getaway, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "Lies",
+			  "isle"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "isle"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "277",
+	  "clue": {
+		"value": "Boosting not nearly all of a musical sound"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"of a musical sound"
+	  ],
+	  "hints": [
+		{
+		  "category": "reversal",
+		  "value": "Boosting",
+		  "end": {
+			"value": [
+			  "not",
+			  "ton"
+			]
+		  },
+		  "explainer": "In this case, \"boosting\" appears in a down clue, so it signifies a reversal (\"raising\")",
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "nearly",
+		  "end": {
+			"value": [
+			  "all",
+			  "al"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tonal"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "278",
+	  "clue": {
+		"value": "Wandering stray lecher"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"lecher"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Wandering",
+		  "end": {
+			"value": [
+			  "stray",
+			  "satyr"
+			]
+		  },
+		  "explainer": "The satyr, in Greek mythology, was a lecherous figure",
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "satyr"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "279",
+	  "clue": {
+		"value": "Mrs. Adams is a great liar for the most part, upon reflection"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"Mrs. Adams"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "a",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "great",
+		  "end": {
+			"value": [
+			  "big"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "for the most part",
+		  "end": {
+			"value": [
+			  "liar",
+			  "lia"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upon reflection",
+		  "end": {
+			"value": [
+			  "lia",
+			  "ail"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Abigail"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "280",
+	  "clue": {
+		"value": "Ordered blue drink"
+	  },
+	  "ready": "FALSE",
+	  "type": "charade",
+	  "definition": [
+		"Ordered"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "blue",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "drink",
+		  "end": {
+			"value": [
+			  "ade"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bade"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "281",
+	  "clue": {
+		"value": "Incredible feast for three goddesses"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"three goddesses"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Incredible",
+		  "end": {
+			"value": [
+			  "feast",
+			  "fates"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "fates"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "282",
+	  "clue": {
+		"value": "Backed up store’s streetcar"
+	  },
+	  "ready": "FALSE",
+	  "type": "reversal",
+	  "definition": [
+		"streetcar"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "store",
+		  "end": {
+			"value": [
+			  "mart"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "Backed up",
+		  "end": {
+			"value": [
+			  "mart",
+			  "tram"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tram"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "283",
+	  "clue": {
+		"value": "Compose new septet around symphony’s finale"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram, container",
+	  "definition": [
+		"Compose"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "septet",
+			  "tpeset"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "finale",
+		  "end": {
+			"value": [
+			  "sympony's",
+			  "y"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "around",
+		  "end": {
+			"value": [
+			  "t",
+			  "y",
+			  "peset"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "typeset"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "284",
+	  "clue": {
+		"value": "Greek character embraced by prostitute, a sticky situation?"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"a sticky situation?"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Greek character",
+		  "end": {
+			"value": [
+			  "pi"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "synonym",
+		  "value": "prostitute",
+		  "end": {
+			"value": [
+			  "tart"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "embraced",
+		  "end": {
+			"value": [
+			  "tar",
+			  "pi",
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tarpit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "285",
+	  "clue": {
+		"value": "Edges away from paisley passageway"
+	  },
+	  "ready": "FALSE",
+	  "type": "deletion",
+	  "definition": [
+		"passageway"
+	  ],
+	  "hints": [
+		{
+		  "category": "deletion",
+		  "value": "Edges away",
+		  "end": {
+			"value": [
+			  "paisley",
+			  "aisle"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "aisle"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "286",
+	  "clue": {
+		"value": "Travel on horseback, circling face of granite mountain crest"
+	  },
+	  "ready": "FALSE",
+	  "type": "container",
+	  "definition": [
+		"mountain crest"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Travel on horseback",
+		  "end": {
+			"value": [
+			  "ride"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "particle",
+		  "value": "face of granite",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "circling",
+		  "end": {
+			"value": [
+			  "rid",
+			  "g",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ridge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "287",
+	  "clue": {
+		"value": "Funny guy returns with one Nobel Prize-winning physicist"
+	  },
+	  "ready": "FALSE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Nobel Prize-winning physicist"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Funny guy",
+		  "end": {
+			"value": [
+			  "card"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "returns",
+		  "end": {
+			"value": [
+			  "card",
+			  "drac"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "i"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "with",
+		  "end": {
+			"value": [
+			  "d",
+			  "i",
+			  "rac"
+			]
+		  },
+		  "explainer": "Paul Dirac won the 1933 Nobel Prize in physics"
+		}
+	  ],
+	  "solution": {
+		"value": "Dirac"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "288",
+	  "clue": {
+		"value": "Obligation Mr. Turner brought up involving bond’s premiere"
+	  },
+	  "ready": "FALSE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Obligation"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Mr. Turner",
+		  "end": {
+			"value": [
+			  "Ted"
+			]
+		  },
+		  "reveals": "FALSE"
+		},
+		{
+		  "category": "reversal",
+		  "value": "brought up",
+		  "end": {
+			"value": [
+			  "ted",
+			  "det"
+			]
+		  },
+		  "explainer": "For a down clue, \"brought up\" can signal a reversal"
+		},
+		{
+		  "category": "particle",
+		  "value": "premiere",
+		  "end": {
+			"value": [
+			  "bond's",
+			  "b"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "involving",
+		  "end": {
+			"value": [
+			  "de",
+			  "b",
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "debt"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "289",
+	  "clue": {
+		"value": "Terribly sad commercials"
+	  },
+	  "ready": "FALSE",
+	  "type": "anagram",
+	  "definition": [
+		"commercials"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Terribly",
+		  "end": {
+			"value": [
+			  "sad",
+			  "ads"
+			]
+		  },
+		  "reveals": "FALSE"
+		}
+	  ],
+	  "solution": {
+		"value": "ads"
 	  },
 	  "source": {
 		"value": "Kegler"
