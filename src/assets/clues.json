@@ -254,7 +254,7 @@
 		  "value": "content",
 		  "end": {
 			"value": [
-			  "Hugo",
+			  "Hugo's",
 			  "ug"
 			]
 		  }
@@ -522,20 +522,15 @@
 	  "hints": [
 		{
 		  "category": "direct",
-		  "value": "dd"
+		  "value": "DD"
 		},
 		{
 		  "category": "direct",
-		  "value": "i"
+		  "value": "I"
 		},
 		{
 		  "category": "direct",
-		  "value": "lute",
-		  "end": {
-			"value": [
-			  "lute"
-			]
-		  }
+		  "value": "lute"
 		},
 		{
 		  "category": "container",
@@ -543,8 +538,8 @@
 		  "end": {
 			"value": [
 			  "lu",
-			  "dd",
-			  "i",
+			  "DD",
+			  "I",
 			  "te"
 			]
 		  },
@@ -624,19 +619,19 @@
 	  "hints": [
 		{
 		  "category": "direct",
-		  "value": "don"
+		  "value": "Don"
 		},
 		{
 		  "category": "direct",
-		  "value": "ann"
+		  "value": "Ann"
 		},
 		{
 		  "category": "container",
 		  "value": "eats",
 		  "end": {
 			"value": [
-			  "d",
-			  "ann",
+			  "D",
+			  "Ann",
 			  "on"
 			]
 		  }
@@ -1127,7 +1122,7 @@
 		  "value": "borders of",
 		  "end": {
 			"value": [
-			  "chile",
+			  "Chile",
 			  "ce"
 			]
 		  }
@@ -1284,7 +1279,7 @@
 		},
 		{
 		  "category": "particle",
-		  "value": "half-credit",
+		  "value": "half",
 		  "end": {
 			"value": [
 			  "credit",

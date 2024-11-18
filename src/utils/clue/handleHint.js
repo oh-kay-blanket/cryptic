@@ -77,7 +77,8 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						break
 					case 'particle':
 						highlightLetters(hint.ref)
-						changeColor(hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), '#ccc')
+						changeColor(hint.end.ref, '#ccc')
+						// changeColor(hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
 					case 'container':
@@ -88,6 +89,15 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 						// changeColor(a1, '#ccc')
 						// changeColor(a2, '#ccc')
+
+						// make all old addLetters gray
+						activeClue.hints.forEach(h => {
+							if (h.addLetters && h.category !== 'container') {
+								changeColor(h.addLetters.ref.current, '#ccc')
+							}
+						});
+
+
 						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
 						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
 						
@@ -124,7 +134,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		if (nextHint > 1) {
 			try {
 				highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)
-				changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
+
+				if (activeClue.hints[nextHint - 1].end) {
+					changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
+				} else {
+					changeColor(activeClue.hints[nextHint - 1].ref, false, true)
+				}
 				
 				if (activeClue.hints[nextHint - 1].category !== 'deletion') {
 					changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
