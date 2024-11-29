@@ -30,8 +30,20 @@ const getTargetLetters = (letters, activeClue, hint) => {
 	
 		// Just a string value
 		} else {
-			const targetLettersStart = activeClue.clue.value.indexOf(letters)
+			let targetLettersStart;
+			
+			if (hint.category == 'direct') {
+
+				// Consider using regex to exclude alpha char before & after letters
+				// console.log(activeClue.clue.value.indexOf(` ${letters}`))
+
+				targetLettersStart = activeClue.clue.value.indexOf(` ${letters}`) + 1
+			} else {
+				targetLettersStart = activeClue.clue.value.indexOf(letters)
+			}
 			const strSlice = activeClue.clue.ref.current.slice(targetLettersStart, (targetLettersStart + letters.length))
+
+
 			// console.log(letters, hint, strSlice)			
 			return strSlice
 	
