@@ -109,8 +109,17 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						break
 					case 'reversal':
 						highlightLetters(hint.ref)
-						// changeColor(hint.end.ref.slice(0,hint.end.value[0].length), '#ccc')
-						changeColor(hint.addLetters.ref.current)
+
+						activeClue.hints.forEach(h => {
+							if (h.addLetters && h.category !== 'reversal') {
+								changeColor(h.addLetters.ref.current, '#ccc')
+							}
+						});
+
+						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), '#222')
+						
+						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length), 'sequence', true)
+
 						
 						if (hint.reveals) {
 							setTimeout(revealSolution, 2000)

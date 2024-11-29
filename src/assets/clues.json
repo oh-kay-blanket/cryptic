@@ -7274,9 +7274,11 @@
 		  "value": "On the way back",
 		  "end": {
 			"value": [
-			  "ads u"
+			  "ads u",
+			  "usda"
 			]
-		  }
+		  },
+		  "reveals": "TRUE"
 		}
 	  ],
 	  "solution": {
