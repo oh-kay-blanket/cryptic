@@ -51,17 +51,22 @@ const fixLetters = (activeClue) => {
 
 	const fixHints = (hint) => { 
 
-		if (hint.category == 'anagram' || hint.category == 'letter bank' || hint.category == 'container') {
+		if (hint.category == 'anagram' || hint.category == 'letter bank' || hint.category == 'container' || hint.category == 'reversal') {
 			let anchor, moving, endPt
 
+			// anagram
 			if (hint.category == 'anagram') {
 				anchor = hint.end.ref // anchor letters
 				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
+
+			// letter bank
 			} else if (hint.category == 'letter bank') {
 				anchor = hint.end.ref // anchor letters
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value[1].length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[1].length) // staging area letters
+
+			// container
 			} else if (hint.category == 'container') {
 
 				// get index in arr of word that is split
@@ -143,6 +148,16 @@ const fixLetters = (activeClue) => {
 				anchor = [...otherLtrs, ...splitWord]
 				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length) // staging area letters
+
+			// reversal
+			} else if (hint.category == 'reversal') {
+				anchor = activeClue.hints.filter(h => h.type == 'indicator' && h.category !== 'reversal' && h.addLetters)
+				
+				anchor = anchor.map(h => h.addLetters.ref.current).flat()
+				
+				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
+				moving = moving.filter(m => m.current.textContent !== " ")
+				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 			}
 			
 			// position move letters over anchor letters
