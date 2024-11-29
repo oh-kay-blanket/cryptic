@@ -99,6 +99,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 
 						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
+						
 						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
 						
 						if (hint.reveals) {
