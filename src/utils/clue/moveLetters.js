@@ -25,7 +25,7 @@ const moveLetters = (movingLettersRef, destLettersRef, timing = 'shuffle', rever
 				ref.current.style.transition = `top 2.5s ease ${(750 * Math.random()) + 250}ms, left 2.5s ease ${(750 * Math.random()) + 250}ms`
 				break
 			case 'sequence':
-				ref.current.style.transition = `top 1.5s ease ${300 * index}ms, left 1.5s ease ${300 * index}ms`
+				ref.current.style.transition = `top 1.5s ease ${200 * index}ms, left 1.5s ease ${200 * index}ms`
 				break
 			default:
 				ref.current.style.transition = `top 2.5s ease, left 2.5s ease`

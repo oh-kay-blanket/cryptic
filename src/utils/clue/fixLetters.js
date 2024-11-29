@@ -171,7 +171,7 @@ const fixLetters = (activeClue) => {
 					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
 					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
 
-					if (hint.category == 'anagram' || hint.category == 'container') {
+					if (hint.category == 'anagram' || hint.category == 'container' || hint.category == 'reversal') {
 						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
 						anchor.splice(destIndex, 1)
 					}
