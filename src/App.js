@@ -8,9 +8,9 @@ import Bottom from './components/bottom/Bottom'
 import Archive from './components/Archive' 
 
 // hooks
-import manageClues from './utils/manageClues'
-import manageHints from './utils/manageHints'
-import manageInput from './utils/manageInput'
+import manageClues from './utils/state/manageClues'
+import manageHints from './utils/state/manageHints'
+import manageInput from './utils/state/manageInput'
 
 const App = () => {
 
