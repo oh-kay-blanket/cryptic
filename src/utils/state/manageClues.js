@@ -1,6 +1,6 @@
 import { useState, useEffect, act } from 'react'
 
-import clues from '../assets/clues.json';
+import clues from '../../assets/clues.json';
 
 const manageClues = (mode) => {
 	
