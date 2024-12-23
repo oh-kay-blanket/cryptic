@@ -159,20 +159,21 @@ const fixLetters = (activeClue) => {
 				moving = moving.filter(m => m.current.textContent !== " ")
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 			}
+
 			
 			// position move letters over anchor letters
 			if (Array.isArray(moving)) {
 				moving.forEach(ref => {
-					
+
 					// Matching letter in anchor
 					let currentDestLetter = anchor.find(destLetter => {
-						return destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase()
+						return destLetter.current.textContent == ref.current.textContent
 					})
 					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
 					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
 
 					if (hint.category == 'anagram' || hint.category == 'container' || hint.category == 'reversal') {
-						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent.toLowerCase() == ref.current.textContent.toLowerCase())
+						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
 						anchor.splice(destIndex, 1)
 					}
 				})
