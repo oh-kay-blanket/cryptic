@@ -84,12 +84,6 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					case 'container':
 						highlightLetters(hint.ref)
 
-						// let a1 = activeClue.hints.find(h => {return (h.type == 'indicator' && h.end) && h.end.value[0] == hint.end.value[1]}).addLetters.ref.current
-						// let a2 = activeClue.hints.find(h => {return (h.type == 'indicator' && h.end) && (h.end.value[0] == [hint.end.value[0], hint.end.value[2]].join(''))}).addLetters.ref.current
-
-						// changeColor(a1, '#ccc')
-						// changeColor(a2, '#ccc')
-
 						// make all old addLetters gray
 						activeClue.hints.forEach(h => {
 							if (h.addLetters && h.category !== 'container') {
@@ -97,7 +91,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 							}
 						});
 
-
+						// Make moving letters dark
 						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
 						
 						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
