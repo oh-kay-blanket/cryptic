@@ -55,7 +55,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						}
 						break
 					case 'direct':
-						changeColor(hint.ref, '#ccc')
+						highlightLetters(hint.ref)
 						changeColor(hint.addLetters.ref.current)
 						break
 					case 'homophone':
@@ -77,8 +77,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						break
 					case 'particle':
 						highlightLetters(hint.ref)
-						changeColor(hint.end.ref, '#ccc')
-						// changeColor(hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), '#ccc')
+						// changeColor(hint.end.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current)
 						break
 					case 'container':

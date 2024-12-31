@@ -9,7 +9,7 @@ const addLetters = (activeClue, hint) => {
 		switch(hint.category) {
 			case 'hidden word':
 			case 'particle':
-				hint.addLetters.value = hint.end.value[1].split('')
+				hint.addLetters.value = hint.end.value[0].split('')
 				break
 			case 'letter bank':
 				hint.addLetters.value = [...hint.end.value[1].split(''), ...hint.end.value[1].split('')]
