@@ -84,7 +84,7 @@ const fixLetters = (activeClue) => {
 								rightValue = h.value
 								break
 							case 'particle':
-								rightValue = h.end.value[1]
+								rightValue = h.end.value[0]
 								break
 							default:
 								rightValue = h.end.value[0]
@@ -126,7 +126,7 @@ const fixLetters = (activeClue) => {
 											rightValue = h.value
 											break
 										case 'particle':
-											rightValue = h.end.value[1]
+											rightValue = h.end.value[0]
 											break
 										default:
 											rightValue = h.end.value[0]

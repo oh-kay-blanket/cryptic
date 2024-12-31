@@ -100,7 +100,7 @@ const manageClues = (mode) => {
 						case 'letter bank':
 							return `<strong>${hint.value}</strong> indicates a letter bank`
 						case 'particle':
-							return `<strong>${hint.value}</strong>, applied to <strong>${hint.end.value[0]}</strong>, can be <strong>${hint.end.value[1]}</strong>`
+							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						case 'reversal':
 							return `<strong>${hint.value}</strong>, indicates a reversal on <strong>${hint.end.value[0]}</strong>, making it <strong>${hint.end.value[1]}</strong>`
 						case 'synonym':
