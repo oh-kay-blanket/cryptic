@@ -83,9 +83,6 @@ const fixLetters = (activeClue) => {
 							case 'direct':
 								rightValue = h.value
 								break
-							case 'particle':
-								rightValue = h.end.value[0]
-								break
 							default:
 								rightValue = h.end.value[0]
 								break
@@ -125,9 +122,6 @@ const fixLetters = (activeClue) => {
 										case 'direct':
 											rightValue = h.value
 											break
-										case 'particle':
-											rightValue = h.end.value[0]
-											break
 										default:
 											rightValue = h.end.value[0]
 											break
@@ -153,10 +147,15 @@ const fixLetters = (activeClue) => {
 			} else if (hint.category == 'reversal') {
 				anchor = activeClue.hints.filter(h => h.type == 'indicator' && h.category !== 'reversal' && h.addLetters)
 				
-				anchor = anchor.map(h => h.addLetters.ref.current).flat()
+				anchor = anchor.map(h => h.addLetters.ref.current).flat().reverse()
 				
 				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
 				moving = moving.filter(m => m.current.textContent !== " ")
+
+				// fix word with. Helps to place hints following this inline
+				const wordWidth = moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
+				hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`
+
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 			}
 
@@ -172,6 +171,7 @@ const fixLetters = (activeClue) => {
 					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
 					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
 
+					// Remove anchor to not reuse
 					if (hint.category == 'anagram' || hint.category == 'container' || hint.category == 'reversal') {
 						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
 						anchor.splice(destIndex, 1)

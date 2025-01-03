@@ -32,6 +32,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					case 'synonym':
 						highlightLetters(hint.ref)
 						changeColor(hint.addLetters.ref.current)
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'deletion':
 						highlightLetters(hint.ref)
@@ -49,45 +50,53 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
 						}
 
-						if (hint.reveals) {
-							setTimeout(revealSolution, 2000)
-							setTimeout(revealSource, 3000)
-						}
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'direct':
 						highlightLetters(hint.ref)
 						changeColor(hint.addLetters.ref.current)
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'homophone':
 						highlightLetters(hint.ref)
 						changeColor(hint.addLetters.ref.current[0])
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'initialism':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref)
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'anagram':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length))
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 					case 'letter bank':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length))
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'particle':
 						highlightLetters(hint.ref)
 						// changeColor(hint.end.ref, '#ccc')
 						changeColor(hint.addLetters.ref.current)
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'container':
 						highlightLetters(hint.ref)
 
-						// make all old addLetters gray
-						activeClue.hints.forEach(h => {
-							if (h.addLetters && h.category !== 'container') {
+						// make all previous addLetters gray
+						activeClue.hints.some(h => {
+							
+							// Break out if container
+							if (h.category == 'container') return true
+							
+							if (h.addLetters) {
 								changeColor(h.addLetters.ref.current, '#ccc')
 							}
+							return false
 						});
 
 						// Make moving letters dark
@@ -95,33 +104,42 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 						
 						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
 						
-						if (hint.reveals) {
-							setTimeout(revealSolution, 2000)
-							setTimeout(revealSource, 3000)
-						}
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					case 'reversal':
 						highlightLetters(hint.ref)
 
-						activeClue.hints.forEach(h => {
-							if (h.addLetters && h.category !== 'reversal') {
+						// make all previous addLetters gray
+						activeClue.hints.some(h => {
+							
+							// Break out if reversal
+							if (h.category == 'reversal') return true
+							
+							if (h.addLetters) {
 								changeColor(h.addLetters.ref.current, '#ccc')
 							}
+							return false
 						});
 
+						// activeClue.hints.forEach(h => {
+						// 	if (h.addLetters && h.category !== 'reversal') {
+						// 		changeColor(h.addLetters.ref.current, '#ccc')
+						// 	}
+						// });
+
 						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), '#222')
-						
 						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length), 'sequence', true)
 
-						
-						if (hint.reveals) {
-							setTimeout(revealSolution, 2000)
-							setTimeout(revealSource, 3000)
-						}
+						hint.reveals && setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)
 						break
 					default: 
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref)
+						if (hint.reveals) {
+							setTimeout(revealSolution, 2000)
+							setTimeout(revealSource, 3000)
+						}
+
 						break
 				}
 				break
