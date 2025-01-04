@@ -83,6 +83,9 @@ const fixLetters = (activeClue) => {
 							case 'direct':
 								rightValue = h.value
 								break
+							case 'reversal':
+								rightValue = h.end.value[1]
+								break
 							default:
 								rightValue = h.end.value[0]
 								break
@@ -122,6 +125,9 @@ const fixLetters = (activeClue) => {
 										case 'direct':
 											rightValue = h.value
 											break
+										case 'reversal':
+											rightValue = h.end.value[1]
+											break
 										default:
 											rightValue = h.end.value[0]
 											break
@@ -138,23 +144,29 @@ const fixLetters = (activeClue) => {
 						thisMatch && otherLtrs.push(...thisMatch.addLetters.ref.current)
 					}
 				})
-
-				anchor = [...otherLtrs, ...splitWord]
-				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length) // moving letters
+				anchor = [...otherLtrs.reverse(), ...splitWord.reverse()]
+				moving = hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length).reverse() // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length) // staging area letters
-
 			// reversal
 			} else if (hint.category == 'reversal') {
-				anchor = activeClue.hints.filter(h => h.type == 'indicator' && h.category !== 'reversal' && h.addLetters)
+				
+				// push only used anchor to anchor
+				anchor = []
+				activeClue.hints.some(h => {
+					if (h.category == 'reversal') return true
+					if (h.addLetters) { anchor.push(h) }
+					return false
+				})
 				
 				anchor = anchor.map(h => h.addLetters.ref.current).flat().reverse()
-				
-				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
-				moving = moving.filter(m => m.current.textContent !== " ")
 
-				// fix word with. Helps to place hints following this inline
+				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
+				moving = moving.filter(m => m.current.textContent !== " ").reverse()
+
+				// fix word with. Helps to place hints following this inline. Only run when there are hints following reversal. Othewise it can mess with reversal layout
 				const wordWidth = moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
-				hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`
+				const revIndex = activeClue.hints.findIndex(h=>h.category=='reversal')
+				activeClue.hints.length > (revIndex + 2) && (hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`)
 
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 			}

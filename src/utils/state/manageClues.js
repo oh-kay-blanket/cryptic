@@ -108,6 +108,7 @@ const manageClues = (mode) => {
 						case 'symbol':
 							return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
 						default:
+							console.log(hint)
 							// One end point
 							if (hint.end.value.length == 1) {
 								return `<strong>${hint.value}</strong> incicates ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong>` 

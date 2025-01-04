@@ -18,15 +18,15 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
 
 	// addLetters HTML
-	const addInsert = activeClue.hints.map((hint, index) => {
+	const addInsert = activeClue.hints.map((hint, parentIndex) => {
 		if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
-			const lettersInsert = hint.addLetters.value.map((letter, index) => (<span key={index} ref={hint.addLetters.ref.current[index]} className='letter'>{letter}</span>))
+			const lettersInsert = hint.addLetters.value.map((letter, childIndex) => (<span key={`${parentIndex}_${childIndex}`} ref={hint.addLetters.ref.current[childIndex]} className='letter'>{letter}</span>))
 
-			let addBr = (hint.category =='container' || hint.category =='reversal')
+			let addBr = (hint.category == 'container' || hint.category == 'reversal')
 
 			return <>
-				{addBr && <span style={{flexBasis: '100%'}}></span>}
-				<span key={index} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
+				{addBr && <span key={`br_${parentIndex}`} style={{flexBasis: '100%'}}></span>}
+				<span key={`word_${parentIndex}`} ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>
 			</>
 		}
 	})
