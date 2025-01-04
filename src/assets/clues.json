@@ -1,12 +1,1557 @@
 [
 	{
-	  "id": "41",
+	  "id": 300,
+	  "clue": {
+		"value": "Primarily resent the man holding back my chance to dance, perhaps"
+	  },
+	  "release": "12/15/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, container, reversal",
+	  "definition": [
+		"chance to dance, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "Primarily resent",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "the man",
+		  "end": {
+			"value": [
+			  "he"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "my"
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "my",
+			  "ym"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "holding",
+		  "end": {
+			"value": [
+			  "r",
+			  "h",
+			  "ym",
+			  "e"
+			]
+		  },
+		  "explainer": "Here, \"chance to dance\" is not about having an opportunity to cut a rug; the two words rhyme",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "rhyme"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 279,
+	  "clue": {
+		"value": "Mrs. Adams is a great liar for the most part, upon reflection"
+	  },
+	  "release": "1/5/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"Mrs. Adams"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "a"
+		},
+		{
+		  "category": "synonym",
+		  "value": "great",
+		  "end": {
+			"value": [
+			  "big"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "liar for the most part",
+		  "end": {
+			"value": [
+			  "lia"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upon reflection",
+		  "end": {
+			"value": [
+			  "lia",
+			  "ail"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "Abigail"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 277,
+	  "clue": {
+		"value": "Boosting not nearly all of a musical sound"
+	  },
+	  "release": "1/7/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"of a musical sound"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "not"
+		},
+		{
+		  "category": "reversal",
+		  "value": "Boosting",
+		  "end": {
+			"value": [
+			  "not",
+			  "ton"
+			]
+		  },
+		  "explainer": "In this case, \"boosting\" appears in a down clue, so it signifies a reversal (\"raising\")"
+		},
+		{
+		  "category": "particle",
+		  "value": "nearly all",
+		  "end": {
+			"value": [
+			  "al"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "tonal"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 168,
+	  "clue": {
+		"value": "Prepared a salad dish, originally, then flipped over endless dessert"
+	  },
+	  "release": "4/25/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"Prepared a salad"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "dish, originally",
+		  "end": {
+			"value": [
+			  "d"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "endless dessert",
+		  "end": {
+			"value": [
+			  "desser"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "flipped over",
+		  "end": {
+			"value": [
+			  "desser",
+			  "ressed"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "dressed"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 80,
+	  "clue": {
+		"value": "Margaret and Susan nearly backing a horse that really took off?"
+	  },
+	  "release": "7/21/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"a horse that really took off"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Margaret",
+		  "end": {
+			"value": [
+			  "Peg"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "Susan nearly",
+		  "end": {
+			"value": [
+			  "Susa"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "Susa",
+			  "asuS"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "pegasus"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 303,
+	  "clue": {
+		"value": "Contrarily work smoothly with Al’s whip"
+	  },
+	  "release": "12/12/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"whip"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "work smoothly",
+		  "end": {
+			"value": [
+			  "purr"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Al"
+		},
+		{
+		  "category": "reversal",
+		  "value": "Contrarily",
+		  "end": {
+			"value": [
+			  "purrAl",
+			  "lArrup"
+			]
+		  },
+		  "explainer": "Larrup\" is a dialectical term meaning \"to flog soundly; whip",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "larrup"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 302,
+	  "clue": {
+		"value": "Last of face powder left striking effect"
+	  },
+	  "release": "12/13/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"striking effect"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "Last of face",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "powder",
+		  "end": {
+			"value": [
+			  "talc"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "left",
+		  "end": {
+			"value": [
+			  "talc",
+			  "clat"
+			]
+		  },
+		  "explainer": "Éclat, a common word in crosswords, means \"dazzling effect; brilliant or conspicuous success\"",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "eclat"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 301,
+	  "clue": {
+		"value": "A sailor and a couple of reserves recalled mistakes"
+	  },
+	  "release": "12/14/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"mistakes"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "A"
+		},
+		{
+		  "category": "synonym",
+		  "value": "sailor",
+		  "end": {
+			"value": [
+			  "tar"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "couple of reserves",
+		  "end": {
+			"value": [
+			  "re"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "recalled",
+		  "end": {
+			"value": [
+			  "Atarre",
+			  "erratA"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "errata"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 253,
+	  "clue": {
+		"value": "For example, Pat’s backing star, perhaps"
+	  },
+	  "release": "1/31/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"star, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "For example",
+		  "end": {
+			"value": [
+			  "eg"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Pat",
+		  "end": {
+			"value": [
+			  "dab"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "egdab",
+			  "badge"
+			]
+		  },
+		  "explainer": "Many badges (e.g., police) are in the shape of a star",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "badge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 247,
+	  "clue": {
+		"value": "Said party rejected quantity of less than 100 shares"
+	  },
+	  "release": "2/6/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"quantity of less than 100 shares"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Said",
+		  "end": {
+			"value": [
+			  "told"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "party",
+		  "end": {
+			"value": [
+			  "do"
+			]
+		  },
+		  "explainer": "Do\" is an old-fashioned (and/or chiefly British) word for \"party"
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejected",
+		  "end": {
+			"value": [
+			  "tolddo",
+			  "odd lot"
+			]
+		  },
+		  "explainer": "In stock trading, a quantity under 100 shares is an \"odd lot\"",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "odd lot"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 230,
+	  "clue": {
+		"value": "Republican rejecting one city in Nevada"
+	  },
+	  "release": "2/23/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"city in Nevada"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Republican",
+		  "end": {
+			"value": [
+			  "R"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "one"
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejecting",
+		  "end": {
+			"value": [
+			  "one",
+			  "eno"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "Reno"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 222,
+	  "clue": {
+		"value": "Islamic ruler eventually gave wheel mount back"
+	  },
+	  "release": "3/2/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Islamic ruler"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "eventually gave",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  },
+		  "explainer": "Eventually\" clues the last letter in \"gave,\" which is \"e"
+		},
+		{
+		  "category": "synonym",
+		  "value": "wheel mount",
+		  "end": {
+			"value": [
+			  "rim"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "rim",
+			  "mir"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "emir"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 212,
+	  "clue": {
+		"value": "Plain covering everything westward"
+	  },
+	  "release": "3/12/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Plain"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "covering",
+		  "end": {
+			"value": [
+			  "on"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "everything",
+		  "end": {
+			"value": [
+			  "all"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "westward",
+		  "end": {
+			"value": [
+			  "onall",
+			  "llano"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "llano"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 172,
+	  "clue": {
+		"value": "I ran into upstanding couple in the tabloids"
+	  },
+	  "release": "4/21/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"couple in the tabloids"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "I"
+		},
+		{
+		  "category": "synonym",
+		  "value": "ran into",
+		  "end": {
+			"value": [
+			  "met"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upstanding",
+		  "end": {
+			"value": [
+			  "met",
+			  "tem"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "item"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 171,
+	  "clue": {
+		"value": "Identify leader of employees’ and staff’s revolt"
+	  },
+	  "release": "4/22/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Identify"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "leader of employees'",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "staff",
+		  "end": {
+			"value": [
+			  "man"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "revolt",
+		  "end": {
+			"value": [
+			  "eman",
+			  "name"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "name"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 170,
+	  "clue": {
+		"value": "Female friend left in commotion"
+	  },
+	  "release": "4/23/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"commotion"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Female",
+		  "end": {
+			"value": [
+			  "F"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "friend",
+		  "end": {
+			"value": [
+			  "pal"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "left",
+		  "end": {
+			"value": [
+			  "pal",
+			  "lap"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "flap"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 169,
+	  "clue": {
+		"value": "Recalling complaints, drink certain protein"
+	  },
+	  "release": "4/24/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"certain protein"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "complaints",
+		  "end": {
+			"value": [
+			  "nits"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "drink",
+		  "end": {
+			"value": [
+			  "ale"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "Recalling",
+		  "end": {
+			"value": [
+			  "nitsale",
+			  "elastin"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "elastin"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 139,
+	  "clue": {
+		"value": "Expert’s unsatisfactory toupee rejected"
+	  },
+	  "release": "5/24/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Expert"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "unsatisfactory",
+		  "end": {
+			"value": [
+			  "u"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "toupee",
+		  "end": {
+			"value": [
+			  "rug"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejected",
+		  "end": {
+			"value": [
+			  "urug",
+			  "guru"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "guru"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 122,
+	  "clue": {
+		"value": "Ornamental strip from shirt worn backwards by Paul"
+	  },
+	  "release": "6/10/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Ornamental strip"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "shirt",
+		  "end": {
+			"value": [
+			  "tee"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backwards",
+		  "end": {
+			"value": [
+			  "tee",
+			  "eet"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Paul"
+		},
+		{
+		  "category": "container",
+		  "value": "worn",
+		  "end": {
+			"value": [
+			  "e",
+			  "Paul",
+			  "et"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "epaulet"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 120,
+	  "clue": {
+		"value": "Spanish artist is returning finally to edgy place?"
+	  },
+	  "release": "6/12/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"Spanish artist"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "finally to",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "edgy place",
+		  "end": {
+			"value": [
+			  "rim"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "orim",
+			  "miro"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "miro"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 89,
+	  "clue": {
+		"value": "Father and staff upset former airline"
+	  },
+	  "release": "7/12/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"former airline"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Father",
+		  "end": {
+			"value": [
+			  "pa"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "staff",
+		  "end": {
+			"value": [
+			  "man"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upset",
+		  "end": {
+			"value": [
+			  "man",
+			  "nam"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "pan am"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 88,
+	  "clue": {
+		"value": "On the way back, spots unsatisfactory stamp found on some meat"
+	  },
+	  "release": "7/13/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"stamp found on some meat"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "spots",
+		  "end": {
+			"value": [
+			  "ads"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "unsatisfactory",
+		  "end": {
+			"value": [
+			  "u"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "On the way back",
+		  "end": {
+			"value": [
+			  "adsu",
+			  "usda"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "usda"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 309,
+	  "clue": {
+		"value": "I start to read back over telegram that cannot be changed"
+	  },
+	  "release": "7/13/2024",
+	  "difficulty": 3,
+	  "ready": false,
+	  "type": "charade, reversal",
+	  "definition": [
+		"cannot be changed"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "I"
+		},
+		{
+		  "category": "particle",
+		  "value": "start to read",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "over"
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "over",
+			  "revo"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "telegram",
+		  "end": {
+			"value": [
+			  "cable"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "irrevocable"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 92,
+	  "clue": {
+		"value": "Tabloid recalled NY baseball team receiving new attire"
+	  },
+	  "release": "7/9/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "charade, reversal, container",
+	  "definition": [
+		"attire"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Tabloid",
+		  "end": {
+			"value": [
+			  "rag"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "recalled",
+		  "end": {
+			"value": [
+			  "rag",
+			  "gar"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "NY baseball team",
+		  "end": {
+			"value": [
+			  "Mets"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "N"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "receiving",
+		  "end": {
+			"value": [
+			  "gar",
+			  "Me",
+			  "N",
+			  "ts"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "garments"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 288,
+	  "clue": {
+		"value": "Obligation Mr. Turner brought up involving Bond's premiere"
+	  },
+	  "release": "12/27/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "container, reversal",
+	  "definition": [
+		"Obligation"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Mr. Turner",
+		  "end": {
+			"value": [
+			  "Ted"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "brought up",
+		  "end": {
+			"value": [
+			  "Ted",
+			  "deT"
+			]
+		  },
+		  "explainer": "For a down clue, \"brought up\" can signal a reversal"
+		},
+		{
+		  "category": "particle",
+		  "value": "Bond's premiere",
+		  "end": {
+			"value": [
+			  "B"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "involving",
+		  "end": {
+			"value": [
+			  "de",
+			  "B",
+			  "T"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "debt"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 287,
+	  "clue": {
+		"value": "Funny guy returns with one Nobel Prize-winning physicist"
+	  },
+	  "release": "12/28/2023",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "container, reversal",
+	  "definition": [
+		"Nobel Prize-winning physicist"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Funny guy",
+		  "end": {
+			"value": [
+			  "card"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returns",
+		  "end": {
+			"value": [
+			  "card",
+			  "drac"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "with",
+		  "end": {
+			"value": [
+			  "d",
+			  "I",
+			  "rac"
+			]
+		  },
+		  "explainer": "Paul Dirac won the 1933 Nobel Prize in physics",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "Dirac"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 242,
+	  "clue": {
+		"value": "Explosive rabble penetrates outskirts of Bangladesh from the south"
+	  },
+	  "release": "2/11/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "container, reversal",
+	  "definition": [
+		"Explosive"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "rabble",
+		  "end": {
+			"value": [
+			  "mob"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "outskirts of Bangladesh",
+		  "end": {
+			"value": [
+			  "Bh"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "penetrates",
+		  "end": {
+			"value": [
+			  "B",
+			  "mob",
+			  "h"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "from the south",
+		  "end": {
+			"value": [
+			  "Bmobh",
+			  "h bomB"
+			]
+		  },
+		  "explainer": "In a down clue, \"from the south\" may indicate a reversal",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "H bomb"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 207,
+	  "clue": {
+		"value": "Ron comes up with one dark film"
+	  },
+	  "release": "3/17/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "container, reversal",
+	  "definition": [
+		"dark film"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "Ron"
+		},
+		{
+		  "category": "reversal",
+		  "value": "comes up",
+		  "end": {
+			"value": [
+			  "Ron",
+			  "noR"
+			]
+		  },
+		  "explainer": "For a down entry, \"comes up\" can indicate a reversal"
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "with",
+		  "end": {
+			"value": [
+			  "no",
+			  "I",
+			  "R"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "noir"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 133,
+	  "clue": {
+		"value": "Witty comment from detective interrupting Marge’s comeback"
+	  },
+	  "release": "5/30/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "container, reversal",
+	  "definition": [
+		"Witty comment"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "detective",
+		  "end": {
+			"value": [
+			  "PI"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Marge"
+		},
+		{
+		  "category": "reversal",
+		  "value": "comeback",
+		  "end": {
+			"value": [
+			  "Marge",
+			  "egraM"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "interrupting",
+		  "end": {
+			"value": [
+			  "e",
+			  "PI",
+			  "graM"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "epigram"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 41,
 	  "clue": {
 		"value": "Lawyer recalled gossip about corruption"
 	  },
 	  "release": "8/30/2024",
-	  "difficulty": "4",
-	  "ready": "FALSE",
+	  "difficulty": 4,
+	  "ready": false,
 	  "type": "container, reversal",
 	  "definition": [
 		"Lawyer"
@@ -50,7 +1595,7 @@
 			  "attorney"
 			]
 		  },
-		  "reveals": "TRUE"
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
@@ -61,1150 +1606,160 @@
 	  }
 	},
 	{
-	  "id": "80",
+	  "id": 174,
 	  "clue": {
-		"value": "Margaret and Susan nearly backing a horse that really took off?"
+		"value": "One leaving Scottish monster back in German city"
 	  },
-	  "release": "7/21/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, deletion, reversal",
+	  "release": "4/19/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "deletion, reversal",
 	  "definition": [
-		"a horse that really took off"
+		"German city"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Margaret",
+		  "value": "Scottish monster",
 		  "end": {
 			"value": [
-			  "Peg"
+			  "Nessie"
 			]
 		  }
 		},
 		{
 		  "category": "particle",
-		  "value": "Susan nearly",
+		  "value": "One leaving Nessie",
 		  "end": {
 			"value": [
-			  "Susa"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "backing",
-		  "end": {
-			"value": [
-			  "Susa",
-			  "asuS"
+			  "Nesse"
 			]
 		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "pegasus"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "168",
-	  "clue": {
-		"value": "Prepared a salad dish, originally, then flipped over endless dessert"
-	  },
-	  "release": "4/25/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, deletion, reversal",
-	  "definition": [
-		"Prepared a salad"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "dish, originally",
-		  "end": {
-			"value": [
-			  "d"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "endless dessert",
-		  "end": {
-			"value": [
-			  "desser"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "flipped over",
-		  "end": {
-			"value": [
-			  "desser",
-			  "ressed"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "dressed"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "277",
-	  "clue": {
-		"value": "Boosting not nearly all of a musical sound"
-	  },
-	  "release": "1/7/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, deletion, reversal",
-	  "definition": [
-		"of a musical sound"
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "not"
-		},
-		{
-		  "category": "reversal",
-		  "value": "Boosting",
-		  "end": {
-			"value": [
-			  "not",
-			  "ton"
-			]
-		  },
-		  "explainer": "In this case, \"boosting\" appears in a down clue, so it signifies a reversal (\"raising\")"
-		},
-		{
-		  "category": "particle",
-		  "value": "nearly all",
-		  "end": {
-			"value": [
-			  "al"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "tonal"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "279",
-	  "clue": {
-		"value": "Mrs. Adams is a great liar for the most part, upon reflection"
-	  },
-	  "release": "1/5/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, deletion, reversal",
-	  "definition": [
-		"Mrs. Adams"
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "a",
-		  "end": {
-			"value": [
-			  "a"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "great",
-		  "end": {
-			"value": [
-			  "big"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "liar for the most part",
-		  "end": {
-			"value": [
-			  "lia"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "upon reflection",
-		  "end": {
-			"value": [
-			  "lia",
-			  "ail"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "Abigail"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "88",
-	  "clue": {
-		"value": "On the way back, spots unsatisfactory stamp found on some meat"
-	  },
-	  "release": "7/13/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"stamp found on some meat"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "spots",
-		  "end": {
-			"value": [
-			  "ads"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "unsatisfactory",
-		  "end": {
-			"value": [
-			  "u"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "On the way back",
-		  "end": {
-			"value": [
-			  "adsu",
-			  "usda"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "usda"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "89",
-	  "clue": {
-		"value": "Father and staff upset former airline"
-	  },
-	  "release": "7/12/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"former airline"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Father",
-		  "end": {
-			"value": [
-			  "pa"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "staff",
-		  "end": {
-			"value": [
-			  "man"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "upset",
-		  "end": {
-			"value": [
-			  "man",
-			  "nam"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "pa",
-		  "end": {
-			"value": [
-			  "nam"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "pan am"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "120",
-	  "clue": {
-		"value": "Spanish artist is returning finally to edgy place?"
-	  },
-	  "release": "6/12/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Spanish artist"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "finally to",
-		  "end": {
-			"value": [
-			  "o"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "edgy place",
-		  "end": {
-			"value": [
-			  "rim"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "orim",
-			  "miro"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "miro"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "122",
-	  "clue": {
-		"value": "Ornamental strip from shirt worn backwards by Paul"
-	  },
-	  "release": "6/10/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Ornamental strip"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "shirt",
-		  "end": {
-			"value": [
-			  "tee"
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "Paul"
-		},
-		{
-		  "category": "reversal",
-		  "value": "backwards",
-		  "end": {
-			"value": [
-			  "tee",
-			  "eet"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "worn",
-		  "end": {
-			"value": [
-			  "e",
-			  "Paul",
-			  "et"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "epaulet"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "139",
-	  "clue": {
-		"value": "Expert’s unsatisfactory toupee rejected"
-	  },
-	  "release": "5/24/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Expert"
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "unsatisfactory",
-		  "end": {
-			"value": [
-			  "u"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "toupee",
-		  "end": {
-			"value": [
-			  "rug"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "rejected",
-		  "end": {
-			"value": [
-			  "urug",
-			  "guru"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "guru"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "169",
-	  "clue": {
-		"value": "Recalling complaints, drink certain protein"
-	  },
-	  "release": "4/24/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"certain protein"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "complaints",
-		  "end": {
-			"value": [
-			  "nits"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "drink",
-		  "end": {
-			"value": [
-			  "ale"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "Recalling",
-		  "end": {
-			"value": [
-			  "nitsale",
-			  "elastin"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "elastin"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "170",
-	  "clue": {
-		"value": "Female friend left in commotion"
-	  },
-	  "release": "4/23/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"commotion"
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "Female",
-		  "end": {
-			"value": [
-			  "f"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "friend",
-		  "end": {
-			"value": [
-			  "pal"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "left",
-		  "end": {
-			"value": [
-			  "pal",
-			  "lap"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "f",
-		  "end": {
-			"value": [
-			  "lap"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "flap"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "171",
-	  "clue": {
-		"value": "Identify leader of employees’ and staff’s revolt"
-	  },
-	  "release": "4/22/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Identify"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "leader of employees'",
-		  "end": {
-			"value": [
-			  "e"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "staff",
-		  "end": {
-			"value": [
-			  "man"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "e",
-		  "end": {
-			"value": [
-			  "man"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "revolt",
-		  "end": {
-			"value": [
-			  "eman",
-			  "name"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "name"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "172",
-	  "clue": {
-		"value": "I ran into upstanding couple in the tabloids"
-	  },
-	  "release": "4/21/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"couple in the tabloids"
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "I",
-		  "end": {
-			"value": [
-			  "i"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "ran into",
-		  "end": {
-			"value": [
-			  "met"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "upstanding",
-		  "end": {
-			"value": [
-			  "met",
-			  "tem"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "i",
-		  "end": {
-			"value": [
-			  "tem"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "item"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "212",
-	  "clue": {
-		"value": "Plain covering everything westward"
-	  },
-	  "release": "3/12/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Plain"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "covering",
-		  "end": {
-			"value": [
-			  "on"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "everything",
-		  "end": {
-			"value": [
-			  "all"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "on",
-		  "end": {
-			"value": [
-			  "all",
-			  "onall"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "westward",
-		  "end": {
-			"value": [
-			  "onall",
-			  "llano"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "llano"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "222",
-	  "clue": {
-		"value": "Islamic ruler eventually gave wheel mount back"
-	  },
-	  "release": "3/2/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"Islamic ruler"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "eventually gave",
-		  "end": {
-			"value": [
-			  "e"
-			]
-		  },
-		  "explainer": "Eventually\" clues the last letter in \"gave,\" which is \"e",
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "wheel mount",
-		  "end": {
-			"value": [
-			  "rim"
-			]
-		  }
+		  "explainer": "One can refer to the letter \"i\" i Nessie"
 		},
 		{
 		  "category": "reversal",
 		  "value": "back",
 		  "end": {
 			"value": [
-			  "rim",
-			  "mir"
+			  "Nesse",
+			  "esseN"
 			]
-		  }
+		  },
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "emir"
+		"value": "essen"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "230",
+	  "id": 199,
 	  "clue": {
-		"value": "Republican rejecting one city in Nevada"
+		"value": "Plastic pet ate carelessly partly thrown up"
 	  },
-	  "release": "2/23/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
+	  "release": "3/25/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "hidden word, reversal",
 	  "definition": [
-		"city in Nevada"
+		"Plastic"
 	  ],
 	  "hints": [
 		{
-		  "category": "symbol",
-		  "value": "Republican",
+		  "category": "hidden word",
+		  "value": "partly",
 		  "end": {
 			"value": [
-			  "R"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "rejecting",
-		  "end": {
-			"value": [
-			  "one",
-			  "eno"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "Reno"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "247",
-	  "clue": {
-		"value": "Said party rejected quantity of less than 100 shares"
-	  },
-	  "release": "2/6/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"quantity of less than 100 shares"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Said",
-		  "end": {
-			"value": [
-			  "told"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "party",
-		  "end": {
-			"value": [
-			  "do"
-			]
-		  },
-		  "explainer": "Do\" is an old-fashioned (and/or chiefly British) word for \"party"
-		},
-		{
-		  "category": "reversal",
-		  "value": "rejected",
-		  "end": {
-			"value": [
-			  "tolddo",
-			  "odd lot"
-			]
-		  },
-		  "explainer": "In stock trading, a quantity under 100 shares is an \"odd lot\""
-		}
-	  ],
-	  "solution": {
-		"value": "odd lot"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "253",
-	  "clue": {
-		"value": "For example, Pat’s backing star, perhaps"
-	  },
-	  "release": "1/31/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"star, perhaps"
-	  ],
-	  "hints": [
-		{
-		  "category": "symbol",
-		  "value": "For example",
-		  "end": {
-			"value": [
-			  "eg"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "Pat",
-		  "end": {
-			"value": [
-			  "dab"
+			  "pet ate carelessly",
+			  "etateca"
 			]
 		  }
 		},
 		{
 		  "category": "reversal",
-		  "value": "backing",
+		  "value": "thrown up",
 		  "end": {
 			"value": [
-			  "egdab",
-			  "badge"
+			  "etateca",
+			  "acetate"
 			]
 		  },
-		  "explainer": "Many badges (e.g., police) are in the shape of a star"
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "badge"
+		"value": "acetate"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "301",
+	  "id": 177,
 	  "clue": {
-		"value": "A sailor and a couple of reserves recalled mistakes"
+		"value": "Religious sect member, repulsed, beats a retreat inside"
 	  },
-	  "release": "12/14/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
+	  "release": "4/16/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "hidden word, reversal",
 	  "definition": [
-		"mistakes"
+		"Religious sect member"
 	  ],
 	  "hints": [
 		{
-		  "category": "direct",
-		  "value": "A",
+		  "category": "hidden word",
+		  "value": "inside",
 		  "end": {
 			"value": [
-			  "a"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "sailor",
-		  "end": {
-			"value": [
-			  "tar"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "couple of reserves",
-		  "end": {
-			"value": [
-			  "re"
-			]
-		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "a",
-		  "end": {
-			"value": [
-			  "tar",
-			  "re"
+			  "beats a retreat",
+			  "atsar"
 			]
 		  }
 		},
 		{
 		  "category": "reversal",
-		  "value": "recalled",
+		  "value": "repulsed",
 		  "end": {
 			"value": [
-			  "atarre",
-			  "errata"
+			  "atsar",
+			  "Rasta"
 			]
-		  }
+		  },
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "errata"
+		"value": "Rasta"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "302",
+	  "id": 137,
 	  "clue": {
-		"value": "Last of face powder left striking effect"
+		"value": "Useless with some people, so I took over"
 	  },
-	  "release": "12/13/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
+	  "release": "5/26/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "hidden word, reversal",
 	  "definition": [
-		"striking effect"
+		"Useless"
 	  ],
 	  "hints": [
 		{
-		  "category": "particle",
-		  "value": "Last of face",
+		  "category": "hidden word",
+		  "value": "some",
 		  "end": {
 			"value": [
-			  "e"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "powder",
-		  "end": {
-			"value": [
-			  "talc"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "left",
-		  "end": {
-			"value": [
-			  "talc",
-			  "clat"
-			]
-		  },
-		  "explainer": "Éclat, a common word in crosswords, means \"dazzling effect; brilliant or conspicuous success\""
-		}
-	  ],
-	  "solution": {
-		"value": "eclat"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "303",
-	  "clue": {
-		"value": "Contrarily work smoothly with Al’s whip"
-	  },
-	  "release": "12/12/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"whip"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "work smoothly",
-		  "end": {
-			"value": [
-			  "purr"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "direct",
-		  "value": "Al",
-		  "end": {
-			"value": [
-			  "al"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "Contrarily",
-		  "end": {
-			"value": [
-			  "purral",
-			  "larrup"
-			]
-		  },
-		  "explainer": "Larrup\" is a dialectical term meaning \"to flog soundly; whip"
-		}
-	  ],
-	  "solution": {
-		"value": "larrup"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "309",
-	  "clue": {
-		"value": "I start to read back over telegram that cannot be changed"
-	  },
-	  "ready": "FALSE",
-	  "type": "charade, reversal",
-	  "definition": [
-		"cannot be changed"
-	  ],
-	  "hints": [
-		{
-		  "category": "direct",
-		  "value": "I",
-		  "end": {
-			"value": [
-			  "i"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "particle",
-		  "value": "start to read",
-		  "end": {
-			"value": [
-			  "r"
+			  "people, so I took",
+			  "esoito"
 			]
 		  }
 		},
@@ -1213,46 +1768,246 @@
 		  "value": "over",
 		  "end": {
 			"value": [
-			  "revo"
+			  "esioto",
+			  "otiose"
 			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "telegram",
-		  "end": {
-			"value": [
-			  "cable"
-			]
-		  }
+		  },
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "irrevocable"
+		"value": "otiose"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "92",
+	  "id": 82,
 	  "clue": {
-		"value": "Tabloid recalled NY baseball team receiving new attire"
+		"value": "Retro gym ran a mortuary section for centurions, et al"
 	  },
-	  "release": "7/9/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, reversal, container",
+	  "release": "7/19/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "hidden word, reversal",
 	  "definition": [
-		"attire"
+		"centurions, et al"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "section",
+		  "end": {
+			"value": [
+			  "gym ran a mortuary",
+			  "ymranamor"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "Retro",
+		  "end": {
+			"value": [
+			  "ymranamor",
+			  "Roman army"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "roman army"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 237,
+	  "clue": {
+		"value": "Talk show host bringing up book by Turow"
+	  },
+	  "release": "2/16/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
+	  "definition": [
+		"Talk show host"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Tabloid",
+		  "value": "book by Turow",
 		  "end": {
 			"value": [
-			  "rag"
+			  "One L"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "bringing up",
+		  "end": {
+			"value": [
+			  "One L",
+			  "Leno"
+			]
+		  },
+		  "explainer": "\"Bringing up,\" in a down clue, may indicate a reversal",
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "Leno"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 208,
+	  "clue": {
+		"value": "Actress Ryan’s jewelry returned"
+	  },
+	  "release": "3/16/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
+	  "definition": [
+		"Actress Ryan"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "jewelry",
+		  "end": {
+			"value": [
+			  "gem"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returned",
+		  "end": {
+			"value": [
+			  "gem",
+			  "Meg"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "meg"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 181,
+	  "clue": {
+		"value": "Rejected Rod’s suggestions"
+	  },
+	  "release": "4/12/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
+	  "definition": [
+		"suggestions"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Rod",
+		  "end": {
+			"value": [
+			  "spit"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "Rejected",
+		  "end": {
+			"value": [
+			  "spit",
+			  "tips"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "tips"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 180,
+	  "clue": {
+		"value": "Storyteller’s train heading back"
+	  },
+	  "release": "4/13/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
+	  "definition": [
+		"Storyteller"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "train",
+		  "end": {
+			"value": [
+			  "rail"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "heading back",
+		  "end": {
+			"value": [
+			  "rail",
+			  "liar"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "liar"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 125,
+	  "clue": {
+		"value": "Recalled isolated organic compound"
+	  },
+	  "release": "6/7/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
+	  "definition": [
+		"organic compound"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "isolated",
+		  "end": {
+			"value": [
+			  "lone"
 			]
 		  }
 		},
@@ -1261,165 +2016,301 @@
 		  "value": "recalled",
 		  "end": {
 			"value": [
-			  "rag",
-			  "gar"
+			  "lone",
+			  "enol"
 			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "NY baseball team",
-		  "end": {
-			"value": [
-			  "mets"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "new",
-		  "end": {
-			"value": [
-			  "N"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "receiving",
-		  "end": {
-			"value": [
-			  "gar",
-			  "me",
-			  "n",
-			  "ts"
-			]
-		  }
+		  },
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "garments"
+		"value": "enol"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "133",
+	  "id": 106,
 	  "clue": {
-		"value": "Witty comment from detective interrupting Marge’s comeback"
+		"value": "Fanatic raised alcoholic container"
 	  },
-	  "release": "5/30/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, reversal",
+	  "release": "6/25/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
 	  "definition": [
-		"Witty comment"
+		"alcoholic container"
 	  ],
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "detective",
+		  "value": "Fanatic",
 		  "end": {
 			"value": [
-			  "PI"
+			  "nut"
 			]
 		  }
 		},
 		{
 		  "category": "reversal",
-		  "value": "comeback",
+		  "value": "raised",
 		  "end": {
 			"value": [
-			  "Marge",
-			  "egraM"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "interrupting",
-		  "end": {
-			"value": [
-			  "e",
-			  "PI",
-			  "graM"
+			  "nut",
+			  "tun"
 			]
 		  },
-		  "reveals": "TRUE"
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "epigram"
+		"value": "tun"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "207",
+	  "id": 85,
 	  "clue": {
-		"value": "Ron comes up with one dark film"
+		"value": "Tied actress Campbell up"
 	  },
-	  "release": "3/17/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, reversal",
+	  "release": "7/16/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal",
 	  "definition": [
-		"dark film"
+		"Tied"
 	  ],
 	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "actress Campbell",
+		  "end": {
+			"value": [
+			  "Neve"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "up",
+		  "end": {
+			"value": [
+			  "Neve",
+			  "even"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "even"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 40,
+	  "clue": {
+		"value": "Severely criticized turning at end of tricky childbirth"
+	  },
+	  "release": "8/29/2024",
+	  "difficulty": 3,
+	  "ready": true,
+	  "type": "reversal",
+	  "definition": [
+		"childbirth"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Severely criticized",
+		  "end": {
+			"value": [
+			  "reviled"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "turning",
+		  "end": {
+			"value": [
+			  "reviled",
+			  "deliver"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "end of tricky",
+		  "end": {
+			"value": [
+			  "y"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "delivery"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": 55,
+	  "clue": {
+		"value": "King with a golden touch is unhappy I'm returning"
+	  },
+	  "release": "9/7/2024",
+	  "difficulty": 2,
+	  "ready": true,
+	  "type": "reversal",
+	  "definition": [
+		"King with a golden touch"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "unhappy",
+		  "end": {
+			"value": [
+			  "sad"
+			]
+		  }
+		},
 		{
 		  "category": "direct",
-		  "value": "Ron"
-		},
-		{
-		  "category": "reversal",
-		  "value": "Ron",
+		  "value": "I'm",
 		  "end": {
 			"value": [
-			  "noR"
-			]
-		  },
-		  "explainer": "For a down entry, \"comes up\" can indicate a reversal"
-		},
-		{
-		  "category": "symbol",
-		  "value": "one",
-		  "end": {
-			"value": [
-			  "i"
+			  "I'm"
 			]
 		  }
 		},
 		{
-		  "category": "container",
-		  "value": "with",
+		  "category": "reversal",
+		  "value": "returning",
 		  "end": {
 			"value": [
-			  "no",
-			  "i",
-			  "R"
+			  "sad I'm",
+			  "midas"
 			]
 		  },
-		  "reveals": "TRUE"
+		  "reveals": true
 		}
 	  ],
 	  "solution": {
-		"value": "noir"
+		"value": "midas"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "id": 13,
+	  "clue": {
+		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
+	  },
+	  "release": "9/17/2024",
+	  "difficulty": 4,
+	  "ready": true,
+	  "type": "reversal",
+	  "definition": [
+		"post office worker's gear"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Idly chat",
+		  "end": {
+			"value": [
+			  "gab"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "actor Neeson",
+		  "end": {
+			"value": [
+			  "Liam"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "gab Liam",
+			  "mailbag"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "mailbag"
 	  },
 	  "source": {
 		"value": "Kegler"
 	  }
 	},
 	{
-	  "id": "210",
+	  "id": 282,
+	  "clue": {
+		"value": "Backed up store’s streetcar"
+	  },
+	  "release": "1/2/2024",
+	  "difficulty": 2,
+	  "ready": false,
+	  "type": "reversal, anagram",
+	  "definition": [
+		"streetcar"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "store",
+		  "end": {
+			"value": [
+			  "mart"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "Backed up",
+		  "end": {
+			"value": [
+			  "mart",
+			  "tram"
+			]
+		  },
+		  "reveals": true
+		}
+	  ],
+	  "solution": {
+		"value": "tram"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": 210,
 	  "clue": {
 		"value": "Again talk about returning that lady’s tree"
 	  },
 	  "release": "3/14/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
+	  "difficulty": 2,
+	  "ready": false,
 	  "type": "reversal, charade",
 	  "definition": [
 		"Again talk about"
@@ -1462,972 +2353,13 @@
 	  }
 	},
 	{
-	  "id": "242",
-	  "clue": {
-		"value": "Explosive rabble penetrates outskirts of Bangladesh from the south"
-	  },
-	  "release": "2/11/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, reversal",
-	  "definition": [
-		"Explosive"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "rabble",
-		  "end": {
-			"value": [
-			  "mob"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "outskirts of Bangladesh",
-		  "end": {
-			"value": [
-			  "Bh"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "penetrates",
-		  "end": {
-			"value": [
-			  "B",
-			  "mob",
-			  "h"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "from the south",
-		  "end": {
-			"value": [
-			  "bmobh",
-			  "H bomb"
-			]
-		  },
-		  "explainer": "In a down clue, \"from the south\" may indicate a reversal",
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "H bomb"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "287",
-	  "clue": {
-		"value": "Funny guy returns with one Nobel Prize-winning physicist"
-	  },
-	  "release": "12/28/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, reversal",
-	  "definition": [
-		"Nobel Prize-winning physicist"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Funny guy",
-		  "end": {
-			"value": [
-			  "card"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "returns",
-		  "end": {
-			"value": [
-			  "card",
-			  "drac"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "one",
-		  "end": {
-			"value": [
-			  "I"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "with",
-		  "end": {
-			"value": [
-			  "d",
-			  "I",
-			  "rac"
-			]
-		  },
-		  "explainer": "Paul Dirac won the 1933 Nobel Prize in physics",
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "Dirac"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "288",
-	  "clue": {
-		"value": "Obligation Mr. Turner brought up involving bond’s premiere"
-	  },
-	  "release": "12/27/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "container, reversal",
-	  "definition": [
-		"Obligation"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Mr. Turner",
-		  "end": {
-			"value": [
-			  "Ted"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "brought up",
-		  "end": {
-			"value": [
-			  "Ted",
-			  "deT"
-			]
-		  },
-		  "explainer": "For a down clue, \"brought up\" can signal a reversal"
-		},
-		{
-		  "category": "particle",
-		  "value": "bond's premiere",
-		  "end": {
-			"value": [
-			  "b"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "involving",
-		  "end": {
-			"value": [
-			  "de",
-			  "b",
-			  "T"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "debt"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "300",
-	  "clue": {
-		"value": "Primarily resent the man holding back my chance to dance, perhaps"
-	  },
-	  "release": "12/15/2023",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "charade, container, reversal",
-	  "definition": [
-		"chance to dance, perhaps"
-	  ],
-	  "hints": [
-		{
-		  "category": "particle",
-		  "value": "Primarily resent",
-		  "end": {
-			"value": [
-			  "r"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "synonym",
-		  "value": "the man",
-		  "end": {
-			"value": [
-			  "he"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "back",
-		  "end": {
-			"value": [
-			  "my",
-			  "ym"
-			]
-		  }
-		},
-		{
-		  "category": "container",
-		  "value": "holding",
-		  "end": {
-			"value": [
-			  "r",
-			  "h",
-			  "ym",
-			  "e"
-			]
-		  },
-		  "explainer": "Here, \"chance to dance\" is not about having an opportunity to cut a rug; the two words rhyme",
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "rhyme"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "174",
-	  "clue": {
-		"value": "One leaving Scottish monster back in German city"
-	  },
-	  "release": "4/19/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "deletion, reversal",
-	  "definition": [
-		"German city"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Scottish monster",
-		  "end": {
-			"value": [
-			  "Nessie"
-			]
-		  }
-		},
-		{
-		  "category": "symbol",
-		  "value": "One",
-		  "end": {
-			"value": [
-			  "i"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "One leaving",
-		  "end": {
-			"value": [
-			  "Nesse"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "back",
-		  "end": {
-			"value": [
-			  "nesse",
-			  "Essen"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "essen"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "82",
-	  "clue": {
-		"value": "Retro gym ran a mortuary section for centurions, et al"
-	  },
-	  "release": "7/19/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "hidden word, reversal",
-	  "definition": [
-		"centurions, et al"
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "section",
-		  "end": {
-			"value": [
-			  "gym ran a mortuary",
-			  "ymranamor"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "Retro",
-		  "end": {
-			"value": [
-			  "ymranamor",
-			  "Roman army"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "roman army"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "137",
-	  "clue": {
-		"value": "Useless with some people, so I took over"
-	  },
-	  "release": "5/26/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "hidden word, reversal",
-	  "definition": [
-		"Useless"
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "some",
-		  "end": {
-			"value": [
-			  "people, so I took",
-			  "esoito"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "over",
-		  "end": {
-			"value": [
-			  "esioto",
-			  "otiose"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "otiose"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "177",
-	  "clue": {
-		"value": "Religious sect member, repulsed, beats a retreat inside"
-	  },
-	  "release": "4/16/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "hidden word, reversal",
-	  "definition": [
-		"Religious sect member"
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "inside",
-		  "end": {
-			"value": [
-			  "beats a retreat",
-			  "atsar"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "repulsed",
-		  "end": {
-			"value": [
-			  "atsar",
-			  "Rasta"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "Rasta"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "199",
-	  "clue": {
-		"value": "Plastic pet ate carelessly partly thrown up"
-	  },
-	  "release": "3/25/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "hidden word, reversal",
-	  "definition": [
-		"Plastic"
-	  ],
-	  "hints": [
-		{
-		  "category": "hidden word",
-		  "value": "partly",
-		  "end": {
-			"value": [
-			  "pet ate carelessly",
-			  "etateca"
-			]
-		  },
-		  "reveals": "FALSE"
-		},
-		{
-		  "category": "reversal",
-		  "value": "thrown up",
-		  "end": {
-			"value": [
-			  "etateca",
-			  "acetate"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "acetate"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "13",
-	  "clue": {
-		"value": "Idly chat with actor Neeson, returning post office worker’s gear"
-	  },
-	  "release": "9/17/2024",
-	  "difficulty": "4",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"post office worker's gear"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Idly chat",
-		  "end": {
-			"value": [
-			  "gab"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "actor Neeson",
-		  "end": {
-			"value": [
-			  "Liam"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "gab Liam",
-			  "mailbag"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "mailbag"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "55",
-	  "clue": {
-		"value": "King with a golden touch is unhappy I'm returning"
-	  },
-	  "release": "9/7/2024",
-	  "difficulty": "2",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"King with a golden touch"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "unhappy",
-		  "end": {
-			"value": [
-			  "sad"
-			]
-		  }
-		},
-		{
-		  "category": "direct",
-		  "value": "I'm",
-		  "end": {
-			"value": [
-			  "I'm"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returning",
-		  "end": {
-			"value": [
-			  "sad I'm",
-			  "midas"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "midas"
-	  },
-	  "source": {
-		"value": "Midas"
-	  }
-	},
-	{
-	  "id": "40",
-	  "clue": {
-		"value": "Severely criticized turning at end of tricky childbirth"
-	  },
-	  "release": "8/29/2024",
-	  "difficulty": "3",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"childbirth"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Severely criticized",
-		  "end": {
-			"value": [
-			  "reviled"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "turning",
-		  "end": {
-			"value": [
-			  "reviled",
-			  "deliver"
-			]
-		  }
-		},
-		{
-		  "category": "particle",
-		  "value": "end of tricky",
-		  "end": {
-			"value": [
-			  "y"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "delivery"
-	  },
-	  "source": {
-		"value": "Fraz"
-	  }
-	},
-	{
-	  "id": "85",
-	  "clue": {
-		"value": "Tied actress Campbell up"
-	  },
-	  "release": "7/16/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"Tied"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "actress Campbell",
-		  "end": {
-			"value": [
-			  "Neve"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "up",
-		  "end": {
-			"value": [
-			  "Neve",
-			  "even"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "even"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "106",
-	  "clue": {
-		"value": "Fanatic raised alcoholic container"
-	  },
-	  "release": "6/25/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"alcoholic container"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Fanatic",
-		  "end": {
-			"value": [
-			  "nut"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "raised",
-		  "end": {
-			"value": [
-			  "nut",
-			  "tun"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "tun"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "125",
-	  "clue": {
-		"value": "Recalled isolated organic compound"
-	  },
-	  "release": "6/7/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"organic compound"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "isolated",
-		  "end": {
-			"value": [
-			  "lone"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "recalled",
-		  "end": {
-			"value": [
-			  "lone",
-			  "enol"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "enol"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "180",
-	  "clue": {
-		"value": "Storyteller’s train heading back"
-	  },
-	  "release": "4/13/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"Storyteller"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "train",
-		  "end": {
-			"value": [
-			  "rail"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "heading back",
-		  "end": {
-			"value": [
-			  "rail",
-			  "liar"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "liar"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "181",
-	  "clue": {
-		"value": "Rejected Rod’s suggestions"
-	  },
-	  "release": "4/12/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"suggestions"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "Rod",
-		  "end": {
-			"value": [
-			  "spit"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "Rejected",
-		  "end": {
-			"value": [
-			  "spit",
-			  "tips"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "tips"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "208",
-	  "clue": {
-		"value": "Actress Ryan’s jewelry returned"
-	  },
-	  "release": "3/16/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"Actress Ryan"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "jewelry",
-		  "end": {
-			"value": [
-			  "gem"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returned",
-		  "end": {
-			"value": [
-			  "gem",
-			  "Meg"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "meg"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "237",
-	  "clue": {
-		"value": "Talk show host bringing up book by Turow"
-	  },
-	  "release": "2/16/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal",
-	  "definition": [
-		"Talk show host"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "book by Turow",
-		  "end": {
-			"value": [
-			  "One L"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "bringing up",
-		  "end": {
-			"value": [
-			  "One L",
-			  "Leno"
-			]
-		  },
-		  "explainer": "\"Bringing up,\" in a down clue, may indicate a reversal",
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "Leno"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "282",
-	  "clue": {
-		"value": "Backed up store’s streetcar"
-	  },
-	  "release": "1/2/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
-	  "type": "reversal, anagram",
-	  "definition": [
-		"streetcar"
-	  ],
-	  "hints": [
-		{
-		  "category": "anagram",
-		  "value": "store",
-		  "end": {
-			"value": [
-			  "mart"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "Backed up",
-		  "end": {
-			"value": [
-			  "mart",
-			  "tram"
-			]
-		  },
-		  "reveals": "TRUE"
-		}
-	  ],
-	  "solution": {
-		"value": "tram"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
-	  "id": "95",
+	  "id": 95,
 	  "clue": {
 		"value": "Awareness of policy expert turned up large advantage"
 	  },
 	  "release": "7/6/2024",
-	  "difficulty": "2",
-	  "ready": "FALSE",
+	  "difficulty": 2,
+	  "ready": false,
 	  "type": "reversal, charade",
 	  "definition": [
 		"Awareness"
