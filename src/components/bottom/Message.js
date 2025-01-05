@@ -7,12 +7,74 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 		return input.join('').toLowerCase() === activeClue.solution.arr.join('').toLowerCase()
 	}
 
+	// hint message
+	const getMessage = hint => {
+
+		const vowels = ['a', 'e', 'i', 'o', 'u']
+
+		let aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'a'
+
+		switch(hint.type) {
+			case 'definition':
+				if (hint.value.length == 1) { // Single definition
+					return <><strong>{hint.value}</strong> is the definition</>
+				} else { // Double definition
+					return <>Both <strong>{hint.value[0]}</strong> and <strong>{hint.value[1]}</strong> are definitions</>
+				}
+			case 'indicator':
+				switch(hint.category) {
+					case 'anagram':
+						return <><strong>{hint.value}</strong> indicates an anagram</>
+					case 'charade':
+						return <><strong>{hint.value}</strong> can be <strong>{hint.end.value[0]}</strong></>
+					case 'container':
+						return <><strong>{hint.value}</strong>, indicates a container</>
+					case 'deletion':
+						return <><strong>{hint.value}</strong>, indicates a deletion</>
+					case 'direct':
+						return <><strong>{hint.value}</strong> is used</>
+					case 'hidden word':
+						return <><strong>{hint.value}</strong> indicates a hidden word</>
+					case 'homophone':
+						return <><strong>{hint.value}</strong> indicates a homophone</>
+					case 'initialism':
+						return <><strong>{hint.value}</strong> indicates the beginning of one or more words</>
+					case 'letter bank':
+						return <><strong>{hint.value}</strong> indicates a letter bank</>
+					case 'particle':
+						return <><strong>{hint.value}</strong> can be <strong>{hint.end.value[0]}</strong></>
+					case 'reversal':
+						return <><strong>{hint.value}</strong>, indicates a reversal on <strong>{hint.end.value[0]}</strong>, making it <strong>{hint.end.value[1]}</strong></>
+					case 'synonym':
+						return <><strong>{hint.value}</strong> can be <strong>{hint.end.value[0]}</strong></>
+					case 'symbol':
+						return <><strong>{hint.value}</strong> can be <strong>{hint.end.value[0]}</strong></>
+					default:
+						// One end point
+						if (hint.end.value.length == 1) {
+							return <><strong>{hint.value}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0]}</strong></> 
+							
+							// Two end points
+						} else {
+							return <><strong>{hint.value}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0]}</strong> and <strong>{hint.end.value[1]}</strong></> 
+						}
+				}
+				
+			case 'solution':
+				return false
+			default: 
+				return hint.value
+		}
+	}
+
 	// figure out which text to display
 	const message = checkAns ? 
 		isCorrectAns() ? 
-			`<strong>${input.join("")}</strong> is correct.<br>Nice work!` :
-			`<strong>${input.join("")}</strong> is not the correct answer.` :
-		activeClue.hints[nextHint].message
+			<><strong>{input.join("")}</strong> is correct.<br/>Nice work!</> :
+			<><strong>{input.join("")}</strong> is not the correct answer.</> :
+		getMessage(activeClue.hints[nextHint])
+	
+	const explainer = activeClue.hints[nextHint].explainer ? activeClue.hints[nextHint].explainer : false
 	
 	const continueButton = [
 		{
@@ -55,7 +117,11 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 
 	return(
 		<div className={`message ${messageStyle}`}>
-			{message && <div className={'message-copy'} dangerouslySetInnerHTML={{__html: message}}/>}
+			{message && <div className={'message-copy'}>
+				{message}
+				{explainer && <div className={'explainer'}>{explainer}</div>}
+			</div>}
+			
 			<ButtonContainer
 				btnArr={messageButton}
 				isSolution={isSolution}
