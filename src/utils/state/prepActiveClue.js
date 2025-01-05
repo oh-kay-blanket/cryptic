@@ -38,77 +38,17 @@ const prepActiveClue = (activeClue) => {
 	}
 
 	// add hint type
-	activeClue.hints.map(hint => hint.type = 'indicator')
+	if (activeClue.hints) {
+		activeClue.hints.map(hint => hint.type = 'indicator')
+	} else {
+		activeClue.hints = []
+	}
 
 	// build hints //
 	activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
 	activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
 
-	// hint message
-	const getMessage = hint => {
-
-		const vowels = ['a', 'e', 'i', 'o', 'u']
-
-		let aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'a'
-
-		switch(hint.type) {
-			case 'definition':
-				// Single definition
-				if (hint.value.length == 1) {
-					return `<strong>${hint.value}</strong> is the definition`
-
-				// Double definition
-				} else {
-					return `Both <strong>${hint.value[0]}</strong> and <strong>${hint.value[1]}</strong> are definitions`
-				}
-			case 'indicator':
-				switch(hint.category) {
-					case 'anagram':
-						return `<strong>${hint.value}</strong> indicates an anagram`
-					case 'charade':
-						return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
-					case 'container':
-						return `<strong>${hint.value}</strong>, indicates a container`
-					case 'deletion':
-						return `<strong>${hint.value}</strong>, indicates a deletion`
-					case 'direct':
-						return `<strong>${hint.value}</strong> is used`
-					case 'hidden word':
-						return `<strong>${hint.value}</strong> indicates a hidden word`
-					case 'homophone':
-						return `<strong>${hint.value}</strong> indicates a homophone`
-					case 'initialism':
-						return `<strong>${hint.value}</strong> indicates the beginning of one or more words`
-					case 'letter bank':
-						return `<strong>${hint.value}</strong> indicates a letter bank`
-					case 'particle':
-						return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
-					case 'reversal':
-						return `<strong>${hint.value}</strong>, indicates a reversal on <strong>${hint.end.value[0]}</strong>, making it <strong>${hint.end.value[1]}</strong>`
-					case 'synonym':
-						return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
-					case 'symbol':
-						return `<strong>${hint.value}</strong> can be <strong>${hint.end.value[0]}</strong>`
-					default:
-						console.log(hint)
-						// One end point
-						if (hint.end.value.length == 1) {
-							return `<strong>${hint.value}</strong> incicates ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong>` 
-							
-							// Two end points
-						} else {
-							return `<strong>${hint.value}</strong> incicates ${aAn} ${hint.category} at <strong>${hint.end.value[0]}</strong> and <strong>${hint.end.value[1]}</strong>` 
-						}
-				}
-				
-			case 'solution':
-				return false
-			default: 
-				return hint.value
-		}
-	}
-
-	activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
+	// activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
 }
 
 export default prepActiveClue
