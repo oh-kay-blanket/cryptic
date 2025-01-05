@@ -8,16 +8,13 @@ import Bottom from './components/bottom/Bottom'
 import Archive from './components/Archive' 
 
 // hooks
-import manageClues from './utils/state/manageClues'
+import manageState from './utils/state/manageState'
 import manageHints from './utils/state/manageHints'
 import manageInput from './utils/state/manageInput'
 
 const App = () => {
 
-	// set mode & clue
-	const [mode, setMode] = useState('archive');
-	const [showType, setShowType] = useState(true);
-	let { clues, activeClue, setclueId, completedClues, addCompletedClue } = manageClues(mode)	
+	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType } = manageState()
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
