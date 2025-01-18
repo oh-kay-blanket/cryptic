@@ -31,7 +31,7 @@ const fixLetters = (activeClue) => {
 			let left = ref.current.getBoundingClientRect().left
 			let top = ref.current.getBoundingClientRect().top
 			ref.current.style.left = `${left}px`
-			ref.current.style.top = `${top -3}px`
+			ref.current.style.top = `${top -2}px`
 			return [left, top]
 		})
 		
@@ -175,6 +175,8 @@ const fixLetters = (activeClue) => {
 			// position move letters over anchor letters
 			if (Array.isArray(moving)) {
 				moving.forEach(ref => {
+
+					ref.current.style.textTransform = 'none'
 
 					// Matching letter in anchor
 					let currentDestLetter = anchor.find(destLetter => {
