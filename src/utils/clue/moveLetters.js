@@ -16,7 +16,7 @@ const moveLetters = (movingLettersRef, destLettersRef, timing = 'shuffle', rever
 		const destIndex = destLettersRef.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
 		destLettersRef.splice(destIndex, 1)
 
-		// ref.current.style.textTransform = 'lowercase'
+		ref.current.style.textTransform = 'uppercase'
 		ref.current.style.top = `${Number(currentDestLetter.current.style.top.slice(0,-2))}px`
 		ref.current.style.left = `${Number(currentDestLetter.current.style.left.slice(0,-2))}px`
 

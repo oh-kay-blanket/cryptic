@@ -78,6 +78,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		align-content: center;
+		text-transform: uppercase;
 		// position: fixed;
 		// left: 50%;
 		// transform: translateX(-50%);
@@ -106,6 +107,7 @@
 			// opacity: 0;
 			transition: opacity $lc-transition--short ease;
 			text-align: center;
+			text-transform: uppercase;
 			margin: 0 auto;
 			font-size: 1.25rem;
 
