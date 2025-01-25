@@ -27,7 +27,7 @@ const prepActiveClue = (activeClue) => {
 			activeClue.source.href = 'https://kegler.gitlab.io/Block_style/November_2009.pdf'
 			break
 		case 'Ucaoimhu':
-			activeClue.source.href = 'https://www.ucaoimhu.com/con11d.pdf'
+			activeClue.source.href = 'https://www.ucaoimhu.com'
 			break
 		case 'Hex':
 			activeClue.source.href = 'https://coxrathvon.com/puzzles/xoOx3KL17IT3eFSBoGPA'
