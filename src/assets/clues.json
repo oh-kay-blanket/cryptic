@@ -259,14 +259,14 @@
 	{
 	  "id": 290,
 	  "clue": {
-		"value": "Crooked stripe is less green than all others"
+		"value": "Crooked stripe is less green than all the others"
 	  },
 	  "release": "4/1/2024",
 	  "difficulty": 2,
 	  "ready": false,
 	  "type": "anagram",
 	  "definition": [
-		"less green than all the others"
+		"is less green than all the others"
 	  ],
 	  "hints": [
 		{
@@ -290,7 +290,7 @@
 	{
 	  "id": 316,
 	  "clue": {
-		"value": "“Perry Mason” actor’s cocktail of brandy or rum"
+		"value": "\"Perry Mason\" actor’s cocktail of brandy or rum"
 	  },
 	  "release": "3/7/2024",
 	  "difficulty": 2,
@@ -535,16 +535,6 @@
 			  "RNs"
 			]
 		  }
-		},
-		{
-		  "category": "charade",
-		  "value": "retu",
-		  "end": {
-			"value": [
-			  "RNs",
-			  "returns"
-			]
-		  }
 		}
 	  ],
 	  "solution": {
@@ -612,7 +602,7 @@
 		  "value": "off",
 		  "end": {
 			"value": [
-			  "set",
+			  "Set",
 			  "est"
 			]
 		  }
@@ -4321,7 +4311,7 @@
 	  "hints": [
 		{
 		  "category": "hidden word",
-		  "value": "held by, belled by",
+		  "value": "held by",
 		  "end": {
 			"value": [
 			  "hospital attendant",

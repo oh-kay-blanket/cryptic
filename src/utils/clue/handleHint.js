@@ -1,186 +1,205 @@
 import underlineLetters from './underlineLetters'
 import highlightLetters from './highlightLetters'
 import changeColor from './changeColor'
-import showSolution from './showSolution'
 import moveLetters from "./moveLetters"
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
-	const revealSolution = () => {
-		activeClue.solution.sectionRef.current.classList.add('hide-input')
-		activeClue.solution.sectionRef.current.classList.add('reveal-solution')
-	}
-
-	const revealSource = () => {
-		activeClue.source.ref.current.classList.add('show')
-	}
-
+	// Run if showing a message & not checking answer
 	if (showMessage && !checkAns) {
 
+		// Get hint
 		const hint = activeClue.hints[nextHint]
 
-		switch(hint.type) {
+		// Definition
+		if (nextHint == 0) {
+			underlineLetters(hint.ref)
 
-			case 'definition':
-				underlineLetters(hint.ref)
-				break
+		// Indicators
+		} else {
+			const prevHint = activeClue.hints[nextHint - 1]
 
-			case 'indicator': 
-				switch(hint.category) {
-					case 'charade':
-					case 'symbol':
-					case 'synonym':
-						highlightLetters(hint.ref)
-						changeColor(hint.addLetters.ref.current)
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'deletion':
-						highlightLetters(hint.ref)
-						changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, '#ccc')
+			switch(hint.category) {
 
-						// see if shorter word exists within last hint addLetters
-						const delIndex = activeClue.hints[nextHint - 1].addLetters.value.join('').indexOf(hint.end.value[1])
+				case 'anagram':
+					highlightLetters(hint.ref)
+					changeColor(hint.end.ref, '#ccc')
+					changeColor(hint.addLetters.ref.current)
+					break
 
-						// if so, highlight short word in longer
-						if (hint.end.value.length > 2) {
-							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(0, hint.end.value[1].length), '#0b0b0b')
+				case 'ag-2':
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
+					changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), '#0b0b0b')
+					moveLetters(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length))
+					break
 
-							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(-hint.end.value[2].length), '#0b0b0b')
-						} else if (delIndex >= 0) {
-							changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
+				case 'charade':
+				case 'symbol':
+				case 'synonym':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current)
+					break
+
+				case 'container':
+					highlightLetters(hint.ref)
+
+					// make all previous addLetters gray
+					activeClue.hints.some(h => {
+						
+						// Break out if container
+						if (h.category == 'container') return true
+						
+						if (h.addLetters) {
+							changeColor(h.addLetters.ref.current, '#ccc')
 						}
+						return false
+					});
 
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'direct':
-						highlightLetters(hint.ref)
-						changeColor(hint.addLetters.ref.current)
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'homophone':
-						highlightLetters(hint.ref)
-						changeColor(hint.addLetters.ref.current[0])
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'initialism':
-						highlightLetters(hint.ref)
-						changeColor(hint.end.ref)
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'anagram':
-						highlightLetters(hint.ref)
-						changeColor(hint.end.ref, '#ccc')
-						changeColor(hint.addLetters.ref.current)
-						break
-					case 'ag-2':
-						changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, '#ccc')
-						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), '#0b0b0b')
+					// Make moving letters dark
+					changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
+					
+					moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
+					break
 
-						moveLetters(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length))
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'letter bank':
-						highlightLetters(hint.ref)
-						changeColor(hint.end.ref, '#ccc')
-						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length))
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'particle':
-						highlightLetters(hint.ref)
-						// changeColor(hint.end.ref, '#ccc')
-						changeColor(hint.addLetters.ref.current)
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'container':
-						highlightLetters(hint.ref)
+				case 'deletion':
+					highlightLetters(hint.ref)
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
 
-						// make all previous addLetters gray
-						activeClue.hints.some(h => {
-							
-							// Break out if container
-							if (h.category == 'container') return true
-							
-							if (h.addLetters) {
-								changeColor(h.addLetters.ref.current, '#ccc')
-							}
-							return false
-						});
+					// see if shorter word exists within last hint addLetters
+					const delIndex = prevHint.addLetters.value.join('').indexOf(hint.end.value[1])
 
-						// Make moving letters dark
-						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
-						
-						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), hint.addLetters.ref.current.slice(hint.end.value.join("").split('').length), false)
-						
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					case 'reversal':
-						highlightLetters(hint.ref)
+					// if so, highlight short word in longer
+					if (hint.end.value.length > 2) {
+						changeColor(prevHint.addLetters.ref.current.slice(0, hint.end.value[1].length), '#0b0b0b')
 
-						// make all previous addLetters gray
-						let usedAnchor = []
-						// push only used anchor to anchor
-						let anchor = []
-						activeClue.hints.some(h => {
-							if (h.category == 'reversal') return true
-							if (h.addLetters) { anchor.push(h) }
-							return false
-						})
-						anchor = anchor.map(h => h.addLetters.ref.current).flat().reverse()
-						
-						let moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length)
-						moving = moving.filter(m => m.current.textContent !== " ").reverse()
-						
-						// Build arr of used anchors
-						moving.forEach(ref => {		
-							const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
-							usedAnchor.push(anchor[destIndex])
-							anchor.splice(destIndex, 1)
-						})
+						changeColor(prevHint.addLetters.ref.current.slice(-hint.end.value[2].length), '#0b0b0b')
+					} else if (delIndex >= 0) {
+						changeColor(prevHint.addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
+					}
+					break
 
-						changeColor(usedAnchor, '#ccc')
-						changeColor(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), '#222')
-						moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length), 'sequence', true)
+				case 'direct':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current)
+					break
 
-						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
-						break
-					default: 
-						highlightLetters(hint.ref)
-						changeColor(hint.end.ref)
-						if (hint.reveals) {
-							setTimeout(revealSolution, 2000)
-							setTimeout(revealSource, 3000)
-						}
+				case 'hidden word':
+					highlightLetters(hint.ref)
+					changeColor(hint.end.ref)
+					break
 
-						break
-				}
-				break
-			case 'solution':
-				showSolution(activeClue, nextHint, revealSolution, revealSource)
-				break
-			default: 
-				break
+				case 'hw-2':
+					let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)
+
+					prevHint.end.ref = removeSpecial(prevHint.end.ref)
+					changeColor(prevHint.end.ref, '#ccc')
+					changeColor(prevHint.end.ref.splice(solIndex, activeClue.solution.arr.length))
+					break
+
+				case 'homophone':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current[0])
+					break
+
+				case 'hp-2':
+					changeColor(prevHint.addLetters.ref.current[1])
+					break
+
+				case 'initialism':
+					highlightLetters(hint.ref)
+					changeColor(hint.end.ref)
+					break
+
+				case 'in-2':
+					changeColor(prevHint.end.ref, '#ccc')
+					// build arrary of first letters
+					let firstLetters = prevHint.end.value[0].split(' ').map(wrd => wrd.length +1)
+					firstLetters.pop()
+					firstLetters = [0, ...firstLetters]
+
+					firstLetters.forEach(startLetter => {
+						changeColor(prevHint.end.ref[startLetter])
+						prevHint.end.ref.splice(0, startLetter)
+					})
+					break
+
+				case 'letter bank':
+					highlightLetters(hint.ref)
+					changeColor(hint.end.ref, '#ccc')
+					changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length))
+					break
+
+				case 'lb-2':
+					moveLetters(prevHint.addLetters.ref.current.slice(0, prevHint.end.value[1].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[1].length))
+					break
+
+				case 'particle':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current)
+					break
+
+				case 'reversal':
+					highlightLetters(hint.ref)
+
+					// make all previous addLetters gray
+					let usedAnchor = []
+					// push only used anchor to anchor
+					let anchor = []
+					activeClue.hints.some(h => {
+						if (h.category == 'reversal') return true
+						if (h.addLetters) { anchor.push(h) }
+						return false
+					})
+					anchor = anchor.map(h => h.addLetters.ref.current).flat().reverse()
+					
+					let moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length)
+					moving = moving.filter(m => m.current.textContent !== " ").reverse()
+					
+					// Build arr of used anchors
+					moving.forEach(ref => {		
+						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
+						usedAnchor.push(anchor[destIndex])
+						anchor.splice(destIndex, 1)
+					})
+
+					changeColor(usedAnchor, '#ccc')
+					changeColor(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), '#222')
+					moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length), 'sequence', true)
+					break
+
+				default: 
+					highlightLetters(hint.ref)
+					changeColor(hint.end.ref)
+					break
+			}
 		}
 
-	// change last hint to gray
-	} else if (!showMessage) {
-		if (nextHint > 1) {
-			try {
-				highlightLetters(activeClue.hints[nextHint - 1].ref, false, true)
+		// If this is the revealing hint, end clue.			
+		if (activeClue.hints.length - 1 == nextHint) {
+			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('hide-input'), 2500)
+			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('reveal-solution'), 2500)
+			setTimeout(()=>activeClue.source.ref.current.classList.add('show'), 3500)
+		}
 
-				if (activeClue.hints[nextHint - 1].end) {
-					changeColor(activeClue.hints[nextHint - 1].end.ref, false, true)
-				} else {
-					changeColor(activeClue.hints[nextHint - 1].ref, false, true)
-				}
-				
-				if (activeClue.hints[nextHint - 1].category !== 'deletion') {
-					changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, false, true)
-				} else {
-					changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
-				}
-			} catch(err) {
-				console.log(err)
+	// Change last hint to gray when going back to play
+	} else if (!showMessage && !checkAns && !nextHint == 0) {
+		const prevHint = activeClue.hints[nextHint - 1]
+		try {
+			highlightLetters(prevHint.ref, false, true)
+
+			if (prevHint.end) {
+				changeColor(prevHint.end.ref, false, true)
+			} else {
+				changeColor(prevHint.ref, false, true)
 			}
+			
+			if (prevHint.category !== 'deletion') {
+				changeColor(prevHint.addLetters.ref.current, false, true)
+			} else {
+				changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
+			}
+		} catch(err) {
+			console.log(err)
 		}
 	}
 }
