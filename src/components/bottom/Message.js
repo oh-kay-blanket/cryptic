@@ -4,7 +4,7 @@ import ButtonContainer from '../ButtonContainer';
 const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
 
 	const isCorrectAns = () => {
-		return input.join('').toLowerCase() === activeClue.solution.arr.join('').toLowerCase()
+		return input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
 	}
 
 	// hint message
@@ -24,7 +24,9 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 			case 'indicator':
 				switch(hint.category) {
 					case 'anagram':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates an anagram</>
+						return <><strong>{hint.value.toUpperCase()}</strong> indicates an anagram on <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					case 'ag-2':
+						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is an anagram of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 					case 'charade':
 						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 					case 'container':
@@ -59,9 +61,6 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 							return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong> and <strong>{hint.end.value[1].toUpperCase()}</strong></> 
 						}
 				}
-				
-			case 'solution':
-				return false
 			default: 
 				return hint.value
 		}
@@ -103,7 +102,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	]
 	
 	// if current message displaying solution
-	const isSolution = (activeClue.hints[nextHint].type == 'solution' || activeClue.hints[nextHint].reveals) && !checkAns
+	const isSolution = (activeClue.hints.length - 1 == nextHint) && !checkAns
 	
 	// choose message button
 	let messageButton = isSolution || (checkAns && isCorrectAns()) ? clueEndButton : continueButton
