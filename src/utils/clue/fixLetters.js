@@ -49,14 +49,14 @@ const fixLetters = (activeClue) => {
 	// Fix hint letters //
 	//
 
-	const fixHints = (hint) => { 
+	const fixHints = (hint, index) => { 
 
-		if (hint.category == 'anagram' || hint.category == 'letter bank' || hint.category == 'container' || hint.category == 'reversal') {
+		if (hint.category == 'ag-2' || hint.category == 'letter bank' || hint.category == 'container' || hint.category == 'reversal') {
 			let anchor, moving, endPt
 
 			// anagram
-			if (hint.category == 'anagram') {
-				anchor = hint.end.ref // anchor letters
+			if (hint.category == 'ag-2') {
+				anchor = activeClue.hints[index-1].addLetters.ref.current // anchor letters
 				moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 
@@ -170,26 +170,34 @@ const fixLetters = (activeClue) => {
 
 				endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters
 			}
-
 			
 			// position move letters over anchor letters
 			if (Array.isArray(moving)) {
+				
+				// Keep track of used anchors
+				let anchorUsed = []
+
 				moving.forEach(ref => {
 
 					ref.current.style.textTransform = 'none'
 
 					// Matching letter in anchor
-					let currentDestLetter = anchor.find(destLetter => {
-						return destLetter.current.textContent == ref.current.textContent
+					let currentDestLetter = anchor.find((destLetter, index) => {
+
+						// Remove anchor to not reuse
+						if (hint.category == 'ag-2' || hint.category == 'container' || hint.category == 'reversal') {
+							if ((destLetter.current.textContent == ref.current.textContent) && !anchorUsed.includes(index)) {
+								anchorUsed.push(index)
+								return destLetter.current.textContent == ref.current.textContent
+							} else {
+								return false
+							}
+						} else {
+							return destLetter.current.textContent == ref.current.textContent
+						}
 					})
 					ref.current.style.top = !!currentDestLetter.current.style.top ? currentDestLetter.current.style.top : `${currentDestLetter.current.getBoundingClientRect().top}px`
 					ref.current.style.left = !!currentDestLetter.current.style.left ? currentDestLetter.current.style.left : `${currentDestLetter.current.getBoundingClientRect().left}px`
-
-					// Remove anchor to not reuse
-					if (hint.category == 'anagram' || hint.category == 'container' || hint.category == 'reversal') {
-						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
-						anchor.splice(destIndex, 1)
-					}
 				})
 
 				moving.forEach(ref => {
@@ -218,8 +226,8 @@ const fixLetters = (activeClue) => {
 	}
 
 	// Logic to run fixHints
-	activeClue.hints.forEach(hint => {
-		hint && hint.type == 'indicator' && fixHints(hint)
+	activeClue.hints.forEach((hint, index) => {
+		hint && hint.type == 'indicator' && fixHints(hint, index)
 	})	
 }
 

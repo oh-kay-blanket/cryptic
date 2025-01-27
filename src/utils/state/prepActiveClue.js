@@ -40,6 +40,13 @@ const prepActiveClue = (activeClue) => {
 	// add hint type
 	if (activeClue.hints) {
 		activeClue.hints.map(hint => hint.type = 'indicator')
+		activeClue.hints = activeClue.hints.flatMap(obj => {
+			if (obj.category === 'anagram') { return [obj, { ...obj, category: 'ag-2' }] }
+			if (obj.category === 'letter bank') { return [obj, { ...obj, category: 'lb-2' }] }
+			if (obj.category === 'hidden word') { return [obj, { ...obj, category: 'hw-2' }] }
+			return [obj]
+		}
+		  );
 	} else {
 		activeClue.hints = []
 	}
@@ -47,8 +54,6 @@ const prepActiveClue = (activeClue) => {
 	// build hints //
 	activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
 	activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
-
-	// activeClue.hints = activeClue.hints.map(hint => ({...hint, message: getMessage(hint)}))
 }
 
 export default prepActiveClue

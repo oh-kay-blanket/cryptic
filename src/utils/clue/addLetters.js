@@ -7,6 +7,7 @@ const addLetters = (activeClue, hint) => {
 		hint.addLetters = {}
 
 		switch(hint.category) {
+			case 'anagram':
 			case 'hidden word':
 			case 'particle':
 				hint.addLetters.value = hint.end.value[0].split('')

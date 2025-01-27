@@ -70,8 +70,15 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					case 'anagram':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref, '#ccc')
-						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length))
+						changeColor(hint.addLetters.ref.current)
+						break
+					case 'ag-2':
+						changeColor(activeClue.hints[nextHint - 1].addLetters.ref.current, '#ccc')
+						changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), '#0b0b0b')
+
+						moveLetters(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length))
 						if(hint.reveals) {setTimeout(revealSolution, 2000), setTimeout(revealSource, 3000)}
+						break
 					case 'letter bank':
 						highlightLetters(hint.ref)
 						changeColor(hint.end.ref, '#ccc')
