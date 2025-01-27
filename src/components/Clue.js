@@ -22,7 +22,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 		if (hint.type == 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
 			const lettersInsert = hint.addLetters.value.map((letter, childIndex) => (<span key={`${parentIndex}_${childIndex}`} ref={hint.addLetters.ref.current[childIndex]} className='letter'>{letter}</span>))
 
-			let addBr = (hint.category == 'container' || hint.category == 'reversal')
+			let addBr = (hint.category == 'container' || hint.category == 'reversal' || hint.category == 'ag-2' || hint.category == 'lb-2' || hint.category == 'hw-2')
 
 			return <>
 				{addBr && <span key={`br_${parentIndex}`} style={{flexBasis: '100%'}}></span>}
