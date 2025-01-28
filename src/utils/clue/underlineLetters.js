@@ -3,7 +3,7 @@
 const underlineLetters = (defintionLettersRef) => {
 	
 	defintionLettersRef.forEach( ref => {
-		ref.current.style.textDecoration = 'underline'
+		ref.current.classList.add('underline')
 	})
 
 }
