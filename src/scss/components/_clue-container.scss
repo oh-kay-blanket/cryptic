@@ -64,10 +64,27 @@
 		flex-grow: 1;
 
 		.letter {
+			position: relative;
 			transition:
 				opacity $lc-transition--short ease 0s,
 				color $lc-transition--short ease 0s,
 				background-color $lc-transition--short ease;
+
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $lc-text;
+				opacity: 0;
+				transition: opacity $lc-transition--short ease;
+			}
+
+			&.underline::after {
+				opacity: 1;
+			}
 		}
 	}
 
