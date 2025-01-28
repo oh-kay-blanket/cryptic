@@ -65,9 +65,9 @@
 
 		.letter {
 			transition:
-				opacity .5s ease 0s,
-				color .5s ease 0s,
-				background-color .5s ease;
+				opacity $lc-transition--short ease 0s,
+				color $lc-transition--short ease 0s,
+				background-color $lc-transition--short ease;
 		}
 	}
 
@@ -79,20 +79,16 @@
 		flex-wrap: wrap;
 		align-content: center;
 		text-transform: uppercase;
-		// position: fixed;
-		// left: 50%;
-		// transform: translateX(-50%);
 
 		.word {
-			// margin: 0 4px;
 			
 			.letter {
 				color: transparent;
 				opacity: 0;
 				transition:
-					opacity .5s ease 0s,
-					color .5s ease 0s,
-					background-color .5s ease;
+					opacity $lc-transition--short ease 0s,
+					color $lc-transition--short ease 0s,
+					background-color $lc-transition--short ease;
 			}
 		}
 	}
@@ -106,7 +102,6 @@
 		.solution {
 			font-family: $lc-font--alt;
 			z-index: 10;
-			// opacity: 0;
 			transition: opacity $lc-transition--short ease;
 			text-align: center;
 			text-transform: uppercase;
@@ -119,7 +114,6 @@
 				display: inline-block;
 				width: 30px;
 				height: 30px;
-				// text-transform: uppercase;
 				border: 1px solid $lc-text;
 				border-right: none;
 

@@ -1,26 +1,12 @@
 // Main colors
-// $lc-primary: #B0D236;
-// $lc-primary--dark: #648000;
-// $lc-secondary: #F1AB7F;
-// $lc-secondary--dark: #C94F03;
-// $lc-secondary--light: #FFCBAB;
 
 $lc-primary: #F1AB7F;
 $lc-primary--light: #FFCBAB;
 $lc-primary--v-light: #FFEEE3;
 $lc-primary--dark: #C94F03;
-$lc-secondary: #e1d8ff;
-$lc-secondary--dark: #7457d6;
-$lc-secondary--light: #e1d8ff;
 
 $lc-hint0: $lc-primary;
 $lc-hint0--dark: $lc-primary--dark;
-$lc-hint1: #e1d8ff;
-$lc-hint1--dark: #7457d6;
-$lc-hint2: #febde3;
-$lc-hint2--dark: #d2268a;
-$lc-hint3: #bcdbfb;
-$lc-hint3--dark: #2a70bb;
 
 // Grays
 $lc-text: #222;
@@ -33,7 +19,7 @@ $lc-gray--dark: #d2d2d2;
 
 // Transition
 $lc-transition: 2.5s;
-$lc-transition--short: 1s;
+$lc-transition--short: .85s;
 $lc-transition--very-short: .5s;
 
 // Height
