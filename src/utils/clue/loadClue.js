@@ -3,7 +3,7 @@ import { useRef, createRef, useEffect } from 'react'
 import getTargetLetters from './getTargetLetters'
 import fixLetters from './fixLetters'
 import addLetters from './addLetters'
-import getLines from './getLines'
+// import getLines from './getLines'
 import handleHint from './handleHint'
 
 const loadClue = (activeClue, nextHint, showMessage, checkAns) => {
@@ -29,10 +29,12 @@ const loadClue = (activeClue, nextHint, showMessage, checkAns) => {
 		if (!!hint.end) {hint.end.ref = getTargetLetters(hint.end.value, activeClue, hint)}
 	})
 
-	// look for position once set
 	useEffect(() => {
-		activeClue.clue.lines = getLines(activeClue.clue.ref.current)		
-		fixLetters(activeClue)
+		// Fix letters
+		const fixList = ['ag-2', 'hw-2', 'letter bank', 'container', 'reversal']	
+		activeClue.hints.forEach((hint, index) => {
+			hint && hint.category && fixList.includes(hint.category) && fixLetters(activeClue, hint, index)
+		})
 	}, []);
 	
 	// runs every change of showMessage
