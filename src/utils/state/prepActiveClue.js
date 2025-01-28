@@ -20,6 +20,9 @@ const prepActiveClue = (activeClue) => {
 		case 'Fraz':
 			activeClue.source.href = 'https://www.theglobeandmail.com/puzzles-and-crosswords/article-how-to-solve-the-cryptic-crossword-fraser-simson/'
 			break
+		case "Midas":
+			activeClue.source.href = 'https://www.marcmaximov.net/about'
+			break
 		case 'plunk it':
 			activeClue.source.href = 'https://ohkayblanket.com'
 			break
@@ -55,7 +58,6 @@ const prepActiveClue = (activeClue) => {
 
 	// build hints //
 	activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
-	// activeClue.hints.push({ type: 'solution', value: activeClue.solution.value })
 }
 
 export default prepActiveClue

@@ -10,10 +10,10 @@ const moveLetters = (movingLettersRef, destLettersRef, timing = 'shuffle', rever
 	
 	movingLettersRef.forEach((ref, index) => {
 		const currentDestLetter = destLettersRef.find(destLetter => {
-			return destLetter.current.textContent == ref.current.textContent
+			return destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase()
 		})
 
-		const destIndex = destLettersRef.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
+		const destIndex = destLettersRef.findIndex(destLetter => destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase())
 		destLettersRef.splice(destIndex, 1)
 
 		ref.current.style.textTransform = 'uppercase'

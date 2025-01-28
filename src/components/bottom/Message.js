@@ -1,7 +1,9 @@
-import React from 'react'
-import ButtonContainer from '../ButtonContainer';
+import React, { useRef } from 'react'
+import ButtonContainer from './ButtonContainer';
 
 const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
+
+	const msgContainer = useRef()
 
 	const isCorrectAns = () => {
 		return input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
@@ -36,7 +38,9 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 					case 'direct':
 						return <><strong>{hint.value.toUpperCase()}</strong> is used</>
 					case 'hidden word':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates a hidden word</>
+						return <><strong>{hint.value.toUpperCase()}</strong> indicates a hidden word at <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					case 'hw-2':
+						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is hidden within <strong>{hint.end.value[0].toUpperCase()}</strong></>
 					case 'homophone':
 						return <><strong>{hint.value.toUpperCase()}</strong> indicates a homophone</>
 					case 'initialism':
@@ -71,7 +75,8 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 		isCorrectAns() ? 
 			<><strong>{input.join("").toUpperCase()}</strong> is correct.<br/>Nice work!</> :
 			<><strong>{input.join("").toUpperCase()}</strong> is not the correct answer.</> :
-		getMessage(activeClue.hints[nextHint])
+			getMessage(activeClue.hints[nextHint])
+		
 	
 	const explainer = activeClue.hints[nextHint].explainer ? activeClue.hints[nextHint].explainer : false
 	
@@ -115,7 +120,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 			'continue'
 
 	return(
-		<div className={`message ${messageStyle}`}>
+		<div className={`message ${messageStyle}`} ref={msgContainer}>
 			{message && <div className={'message-copy'}>
 				{message}
 				{explainer && <div className={'explainer'}>{explainer}</div>}

@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonContainer from './ButtonContainer';
+import ButtonContainer from './bottom/ButtonContainer';
 
 import logo from '../assets/img/favicon.png';
 import gif from '../assets/img/learn-cryptic.gif';

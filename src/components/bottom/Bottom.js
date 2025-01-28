@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ButtonContainer from '../ButtonContainer'
+import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
