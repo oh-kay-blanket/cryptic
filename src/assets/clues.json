@@ -1,12 +1,12 @@
 [
 	{
-	  "id": 7,
+	  "id": "7",
 	  "clue": {
 		"value": "Starting with a core of knowledge, gain deeper understanding!"
 	  },
 	  "release": "11/21/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "& Lit.",
 	  "definition": [
 		"Starting with a core of knowledge, gain deeper understanding!"
@@ -39,16 +39,16 @@
 	  }
 	},
 	{
-	  "id": 56,
+	  "id": "56",
 	  "clue": {
 		"value": "In Boston, commuting T trains as a way to get around!"
 	  },
 	  "release": "12/18/2024",
-	  "difficulty": 2,
-	  "ready": false,
-	  "type": "anagram",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram, & Lit.",
 	  "definition": [
-		"way to get around"
+		"In Boston, commuting T trains as a way to get around!"
 	  ],
 	  "hints": [
 		{
@@ -70,13 +70,13 @@
 	  }
 	},
 	{
-	  "id": 123,
+	  "id": "123",
 	  "clue": {
 		"value": "Certain picture-takers came across a bur, surprisingly"
 	  },
 	  "release": "9/12/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"Certain picture-takers"
@@ -101,13 +101,13 @@
 	  }
 	},
 	{
-	  "id": 195,
+	  "id": "195",
 	  "clue": {
 		"value": "Shattering broadcast put things right"
 	  },
 	  "release": "7/5/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"put things right"
@@ -118,7 +118,7 @@
 		  "value": "broadcast",
 		  "end": {
 			"value": [
-			  "shattering",
+			  "Shattering",
 			  "straighten"
 			]
 		  }
@@ -132,13 +132,13 @@
 	  }
 	},
 	{
-	  "id": 204,
+	  "id": "204",
 	  "clue": {
-		"value": "One unusual role in “The Matrix”"
+		"value": "One unusual role in \"The Matrix\""
 	  },
 	  "release": "6/26/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"role in \"The Matrix\""
@@ -150,7 +150,7 @@
 		  "end": {
 			"value": [
 			  "One",
-			  "neO"
+			  "neo"
 			]
 		  }
 		}
@@ -163,13 +163,13 @@
 	  }
 	},
 	{
-	  "id": 213,
+	  "id": "213",
 	  "clue": {
 		"value": "Snarling lips creating speech problem"
 	  },
 	  "release": "6/17/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"speech problem"
@@ -177,7 +177,7 @@
 	  "hints": [
 		{
 		  "category": "anagram",
-		  "value": "snarling",
+		  "value": "Snarling",
 		  "end": {
 			"value": [
 			  "lips",
@@ -194,13 +194,13 @@
 	  }
 	},
 	{
-	  "id": 243,
+	  "id": "243",
 	  "clue": {
 		"value": "Early sci-fi writer’s incredible nerve"
 	  },
 	  "release": "5/18/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"Early sci-fi writer"
@@ -212,7 +212,7 @@
 		  "end": {
 			"value": [
 			  "nerve",
-			  "Verne"
+			  "verne"
 			]
 		  }
 		}
@@ -225,13 +225,13 @@
 	  }
 	},
 	{
-	  "id": 278,
+	  "id": "278",
 	  "clue": {
 		"value": "Wandering stray lecher"
 	  },
 	  "release": "4/13/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"lecher"
@@ -257,13 +257,13 @@
 	  }
 	},
 	{
-	  "id": 290,
+	  "id": "290",
 	  "clue": {
 		"value": "Crooked stripe is less green than all the others"
 	  },
 	  "release": "4/1/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"is less green than all the others"
@@ -288,13 +288,13 @@
 	  }
 	},
 	{
-	  "id": 316,
+	  "id": "316",
 	  "clue": {
 		"value": "\"Perry Mason\" actor’s cocktail of brandy or rum"
 	  },
 	  "release": "3/7/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"\"Perry Mason\" actor"
@@ -319,13 +319,13 @@
 	  }
 	},
 	{
-	  "id": 5,
+	  "id": "5",
 	  "clue": {
 		"value": "Hear Leo's wonky audio receiver"
 	  },
 	  "release": "1/6/2025",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"audio receiver"
@@ -350,13 +350,13 @@
 	  }
 	},
 	{
-	  "id": 12,
+	  "id": "12",
 	  "clue": {
 		"value": "No, fear not traveling between morning and night"
 	  },
 	  "release": "11/24/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"between morning and night"
@@ -381,13 +381,13 @@
 	  }
 	},
 	{
-	  "id": 35,
+	  "id": "35",
 	  "clue": {
 		"value": "Magic Pan pitches battle"
 	  },
 	  "release": "1/2/2025",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"battle"
@@ -412,13 +412,13 @@
 	  }
 	},
 	{
-	  "id": 39,
+	  "id": "39",
 	  "clue": {
 		"value": "List clue she'd anagrammed"
 	  },
 	  "release": "12/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"List"
@@ -443,13 +443,13 @@
 	  }
 	},
 	{
-	  "id": 45,
+	  "id": "45",
 	  "clue": {
 		"value": "Doesn't debate grease must be changed"
 	  },
 	  "release": "12/13/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram",
 	  "definition": [
 		"Doesn't debate"
@@ -474,13 +474,13 @@
 	  }
 	},
 	{
-	  "id": 232,
+	  "id": "232",
 	  "clue": {
 		"value": "Contort a sphere!"
 	  },
 	  "release": "5/29/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "anagram, & Lit.",
 	  "definition": [
 		"Contort a sphere!"
@@ -505,13 +505,13 @@
 	  }
 	},
 	{
-	  "id": 158,
+	  "id": "158",
 	  "clue": {
 		"value": "IRS forms, true, upset hospital personnel"
 	  },
 	  "release": "8/10/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, charade",
 	  "definition": [
 		"IRS forms"
@@ -522,7 +522,7 @@
 		  "value": "upset",
 		  "end": {
 			"value": [
-			  true,
+			  "true",
 			  "retu"
 			]
 		  }
@@ -545,13 +545,13 @@
 	  }
 	},
 	{
-	  "id": 217,
+	  "id": "217",
 	  "clue": {
 		"value": "New era: love of aircraft"
 	  },
 	  "release": "6/13/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, charade",
 	  "definition": [
 		"of aircraft"
@@ -585,13 +585,13 @@
 	  }
 	},
 	{
-	  "id": 267,
+	  "id": "267",
 	  "clue": {
 		"value": "Set off at eight, initially, for property"
 	  },
 	  "release": "4/24/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, charade",
 	  "definition": [
 		"property"
@@ -634,13 +634,13 @@
 	  }
 	},
 	{
-	  "id": 313,
+	  "id": "313",
 	  "clue": {
 		"value": "Radical ran off with biological building block"
 	  },
 	  "release": "3/10/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, charade",
 	  "definition": [
 		"biological building block"
@@ -675,13 +675,13 @@
 	  }
 	},
 	{
-	  "id": 98,
+	  "id": "98",
 	  "clue": {
 		"value": "Experience shifting ground around start of earthquake"
 	  },
 	  "release": "10/5/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Experience"
@@ -726,13 +726,13 @@
 	  }
 	},
 	{
-	  "id": 102,
+	  "id": "102",
 	  "clue": {
 		"value": "Rightfully, girl admitted to wild yell"
 	  },
 	  "release": "10/1/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Rightfully"
@@ -766,8 +766,7 @@
 			  "gal",
 			  "ly"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -778,13 +777,13 @@
 	  }
 	},
 	{
-	  "id": 228,
+	  "id": "228",
 	  "clue": {
 		"value": "Caressed, Don excitedly bolted outside"
 	  },
 	  "release": "6/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Caressed"
@@ -818,8 +817,7 @@
 			  "onD",
 			  "led"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -830,13 +828,13 @@
 	  }
 	},
 	{
-	  "id": 283,
+	  "id": "283",
 	  "clue": {
 		"value": "Compose new septet around symphony’s finale"
 	  },
 	  "release": "4/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Compose"
@@ -870,8 +868,7 @@
 			  "y",
 			  "peset"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -882,13 +879,13 @@
 	  }
 	},
 	{
-	  "id": 294,
+	  "id": "294",
 	  "clue": {
 		"value": "Tuna container holds exotic fuel"
 	  },
 	  "release": "3/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Tuna"
@@ -922,8 +919,7 @@
 			  "luef",
 			  "in"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -934,13 +930,13 @@
 	  }
 	},
 	{
-	  "id": 11,
+	  "id": "11",
 	  "clue": {
 		"value": "Wearing fewer clothes around Rhode Island is an impediment"
 	  },
 	  "release": "1/8/2025",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"impediment"
@@ -984,13 +980,13 @@
 	  }
 	},
 	{
-	  "id": 26,
+	  "id": "26",
 	  "clue": {
 		"value": "Oldest person born in early April into baking"
 	  },
 	  "release": "12/30/2024",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Oldest"
@@ -1034,13 +1030,13 @@
 	  }
 	},
 	{
-	  "id": 58,
+	  "id": "58",
 	  "clue": {
 		"value": "Garland has looked over knot after weather event"
 	  },
 	  "release": "12/20/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Garland has looked over"
@@ -1073,13 +1069,13 @@
 	  }
 	},
 	{
-	  "id": 62,
+	  "id": "62",
 	  "clue": {
 		"value": "Starting after first of January working at home?"
 	  },
 	  "release": "11/4/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Starting"
@@ -1122,13 +1118,13 @@
 	  }
 	},
 	{
-	  "id": 73,
+	  "id": "73",
 	  "clue": {
 		"value": "Coffee servers initially upset nurses"
 	  },
 	  "release": "10/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Coffee servers"
@@ -1170,13 +1166,13 @@
 	  }
 	},
 	{
-	  "id": 75,
+	  "id": "75",
 	  "clue": {
 		"value": "That girl's beginning to bother Ginger, among others"
 	  },
 	  "release": "10/26/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Ginger, among others"
@@ -1218,13 +1214,13 @@
 	  }
 	},
 	{
-	  "id": 78,
+	  "id": "78",
 	  "clue": {
 		"value": "One hands out cards with goals"
 	  },
 	  "release": "10/24/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"goals"
@@ -1266,13 +1262,13 @@
 	  }
 	},
 	{
-	  "id": 115,
+	  "id": "115",
 	  "clue": {
 		"value": "Six score, essentially"
 	  },
 	  "release": "9/19/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"essentially"
@@ -1314,13 +1310,13 @@
 	  }
 	},
 	{
-	  "id": 117,
+	  "id": "117",
 	  "clue": {
 		"value": "Venerated ones go down south"
 	  },
 	  "release": "9/17/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Venerated ones"
@@ -1372,13 +1368,13 @@
 	  }
 	},
 	{
-	  "id": 118,
+	  "id": "118",
 	  "clue": {
 		"value": "Nixon wearing a thin coat"
 	  },
 	  "release": "9/16/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"thin coat"
@@ -1430,13 +1426,13 @@
 	  }
 	},
 	{
-	  "id": 126,
+	  "id": "126",
 	  "clue": {
 		"value": "Agreements with a corporation’s primary power suppliers"
 	  },
 	  "release": "9/9/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Agreements"
@@ -1488,13 +1484,13 @@
 	  }
 	},
 	{
-	  "id": 127,
+	  "id": "127",
 	  "clue": {
 		"value": "Stirred frying pan eagerly at first"
 	  },
 	  "release": "9/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Stirred"
@@ -1536,13 +1532,13 @@
 	  }
 	},
 	{
-	  "id": 128,
+	  "id": "128",
 	  "clue": {
 		"value": "Land surrounded by water is rented"
 	  },
 	  "release": "9/7/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Land surrounded by water"
@@ -1584,13 +1580,13 @@
 	  }
 	},
 	{
-	  "id": 129,
+	  "id": "129",
 	  "clue": {
 		"value": "Make black and brown patterned fabric"
 	  },
 	  "release": "9/6/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"patterned fabric"
@@ -1632,13 +1628,13 @@
 	  }
 	},
 	{
-	  "id": 132,
+	  "id": "132",
 	  "clue": {
 		"value": "Jump with energy and desire"
 	  },
 	  "release": "9/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"desire"
@@ -1680,13 +1676,13 @@
 	  }
 	},
 	{
-	  "id": 141,
+	  "id": "141",
 	  "clue": {
 		"value": "Ring pursuing spy group’s informal greeting"
 	  },
 	  "release": "8/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"informal greeting"
@@ -1728,13 +1724,13 @@
 	  }
 	},
 	{
-	  "id": 159,
+	  "id": "159",
 	  "clue": {
 		"value": "Loud noise of red propeller"
 	  },
 	  "release": "8/9/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Loud noise"
@@ -1776,13 +1772,13 @@
 	  }
 	},
 	{
-	  "id": 160,
+	  "id": "160",
 	  "clue": {
 		"value": "Snag Hanks’ first desire"
 	  },
 	  "release": "8/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Snag"
@@ -1824,13 +1820,13 @@
 	  }
 	},
 	{
-	  "id": 161,
+	  "id": "161",
 	  "clue": {
 		"value": "Ran with brio, initially, and was in front"
 	  },
 	  "release": "8/7/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Ran"
@@ -1872,13 +1868,13 @@
 	  }
 	},
 	{
-	  "id": 162,
+	  "id": "162",
 	  "clue": {
 		"value": "Sleep at noon (twelve)"
 	  },
 	  "release": "8/6/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"twelve"
@@ -1920,13 +1916,13 @@
 	  }
 	},
 	{
-	  "id": 163,
+	  "id": "163",
 	  "clue": {
 		"value": "Girls with large butts"
 	  },
 	  "release": "8/5/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Girls"
@@ -1968,13 +1964,13 @@
 	  }
 	},
 	{
-	  "id": 184,
+	  "id": "184",
 	  "clue": {
 		"value": "Spanish adult resort"
 	  },
 	  "release": "7/16/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"resort"
@@ -2007,13 +2003,13 @@
 	  }
 	},
 	{
-	  "id": 190,
+	  "id": "190",
 	  "clue": {
 		"value": "Beg in Low Church"
 	  },
 	  "release": "7/10/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Beg"
@@ -2046,13 +2042,13 @@
 	  }
 	},
 	{
-	  "id": 215,
+	  "id": "215",
 	  "clue": {
 		"value": "Rude person runs, after scary yell"
 	  },
 	  "release": "6/15/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Rude person"
@@ -2095,13 +2091,13 @@
 	  }
 	},
 	{
-	  "id": 245,
+	  "id": "245",
 	  "clue": {
 		"value": "Fix movie’s introduction and finale"
 	  },
 	  "release": "5/16/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Fix"
@@ -2134,13 +2130,13 @@
 	  }
 	},
 	{
-	  "id": 246,
+	  "id": "246",
 	  "clue": {
 		"value": "Took advantage of “Us” editor"
 	  },
 	  "release": "5/15/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Took advantage of"
@@ -2173,13 +2169,13 @@
 	  }
 	},
 	{
-	  "id": 251,
+	  "id": "251",
 	  "clue": {
 		"value": "A drunk settled"
 	  },
 	  "release": "5/10/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"settled"
@@ -2212,13 +2208,13 @@
 	  }
 	},
 	{
-	  "id": 258,
+	  "id": "258",
 	  "clue": {
 		"value": "Carol’s wrong, ultimately wrong"
 	  },
 	  "release": "5/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Carol"
@@ -2251,13 +2247,13 @@
 	  }
 	},
 	{
-	  "id": 295,
+	  "id": "295",
 	  "clue": {
 		"value": "A way to capture girl with ring"
 	  },
 	  "release": "3/27/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"A way to capture"
@@ -2290,13 +2286,13 @@
 	  }
 	},
 	{
-	  "id": 308,
+	  "id": "308",
 	  "clue": {
 		"value": "Change the decor, red and orange"
 	  },
 	  "release": "3/14/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Change the decor"
@@ -2324,13 +2320,13 @@
 	  }
 	},
 	{
-	  "id": 320,
+	  "id": "320",
 	  "clue": {
 		"value": "Endlessly hot nurse is a member of the brass"
 	  },
 	  "release": "3/5/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"a member of the brass"
@@ -2363,13 +2359,13 @@
 	  }
 	},
 	{
-	  "id": 322,
+	  "id": "322",
 	  "clue": {
 		"value": "Mild Irish oath: “Plead or pray at heart”"
 	  },
 	  "release": "3/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Mild Irish oath"
@@ -2406,13 +2402,13 @@
 	  }
 	},
 	{
-	  "id": 323,
+	  "id": "323",
 	  "clue": {
 		"value": "Quickly move Southern Indian dish"
 	  },
 	  "release": "3/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Quickly move"
@@ -2445,13 +2441,13 @@
 	  }
 	},
 	{
-	  "id": 69,
+	  "id": "69",
 	  "clue": {
 		"value": "Hurt most unusual rodents"
 	  },
 	  "release": "10/31/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, anagram",
 	  "definition": [
 		"rodents"
@@ -2494,13 +2490,13 @@
 	  }
 	},
 	{
-	  "id": 113,
+	  "id": "113",
 	  "clue": {
 		"value": "Pass up Peter, taking issue ultimately with one pulling the strings"
 	  },
 	  "release": "9/21/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"one pulling the strings"
@@ -2538,8 +2534,7 @@
 			  "e",
 			  "r"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2550,13 +2545,13 @@
 	  }
 	},
 	{
-	  "id": 164,
+	  "id": "164",
 	  "clue": {
 		"value": "Marsh full of grass hides male ex-slaves"
 	  },
 	  "release": "11/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"ex-slaves"
@@ -2599,8 +2594,7 @@
 			  "M",
 			  "en"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2611,13 +2605,13 @@
 	  }
 	},
 	{
-	  "id": 209,
+	  "id": "209",
 	  "clue": {
 		"value": "Way out, very loud gold-plated concert gear"
 	  },
 	  "release": "6/21/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"Way out"
@@ -2673,13 +2667,13 @@
 	  }
 	},
 	{
-	  "id": 236,
+	  "id": "236",
 	  "clue": {
 		"value": "Sister has married husband from Stockholm, perhaps"
 	  },
 	  "release": "5/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"from Stockholm, perhaps"
@@ -2721,8 +2715,7 @@
 			"value": [
 			  "H"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2733,13 +2726,13 @@
 	  }
 	},
 	{
-	  "id": 297,
+	  "id": "297",
 	  "clue": {
 		"value": "My high school collects rare red resins"
 	  },
 	  "release": "3/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"resins"
@@ -2786,8 +2779,7 @@
 			  "r",
 			  "HS"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2798,13 +2790,13 @@
 	  }
 	},
 	{
-	  "id": 298,
+	  "id": "298",
 	  "clue": {
 		"value": "Saw-toothed river rodent caught by ranked tennis player"
 	  },
 	  "release": "3/24/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"Saw-toothed"
@@ -2846,8 +2838,7 @@
 			  "rat",
 			  "ed"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2858,13 +2849,13 @@
 	  }
 	},
 	{
-	  "id": 299,
+	  "id": "299",
 	  "clue": {
 		"value": "Note my enthralling arrival and join up again"
 	  },
 	  "release": "3/23/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"join up again"
@@ -2902,8 +2893,7 @@
 			  "arr",
 			  "y"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2914,13 +2904,13 @@
 	  }
 	},
 	{
-	  "id": 238,
+	  "id": "238",
 	  "clue": {
 		"value": "From a certain continent, a supporter welcomes Rick briefly"
 	  },
 	  "release": "5/23/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, container, deletion",
 	  "definition": [
 		"From a certain continent"
@@ -2963,8 +2953,7 @@
 			  "Ric",
 			  "an"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -2975,13 +2964,13 @@
 	  }
 	},
 	{
-	  "id": 21,
+	  "id": "21",
 	  "clue": {
 		"value": "Financial failure is not entirely peaceful"
 	  },
 	  "release": "11/28/2024",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Financial"
@@ -3021,8 +3010,7 @@
 			"value": [
 			  "cal"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3033,13 +3021,13 @@
 	  }
 	},
 	{
-	  "id": 136,
+	  "id": "136",
 	  "clue": {
 		"value": "Topless Cleo narrated abridged story, ignoring radical Russian novelist"
 	  },
 	  "release": "8/30/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Russian novelist"
@@ -3111,13 +3099,13 @@
 	  }
 	},
 	{
-	  "id": 140,
+	  "id": "140",
 	  "clue": {
 		"value": "Descriptor of the empty room"
 	  },
 	  "release": "8/26/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Descriptor"
@@ -3160,13 +3148,13 @@
 	  }
 	},
 	{
-	  "id": 165,
+	  "id": "165",
 	  "clue": {
 		"value": "When interrupted, start to talk in Polish"
 	  },
 	  "release": "8/4/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Polish"
@@ -3208,13 +3196,13 @@
 	  }
 	},
 	{
-	  "id": 166,
+	  "id": "166",
 	  "clue": {
 		"value": "Mean and unhappy, I stick almost to the end"
 	  },
 	  "release": "8/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Mean"
@@ -3245,8 +3233,7 @@
 			"value": [
 			  "stic"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3257,13 +3244,13 @@
 	  }
 	},
 	{
-	  "id": 167,
+	  "id": "167",
 	  "clue": {
 		"value": "Like a no-good member of royalty"
 	  },
 	  "release": "8/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"Like"
@@ -3294,8 +3281,7 @@
 			"value": [
 			  "kin"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3306,13 +3292,13 @@
 	  }
 	},
 	{
-	  "id": 265,
+	  "id": "265",
 	  "clue": {
 		"value": "French city park is excluding kids, at first"
 	  },
 	  "release": "4/26/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "charade, deletion",
 	  "definition": [
 		"French city"
@@ -3346,13 +3332,13 @@
 	  }
 	},
 	{
-	  "id": 23,
+	  "id": "23",
 	  "clue": {
 		"value": "Runner Hugo's content with it in late afternoon"
 	  },
 	  "release": "11/30/2024",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"Runner"
@@ -3390,8 +3376,7 @@
 			  "it",
 			  "ive"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3402,13 +3387,13 @@
 	  }
 	},
 	{
-	  "id": 65,
+	  "id": "65",
 	  "clue": {
 		"value": "Don eats Ann's brand of yogurt"
 	  },
 	  "release": "11/17/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"brand of yogurt"
@@ -3431,8 +3416,7 @@
 			  "Ann",
 			  "on"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3443,13 +3427,13 @@
 	  }
 	},
 	{
-	  "id": 83,
+	  "id": "83",
 	  "clue": {
 		"value": "C in C enthralled by brief opportunities to use power unjustly"
 	  },
 	  "release": "10/19/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"to use power unjustly"
@@ -3482,8 +3466,7 @@
 			  "pres",
 			  "s"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3494,13 +3477,13 @@
 	  }
 	},
 	{
-	  "id": 105,
+	  "id": "105",
 	  "clue": {
 		"value": "Sticky stuff found around a U.S. territory"
 	  },
 	  "release": "9/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"U.S. territory"
@@ -3528,8 +3511,7 @@
 			  "a",
 			  "m"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3540,13 +3522,13 @@
 	  }
 	},
 	{
-	  "id": 257,
+	  "id": "257",
 	  "clue": {
 		"value": "Win, capturing opposition’s last man"
 	  },
 	  "release": "5/4/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"man"
@@ -3579,8 +3561,7 @@
 			  "n",
 			  "t"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3591,13 +3572,13 @@
 	  }
 	},
 	{
-	  "id": 284,
+	  "id": "284",
 	  "clue": {
 		"value": "Greek character embraced by prostitute, a sticky situation?"
 	  },
 	  "release": "4/7/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"a sticky situation?"
@@ -3630,8 +3611,7 @@
 			  "pi",
 			  "t"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3642,13 +3622,13 @@
 	  }
 	},
 	{
-	  "id": 304,
+	  "id": "304",
 	  "clue": {
 		"value": "Does keeping time inhibit?"
 	  },
 	  "release": "3/18/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"inihibit"
@@ -3681,8 +3661,7 @@
 			  "T",
 			  "er"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3693,13 +3672,13 @@
 	  }
 	},
 	{
-	  "id": 306,
+	  "id": "306",
 	  "clue": {
 		"value": "Cries about large unkempt people"
 	  },
 	  "release": "3/16/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"unkempt people"
@@ -3732,8 +3711,7 @@
 			  "L",
 			  "obs"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3744,13 +3722,13 @@
 	  }
 	},
 	{
-	  "id": 63,
+	  "id": "63",
 	  "clue": {
 		"value": "Inquires nosily about despicable general's perks"
 	  },
 	  "release": "11/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "container, charade",
 	  "definition": [
 		"perks"
@@ -3793,8 +3771,7 @@
 			  "G",
 			  "es"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -3805,13 +3782,13 @@
 	  }
 	},
 	{
-	  "id": 112,
+	  "id": "112",
 	  "clue": {
 		"value": "Actress Cruz leaves prison behind in “Bond on the Run”"
 	  },
 	  "release": "9/22/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"\"Bond on the Run\""
@@ -3855,13 +3832,13 @@
 	  }
 	},
 	{
-	  "id": 138,
+	  "id": "138",
 	  "clue": {
 		"value": "Join service facility after college"
 	  },
 	  "release": "8/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Join"
@@ -3904,13 +3881,13 @@
 	  }
 	},
 	{
-	  "id": 173,
+	  "id": "173",
 	  "clue": {
 		"value": "Messes up chores and departs"
 	  },
 	  "release": "7/27/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Messes up"
@@ -3943,13 +3920,13 @@
 	  }
 	},
 	{
-	  "id": 198,
+	  "id": "198",
 	  "clue": {
 		"value": "Run into limitless drama"
 	  },
 	  "release": "7/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Run into"
@@ -3974,13 +3951,13 @@
 	  }
 	},
 	{
-	  "id": 205,
+	  "id": "205",
 	  "clue": {
 		"value": "Academic institution in Honshu ignoring the odds"
 	  },
 	  "release": "6/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Academic institution"
@@ -4005,13 +3982,13 @@
 	  }
 	},
 	{
-	  "id": 263,
+	  "id": "263",
 	  "clue": {
 		"value": "Wrath of Israel evens out"
 	  },
 	  "release": "4/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Wrath"
@@ -4037,13 +4014,13 @@
 	  }
 	},
 	{
-	  "id": 264,
+	  "id": "264",
 	  "clue": {
 		"value": "Expensive ruby initially misplaced by actress Meryl"
 	  },
 	  "release": "4/27/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Expensive"
@@ -4086,13 +4063,13 @@
 	  }
 	},
 	{
-	  "id": 285,
+	  "id": "285",
 	  "clue": {
 		"value": "Edges away from paisley passageway"
 	  },
 	  "release": "4/6/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"passageway"
@@ -4117,13 +4094,13 @@
 	  }
 	},
 	{
-	  "id": 321,
+	  "id": "321",
 	  "clue": {
 		"value": "Break tip off of tool, also"
 	  },
 	  "release": "3/4/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"also"
@@ -4148,13 +4125,13 @@
 	  }
 	},
 	{
-	  "id": 327,
+	  "id": "327",
 	  "clue": {
 		"value": "Eartha’s half-finished serving of corn"
 	  },
 	  "release": "2/27/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"serving of corn"
@@ -4179,13 +4156,13 @@
 	  }
 	},
 	{
-	  "id": 131,
+	  "id": "131",
 	  "clue": {
 		"value": "Was honest with Republican replacing leading Liberal, and celebrated"
 	  },
 	  "release": "9/4/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "deletion, charade",
 	  "definition": [
 		"celebrated"
@@ -4246,13 +4223,13 @@
 	  }
 	},
 	{
-	  "id": 183,
+	  "id": "183",
 	  "clue": {
 		"value": "Brings home fishermen’s equipment"
 	  },
 	  "release": "7/17/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "double definition",
 	  "definition": [
 		"Brings home",
@@ -4266,13 +4243,13 @@
 	  }
 	},
 	{
-	  "id": 255,
+	  "id": "255",
 	  "clue": {
 		"value": "Northwestern state’s hospital area"
 	  },
 	  "release": "5/6/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "double definition",
 	  "definition": [
 		"Northwestern state",
@@ -4297,13 +4274,53 @@
 	  }
 	},
 	{
-	  "id": 2,
+	  "id": "20",
+	  "clue": {
+		"value": "Throw black goo"
+	  },
+	  "release": "11/27/2024",
+	  "difficulty": "1",
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"Throw",
+		"black goo"
+	  ],
+	  "solution": {
+		"value": "pitch"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "24",
+	  "clue": {
+		"value": "E.g., breakfast grain ground up"
+	  },
+	  "release": "12/29/2024",
+	  "difficulty": "1",
+	  "ready": "FALSE",
+	  "type": "double definition",
+	  "definition": [
+		"E.g., breakfast",
+		"grain ground up"
+	  ],
+	  "solution": {
+		"value": "meal"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "2",
 	  "clue": {
 		"value": "Espresso drink held by hospital attendant"
 	  },
 	  "release": "1/5/2025",
-	  "difficulty": 1,
-	  "ready": false,
+	  "difficulty": "1",
+	  "ready": "TRUE",
 	  "type": "hidden word",
 	  "definition": [
 		"Espresso drink"
@@ -4315,7 +4332,7 @@
 		  "end": {
 			"value": [
 			  "hospital attendant",
-			  "l atte"
+			  "latte"
 			]
 		  }
 		}
@@ -4328,13 +4345,13 @@
 	  }
 	},
 	{
-	  "id": 175,
+	  "id": "175",
 	  "clue": {
 		"value": "UPS Store stocks attention-getter"
 	  },
 	  "release": "7/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "hidden word",
 	  "definition": [
 		"attention-getter"
@@ -4342,9 +4359,10 @@
 	  "hints": [
 		{
 		  "category": "hidden word",
-		  "value": "UPS store",
+		  "value": "stocks",
 		  "end": {
 			"value": [
+			  "UPS Store",
 			  "psst"
 			]
 		  }
@@ -4358,13 +4376,13 @@
 	  }
 	},
 	{
-	  "id": 176,
+	  "id": "176",
 	  "clue": {
 		"value": "Field in Far East"
 	  },
 	  "release": "7/24/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "TRUE",
 	  "type": "hidden word",
 	  "definition": [
 		"Field"
@@ -4372,9 +4390,10 @@
 	  "hints": [
 		{
 		  "category": "hidden word",
-		  "value": "Far East",
+		  "value": "in",
 		  "end": {
 			"value": [
+			  "Far East",
 			  "area"
 			]
 		  }
@@ -4388,13 +4407,13 @@
 	  }
 	},
 	{
-	  "id": 269,
+	  "id": "269",
 	  "clue": {
-		"value": "“Cosmo” sisterhood features learning without trying?"
+		"value": "\"Cosmo\" sisterhood features learning without trying?"
 	  },
 	  "release": "4/22/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"learning without trying?"
@@ -4419,13 +4438,13 @@
 	  }
 	},
 	{
-	  "id": 311,
+	  "id": "311",
 	  "clue": {
 		"value": "Thumbs a ride smuggling dress"
 	  },
 	  "release": "3/12/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"dress"
@@ -4433,9 +4452,10 @@
 	  "hints": [
 		{
 		  "category": "hidden word",
-		  "value": "Thumbs a ride",
+		  "value": "sumggling",
 		  "end": {
 			"value": [
+			  "Thumbs a ride",
 			  "sari"
 			]
 		  }
@@ -4449,13 +4469,13 @@
 	  }
 	},
 	{
-	  "id": 326,
+	  "id": "326",
 	  "clue": {
-		"value": "Ramses’ pyramid covers spot"
+		"value": "Ramses' pyramid covers spot"
 	  },
 	  "release": "2/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"spot"
@@ -4480,13 +4500,13 @@
 	  }
 	},
 	{
-	  "id": 18,
+	  "id": "18",
 	  "clue": {
 		"value": "Held by clasp, a designer suit"
 	  },
 	  "release": "12/28/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"suit"
@@ -4498,7 +4518,7 @@
 		  "end": {
 			"value": [
 			  "clasp, a designer",
-			  "sp, a de"
+			  "spade"
 			]
 		  }
 		}
@@ -4511,13 +4531,13 @@
 	  }
 	},
 	{
-	  "id": 31,
+	  "id": "31",
 	  "clue": {
 		"value": "Least outgoing member of pushy establishment"
 	  },
 	  "release": "12/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"Least outgoing"
@@ -4529,7 +4549,7 @@
 		  "end": {
 			"value": [
 			  "pushy establishment",
-			  "shy est"
+			  "shyest"
 			]
 		  }
 		}
@@ -4542,13 +4562,13 @@
 	  }
 	},
 	{
-	  "id": 52,
+	  "id": "52",
 	  "clue": {
 		"value": "Buried in Tucson or another arid region"
 	  },
 	  "release": "1/15/2025",
-	  "difficulty": 1,
-	  "ready": false,
+	  "difficulty": "1",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"arid region"
@@ -4560,7 +4580,7 @@
 		  "end": {
 			"value": [
 			  "Tucson or another",
-			  "son or an"
+			  "sonoran"
 			]
 		  }
 		}
@@ -4573,13 +4593,13 @@
 	  }
 	},
 	{
-	  "id": 66,
+	  "id": "66",
 	  "clue": {
 		"value": "Fulminate against providing drink"
 	  },
 	  "release": "11/2/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"drink"
@@ -4591,7 +4611,7 @@
 		  "end": {
 			"value": [
 			  "Fulminate against",
-			  "t ea"
+			  "tea"
 			]
 		  }
 		}
@@ -4604,13 +4624,13 @@
 	  }
 	},
 	{
-	  "id": 76,
+	  "id": "76",
 	  "clue": {
 		"value": "Unfluctuating feature of muzzle velocity"
 	  },
 	  "release": "10/25/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"Unfluctuating"
@@ -4635,13 +4655,13 @@
 	  }
 	},
 	{
-	  "id": 130,
+	  "id": "130",
 	  "clue": {
 		"value": "One peer sheathes sword"
 	  },
 	  "release": "9/5/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"sword"
@@ -4666,13 +4686,13 @@
 	  }
 	},
 	{
-	  "id": 193,
+	  "id": "193",
 	  "clue": {
 		"value": "Originally called some telephone extension"
 	  },
 	  "release": "7/7/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"Originally called"
@@ -4697,13 +4717,13 @@
 	  }
 	},
 	{
-	  "id": 219,
+	  "id": "219",
 	  "clue": {
 		"value": "Certain tide seen in Minneapolis"
 	  },
 	  "release": "6/11/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"Certain tide"
@@ -4728,13 +4748,13 @@
 	  }
 	},
 	{
-	  "id": 227,
+	  "id": "227",
 	  "clue": {
 		"value": "Focus too much on portion of job session"
 	  },
 	  "release": "6/3/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"Focus too much"
@@ -4759,13 +4779,13 @@
 	  }
 	},
 	{
-	  "id": 252,
+	  "id": "252",
 	  "clue": {
 		"value": "Coffee contains ice"
 	  },
 	  "release": "5/9/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "hidden word",
 	  "definition": [
 		"ice"
@@ -4791,13 +4811,13 @@
 	  }
 	},
 	{
-	  "id": 82,
+	  "id": "82",
 	  "clue": {
 		"value": "Retro gym ran a mortuary section for centurions, et al"
 	  },
 	  "release": "5/14/2024",
-	  "difficulty": 4,
-	  "ready": false,
+	  "difficulty": "4",
+	  "ready": "FALSE",
 	  "type": "hidden word, reversal",
 	  "definition": [
 		"centurions, et al"
@@ -4821,8 +4841,7 @@
 			  "ymranamor",
 			  "Roman army"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -4833,13 +4852,13 @@
 	  }
 	},
 	{
-	  "id": 177,
+	  "id": "177",
 	  "clue": {
 		"value": "Religious sect member, repulsed, beats a retreat inside"
 	  },
 	  "release": "5/24/2024",
-	  "difficulty": 4,
-	  "ready": false,
+	  "difficulty": "4",
+	  "ready": "FALSE",
 	  "type": "hidden word, reversal",
 	  "definition": [
 		"Religious sect member"
@@ -4863,8 +4882,7 @@
 			  "atsar",
 			  "rasta"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -4875,13 +4893,13 @@
 	  }
 	},
 	{
-	  "id": 199,
+	  "id": "199",
 	  "clue": {
 		"value": "Plastic pet ate carelessly partly thrown back"
 	  },
 	  "release": "5/31/2024",
-	  "difficulty": 4,
-	  "ready": false,
+	  "difficulty": "4",
+	  "ready": "FALSE",
 	  "type": "hidden word, reversal",
 	  "definition": [
 		"Plastic"
@@ -4905,8 +4923,7 @@
 			  "etateca",
 			  "acetate"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -4917,13 +4934,13 @@
 	  }
 	},
 	{
-	  "id": 16,
+	  "id": "16",
 	  "clue": {
 		"value": "South Mountain, say"
 	  },
 	  "release": "1/9/2025",
-	  "difficulty": 1,
-	  "ready": false,
+	  "difficulty": "1",
+	  "ready": "FALSE",
 	  "type": "homophone",
 	  "definition": [
 		"say"
@@ -4956,13 +4973,13 @@
 	  }
 	},
 	{
-	  "id": 17,
+	  "id": "17",
 	  "clue": {
 		"value": "Eyeglasses initially broken by liberal in terrible fiasco"
 	  },
 	  "release": "1/2/2025",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "homophone",
 	  "definition": [
 		"Eyeglasses"
@@ -4998,13 +5015,13 @@
 	  }
 	},
 	{
-	  "id": 60,
+	  "id": "60",
 	  "clue": {
 		"value": "Pop star to hum quietly while slowly passing gas, we hear"
 	  },
 	  "release": "12/22/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "homophone",
 	  "definition": [
 		"Pop star"
@@ -5029,13 +5046,13 @@
 	  }
 	},
 	{
-	  "id": 74,
+	  "id": "74",
 	  "clue": {
 		"value": "Claims a shelf is mentioned"
 	  },
 	  "release": "10/27/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "homophone",
 	  "definition": [
 		"Alleges"
@@ -5063,13 +5080,13 @@
 	  }
 	},
 	{
-	  "id": 188,
+	  "id": "188",
 	  "clue": {
 		"value": "You mentioned sheep"
 	  },
 	  "release": "7/12/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "homophone",
 	  "definition": [
 		"sheep"
@@ -5094,13 +5111,56 @@
 	  }
 	},
 	{
-	  "id": 50,
+	  "id": "15",
+	  "clue": {
+		"value": "Sounds like Fleetwood Mac frontwoman went after compensation in her hometown"
+	  },
+	  "release": "12/27/2024",
+	  "difficulty": "3",
+	  "ready": "FALSE",
+	  "type": "homophone",
+	  "definition": [
+		"her hometown"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "compensation",
+		  "end": {
+			"value": [
+			  "fee"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Fleetwood Mac frontwoman",
+		  "end": {
+			"value": [
+			  "Nicks"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Sounds like"
+		}
+	  ],
+	  "solution": {
+		"value": "phoenix"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
+	  "id": "50",
 	  "clue": {
 		"value": "Repeatedly slam nicer way to get to London or Tokyo?"
 	  },
 	  "release": "12/15/2024",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "letter bank",
 	  "definition": [
 		"way to get to London or Tokyo?"
@@ -5125,13 +5185,13 @@
 	  }
 	},
 	{
-	  "id": 107,
+	  "id": "107",
 	  "clue": {
 		"value": "Auto-canibalizing serpent often robs you last"
 	  },
 	  "release": "11/6/2024",
-	  "difficulty": 3,
-	  "ready": false,
+	  "difficulty": "3",
+	  "ready": "FALSE",
 	  "type": "letter bank",
 	  "definition": [
 		"Auto-canibalizing serpent"
@@ -5165,13 +5225,44 @@
 	  }
 	},
 	{
-	  "id": 108,
+	  "id": "3",
+	  "clue": {
+		"value": "Repeatedly retain host"
+	  },
+	  "release": "11/20/2024",
+	  "difficulty": "2",
+	  "ready": "FALSE",
+	  "type": "letter bank",
+	  "definition": [
+		"host"
+	  ],
+	  "hints": [
+		{
+		  "category": "letter bank",
+		  "value": "Repeatedly",
+		  "end": {
+			"value": [
+			  "retain",
+			  "entertainer"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "entertainer"
+	  },
+	  "source": {
+		"value": "Fraz"
+	  }
+	},
+	{
+	  "id": "108",
 	  "clue": {
 		"value": "Restaurant supervisors marry bigots, per Rev. Spooner"
 	  },
 	  "release": "9/26/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "spoonerism",
 	  "definition": [
 		"Restaurant supervisors"
@@ -5213,13 +5304,13 @@
 	  }
 	},
 	{
-	  "id": 192,
+	  "id": "192",
 	  "clue": {
 		"value": "Cut short sharp criticism, per Rev. Spooner’s plan"
 	  },
 	  "release": "7/8/2024",
-	  "difficulty": 2,
-	  "ready": false,
+	  "difficulty": "2",
+	  "ready": "FALSE",
 	  "type": "spoonerism",
 	  "definition": [
 		"plan"
@@ -5265,7 +5356,7 @@
 	  "clue": {
 		"value": "Merriam-Webster describes a California bird"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"bird"
@@ -5308,8 +5399,7 @@
 			  "CA",
 			  "W"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5323,7 +5413,7 @@
 	  "clue": {
 		"value": "Thanks boyfriend taking lover’s first picture"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"picture"
@@ -5365,8 +5455,7 @@
 			  "l",
 			  "eau"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5380,7 +5469,7 @@
 	  "clue": {
 		"value": "Beg for rascal stories"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Beg"
@@ -5402,8 +5491,7 @@
 			"value": [
 			  "lore"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5417,7 +5505,7 @@
 	  "clue": {
 		"value": "Actress Russo, married, handled more issues?"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"handled more issues?"
@@ -5439,8 +5527,7 @@
 			"value": [
 			  "wed"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5454,7 +5541,7 @@
 	  "clue": {
 		"value": "Refined oil’s storage site"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "anagram",
 	  "definition": [
 		"storage site"
@@ -5467,8 +5554,7 @@
 			"value": [
 			  "oil's"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5482,7 +5568,7 @@
 	  "clue": {
 		"value": "Three-dimensional artwork of underwater structure surrounding large island"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"Three-dimensional artwork"
@@ -5525,8 +5611,7 @@
 			  "i",
 			  "ef"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5540,7 +5625,7 @@
 	  "clue": {
 		"value": "Shortstop gets into vigorous squabble"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"squabble"
@@ -5572,8 +5657,7 @@
 			  "ss",
 			  "le"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5587,7 +5671,7 @@
 	  "clue": {
 		"value": "Article by that group in “Country Music”?"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"\"Country Music?\""
@@ -5610,8 +5694,7 @@
 			  "them"
 			]
 		  },
-		  "explainer": "\"Country Music\" is a clever trick, as a national anthem is a type of \"country music\"",
-		  "reveals": true
+		  "explainer": "\"Country Music\" is a clever trick, as a national anthem is a type of \"country music\""
 		}
 	  ],
 	  "solution": {
@@ -5625,7 +5708,7 @@
 	  "clue": {
 		"value": "Woman’s short boy"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"boy"
@@ -5648,8 +5731,7 @@
 			  "lady",
 			  "lad"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5663,7 +5745,7 @@
 	  "clue": {
 		"value": "Cheer with every other breath"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "deletion",
 	  "definition": [
 		"Cheer"
@@ -5678,8 +5760,7 @@
 			  "rah"
 			]
 		  },
-		  "explainer": "Deleting every other letter of \"breath\" yields \"rah\"",
-		  "reveals": true
+		  "explainer": "Deleting every other letter of \"breath\" yields \"rah\""
 		}
 	  ],
 	  "solution": {
@@ -5693,7 +5774,7 @@
 	  "clue": {
 		"value": "Seldom seen Conservative in panic"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "container",
 	  "definition": [
 		"Seldom seen"
@@ -5726,8 +5807,7 @@
 			  "c",
 			  "are"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5741,7 +5821,7 @@
 	  "clue": {
 		"value": "Adult comics admitting bit of angst is in store"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"is in store"
@@ -5783,8 +5863,7 @@
 			  "a",
 			  "its"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5798,7 +5877,7 @@
 	  "clue": {
 		"value": "Valerie, I’m holding up tranquilizer"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, container",
 	  "definition": [
 		"tranquilizer"
@@ -5840,8 +5919,7 @@
 			  "u",
 			  "m"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5855,7 +5933,7 @@
 	  "clue": {
 		"value": "Humid block party’s debut"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Humid"
@@ -5877,8 +5955,7 @@
 			"value": [
 			  "p"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5892,7 +5969,7 @@
 	  "clue": {
 		"value": "Leo, for one, with soldiers returning mid-month"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, reversal",
 	  "definition": [
 		"Leo, for one"
@@ -5925,8 +6002,7 @@
 			  "n"
 			]
 		  },
-		  "explainer": "Leo is an astrological sign",
-		  "reveals": true
+		  "explainer": "Leo is an astrological sign"
 		}
 	  ],
 	  "solution": {
@@ -5940,7 +6016,7 @@
 	  "clue": {
 		"value": "Famous trio of women counter formidable foe, for the most part"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade, deletion, reversal",
 	  "definition": [
 		"Famous trio"
@@ -5982,8 +6058,7 @@
 			  "nemesi",
 			  "isemen"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -5997,7 +6072,7 @@
 	  "clue": {
 		"value": "Rundown cab enters foreign realms"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "anagram, container",
 	  "definition": [
 		"Rundown"
@@ -6031,8 +6106,7 @@
 			  "hack",
 			  "le"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -6046,7 +6120,7 @@
 	  "clue": {
 		"value": "Believe in true sign of disuse"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "type": "charade",
 	  "definition": [
 		"Believe in"
@@ -6054,7 +6128,7 @@
 	  "hints": [
 		{
 		  "category": "symbol",
-		  "value": true,
+		  "value": "true",
 		  "end": {
 			"value": [
 			  "t"
@@ -6068,8 +6142,7 @@
 			"value": [
 			  "rust"
 			]
-		  },
-		  "reveals": true
+		  }
 		}
 	  ],
 	  "solution": {
@@ -6083,7 +6156,7 @@
 	  "clue": {
 		"value": "Overlook a long religious text"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "missal"
 	  },
@@ -6095,7 +6168,7 @@
 	  "clue": {
 		"value": "Comes down while carrying lantern"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "alights"
 	  },
@@ -6107,7 +6180,7 @@
 	  "clue": {
 		"value": "Youngster has rare gait"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "trot"
 	  },
@@ -6119,7 +6192,7 @@
 	  "clue": {
 		"value": "Note interrupting bad notes?"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "bread"
 	  },
@@ -6131,7 +6204,7 @@
 	  "clue": {
 		"value": "Isolate senile bum"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "enisle"
 	  },
@@ -6143,7 +6216,7 @@
 	  "clue": {
 		"value": "Amazingly fun dream, like some pictures"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "unframed"
 	  },
@@ -6155,7 +6228,7 @@
 	  "clue": {
 		"value": "Bush reorganized activity centers"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "hubs"
 	  },
@@ -6167,7 +6240,7 @@
 	  "clue": {
 		"value": "New York team supporter turned up"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "mets"
 	  },
@@ -6179,7 +6252,7 @@
 	  "clue": {
 		"value": "Fight about Madame, one who clutters in-boxes"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "spammer"
 	  },
@@ -6191,7 +6264,7 @@
 	  "clue": {
 		"value": "Spanish aunt welcoming Harold’s muse"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "thalia"
 	  },
@@ -6203,7 +6276,7 @@
 	  "clue": {
 		"value": "Narrow-minded teacher’s pet grabbing Daniel"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "pedant"
 	  },
@@ -6215,7 +6288,7 @@
 	  "clue": {
 		"value": "Fixes some clothing snagged by crew eavesdropping"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "reweaves"
 	  },
@@ -6227,7 +6300,7 @@
 	  "clue": {
 		"value": "Flooded section of parish saw anger rising"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "awash"
 	  },
@@ -6239,7 +6312,7 @@
 	  "clue": {
 		"value": "Kansas without eccentric running back performed poorly"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "stunk"
 	  },
@@ -6251,7 +6324,7 @@
 	  "clue": {
 		"value": "Rowdy males back beach parties"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "clam bakes"
 	  },
@@ -6263,7 +6336,7 @@
 	  "clue": {
 		"value": "Parodies involving dog in the comics"
 	  },
-	  "ready": false,
+	  "ready": "FALSE",
 	  "solution": {
 		"value": "odie"
 	  },

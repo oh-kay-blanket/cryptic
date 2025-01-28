@@ -85,15 +85,13 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 				case 'hidden word':
 					highlightLetters(hint.ref)
-					changeColor(hint.end.ref)
+					changeColor(hint.end.ref, '#ccc')
+					changeColor(hint.addLetters.ref.current)
 					break
 
 				case 'hw-2':
-					let solIndex = removeSpecial(activeClue.hints.find(hint => hint.type == 'indicator').end.value[0]).indexOf(activeClue.solution.value)
-
-					prevHint.end.ref = removeSpecial(prevHint.end.ref)
-					changeColor(prevHint.end.ref, '#ccc')
-					changeColor(prevHint.end.ref.splice(solIndex, activeClue.solution.arr.length))
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
+					changeColor(hint.addLetters.ref.current)
 					break
 
 				case 'homophone':
@@ -182,7 +180,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		}
 
 	// Change last hint to gray when going back to play
-	} else if (!showMessage && !checkAns && !nextHint == 0) {
+	} else if (!showMessage && !checkAns && nextHint > 1) {
 		const prevHint = activeClue.hints[nextHint - 1]
 		try {
 			highlightLetters(prevHint.ref, false, true)

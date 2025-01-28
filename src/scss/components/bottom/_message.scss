@@ -17,6 +17,12 @@
 	&.solution {
 		height: calc($lc-bottom-height);
 		background-color: $lc-gray--light;
+		opacity: 0;
+		visibility: hidden;
+		animation-name: fadein;
+		animation-delay: 4s;
+		animation-duration: 1.5s;
+		animation-fill-mode: forwards;
 	}
 
 	&.is-correct-ans {

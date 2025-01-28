@@ -1,5 +1,7 @@
 import { useRef, createRef } from 'react'
 
+import removeSpecial from "./removeSpecialChar"
+
 // adds letters that will be needed as either duplicates or are not within the original clue
 const addLetters = (activeClue, hint) => {
 
@@ -12,14 +14,14 @@ const addLetters = (activeClue, hint) => {
 			case 'particle':
 				hint.addLetters.value = hint.end.value[0].split('')
 				break
+			case 'hw-2':
+				hint.addLetters.value = removeSpecial(hint.end.value[1]).split('')
+				break
 			case 'letter bank':
 				hint.addLetters.value = [...hint.end.value[1].split(''), ...hint.end.value[1].split('')]
 				break
 			case 'container':
 				hint.addLetters.value = [...hint.end.value.join("").split(''), ...hint.end.value.join(" ").split('')]
-				break
-			case 'deletion':
-				// hint.addLetters.value = [...hint.end.value.join("").split(''), ...hint.end.value.join(" ").split('')]
 				break
 			case 'direct':
 				hint.addLetters.value = hint.value.split('')
