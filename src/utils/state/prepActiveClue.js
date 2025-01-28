@@ -44,11 +44,11 @@ const prepActiveClue = (activeClue) => {
 	if (activeClue.hints) {
 		activeClue.hints.map(hint => hint.type = 'indicator')
 		activeClue.hints = activeClue.hints.flatMap(obj => {
-			if (obj.category === 'anagram') { return [obj, { ...obj, category: 'ag-2' }] }
-			if (obj.category === 'hidden word') { return [obj, { ...obj, category: 'hw-2' }] }
-			if (obj.category === 'homophone') { return [obj, { ...obj, category: 'hp-2' }] }
-			if (obj.category === 'initialism') { return [obj, { ...obj, category: 'in-2' }] }
-			if (obj.category === 'letter bank') { return [obj, { ...obj, category: 'lb-2' }] }
+			if (obj.category === 'anagram') { return [{ ...obj, explainer: "" }, { ...obj, category: 'ag-2' }] }
+			if (obj.category === 'hidden word') { return [{ ...obj, explainer: "" }, { ...obj, category: 'hw-2' }] }
+			if (obj.category === 'homophone') { return [{ ...obj, explainer: "" }, { ...obj, category: 'hp-2' }] }
+			if (obj.category === 'initialism') { return [{ ...obj, explainer: "" }, { ...obj, category: 'in-2' }] }
+			if (obj.category === 'letter bank') { return [{ ...obj, explainer: "" }, { ...obj, category: 'lb-2' }] }
 			return [obj]
 		}
 		  );
