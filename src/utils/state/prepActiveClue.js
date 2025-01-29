@@ -56,8 +56,23 @@ const prepActiveClue = (activeClue) => {
 		activeClue.hints = []
 	}
 
-	// build hints //
-	activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
+	// Add definition(s)
+	if (!activeClue.type.includes('double definition')) {
+		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
+	} else {
+		activeClue.hints.unshift(
+			{ type: 'definition', value: activeClue.definition },
+			{ 
+				type: 'indicator', 
+				category: 'dd-2',
+				explainer: false,
+				value: activeClue.definition,
+				end: {
+					value: activeClue.definition
+				}
+			}
+		)
+	}
 }
 
 export default prepActiveClue
