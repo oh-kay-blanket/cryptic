@@ -21,7 +21,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 				if (hint.value.length == 1) { // Single definition
 					return <><strong>{hint.value[0].toUpperCase()}</strong> is the definition</>
 				} else { // Double definition
-					return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> are definitions</>
+					return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> have the same definition</>
 				}
 			case 'indicator':
 				switch(hint.category) {
@@ -55,6 +55,8 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 					case 'symbol':
 						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					case 'dd-2':
+						return
 					default:
 						// One end point
 						if (hint.end.value.length == 1) {
