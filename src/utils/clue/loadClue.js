@@ -15,6 +15,7 @@ const loadClue = (activeClue, nextHint, showMessage, checkAns) => {
 	activeClue.solution.sectionRef = useRef() // solution section ref
 	activeClue.solution.length.ref = useRef() // solution length ref
 	activeClue.source.ref = useRef() // source ref
+	activeClue.spoon = useRef() // source ref
 
 	// hint target refs
 	activeClue.hints.forEach(hint => { 
@@ -31,7 +32,7 @@ const loadClue = (activeClue, nextHint, showMessage, checkAns) => {
 
 	useEffect(() => {
 		// Fix letters
-		const fixList = ['ag-2', 'hw-2', 'letter bank', 'container', 'reversal']	
+		const fixList = ['ag-2', 'hw-2', 'lb-2', 'container', 'reversal']	
 		activeClue.hints.forEach((hint, index) => {
 			hint && hint.category && fixList.includes(hint.category) && fixLetters(activeClue, hint, index)
 		})

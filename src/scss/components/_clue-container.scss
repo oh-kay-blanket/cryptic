@@ -72,7 +72,6 @@
 
 			&:after {
 				content: "";
-				position: absolute;
 				left: 0;
 				bottom: 0;
 				width: 100%;
@@ -84,6 +83,7 @@
 
 			&.underline::after {
 				opacity: 1;
+				position: absolute;
 			}
 		}
 	}
@@ -108,6 +108,16 @@
 					background-color $lc-transition--short ease;
 			}
 		}
+
+		svg {
+			fill: #ccc;
+			transform: rotate(45deg);
+			opacity: 0;
+			transition:
+				opacity $lc-transition--short ease 0s,
+				color $lc-transition--short ease 0s,
+				background-color $lc-transition--short ease;
+		}
 	}
 
 	.sol-section {
@@ -131,8 +141,8 @@
 				display: inline-block;
 				width: 30px;
 				height: 30px;
-				border: 1px solid $lc-text;
-				border-right: none;
+				border: .75px solid $lc-text;
+				// border-right: none;
 
 				&:last-child {
 					border-right: 1px solid $lc-text;
