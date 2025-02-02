@@ -22,6 +22,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 			switch(hint.category) {
 
 				case 'anagram':
+				case 'letter bank':
 					highlightLetters(hint.ref)
 					changeColor(hint.end.ref, '#ccc')
 					changeColor(hint.addLetters.ref.current)
@@ -31,6 +32,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 					changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), '#0b0b0b')
 					moveLetters(hint.addLetters.ref.current.slice(0,hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length))
+					break
+
+				case 'lb-2':
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
+					changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length), '#0b0b0b')
+					moveLetters(hint.addLetters.ref.current.slice(0,hint.end.value[1].length), hint.addLetters.ref.current.slice(hint.end.value[1].length))
 					break
 
 				case 'charade':
@@ -69,7 +76,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 
 					// see if shorter word exists within last hint addLetters
-					const delIndex = prevHint.addLetters.value.join('').indexOf(hint.end.value[1])
+					const delIndex = prevHint.addLetters.value.join('').toUpperCase().indexOf(hint.end.value[1].toUpperCase())
 
 					// if so, highlight short word in longer
 					if (hint.end.value.length > 2) {
@@ -79,6 +86,20 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					} else if (delIndex >= 0) {
 						changeColor(prevHint.addLetters.ref.current.slice(delIndex, (delIndex + hint.end.value[1].length)), '#0b0b0b')
 					}
+					break
+
+				case 'delete even':
+					highlightLetters(hint.ref)
+					const oddOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 != 0)
+					console.log(oddOnly)
+					changeColor(oddOnly, '#ccc')
+					break
+
+				case 'delete odd':
+					highlightLetters(hint.ref)
+					const evenOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 == 0)
+					console.log(evenOnly)
+					changeColor(evenOnly, '#ccc')
 					break
 
 				case 'direct':
@@ -124,16 +145,6 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					})
 					break
 
-				case 'letter bank':
-					highlightLetters(hint.ref)
-					changeColor(hint.end.ref, '#ccc')
-					changeColor(hint.addLetters.ref.current.slice(0,hint.end.value[1].length))
-					break
-
-				case 'lb-2':
-					moveLetters(prevHint.addLetters.ref.current.slice(0, prevHint.end.value[1].length), prevHint.addLetters.ref.current.slice(prevHint.end.value[1].length))
-					break
-
 				case 'particle':
 					highlightLetters(hint.ref)
 					changeColor(hint.addLetters.ref.current)
@@ -166,6 +177,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					changeColor(usedAnchor, '#ccc')
 					changeColor(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), '#222')
 					moveLetters(hint.addLetters.ref.current.slice(0, hint.end.value[0].length), hint.addLetters.ref.current.slice(hint.end.value[0].length), 'sequence', true)
+					break
+
+				case 'spoonerism':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current)
+					changeColor(activeClue.spoon)
 					break
 
 				default: 

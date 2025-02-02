@@ -23,6 +23,7 @@ const fixLetters = (activeClue, hint, index) => {
 						return false
 					}
 				} else {
+					console.log(destLetter.current.textContent.toUpperCase(), ref.current.textContent.toUpperCase())
 					return destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase()
 				}
 			})
@@ -65,6 +66,18 @@ const fixLetters = (activeClue, hint, index) => {
 			positionLetters()
 			break
 
+		case 'lb-2':
+			anchor = prevHint.addLetters.ref.current // anchor letters
+			moving = hint.addLetters.ref.current.slice(0,hint.end.value[1].length) // moving letters
+			endPt = hint.addLetters.ref.current.slice(hint.end.value[1].length) // staging area letters
+
+			// fix word with. Helps to place hints following this inline. Only run when there are hints following ag-2. Othewise it can mess with layout
+			wordWidth = moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
+			activeClue.hints.length > (index + 1) && (hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`)
+
+			positionLetters(false)
+			break
+
 		case 'hw-2':
 			let solIndex = removeSpecial(prevHint.end.value[0].toUpperCase()).indexOf(removeSpecial(hint.end.value[1].toUpperCase()))
 			anchor = removeSpecial(prevHint.addLetters.ref.current).slice(solIndex, (solIndex + removeSpecial(activeClue.solution.value).length)) // anchor letters
@@ -77,14 +90,6 @@ const fixLetters = (activeClue, hint, index) => {
 			activeClue.hints.length > (index + 1) && (hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`)
 
 			positionLetters()
-			break
-
-		case 'letter bank':
-			anchor = hint.end.ref // anchor letters
-			moving = hint.addLetters.ref.current.slice(0, hint.end.value[1].length) // moving letters
-			endPt = hint.addLetters.ref.current.slice(hint.end.value[1].length) // staging area letters
-
-			positionLetters(false)
 			break
 
 		case 'container':
