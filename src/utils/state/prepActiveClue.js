@@ -59,6 +59,7 @@ const prepActiveClue = (activeClue) => {
 	// Add definition(s)
 	if (!activeClue.type.includes('double definition')) {
 		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
+		activeClue.hints[activeClue.hints.length-1].reaveals = true
 	} else {
 		activeClue.hints.unshift(
 			{ type: 'definition', value: activeClue.definition },
@@ -67,6 +68,7 @@ const prepActiveClue = (activeClue) => {
 				category: 'dd-2',
 				explainer: false,
 				value: activeClue.definition,
+				reveals: true,
 				end: {
 					value: activeClue.definition
 				}
