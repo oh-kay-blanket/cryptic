@@ -193,7 +193,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		}
 
 		// If this is the revealing hint, end clue.			
-		if (activeClue.hints.length - 1 == nextHint) {
+		if (hint.reveals) {
 			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('hide-input'), 2500)
 			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('reveal-solution'), 2500)
 			setTimeout(()=>activeClue.source.ref.current.classList.add('show'), 3500)

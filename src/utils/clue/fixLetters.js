@@ -94,76 +94,68 @@ const fixLetters = (activeClue, hint, index) => {
 
 		case 'container':
 
-			// get index in arr of word that is split
-			let joinIndex
-			
-			// find word that is split
-			const prevHints = activeClue.hints.slice(1,index)
-			let splitWord = prevHints.find(h => {
+			// Get valid previous hints
+			let prevHints = activeClue.hints.slice(1,index)
+			const skipCats = ['anagram', 'hidden word', 'letter bank', 'homophone']
+			prevHints = prevHints.filter(prevHint => !skipCats.includes(prevHint.category))
 
-				// get cell to use for split word
-				let rightValue
-				switch(h.category) {
+			prevHints.forEach(prevHint => {
+				// Get cell to use for split word
+				switch(prevHint.category) {
 					case 'direct':
-						rightValue = h.value
+						prevHint.rightValue = prevHint.value
 						break
 					case 'reversal':
-						rightValue = h.end.value[1]
+					case 'ag-2':
+						prevHint.rightValue = prevHint.end.value[1]
 						break
 					default:
-						rightValue = h.end.value[0]
+						prevHint.rightValue = prevHint.end.value[0]
 						break
 				}
+			})
+			
+			// Find word that is split
+			let splitWord = prevHints.find((h,hIndex) => {
 				
-				// standard container
-				if (hint.end.value.length == 3 || rightValue == [hint.end.value[0], hint.end.value[2]].join('')) {
-					joinIndex = [0,2]
-					return (rightValue == [hint.end.value[0], hint.end.value[2]].join(''))
+				// Standard container
+				if (hint.end.value.length == 3 || h.rightValue == [hint.end.value[0], hint.end.value[2]].join('')) {
+					hint.joinIndex = [0,2]
+					hint.indicatorMatch = hIndex
+					return (h.rightValue == [hint.end.value[0], hint.end.value[2]].join(''))
 
 				// complex containers w/more than 3 parts
-				} else if (rightValue == [hint.end.value[0], hint.end.value[3]].join('')) {
-					joinIndex = [0,3]
-					return (rightValue == [hint.end.value[0], hint.end.value[3]].join(''))
+				} else if (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('')) {
+					hint.joinIndex = [0,3]
+					hint.indicatorMatch = hIndex
+					return (h.rightValue == [hint.end.value[0], hint.end.value[3]].join(''))
 
-				} else if (rightValue == [hint.end.value[1], hint.end.value[3]].join('')) {
-					joinIndex = [1,3]
-					return (rightValue == [hint.end.value[1], hint.end.value[3]].join(''))
-				} else {
-					joinIndex = false
+				} else if (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('')) {
+					hint.joinIndex = [1,3]
+					hint.indicatorMatch = hIndex
+					return (h.rightValue == [hint.end.value[1], hint.end.value[3]].join(''))
 				}
+				return false
 			})
-			splitWord = splitWord ? splitWord.addLetters.ref.current : false
+
+			// Remove duplicate letter from special hints
+			const doubleHints = ['ag-2', 'lb-2']
+			if (doubleHints.includes(splitWord.category)) {
+				console.log(splitWord)
+				splitWord = splitWord.addLetters.ref.current.slice(splitWord.end.value[0].length)
+			} else {
+				splitWord = splitWord.addLetters.ref.current
+			}
+			
+			// Remove splitword from prevHints
+			prevHints.splice(hint.indicatorMatch, 1)
+
 
 			// find non-split words/letters
 			let otherLtrs = []
 			hint.end.value.forEach((hend, index) => {
-				if (joinIndex && !joinIndex.includes(index) || !joinIndex) {
-
-					const thisMatch = activeClue.hints.find(h => {
-
-						if (h.category !== 'container') {
-							let rightValue
-							if (h.type == 'indicator') {
-								switch(h.category) {
-									case 'direct':
-										rightValue = h.value
-										break
-									case 'reversal':
-										rightValue = h.end.value[1]
-										break
-									default:
-										rightValue = h.end.value[0]
-										break
-								}
-
-								return rightValue.toUpperCase() == hend.toUpperCase()
-							} else {
-								return false
-							}
-						} else {
-							return false
-						}
-					})
+				if (!hint.joinIndex.includes(index)) {
+					const thisMatch = prevHints.find((h,hIndex) => h.rightValue.toUpperCase() == hend.toUpperCase())
 					thisMatch && otherLtrs.push(...thisMatch.addLetters.ref.current)
 				}
 			})
@@ -177,7 +169,6 @@ const fixLetters = (activeClue, hint, index) => {
 			activeClue.hints.length > (index + 1) && (hint.addLetters.wordRef.current.style.width = `${wordWidth + 8}px`)
 			
 			positionLetters()
-
 			break
 
 		case 'reversal':
@@ -202,6 +193,7 @@ const fixLetters = (activeClue, hint, index) => {
 			
 			positionLetters()
 			break
+
 		default:
 			break
 	}
