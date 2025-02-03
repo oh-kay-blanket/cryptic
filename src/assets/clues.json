@@ -6,7 +6,7 @@
 	  },
 	  "release": "1/2/2025",
 	  "difficulty": "3",
-	  "ready": "FALSE",
+	  "ready": "TRUE",
 	  "type": "anagram, charade, container",
 	  "definition": [
 		"Eyeglasses"
@@ -181,7 +181,7 @@
 		  "end": {
 			"value": [
 			  "Don",
-			  "onD"
+			  "ond"
 			]
 		  }
 		},
@@ -238,7 +238,7 @@
 		},
 		{
 		  "category": "particle",
-		  "value": "sympony's finale",
+		  "value": "symphony's finale",
 		  "end": {
 			"value": [
 			  "y"

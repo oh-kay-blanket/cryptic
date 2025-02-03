@@ -59,7 +59,7 @@ const prepActiveClue = (activeClue) => {
 	// Add definition(s)
 	if (!activeClue.type.includes('double definition')) {
 		activeClue.hints.unshift({ type: 'definition', value: activeClue.definition })
-		activeClue.hints[activeClue.hints.length-1].reaveals = true
+		activeClue.hints[activeClue.hints.length-1].reveals = true
 	} else {
 		activeClue.hints.unshift(
 			{ type: 'definition', value: activeClue.definition },
