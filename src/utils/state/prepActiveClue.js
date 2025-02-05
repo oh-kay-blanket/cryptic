@@ -1,4 +1,4 @@
-const prepActiveClue = (activeClue) => {
+const prepActiveClue = (activeClue, completedClues) => {
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)

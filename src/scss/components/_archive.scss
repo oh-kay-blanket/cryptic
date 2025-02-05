@@ -18,7 +18,7 @@
 		position: relative;
 
 		.archive-release {
-			width: 48px;
+			width: 60px;
 			font-size: 12px;
 			margin-right: 8px;
 			text-align: center;
@@ -32,14 +32,22 @@
 				content: " ";
 				position:absolute;
 				z-index: -1;
-				width: 48px;
-				height: 48px;
-				background-color: $lc-primary;
-				border: 1px solid $lc-primary;
+				width: 60px;
+				height: 60px;
 				border-radius: .5rem;
 				top: 50%;
 				transform: translateY(-50%);
 				left: 0;
+			}
+
+			&.g .archive-release:before {
+				background-color: $lc-primary--light;
+				border: 1px solid $lc-primary--light;
+			}
+
+			&.h .archive-release:before {
+				background-color: $lc-secondary;
+				border: 1px solid $lc-secondary;
 			}
 		}
 	}
@@ -47,10 +55,11 @@
 	.archive-tile {
 		display: flex;
 		width: 100%;
-		align-items: flex-end;
-		justify-content: space-between;
+		align-items: center;
+		justify-content: flex-start;
 		margin: .5rem 0;
-		padding: 15px .75rem;
+		padding: .25rem 1rem;
+		height: 60px;
 		border: 1px solid $lc-gray--dark;
 		overflow: hidden;
 		border-radius: .5rem;
@@ -61,12 +70,45 @@
 			border: 1px solid $lc-gray--light;
 		}
 		
-		.tile-difficulty {
-			align-self: center;
-			width: 36px;
-			height:	fit-content;
-			line-height: 1;
-			margin-right: .5rem;
+		.tile-img-stats {
+			margin-right: .25rem;
+			display: flex;
+	
+			.tile-difficulty {
+				align-self: center;
+				width: 36px;
+				height:	fit-content;
+				line-height: 1;
+				transform: rotate(270deg);
+			}
+
+			.tile-stats {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				font-size: 9px;
+				font-family: $lc-font--sans;
+				font-weight: 600;
+				text-transform: uppercase;
+
+				.stat-guesses, .stat-hints {
+					margin: 2px auto;
+					padding: 2px 3px;
+					border-radius: 4px;
+					
+					.stat {
+						font-size: 11px;
+					}
+				}
+				
+				.stat-guesses {
+					background-color: $lc-primary--light;
+				}
+
+				.stat-hints {
+					background-color: $lc-secondary;
+				}
+			}
 		}
 
 		.tile-name {

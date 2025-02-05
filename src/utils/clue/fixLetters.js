@@ -105,14 +105,14 @@ const fixLetters = (activeClue, hint, index) => {
 				// Get cell to use for split word
 				switch(prevHint.category) {
 					case 'direct':
-						prevHint.rightValue = prevHint.value
+						prevHint.rightValue = prevHint.value.toUpperCase()
 						break
 					case 'reversal':
 					case 'ag-2':
-						prevHint.rightValue = prevHint.end.value[1]
+						prevHint.rightValue = prevHint.end.value[1].toUpperCase()
 						break
 					default:
-						prevHint.rightValue = prevHint.end.value[0]
+						prevHint.rightValue = prevHint.end.value[0].toUpperCase()
 						break
 				}
 			})
@@ -120,29 +120,28 @@ const fixLetters = (activeClue, hint, index) => {
 			// anchorSplit - get anchor word that is split //
 			hint.fix.anchorSplit = prevHints.find((h,hIndex) => {
 				// Standard container
-				if (hint.end.value.length == 3 || h.rightValue == [hint.end.value[0], hint.end.value[2]].join('')) {
+				if (hint.end.value.length == 3 || h.rightValue == [hint.end.value[0], hint.end.value[2]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [0,2]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[0], hint.end.value[2]].join(''))
+					return (h.rightValue == [hint.end.value[0], hint.end.value[2]].join('').toUpperCase())
 
 				// complex containers w/more than 3 parts
-				} else if (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('')) {
+				} else if (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [0,3]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[0], hint.end.value[3]].join(''))
+					return (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('').toUpperCase())
 
-				} else if (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('')) {
+				} else if (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [1,3]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[1], hint.end.value[3]].join(''))
+					return (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('').toUpperCase())
 				}
 				return false
 			})
 
 			// Remove duplicate letter from special hints
-			const doubleHints = ['ag-2', 'lb-2']
+			const doubleHints = ['ag-2', 'lb-2', 'reversal']
 			if (doubleHints.includes(hint.fix.anchorSplit.category)) {
-				console.log('double hint')
 				hint.fix.anchorSplit = hint.fix.anchorSplit.addLetters.ref.current.slice(hint.fix.anchorSplit.end.value[0].length)
 			} else {
 				hint.fix.anchorSplit = hint.fix.anchorSplit.addLetters.ref.current
@@ -157,7 +156,11 @@ const fixLetters = (activeClue, hint, index) => {
 			hint.end.value.forEach((hend, index) => {
 				if (!hint.fix.joinIndex.includes(index)) {
 					const thisMatch = prevHints.find((h,hIndex) => h.rightValue.toUpperCase() == hend.toUpperCase())
-					thisMatch && hint.fix.anchorOther.push(...thisMatch.addLetters.ref.current)
+					if (thisMatch && doubleHints.includes(thisMatch.category)) {
+						hint.fix.anchorOther.push(...thisMatch.addLetters.ref.current.slice(thisMatch.end.value[0].length))	
+					} else if (thisMatch) {
+						hint.fix.anchorOther.push(...thisMatch.addLetters.ref.current)
+					}
 				}
 			})
 
@@ -187,11 +190,11 @@ const fixLetters = (activeClue, hint, index) => {
 			hint.fix.anchor = []
 			activeClue.hints.some(h => {
 				if (h.category == 'reversal') return true
-				if (h.addLetters) { anchor.push(h) }
+				if (h.addLetters) { hint.fix.anchor.push(h) }
 				return false
 			})
 			
-			hint.fix.anchor = anchor.map(h => h.addLetters.ref.current).flat().reverse()
+			hint.fix.anchor = hint.fix.anchor.map(h => h.addLetters.ref.current).flat().reverse()
 			hint.fix.moving = hint.addLetters.ref.current.slice(0,hint.end.value[0].length) // moving letters
 			hint.fix.moving = hint.fix.moving.filter(m => m.current.textContent !== " ").reverse()
 

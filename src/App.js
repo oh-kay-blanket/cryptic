@@ -14,7 +14,7 @@ import manageInput from './utils/state/manageInput'
 
 const App = () => {
 
-	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType } = manageState()
+	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats } = manageState()
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
@@ -26,6 +26,7 @@ const App = () => {
 					setMode={setMode}
 					clues={clues}
 					setclueId={setclueId}
+					completedClues={completedClues}
 				/> 
 			}
 			<TopBar
@@ -44,6 +45,7 @@ const App = () => {
 						completedClues={completedClues}
 						setInput={setInput}
 						setCheckAns={setCheckAns}
+						stats={stats}
 					/>
 				</>
 			}
@@ -73,6 +75,8 @@ const App = () => {
 						setInput={setInput}
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
+						stats={stats}
+						setStats={setStats}
 					/>
 				</>
 			}
