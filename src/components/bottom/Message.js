@@ -1,133 +1,29 @@
 import React, { useRef } from 'react'
 import ButtonContainer from './ButtonContainer';
 
-const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue }) => {
+import getMessage from '../../utils/bottom/getMessage';
 
-	const msgContainer = useRef()
+const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue, isCorrectAns, isSolution, buttons }) => {
 
-	const isCorrectAns = () => {
-		return input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
-	}
-
-	// hint message
-	const getMessage = hint => {
-
-		const vowels = ['a', 'e', 'i', 'o', 'u']
-
-		let aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'a'
-
-		switch(hint.type) {
-			case 'definition':
-				if (hint.value.length == 1) { // Single definition
-					return <><strong>{hint.value[0].toUpperCase()}</strong> is the definition</>
-				} else { // Double definition
-					return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> have the same definition</>
-				}
-			case 'indicator':
-				switch(hint.category) {
-					case 'anagram':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates an anagram on <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'ag-2':
-						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is an anagram of <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'charade':
-						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'container':
-						return <><strong>{hint.value.toUpperCase()}</strong>, indicates a container</>
-					case 'deletion':
-						return <><strong>{hint.value.toUpperCase()}</strong>, indicates a deletion</>
-					case 'delete even':
-						return <><strong>{hint.value.toUpperCase()}</strong>, indicates deleting the even letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'delete odd':
-						return <><strong>{hint.value.toUpperCase()}</strong>, indicates deleting the odd letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'direct':
-						return <><strong>{hint.value.toUpperCase()}</strong> is used</>
-					case 'hidden word':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates a hidden word at <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'hw-2':
-						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is hidden within <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'homophone':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates a homophone</>
-					case 'hp-2':
-						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is a homophone of <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'initialism':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates the beginning of one or more words</>
-					case 'letter bank':
-						return <><strong>{hint.value.toUpperCase()}</strong> indicates a letter bank</>
-					case 'lb-2':
-						return <><strong>{hint.end.value[0].toUpperCase()}</strong> is an letter bank for <strong>{hint.end.value[1].toUpperCase()}</strong></>
-					case 'particle':
-						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'reversal':
-						return <><strong>{hint.value.toUpperCase()}</strong>, indicates a reversal on <strong>{hint.end.value[0].toUpperCase()}</strong>, making it <strong>{hint.end.value[1].toUpperCase()}</strong></>
-					case 'synonym':
-						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'symbol':
-						return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'spoonerism':
-						return <><strong>{hint.end.value[1].toUpperCase()}</strong> is a spoonerism of <strong>{hint.end.value[0].toUpperCase()}</strong></>
-					case 'dd-2':
-						return
-					default:
-						// One end point
-						if (hint.end.value.length == 1) {
-							return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong></> 
-							
-							// Two end points
-						} else {
-							return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong> and <strong>{hint.end.value[1].toUpperCase()}</strong></> 
-						}
-				}
-			default: 
-				return hint.value
-		}
-	}
+	const msgContainer = useRef()	
 
 	// figure out which text to display
 	const message = checkAns ? 
-		isCorrectAns() ? 
+		isCorrectAns ? 
 			<><strong>{input.join("").toUpperCase()}</strong> is correct.<br/>Nice work!</> :
 			<><strong>{input.join("").toUpperCase()}</strong> is not the correct answer.</> :
 			getMessage(activeClue.hints[nextHint])
 		
-	
+
 	const explainer = activeClue.hints[nextHint].explainer ? activeClue.hints[nextHint].explainer : false
 	
-	const continueButton = [
-		{
-			name: 'Continue',
-			style: 'secondary',
-			onClick: function(){
-				setShowMessage(false)
-				!checkAns && setNextHint(nextHint + 1)
-				setCheckAns(false)
-			}
-		}
-	]
-	
-	const clueEndButton = [
-		{
-			name: 'Play more',
-			style: isCorrectAns() ? 'gray' : 'secondary',
-			onClick: function(){
-				addCompletedClue(activeClue.id)
-				setShowMessage(false)
-				setNextHint(0)
-				setclueId(false)
-				setMode('archive')
-			}
-		}
-	]
-	
-	// if current message displaying solution
-	const isSolution = (activeClue.hints.length - 1 == nextHint) && !checkAns
-	
 	// choose message button
-	let messageButton = isSolution || (checkAns && isCorrectAns()) ? clueEndButton : continueButton
+	let messageButton = isSolution || (checkAns && isCorrectAns) ? [buttons.endClue] : [buttons.continue]
 	
 	// style message
 	let messageStyle = isSolution ? 
 		'solution' :
-		checkAns && isCorrectAns() ?
+		checkAns && isCorrectAns ?
 			'is-correct-ans' :
 			'continue'
 

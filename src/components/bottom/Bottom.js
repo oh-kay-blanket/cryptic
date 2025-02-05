@@ -4,40 +4,71 @@ import ButtonContainer from './ButtonContainer'
 import Keyboard from './Keyboard'
 import Message from './Message'
 
-const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns }) => {
-
-	// set initial btns
-	let btnArr = btnArr || [{ name:'Show hint', style: 'secondary', onClick: function(){setCheckAns(false);setShowMessage(true)} }]
-
-	const reavealSolutionButton = [
-		{ 
+const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats }) => {
+	
+	// buttons
+	const buttons = {
+		showHint: {
+			name:'Show hint',
+			style: 'secondary',
+			onClick: function() {
+				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1}));
+				setCheckAns(false)
+				setShowMessage(true)
+			}
+		},
+		revealSolution: { 
 			name:'Reveal solution', 
 			style: 'primary', 
 			onClick: function() {
+				addCompletedClue(activeClue, stats, 'h')
 				setShowMessage(true)
 				setInput([])
 			} 
-		}
-	]
-
-	const checkAnsButton = [
-		{ 
+		},
+		checkAnswer: { 
 			name:'Check answer', 
 			style: 'primary', 
 			onClick: function() {
-				setCheckAns(true)
-				setShowMessage(true)
+				let correct = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase();
+				if (correct) {
+					addCompletedClue(activeClue, stats, 'g');
+				} else {
+					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }));
+				}
+				setCheckAns(true);
+				setShowMessage(true);
 			} 
+		},
+		continue: {
+			name: 'Continue',
+			style: 'secondary',
+			onClick: function(){
+				setShowMessage(false)
+				!checkAns && setNextHint(nextHint + 1)
+				setCheckAns(false)
+			}
+		},
+		endClue: {
+			name: 'Play more',
+			style: isCorrectAns ? 'gray' : 'secondary',
+			onClick: function(){
+				setShowMessage(false)
+				setNextHint(0)
+				setclueId(false)
+				setMode('archive')
+			}
 		}
-	]
-	
-	if (activeClue.hints.length - 1 == nextHint) {
-		btnArr = reavealSolutionButton
 	}
+
+	let btnArr = btnArr || [buttons.showHint]
 	
-	if (input.length === activeClue.solution.arr.length) {
-		btnArr.push(...checkAnsButton)
-	}
+	if (activeClue.hints[nextHint].reveals) { btnArr = [buttons.revealSolution] }
+	
+	if (input.length === activeClue.solution.arr.length) { btnArr.push(buttons.checkAnswer) }
+
+	const isCorrectAns = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
+	const isSolution = (activeClue.hints.length - 1 == nextHint) && !checkAns
 
 	return(
 		<div className='bottom'>
@@ -54,6 +85,9 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
 						addCompletedClue={addCompletedClue}
+						isCorrectAns={isCorrectAns}
+						isSolution={isSolution}
+						buttons={buttons}
 					/> :
 					<>
 						<ButtonContainer

@@ -61,22 +61,36 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 			  }
 		}
 
-		const isComplete = completedClues.includes(Number(clue.id)) ? ' completed' : ''
+		const completedClue = completedClues.find(c => c.id == clue.id)
+
+		const stats = completedClue && <>
+			<div className="tile-stats">
+				<span className='stat-guesses'>
+					<span className="stat">{completedClue.guesses}</span>
+				g</span>
+				<span className='stat-hints'>
+					<span className="stat">{completedClue.hints}</span>h
+				</span>
+			</div>
+		</>
 
 		return (
-		<div className={`archive-clue${isComplete}`} key={clue.id}>
+		<div className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
 			<div className='archive-release'>
 				<span>
 					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
-					<span>{getRelease(clue.release).getDate()}</span>,
+					<span>{getRelease(clue.release).getDate()}</span>
 				</span>
 				<br></br>
 				<span>{getRelease(clue.release).getFullYear()}</span>
 			</div>
 			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
-				<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
+				<div className='tile-img-stats'>
+					{stats}
+					<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
+				</div>
 				<span className='tile-name'>{clue.clue.value}</span>
-				<span className='tile-source'>{clue.source.value}</span>
+				{/* <span className='tile-source'>{clue.source.value}</span> */}
 			</div>
 		</div>
 		)

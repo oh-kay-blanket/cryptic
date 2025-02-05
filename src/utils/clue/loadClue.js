@@ -3,7 +3,6 @@ import { useRef, createRef, useEffect } from 'react'
 import getTargetLetters from './getTargetLetters'
 import fixLetters from './fixLetters'
 import addLetters from './addLetters'
-// import getLines from './getLines'
 import handleHint from './handleHint'
 
 const loadClue = (activeClue, nextHint, showMessage, checkAns) => {

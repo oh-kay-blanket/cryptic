@@ -152,6 +152,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 				case 'reversal':
 					highlightLetters(hint.ref)
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
 
 					// make all previous addLetters gray
 					let usedAnchor = []
