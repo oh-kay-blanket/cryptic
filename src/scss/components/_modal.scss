@@ -1,0 +1,29 @@
+@use '../base/var' as *;
+
+.modal-bg {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	background-color: #3332;
+
+	.modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-family: $lc-font--sans;
+		background-color: #fff;
+		min-width: 200px;
+		min-height: 100px;
+		padding: 1.5rem .5rem 1rem;
+		border-radius: 8px;
+
+		button {
+			margin-top: 1rem;
+		}
+	}
+}

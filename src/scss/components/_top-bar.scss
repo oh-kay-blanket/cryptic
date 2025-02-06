@@ -3,11 +3,11 @@
 .top-bar {
 	background-color: $lc-gray--light;
 	height: $lc-top-height;
-	padding: .5rem 1rem;
-
+	
 	.container {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
+		padding: .5rem;
 	}
 }

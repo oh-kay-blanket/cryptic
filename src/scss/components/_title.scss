@@ -5,9 +5,62 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
+	font-family: $lc-font--sans;
 
+	.title-logo {
+		max-width: 70px;
+	}
+ 
 	.title-gif {
-		max-width: 350px;
+		max-width: 280px;
+	}
+
+	.title-intro {
+		max-width: 300px;
+		text-align: center;
+
+		p {
+			font-size: 16px;
+		}
+	}
+
+	.title-stats {
+		font-size: 16px;
+		// border: 1px solid $lc-gray--dark;
+		border-radius: .5rem;
+		padding: 1rem 2rem;
+
+		.stats-clues, .stats-guesses, .stats-hints {
+			// display: flex;
+			// justify-content: flex-end;
+			text-align: center;
+			border-radius: 4px;
+			padding: .25rem 1rem;
+			font-weight: 500;
+
+			span {
+				// margin-left: .5rem;
+				// width: 25px;
+				// text-align: center;
+				font-weight: 600;
+				// background-color: green;
+			}
+		}
+		
+		.stats-clues {
+			background-color: $lc-gray;
+		}
+
+		.stats-guesses {
+			background-color: $lc-primary--light;
+			// color: $lc-primary--dark;
+		}
+
+		.stats-hints {
+			background-color: $lc-secondary--light;
+			// color: $lc-secondary--dark;
+
+		}
 	}
 
 	.title-actions {

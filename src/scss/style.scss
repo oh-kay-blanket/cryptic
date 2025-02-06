@@ -3,21 +3,12 @@
 @use './base/typo';
 
 // Components
-
-// Title
 @use './components/title.scss';
-
-// Archive
 @use './components/archive';
-
-// Top
 @use './components/top-bar';
-
-// Clue
 @use './components/clue-container';
-
-// Input
 @use './components/input';
+@use './components/tooltip';
 
 // Bottom
 @use './components/bottom/bottom';
