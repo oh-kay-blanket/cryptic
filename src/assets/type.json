@@ -15,7 +15,7 @@
 	  "example": "fri + ends + hip → friendship"
 	},
 	{
-	  "type": "Contianer",
+	  "type": "Container",
 	  "description": "Place word or letter(s) inside another word or set of letters.",
 	  "example": "a + reminder → remainder"
 	},
