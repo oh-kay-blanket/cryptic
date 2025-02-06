@@ -18,7 +18,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 	</div>
 
 	const intro = <div className='title-intro'>
-		<p>Learn Cryptic is a tool to help you learn to solve cryptic crossword clues.</p>
+		<p>Learn Cryptic is a tool to help you learn about, practice and solve cryptic crossword clues.</p>
 	</div>
 
 	// Today clue
