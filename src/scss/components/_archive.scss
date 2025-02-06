@@ -46,8 +46,8 @@
 			}
 
 			&.h .archive-release:before {
-				background-color: $lc-secondary;
-				border: 1px solid $lc-secondary;
+				background-color: $lc-secondary--light;
+				border: 1px solid $lc-secondary--light;
 			}
 		}
 	}
@@ -106,7 +106,7 @@
 				}
 
 				.stat-hints {
-					background-color: $lc-secondary;
+					background-color: $lc-secondary--light;
 				}
 			}
 		}

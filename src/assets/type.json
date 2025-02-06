@@ -1,0 +1,62 @@
+[
+	{
+	  "type": "& Lit.",
+	  "description": "Entire clue serves as definition.",
+	  "example": "I only appear manipulated! → player piano"
+	},
+	{
+	  "type": "Anagram",
+	  "description": "Scramble letters in one or more words.",
+	  "example": "triangle → relating"
+	},
+	{
+	  "type": "Charade",
+	  "description": "Arrange clued parts of word(s) in order.",
+	  "example": "fri + ends + hip → friendship"
+	},
+	{
+	  "type": "Contianer",
+	  "description": "Place word or letter(s) inside another word or set of letters.",
+	  "example": "a + reminder → remainder"
+	},
+	{
+	  "type": "Deletion",
+	  "description": "Delete letter or set of letters from beginning, middle, or end of word.",
+	  "example": "excited - c → exited"
+	},
+	{
+	  "type": "Double Definition",
+	  "description": "Two definitions apply to one word, or two different words are spelled the same.",
+	  "example": "drop season → fall"
+	},
+	{
+	  "type": "Hidden Word",
+	  "description": "Answer is embedded in clue.",
+	  "example": "...science lab, or a test... → elaborate"
+	},
+	{
+	  "type": "Homophone",
+	  "description": "Words and/or letter(s), when spoken aloud, sound like answer.",
+	  "example": "to wield → two-wheeled"
+	},
+	{
+	  "type": "Initialism",
+	  "description": "Use first (or last, or even middle) letters of series of words.",
+	  "example": "sights that astronomers really savor → stars"
+	},
+	{
+	  "type": "Letter Bank",
+	  "description": "Similar to anagram, but letters from source word can be repeated.",
+	  "example": "retain → entertainer"
+	},
+	{
+	  "type": "Reversal",
+	  "description": "Reverse letters to make new word(s).",
+	  "example": "rail → liar"
+	},
+	{
+	  "type": "Spoonerism",
+	  "description": "Swap sounds at beginnings of two words.",
+	  "example": "shoving leopard → loving shepherd"
+	}
+  ]

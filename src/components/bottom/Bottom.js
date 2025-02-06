@@ -19,7 +19,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 		},
 		revealSolution: { 
 			name:'Reveal solution', 
-			style: 'primary', 
+			style: 'alt', 
 			onClick: function() {
 				addCompletedClue(activeClue, stats, 'h')
 				setShowMessage(true)

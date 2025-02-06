@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+// import { createPortal } from 'react-dom';
+
+import Tooltip from './Tooltip';
 
 import loadClue from '../utils/clue/loadClue'
 import eyeOpen from '../assets/img/eye--open.svg'
@@ -10,7 +13,11 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 	loadClue(activeClue, nextHint, showMessage, checkAns)
 
 	// type HTML
-	const pillList = activeClue.type.map((t, index) => <li key={index} className='type-pill'>{t}</li>)
+	const pillList = activeClue.type.map((t, index) => <li key={index} className='type-pill tooltip-parent' aria-describedby="tooltip-id">
+		{t}
+		<Tooltip text={t} />
+	</li>)
+
 	const typeInsert = showType ? <><li onClick={()=>setShowType(false)}><img src={eyeClosed}/></li>{pillList}</> : 
 		<><li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li><li className='type-text' onClick={()=>setShowType(true)}>See type</li></>
 
