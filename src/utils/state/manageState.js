@@ -4,6 +4,9 @@ import clues from '../../assets/clues.json'
 import prepActiveClue from './prepActiveClue'
 
 const manageState = () => {
+
+	window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
 	
 	// state
 	const [clueId, setclueId] = useState()
@@ -39,6 +42,13 @@ const manageState = () => {
 
 		// Only update if not already in completedClues
 		if (!completedClues.find(completed => completed.id == activeClue.id)) {
+
+			// GA event
+			gtag('completed', ...lcState.completedClues)
+			gtag('guesses', guesses)
+			gtag('hints', hints)
+
+			// Local Storage
 			setLcState({
 				...lcState,
 				completedClues: [...lcState.completedClues, { id: activeClue.id, guesses: guesses, hints: hints, how: type }]
