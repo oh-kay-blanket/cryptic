@@ -3,7 +3,7 @@ import ButtonContainer from './ButtonContainer';
 
 import getMessage from '../../utils/bottom/getMessage';
 
-const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, input, checkAns, setCheckAns, addCompletedClue, isCorrectAns, isSolution, buttons }) => {
+const Message = ({ activeClue, nextHint, input, checkAns, isCorrectAns, isSolution, buttons }) => {
 
 	const msgContainer = useRef()	
 
@@ -18,7 +18,7 @@ const Message = ({ setShowMessage, activeClue, setclueId, nextHint, setNextHint,
 	const explainer = activeClue.hints[nextHint].explainer ? activeClue.hints[nextHint].explainer : false
 	
 	// choose message button
-	let messageButton = isSolution || (checkAns && isCorrectAns) ? [buttons.endClue] : [buttons.continue]
+	let messageButton = isSolution ? [buttons.endClueHint] : checkAns && isCorrectAns ? [buttons.endClueGuess] : [buttons.continue]
 	
 	// style message
 	let messageStyle = isSolution ? 
