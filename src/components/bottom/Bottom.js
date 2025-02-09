@@ -47,11 +47,21 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setShowMessage(false)
 				!checkAns && setNextHint(nextHint + 1)
 				setCheckAns(false)
+			} 
+		},
+		endClueHint: {
+			name: 'Play more',
+			style: 'secondary',
+			onClick: function(){
+				setShowMessage(false)
+				setNextHint(0)
+				setclueId(false)
+				setMode('archive')
 			}
 		},
-		endClue: {
+		endClueGuess: {
 			name: 'Play more',
-			style: isCorrectAns ? 'gray' : 'secondary',
+			style: 'gray',
 			onClick: function(){
 				setShowMessage(false)
 				setNextHint(0)
