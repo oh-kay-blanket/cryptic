@@ -86,18 +86,19 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				font-size: 9px;
-				font-family: $lc-font--sans;
+				font-size: 11px;
 				font-weight: 600;
+				font-family: $lc-font--sans;
 				text-transform: uppercase;
-
+				
 				.stat-guesses, .stat-hints {
 					margin: 2px auto;
 					padding: 2px 3px;
 					border-radius: 4px;
 					
 					.stat {
-						font-size: 11px;
+						font-size: 13px;
+						font-weight: 700;
 					}
 				}
 				
@@ -119,6 +120,7 @@
 			font-size: 14px;
 			flex-shrink: 10;
 			padding: 2px 0;
+			font-family: $lc-font--serif;
 		}
 	
 		.tile-source {

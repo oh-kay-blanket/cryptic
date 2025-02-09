@@ -65,12 +65,8 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 
 		const stats = completedClue && <>
 			<div className="tile-stats">
-				<span className='stat-guesses'>
-					<span className="stat">{completedClue.guesses}</span>
-				g</span>
-				<span className='stat-hints'>
-					<span className="stat">{completedClue.hints}</span>h
-				</span>
+				<span className='stat-hints'><span className="stat">{completedClue.hints}</span>&nbsp;h</span>
+				<span className='stat-guesses'><span className="stat">{completedClue.guesses}</span>&nbsp;g</span>
 			</div>
 		</>
 

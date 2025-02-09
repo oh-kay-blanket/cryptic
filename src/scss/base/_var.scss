@@ -1,5 +1,6 @@
-// Main colors
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
+// Main colors
 $lc-primary: #EF9E6C;
 $lc-primary--light: #FFCBAB;
 $lc-primary--v-light: #FFEEE3;
@@ -35,6 +36,6 @@ $lc-clue-input-height: 20%;
 $lc-clue-container-height: calc((100% - $lc-bottom-height) - $lc-top-height);
 
 // Font
-$lc-font--serif: 'Gelasio', 'Times New Roman', serif;
-$lc-font--sans: 'Open Sans', 'Arial', 'Open Sans', sans;
+$lc-font--serif: 'Georgia', 'Times New Roman', serif;
+$lc-font--sans: 'Hanken Grotesk', 'Open Sans', 'Arial', 'Open Sans', sans;
 $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;

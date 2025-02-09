@@ -10,7 +10,7 @@ const manageState = () => {
 	
 	// state
 	const [clueId, setclueId] = useState()
-	const [mode, setMode] = useState('title');
+	const [mode, setMode] = useState('learn');
 	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
 
 	// manage lcState
