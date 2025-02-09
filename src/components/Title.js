@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonContainer from './bottom/ButtonContainer';
 
 import logo from '../assets/img/favicon.png';
-import gif from '../assets/img/learn-cryptic.gif';
+import gif from '../assets/img/lc4.png';
 
 const Title = ({ setMode, clues, setclueId, completedClues }) => {
 
