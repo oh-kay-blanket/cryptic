@@ -4,8 +4,9 @@
 
 // Components
 @use './components/title.scss';
-@use './components/archive';
 @use './components/top-bar';
+@use './components/learn';
+@use './components/archive';
 @use './components/clue-container';
 @use './components/input';
 @use './components/tooltip';
@@ -16,9 +17,3 @@
 @use './components/bottom/button';
 @use './components/bottom/keyboard';
 @use './components/bottom/message';
-
-// Fonts
-@font-face {
-	font-family: 'Caveat';
-	src: local('Caveat'), url(../assets/fonts/Caveat-VariableFont_wght.ttf) format('ttf');
-}

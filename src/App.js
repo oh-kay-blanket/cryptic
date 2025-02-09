@@ -3,6 +3,7 @@ import React from 'react'
 // components
 import Title from './components/Title'
 import TopBar from './components/TopBar'
+import Learn from './components/Learn'
 import ClueContainer from './components/Clue'
 import Bottom from './components/bottom/Bottom'
 import Archive from './components/Archive' 
@@ -21,21 +22,30 @@ const App = () => {
 
     return (
 		<>	
-			{ mode == 'title' && 
+			{ mode == 'title' ?
 				<Title 
-					setMode={setMode}
 					clues={clues}
+					setMode={setMode}
 					setclueId={setclueId}
 					completedClues={completedClues}
-				/> 
+				/> :
+				<TopBar
+					setMode={setMode}
+					setShowMessage={setShowMessage}
+					setNextHint={setNextHint}
+					setclueId={setclueId}
+					setInput={setInput}
+				/>
 			}
-			<TopBar
-				setMode={setMode}
-				setShowMessage={setShowMessage}
-				setNextHint={setNextHint}
-				setclueId={setclueId}
-				setInput={setInput}
-			/>
+			{ mode == 'learn' &&
+				<>
+					<Learn
+						clues={clues}
+						setMode={setMode}
+						setclueId={setclueId}
+					/>
+				</>
+			}
 			{ mode == 'archive' &&
 				<>
 					<Archive

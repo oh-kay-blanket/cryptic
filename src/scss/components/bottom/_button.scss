@@ -29,13 +29,13 @@
 	}
 
 	&.primary {
-		background-color: $lc-primary;
-		border: 1px solid $lc-primary;
+		background-color: $lc-primary--light;
+		border: 1px solid $lc-primary--light;
 	}
 
 	&.alt {
-		background-color: $lc-secondary;
-		border: 1px solid $lc-secondary;
+		background-color: $lc-secondary--light;
+		border: 1px solid $lc-secondary--light;
 	}
 
 	&.secondary {

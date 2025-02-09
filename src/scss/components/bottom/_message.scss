@@ -14,6 +14,10 @@
 	text-align: center;
 	text-wrap: balance;
 
+	strong {
+		font-family: $lc-font--serif;
+	}
+
 	&.solution {
 		height: calc($lc-bottom-height);
 		background-color: $lc-gray--light;
@@ -27,7 +31,7 @@
 
 	&.is-correct-ans {
 		height: calc($lc-bottom-height);
-		background-color: $lc-primary;
+		background-color: $lc-primary--light;
 	}
 
 	.message-copy {

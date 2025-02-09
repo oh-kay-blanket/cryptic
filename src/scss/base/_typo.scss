@@ -1,14 +1,19 @@
 @use './var' as *;
 
 body {
-	font-family: 'Georgia', 'Times New Roman', Times, serif;
-  	color: $lc-text;
+	font-family: $lc-font--sans;
+	color: $lc-text;
 }
 
 p {
 	margin: .25rem;
 }
 
+a {
+	color: $lc-primary--dark;
+}
+
 button {
+	font-family: $lc-font--sans;
 	font-size: 1rem;
 }

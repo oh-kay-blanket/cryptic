@@ -65,6 +65,7 @@
 
 		.letter {
 			position: relative;
+			font-family: $lc-font--serif;
 			transition:
 				opacity $lc-transition--short ease 0s,
 				color $lc-transition--short ease 0s,
@@ -99,6 +100,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		align-content: center;
+		font-family: $lc-font--serif;
 		text-transform: uppercase;
 
 		.word {
@@ -183,7 +185,7 @@
 			top: 60px;
 			left: 50%;
 			transform: translateX(-50%);
-			font-size: 14px;
+			font-size: 15px;
 			font-family: $lc-font--sans;
 
 			&.show {
