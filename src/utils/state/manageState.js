@@ -39,23 +39,38 @@ const manageState = () => {
 	const addCompletedClue = (activeClue, stats, type) => {
 		const guesses = type == 'g' ? stats.guesses + 1 : stats.guesses
 		const hints = type == 'h' ? stats.hints + 1 : stats.hints
+		const repeat = completedClues.find(completed => completed.id == activeClue.id)
+		const knownUser = completedClues && completedClues.length > 0
 
 		// Only update if not already in completedClues
-		if (!completedClues.find(completed => completed.id == activeClue.id)) {
-
-			// GA event
-			gtag('completed', ...lcState.completedClues)
-			gtag('guesses', guesses)
-			gtag('hints', hints)
-
-			// Local Storage
+		if (!repeat) {
 			setLcState({
 				...lcState,
-				completedClues: [...lcState.completedClues, { id: activeClue.id, guesses: guesses, hints: hints, how: type }]
+				completedClues: [...lcState.completedClues, { 
+					id: activeClue.id,
+					guesses: guesses,
+					hints: hints,
+					how: type 
+				}]
 			})
 		} else {
 			console.log('clue locked, no update to stats')
 		}
+
+		// GA event
+		gtag('event', 'completed_clue', {
+			'id': activeClue.id,
+			'hints': hints,
+			'guesses': guesses,
+			'how': type,
+			'total_completed': knownUser && completedClues.length +1,
+			'repeat': !!repeat,
+			'known_user': knownUser,
+			'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
+			'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
+		})
+
+		// Reset stats
 		setStats({ guesses: 0, hints: 0, how: '' });
 	}
 
