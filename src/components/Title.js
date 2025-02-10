@@ -18,7 +18,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 
 	const intro = <div className='title-intro'>
 		<p>Learn Cryptic is a tool to help you learn about, practice, and solve cryptic crossword clues.</p>
-		<p>This is a place for both beginners who are wanting to learn about cryptic crosswords and those already familiar with this wonderful form of wordplay.</p>
+		<p>This is for both beginners who are wanting to learn about cryptic crosswords and those already familiar with this wonderful form of wordplay.</p>
 	</div>
 
 	// Today clue
@@ -38,7 +38,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 	// buttons
 	const buttons = {
 		learn: {
-			name: "What are cryptics?",
+			name: "Learn about cryptics",
 			style: 'alt',
 			onClick: function() {
 				setMode('learn')
@@ -68,7 +68,13 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 		}
 	}
 
-	let btnArr = todayClue ? [buttons.learn, buttons.todayClue, buttons.allClues] : [buttons.learn, buttons.viewClues]
+	let btnArr = []
+	
+	if (knownUser) {
+		btnArr = todayClue ? [buttons.learn, buttons.todayClue, buttons.allClues] : [buttons.learn, buttons.viewClues]
+	} else {
+		btnArr = todayClue ? [buttons.learn, buttons.todayClue] : [buttons.learn, buttons.viewClues]
+	}
 
   return (
 	<div className='title container'>

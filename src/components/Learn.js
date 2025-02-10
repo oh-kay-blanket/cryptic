@@ -5,7 +5,7 @@ import ButtonContainer from './bottom/ButtonContainer';
 import typePill from '../assets/img/learn/type-pill-reveal.png';
 import showHint from '../assets/img/learn/show-hint.png';
 
-const Learn = ({ clues, setMode, setclueId }) => {
+const Learn = ({ clues, setMode, setclueId, setInput, setCheckAns }) => {
 
 	const todayClue = clues.find(clue => {
 
@@ -21,40 +21,28 @@ const Learn = ({ clues, setMode, setclueId }) => {
 
 	// buttons
 	const buttons = {
-		todayClue: {
-			name: "Play today's clue",
+		easyClue: {
+			name: "Try a clue",
 			style: 'primary',
 			onClick: function() {
-				setclueId(todayClue.id)
+				setclueId(208)
+				setInput([])
+				setCheckAns(false)
 				setMode('playing')
-			}
-		},
-		allClues: {
-			name: "See all clues",
-			style: 'secondary',
-			onClick: function() {
-				setMode('archive')
-			}
-		},
-		viewClues: {
-			name: "View clues",
-			style: 'primary',
-			onClick: function() {
-				setMode('archive')
 			}
 		}
 	}
 
-	const btnArr = todayClue ? [buttons.todayClue] : [buttons.viewClues]
+	const btnArr =  [buttons.easyClue]
 
 	return (
 		<div className='learn container'>
 
 			<div className='learn-section'>
 				<p className='learn-question'>What is a cryptic crossword?</p>
-				<p className='learn-answer'>A cryptic crossword is a type of crossword in which each clue is a word in itself, often involving wordplay, anagrams, homophones, hidden words, or other linguistic tricks. Unlike standard crosswords, where clues are straightforward definitions, cryptic clues typically have two parts:</p>
+				<p className='learn-answer'>A cryptic crossword is a type of crossword in which each clue is a puzzle in itself, often involving wordplay, anagrams, homophones, hidden words, or other linguistic tricks. Unlike standard crosswords, where clues are straightforward definitions, cryptic clues typically have two parts:</p>
 				<ul>
-					<li><strong>Definition</strong><br></br> A straight or slightly disguised definition of the answer. <br></br>In a cryptic, this will <span className='disclaimer'>always be at the beginning or end of the clue.</span></li>
+					<li><strong>Definition</strong><br></br> A straight or slightly disguised definition of the answer. <br></br><span className='disclaimer'>This will always be at the start or end of the clue.</span></li>
 					<li><strong>Wordplay</strong><br></br> A cryptic hint involving anagrams, reversals, hidden words, homophones, or other forms of word manipulation.</li>
 				</ul>
 			</div>
