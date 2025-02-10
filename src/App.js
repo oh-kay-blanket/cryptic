@@ -43,6 +43,8 @@ const App = () => {
 						clues={clues}
 						setMode={setMode}
 						setclueId={setclueId}
+						setInput={setInput}
+						setCheckAns={setCheckAns}
 					/>
 				</>
 			}
