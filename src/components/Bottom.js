@@ -1,8 +1,8 @@
 import React from 'react'
 
-import ButtonContainer from './ButtonContainer'
-import Keyboard from './Keyboard'
-import Message from './Message'
+import ButtonContainer from './bottom/ButtonContainer'
+import Keyboard from './bottom/Keyboard'
+import Message from './bottom/Message'
 
 const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats }) => {
 	

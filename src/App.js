@@ -5,7 +5,7 @@ import Title from './components/Title'
 import TopBar from './components/TopBar'
 import Learn from './components/Learn'
 import ClueContainer from './components/Clue'
-import Bottom from './components/bottom/Bottom'
+import Bottom from './components/Bottom'
 import Archive from './components/Archive' 
 
 // hooks
@@ -15,7 +15,7 @@ import manageInput from './utils/state/manageInput'
 
 const App = () => {
 
-	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats } = manageState()
+	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed } = manageState()
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
@@ -45,6 +45,8 @@ const App = () => {
 						setclueId={setclueId}
 						setInput={setInput}
 						setCheckAns={setCheckAns}
+						typeViewed={typeViewed}
+						setTypeViewed={setTypeViewed}
 					/>
 				</>
 			}
