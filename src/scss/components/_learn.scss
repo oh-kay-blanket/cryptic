@@ -16,7 +16,7 @@
 		}
 
 		img {
-			max-width: 200px;
+			// max-width: 200px;
 			border: 2px solid $lc-gray--dark;
 		}
 
@@ -40,6 +40,7 @@
 
 		.example {
 			font-family: $lc-font--serif;
+			margin-bottom: .75rem;
 			
 			.highlight {
 				background-color: $lc-secondary--light;

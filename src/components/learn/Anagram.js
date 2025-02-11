@@ -39,8 +39,8 @@ const Anagram = ({ setLearnType }) => {
 
 			<div className='learn-section'>
 				<h3>Examples</h3>
-				<p className='example'><span className='purple'>Hear Leo</span>'s <span className='highlight'>wonky</span> audio receiver (7)</p>
-				<p>Here, "wonky" is indicating that "Hear Leo" will be an anagram.</p>
+				<p className='example'>Hear Leo's <span className='highlight'>wonky</span> audio receiver (7)</p>
+				<p>In this clue, "wonky" is an anagram indicator.</p>
 				<img src={earhole}/>
 			</div>
 
