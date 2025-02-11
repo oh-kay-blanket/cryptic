@@ -21,13 +21,14 @@ const manageState = () => {
 			return JSON.parse(storedState); // Parse and use the stored value
 		} else {
 			// Return a default value if it doesn't exist
-			return { completedClues: [], showType: true }
+			return { completedClues: [], showType: true, typeViewed: [] }
 		}
 	})
 
 	// Variables
 	let completedClues = lcState.completedClues
 	let showType = lcState.showType
+	let typeViewed = lcState.typeViewed
 
 
 	// Persist state to localStorage whenever it changes
@@ -74,10 +75,19 @@ const manageState = () => {
 		setStats({ guesses: 0, hints: 0, how: '' });
 	}
 
+	// Whether or not to show type pills in clue container
 	const setShowType = (newType) => {
 		setLcState({
 			...lcState,
 			showType: newType
+		})
+	}
+
+	// List of types viewed in Learn module
+	const setTypeViewed = (newType) => {
+		setLcState({
+			...lcState,
+			typeViewed: [...lcState.typeViewed,newType]
 		})
 	}
 
@@ -89,7 +99,7 @@ const manageState = () => {
 		activeClue && console.log(activeClue)
 	}, [clueId]);
 
-	return { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats }
+	return { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed }
 }
 
 export default manageState

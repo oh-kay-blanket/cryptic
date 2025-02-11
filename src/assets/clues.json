@@ -2603,46 +2603,6 @@
 	  }
 	},
 	{
-	  "id": "208",
-	  "clue": {
-		"value": "Actress Ryan's jewelry returned"
-	  },
-	  "release": "12/31/2024",
-	  "difficulty": "1",
-	  "ready": "TRUE",
-	  "type": "reversal",
-	  "definition": [
-		"Actress Ryan"
-	  ],
-	  "hints": [
-		{
-		  "category": "synonym",
-		  "value": "jewelry",
-		  "end": {
-			"value": [
-			  "gem"
-			]
-		  }
-		},
-		{
-		  "category": "reversal",
-		  "value": "returned",
-		  "end": {
-			"value": [
-			  "gem",
-			  "meg"
-			]
-		  }
-		}
-	  ],
-	  "solution": {
-		"value": "meg"
-	  },
-	  "source": {
-		"value": "Kegler"
-	  }
-	},
-	{
 	  "id": "280",
 	  "clue": {
 		"value": "Ordered blue drink"
@@ -2808,6 +2768,46 @@
 	  ],
 	  "solution": {
 		"value": "Raymond Burr"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "208",
+	  "clue": {
+		"value": "Actress Ryan's jewelry returned"
+	  },
+	  "release": "12/26/2024",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"Actress Ryan"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "jewelry",
+		  "end": {
+			"value": [
+			  "gem"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returned",
+		  "end": {
+			"value": [
+			  "gem",
+			  "meg"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "meg"
 	  },
 	  "source": {
 		"value": "Kegler"
