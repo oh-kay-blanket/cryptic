@@ -1,8 +1,6 @@
 import React from 'react'
 
 import ButtonContainer from '../bottom/ButtonContainer'
-import an1 from '../../assets/img/learn/anagram/an1.gif'
-import an3 from '../../assets/img/learn/anagram/an3.gif'
 
 const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) => {
 
@@ -57,6 +55,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 							<li>The definition is <strong>role in "The Matrix"</strong></li>
 							<li><strong>unusual</strong> indicates that <strong>One</strong> is an anagram</li>
 						</ul>
+						<p className='text-center'><strong>neo</strong> → <strong>one</strong></p>
 						<div className='solution'>
 							<span className='letter'>n</span>
 							<span className='letter'>e</span>
@@ -72,6 +71,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 							<li>The definition is <strong>three-sided figure</strong></li>
 							<li><strong>odd</strong> indicates that <strong>Altering</strong> is an anagram</li>
 						</ul>
+						<p className='text-center'><strong>altering</strong> → <strong>triangle</strong></p>
 						<div className='solution'>
 							<span className='letter'>t</span>
 							<span className='letter'>r</span>
