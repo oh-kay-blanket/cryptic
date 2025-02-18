@@ -5,6 +5,10 @@
 	overflow-y: auto;
 	padding: 1rem 1rem 5rem;
 
+	.back-button {
+		margin-bottom: 1.5rem;
+	}
+
 	.learn-section {
 		&:not(:last-of-type) {
 			margin-bottom: 2rem;
@@ -15,8 +19,7 @@
 			font-weight: 700;
 		}
 
-		img {
-			// max-width: 200px;
+		img.border {
 			border: 2px solid $lc-gray--dark;
 		}
 
@@ -26,10 +29,6 @@
 			&.no-dec {
 				list-style-type: none;
 			}
-			
-			li {
-				margin-top: 1rem;
-			}
 		}
 
 
@@ -38,17 +37,36 @@
 			background-color: $lc-secondary--light;
 		}
 
-		.example {
-			font-family: $lc-font--serif;
-			margin-bottom: .75rem;
+		.example-container {
+			border: 2px solid $lc-gray--light;
+			border-radius: .5rem;
+			margin-bottom: 1rem;
 			
-			.highlight {
-				background-color: $lc-secondary--light;
+			.example {
+				padding: 1.5rem .5rem .5rem;
+				font-family: $lc-font--serif;
+				margin-bottom: 1.5rem;
+				text-align: center;
 			}
 
-			.purple {
-				// color: $lc-secondary--dark;
+			.explanation {
+				background-color: $lc-gray--light;
+				padding: .5rem;
+				font-size: .9rem;
+				
+				strong {
+					font-family: $lc-font--serif;
+					text-transform: uppercase;
+					font-size: .8rem;
+				}
+	
+				img {
+					margin-top: .5rem;
+					border: none;
+					border-radius: .5rem;
+				}
 			}
+	
 		}
 
 		.indicators {
@@ -62,7 +80,8 @@
 				margin: .25rem;
 				padding: 0 .25rem;
 				font-family: $lc-font--serif;
-				background-color: $lc-secondary--light;
+				background-color: $lc-secondary--v-light;
+				font-size: .9rem;
 			}
 		}
 	}
@@ -79,7 +98,7 @@
 			border-radius: 50px;
 			width: fit-content;
 			padding: .2rem .75rem;
-			margin: .35rem .25rem !important;
+			margin: .3rem .25rem !important;
 			cursor: pointer;
 
 			&:hover, &:active, &:focus, &.viewed {

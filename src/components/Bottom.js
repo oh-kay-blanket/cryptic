@@ -82,7 +82,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 
 	return(
 		<div className='bottom'>
-			<div className='container'>				
+			<div className='container px-0'>				
 				{showMessage ? 
 					<Message
 						setShowMessage={setShowMessage}

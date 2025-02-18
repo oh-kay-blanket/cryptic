@@ -11,7 +11,7 @@ const getMessage = hint => {
 			if (hint.value.length == 1) { // Single definition
 				return <><strong>{hint.value[0].toUpperCase()}</strong> is the definition</>
 			} else { // Double definition
-				return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> have the same definition</>
+				return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> are definitions for the solution</>
 			}
 		case 'indicator':
 			switch(hint.category) {

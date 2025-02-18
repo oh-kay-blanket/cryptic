@@ -107,6 +107,7 @@
 			
 			.letter {
 				color: transparent;
+				line-height: 23px;
 				opacity: 0;
 				transition:
 					opacity $lc-transition--short ease 0s,

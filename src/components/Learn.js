@@ -17,6 +17,7 @@ import Combination from './learn/Combination'
 
 import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
+import ex from '../assets/img/learn/example.jpg'
 
 const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeViewed }) => {
 
@@ -64,17 +65,28 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 					<h2 className='learn-question'>What is a cryptic crossword?</h2>
 					<p className='learn-answer'>A cryptic crossword is a type of crossword in which each clue is a puzzle in itself, often involving wordplay, anagrams, homophones, hidden words, or other linguistic tricks. Unlike standard crosswords, where clues are straightforward definitions, cryptic clues typically have two parts:</p>
 					<ul className='no-dec'>
-						<li><strong>Definition</strong><br></br> A straight or slightly disguised definition of the answer. This will <em>always</em> be at the start or end of the clue.</li>
-						<li><strong>Wordplay</strong><br></br> A cryptic hint involving anagrams, reversals, hidden words, homophones, or other forms of word manipulation.</li>
+						<li className='mt-3'><strong>Definition</strong><br></br> A straight or slightly disguised definition of the answer. This will <em>always</em> be at the start or end of the clue.</li>
+						<li className='mt-3'><strong>Wordplay</strong><br></br> A cryptic hint involving anagrams, reversals, hidden words, homophones, or other forms of word manipulation.</li>
 					</ul>
+					<p><strong>Example</strong></p>
+					<div className='example-container'>
+						<div className='example'><img src={ex}/></div>
+						<div className='explanation'>
+							<ul className='mt-3'>
+								<li><strong>Frogs</strong> can be <strong>toads</strong></li>
+								<li><strong>saw</strong> can be <strong>tool</strong></li>
+								<li><strong>toadstool</strong> is the solution</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 
 				<div className='learn-section'>
 					<h2 className='learn-question'>What is Learn Cryptic?</h2>
 					<p className='learn-answer'>Learn Cryptic is designed to help you learn to understand and solve cryptic clues. There are two ways you can get help with solving clues:</p>
 					<ul className='no-dec'>
-						<li><strong>Wordplay used</strong><br></br> At the top of each clue you will see purple pills indicating the type(s) of wordplay used in this clue. Tapping on these will reveal more information about that type.<br></br><img className='' src={typePill} /></li>
-						<li><strong>Hints</strong><br></br> The "Show hint" and "Reveal solution" buttons in the clue provide direct guidance as to what steps you will need to take to find the solution.<br></br><img className='' src={showHint} /></li>
+						<li className='mt-3'><strong>Wordplay used</strong><br></br> At the top of each clue you will see purple pills indicating the type(s) of wordplay used in this clue. Tapping on these will reveal more information about that type.<br></br><img className='border' src={typePill} /></li>
+						<li className='mt-3'><strong>Hints</strong><br></br> The "Show hint" and "Reveal solution" buttons in the clue provide direct guidance as to what steps you will need to take to find the solution.<br></br><img className='border' src={showHint} /></li>
 					</ul>
 				</div>
 
@@ -97,19 +109,19 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 				</div>
 			</div>
 		}
-		{ learnType == 'Charade' && <Charade setLearnType={setLearnType} /> }
-		{ learnType == 'Anagram' && <Anagram setLearnType={setLearnType} /> }
-		{ learnType == 'Container' && <Container setLearnType={setLearnType} /> }
-		{ learnType == 'Deletion' && <Deletion setLearnType={setLearnType} /> }
-		{ learnType == 'Double Definition' && <DoubleDefinition setLearnType={setLearnType} /> }
-		{ learnType == 'Hidden Word' && <HiddenWord setLearnType={setLearnType} /> }
-		{ learnType == 'Homophone' && <Homophone setLearnType={setLearnType} /> }
-		{ learnType == 'Initialism' && <Initialism setLearnType={setLearnType} /> }
-		{ learnType == 'Letter Bank' && <LetterBank setLearnType={setLearnType} /> }
-		{ learnType == 'Reversal' && <Reversal setLearnType={setLearnType} /> }
-		{ learnType == 'Spoonerism' && <Spoonerism setLearnType={setLearnType} /> }
-		{ learnType == '& Lit.' && <Lit setLearnType={setLearnType} /> }
-		{ learnType == 'Combination' && <Combination setLearnType={setLearnType} /> }
+		{ learnType == 'Charade' && <Charade setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Anagram' && <Anagram setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Container' && <Container setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Deletion' && <Deletion setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Double Definition' && <DoubleDefinition setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Hidden Word' && <HiddenWord setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Homophone' && <Homophone setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Initialism' && <Initialism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Letter Bank' && <LetterBank setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Reversal' && <Reversal setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Spoonerism' && <Spoonerism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == '& Lit.' && <Lit setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Combination' && <Combination setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
 	</>)
 }
 
