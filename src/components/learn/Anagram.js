@@ -30,7 +30,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 	}
 	const btnArr = [buttons.easyClue]
 
-	const indicatorArr = ["new", "broken", "mad", "crazy", "wild", "scrambled", "mixed", "shaken", "rearranged", "confused"]
+	const indicatorArr = ["new", "broken", "mad", "crazy", "wild", "scrambled", "mixed", "shaken", "rearranged", "confused", "odd", "unusual", "off", "dancing", "rocky", "stirred"]
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -44,7 +44,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 
 			<div className='learn-section'>
 				<h2>Indicators</h2>
-				<p>Common anagram indicators include:</p>
+				<p>Clues with anagrams will always have an indicator word to let you know there will be an anagram. Common indicators include:</p>
 				<ul className='indicators mt-3'>{indicators}</ul>
 			</div>
 
@@ -53,23 +53,35 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 				<div className='example-container'>
 					<p className='example'>One unusual role in "The Matrix" (3)</p>
 					<div className='explanation'>
-						<ul className='mt-3'>
-							<li><strong>role in "The Matrix"</strong> is the definition</li>
+						<ul className='mt-0'>
+							<li>The definition is <strong>role in "The Matrix"</strong></li>
 							<li><strong>unusual</strong> indicates that <strong>One</strong> is an anagram</li>
-							<li><strong>Neo</strong> is the solution</li>
 						</ul>
-						<img src={an1}/>
+						<div className='solution'>
+							<span className='letter'>n</span>
+							<span className='letter'>e</span>
+							<span className='letter'>o</span>
+						</div>
 					</div>
 				</div>
 
 				<div className='example-container'>
 					<p className='example'>Altering odd three-sided figure (8)</p>
 					<div className='explanation'>
-						<ul className='mt-3'>
-							<li><strong>three-sided figure</strong> is the definition</li>
+						<ul className='mt-0'>
+							<li>The definition is <strong>three-sided figure</strong></li>
 							<li><strong>odd</strong> indicates that <strong>Altering</strong> is an anagram</li>
 						</ul>
-						<img src={an3}/>
+						<div className='solution'>
+							<span className='letter'>t</span>
+							<span className='letter'>r</span>
+							<span className='letter'>i</span>
+							<span className='letter'>a</span>
+							<span className='letter'>n</span>
+							<span className='letter'>g</span>
+							<span className='letter'>l</span>
+							<span className='letter'>e</span>
+						</div>
 					</div>
 				</div>
 			</div>

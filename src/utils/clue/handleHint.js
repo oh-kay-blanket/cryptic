@@ -197,7 +197,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		if (hint.reveals) {
 			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('hide-input'), 2500)
 			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('reveal-solution'), 2500)
-			setTimeout(()=>activeClue.source.ref.current.classList.add('show'), 3500)
+			setTimeout(()=>activeClue.source.ref.current.classList.add('show'), 3000)
 		}
 
 	// Change last hint to gray when going back to play
