@@ -1,8 +1,6 @@
 import React from 'react'
 
 import ButtonContainer from '../bottom/ButtonContainer'
-import ch1 from '../../assets/img/learn/charade/ch1.gif'
-import ch2 from '../../assets/img/learn/charade/ch2.gif'
 
 const Charade = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) => {
 
@@ -48,8 +46,8 @@ const Charade = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 							<li>The definition is <strong>Come to</strong></li>
 							<li><strong>att</strong> is used</li>
 							<li><strong>objective</strong> can be <strong>end</strong></li>
-							<li><strong>att</strong> + <strong>end</strong></li>
 						</ul>
+						<p className='text-center'><strong>att</strong> + <strong>end</strong> = <strong>attend</strong></p>
 						<div className='solution'>
 							<span className='letter'>a</span>
 							<span className='letter'>t</span>
@@ -69,8 +67,8 @@ const Charade = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 							<li><strong>runny cheese</strong> can be <strong>brie</strong></li>
 							<li><strong>Friday</strong> can be <strong>f</strong></li>
 							<li><strong>Saturday</strong> can be <strong>s</strong></li>
-							<li><strong>brie</strong> + <strong>f</strong> + <strong>s</strong></li>
 						</ul>
+						<p className='text-center'><strong>brie</strong> + <strong>f</strong> + <strong>s</strong> = <strong>briefs</strong></p>
 						<div className='solution'>
 							<span className='letter'>b</span>
 							<span className='letter'>r</span>

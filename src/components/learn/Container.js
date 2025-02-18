@@ -1,8 +1,6 @@
 import React from 'react'
 
 import ButtonContainer from '../bottom/ButtonContainer'
-import ct1 from '../../assets/img/learn/container/ct1.gif'
-import ct2 from '../../assets/img/learn/container/ct2.gif'
 
 const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) => {
 
@@ -14,7 +12,7 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 			name: "Play a container clue",
 			style: 'secondary',
 			onClick: function() {
-				setclueId(97)
+				setclueId(306)
 				setInput([])
 				setCheckAns(false)
 				setMode('playing')
@@ -39,7 +37,7 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 
 			<div className='learn-section'>
 				<h1>Container</h1>
-				<p>In a clue with a container, a word or words are reordered to make a new word or words.</p>
+				<p>In a clue with a container, a word goes inside of another to make a new word.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,14 +50,43 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 				<h2>Examples</h2>
 				<div className='example-container'>
 					<p className='example'>Don eats Ann's brand of yogurt (6)</p>
-					<p><strong>eats</strong> indicates a container.</p>
-					<img src={ct1}/>
+					<div className='explanation'>
+						<ul className='mt-0'>
+							<li>The definition is <strong>brand of yogurt</strong></li>
+							<li><strong>eats</strong> indicates a container</li>
+						</ul>
+						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<div className='solution'>
+							<span className='letter'>d</span>
+							<span className='letter'>a</span>
+							<span className='letter'>n</span>
+							<span className='letter'>n</span>
+							<span className='letter'>o</span>
+							<span className='letter'>n</span>
+						</div>
+					</div>
 				</div>
 
 				<div className='example-container'>
 					<p className='example'>Spanish gentlemen taking interest in old people (7)</p>
-					<p><strong>taking</strong> indicates a container.</p>
-					<img src={ct2}/>
+					<div className='explanation'>
+						<ul className='mt-0'>
+							<li>The definition is <strong>old people</strong></li>
+							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
+							<li><strong>interest</strong> can be <strong>i</strong></li>
+							<li><strong>taking</strong> indicates a container</li>
+						</ul>
+						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<div className='solution'>
+							<span className='letter'>s</span>
+							<span className='letter'>e</span>
+							<span className='letter'>n</span>
+							<span className='letter'>i</span>
+							<span className='letter'>o</span>
+							<span className='letter'>r</span>
+							<span className='letter'>s</span>
+						</div>
+					</div>
 				</div>
 			</div>
 

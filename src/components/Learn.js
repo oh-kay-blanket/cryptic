@@ -67,7 +67,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 					<ul className='no-dec'>
 						<li className='mt-3'>
 							<p><strong>Definition</strong></p>
-							<p>A straight or slightly disguised definition of the answer. This will <em>always</em> be at the start or end of the clue.</p>
+							<p>A straight or slightly disguised definition of the answer. This will <span className='underline'>always</span> be at the start or end of the clue.</p>
 						</li>
 						<li className='mt-3'>
 							<p><strong>Wordplay</strong></p>
@@ -81,8 +81,8 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 							<ul className='mt-0'>
 								<li><strong>Frogs</strong> can be <strong>toads</strong></li>
 								<li><strong>saw</strong> can be <strong>tool</strong></li>
-								<li><strong>toads</strong> + <strong>tool</strong></li>
 							</ul>
+							<p className='text-center'><strong>toads</strong> + <strong>tool</strong> = <strong>toadstool</strong></p>
 							<div className='solution'>
 								<span className='letter'>t</span>
 								<span className='letter'>o</span>
@@ -100,7 +100,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 
 				<div className='learn-section'>
 					<h2 className='learn-question'>What is Learn Cryptic?</h2>
-					<p className='learn-answer'>Learn Cryptic is a gmae to help you learn about and practice cryptic clues. There are two ways you can get help with solving clues:</p>
+					<p className='learn-answer'>Learn Cryptic is a game to help you learn about and practice cryptic clues. There are two ways you can get help with solving clues:</p>
 					<ul className='no-dec'>
 						<li className='mt-3'>
 							<p><strong>Wordplay used</strong></p>
@@ -117,7 +117,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 
 				<div ref={typeSection} className='learn-section'>
 					<h2 className='learn-question'>What differnt types of wordplay will I find?</h2>
-					<p className='learn-answer'>Tap each type below to learn more:</p>
+					<p className='learn-answer'>Tap a type below to learn more:</p>
 					<ul className='learn-types no-dec'>{types}</ul>
 				</div>
 
