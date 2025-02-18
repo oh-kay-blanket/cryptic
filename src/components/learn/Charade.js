@@ -43,14 +43,43 @@ const Charade = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 				<h2>Examples</h2>
 				<div className='example-container'>
 					<p className='example'>Come to AT&T objective (6)</p>
-					<p><strong>att</strong> + <strong>end</strong> = <strong>attend</strong>.</p>
-					<img src={ch2}/>
+					<div className='explanation'>
+						<ul className='mt-0'>
+							<li>The definition is <strong>Come to</strong></li>
+							<li><strong>att</strong> is used</li>
+							<li><strong>objective</strong> can be <strong>end</strong></li>
+							<li><strong>att</strong> + <strong>end</strong></li>
+						</ul>
+						<div className='solution'>
+							<span className='letter'>a</span>
+							<span className='letter'>t</span>
+							<span className='letter'>t</span>
+							<span className='letter'>e</span>
+							<span className='letter'>n</span>
+							<span className='letter'>d</span>
+						</div>
+					</div>
 				</div>
 
 				<div className='example-container'>
 					<p className='example'>Digests runny cheese on Friday and Saturday (6)</p>
-					<p><strong>brie</strong> + <strong>f</strong> + <strong>s</strong> = <strong>briefs</strong>.</p>
-					<img src={ch1}/>
+					<div className='explanation'>
+						<ul className='mt-0'>
+							<li>The definition is <strong>Digests</strong></li>
+							<li><strong>runny cheese</strong> can be <strong>brie</strong></li>
+							<li><strong>Friday</strong> can be <strong>f</strong></li>
+							<li><strong>Saturday</strong> can be <strong>s</strong></li>
+							<li><strong>brie</strong> + <strong>f</strong> + <strong>s</strong></li>
+						</ul>
+						<div className='solution'>
+							<span className='letter'>b</span>
+							<span className='letter'>r</span>
+							<span className='letter'>i</span>
+							<span className='letter'>e</span>
+							<span className='letter'>f</span>
+							<span className='letter'>s</span>
+						</div>
+					</div>
 				</div>
 			</div>
 

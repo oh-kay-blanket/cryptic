@@ -65,28 +65,53 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 					<h2 className='learn-question'>What is a cryptic crossword?</h2>
 					<p className='learn-answer'>A cryptic crossword is a type of crossword in which each clue is a puzzle in itself, often involving wordplay, anagrams, homophones, hidden words, or other linguistic tricks. Unlike standard crosswords, where clues are straightforward definitions, cryptic clues typically have two parts:</p>
 					<ul className='no-dec'>
-						<li className='mt-3'><strong>Definition</strong><br></br> A straight or slightly disguised definition of the answer. This will <em>always</em> be at the start or end of the clue.</li>
-						<li className='mt-3'><strong>Wordplay</strong><br></br> A cryptic hint involving anagrams, reversals, hidden words, homophones, or other forms of word manipulation.</li>
+						<li className='mt-3'>
+							<p><strong>Definition</strong></p>
+							<p>A straight or slightly disguised definition of the answer. This will <em>always</em> be at the start or end of the clue.</p>
+						</li>
+						<li className='mt-3'>
+							<p><strong>Wordplay</strong></p>
+							<p>A cryptic hint involving anagrams, reversals, hidden words, homophones, or other forms of word manipulation.</p>
+						</li>
 					</ul>
 					<p><strong>Example</strong></p>
 					<div className='example-container'>
 						<div className='example'><img src={ex}/></div>
 						<div className='explanation'>
-							<ul className='mt-3'>
+							<ul className='mt-0'>
 								<li><strong>Frogs</strong> can be <strong>toads</strong></li>
 								<li><strong>saw</strong> can be <strong>tool</strong></li>
-								<li><strong>toadstool</strong> is the solution</li>
+								<li><strong>toads</strong> + <strong>tool</strong></li>
 							</ul>
+							<div className='solution'>
+								<span className='letter'>t</span>
+								<span className='letter'>o</span>
+								<span className='letter'>a</span>
+								<span className='letter'>d</span>
+								<span className='letter'>s</span>
+								<span className='letter'>t</span>
+								<span className='letter'>o</span>
+								<span className='letter'>o</span>
+								<span className='letter'>l</span>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<div className='learn-section'>
 					<h2 className='learn-question'>What is Learn Cryptic?</h2>
-					<p className='learn-answer'>Learn Cryptic is designed to help you learn to understand and solve cryptic clues. There are two ways you can get help with solving clues:</p>
+					<p className='learn-answer'>Learn Cryptic is a gmae to help you learn about and practice cryptic clues. There are two ways you can get help with solving clues:</p>
 					<ul className='no-dec'>
-						<li className='mt-3'><strong>Wordplay used</strong><br></br> At the top of each clue you will see purple pills indicating the type(s) of wordplay used in this clue. Tapping on these will reveal more information about that type.<br></br><img className='border' src={typePill} /></li>
-						<li className='mt-3'><strong>Hints</strong><br></br> The "Show hint" and "Reveal solution" buttons in the clue provide direct guidance as to what steps you will need to take to find the solution.<br></br><img className='border' src={showHint} /></li>
+						<li className='mt-3'>
+							<p><strong>Wordplay used</strong></p>
+							<p>At the top of each clue you will see purple pills indicating the type(s) of wordplay used in this clue. Tapping on these will reveal more information about that type.</p>
+							<img className='border' src={typePill} />
+						</li>
+						<li className='mt-3'>
+							<p><strong>Hints</strong></p>
+							<p>The "Show hint" and "Reveal solution" buttons in the clue provide direct guidance as to what steps you will need to take to find the solution.</p>
+							<img className='border' src={showHint} />
+						</li>
 					</ul>
 				</div>
 
@@ -98,7 +123,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 
 				<div className='learn-section'>
 					<h2 className='learn-question'>Anything else I need to know?</h2>
-					<p className='learn-answer'>Now that you understand the basics of how cryptic clues are constructed and are familiar with some of the different types of hints, dive in and try a few! Make sure to use the type pills and hints to help you out along the way.</p>
+					<p className='learn-answer'>Now that you understand the basics of how cryptic clues are constructed and are familiar with some of the different types of hints, dive in and try a few!</p>
 				</div>
 
 				<div className='learn-section'>
