@@ -10,7 +10,7 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 	const buttons = {
 		easyClue: {
 			name: "Play a double definition clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(101)
 				setInput([])
@@ -26,7 +26,7 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 	
 	return(
 		<div className='learn container'>
@@ -80,7 +80,6 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

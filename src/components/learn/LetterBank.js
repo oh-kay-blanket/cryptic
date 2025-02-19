@@ -9,8 +9,8 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play a letter bank clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(50)
 				setInput([])
@@ -26,7 +26,7 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ['repeatedly', 'often', 'recurring', 'looping', 'cyclical', 'over and over']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -76,7 +76,6 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

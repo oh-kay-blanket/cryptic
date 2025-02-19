@@ -10,7 +10,7 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 	const buttons = {
 		easyClue: {
 			name: "Play a container clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(306)
 				setInput([])
@@ -26,7 +26,7 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = [ "In", "Inside", "About", "Around", "Holding", "Containing", "Grasping", "Covering", "Enclosing", "Wrapped in", "Surrounding", "Encasing", "Embracing", "Included in", "Held by"]
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -93,7 +93,6 @@ const Container = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) 
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

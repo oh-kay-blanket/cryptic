@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button'
 
-const ButtonContainer = ({ btnArr, isSolution, stack }) => {
+const ButtonContainer = ({ btnArr, isSolution, stack = false }) => {
 
 	const buttons = btnArr.map((btnInfo, index) => <Button key={index} btnInfo={btnInfo} />)
 

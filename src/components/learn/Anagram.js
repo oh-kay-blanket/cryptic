@@ -10,7 +10,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 	const buttons = {
 		easyClue: {
 			name: "Play an anagram clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(97)
 				setInput([])
@@ -26,7 +26,7 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ["new", "broken", "mad", "crazy", "wild", "scrambled", "mixed", "shaken", "rearranged", "confused", "odd", "unusual", "off", "dancing", "rocky", "stirred"]
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -89,7 +89,6 @@ const Anagram = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode }) =>
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

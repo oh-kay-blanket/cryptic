@@ -10,7 +10,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	const buttons = {
 		easyClue: {
 			name: "Play a hidden word clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(2)
 				setInput([])
@@ -26,7 +26,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ['concealed', 'within', 'member', 'held', 'inside', 'buried', 'featured', 'seen in', 'stocks', 'partly', 'smuggled', 'sheath']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -55,7 +55,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 							<li>The definition is <strong>Field</strong></li>
 							<li><strong>in</strong> indicates a hidden word</li>
 						</ul>
-						<p className='text-center'><strong>f</strong>(<strong>ar ea</strong>)<strong>st</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>f</strong>(<strong>ar ea</strong>)<strong>st</strong></p>
 						<div className='solution'>
 							<span className='letter'>a</span>
 							<span className='letter'>r</span>
@@ -88,7 +88,6 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

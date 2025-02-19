@@ -9,8 +9,8 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play a spoonerism clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(192)
 				setInput([])
@@ -26,7 +26,7 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 	
 	return(
 		<div className='learn container'>
@@ -45,7 +45,7 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			<div className='learn-section'>
 				<h2>Examples</h2>
 				<div className='example-container'>
-					<p className='example'>Clean up, shake a tower, then spoon (5,1,6)</p>
+					<p className='example'>Clean up, shake a tower, then spoon (4,1,6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
 							<li>The definition is <strong>Clean up</strong></li>
@@ -98,7 +98,6 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>
