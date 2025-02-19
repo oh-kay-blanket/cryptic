@@ -9,7 +9,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
+			name: "Play a hidden word clue",
 			style: 'secondary',
 			onClick: function() {
 				setclueId(2)
@@ -28,7 +28,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	}
 	const btnArr = [buttons.easyClue]
 
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
+	const indicatorArr = ['concealed', 'within', 'member', 'held', 'inside', 'buried', 'featured', 'seen in', 'stocks', 'partly', 'smuggled', 'sheath']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -37,7 +37,7 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 
 			<div className='learn-section'>
 				<h1>Hidden Word</h1>
-				<p>In a clue with a hidden word, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a hidden word, the answer is a string of letters embedded in the clue.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,17 +52,15 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>Field in Far East (4)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a hidden word</li>
+							<li>The definition is <strong>Field</strong></li>
+							<li><strong>in</strong> indicates a hidden word</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>f</strong>(<strong>ar ea</strong>)<strong>st</strong> = <strong>dannon</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
 							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>r</span>
+							<span className='letter'>e</span>
+							<span className='letter'>a</span>
 						</div>
 					</div>
 				</div>
@@ -71,19 +69,16 @@ const HiddenWord = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>Focus too much on portion of job session (6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a hidden word</li>
+							<li>The definition is <strong>Focus too much on</strong></li>
+							<li><strong>portion of</strong> indicates a hidden word</li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>j</strong>(<strong>ob sess</strong>)<strong>ion</strong></p>
 						<div className='solution'>
+							<span className='letter'>o</span>
+							<span className='letter'>b</span>
 							<span className='letter'>s</span>
 							<span className='letter'>e</span>
-							<span className='letter'>n</span>
-							<span className='letter'>i</span>
-							<span className='letter'>o</span>
-							<span className='letter'>r</span>
+							<span className='letter'>s</span>
 							<span className='letter'>s</span>
 						</div>
 					</div>

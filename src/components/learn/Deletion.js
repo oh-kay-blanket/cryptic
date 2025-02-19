@@ -9,7 +9,7 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
+			name: "Play a deletion clue",
 			style: 'secondary',
 			onClick: function() {
 				setclueId(104)
@@ -49,20 +49,21 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 			<div className='learn-section'>
 				<h2>Examples</h2>
 				<div className='example-container'>
-					<p className='example'>Different parent starts late (5)</p>
+					<p className='example'>Different parent starts late (6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a deletion</li>
+							<li>The definition is <strong>different</strong></li>
+							<li><strong>parent</strong> can be <strong>mother</strong></li>
+							<li><strong>starts late</strong> indicates a deletion</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>mother</strong> - <strong>m</strong> = <strong>other</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
-							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
+							<span className='letter'>m</span>
 							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>t</span>
+							<span className='letter'>h</span>
+							<span className='letter'>e</span>
+							<span className='letter'>r</span>
 						</div>
 					</div>
 				</div>
@@ -71,19 +72,16 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 					<p className='example'>French city park is excluding kids, at first (5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a deletion</li>
+							<li>The definition is <strong>French city</strong></li>
+							<li><strong>kids, at first</strong> gives us <strong>k</strong></li>
+							<li><strong>excluding</strong> indicates a deletion</li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>park is</strong> - <strong>k</strong> = <strong>paris</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
-							<span className='letter'>e</span>
-							<span className='letter'>n</span>
-							<span className='letter'>i</span>
-							<span className='letter'>o</span>
+							<span className='letter'>p</span>
+							<span className='letter'>a</span>
 							<span className='letter'>r</span>
+							<span className='letter'>i</span>
 							<span className='letter'>s</span>
 						</div>
 					</div>

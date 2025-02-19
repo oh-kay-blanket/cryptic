@@ -27,9 +27,6 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 		}
 	}
 	const btnArr = [buttons.easyClue]
-
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
-	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
 		<div className='learn container'>
@@ -37,13 +34,12 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 
 			<div className='learn-section'>
 				<h1>Spoonerism</h1>
-				<p>In a clue with a spoonerism, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a spoonerism, swap the sounds at beginnings of two words.</p>
 			</div>
 
 			<div className='learn-section'>
 				<h2>Indicators</h2>
-				<p>Common spoonerism indicators include:</p>
-				<ul className='indicators'>{indicators}</ul>
+				<p>Spoonerisms will include some reference to a spoon or Reverand Spooner (the person who invented spoonerisms)</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,37 +48,46 @@ const Spoonerism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>Clean up, shake a tower, then spoon (5,1,6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a spoonerism</li>
+							<li>The definition is <strong>Clean up</strong></li>
+							<li><strong>then spoon</strong> indicates a spoonerism</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>shake a tower</strong> → <strong>take a shower</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
+							<span className='letter'>t</span>
 							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
+							<span className='letter'>k</span>
+							<span className='letter'>e</span>
+							<span className='letter'>a</span>
+							<span className='letter'>s</span>
+							<span className='letter'>h</span>
 							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>w</span>
+							<span className='letter'>e</span>
+							<span className='letter'>r</span>
 						</div>
 					</div>
 				</div>
 
 				<div className='example-container'>
-					<p className='example'>Restaurant supervisors marry bigots, per Rev. Spooner (3,6)</p>
+					<p className='example'>Restaurant supervisors marry bigots, per Rev. Spooner (4,7)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a spoonerism</li>
+							<li>The definition is <strong>Restaurant supervisors</strong></li>
+							<li><strong>marry</strong> can be <strong>wed</strong></li>
+							<li><strong>bigots</strong> can be <strong>haters</strong></li>
+							<li><strong>per Rev. Spooner</strong> indicates a spoonerism</li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>wed haters</strong> → <strong>head waiters</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
+							<span className='letter'>h</span>
 							<span className='letter'>e</span>
-							<span className='letter'>n</span>
+							<span className='letter'>a</span>
+							<span className='letter'>d</span>
+							<span className='letter'>w</span>
+							<span className='letter'>a</span>
 							<span className='letter'>i</span>
-							<span className='letter'>o</span>
+							<span className='letter'>t</span>
+							<span className='letter'>e</span>
 							<span className='letter'>r</span>
 							<span className='letter'>s</span>
 						</div>

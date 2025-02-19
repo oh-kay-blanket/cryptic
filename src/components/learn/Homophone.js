@@ -28,7 +28,7 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 	}
 	const btnArr = [buttons.easyClue]
 
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
+	const indicatorArr = ['sounds like', 'we hear', 'say', 'said', 'speak']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -37,7 +37,7 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 
 			<div className='learn-section'>
 				<h1>Homophone</h1>
-				<p>In a clue with a homophone, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a homophone, clued words and/or letter(s) sound like the solution when spoken aloud.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,17 +52,17 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 					<p className='example'>Group of lions was snoopy, we hear (5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a homophone</li>
+							<li>The definition is <strong>Group of lions</strong></li>
+							<li><strong>we hear</strong> indicates a homophone</li>
+							<li><strong>was snoopy</strong> can be <strong>pried</strong></li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>pried</strong> = <strong>pride</strong></p>
 						<div className='solution'>
+							<span className='letter'>p</span>
+							<span className='letter'>r</span>
+							<span className='letter'>i</span>
 							<span className='letter'>d</span>
-							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>e</span>
 						</div>
 					</div>
 				</div>
@@ -71,20 +71,20 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 					<p className='example'>Produced blooms covered with white powder, say (8)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a homophone</li>
+							<li>The definition is <strong>Produced blooms</strong></li>
+							<li><strong>say</strong> indicates a homophone</li>
+							<li><strong>covered with white powder</strong> can be <strong>floured</strong></li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>floured</strong> = <strong>flowered</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
-							<span className='letter'>e</span>
-							<span className='letter'>n</span>
-							<span className='letter'>i</span>
+							<span className='letter'>f</span>
+							<span className='letter'>l</span>
 							<span className='letter'>o</span>
+							<span className='letter'>w</span>
+							<span className='letter'>e</span>
 							<span className='letter'>r</span>
-							<span className='letter'>s</span>
+							<span className='letter'>e</span>
+							<span className='letter'>d</span>
 						</div>
 					</div>
 				</div>

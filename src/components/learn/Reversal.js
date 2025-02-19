@@ -37,7 +37,7 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 
 			<div className='learn-section'>
 				<h1>Reversal</h1>
-				<p>In a clue with a reversal, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a reversal, reverse the letters to make a new word or words.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,17 +52,18 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 					<p className='example'>King with a golden touch is unhappy I'm returning (5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a reversal</li>
+							<li>The definition is <strong>King with a golden touch</strong></li>
+							<li><strong>unhappy</strong> can be <strong>sad</strong></li>
+							<li><strong>I'm</strong> is used directly</li>
+							<li><strong>returning</strong> indicates a reversal</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>sad Im</strong> → <strong>midas</strong></p>
 						<div className='solution'>
+							<span className='letter'>m</span>
+							<span className='letter'>i</span>
 							<span className='letter'>d</span>
 							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>s</span>
 						</div>
 					</div>
 				</div>
@@ -71,20 +72,20 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 					<p className='example'>Idly chat with actor Neeson, returning post office worker's sack (7)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a reversal</li>
+							<li>The definition is <strong>post office worker's sack</strong></li>
+							<li><strong>Idly chat</strong> can be <strong>gab</strong></li>
+							<li><strong>actor Neeson</strong> can be <strong>Liam</strong></li>
+							<li><strong>returning</strong> indicates a reversal</li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>gab liam</strong> → <strong>mailbag</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
-							<span className='letter'>e</span>
-							<span className='letter'>n</span>
+							<span className='letter'>m</span>
+							<span className='letter'>a</span>
 							<span className='letter'>i</span>
-							<span className='letter'>o</span>
-							<span className='letter'>r</span>
-							<span className='letter'>s</span>
+							<span className='letter'>l</span>
+							<span className='letter'>b</span>
+							<span className='letter'>a</span>
+							<span className='letter'>g</span>
 						</div>
 					</div>
 				</div>
