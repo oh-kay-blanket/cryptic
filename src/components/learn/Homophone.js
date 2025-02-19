@@ -9,8 +9,8 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play a homophone clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(188)
 				setInput([])
@@ -26,7 +26,7 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ['sounds like', 'we hear', 'say', 'said', 'speak']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -56,7 +56,7 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 							<li><strong>we hear</strong> indicates a homophone</li>
 							<li><strong>was snoopy</strong> can be <strong>pried</strong></li>
 						</ul>
-						<p className='text-center'><strong>pried</strong> = <strong>pride</strong></p>
+						<p className='text-center'><strong>pried</strong> sounds like <strong>pride</strong></p>
 						<div className='solution'>
 							<span className='letter'>p</span>
 							<span className='letter'>r</span>
@@ -75,7 +75,7 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 							<li><strong>say</strong> indicates a homophone</li>
 							<li><strong>covered with white powder</strong> can be <strong>floured</strong></li>
 						</ul>
-						<p className='text-center'><strong>floured</strong> = <strong>flowered</strong></p>
+						<p className='text-center'><strong>floured</strong> sounds like <strong>flowered</strong></p>
 						<div className='solution'>
 							<span className='letter'>f</span>
 							<span className='letter'>l</span>
@@ -93,7 +93,6 @@ const Homophone = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) 
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

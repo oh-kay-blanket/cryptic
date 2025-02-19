@@ -122,8 +122,8 @@
 			cursor: pointer;
 
 			&:hover, &:active, &:focus, &.viewed {
-				border: 1px solid $lc-primary--light;
-				background-color: $lc-primary--light;
+				border: 1px solid $lc-secondary--light;
+				background-color: $lc-secondary--light;
 			}
 		}
 	}

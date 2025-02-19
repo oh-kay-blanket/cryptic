@@ -9,8 +9,8 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play a reversal clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(208)
 				setInput([])
@@ -26,9 +26,9 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
+	const indicatorArr = ['returning', 'back', 'backwards', 'retrace', 'retreat', 'reverse', 'upon reflection', 'up', 'inverted']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -94,7 +94,6 @@ const Reversal = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

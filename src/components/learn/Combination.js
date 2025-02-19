@@ -10,7 +10,7 @@ const Combination = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }
 	const buttons = {
 		easyClue: {
 			name: "Play a combination clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(122)
 				setInput([])
@@ -26,7 +26,7 @@ const Combination = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 	
 	return(
 		<div className='learn container'>
@@ -84,7 +84,6 @@ const Combination = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

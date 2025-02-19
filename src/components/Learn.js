@@ -25,7 +25,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 	const buttons = {
 		easyClue: {
 			name: "Try a clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(208)
 				setInput([])

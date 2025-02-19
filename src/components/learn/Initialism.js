@@ -9,8 +9,8 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play an initialism clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(324)
 				setInput([])
@@ -26,7 +26,7 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ['starts', 'beginnings', 'first', 'early', 'middle', 'center', 'core', 'ends', 'final', 'last', 'ultimate']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -88,7 +88,6 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

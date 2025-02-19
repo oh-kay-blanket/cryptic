@@ -9,8 +9,8 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
-			style: 'secondary',
+			name: "Play an & Lit. clue",
+			style: 'primary',
 			onClick: function() {
 				setclueId(232)
 				setInput([])
@@ -26,10 +26,7 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
-
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
-	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
+	const btnArr = [buttons.return, buttons.easyClue]
 	
 	return(
 		<div className='learn container'>
@@ -42,7 +39,7 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 
 			<div className='learn-section'>
 				<h2>Indicators</h2>
-				<p>& Lit. clues are indicated by the presence of an exclamation mark (!) at the end of the clue.</p>
+				<p>& Lit. clues are indicated by the presence of an exclamation mark (!) at the end of the clue. They typically also contain another form of wordplay, such as an anagram or deletion.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -94,7 +91,6 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>

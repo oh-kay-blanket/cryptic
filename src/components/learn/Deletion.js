@@ -10,7 +10,7 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 	const buttons = {
 		easyClue: {
 			name: "Play a deletion clue",
-			style: 'secondary',
+			style: 'primary',
 			onClick: function() {
 				setclueId(104)
 				setInput([])
@@ -26,7 +26,7 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 			}
 		}
 	}
-	const btnArr = [buttons.easyClue]
+	const btnArr = [buttons.return, buttons.easyClue]
 
 	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
@@ -58,7 +58,6 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 						</ul>
 						<p className='text-center'><strong>mother</strong> - <strong>m</strong> = <strong>other</strong></p>
 						<div className='solution'>
-							<span className='letter'>m</span>
 							<span className='letter'>o</span>
 							<span className='letter'>t</span>
 							<span className='letter'>h</span>
@@ -91,7 +90,6 @@ const Deletion = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) =
 			<div className='learn-section'>
 				<ButtonContainer
 					btnArr={btnArr}
-					stack={true}
 				/>
 			</div>
 		</div>
