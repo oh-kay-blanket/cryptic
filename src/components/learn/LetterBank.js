@@ -28,7 +28,7 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	}
 	const btnArr = [buttons.easyClue]
 
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
+	const indicatorArr = ['repeatedly', 'often', 'recurring', 'looping', 'cyclical', 'over and over']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -37,7 +37,7 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 
 			<div className='learn-section'>
 				<h1>Letter Bank</h1>
-				<p>In a clue with a letter bank, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a letter bank, letters are rearranged like in an anagram, but the letters in the source word(s) can be repeated.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,17 +52,22 @@ const LetterBank = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>Repeatedly retain host (11)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a letter bank</li>
+							<li>The definition is <strong>host</strong></li>
+							<li><strong>Repeatedly</strong> indicates a letter bank</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>retain</strong> → <strong>entertainer</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
+							<span className='letter'>e</span>
+							<span className='letter'>n</span>
+							<span className='letter'>t</span>
+							<span className='letter'>e</span>
+							<span className='letter'>r</span>
+							<span className='letter'>t</span>
 							<span className='letter'>a</span>
+							<span className='letter'>i</span>
 							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>e</span>
+							<span className='letter'>r</span>
 						</div>
 					</div>
 				</div>

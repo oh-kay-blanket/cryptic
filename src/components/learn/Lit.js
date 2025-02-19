@@ -37,12 +37,12 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 
 			<div className='learn-section'>
 				<h1>& Lit.</h1>
-				<p>In a clue with a deletion, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In an & Lit. clue, the entire clue functions as a definition.</p>
 			</div>
 
 			<div className='learn-section'>
 				<h2>Indicators</h2>
-				<p>& Lit. clues are indicated by the presence of an exclamation mark at the end of the clue.</p>
+				<p>& Lit. clues are indicated by the presence of an exclamation mark (!) at the end of the clue.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -51,17 +51,22 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 					<p className='example'>I only appear manipulated! (6, 5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a deletion</li>
+							<li>The definition is <strong>I only appear manipulated</strong></li>
+							<li><strong>manipulated</strong> indicates an anagram</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>I only appear</strong> → <strong>player piano</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
+							<span className='letter'>p</span>
+							<span className='letter'>l</span>
+							<span className='letter'>a</span>
+							<span className='letter'>y</span>
+							<span className='letter'>e</span>
+							<span className='letter'>r</span>
+							<span className='letter'>p</span>
+							<span className='letter'>i</span>
 							<span className='letter'>a</span>
 							<span className='letter'>n</span>
-							<span className='letter'>n</span>
 							<span className='letter'>o</span>
-							<span className='letter'>n</span>
 						</div>
 					</div>
 				</div>
@@ -70,20 +75,17 @@ const Lit = ({ setLearnType, setclueId, setInput, setCheckAns, setMode }) => {
 					<p className='example'>Starting with a core of knowledge, gain deeper understanding! (5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a deletion</li>
+							<li>The definition is <strong>Starting with a core of knowledge, gain deeper understanding</strong></li>
+							<li><strong>core of knowledge</strong> can be <strong>l</strong></li>
+							<li><strong>gain</strong> can be <strong>earn</strong></li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>l</strong> + <strong>earn</strong> = <strong>learn</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
+							<span className='letter'>l</span>
 							<span className='letter'>e</span>
-							<span className='letter'>n</span>
-							<span className='letter'>i</span>
-							<span className='letter'>o</span>
+							<span className='letter'>a</span>
 							<span className='letter'>r</span>
-							<span className='letter'>s</span>
+							<span className='letter'>n</span>
 						</div>
 					</div>
 				</div>

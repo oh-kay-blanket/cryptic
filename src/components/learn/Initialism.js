@@ -28,7 +28,7 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 	}
 	const btnArr = [buttons.easyClue]
 
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
+	const indicatorArr = ['starts', 'beginnings', 'first', 'early', 'middle', 'center', 'core', 'ends', 'final', 'last', 'ultimate']
 	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
@@ -37,7 +37,7 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 
 			<div className='learn-section'>
 				<h1>Initialism</h1>
-				<p>In a clue with initialism, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with initialism, the first (or last, or even middle) letters of series of words form the answer.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -52,17 +52,17 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>Starts to dream about living large amid suburban Texas metropolis (6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates initialism</li>
+							<li>The definition is <strong>Texas metropolis</strong></li>
+							<li><strong>Starts to</strong> indicates initialism</li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
+						<p className='text-center'><strong>d</strong>ream <strong>a</strong>bout <strong>l</strong>iving <strong>l</strong>arge <strong>a</strong>mid <strong>s</strong>uburban</p>
 						<div className='solution'>
 							<span className='letter'>d</span>
 							<span className='letter'>a</span>
-							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>l</span>
+							<span className='letter'>l</span>
+							<span className='letter'>a</span>
+							<span className='letter'>s</span>
 						</div>
 					</div>
 				</div>
@@ -71,20 +71,15 @@ const Initialism = ({ setLearnType, setclueId, setInput, setCheckAns, setMode })
 					<p className='example'>European capital starts to open some legislative offices (4)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates initialism</li>
+							<li>The definition is <strong>European capital</strong></li>
+							<li><strong>starts to</strong> indicates initialism</li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
+						<p className='text-center'><strong>o</strong>pen <strong>s</strong>ome <strong>l</strong>egislative <strong>o</strong>ffices</p>
 						<div className='solution'>
-							<span className='letter'>s</span>
-							<span className='letter'>e</span>
-							<span className='letter'>n</span>
-							<span className='letter'>i</span>
 							<span className='letter'>o</span>
-							<span className='letter'>r</span>
 							<span className='letter'>s</span>
+							<span className='letter'>l</span>
+							<span className='letter'>o</span>
 						</div>
 					</div>
 				</div>

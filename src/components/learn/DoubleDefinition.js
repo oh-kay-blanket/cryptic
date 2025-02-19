@@ -9,7 +9,7 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 	// buttons
 	const buttons = {
 		easyClue: {
-			name: "Play a container clue",
+			name: "Play a double definition clue",
 			style: 'secondary',
 			onClick: function() {
 				setclueId(101)
@@ -27,9 +27,6 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 		}
 	}
 	const btnArr = [buttons.easyClue]
-
-	const indicatorArr = ['missing', 'minus', 'without', 'even', 'odd', 'hollow', 'middle', 'endless', 'headless', 'short', 'empty', 'outskirts', 'outside', 'inside', 'a couple']
-	const indicators = indicatorArr.map(indicator => <li className='indicator'>{indicator.toLowerCase()}</li>)
 	
 	return(
 		<div className='learn container'>
@@ -37,7 +34,7 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 
 			<div className='learn-section'>
 				<h1>Double Definition</h1>
-				<p>In a clue with a double definition, remove a letter or set of letters from the beginning, middle, or end of a word.</p>
+				<p>In a clue with a double definition, the clue can be split into two parts that each define the solution.</p>
 			</div>
 
 			<div className='learn-section'>
@@ -46,17 +43,17 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 					<p className='example'>Tightens up verb forms (6)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>brand of yogurt</strong></li>
-							<li><strong>eats</strong> indicates a deletion</li>
+							<li>Both <strong>Tightens up</strong> and <strong>verb forms</strong> are definitions</li>
+							<li><strong>Tightens up</strong> can be <strong>tenses</strong></li>
+							<li><strong>verb forms</strong> can be <strong>tenses</strong></li>
 						</ul>
-						<p className='text-center'><strong>d</strong>(<strong>ann</strong>)<strong>on</strong> = <strong>dannon</strong></p>
 						<div className='solution'>
-							<span className='letter'>d</span>
-							<span className='letter'>a</span>
+							<span className='letter'>t</span>
+							<span className='letter'>e</span>
 							<span className='letter'>n</span>
-							<span className='letter'>n</span>
-							<span className='letter'>o</span>
-							<span className='letter'>n</span>
+							<span className='letter'>s</span>
+							<span className='letter'>e</span>
+							<span className='letter'>s</span>
 						</div>
 					</div>
 				</div>
@@ -65,20 +62,16 @@ const DoubleDefinition = ({ setLearnType, setclueId, setInput, setCheckAns, setM
 					<p className='example'>Throw black goo (5)</p>
 					<div className='explanation'>
 						<ul className='mt-0'>
-							<li>The definition is <strong>old people</strong></li>
-							<li><strong>Spanish gentlemen</strong> can be <strong>senors</strong></li>
-							<li><strong>interest</strong> can be <strong>i</strong></li>
-							<li><strong>taking</strong> indicates a deletion</li>
+							<li>Both <strong>Throw</strong> and <strong>black goo</strong> are definitions</li>
+							<li><strong>Throw</strong> can be <strong>pitch</strong></li>
+							<li><strong>black goo</strong> can be <strong>pitch</strong></li>
 						</ul>
-						<p className='text-center'><strong>sen</strong>(<strong>i</strong>)<strong>ors</strong> = <strong>seniors</strong></p>
 						<div className='solution'>
-							<span className='letter'>s</span>
-							<span className='letter'>e</span>
-							<span className='letter'>n</span>
+							<span className='letter'>p</span>
 							<span className='letter'>i</span>
-							<span className='letter'>o</span>
-							<span className='letter'>r</span>
-							<span className='letter'>s</span>
+							<span className='letter'>t</span>
+							<span className='letter'>c</span>
+							<span className='letter'>h</span>
 						</div>
 					</div>
 				</div>
