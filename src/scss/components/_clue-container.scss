@@ -56,6 +56,38 @@
 		
 	}
 
+	.clue-stats {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		font-size: 13px;
+		font-weight: 600;
+		font-family: $lc-font--sans;
+		text-transform: uppercase;
+		margin: 1rem;
+		
+		.stat-guesses, .stat-hints {
+			margin: 2px auto;
+			padding: 2px 3px;
+			border-radius: 4px;
+			
+			.stat {
+				font-size: 15px;
+				font-weight: 700;
+			}
+		}
+		
+		.stat-hints {
+			background-color: $lc-secondary--light;
+			margin-right: .5rem;
+		}
+
+		.stat-guesses {
+			background-color: $lc-primary--light;
+		}
+	}
+
 	.clue {
 		display: flex;
 		flex-direction: column;
