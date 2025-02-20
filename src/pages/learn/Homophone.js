@@ -10,7 +10,7 @@ const Homophone = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clue',
+			path: '/clues/clue',
 			name: "Play a homophone clue",
 			style: 'primary',
 			onClick: function() {

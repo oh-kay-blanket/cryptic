@@ -10,7 +10,7 @@ const Initialism = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clue',
+			path: '/clues/clue',
 			name: "Play an initialism clue",
 			style: 'primary',
 			onClick: function() {

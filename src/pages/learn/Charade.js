@@ -10,7 +10,7 @@ const Charade = ({ setLearnType, setclueId,	setInput, setCheckAns, setMode, setR
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clue',
+			path: '/clues/clue',
 			name: "Play a charade clue",
 			style: 'primary',
 			onClick: function() {
