@@ -4,7 +4,7 @@ import ButtonContainer from './bottom/ButtonContainer'
 import Keyboard from './bottom/Keyboard'
 import Message from './bottom/Message'
 
-const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats }) => {
+const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats, returnLearn, setReturnLearn }) => {
 	
 	// buttons
 	const buttons = {
@@ -56,6 +56,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setShowMessage(false)
 				setNextHint(0)
 				setclueId(false)
+				setReturnLearn(false)
 				setMode('archive')
 			}
 		},
@@ -66,7 +67,19 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setShowMessage(false)
 				setNextHint(0)
 				setclueId(false)
+				setReturnLearn(false)
 				setMode('archive')
+			}
+		},
+		returnLearn: {
+			name: 'Return',
+			style: 'alt',
+			onClick: function(){
+				setShowMessage(false)
+				setNextHint(0)
+				setclueId(false)
+				setReturnLearn(false)
+				setMode('learn')
 			}
 		}
 	}
@@ -97,6 +110,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 						addCompletedClue={addCompletedClue}
 						isCorrectAns={isCorrectAns}
 						isSolution={isSolution}
+						returnLearn={returnLearn}
 						buttons={buttons}
 					/> :
 					<>

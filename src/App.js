@@ -15,7 +15,7 @@ import manageInput from './utils/state/manageInput'
 
 const App = () => {
 
-	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed } = manageState()
+	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn } = manageState()
 	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
 	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
@@ -35,6 +35,7 @@ const App = () => {
 					setNextHint={setNextHint}
 					setclueId={setclueId}
 					setInput={setInput}
+					setReturnLearn={setReturnLearn}
 				/>
 			}
 			{ mode == 'learn' &&
@@ -47,6 +48,7 @@ const App = () => {
 						setCheckAns={setCheckAns}
 						typeViewed={typeViewed}
 						setTypeViewed={setTypeViewed}
+						setReturnLearn={setReturnLearn}
 					/>
 				</>
 			}
@@ -91,6 +93,8 @@ const App = () => {
 						setCheckAns={setCheckAns}
 						stats={stats}
 						setStats={setStats}
+						returnLearn={returnLearn}
+						setReturnLearn={setReturnLearn}
 					/>
 				</>
 			}

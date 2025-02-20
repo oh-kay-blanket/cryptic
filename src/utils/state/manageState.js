@@ -12,6 +12,7 @@ const manageState = () => {
 	const [clueId, setclueId] = useState()
 	const [mode, setMode] = useState('title');
 	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
+	const [returnLearn, setReturnLearn] = useState(false)
 
 	// manage lcState
 	const [lcState, setLcState] = useState(() => {
@@ -99,7 +100,7 @@ const manageState = () => {
 		activeClue && console.log(activeClue)
 	}, [clueId]);
 
-	return { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed }
+	return { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
 }
 
 export default manageState

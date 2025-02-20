@@ -3,7 +3,7 @@ import React from 'react';
 import logo from '../assets/img/lc7.png';
 import info from '../assets/img/info.svg';
 
-const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput }) => {
+const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput, setReturnLearn }) => {
 
 	const clickTitle = () => {
 		setShowMessage(false)
@@ -11,6 +11,7 @@ const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput }) =
 		setMode('title')
 		setclueId()
 		setInput([])
+		setReturnLearn(false)
 	}
 
 	const clickInfo = () => {

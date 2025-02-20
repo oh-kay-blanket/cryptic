@@ -19,7 +19,7 @@ import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
 import ex from '../assets/img/learn/example.jpg'
 
-const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeViewed }) => {
+const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeViewed, setReturnLearn }) => {
 
 	// buttons
 	const buttons = {
@@ -134,19 +134,19 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 				</div>
 			</div>
 		}
-		{ learnType == 'Charade' && <Charade setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Anagram' && <Anagram setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Container' && <Container setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Deletion' && <Deletion setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Double Definition' && <DoubleDefinition setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Hidden Word' && <HiddenWord setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Homophone' && <Homophone setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Initialism' && <Initialism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Letter Bank' && <LetterBank setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Reversal' && <Reversal setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Spoonerism' && <Spoonerism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == '& Lit.' && <Lit setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
-		{ learnType == 'Combination' && <Combination setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} /> }
+		{ learnType == 'Charade' && <Charade setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Anagram' && <Anagram setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Container' && <Container setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Deletion' && <Deletion setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Double Definition' && <DoubleDefinition setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Hidden Word' && <HiddenWord setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Homophone' && <Homophone setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Initialism' && <Initialism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Letter Bank' && <LetterBank setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Reversal' && <Reversal setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Spoonerism' && <Spoonerism setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == '& Lit.' && <Lit setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
+		{ learnType == 'Combination' && <Combination setLearnType={setLearnType} setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} /> }
 	</>)
 }
 
