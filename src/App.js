@@ -36,6 +36,7 @@ const App = () => {
 					setclueId={setclueId}
 					setInput={setInput}
 					setReturnLearn={setReturnLearn}
+					setStats={setStats}
 				/>
 			}
 			{ mode == 'learn' &&
@@ -76,6 +77,7 @@ const App = () => {
 						checkAns={checkAns}
 						showType={showType}
 						setShowType={setShowType}
+						stats={stats}
 					/>
 					<Bottom
 						showMessage={showMessage}

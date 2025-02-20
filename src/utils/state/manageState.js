@@ -71,9 +71,6 @@ const manageState = () => {
 			'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
 			'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
 		})
-
-		// Reset stats
-		setStats({ guesses: 0, hints: 0, how: '' });
 	}
 
 	// Whether or not to show type pills in clue container

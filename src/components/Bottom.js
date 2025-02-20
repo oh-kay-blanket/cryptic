@@ -22,6 +22,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 			style: 'alt', 
 			onClick: function() {
 				addCompletedClue(activeClue, stats, 'h')
+				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1 }));
 				setShowMessage(true)
 				setInput([])
 			} 
@@ -33,6 +34,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				let correct = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase();
 				if (correct) {
 					addCompletedClue(activeClue, stats, 'g');
+					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }));
 				} else {
 					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }));
 				}
@@ -57,6 +59,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setNextHint(0)
 				setclueId(false)
 				setReturnLearn(false)
+				setStats({ guesses: 0, hints: 0, how: '' });
 				setMode('archive')
 			}
 		},
@@ -68,6 +71,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setNextHint(0)
 				setclueId(false)
 				setReturnLearn(false)
+				setStats({ guesses: 0, hints: 0, how: '' });
 				setMode('archive')
 			}
 		},
@@ -79,6 +83,7 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 				setNextHint(0)
 				setclueId(false)
 				setReturnLearn(false)
+				setStats({ guesses: 0, hints: 0, how: '' });
 				setMode('learn')
 			}
 		}

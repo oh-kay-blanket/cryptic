@@ -8,7 +8,7 @@ import eyeOpen from '../assets/img/eye--open.svg'
 import eyeClosed from '../assets/img/eye--closed.svg'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, showType, setShowType }) => {
+const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, showType, setShowType, stats }) => {
 	
 	loadClue(activeClue, nextHint, showMessage, checkAns)
 
@@ -20,6 +20,9 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 
 	const typeInsert = showType ? <><li onClick={()=>setShowType(false)}><img src={eyeClosed}/></li>{pillList}</> : 
 		<><li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li><li className='type-text' onClick={()=>setShowType(true)}>See type</li></>
+
+	// stats HTML
+	stats = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;h</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;g</span></div></>
 
 	// clue HTML
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
@@ -59,6 +62,7 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 	return(
 		<div id='clue-container' className='clue container'>
 			<ul className='type'>{typeInsert}</ul>
+			{stats}
 			<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
 				<div>{clueInsert} {solLength}</div>
 			</div>
