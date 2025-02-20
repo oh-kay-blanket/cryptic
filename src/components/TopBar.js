@@ -1,7 +1,7 @@
 import React from 'react';
+import { Outlet, Link } from "react-router-dom";
 
 import logo from '../assets/img/lc7.png';
-import info from '../assets/img/info.svg';
 
 const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput, setReturnLearn, setStats }) => {
 
@@ -20,12 +20,17 @@ const TopBar = ({ setMode, setNextHint, setShowMessage, setclueId, setInput, set
 	}
 
   return(
-    <div className='top-bar'>
-		<div className='container'>
-			{/* <img src={info} onClick={clickInfo} /> */}
-			<img src={logo} onClick={clickTitle} />
+	<>
+		<div className='top-bar'>
+			<div className='container'>
+				{/* <img src={info} onClick={clickInfo} /> */}
+				<Link to='/'>
+					<img src={logo} onClick={ clickTitle } />
+				</Link>
+			</div>
 		</div>
-    </div>
+		<Outlet />
+	</>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import { createPortal } from 'react-dom';
 
-import Tooltip from './Tooltip';
+import Tooltip from '../components/Tooltip';
 
 import loadClue from '../utils/clue/loadClue'
 import eyeOpen from '../assets/img/eye--open.svg'

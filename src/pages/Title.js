@@ -1,7 +1,6 @@
 import React from 'react';
-import ButtonContainer from './bottom/ButtonContainer';
+import ButtonContainer from '../components/bottom/ButtonContainer';
 
-import logo from '../assets/img/favicon.png';
 import gif from '../assets/img/lc4.png';
 
 const Title = ({ setMode, clues, setclueId, completedClues }) => {
@@ -38,6 +37,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 	// buttons
 	const buttons = {
 		learn: {
+			path: '/learn',
 			name: "Learn about cryptics",
 			style: 'alt',
 			onClick: function() {
@@ -45,6 +45,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 			}
 		},
 		todayClue: {
+			path: '/clue',
 			name: "Play today's clue",
 			style: 'primary',
 			onClick: function() {
@@ -53,6 +54,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 			}
 		},
 		allClues: {
+			path: '/clues',
 			name: "See all clues",
 			style: 'secondary',
 			onClick: function() {
@@ -60,6 +62,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 			}
 		},
 		viewClues: {
+			path: '/clues',
 			name: "View clues",
 			style: 'primary',
 			onClick: function() {
@@ -82,11 +85,6 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 		<img className='title-gif' src={gif} />
 		{knownUser ? stats : intro}
 		<div className='title-actions'>
-			{/* <div className='title-date'>
-				<span>{today.toLocaleString('en-us', { month: 'long' })}</span>&nbsp;
-				<span>{today.getDate()}</span>,&nbsp;
-				<span>{today.getFullYear()}</span>
-			</div> */}
 			<ButtonContainer
 				btnArr={btnArr}
 				stack={true}
