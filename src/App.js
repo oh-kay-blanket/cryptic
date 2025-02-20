@@ -114,7 +114,7 @@ const App = () => {
 					} />
 				</Route>
 
-				<Route path="/clues" element={<>
+				<Route path="clues" element={
 					<TopBar
 						setMode={setMode}
 						setShowMessage={setShowMessage}
@@ -124,58 +124,52 @@ const App = () => {
 						setReturnLearn={setReturnLearn}
 						setStats={setStats}
 					/>
-					<AllClues
-						clues={clues}
-						setclueId={setclueId}
-						setMode={setMode}
-						completedClues={completedClues}
-						setInput={setInput}
-						setCheckAns={setCheckAns}
-						stats={stats}
-					/>
-				</>} />
+				}>
+					<Route index element={
+						<AllClues
+							clues={clues}
+							setclueId={setclueId}
+							setMode={setMode}
+							completedClues={completedClues}
+							setInput={setInput}
+							setCheckAns={setCheckAns}
+							stats={stats}
+						/>
+					} />
 
-				<Route path="/clue" element={<>
-					<TopBar
-						setMode={setMode}
-						setShowMessage={setShowMessage}
-						setNextHint={setNextHint}
-						setclueId={setclueId}
-						setInput={setInput}
-						setReturnLearn={setReturnLearn}
-						setStats={setStats}
-					/>
-					<ClueContainer 
-						clues={clues}
-						activeClue={activeClue}
-						nextHint={nextHint}
-						showMessage={showMessage}
-						input={input}
-						checkAns={checkAns}
-						showType={showType}
-						setShowType={setShowType}
-						stats={stats}
-					/>
-					<Bottom
-						showMessage={showMessage}
-						setShowMessage={setShowMessage}
-						nextHint={nextHint}
-						setNextHint={setNextHint}
-						activeClue={activeClue}
-						setclueId={setclueId}
-						setMode={setMode}
-						addCompletedClue={addCompletedClue}
-						handleInput={handleInput}
-						input={input}
-						setInput={setInput}
-						checkAns={checkAns}
-						setCheckAns={setCheckAns}
-						stats={stats}
-						setStats={setStats}
-						returnLearn={returnLearn}
-						setReturnLearn={setReturnLearn}
-					/>
-				</>} />
+					<Route path="clue" element={<>
+						<ClueContainer 
+							clues={clues}
+							activeClue={activeClue}
+							nextHint={nextHint}
+							showMessage={showMessage}
+							input={input}
+							checkAns={checkAns}
+							showType={showType}
+							setShowType={setShowType}
+							stats={stats}
+						/>
+						<Bottom
+							showMessage={showMessage}
+							setShowMessage={setShowMessage}
+							nextHint={nextHint}
+							setNextHint={setNextHint}
+							activeClue={activeClue}
+							setclueId={setclueId}
+							setMode={setMode}
+							addCompletedClue={addCompletedClue}
+							handleInput={handleInput}
+							input={input}
+							setInput={setInput}
+							checkAns={checkAns}
+							setCheckAns={setCheckAns}
+							stats={stats}
+							setStats={setStats}
+							returnLearn={returnLearn}
+							setReturnLearn={setReturnLearn}
+						/>
+					</>} />
+				</Route>
 				{/* <Route path="*" element={<NotFound />} /> */}
 			</Routes>
 		</BrowserRouter>

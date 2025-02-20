@@ -45,7 +45,7 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 			}
 		},
 		todayClue: {
-			path: '/clue',
+			path: '/clues/clue',
 			name: "Play today's clue",
 			style: 'primary',
 			onClick: function() {

@@ -12,7 +12,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clue',
+			path: '/clues/clue',
 			name: "Try a clue",
 			style: 'primary',
 			onClick: function() {
