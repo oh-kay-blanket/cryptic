@@ -9,5 +9,9 @@
 		justify-content: flex-end;
 		align-items: center;
 		padding: .5rem;
+
+		a img {
+			max-width: 40px;
+		}
 	}
 }

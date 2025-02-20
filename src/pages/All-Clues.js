@@ -5,7 +5,7 @@ import d2 from '../assets/img/difficulty/2.svg';
 import d3 from '../assets/img/difficulty/3.svg';
 import d4 from '../assets/img/difficulty/4.svg';
 
-const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
+const AllClues = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
 
 
 	let tilesRef = useRef(clues.map(() => createRef()))
@@ -99,4 +99,4 @@ const Archive = ({ clues, setclueId, setMode, completedClues, setInput, setCheck
 	)
 }
 
-export default Archive;
+export default AllClues;

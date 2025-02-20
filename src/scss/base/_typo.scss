@@ -24,6 +24,11 @@ a {
 
 li {
 	margin: .25rem 0;
+
+	a {
+		color: unset;
+		text-decoration: unset;
+	}
 }
 
 button {
