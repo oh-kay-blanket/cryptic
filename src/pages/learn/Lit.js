@@ -10,7 +10,7 @@ const Lit = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/232',
 			name: "Play an & Lit. clue",
 			style: 'primary',
 			onClick: function() {

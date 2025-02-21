@@ -3,10 +3,13 @@
 
 .button-container {
 	&.stack {
-		.show-btn {
+		a, .show-btn {
 			min-width: fit-content;
 			width: 60%;
 			max-width: 300px;
+		}
+		a .show-btn {
+			width: 100%;
 		}
 	}
 }

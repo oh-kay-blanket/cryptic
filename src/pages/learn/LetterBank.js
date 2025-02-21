@@ -10,7 +10,7 @@ const LetterBank = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/50',
 			name: "Play a letter bank clue",
 			style: 'primary',
 			onClick: function() {

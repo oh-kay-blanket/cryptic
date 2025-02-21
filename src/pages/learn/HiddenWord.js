@@ -10,7 +10,7 @@ const HiddenWord = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clues/clue',
+			path: '/clues/2',
 			name: "Play a hidden word clue",
 			style: 'primary',
 			onClick: function() {

@@ -10,7 +10,7 @@ const Container = ({ setclueId,	setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/306',
 			name: "Play a container clue",
 			style: 'primary',
 			onClick: function() {

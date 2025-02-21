@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react'
 
-import clues from '../../assets/clues.json'
-import prepActiveClue from './prepActiveClue'
-
-const manageState = () => {
+const manageStorage = () => {
 
 	window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 	
 	// state
-	const [clueId, setclueId] = useState()
-	const [mode, setMode] = useState('title');
 	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
 	const [returnLearn, setReturnLearn] = useState(false)
 
@@ -89,15 +84,7 @@ const manageState = () => {
 		})
 	}
 
-	// make copy of clue to modify & prep
-	let activeClue = !!clueId ? structuredClone(clues.find(clue => clue.id == clueId)) : false
-	activeClue && prepActiveClue(activeClue, completedClues)
-	
-	useEffect(() => {
-		activeClue && console.log(activeClue)
-	}, [clueId]);
-
-	return { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
+	return { completedClues, addCompletedClue, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
 }
 
-export default manageState
+export default manageStorage

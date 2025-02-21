@@ -10,7 +10,7 @@ const Spoonerism = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/192',
 			name: "Play a spoonerism clue",
 			style: 'primary',
 			onClick: function() {

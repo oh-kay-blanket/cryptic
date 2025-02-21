@@ -1,21 +1,15 @@
 import React, { useRef, createRef } from 'react'
+import { Link } from "react-router-dom";
 
 import d1 from '../assets/img/difficulty/1.svg';
 import d2 from '../assets/img/difficulty/2.svg';
 import d3 from '../assets/img/difficulty/3.svg';
 import d4 from '../assets/img/difficulty/4.svg';
 
-const AllClues = ({ clues, setclueId, setMode, completedClues, setInput, setCheckAns }) => {
+const AllClues = ({ clues, completedClues, setInput, setCheckAns }) => {
 
 
 	let tilesRef = useRef(clues.map(() => createRef()))
-
-	const handleClick = (e) => {
-		setclueId(e.current.id)
-		setInput([])
-		setCheckAns(false)
-		setMode('playing')
-	}
 
 	// only past clues
 	let archiveTiles = clues.filter(clue => {
@@ -71,7 +65,7 @@ const AllClues = ({ clues, setclueId, setMode, completedClues, setInput, setChec
 		</>
 
 		return (
-		<div className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
+		<Link to={`/clues/${clue.id}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
 			<div className='archive-release'>
 				<span>
 					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
@@ -80,7 +74,7 @@ const AllClues = ({ clues, setclueId, setMode, completedClues, setInput, setChec
 				<br></br>
 				<span>{getRelease(clue.release).getFullYear()}</span>
 			</div>
-			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} onClick={()=>handleClick(tilesRef.current[index])}>
+			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} >
 				<div className='tile-img-stats'>
 					{stats}
 					<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
@@ -88,7 +82,7 @@ const AllClues = ({ clues, setclueId, setMode, completedClues, setInput, setChec
 				<span className='tile-name'>{clue.clue.value}</span>
 				{/* <span className='tile-source'>{clue.source.value}</span> */}
 			</div>
-		</div>
+		</Link>
 		)
 	})
 

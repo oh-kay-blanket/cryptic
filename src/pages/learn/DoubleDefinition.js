@@ -10,7 +10,7 @@ const DoubleDefinition = ({ setclueId, setInput, setCheckAns, setReturnLearn }) 
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/101',
 			name: "Play a double definition clue",
 			style: 'primary',
 			onClick: function() {

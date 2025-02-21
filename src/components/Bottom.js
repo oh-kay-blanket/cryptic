@@ -4,7 +4,7 @@ import ButtonContainer from './bottom/ButtonContainer'
 import Keyboard from './bottom/Keyboard'
 import Message from './bottom/Message'
 
-const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, setNextHint, setMode, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats, returnLearn, setReturnLearn }) => {
+const Bottom = ({ showMessage, setShowMessage, activeClue, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, checkAns, setCheckAns, stats, setStats, returnLearn, setReturnLearn }) => {
 	
 	// buttons
 	const buttons = {
@@ -52,39 +52,30 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 			} 
 		},
 		endClueHint: {
+			path: '/clues',
 			name: 'Play more',
 			style: 'secondary',
 			onClick: function(){
-				setShowMessage(false)
-				setNextHint(0)
-				setclueId(false)
 				setReturnLearn(false)
 				setStats({ guesses: 0, hints: 0, how: '' });
-				setMode('archive')
 			}
 		},
 		endClueGuess: {
+			path: '/clues',
 			name: 'Play more',
 			style: 'gray',
 			onClick: function(){
-				setShowMessage(false)
-				setNextHint(0)
-				setclueId(false)
 				setReturnLearn(false)
 				setStats({ guesses: 0, hints: 0, how: '' });
-				setMode('archive')
 			}
 		},
 		returnLearn: {
+			path: '/learn',
 			name: 'Return',
 			style: 'alt',
 			onClick: function(){
-				setShowMessage(false)
-				setNextHint(0)
-				setclueId(false)
 				setReturnLearn(false)
 				setStats({ guesses: 0, hints: 0, how: '' });
-				setMode('learn')
 			}
 		}
 	}
@@ -105,10 +96,8 @@ const Bottom = ({ showMessage, setShowMessage, activeClue, setclueId, nextHint, 
 					<Message
 						setShowMessage={setShowMessage}
 						activeClue={activeClue}
-						setclueId={setclueId}
 						nextHint={nextHint}
 						setNextHint={setNextHint}
-						setMode={setMode}
 						input={input}
 						checkAns={checkAns}
 						setCheckAns={setCheckAns}
