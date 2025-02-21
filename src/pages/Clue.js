@@ -1,15 +1,30 @@
-import React, { useState } from 'react'
-// import { createPortal } from 'react-dom';
+import React, { useEffect } from 'react'
+import { useParams } from "react-router-dom";
 
+import Bottom from '../components/Bottom';
 import Tooltip from '../components/Tooltip';
+
+import manageHints from '../utils/clue/manageHints'
+import manageInput from '../utils/clue/manageInput'
+import prepActiveClue from '../utils/clue/prepActiveClue'
 
 import loadClue from '../utils/clue/loadClue'
 import eyeOpen from '../assets/img/eye--open.svg'
 import eyeClosed from '../assets/img/eye--closed.svg'
 
 
-const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, showType, setShowType, stats }) => {
+const Clue = ({ clues, showType, setShowType, stats, addCompletedClue, setStats, returnLearn, setReturnLearn }) => {
+	const { id } = useParams()
+
+	let activeClue = !!id ? structuredClone(clues.find(clue => clue.id == id)) : false
+	activeClue && prepActiveClue(activeClue)
 	
+	useEffect(() => {
+		activeClue && console.log(activeClue)
+	}, [id]);
+	
+	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints()
+	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 	loadClue(activeClue, nextHint, showMessage, checkAns)
 
 	// type HTML
@@ -60,19 +75,38 @@ const ClueContainer = ({ activeClue, nextHint, showMessage, input, checkAns, sho
 		<a target='_blank' href={activeClue.source.href} >{activeClue.source.value}</a> : <span>{activeClue.source.value}</span>
 
 	return(
-		<div id='clue-container' className='clue container'>
-			<ul className='type'>{typeInsert}</ul>
-			{stats}
-			<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
-				<div>{clueInsert} {solLength}</div>
+		<>
+			<div id='clue-container' className='clue container'>
+				<ul className='type'>{typeInsert}</ul>
+				{stats}
+				<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
+					<div>{clueInsert} {solLength}</div>
+				</div>
+				<div className='addLetters'>{addInsert}</div>
+				<div style={{position:'relative'}} className='sol-section'>
+					<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
+					<div id='sourceRef' ref={activeClue.source.ref} className='source'>by {sourceInsert}</div>
+				</div>
 			</div>
-			<div className='addLetters'>{addInsert}</div>
-			<div style={{position:'relative'}} className='sol-section'>
-				<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
-				<div id='sourceRef' ref={activeClue.source.ref} className='source'>by {sourceInsert}</div>
-			</div>
-		</div>
+			<Bottom
+				showMessage={showMessage}
+				setShowMessage={setShowMessage}
+				nextHint={nextHint}
+				setNextHint={setNextHint}
+				activeClue={activeClue}
+				addCompletedClue={addCompletedClue}
+				handleInput={handleInput}
+				input={input}
+				setInput={setInput}
+				checkAns={checkAns}
+				setCheckAns={setCheckAns}
+				stats={stats}
+				setStats={setStats}
+				returnLearn={returnLearn}
+				setReturnLearn={setReturnLearn}
+			/>
+		</>
 	)
 }
 
-export default ClueContainer;
+export default Clue;

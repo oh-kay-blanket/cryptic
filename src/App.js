@@ -6,7 +6,8 @@ import Title from './pages/Title'
 import TopBar from './components/TopBar'
 import Learn from './pages/Learn'
 import AllClues from './pages/All-Clues' 
-import ClueContainer from './pages/Clue'
+import Clue from './pages/Clue'
+import NotFound from './pages/NotFound';
 
 // learn
 import Anagram from './pages/learn/Anagram'
@@ -23,20 +24,15 @@ import Spoonerism from './pages/learn/Spoonerism'
 import Lit from './pages/learn/Lit'
 import Combination from './pages/learn/Combination'
 
-// components
-import Bottom from './components/Bottom'
-
 // hooks
-import manageState from './utils/state/manageState'
-import manageHints from './utils/state/manageHints'
-import manageInput from './utils/state/manageInput'
+import manageStorage from './utils/state/manageStorage'
+
+import clues from './assets/clues.json'
 
 const App = () => {
 
-	let { clues, activeClue, setclueId, completedClues, addCompletedClue, mode, setMode, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn } = manageState()
-	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints(activeClue, setCheckAns)
-	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
 
+	let { completedClues, addCompletedClue, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn } = manageStorage()
 
     return (
 		<BrowserRouter>
@@ -45,82 +41,65 @@ const App = () => {
 				<Route path="/" element={
 					<Title
 						clues={clues}
-						setMode={setMode}
-						setclueId={setclueId}
 						completedClues={completedClues}
 					/>
 				} />
 
 				<Route path="learn" element={<TopBar
-						setMode={setMode}
-						setShowMessage={setShowMessage}
-						setNextHint={setNextHint}
-						setclueId={setclueId}
-						setInput={setInput}
 						setReturnLearn={setReturnLearn}
 						setStats={setStats}
 					/>
 				}>
 					<Route index element={
 						<Learn
-							clues={clues}
-							setMode={setMode}
-							setclueId={setclueId}
-							setInput={setInput}
-							setCheckAns={setCheckAns}
 							typeViewed={typeViewed}
 							setTypeViewed={setTypeViewed}
 							setReturnLearn={setReturnLearn}
 						/>
 					} />
 					<Route path="anagram" element={
-						<Anagram setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Anagram setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="charade" element={
-						<Charade setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Charade setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="container" element={
-						<Container setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Container setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="deletion" element={
-						<Deletion setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Deletion setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="double-definition" element={
-						<DoubleDefinition setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<DoubleDefinition setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="hidden-word" element={
-						<HiddenWord setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<HiddenWord setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="homophone" element={
-						<Homophone setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Homophone setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="initialism" element={
-						<Initialism setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Initialism setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="letter-bank" element={
-						<LetterBank setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<LetterBank setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="reversal" element={
-						<Reversal setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Reversal setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="spoonerism" element={
-						<Spoonerism setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Spoonerism setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="lit" element={
-						<Lit setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Lit setReturnLearn={setReturnLearn} />
 					} />
 					<Route path="combination" element={
-						<Combination setclueId={setclueId} setInput={setInput} setCheckAns={setCheckAns} setMode={setMode} setReturnLearn={setReturnLearn} />
+						<Combination setReturnLearn={setReturnLearn} />
 					} />
 				</Route>
 
 				<Route path="clues" element={
 					<TopBar
-						setMode={setMode}
-						setShowMessage={setShowMessage}
-						setNextHint={setNextHint}
-						setclueId={setclueId}
-						setInput={setInput}
 						setReturnLearn={setReturnLearn}
 						setStats={setStats}
 					/>
@@ -128,49 +107,25 @@ const App = () => {
 					<Route index element={
 						<AllClues
 							clues={clues}
-							setclueId={setclueId}
-							setMode={setMode}
 							completedClues={completedClues}
-							setInput={setInput}
-							setCheckAns={setCheckAns}
 							stats={stats}
 						/>
 					} />
 
-					<Route path="clue" element={<>
-						<ClueContainer 
+					<Route path=":id" element={<>
+						<Clue 
 							clues={clues}
-							activeClue={activeClue}
-							nextHint={nextHint}
-							showMessage={showMessage}
-							input={input}
-							checkAns={checkAns}
 							showType={showType}
 							setShowType={setShowType}
 							stats={stats}
-						/>
-						<Bottom
-							showMessage={showMessage}
-							setShowMessage={setShowMessage}
-							nextHint={nextHint}
-							setNextHint={setNextHint}
-							activeClue={activeClue}
-							setclueId={setclueId}
-							setMode={setMode}
-							addCompletedClue={addCompletedClue}
-							handleInput={handleInput}
-							input={input}
-							setInput={setInput}
-							checkAns={checkAns}
-							setCheckAns={setCheckAns}
-							stats={stats}
 							setStats={setStats}
+							addCompletedClue={addCompletedClue}
 							returnLearn={returnLearn}
 							setReturnLearn={setReturnLearn}
 						/>
 					</>} />
 				</Route>
-				{/* <Route path="*" element={<NotFound />} /> */}
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
 	)

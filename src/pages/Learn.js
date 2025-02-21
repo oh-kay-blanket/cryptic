@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 
 import ButtonContainer from '../components/bottom/ButtonContainer'
@@ -7,37 +7,17 @@ import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
 import ex from '../assets/img/learn/example.jpg'
 
-const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeViewed }) => {
+const Learn = ({ typeViewed, setTypeViewed, setReturnLearn }) => {
 
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/208',
 			name: "Try a clue",
-			style: 'primary',
-			onClick: function() {
-				setclueId(208)
-				setInput([])
-				setCheckAns(false)
-				setMode('playing')
-			}
+			style: 'primary'
 		}
 	}
 	const btnArr = [buttons.easyClue]
-
-	// Clue types
-	
-	const [learnType, setLearnType] = useState('learn');
-
-	const typeSection = useRef(null);
-	useEffect(() => {
-		// learnType == 'learn' && typeSection.current?.scrollIntoView({ behavior: "smooth" });
-	}, [learnType])
-
-	const loadType = (type) => {
-		setTypeViewed(type.name)
-		// setLearnType(type)
-	}
 	
 	const typesArr = [
 		{ name: 'Anagram', id: 'anagram' },
@@ -57,7 +37,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 
 	const types = typesArr.map(type => {
 		const isViewed = typeViewed.find(viewed => viewed == type.name)
-		return <li className={isViewed ? 'viewed' : ''} onClick={()=>loadType(type)}><Link to={type.id}>{type.name}</Link></li>
+		return <li className={isViewed ? 'viewed' : ''} onClick={()=>setTypeViewed(type.name)}><Link to={type.id}>{type.name}</Link></li>
 	})
 
 	return (<>
@@ -117,7 +97,7 @@ const Learn = ({ setMode, setclueId, setInput, setCheckAns, typeViewed, setTypeV
 				</ul>
 			</div>
 
-			<div ref={typeSection} className='learn-section'>
+			<div className='learn-section'>
 				<h2 className='learn-question'>What differnt types of wordplay will I find?</h2>
 				<p className='learn-answer'>Tap a type below to learn more:</p>
 				<ul className='learn-types no-dec'>{types}</ul>

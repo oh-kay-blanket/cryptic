@@ -10,7 +10,7 @@ const Combination = ({ setclueId, setInput, setCheckAns, setReturnLearn }) => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/clue',
+			path: '/clues/122',
 			name: "Play a combination clue",
 			style: 'primary',
 			onClick: function() {

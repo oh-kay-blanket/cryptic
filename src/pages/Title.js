@@ -3,7 +3,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer';
 
 import gif from '../assets/img/lc4.png';
 
-const Title = ({ setMode, clues, setclueId, completedClues }) => {
+const Title = ({ clues, setclueId, completedClues }) => {
 
 	const knownUser = (completedClues && completedClues.length > 0) ? true : false
 	const avgGuesses = (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0);
@@ -39,35 +39,22 @@ const Title = ({ setMode, clues, setclueId, completedClues }) => {
 		learn: {
 			path: '/learn',
 			name: "Learn about cryptics",
-			style: 'alt',
-			onClick: function() {
-				setMode('learn')
-			}
+			style: 'alt'
 		},
 		todayClue: {
-			path: '/clues/clue',
+			path: `/clues/${todayClue.id}`,
 			name: "Play today's clue",
 			style: 'primary',
-			onClick: function() {
-				setclueId(todayClue.id)
-				setMode('playing')
-			}
 		},
 		allClues: {
 			path: '/clues',
 			name: "See all clues",
 			style: 'secondary',
-			onClick: function() {
-				setMode('archive')
-			}
 		},
 		viewClues: {
 			path: '/clues',
 			name: "View clues",
-			style: 'primary',
-			onClick: function() {
-				setMode('archive')
-			}
+			style: 'primary'
 		}
 	}
 
