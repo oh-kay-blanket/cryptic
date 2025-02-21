@@ -6,7 +6,6 @@ import logo from '../assets/img/lc7.png';
 const TopBar = ({ setReturnLearn, setStats }) => {
 
 	const clickTitle = () => {
-		setStats({ guesses: 0, hints: 0, how: '' });
 		setReturnLearn(false)
 	}
 

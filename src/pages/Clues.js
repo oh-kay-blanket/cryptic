@@ -6,13 +6,13 @@ import d2 from '../assets/img/difficulty/2.svg';
 import d3 from '../assets/img/difficulty/3.svg';
 import d4 from '../assets/img/difficulty/4.svg';
 
-const AllClues = ({ clues, completedClues, setInput, setCheckAns }) => {
+const Clues = ({ cluesData, completedClues }) => {
 
 
-	let tilesRef = useRef(clues.map(() => createRef()))
+	let tilesRef = useRef(cluesData.map(() => createRef()))
 
 	// only past clues
-	let archiveTiles = clues.filter(clue => {
+	let archiveTiles = cluesData.filter(clue => {
 
 		function isTodayOrBefore(date1Str) {
 
@@ -93,4 +93,4 @@ const AllClues = ({ clues, completedClues, setInput, setCheckAns }) => {
 	)
 }
 
-export default AllClues;
+export default Clues;

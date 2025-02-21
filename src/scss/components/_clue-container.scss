@@ -152,8 +152,8 @@
 	.sol-section {
 		flex-grow: 1;
 		display: flex;
-		align-items: flex-start;
-		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 
 		.solution {
 			font-family: $lc-font--alt;
@@ -210,14 +210,16 @@
 		.source {
 			opacity: 0;
 			transition: opacity $lc-transition--short ease;
-			position: absolute;
-			top: 60px;
-			left: 50%;
-			transform: translateX(-50%);
+			margin-top: 1rem;
 			font-size: 15px;
 			font-family: $lc-font--sans;
 			pointer-events: none;
 			user-select: none;
+
+			a {
+				color: $lc-primary--dark;
+				text-decoration: underline;
+			}
 
 			&.show {
 				opacity: 1;

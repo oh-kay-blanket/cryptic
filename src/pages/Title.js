@@ -3,7 +3,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer';
 
 import gif from '../assets/img/lc4.png';
 
-const Title = ({ clues, setclueId, completedClues }) => {
+const Title = ({ cluesData, completedClues }) => {
 
 	const knownUser = (completedClues && completedClues.length > 0) ? true : false
 	const avgGuesses = (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0);
@@ -22,7 +22,7 @@ const Title = ({ clues, setclueId, completedClues }) => {
 
 	// Today clue
 	const today = new Date();
-	const todayClue = clues.find(clue => {
+	const todayClue = cluesData.find(clue => {
 
 		const date1 = new Date(clue.release);
 		const date2 = new Date();
