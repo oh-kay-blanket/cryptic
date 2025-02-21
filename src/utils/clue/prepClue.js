@@ -1,4 +1,20 @@
-const prepActiveClue = (activeClue) => {
+import { useRef, createRef, useEffect } from 'react'
+
+import getTargetLetters from './getTargetLetters'
+import fixLetters from './fixLetters'
+import addLetters from './addLetters'
+
+const prepClue = (id, cluesData) => {
+
+	let activeClue = !!id ? structuredClone(cluesData.find(clue => clue.id == id)) : false
+	if (!activeClue) {
+		console.log('activeClue not found')
+		return
+	}
+
+	useEffect(() => {
+		activeClue && console.log(activeClue)
+	}, [id]);
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
@@ -21,19 +37,19 @@ const prepActiveClue = (activeClue) => {
 			activeClue.source.href = 'https://www.theglobeandmail.com/puzzles-and-crosswords/article-how-to-solve-the-cryptic-crossword-fraser-simson/'
 			break
 		case "Midas":
-			activeClue.source.href = 'https://www.marcmaximov.net/about'
+			activeClue.source.href = 'https://www.marcmaximov.net'
 			break
 		case 'plunk it':
 			activeClue.source.href = 'https://ohkayblanket.com'
 			break
 		case 'Kegler':
-			activeClue.source.href = 'https://kegler.gitlab.io/Block_style/November_2009.pdf'
+			activeClue.source.href = 'https://kegler.gitlab.io'
 			break
 		case 'Ucaoimhu':
 			activeClue.source.href = 'https://www.ucaoimhu.com'
 			break
 		case 'Hex':
-			activeClue.source.href = 'https://coxrathvon.com/puzzles/xoOx3KL17IT3eFSBoGPA'
+			activeClue.source.href = 'https://coxrathvon.com'
 			break
 		default:
 			activeClue.source.href = false
@@ -75,6 +91,38 @@ const prepActiveClue = (activeClue) => {
 			}
 		)
 	}
+
+	// build refs
+	activeClue.clue.ref = useRef(activeClue.clue.arr.map(() => createRef())) // clue letter refs
+	activeClue.clue.sectionRef = useRef() // clue section ref
+	activeClue.solution.ref = useRef(activeClue.solution.arr.map(() => createRef())) // solution letter refs
+	activeClue.solution.sectionRef = useRef() // solution section ref
+	activeClue.solution.length.ref = useRef() // solution length ref
+	activeClue.source.ref = useRef() // source ref
+	activeClue.spoon = useRef() // source ref
+
+	// hint target refs
+	activeClue.hints.forEach(hint => { 
+		
+		// add extra letters needed
+		addLetters(activeClue, hint)
+		
+		// indicator letters
+		hint.ref = getTargetLetters(hint.value, activeClue, hint)
+		
+		// indicator end letters
+		if (!!hint.end) {hint.end.ref = getTargetLetters(hint.end.value, activeClue, hint)}
+	})
+
+	useEffect(() => {
+		// Fix letters
+		const fixList = ['ag-2', 'hw-2', 'lb-2', 'container', 'reversal']	
+		activeClue.hints.forEach((hint, index) => {
+			hint && hint.category && fixList.includes(hint.category) && fixLetters(activeClue, hint, index)
+		})
+	}, [])
+
+	return { activeClue }
 }
 
-export default prepActiveClue
+export default prepClue

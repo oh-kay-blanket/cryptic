@@ -1,31 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams } from "react-router-dom";
 
 import Bottom from '../components/Bottom';
 import Tooltip from '../components/Tooltip';
 
-import manageHints from '../utils/clue/manageHints'
-import manageInput from '../utils/clue/manageInput'
-import prepActiveClue from '../utils/clue/prepActiveClue'
+import prepClue from '../utils/clue/prepClue'
+import manageClue from '../utils/clue/manageClue'
 
-import loadClue from '../utils/clue/loadClue'
 import eyeOpen from '../assets/img/eye--open.svg'
 import eyeClosed from '../assets/img/eye--closed.svg'
 
 
-const Clue = ({ clues, showType, setShowType, stats, addCompletedClue, setStats, returnLearn, setReturnLearn }) => {
-	const { id } = useParams()
+const Clue = ({ cluesData, showType, setShowType, addCompletedClue, returnLearn, setReturnLearn }) => {
 
-	let activeClue = !!id ? structuredClone(clues.find(clue => clue.id == id)) : false
-	activeClue && prepActiveClue(activeClue)
-	
-	useEffect(() => {
-		activeClue && console.log(activeClue)
-	}, [id]);
-	
-	let { nextHint, setNextHint, showMessage, setShowMessage } = manageHints()
-	let { input, setInput, handleInput, checkAns, setCheckAns } = manageInput(activeClue)
-	loadClue(activeClue, nextHint, showMessage, checkAns)
+	// Set up activeClue
+	const { id } = useParams()
+	let { activeClue } = prepClue(id, cluesData)
+	let { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns } = manageClue(activeClue)
 
 	// type HTML
 	const pillList = activeClue.type.map((t, index) => <li key={index} className='type-pill tooltip-parent' aria-describedby="tooltip-id">
@@ -37,7 +28,7 @@ const Clue = ({ clues, showType, setShowType, stats, addCompletedClue, setStats,
 		<><li onClick={()=>setShowType(true)}><img src={eyeOpen}/></li><li className='type-text' onClick={()=>setShowType(true)}>See type</li></>
 
 	// stats HTML
-	stats = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;h</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;g</span></div></>
+	const statsInsert = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;h</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;g</span></div></>
 
 	// clue HTML
 	const clueInsert = activeClue.clue.arr.map((letter, index) => (<span key={index} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>))
@@ -78,7 +69,7 @@ const Clue = ({ clues, showType, setShowType, stats, addCompletedClue, setStats,
 		<>
 			<div id='clue-container' className='clue container'>
 				<ul className='type'>{typeInsert}</ul>
-				{stats}
+				{statsInsert}
 				<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
 					<div>{clueInsert} {solLength}</div>
 				</div>
@@ -95,9 +86,9 @@ const Clue = ({ clues, showType, setShowType, stats, addCompletedClue, setStats,
 				setNextHint={setNextHint}
 				activeClue={activeClue}
 				addCompletedClue={addCompletedClue}
-				handleInput={handleInput}
 				input={input}
 				setInput={setInput}
+				handleInput={handleInput}
 				checkAns={checkAns}
 				setCheckAns={setCheckAns}
 				stats={stats}

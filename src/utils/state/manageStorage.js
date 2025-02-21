@@ -6,7 +6,6 @@ const manageStorage = () => {
     function gtag(){dataLayer.push(arguments);}
 	
 	// state
-	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
 	const [returnLearn, setReturnLearn] = useState(false)
 
 	// manage lcState
@@ -84,7 +83,7 @@ const manageStorage = () => {
 		})
 	}
 
-	return { completedClues, addCompletedClue, showType, setShowType, stats, setStats, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
+	return { completedClues, addCompletedClue, showType, setShowType, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
 }
 
 export default manageStorage

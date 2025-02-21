@@ -7,7 +7,7 @@ import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
 import ex from '../assets/img/learn/example.jpg'
 
-const Learn = ({ typeViewed, setTypeViewed, setReturnLearn }) => {
+const Learn = ({ typeViewed, setTypeViewed }) => {
 
 	// buttons
 	const buttons = {
