@@ -9,6 +9,8 @@ const fixLetters = (activeClue, hint, index) => {
 		// Keep track of used anchors
 		let anchorUsed = []
 
+		moving.forEach(ref => { ref.current.style.position = 'absolute' })
+
 		moving.forEach(ref => {
 
 			// Matching letter in anchor
@@ -74,7 +76,7 @@ const fixLetters = (activeClue, hint, index) => {
 			hint.fix.removeAnchor = false
 
 			// fix word with. Helps to place hints following this inline. Only run when there are hints following ag-2. Othewise it can mess with layout
-			// hint.fix.wordWidth = moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
+			// hint.fix.wordWidth = hint.fix.moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
 			// activeClue.hints.length > (index + 1) && (hint.addLetters.wordRef.current.style.width = `${hint.fix.wordWidth + 8}px`)
 
 			positionLetters(hint)
