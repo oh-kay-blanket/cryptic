@@ -14,7 +14,7 @@ const Lit = ({ setReturnLearn }) => {
 			name: "Play an & Lit. clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('lit')
 			}
 		},
 		return: {

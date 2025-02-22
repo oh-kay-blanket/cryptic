@@ -14,7 +14,7 @@ const Reversal = ({ setReturnLearn }) => {
 			name: "Play a reversal clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('reversal')
 			}
 		},
 		return: {

@@ -14,7 +14,7 @@ const Charade = ({ setReturnLearn }) => {
 			name: "Play a charade clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('charade')
 			}
 		},
 		return: {

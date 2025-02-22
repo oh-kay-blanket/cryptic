@@ -14,7 +14,7 @@ const HiddenWord = ({ setReturnLearn }) => {
 			name: "Play a hidden word clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('hidden-word')
 			}
 		},
 		return: {

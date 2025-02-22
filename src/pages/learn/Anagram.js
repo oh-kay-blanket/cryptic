@@ -14,7 +14,7 @@ const Anagram = ({ setReturnLearn }) => {
 			name: "Play an anagram clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('anagram')
 			}
 		},
 		return: {

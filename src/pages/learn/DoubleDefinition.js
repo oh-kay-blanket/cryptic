@@ -14,7 +14,7 @@ const DoubleDefinition = ({ setReturnLearn }) => {
 			name: "Play a double definition clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('double-definition')
 			}
 		},
 		return: {
