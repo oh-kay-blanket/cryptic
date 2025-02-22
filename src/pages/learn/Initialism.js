@@ -14,7 +14,7 @@ const Initialism = ({ setReturnLearn }) => {
 			name: "Play an initialism clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('initialism')
 			}
 		},
 		return: {

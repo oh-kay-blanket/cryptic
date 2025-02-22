@@ -14,7 +14,7 @@ const LetterBank = ({ setReturnLearn }) => {
 			name: "Play a letter bank clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn("letter-bank")
 			}
 		},
 		return: {

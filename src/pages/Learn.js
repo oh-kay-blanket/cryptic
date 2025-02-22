@@ -82,7 +82,7 @@ const Learn = ({ typeViewed, setTypeViewed }) => {
 
 			<div className='learn-section'>
 				<h2 className='learn-question'>What is Learn Cryptic?</h2>
-				<p className='learn-answer'>Learn Cryptic is a game to help you learn about and practice cryptic clues. There are two ways you can get help with solving clues:</p>
+				<p className='learn-answer'>Learn Cryptic is a  daily game to help you learn about and practice cryptic clues. There are two ways you can get help with solving clues:</p>
 				<ul className='no-dec'>
 					<li className='mt-3'>
 						<p><strong>Wordplay used</strong></p>

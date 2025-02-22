@@ -16,7 +16,7 @@ const Title = ({ cluesData, completedClues }) => {
 	</div>
 
 	const intro = <div className='title-intro'>
-		<p>Learn Cryptic is a tool to help you learn about, practice, and solve cryptic crossword clues.</p>
+		<p>Learn Cryptic is a daily game to help you learn about, practice, and solve cryptic crossword clues.</p>
 		<p>This is for both beginners who are wanting to learn about cryptic crosswords and those already familiar with this wonderful form of wordplay.</p>
 	</div>
 

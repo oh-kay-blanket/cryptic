@@ -14,7 +14,7 @@ const Deletion = ({ setReturnLearn }) => {
 			name: "Play a deletion clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('deletion')
 			}
 		},
 		return: {

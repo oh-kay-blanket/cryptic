@@ -14,7 +14,7 @@ const Combination = ({ setReturnLearn }) => {
 			name: "Play a combination clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('combination')
 			}
 		},
 		return: {

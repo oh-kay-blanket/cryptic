@@ -1,4 +1,4 @@
-const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, setReturnLearn, checkAns, setCheckAns) => {
+const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns) => {
 
 	// buttons
 	const buttons = {
@@ -64,7 +64,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			}
 		},
 		returnLearn: {
-			path: '/learn',
+			path: `/learn/${returnLearn}`,
 			name: 'Return',
 			style: 'alt',
 			onClick: function(){

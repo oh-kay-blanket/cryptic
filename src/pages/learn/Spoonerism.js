@@ -14,7 +14,7 @@ const Spoonerism = ({ setReturnLearn }) => {
 			name: "Play a spoonerism clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('spoonerism')
 			}
 		},
 		return: {

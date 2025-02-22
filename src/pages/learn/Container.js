@@ -14,7 +14,7 @@ const Container = ({ setReturnLearn }) => {
 			name: "Play a container clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('container')
 			}
 		},
 		return: {

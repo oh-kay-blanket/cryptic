@@ -14,7 +14,7 @@ const Homophone = ({ setReturnLearn }) => {
 			name: "Play a homophone clue",
 			style: 'primary',
 			onClick: function() {
-				setReturnLearn(true)
+				setReturnLearn('homophone')
 			}
 		},
 		return: {
