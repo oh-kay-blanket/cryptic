@@ -2,37 +2,36 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router';
 
 // pages
-import Title from './pages/Title'
-import TopBar from './components/TopBar'
-import Learn from './pages/Learn'
-import Clues from './pages/Clues' 
-import Clue from './pages/Clue'
-import NotFound from './pages/NotFound';
+import Title from './Title'
+import TopBar from '../components/TopBar'
+import Learn from './learn'
+import Clues from './Clues' 
+import Clue from './Clue'
+import NotFound from './404';
 
 // learn
-import Anagram from './pages/learn/Anagram'
-import Charade from './pages/learn/Charade'
-import Container from './pages/learn/Container'
-import Deletion from './pages/learn/Deletion'
-import DoubleDefinition from './pages/learn/DoubleDefinition'
-import HiddenWord from './pages/learn/HiddenWord'
-import Homophone from './pages/learn/Homophone'
-import Initialism from './pages/learn/Initialism'
-import LetterBank from './pages/learn/LetterBank'
-import Reversal from './pages/learn/Reversal'
-import Spoonerism from './pages/learn/Spoonerism'
-import Lit from './pages/learn/Lit'
-import Combination from './pages/learn/Combination'
+import Anagram from './learn/Anagram'
+import Charade from './learn/Charade'
+import Container from './learn/Container'
+import Deletion from './learn/Deletion'
+import DoubleDefinition from './learn/DoubleDefinition'
+import HiddenWord from './learn/HiddenWord'
+import Homophone from './learn/Homophone'
+import Initialism from './learn/Initialism'
+import LetterBank from './learn/LetterBank'
+import Reversal from './learn/Reversal'
+import Spoonerism from './learn/Spoonerism'
+import Lit from './learn/Lit'
+import Combination from './learn/Combination'
 
 // hooks
-import manageStorage from './utils/state/manageStorage'
+import useLocalStorage from '../utils/state/useLocalStorage'
+import cluesData from '../assets/clues.json'
 
-import cluesData from './assets/clues.json'
-
-const App = () => {
+const IndexPage = () => {
 
 
-	let { completedClues, addCompletedClue, showType, setShowType, typeViewed, setTypeViewed, returnLearn, setReturnLearn } = manageStorage()
+	let { completedClues, addCompletedClue, showType, setShowType, typeViewed, setTypeViewed, returnLearn, setReturnLearn } = useLocalStorage()
 
     return (
 		<BrowserRouter>
@@ -99,4 +98,6 @@ const App = () => {
 	)
 }
 
-export default App
+export default IndexPage
+
+export { Head } from "../components/Head"

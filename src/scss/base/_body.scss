@@ -1,7 +1,7 @@
 @use './var' as *;
 @use './media' as *;
 
-html, body, #root {
+html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 	width: 100%;
 	font-size: 18px;

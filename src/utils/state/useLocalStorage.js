@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
-const manageStorage = () => {
+const useLocalStorage = () => {
 
-	window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+	// window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
 	
 	// state
 	const [returnLearn, setReturnLearn] = useState(false)
@@ -33,10 +33,10 @@ const manageStorage = () => {
 
 	// Functions
 	const addCompletedClue = (activeClue, stats, type) => {
-		const guesses = type == 'g' ? stats.guesses + 1 : stats.guesses
-		const hints = type == 'h' ? stats.hints + 1 : stats.hints
-		const repeat = completedClues.find(completed => completed.id == activeClue.id)
-		const knownUser = completedClues && completedClues.length > 0
+		const guesses = type === 'g' ? stats.guesses + 1 : stats.guesses
+		const hints = type === 'h' ? stats.hints + 1 : stats.hints
+		const repeat = completedClues.find(completed => completed.id === activeClue.id)
+		// const knownUser = completedClues && completedClues.length > 0
 
 		// Only update if not already in completedClues
 		if (!repeat) {
@@ -54,17 +54,17 @@ const manageStorage = () => {
 		}
 
 		// GA event
-		gtag('event', 'completed_clue', {
-			'id': activeClue.id,
-			'hints': hints,
-			'guesses': guesses,
-			'how': type,
-			'total_completed': knownUser && completedClues.length +1,
-			'repeat': !!repeat,
-			'known_user': knownUser,
-			'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
-			'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
-		})
+		// gtag('event', 'completed_clue', {
+		// 	'id': activeClue.id,
+		// 	'hints': hints,
+		// 	'guesses': guesses,
+		// 	'how': type,
+		// 	'total_completed': knownUser && completedClues.length +1,
+		// 	'repeat': !!repeat,
+		// 	'known_user': knownUser,
+		// 	'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
+		// 	'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
+		// })
 	}
 
 	// Whether or not to show type pills in clue container
@@ -86,4 +86,4 @@ const manageStorage = () => {
 	return { completedClues, addCompletedClue, showType, setShowType, typeViewed, setTypeViewed, returnLearn, setReturnLearn }
 }
 
-export default manageStorage
+export default useLocalStorage
