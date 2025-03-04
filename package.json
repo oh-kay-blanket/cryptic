@@ -49,6 +49,7 @@
     "gatsby-transformer-json": "^5.14.0",
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
+    "git-filter-repo": "^0.0.30",
     "react": "^18.3.1",
     "react-anagram-animation": "^1.4.0",
     "react-dom": "^18.3.1",
