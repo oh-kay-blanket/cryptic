@@ -5,7 +5,7 @@ const removeSpecial = (charArr) => {
 	const specialChar = [' ', ',', '-', '_', ':', ':', '"', "'"]
 
 
-	if (typeof(charArr) == 'string') {
+	if (typeof(charArr) === 'string') {
 
 		charArr = charArr.split('')
 		return charArr.filter(char => !specialChar.includes(char)).join('')

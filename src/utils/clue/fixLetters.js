@@ -18,14 +18,14 @@ const fixLetters = (activeClue, hint, index) => {
 
 				// Remove anchor to not reuse
 				if (hint.fix.removeAnchor) {
-					if ((destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase()) && !anchorUsed.includes(index)) {
+					if ((destLetter.current.textContent.toUpperCase() === ref.current.textContent.toUpperCase()) && !anchorUsed.includes(index)) {
 						anchorUsed.push(index)
-						return destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase()
+						return destLetter.current.textContent.toUpperCase() === ref.current.textContent.toUpperCase()
 					} else {
 						return false
 					}
 				} else {
-					return destLetter.current.textContent.toUpperCase() == ref.current.textContent.toUpperCase()
+					return destLetter.current.textContent.toUpperCase() === ref.current.textContent.toUpperCase()
 				}
 			})
 
@@ -122,21 +122,21 @@ const fixLetters = (activeClue, hint, index) => {
 			// anchorSplit - get anchor word that is split //
 			hint.fix.anchorSplit = prevHints.find((h,hIndex) => {
 				// Standard container
-				if (hint.end.value.length == 3 || h.rightValue == [hint.end.value[0], hint.end.value[2]].join('').toUpperCase()) {
+				if (hint.end.value.length === 3 || h.rightValue === [hint.end.value[0], hint.end.value[2]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [0,2]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[0], hint.end.value[2]].join('').toUpperCase())
+					return (h.rightValue === [hint.end.value[0], hint.end.value[2]].join('').toUpperCase())
 
 				// complex containers w/more than 3 parts
-				} else if (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('').toUpperCase()) {
+				} else if (h.rightValue === [hint.end.value[0], hint.end.value[3]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [0,3]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[0], hint.end.value[3]].join('').toUpperCase())
+					return (h.rightValue === [hint.end.value[0], hint.end.value[3]].join('').toUpperCase())
 
-				} else if (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('').toUpperCase()) {
+				} else if (h.rightValue === [hint.end.value[1], hint.end.value[3]].join('').toUpperCase()) {
 					hint.fix.joinIndex = [1,3]
 					hint.fix.indicatorMatch = hIndex
-					return (h.rightValue == [hint.end.value[1], hint.end.value[3]].join('').toUpperCase())
+					return (h.rightValue === [hint.end.value[1], hint.end.value[3]].join('').toUpperCase())
 				}
 				return false
 			})
@@ -157,7 +157,7 @@ const fixLetters = (activeClue, hint, index) => {
 			hint.fix.anchorOther = []
 			hint.end.value.forEach((hend, index) => {
 				if (!hint.fix.joinIndex.includes(index)) {
-					const thisMatch = prevHints.find((h,hIndex) => h.rightValue.toUpperCase() == hend.toUpperCase())
+					const thisMatch = prevHints.find((h,hIndex) => h.rightValue.toUpperCase() === hend.toUpperCase())
 					if (thisMatch && doubleHints.includes(thisMatch.category)) {
 						hint.fix.anchorOther.push(...thisMatch.addLetters.ref.current.slice(thisMatch.end.value[0].length))	
 					} else if (thisMatch) {
@@ -191,7 +191,7 @@ const fixLetters = (activeClue, hint, index) => {
 			// push only used anchor to anchor
 			hint.fix.anchor = []
 			activeClue.hints.some(h => {
-				if (h.category == 'reversal') return true
+				if (h.category === 'reversal') return true
 				if (h.addLetters) { hint.fix.anchor.push(h) }
 				return false
 			})
@@ -202,7 +202,7 @@ const fixLetters = (activeClue, hint, index) => {
 
 			// fix word with. Helps to place hints following this inline. Only run when there are hints following reversal. Othewise it can mess with reversal layout
 			hint.fix.wordWidth = hint.fix.moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
-			// const revIndex = activeClue.hints.findIndex(h=>h.category=='reversal')
+			// const revIndex = activeClue.hints.findIndex(h=>h.category==='reversal')
 			// activeClue.hints.length > (revIndex + 1) && (hint.addLetters.wordRef.current.style.width = `${hint.fix.wordWidth + 8}px`)
 
 			hint.fix.endPt = hint.addLetters.ref.current.slice(hint.end.value[0].length) // staging area letters

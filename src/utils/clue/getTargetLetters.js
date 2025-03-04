@@ -10,7 +10,7 @@ const getTargetLetters = (letters, activeClue, hint) => {
 			})
 			
 			// Special case where ref is not part of clue
-			if ((hint.category == 'particle' || hint.category == 'container' || hint.category == 'anagram' || hint.category == 'letter bank') && Array.isArray(targetLettersStartArr) && targetLettersStartArr[0] == -1) {
+			if ((hint.category === 'particle' || hint.category === 'container' || hint.category === 'anagram' || hint.category === 'letter bank') && Array.isArray(targetLettersStartArr) && targetLettersStartArr[0] === -1) {
 				activeClue.hints.find(h => {
 					if (!!h.end && h.end.value[0] === letters[0]) {
 						return h.addLetters.ref.current
@@ -32,7 +32,7 @@ const getTargetLetters = (letters, activeClue, hint) => {
 		} else {
 			let targetLettersStart;
 			
-			if (hint.category == 'direct') {
+			if (hint.category === 'direct') {
 
 				// Consider using regex to exclude alpha char before & after letters
 				// console.log(activeClue.clue.value.indexOf(` ${letters}`))

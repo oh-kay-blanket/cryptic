@@ -20,7 +20,7 @@ const Message = ({ activeClue, nextHint, input, checkAns, isCorrectAns, isSoluti
 	// choose message button
 	let messageButton = isSolution ? [buttons.endClueHint] : checkAns && isCorrectAns ? [buttons.endClueGuess] : [buttons.continue]
 
-	if (returnLearn && (isSolution || checkAns && isCorrectAns)) {
+	if (returnLearn && (isSolution || (checkAns && isCorrectAns))) {
 		messageButton = [buttons.returnLearn]
 	}
 	

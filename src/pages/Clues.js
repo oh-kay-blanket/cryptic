@@ -1,13 +1,18 @@
-import React, { useRef, createRef } from 'react'
-import { Link } from "react-router-dom";
+import React, { useRef, createRef, useContext } from 'react'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
+import { UserContext } from '../utils/UserContext'
+// import cluesData from '../assets/data/clues.json'
 
-import d1 from '../assets/img/difficulty/1.svg';
-import d2 from '../assets/img/difficulty/2.svg';
-import d3 from '../assets/img/difficulty/3.svg';
-import d4 from '../assets/img/difficulty/4.svg';
+import d1 from '../assets/img/difficulty/1.svg'
+import d2 from '../assets/img/difficulty/2.svg'
+import d3 from '../assets/img/difficulty/3.svg'
+import d4 from '../assets/img/difficulty/4.svg'
 
-const Clues = ({ cluesData, completedClues }) => {
-
+const Clues = ({ data }) => {
+	
+	const cluesData = data.allCluesJson.nodes	    
+	const { completedClues } = useContext(UserContext)
 
 	let tilesRef = useRef(cluesData.map(() => createRef()))
 
@@ -17,7 +22,7 @@ const Clues = ({ cluesData, completedClues }) => {
 		function isTodayOrBefore(date1Str) {
 
 			const date1 = new Date(date1Str);
-    		const date2 = new Date();
+        		const date2 = new Date();
 
 			// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
 			const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
@@ -43,7 +48,7 @@ const Clues = ({ cluesData, completedClues }) => {
 		const getImg = (difficulty) => {
 			switch (Number(difficulty)) {
 				case 1:
-				  return d1
+				    return d1
 				case 2:
 					return d2
 				case 3:
@@ -52,10 +57,10 @@ const Clues = ({ cluesData, completedClues }) => {
 					return d4
 				default:
 					return d1
-			  }
+			    }
 		}
 
-		const completedClue = completedClues.find(c => c.id == clue.id)
+		const completedClue = completedClues.find(c => c.id === clue.id)
 
 		const stats = completedClue && <>
 			<div className="tile-stats">
@@ -65,7 +70,7 @@ const Clues = ({ cluesData, completedClues }) => {
 		</>
 
 		return (
-		<Link to={`/clues/${clue.id}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
+		<Link to={`/clues/${clue.clid}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
 			<div className='archive-release'>
 				<span>
 					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
@@ -87,10 +92,28 @@ const Clues = ({ cluesData, completedClues }) => {
 	})
 
 	return(
-		<div className='archive container'>
-			{archiveTiles}
-		</div>
+		<Layout>
+			<div className='archive container'>
+				{archiveTiles}
+			</div>
+		</Layout>
 	)
 }
 
-export default Clues;
+export default Clues
+
+export const query = graphql`
+	query {
+		allCluesJson {
+			nodes {
+				clue {
+					value
+				}
+				difficulty
+				release
+				clid
+				id
+			}
+		}
+	}
+`

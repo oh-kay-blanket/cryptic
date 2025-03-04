@@ -4,7 +4,7 @@ import types from '../assets/type.json'
 
 const Tooltip = ({ text }) => {
 
-	const matchType = types.find(type => type.type.toUpperCase() == text.toUpperCase())
+	const matchType = types.find(type => type.type.toUpperCase() === text.toUpperCase())
 
     return (
         <div role="tooltip" className="tooltip" id={text}>

@@ -12,7 +12,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 		const hint = activeClue.hints[nextHint]
 
 		// Definition
-		if (nextHint == 0) {
+		if (nextHint === 0) {
 			underlineLetters(hint.ref)
 
 		// Indicators
@@ -54,7 +54,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					activeClue.hints.some(h => {
 						
 						// Break out if container
-						if (h.category == 'container') return true
+						if (h.category === 'container') return true
 						
 						if (h.addLetters) {
 							changeColor(h.addLetters.ref.current, '#ccc')
@@ -90,14 +90,14 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 				case 'delete even':
 					highlightLetters(hint.ref)
-					const oddOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 != 0)
+					const oddOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 !== 0)
 					console.log(oddOnly)
 					changeColor(oddOnly, '#ccc')
 					break
 
 				case 'delete odd':
 					highlightLetters(hint.ref)
-					const evenOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 == 0)
+					const evenOnly = prevHint.addLetters.ref.current.filter((ltr,index) => index % 2 === 0)
 					console.log(evenOnly)
 					changeColor(evenOnly, '#ccc')
 					break
@@ -159,7 +159,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					// push only used anchor to anchor
 					let anchor = []
 					activeClue.hints.some(h => {
-						if (h.category == 'reversal') return true
+						if (h.category === 'reversal') return true
 						if (h.addLetters) { anchor.push(h) }
 						return false
 					})
@@ -170,7 +170,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 					
 					// Build arr of used anchors
 					moving.forEach(ref => {		
-						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent == ref.current.textContent)
+						const destIndex = anchor.findIndex(destLetter => destLetter.current.textContent === ref.current.textContent)
 						usedAnchor.push(anchor[destIndex])
 						anchor.splice(destIndex, 1)
 					})

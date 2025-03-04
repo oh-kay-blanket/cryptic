@@ -74,14 +74,14 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 		}
 	}
 
-	let btnArr = btnArr || [buttons.showHint]
+	let btnArr = [buttons.showHint]
 	
 	if (activeClue.hints[nextHint].reveals) { btnArr = [buttons.revealSolution] }
 	
 	if (input.length === activeClue.solution.arr.length) { btnArr.push(buttons.checkAnswer) }
 
 	const isCorrectAns = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
-	const isSolution = (activeClue.hints.length - 1 == nextHint) && !checkAns
+	const isSolution = (activeClue.hints.length - 1 === nextHint) && !checkAns
 
 
     return { buttons, btnArr, checkAns, setCheckAns, isSolution, isCorrectAns }

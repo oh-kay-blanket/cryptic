@@ -1,8 +1,13 @@
 @use '../base/var' as *;
 
 .top-bar {
-	background-color: $lc-gray--light;
+	position: fixed;
+	width: 100vw;
 	height: $lc-top-height;
+	top: 0;
+	left: 0;
+	background-color: $lc-gray--light;
+	z-index: 1;
 	
 	.container {
 		display: flex;

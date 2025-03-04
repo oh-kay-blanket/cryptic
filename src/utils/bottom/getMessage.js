@@ -8,7 +8,7 @@ const getMessage = hint => {
 
 	switch(hint.type) {
 		case 'definition':
-			if (hint.value.length == 1) { // Single definition
+			if (hint.value.length === 1) { // Single definition
 				return <><strong>{hint.value[0].toUpperCase()}</strong> is the definition</>
 			} else { // Double definition
 				return <>Both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong> are definitions for the solution</>
@@ -60,7 +60,7 @@ const getMessage = hint => {
 					return
 				default:
 					// One end point
-					if (hint.end.value.length == 1) {
+					if (hint.end.value.length === 1) {
 						return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong></> 
 						
 						// Two end points

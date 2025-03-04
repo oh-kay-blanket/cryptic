@@ -1,16 +1,18 @@
 @use './var' as *;
 @use './media' as *;
 
-html, body, #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
-	width: 100%;
+html, body {
 	font-size: 18px;
-	overflow: hidden;
 	margin: 0;
 
 	@include desktop {
 		font-size: 20px;
 	}
+}
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+	width: 100%;
 }
 
 * {
@@ -19,6 +21,10 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 body {
     display: flex;
+}
+
+main {
+	padding-top: 60px;
 }
 
 .container {

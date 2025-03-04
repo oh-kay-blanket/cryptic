@@ -1,9 +1,13 @@
-import React from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Link } from 'gatsby'
 
-import logo from '../assets/img/lc7.png';
+import { UserContext } from '../utils/UserContext';
 
-const TopBar = ({ setReturnLearn, setStats }) => {
+import logo from '../assets/img/logo-short.png';
+
+const TopBar = () => {
+
+	const { setReturnLearn } = useContext(UserContext);
 
 	const clickTitle = () => {
 		setReturnLearn(false)
@@ -11,16 +15,15 @@ const TopBar = ({ setReturnLearn, setStats }) => {
 
   return(
 	<>
-		<div className='top-bar'>
+		<header className='top-bar'>
 			<div className='container'>
 				<Link to='/'>
-					<img src={logo} onClick={ clickTitle } />
+					<img src={logo} onClick={ clickTitle } alt="" />
 				</Link>
 			</div>
-		</div>
-		<Outlet />
+		</header>
 	</>
   )
 }
 
-export default TopBar;
+export default TopBar
