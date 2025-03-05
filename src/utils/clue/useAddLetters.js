@@ -1,12 +1,22 @@
-import { useRef, createRef } from 'react'
+import { useEffect, useRef, createRef } from 'react'
 
 import removeSpecial from "./removeSpecialChar"
 
 // adds letters that will be needed as either duplicates or are not within the original clue
 const useAddLetters = (activeClue, hint) => {
+	
+	hint.addLetters = {}
+	hint.addLetters.wordRef = useRef()
+	hint.addLetters.ref = useRef()
+	
+
+	useEffect(() => {
+		if (hint.addLetters.value) {
+			hint.addLetters.ref.current = hint.addLetters.value.map(() => createRef())
+		}
+	  }, []);
 
 	if (hint && hint.type === 'indicator') {
-		hint.addLetters = {}
 
 		switch(hint.category) {
 			case 'anagram':
@@ -55,11 +65,6 @@ const useAddLetters = (activeClue, hint) => {
 
 			default:
 				break
-		}
-
-		if (hint.addLetters.value) {
-			hint.addLetters.ref = useRef(hint.addLetters.value.map(() => createRef()))
-			hint.addLetters.wordRef = useRef()
 		}
 	}
 }

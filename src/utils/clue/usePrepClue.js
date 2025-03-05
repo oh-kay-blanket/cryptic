@@ -100,7 +100,7 @@ const usePrepClue = (dataClue) => {
 	activeClue.hints.forEach(hint => { 
 		
 		// add extra letters needed
-		useAddLetters(activeClue, hint)
+		useAddLetters(activeClue, hint) 
 		
 		// indicator letters
 		hint.ref = getTargetLetters(hint.value, activeClue, hint)
