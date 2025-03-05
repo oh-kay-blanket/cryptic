@@ -17,7 +17,7 @@ const getTargetLetters = (letters, activeClue, hint) => {
 					}
 				})
 				
-				// Ref found in clue
+			// Ref found in clue
 			} else {
 				// get each range of clue refs
 				let clueLetters = []

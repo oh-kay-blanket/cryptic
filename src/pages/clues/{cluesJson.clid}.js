@@ -12,8 +12,8 @@ import eyeClosed from '../../assets/img/eye--closed.svg'
 
 
 const CluePage = ({ data }) => {
-
-	const dataClue = data.clue;
+	
+	const dataClue = data.cluesJson;
 	// const { completedClues } = useContext(UserContext);
 
 	const { showType, setShowType, addCompletedClue, returnLearn, setReturnLearn } = useContext(UserContext);
@@ -40,7 +40,7 @@ const CluePage = ({ data }) => {
 	// addLetters HTML
 	const addInsert = activeClue.hints.map((hint, parentIndex) => {
 		if (hint.type === 'indicator' && !!hint.addLetters && !!hint.addLetters.value) {
-			const lettersInsert = hint.addLetters.value.map((letter, childIndex) => (<span key={`${parentIndex}_${childIndex}`} ref={hint.addLetters.ref.current[childIndex]} className='letter'>{letter}</span>))
+			const lettersInsert = hint.addLetters.value.map((letter, childIndex) => (<span key={`${parentIndex}_${childIndex}`} ref={activeClue.addLetters.ref.current[parentIndex][childIndex]} className='letter'>{letter}</span>))
 			
 			const brCats = ['container', 'reversal', 'ag-2', 'lb-2', 'hw-2', 'spoonerism']
 			const addBr = brCats.includes(hint.category)

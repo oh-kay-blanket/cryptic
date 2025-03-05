@@ -2,14 +2,13 @@ import { useRef, createRef, useEffect } from 'react'
 
 import getTargetLetters from './getTargetLetters'
 import fixLetters from './fixLetters'
-import useAddLetters from './useAddLetters'
+import addLetters from './addLetters'
 
 const usePrepClue = (dataClue) => {
 
 	let activeClue = structuredClone(dataClue)
-	useEffect(() => {
-		console.log(activeClue)
-	}, [dataClue]);
+	console.log(activeClue)
+	// useEffect(() => {}, [activeClue]);
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
@@ -95,18 +94,29 @@ const usePrepClue = (dataClue) => {
 	activeClue.solution.length.ref = useRef() // solution length ref
 	activeClue.source.ref = useRef() // source ref
 	activeClue.spoon = useRef() // source ref
+	activeClue.addLetters = { ref: useRef([]) } // add letters ref
 
 	// hint target refs
 	activeClue.hints.forEach(hint => { 
 		
 		// add extra letters needed
-		useAddLetters(activeClue, hint) 
+		addLetters(activeClue, hint)
 		
 		// indicator letters
 		hint.ref = getTargetLetters(hint.value, activeClue, hint)
 		
 		// indicator end letters
 		if (!!hint.end) {hint.end.ref = getTargetLetters(hint.end.value, activeClue, hint)}
+	})
+
+	// add letters
+	activeClue.hints.forEach((hint, index) => { 
+		if (hint.addLetters && hint.addLetters.value) {
+			activeClue.addLetters.ref.current.push(hint.addLetters.value.map(() => createRef()))
+			hint.addLetters.ref.current = activeClue.addLetters.ref.current[index]
+		} else {
+			activeClue.addLetters.ref.current.push([])
+		}
 	})
 
 	useEffect(() => {

@@ -83,6 +83,7 @@ const fixLetters = (activeClue, hint, index) => {
 			break
 
 		case 'hw-2':
+			console.log(prevHint.addLetters.ref)
 			let solIndex = removeSpecial(prevHint.end.value[0].toUpperCase()).indexOf(removeSpecial(hint.end.value[1].toUpperCase()))
 			hint.fix.anchor = removeSpecial(prevHint.addLetters.ref.current).slice(solIndex, (solIndex + removeSpecial(activeClue.solution.value).length)) // anchor letters
 			hint.fix.moving = removeSpecial(hint.addLetters.ref.current) // moving letters

@@ -11,6 +11,7 @@ const removeSpecial = (charArr) => {
 		return charArr.filter(char => !specialChar.includes(char)).join('')
 
 	} else {
+		console.log(charArr)
 
 		return charArr.filter(ref => {
 			
