@@ -1,8 +1,7 @@
 import React, { useRef, createRef, useContext } from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { UserContext } from '../utils/UserContext'
-// import cluesData from '../assets/data/clues.json'
 
 import d1 from '../assets/img/difficulty/1.svg'
 import d2 from '../assets/img/difficulty/2.svg'

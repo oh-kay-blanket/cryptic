@@ -27,7 +27,7 @@ const useManageClue = (activeClue) => {
 	// runs every change of showMessage
 	useEffect(() => {
 		handleHint(activeClue, nextHint, showMessage, checkAns)
-	}, [showMessage])
+	}, [showMessage, activeClue, nextHint, checkAns])
 
 	return { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns }
 }

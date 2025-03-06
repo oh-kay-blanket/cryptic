@@ -1,10 +1,22 @@
 import React from 'react'
-
-import types from '../assets/type.json'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Tooltip = ({ text }) => {
 
-	const matchType = types.find(type => type.type.toUpperCase() === text.toUpperCase())
+	const data = useStaticQuery(graphql`
+		query AllTypeQuery {
+			allTypeJson {
+				nodes {
+					type
+					description
+					example
+				}
+			}
+		}
+	`);
+	
+	const matchType = data.allTypeJson.nodes.find(type => type.type.toUpperCase() === text.toUpperCase())
+	console.log(matchType)
 
     return (
         <div role="tooltip" className="tooltip" id={text}>

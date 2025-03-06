@@ -28,8 +28,8 @@ const CluePage = ({ data }) => {
 		<Tooltip text={t} />
 	</li>)
 
-	const typeInsert = showType ? <><li onClick={()=>setShowType(false)}><img src={eyeClosed} alt="" /></li>{pillList}</> : 
-		<><li onClick={()=>setShowType(true)}><img src={eyeOpen} alt="" /></li><li className='type-text' onClick={()=>setShowType(true)}>See type</li></>
+	const typeInsert = showType ? <><li><button aria-label="Hide type" onClick={()=>setShowType(false)}><img src={eyeClosed} alt="" /></button></li>{pillList}</> : 
+		<><li><button onClick={()=>setShowType(true)} aria-label="Show type"><img src={eyeOpen} alt="" /></button></li><li className='type-text'><button onClick={()=>setShowType(true)} aria-label="Expand type">See type</button></li></>
 
 	// stats HTML
 	const statsInsert = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;h</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;g</span></div></>

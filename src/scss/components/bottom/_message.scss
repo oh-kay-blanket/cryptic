@@ -1,11 +1,11 @@
 @use '../../base/var' as *;
 
 .message {
-	position: fixed;
+	// position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: $lc-bottom-height;
+	height: 100%;
 	background-color: $lc-gray--light;
 	display: flex;
 	flex-direction: column;
@@ -19,18 +19,16 @@
 	}
 
 	&.solution {
-		height: calc($lc-bottom-height);
 		background-color: $lc-gray--light;
 		opacity: 0;
 		visibility: hidden;
 		animation-name: fadein;
-		animation-delay: 4s;
+		animation-delay: .5s;
 		animation-duration: 1.5s;
 		animation-fill-mode: forwards;
 	}
 
 	&.is-correct-ans {
-		height: calc($lc-bottom-height);
 		background-color: $lc-primary--light;
 	}
 

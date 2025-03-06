@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from "gatsby";
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
 

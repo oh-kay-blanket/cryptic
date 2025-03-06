@@ -33,7 +33,7 @@ $lc-top-height: 60px;
 $lc-bottom-height: 35%;
 $lc-keyboard-height: fit-content;
 $lc-clue-input-height: 20%;
-$lc-clue-container-height: calc((100% - $lc-bottom-height) - $lc-top-height);
+$lc-clue-container-height: calc((100% - $lc-bottom-height));
 
 // Font
 $lc-font--serif: 'Georgia', 'Times New Roman', serif;

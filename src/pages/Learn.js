@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from "gatsby"
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 
 import { UserContext } from '../utils/UserContext'
@@ -42,7 +42,7 @@ const Learn = () => {
 
 	const types = typesArr.map(type => {
 		const isViewed = typeViewed.find(viewed => viewed === type.name)
-		return <li className={isViewed ? 'viewed' : ''} onClick={()=>setTypeViewed(type.name)}><Link to={type.id}>{type.name}</Link></li>
+		return <li className={isViewed ? 'viewed' : ''}><Link to={type.id} onClick={()=>setTypeViewed(type.name)}>{type.name}</Link></li>
 	})
 
 	return (

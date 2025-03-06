@@ -19,7 +19,7 @@ const Keyboard = ({ handleInput }) => {
         return () => {
             document.removeEventListener("keydown", handleKeyDown)
         }
-    }, [])
+    }, [handleInput])
 
 	return(
 		<div className='container keyboard'>

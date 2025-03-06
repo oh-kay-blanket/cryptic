@@ -17,8 +17,8 @@ const TopBar = () => {
 	<>
 		<header className='top-bar'>
 			<div className='container'>
-				<Link to='/'>
-					<img src={logo} onClick={ clickTitle } alt="" />
+				<Link to='/' onClick={ clickTitle }>
+					<img src={logo} alt="" />
 				</Link>
 			</div>
 		</header>

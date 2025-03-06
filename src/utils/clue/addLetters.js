@@ -1,12 +1,7 @@
-import { useEffect, useRef, createRef } from 'react'
-
 import removeSpecial from "./removeSpecialChar"
 
 // adds letters that will be needed as either duplicates or are not within the original clue
 const addLetters = (activeClue, hint) => {
-	
-	// hint.addLetters.wordRef = useRef()
-	// hint.addLetters.ref = useRef()
 	
 	if (hint && hint.type === 'indicator') { 
 		hint.addLetters = { ref: { current: [] } }
