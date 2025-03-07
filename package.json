@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "start": "gatsby clean && gatsby develop",
+    "build": "gatsby clean && gatsby build --prefix-paths",
     "deploy": "gh-pages -d public --cname learncryptic.com"
   },
   "keywords": [],
