@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gh-pages -d dist --cname learncryptic.com"
+    "build": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public --cname learncryptic.com"
   },
   "keywords": [],
   "author": "",
