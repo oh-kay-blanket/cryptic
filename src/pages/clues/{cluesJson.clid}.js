@@ -38,7 +38,7 @@ const CluePage = ({ data }) => {
 			const lettersInsert = hint.addLetters.value.map((letter, childIndex) => <span key={`${parentIndex}_${childIndex}`} ref={activeClue.addLetters.ref.current[parentIndex][childIndex]} className='letter'>{letter}</span>)
 			
 			const brCats = ['container', 'reversal', 'ag-2', 'lb-2', 'hw-2', 'spoonerism']
-			const addBr = brCats.includes(hint.category)
+			const addBr = brCats.includes(hint.category) ? '100%' : 'auto'
 
 			const addSpoon = hint.category === 'spoonerism'
 			const spoon = <>
@@ -46,7 +46,7 @@ const CluePage = ({ data }) => {
 				<span style={{flexBasis: '100%'}}></span>
 			</>
 
-			return <span key={`add_${parentIndex}`}>
+			return <span key={`add_${parentIndex}`} style={{flexBasis: addBr}}>
 				{addBr && <span style={{flexBasis: '100%'}}></span>}
 				{addSpoon && spoon}
 				<span ref={hint.addLetters.wordRef} className='word'>{lettersInsert}&nbsp;</span>

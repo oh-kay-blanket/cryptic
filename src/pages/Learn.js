@@ -42,7 +42,7 @@ const Learn = () => {
 
 	const types = typesArr.map(type => {
 		const isViewed = typeViewed.find(viewed => viewed === type.name)
-		return <li className={isViewed ? 'viewed' : ''}><Link to={type.id} onClick={()=>setTypeViewed(type.name)}>{type.name}</Link></li>
+		return <li key={type.id} className={isViewed ? 'viewed' : ''}><Link to={type.id} onClick={()=>setTypeViewed(type.name)}>{type.name}</Link></li>
 	})
 
 	return (

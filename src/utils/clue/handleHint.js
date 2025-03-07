@@ -195,9 +195,9 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 
 		// If this is the revealing hint, end clue.			
 		if (hint.reveals) {
-			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('hide-input'), 2500)
-			setTimeout(()=>activeClue.solution.sectionRef.current.classList.add('reveal-solution'), 2500)
-			setTimeout(()=>activeClue.source.ref.current.classList.add('show'), 3000)
+			setTimeout(()=> { try {activeClue.solution.sectionRef.current.classList.add('hide-input') } catch(e){console.log(e)} }, 2500)
+			setTimeout(()=> { try {activeClue.solution.sectionRef.current.classList.add('reveal-solution') } catch(e){console.log(e)} }, 2500)
+			setTimeout(()=> { try {activeClue.source.ref.current.classList.add('show') } catch(e){console.log(e)} }, 3000)
 		}
 
 	// Change last hint to gray when going back to play
