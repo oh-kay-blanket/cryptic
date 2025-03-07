@@ -9,6 +9,6 @@ export const Head = () => <>
 	<meta property="og:description" content="Learn Cryptic is a tool to help you learn about, practice and solve cryptic crossword clues." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://learncryptic.com" />
-	<meta property="og:image" content="https://public/favicon.png" />
+	<meta property="og:image" content="https://learncryptic.com/favicon.png" />
 	<title>Learn Cryptic</title>
 </>
