@@ -4,7 +4,6 @@ module.exports = {
         description: `A description of your project`,
         author: `@oh-kay-blanket`,
     },
-	pathPrefix: "/learn-cryptic",
     plugins: [
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
