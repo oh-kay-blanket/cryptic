@@ -22,13 +22,13 @@ module.exports = {
 				icon: "src/assets/img/favicon.png", // Path to your favicon (512x512 recommended)
 			},
 	    },
-        // {
-        //     resolve: `gatsby-source-filesystem`,
-        //     options: {
-        //         name: `images`,
-        //         path: `${__dirname}/src/assets/img/`,
-        //     },
-        // },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/assets/img/`,
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
