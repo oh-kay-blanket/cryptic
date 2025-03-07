@@ -10,6 +10,5 @@ export const Head = () => <>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://learncryptic.com" />
 	<meta property="og:image" content="https://learncryptic.com/favicon.png" />
-	<meta name="theme-color" content="#E1D8FF" />
 	<title>Learn Cryptic</title>
 </>

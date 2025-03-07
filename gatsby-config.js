@@ -17,7 +17,7 @@ module.exports = {
 				short_name: "LC",
 				start_url: "/",
 				background_color: "#ffffff",
-				theme_color: "#000000",
+				theme_color: "#E1D8FF",
 				display: "standalone",
 				icon: "src/assets/img/favicon.png", // Path to your favicon (512x512 recommended)
 			},
