@@ -19,7 +19,7 @@
 		cursor: default;
 	}
 
-	.type {
+	ul.type {
 		display: flex;
 		align-items: center;
 		position: absolute;
@@ -48,9 +48,16 @@
 
 			&.type-text {
 				font-family: $lc-font--sans;
-				font-size: 12px;
 				font-weight: 500;
 				color: $lc-text--light;
+				
+				button {
+					font-size: 12px;
+				}
+			}
+
+			&.eyecon button {
+				display: flex;
 			}
 		}
 		

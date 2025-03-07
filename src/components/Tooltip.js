@@ -16,7 +16,6 @@ const Tooltip = ({ text }) => {
 	`);
 	
 	const matchType = data.allTypeJson.nodes.find(type => type.type.toUpperCase() === text.toUpperCase())
-	console.log(matchType)
 
     return (
         <div role="tooltip" className="tooltip" id={text}>

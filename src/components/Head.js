@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Head = () => <>
-	<meta charset="UTF-8"/>
+	<meta charSet="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
 	<link rel="icon" href="../../public/favicon.ico"/>
 	<meta property="og:title" content="Learn Cryptic" />
 	<meta property="og:description" content="Learn Cryptic is a tool to help you learn about, practice and solve cryptic crossword clues." />

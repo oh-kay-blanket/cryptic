@@ -7,4 +7,4 @@ export const wrapRootElement = ({ element }) => (
 	<UserProvider>
 	  	{element}
 	</UserProvider>
-);
+)

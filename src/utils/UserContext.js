@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const UserContext = createContext();
+export const UserContext = createContext({ completedClues:[], showType: true, typeViewed: [], returnLearn: false });
 
 export const UserProvider = ({ children }) => {
 	

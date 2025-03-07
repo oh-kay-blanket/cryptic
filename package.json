@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
-    "build": "webpack --mode production",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "deploy": "gh-pages -d dist --cname learncryptic.com"
   },
   "keywords": [],

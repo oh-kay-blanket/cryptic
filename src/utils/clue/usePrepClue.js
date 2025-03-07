@@ -7,8 +7,8 @@ import addLetters from './addLetters'
 const usePrepClue = (dataClue) => {
 
 	let activeClue = structuredClone(dataClue)
-	console.log(activeClue)
-	// useEffect(() => {}, [activeClue]);
+	
+	useEffect(() => console.log(activeClue), [dataClue]);
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
