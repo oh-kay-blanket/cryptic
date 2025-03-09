@@ -1,9 +1,9 @@
 @use '../base/var' as *;
 
 .archive {
-	position: relative;
+	// position: relative;
 	// overflow-y: auto;
-	padding: 1rem .5rem 5rem;
+	padding: 1rem .5rem 2rem;
 
 	h1 {
 		font-family: $lc-font--alt;
