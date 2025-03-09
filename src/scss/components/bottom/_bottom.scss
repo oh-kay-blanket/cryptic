@@ -3,6 +3,7 @@
 .bottom {
 	width: 100%;
 	height: $lc-bottom-height;
+	display: flex;
 	background-color: $lc-gray--light;
 
 	& > .container {
