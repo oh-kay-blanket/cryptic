@@ -33,7 +33,7 @@ const Message = ({ activeClue, nextHint, input, checkAns, isCorrectAns, isSoluti
 
 	return(
 		<div className={`message ${messageStyle}`} ref={msgContainer}>
-			{message && <div className={'message-copy'}>
+			{message && <div className={'message-copy container'}>
 				{message}
 				{explainer && <div className={'explainer'}>{explainer}</div>}
 			</div>}

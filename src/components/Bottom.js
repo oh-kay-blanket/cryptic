@@ -11,33 +11,31 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 	let { buttons, btnArr, isSolution, isCorrectAns } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns)
 
 	return(
-		<div className='bottom'>
-			<div className='container px-0'>				
-				{showMessage ? 
-					<Message
-						setShowMessage={setShowMessage}
-						activeClue={activeClue}
-						nextHint={nextHint}
-						setNextHint={setNextHint}
-						input={input}
-						checkAns={checkAns}
-						setCheckAns={setCheckAns}
-						addCompletedClue={addCompletedClue}
-						isCorrectAns={isCorrectAns}
-						isSolution={isSolution}
-						returnLearn={returnLearn}
-						buttons={buttons}
-					/> :
-					<>
-						<ButtonContainer
-							btnArr={btnArr}
-						/>
-						<Keyboard
-							handleInput={handleInput}
-						/>
-					</>
-				}
-			</div>
+		<div className='bottom'>			
+			{showMessage ? 
+				<Message
+					setShowMessage={setShowMessage}
+					activeClue={activeClue}
+					nextHint={nextHint}
+					setNextHint={setNextHint}
+					input={input}
+					checkAns={checkAns}
+					setCheckAns={setCheckAns}
+					addCompletedClue={addCompletedClue}
+					isCorrectAns={isCorrectAns}
+					isSolution={isSolution}
+					returnLearn={returnLearn}
+					buttons={buttons}
+				/> :
+				<>
+					<ButtonContainer
+						btnArr={btnArr}
+					/>
+					<Keyboard
+						handleInput={handleInput}
+					/>
+				</>
+			}
 		</div>
 	)
 }

@@ -4,11 +4,7 @@
 	width: 100%;
 	height: $lc-bottom-height;
 	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
 	background-color: $lc-gray--light;
-
-	& > .container {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-end;
-	}
 }

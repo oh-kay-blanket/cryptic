@@ -33,7 +33,7 @@ export const UserProvider = ({ children }) => {
 		const guesses = type === 'g' ? stats.guesses + 1 : stats.guesses
 		const hints = type === 'h' ? stats.hints + 1 : stats.hints
 		const repeat = completedClues.find(completed => completed.id === activeClue.id)
-		// const knownUser = completedClues && completedClues.length > 0
+		const knownUser = completedClues && completedClues.length > 0
 
 		// Only update if not already in completedClues
 		if (!repeat) {
@@ -51,17 +51,19 @@ export const UserProvider = ({ children }) => {
 		}
 
 		// GA event
-		// gtag('event', 'completed_clue', {
-		// 	'id': activeClue.id,
-		// 	'hints': hints,
-		// 	'guesses': guesses,
-		// 	'how': type,
-		// 	'total_completed': knownUser && completedClues.length +1,
-		// 	'repeat': !!repeat,
-		// 	'known_user': knownUser,
-		// 	'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
-		// 	'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
-		// })
+		if (typeof window.gtag !== 'undefined') {
+			window.gtag('event', 'completed_clue', {
+				'id': activeClue.id,
+				'hints': hints,
+				'guesses': guesses,
+				'how': type,
+				'total_completed': knownUser && completedClues.length +1,
+				'repeat': !!repeat,
+				'known_user': knownUser,
+				'avg_guesses': (completedClues.reduce((sum, item) => sum + item.guesses, 0)/completedClues.length).toFixed(0),
+				'avg_hints': (completedClues.reduce((sum, item) => sum + item.hints, 0)/completedClues.length).toFixed(0)
+			})
+		  }
 	}
 
 	// Whether or not to show type pills in clue container
