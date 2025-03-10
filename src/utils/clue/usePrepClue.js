@@ -125,7 +125,7 @@ const usePrepClue = (dataClue) => {
 		activeClue.hints.forEach((hint, index) => {
 			hint && hint.category && fixList.includes(hint.category) && fixLetters(activeClue, hint, index)
 		})
-	}, [activeClue])
+	}, [])
 
 	return { activeClue }
 }
