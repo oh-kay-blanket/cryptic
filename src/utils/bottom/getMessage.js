@@ -22,13 +22,13 @@ const getMessage = hint => {
 				case 'charade':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'container':
-					return <><strong>{hint.value.toUpperCase()}</strong>, indicates a container</>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates a container</>
 				case 'deletion':
-					return <><strong>{hint.value.toUpperCase()}</strong>, indicates a deletion</>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates a deletion</>
 				case 'delete even':
-					return <><strong>{hint.value.toUpperCase()}</strong>, indicates deleting the even letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates deleting the even letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'delete odd':
-					return <><strong>{hint.value.toUpperCase()}</strong>, indicates deleting the odd letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates deleting the odd letters from <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'direct':
 					return <><strong>{hint.value.toUpperCase()}</strong> is used</>
 				case 'hidden word':
@@ -48,7 +48,7 @@ const getMessage = hint => {
 				case 'particle':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'reversal':
-					return <><strong>{hint.value.toUpperCase()}</strong>, indicates a reversal on <strong>{hint.end.value[0].toUpperCase()}</strong>, making it <strong>{hint.end.value[1].toUpperCase()}</strong></>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates a reversal on <strong>{hint.end.value[0].toUpperCase()}</strong>, making it <strong>{hint.end.value[1].toUpperCase()}</strong></>
 				case 'synonym':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'symbol':
