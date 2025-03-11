@@ -3431,28 +3431,20 @@
 	  "hints": [
 		{
 		  "category": "synonym",
-		  "value": "Male",
-		  "end": {
-			"value": [
-			  "gent"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
-		  "value": "dogs",
-		  "end": {
-			"value": [
-			  "goes after"
-			]
-		  }
-		},
-		{
-		  "category": "synonym",
 		  "value": "check",
 		  "end": {
 			"value": [
 			  "deter"
+			]
+		  },
+		  "explainer": "Here, \"dogs\" means \"goes after,\" as a dog chases its quarry"
+		},
+		{
+		  "category": "synonym",
+		  "value": "male",
+		  "end": {
+			"value": [
+			  "gent"
 			]
 		  }
 		}
@@ -3483,7 +3475,7 @@
 		  "value": "My high school",
 		  "end": {
 			"value": [
-			  "My HS"
+			  "MyHS"
 			]
 		  }
 		},

@@ -4,7 +4,7 @@ const getMessage = hint => {
 
 	const vowels = ['a', 'e', 'i', 'o', 'u']
 
-	const aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'a'
+	const aAn = hint.category && hint.category.slice(0, 1).includes(vowels) ? 'a' : 'an'
 
 	switch(hint.type) {
 		case 'definition':
@@ -16,7 +16,7 @@ const getMessage = hint => {
 		case 'indicator':
 			switch(hint.category) {
 				case 'anagram':
-					return <><strong>{hint.value.toUpperCase()}</strong> indicates an anagram on <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates an anagram of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'ag-2':
 					return <><strong>{hint.end.value[1].toUpperCase()}</strong> is an anagram of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'charade':
@@ -32,7 +32,7 @@ const getMessage = hint => {
 				case 'direct':
 					return <><strong>{hint.value.toUpperCase()}</strong> is used</>
 				case 'hidden word':
-					return <><strong>{hint.value.toUpperCase()}</strong> indicates a hidden word at <strong>{hint.end.value[0].toUpperCase()}</strong></>
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates a hidden word in <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'hw-2':
 					return <><strong>{hint.end.value[1].toUpperCase()}</strong> is hidden within <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'homophone':
@@ -44,7 +44,7 @@ const getMessage = hint => {
 				case 'letter bank':
 					return <><strong>{hint.value.toUpperCase()}</strong> indicates a letter bank</>
 				case 'lb-2':
-					return <><strong>{hint.end.value[0].toUpperCase()}</strong> is an letter bank for <strong>{hint.end.value[1].toUpperCase()}</strong></>
+					return <><strong>{hint.end.value[0].toUpperCase()}</strong> is a letter bank for <strong>{hint.end.value[1].toUpperCase()}</strong></>
 				case 'particle':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'reversal':
