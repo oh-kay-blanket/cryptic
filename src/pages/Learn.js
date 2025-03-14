@@ -67,8 +67,9 @@ const Learn = () => {
 						<div className='example'><img src={ex} alt=""/></div>
 						<div className='explanation'>
 							<ul className='mt-0'>
-								<li><strong>Frogs</strong> can be <strong>toads</strong></li>
-								<li><strong>saw</strong> can be <strong>tool</strong></li>
+								<li>The definition is <strong>poison fungus</strong></li>
+								<li><strong>toads</strong> is a synonym for <strong>frogs</strong></li>
+								<li><strong>tool</strong> is a synonym for <strong>saw</strong></li>
 							</ul>
 							<p className='text-center'><strong>toads</strong> + <strong>tool</strong> = <strong>toadstool</strong></p>
 							<div className='solution'>

@@ -7,7 +7,7 @@
 	{
 	  "type": "Anagram",
 	  "description": "Scramble letters in one or more words.",
-	  "example": "triangle → relating"
+	  "example": "altering → triangle"
 	},
 	{
 	  "type": "Charade",
@@ -17,7 +17,7 @@
 	{
 	  "type": "Container",
 	  "description": "Place word or letter(s) inside another word or set of letters.",
-	  "example": "a + reminder → remainder"
+	  "example": "a + reminder → rem(a)inder"
 	},
 	{
 	  "type": "Deletion",
@@ -37,7 +37,7 @@
 	{
 	  "type": "Homophone",
 	  "description": "Words and/or letter(s), when spoken aloud, sound like answer.",
-	  "example": "to wield → two-wheeled"
+	  "example": "to wield = two-wheeled"
 	},
 	{
 	  "type": "Initialism",

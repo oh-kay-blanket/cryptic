@@ -119,6 +119,7 @@ export const query = graphql`
 			hints {
 				category
 				value
+				explainer
 				end {
 					value
 				}
