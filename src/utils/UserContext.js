@@ -53,7 +53,7 @@ export const UserProvider = ({ children }) => {
 		// GA event
 		if (typeof window.gtag !== 'undefined') {
 			window.gtag('event', 'completed_clue', {
-				'id': activeClue.id,
+				'clid': activeClue.clid,
 				'hints': hints,
 				'guesses': guesses,
 				'how': type,
