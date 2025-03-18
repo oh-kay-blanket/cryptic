@@ -1,8 +1,9 @@
 module.exports = {
 	siteMetadata: {
-			title: `Cryptic`,
-			description: `A description of your project`,
-			author: `@oh-kay-blanket`,
+		title: `Cryptic`,
+		description: `A description of your project`,
+		author: `@oh-kay-blanket`,
+		siteUrl: `https://learncryptic.com`
 	},
 	plugins: [
 		`gatsby-plugin-image`,
@@ -66,5 +67,44 @@ module.exports = {
 			    },
 			},
 		},
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+			  query: `
+				{
+				  site {
+					siteMetadata {
+					  siteUrl
+					}
+				  }
+				  allSitePage {
+					nodes {
+					  path
+					}
+				  }
+				}
+			  `,
+			  resolveSiteUrl: ({ site, allSitePage }) => {
+				//Alternatively, you may also pass in env variables
+				return site.siteMetadata.siteUrl;
+			  },
+			  serialize: ({ site, allSitePage }) =>
+				allSitePage.nodes.map(node => {
+				  return {
+					url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
+					changefreq: `daily`,
+					priority: 0.7,
+				  }
+				})
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+			  host: 'https://learncryptic.com',
+			  sitemap: 'https://learncryptic.com/sitemap.xml',
+			  policy: [{userAgent: '*', allow: '/'}]
+			}
+		  }
 	],
 }
