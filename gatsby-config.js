@@ -11,6 +11,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-transformer-remark`,
 		`gatsby-plugin-sass`,
+		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -37,7 +38,6 @@ module.exports = {
 				path: `${__dirname}/src/assets/data`,
 			},
 		},
-		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-plugin-google-gtag`,
 			options: {
@@ -91,9 +91,9 @@ module.exports = {
 			  serialize: ({ site, allSitePage }) =>
 				allSitePage.nodes.map(node => {
 				  return {
-					url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
-					changefreq: `daily`,
-					priority: 0.7,
+						url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
+						changefreq: `daily`,
+						priority: 0.7,
 				  }
 				})
 			},
@@ -101,10 +101,10 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
-			  host: 'https://learncryptic.com',
-			  sitemap: 'https://learncryptic.com/sitemap.xml',
-			  policy: [{userAgent: '*', allow: '/'}]
+				host: 'https://learncryptic.com',
+				sitemap: 'https://learncryptic.com/sitemap.xml',
+				policy: [{userAgent: '*', allow: '/'}]
 			}
-		  }
+		}
 	],
 }
