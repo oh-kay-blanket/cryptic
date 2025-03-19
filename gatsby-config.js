@@ -69,34 +69,34 @@ module.exports = {
 		},
 		{
 			resolve: `gatsby-plugin-sitemap`,
-			options: {
-			  query: `
-				{
-				  site {
-					siteMetadata {
-					  siteUrl
-					}
-				  }
-				  allSitePage {
-					nodes {
-					  path
-					}
-				  }
-				}
-			  `,
-			  resolveSiteUrl: ({ site, allSitePage }) => {
-				//Alternatively, you may also pass in env variables
-				return site.siteMetadata.siteUrl;
-			  },
-			  serialize: ({ site, allSitePage }) =>
-				allSitePage.nodes.map(node => {
-				  return {
-						url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
-						changefreq: `daily`,
-						priority: 0.7,
-				  }
-				})
-			},
+			// options: {
+			//   query: `
+			// 	{
+			// 		site {
+			// 			siteMetadata {
+			// 			siteUrl
+			// 			}
+			// 		}
+			// 		allSitePage {
+			// 			nodes {
+			// 				path
+			// 			}
+			// 		}
+			// 	}
+			//   `,
+			//   resolveSiteUrl: ({ site, allSitePage }) => {
+			// 	//Alternatively, you may also pass in env variables
+			// 	return site.siteMetadata.siteUrl;
+			//   },
+			//   serialize: ({ site, allSitePage }) =>
+			// 	allSitePage.nodes.map(node => {
+			// 	  return {
+			// 			url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
+			// 			changefreq: `daily`,
+			// 			priority: 0.7,
+			// 	  }
+			// 	})
+			// },
 		},
 		{
 			resolve: 'gatsby-plugin-robots-txt',
