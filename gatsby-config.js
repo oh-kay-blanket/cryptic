@@ -12,6 +12,7 @@ module.exports = {
 		`gatsby-transformer-remark`,
 		`gatsby-plugin-sass`,
 		`gatsby-transformer-json`,
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -68,41 +69,10 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-sitemap`,
-			// options: {
-			//   query: `
-			// 	{
-			// 		site {
-			// 			siteMetadata {
-			// 			siteUrl
-			// 			}
-			// 		}
-			// 		allSitePage {
-			// 			nodes {
-			// 				path
-			// 			}
-			// 		}
-			// 	}
-			//   `,
-			//   resolveSiteUrl: ({ site, allSitePage }) => {
-			// 	//Alternatively, you may also pass in env variables
-			// 	return site.siteMetadata.siteUrl;
-			//   },
-			//   serialize: ({ site, allSitePage }) =>
-			// 	allSitePage.nodes.map(node => {
-			// 	  return {
-			// 			url: `<span class="math-inline">\{site\.siteMetadata\.siteUrl\}</span>{node.path}`,
-			// 			changefreq: `daily`,
-			// 			priority: 0.7,
-			// 	  }
-			// 	})
-			// },
-		},
-		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
 				host: 'https://learncryptic.com',
-				sitemap: 'https://learncryptic.com/sitemap.xml',
+				sitemap: 'https://learncryptic.com/sitemap-index.xml',
 				policy: [{userAgent: '*', allow: '/'}]
 			}
 		}

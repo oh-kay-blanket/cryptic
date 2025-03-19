@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://learncryptic.com/sitemap.xml
+Sitemap: https://learncryptic.com/sitemap-index.xml
 Host: https://learncryptic.com
