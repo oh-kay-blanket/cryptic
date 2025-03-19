@@ -1,5 +1,6 @@
-import React from 'react';
-import ButtonContainer from '../components/bottom/ButtonContainer';
+import React from 'react'
+import ButtonContainer from '../components/bottom/ButtonContainer'
+import Layout from '../components/Layout'
 
 const NotFound = () => {
 
@@ -7,7 +8,7 @@ const NotFound = () => {
 	const buttons = {
 		home: {
 			path: '/',
-			name: "Return home",
+			name: "Home",
 			style: 'primary'
 		}
 	}
@@ -15,12 +16,14 @@ const NotFound = () => {
 	let btnArr = [buttons.home]
 	
 	return (
-		<section className='container' style={{ marginTop: '5rem' }}>
-			<h1 style={{ textAlign: 'center' }}>Page not found</h1>
-			<ButtonContainer
-				btnArr={btnArr}
-			/>
-		</section>
+		<Layout>
+			<section className='container container_404' style={{ marginTop: '5rem' }}>
+				<h1 style={{ textAlign: 'center' }}>Page not found</h1>
+				<ButtonContainer
+					btnArr={btnArr}
+				/>
+			</section>
+		</Layout>
 	)
 }
 
