@@ -1,5 +1,6843 @@
 [
 	{
+	  "id": "327",
+	  "clid": "327",
+	  "clue": {
+		"value": "Eartha's half-finished serving of corn"
+	  },
+	  "release": "9/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"serving of corn"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "Eartha"
+		},
+		{
+		  "category": "deletion",
+		  "value": "half-finished",
+		  "end": {
+			"value": [
+			  "Eartha",
+			  "ear"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ear"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "326",
+	  "clid": "326",
+	  "clue": {
+		"value": "Ramses' pyramid covers spot"
+	  },
+	  "release": "9/21/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"spot"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "covers",
+		  "end": {
+			"value": [
+			  "Ramses' pyramid",
+			  "espy"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "espy"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "325",
+	  "clid": "325",
+	  "clue": {
+		"value": "Distributed leis in Hawaii, e.g."
+	  },
+	  "release": "9/20/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Hawaii, e.g."
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Distributed",
+		  "end": {
+			"value": [
+			  "leis",
+			  "isle"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "isle"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "320",
+	  "clid": "320",
+	  "clue": {
+		"value": "Endlessly hot nurse is a member of the brass"
+	  },
+	  "release": "9/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"a member of the brass"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "Endlessly hot",
+		  "end": {
+			"value": [
+			  "ho"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "nurse",
+		  "end": {
+			"value": [
+			  "RN"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "horn"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "318",
+	  "clid": "318",
+	  "clue": {
+		"value": "Flying roc, a mythical monster"
+	  },
+	  "release": "9/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"a mythical monster"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "flying",
+		  "end": {
+			"value": [
+			  "roc",
+			  "orc"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "orc"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "314",
+	  "clid": "314",
+	  "clue": {
+		"value": "Why do Rocky's colloquial greeting?"
+	  },
+	  "release": "9/17/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"colloquial greeting"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Rocky",
+		  "end": {
+			"value": [
+			  "Why do",
+			  "hoWdy"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "howdy"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "313",
+	  "clid": "313",
+	  "clue": {
+		"value": "Radical ran off with biological building block"
+	  },
+	  "release": "9/16/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram, charade",
+	  "definition": [
+		"biological building block"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Radical",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "off",
+		  "end": {
+			"value": [
+			  "ran",
+			  "rna"
+			]
+		  },
+		  "explainer": "Ribosomal RNA (rRNA) is \"the primary component of ribosomes, essential to all cells.\" (Wikipedia)"
+		}
+	  ],
+	  "solution": {
+		"value": "rRNA"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "312",
+	  "clid": "312",
+	  "clue": {
+		"value": "Mongoose is nothing more than jazz musician, reportedly"
+	  },
+	  "release": "9/15/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Mongoose"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "nothing more than",
+		  "end": {
+			"value": [
+			  "mere"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "jazz musician",
+		  "end": {
+			"value": [
+			  "cat"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "reportedly",
+		  "end": {
+			"value": [
+			  "mere cat",
+			  "meerkat"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "meerkat"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "311",
+	  "clid": "311",
+	  "clue": {
+		"value": "Thumbs a ride smuggling dress"
+	  },
+	  "release": "9/14/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"dress"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "smuggling",
+		  "end": {
+			"value": [
+			  "Thumbs a ride",
+			  "sari"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sari"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "310",
+	  "clid": "310",
+	  "clue": {
+		"value": "Guard's remodeled portal"
+	  },
+	  "release": "9/13/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Guard"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "remodeled",
+		  "end": {
+			"value": [
+			  "portal",
+			  "patrol"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "patrol"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "309",
+	  "clid": "309",
+	  "clue": {
+		"value": "I start to read back over telegram that cannot be changed"
+	  },
+	  "release": "9/12/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"cannot be changed"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "I"
+		},
+		{
+		  "category": "particle",
+		  "value": "start to read",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "over"
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "over",
+			  "revo"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "telegram",
+		  "end": {
+			"value": [
+			  "cable"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "irrevocable"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "308",
+	  "clid": "308",
+	  "clue": {
+		"value": "Change the decor, red and orange"
+	  },
+	  "release": "9/11/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Change the decor"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "red"
+		},
+		{
+		  "category": "symbol",
+		  "value": "orange",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "redo"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "307",
+	  "clid": "307",
+	  "clue": {
+		"value": "Instruments for storytellers, we hear"
+	  },
+	  "release": "9/10/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Instruments"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "storytellers",
+		  "end": {
+			"value": [
+			  "liars"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear",
+		  "end": {
+			"value": [
+			  "liars",
+			  "lyres"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lyres"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "304",
+	  "clid": "304",
+	  "clue": {
+		"value": "Does keeping time inhibit?"
+	  },
+	  "release": "9/9/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"inhibit"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Does",
+		  "end": {
+			"value": [
+			  "deer"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "time",
+		  "end": {
+			"value": [
+			  "T"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "keeping",
+		  "end": {
+			"value": [
+			  "de",
+			  "t",
+			  "er"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "deter"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "300",
+	  "clid": "300",
+	  "clue": {
+		"value": "Primarily resent the man holding back my chance to dance, perhaps"
+	  },
+	  "release": "9/8/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container, reversal",
+	  "definition": [
+		"chance to dance, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "Primarily resent",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "the man",
+		  "end": {
+			"value": [
+			  "he"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "my"
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "my",
+			  "ym"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "holding",
+		  "end": {
+			"value": [
+			  "r",
+			  "h",
+			  "ym",
+			  "e"
+			]
+		  },
+		  "explainer": "Here, \"chance to dance\" is not about having an opportunity to cut a rug; the two words rhyme"
+		}
+	  ],
+	  "solution": {
+		"value": "rhyme"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "299",
+	  "clid": "299",
+	  "clue": {
+		"value": "Note my enthralling arrival and join up again"
+	  },
+	  "release": "9/7/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"join up again"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Note",
+		  "end": {
+			"value": [
+			  "re"
+			]
+		  },
+		  "explainer": "RE is the note D in the major scale"
+		},
+		{
+		  "category": "direct",
+		  "value": "my"
+		},
+		{
+		  "category": "symbol",
+		  "value": "arrival",
+		  "end": {
+			"value": [
+			  "arr"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "enthralling",
+		  "end": {
+			"value": [
+			  "re",
+			  "m",
+			  "arr",
+			  "y"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "remarry"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "295",
+	  "clid": "295",
+	  "clue": {
+		"value": "A way to capture girl with ring"
+	  },
+	  "release": "9/6/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"A way to capture"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "girl",
+		  "end": {
+			"value": [
+			  "lass"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "ring",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lasso"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "292",
+	  "clid": "292",
+	  "clue": {
+		"value": "Confused prior OKs a bad bet"
+	  },
+	  "release": "9/5/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"bad bet"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Confused",
+		  "end": {
+			"value": [
+			  "prior OKs",
+			  "pOor risK"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "poor risk"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "290",
+	  "clid": "290",
+	  "clue": {
+		"value": "Crooked stripe is less green than all the others"
+	  },
+	  "release": "9/4/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"is less green than all the others"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Crooked",
+		  "end": {
+			"value": [
+			  "stripe",
+			  "ripest"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ripest"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "289",
+	  "clid": "289",
+	  "clue": {
+		"value": "Terribly sad commercials"
+	  },
+	  "release": "9/3/2025",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"commercials"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Terribly",
+		  "end": {
+			"value": [
+			  "sad",
+			  "ads"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ads"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "288",
+	  "clid": "288",
+	  "clue": {
+		"value": "Obligation Mr. Turner brought up involving Bond's premiere"
+	  },
+	  "release": "9/2/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Obligation"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Mr. Turner",
+		  "end": {
+			"value": [
+			  "Ted"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "brought up",
+		  "end": {
+			"value": [
+			  "Ted",
+			  "deT"
+			]
+		  },
+		  "explainer": "For a down clue, \"brought up\" can signal a reversal"
+		},
+		{
+		  "category": "particle",
+		  "value": "Bond's premiere",
+		  "end": {
+			"value": [
+			  "B"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "involving",
+		  "end": {
+			"value": [
+			  "de",
+			  "B",
+			  "T"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "debt"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "286",
+	  "clid": "286",
+	  "clue": {
+		"value": "Travel on horseback, circling face of granite mountain crest"
+	  },
+	  "release": "9/1/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"mountain crest"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Travel on horseback",
+		  "end": {
+			"value": [
+			  "ride"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "face of granite",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "circling",
+		  "end": {
+			"value": [
+			  "rid",
+			  "g",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ridge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "284",
+	  "clid": "284",
+	  "clue": {
+		"value": "Greek character embraced by prostitute, a sticky situation?"
+	  },
+	  "release": "8/31/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"a sticky situation?"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Greek character",
+		  "end": {
+			"value": [
+			  "pi"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "prostitute",
+		  "end": {
+			"value": [
+			  "tart"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "embraced",
+		  "end": {
+			"value": [
+			  "tar",
+			  "pi",
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tar pit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "283",
+	  "clid": "283",
+	  "clue": {
+		"value": "Compose new septet around symphony's finale"
+	  },
+	  "release": "8/30/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "anagram, container",
+	  "definition": [
+		"Compose"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "septet",
+			  "tpeset"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "symphony's finale",
+		  "end": {
+			"value": [
+			  "y"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "around",
+		  "end": {
+			"value": [
+			  "t",
+			  "y",
+			  "peset"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "typeset"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "281",
+	  "clid": "281",
+	  "clue": {
+		"value": "Incredible feast for three goddesses"
+	  },
+	  "release": "8/29/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"three goddesses"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Incredible",
+		  "end": {
+			"value": [
+			  "feast",
+			  "fates"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "fates"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "278",
+	  "clid": "278",
+	  "clue": {
+		"value": "Wandering stray lecher"
+	  },
+	  "release": "8/28/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"lecher"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Wandering",
+		  "end": {
+			"value": [
+			  "stray",
+			  "satyr"
+			]
+		  },
+		  "explainer": "The satyr, in Greek mythology, was a lecherous figure"
+		}
+	  ],
+	  "solution": {
+		"value": "satyr"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "276",
+	  "clid": "276",
+	  "clue": {
+		"value": "Lies about tropical getaway, perhaps"
+	  },
+	  "release": "8/27/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"tropical getaway, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "Lies",
+			  "isLe"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "isle"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "274",
+	  "clid": "274",
+	  "clue": {
+		"value": "Jokes about Navy work crews"
+	  },
+	  "release": "8/26/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"work crews"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Jokes",
+		  "end": {
+			"value": [
+			  "gags"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Navy",
+		  "end": {
+			"value": [
+			  "N"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "ga",
+			  "N",
+			  "gs"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "gangs"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "272",
+	  "clid": "272",
+	  "clue": {
+		"value": "Cover one entering outskirts of Leningrad"
+	  },
+	  "release": "8/25/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Cover"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "outskirts of Leningrad",
+		  "end": {
+			"value": [
+			  "Ld"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "entering",
+		  "end": {
+			"value": [
+			  "L",
+			  "I",
+			  "d"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lid"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "271",
+	  "clid": "271",
+	  "clue": {
+		"value": "Doctor provided temperature deviation"
+	  },
+	  "release": "8/24/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"deviation"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Doctor",
+		  "end": {
+			"value": [
+			  "dr"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "provided",
+		  "end": {
+			"value": [
+			  "if"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "temperature",
+		  "end": {
+			"value": [
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "drift"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "270",
+	  "clid": "270",
+	  "clue": {
+		"value": "Fade out, giving no heed"
+	  },
+	  "release": "8/23/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"giving no heed"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "out",
+		  "end": {
+			"value": [
+			  "Fade",
+			  "deaF"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "deaf"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "269",
+	  "clid": "269",
+	  "clue": {
+		"value": "\"Cosmo\" sisterhood features learning without trying?"
+	  },
+	  "release": "8/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"learning without trying?"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "features",
+		  "end": {
+			"value": [
+			  "\"Cosmo\" sisterhood",
+			  "osmosis"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "osmosis"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "267",
+	  "clid": "267",
+	  "clue": {
+		"value": "Set off at eight, initially, for property"
+	  },
+	  "release": "8/21/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram, charade",
+	  "definition": [
+		"property"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "off",
+		  "end": {
+			"value": [
+			  "Set",
+			  "est"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "at"
+		},
+		{
+		  "category": "particle",
+		  "value": "eight, initially",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "estate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "266",
+	  "clid": "266",
+	  "clue": {
+		"value": "Black and gray protective covering"
+	  },
+	  "release": "8/20/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"protective covering"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Black",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "and",
+		  "end": {
+			"value": [
+			  "and"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "gray",
+		  "end": {
+			"value": [
+			  "age"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bandage"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "264",
+	  "clid": "264",
+	  "clue": {
+		"value": "Expensive ruby initially misplaced by actress Meryl"
+	  },
+	  "release": "8/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Expensive"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "actress Meryl",
+		  "end": {
+			"value": [
+			  "Streep"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "ruby initially misplaced",
+		  "end": {
+			"value": [
+			  "Streep",
+			  "St",
+			  "eep"
+			]
+		  },
+		  "explainer": "\"ruby initially misplaced\" indicates a deletion of the letter \"r\""
+		}
+	  ],
+	  "solution": {
+		"value": "streep"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "263",
+	  "clid": "263",
+	  "clue": {
+		"value": "Wrath of Israel evens out"
+	  },
+	  "release": "8/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Wrath"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "Israel"
+		},
+		{
+		  "category": "delete even",
+		  "value": "evens out",
+		  "end": {
+			"value": [
+			  "Israel",
+			  "ire"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ire"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "259",
+	  "clid": "259",
+	  "clue": {
+		"value": "Avert wary Aunt Dotty"
+	  },
+	  "release": "8/17/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Avert"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Dotty",
+		  "end": {
+			"value": [
+			  "wary Aunt",
+			  "turn Away"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "turn away"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "258",
+	  "clid": "258",
+	  "clue": {
+		"value": "Carol's wrong, ultimately wrong"
+	  },
+	  "release": "8/16/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Carol"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "wrong",
+		  "end": {
+			"value": [
+			  "sin"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "ultimately wrong",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sing"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "257",
+	  "clid": "257",
+	  "clue": {
+		"value": "Win, capturing opposition's last man"
+	  },
+	  "release": "8/15/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"man"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Win",
+		  "end": {
+			"value": [
+			  "get"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "opposition's last",
+		  "end": {
+			"value": [
+			  "n"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "capturing",
+		  "end": {
+			"value": [
+			  "ge",
+			  "n",
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "gent"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "255",
+	  "clid": "255",
+	  "clue": {
+		"value": "Northwestern state's hospital area"
+	  },
+	  "release": "8/14/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Northwestern state",
+		"hospital area"
+	  ],
+	  "solution": {
+		"value": "OR"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "254",
+	  "clid": "254",
+	  "clue": {
+		"value": "Corners reporter finally among athletic supporters?"
+	  },
+	  "release": "8/13/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Corners"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "reporter finally",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "athletic supporters",
+		  "end": {
+			"value": [
+			  "tees"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "among",
+		  "end": {
+			"value": [
+			  "t",
+			  "r",
+			  "ees"
+			]
+		  },
+		  "explainer": "To \"tree\" is to corner, a reference to hunting tree-climbing animals with hounds"
+		}
+	  ],
+	  "solution": {
+		"value": "trees"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "253",
+	  "clid": "253",
+	  "clue": {
+		"value": "For example, Pat's backing star, perhaps"
+	  },
+	  "release": "8/12/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"star, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "For example",
+		  "end": {
+			"value": [
+			  "eg"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "Pat",
+		  "end": {
+			"value": [
+			  "dab"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "egdab",
+			  "badge"
+			]
+		  },
+		  "explainer": "Many badges (e.g., police) are in the shape of a star"
+		}
+	  ],
+	  "solution": {
+		"value": "badge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "251",
+	  "clid": "251",
+	  "clue": {
+		"value": "A drunk settled"
+	  },
+	  "release": "8/11/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"settled"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "A",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "drunk",
+		  "end": {
+			"value": [
+			  "lit"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "alit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "250",
+	  "clid": "250",
+	  "clue": {
+		"value": "Crazy son employs one cleaning crew"
+	  },
+	  "release": "8/10/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"cleaning crew"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Crazy",
+		  "end": {
+			"value": [
+			  "mad"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "son",
+		  "end": {
+			"value": [
+			  "S"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "i"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "employs",
+		  "end": {
+			"value": [
+			  "ma",
+			  "i",
+			  "d",
+			  "S"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "maids"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "248",
+	  "clid": "248",
+	  "clue": {
+		"value": "Gram meets uncle inside with specialized clothing for fighter pilots"
+	  },
+	  "release": "8/9/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"specialized clothing for fighter pilots"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Gram",
+		  "end": {
+			"value": [
+			  "g"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "meets",
+		  "end": {
+			"value": [
+			  "sits"
+			]
+		  },
+		  "explainer": "As in, the legislature sits (meets)"
+		},
+		{
+		  "category": "symbol",
+		  "value": "uncle",
+		  "end": {
+			"value": [
+			  "U"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "g",
+			  "s",
+			  "U",
+			  "its"
+			]
+		  },
+		  "explainer": "A G-suit is worn by fighter pilots to counteract extreme forces"
+		}
+	  ],
+	  "solution": {
+		"value": "G suits"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "246",
+	  "clid": "246",
+	  "clue": {
+		"value": "Took advantage of \"Us\" editor"
+	  },
+	  "release": "8/8/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Took advantage of"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "\"Us\""
+		},
+		{
+		  "category": "symbol",
+		  "value": "editor",
+		  "end": {
+			"value": [
+			  "ed"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "used"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "245",
+	  "clid": "245",
+	  "clue": {
+		"value": "Fix movie's introduction and finale"
+	  },
+	  "release": "8/7/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Fix"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "movie's introduction",
+		  "end": {
+			"value": [
+			  "m"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "finale",
+		  "end": {
+			"value": [
+			  "end"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "mend"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "242",
+	  "clid": "242",
+	  "clue": {
+		"value": "Explosive rabble penetrates outskirts of Bangladesh from the south"
+	  },
+	  "release": "8/6/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Explosive"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "rabble",
+		  "end": {
+			"value": [
+			  "mob"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "outskirts of Bangladesh",
+		  "end": {
+			"value": [
+			  "Bh"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "penetrates",
+		  "end": {
+			"value": [
+			  "B",
+			  "mob",
+			  "h"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "from the south",
+		  "end": {
+			"value": [
+			  "Bmobh",
+			  "h bomB"
+			]
+		  },
+		  "explainer": "In a down clue, \"from the south\" may indicate a reversal"
+		}
+	  ],
+	  "solution": {
+		"value": "H bomb"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "241",
+	  "clid": "241",
+	  "clue": {
+		"value": "Pictures taken by St. Leo endlessly surprise"
+	  },
+	  "release": "8/5/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container, deletion",
+	  "definition": [
+		"surprise"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Pictures",
+		  "end": {
+			"value": [
+			  "art"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "St. Leo endlessly",
+		  "end": {
+			"value": [
+			  "StLe"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "taken by",
+		  "end": {
+			"value": [
+			  "St",
+			  "art",
+			  "Le"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "startle"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "239",
+	  "clid": "239",
+	  "clue": {
+		"value": "Rome redefined Hebrew unit"
+	  },
+	  "release": "8/4/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Hebrew unit"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "redefined",
+		  "end": {
+			"value": [
+			  "Rome",
+			  "omeR"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "omer"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "235",
+	  "clid": "235",
+	  "clue": {
+		"value": "That woman's a goddess"
+	  },
+	  "release": "8/3/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"goddess"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "That woman",
+		  "end": {
+			"value": [
+			  "her"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "a",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Hera"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "234",
+	  "clid": "234",
+	  "clue": {
+		"value": "Drunk grabbing prostitute's film"
+	  },
+	  "release": "8/2/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"film"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Drunk",
+		  "end": {
+			"value": [
+			  "sot"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "prostitute",
+		  "end": {
+			"value": [
+			  "ho"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "grabbing",
+		  "end": {
+			"value": [
+			  "s",
+			  "ho",
+			  "ot"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "shoot"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "233",
+	  "clid": "233",
+	  "clue": {
+		"value": "Catches last of cottonmouth snakes"
+	  },
+	  "release": "8/1/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Catches"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "last of cottonmouth",
+		  "end": {
+			"value": [
+			  "h"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "snakes",
+		  "end": {
+			"value": [
+			  "asps"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "hasps"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "230",
+	  "clid": "230",
+	  "clue": {
+		"value": "Republican rejecting one city in Nevada"
+	  },
+	  "release": "7/31/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"city in Nevada"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Republican",
+		  "end": {
+			"value": [
+			  "R"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "one"
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejecting",
+		  "end": {
+			"value": [
+			  "one",
+			  "eno"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Reno"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "225",
+	  "clid": "225",
+	  "clue": {
+		"value": "Reportedly detect small change"
+	  },
+	  "release": "7/30/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"small change"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "detect",
+		  "end": {
+			"value": [
+			  "sense"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Reportedly",
+		  "end": {
+			"value": [
+			  "sense",
+			  "cents"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "cents"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "224",
+	  "clid": "224",
+	  "clue": {
+		"value": "Designated hitter gets one single, a good-looking one"
+	  },
+	  "release": "7/29/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"a good-looking one"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Designated hitter",
+		  "end": {
+			"value": [
+			  "DH"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "one",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "single",
+		  "end": {
+			"value": [
+			  "S"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "gets",
+		  "end": {
+			"value": [
+			  "D",
+			  "I",
+			  "S",
+			  "H"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dish"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "223",
+	  "clid": "223",
+	  "clue": {
+		"value": "Barrel maker tosses piece of pie for dove sometimes"
+	  },
+	  "release": "7/28/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Barrel maker"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "piece of pie",
+		  "end": {
+			"value": [
+			  "p"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "dove sometimes",
+		  "end": {
+			"value": [
+			  "cooer"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "tosses",
+		  "end": {
+			"value": [
+			  "coo",
+			  "p",
+			  "er"
+			]
+		  },
+		  "explainer": "Here, \"tosses\" means to mix the letter \"p\" in with \"cooer\""
+		}
+	  ],
+	  "solution": {
+		"value": "cooper"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "222",
+	  "clid": "222",
+	  "clue": {
+		"value": "Islamic ruler eventually gave wheel mount back"
+	  },
+	  "release": "7/27/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"Islamic ruler"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "eventually gave",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  },
+		  "explainer": "\"Eventually\" clues the last letter in \"gave,\" which is \"e\""
+		},
+		{
+		  "category": "synonym",
+		  "value": "wheel mount",
+		  "end": {
+			"value": [
+			  "rim"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "back",
+		  "end": {
+			"value": [
+			  "rim",
+			  "mir"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "emir"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "221",
+	  "clid": "221",
+	  "clue": {
+		"value": "Genetically limits variation with trendy second-rate instruments"
+	  },
+	  "release": "7/26/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Genetically limits variation"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "trendy",
+		  "end": {
+			"value": [
+			  "in"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "second-rate",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "instruments",
+		  "end": {
+			"value": [
+			  "reeds"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "inbreeds"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "219",
+	  "clid": "219",
+	  "clue": {
+		"value": "Certain tide seen in Minneapolis"
+	  },
+	  "release": "7/25/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"Certain tide"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "seen in",
+		  "end": {
+			"value": [
+			  "Minneapolis",
+			  "neap"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "neap"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "217",
+	  "clid": "217",
+	  "clue": {
+		"value": "New era: love of aircraft"
+	  },
+	  "release": "7/24/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram, charade",
+	  "definition": [
+		"of aircraft"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "New",
+		  "end": {
+			"value": [
+			  "era",
+			  "aer"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "love",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  },
+		  "explainer": "AERO is an adjective meaning \"of or relating to aircraft or aeronautics.\""
+		}
+	  ],
+	  "solution": {
+		"value": "aero"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "216",
+	  "clid": "216",
+	  "clue": {
+		"value": "Large number unhappy about greeting PLO"
+	  },
+	  "release": "7/23/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"Large number"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "unhappy",
+		  "end": {
+			"value": [
+			  "sad"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "greeting",
+		  "end": {
+			"value": [
+			  "hi"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "PLO"
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "s",
+			  "hi",
+			  "PLO",
+			  "ad"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "shipload"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "215",
+	  "clid": "215",
+	  "clue": {
+		"value": "Rude person runs, after scary yell"
+	  },
+	  "release": "7/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Rude person"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "scary yell",
+		  "end": {
+			"value": [
+			  "boo"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "runs",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "boor"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "214",
+	  "clid": "214",
+	  "clue": {
+		"value": "Brace for broken-down horse"
+	  },
+	  "release": "7/21/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Brace"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "broken-down",
+		  "end": {
+			"value": [
+			  "horse",
+			  "shore"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "shore"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "213",
+	  "clid": "213",
+	  "clue": {
+		"value": "Snarling lips creating speech problem"
+	  },
+	  "release": "7/20/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"speech problem"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Snarling",
+		  "end": {
+			"value": [
+			  "lips",
+			  "lisp"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "lisp"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "211",
+	  "clid": "211",
+	  "clue": {
+		"value": "Easy job is sure nice, Dotty"
+	  },
+	  "release": "7/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Easy job"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Dotty",
+		  "end": {
+			"value": [
+			  "sure nice",
+			  "sinecure"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sinecure"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "206",
+	  "clid": "206",
+	  "clue": {
+		"value": "Mecca traveler fooled Jim, for the most part"
+	  },
+	  "release": "7/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Mecca traveler"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "fooled",
+		  "end": {
+			"value": [
+			  "had"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "Jim, for the most part",
+		  "end": {
+			"value": [
+			  "Ji"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "hadji"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "202",
+	  "clid": "202",
+	  "clue": {
+		"value": "Caramel kept melting in bazaar"
+	  },
+	  "release": "7/17/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"bazaar"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "melting",
+		  "end": {
+			"value": [
+			  "Caramel kept",
+			  "marketplaCe"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "marketplace"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "201",
+	  "clid": "201",
+	  "clue": {
+		"value": "Son cut top of chestnut tree for extra money"
+	  },
+	  "release": "7/16/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"extra money"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Son",
+		  "end": {
+			"value": [
+			  "s"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "cut",
+		  "end": {
+			"value": [
+			  "pare"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "top of chestnut",
+		  "end": {
+			"value": [
+			  "c"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "tree",
+		  "end": {
+			"value": [
+			  "ash"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "spare cash"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "200",
+	  "clid": "200",
+	  "clue": {
+		"value": "Former English Conservative's suit"
+	  },
+	  "release": "7/15/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"suit"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Former",
+		  "end": {
+			"value": [
+			  "ex"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "English",
+		  "end": {
+			"value": [
+			  "E"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Conservative",
+		  "end": {
+			"value": [
+			  "c"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "exec"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "199",
+	  "clid": "199",
+	  "clue": {
+		"value": "Plastic pet ate carelessly partly thrown back"
+	  },
+	  "release": "7/14/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "hidden word, reversal",
+	  "definition": [
+		"Plastic"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "partly",
+		  "end": {
+			"value": [
+			  "pet ate carelessly",
+			  "etateca"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "thrown back",
+		  "end": {
+			"value": [
+			  "etateca",
+			  "acetate"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "acetate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "197",
+	  "clid": "197",
+	  "clue": {
+		"value": "Impala, perhaps, runs after Chip"
+	  },
+	  "release": "7/13/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Impala, perhaps"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Chip",
+		  "end": {
+			"value": [
+			  "ante"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "runs",
+		  "end": {
+			"value": [
+			  "lopes"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "antelopes"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "196",
+	  "clid": "196",
+	  "clue": {
+		"value": "Yeomen react badly to Japanese rite"
+	  },
+	  "release": "7/12/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Japanese rite"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "badly",
+		  "end": {
+			"value": [
+			  "Yeomen react",
+			  "tea ceremonY"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tea ceremony"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "195",
+	  "clid": "195",
+	  "clue": {
+		"value": "Shattering broadcast put things right"
+	  },
+	  "release": "7/11/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"put things right"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "broadcast",
+		  "end": {
+			"value": [
+			  "Shattering",
+			  "straighten"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "straighten"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "194",
+	  "clid": "194",
+	  "clue": {
+		"value": "Watches for favorable votes, we hear"
+	  },
+	  "release": "7/10/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Watches"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "favorable votes",
+		  "end": {
+			"value": [
+			  "ayes"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "we hear",
+		  "end": {
+			"value": [
+			  "ayes",
+			  "eyes"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "eyes"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "191",
+	  "clid": "191",
+	  "clue": {
+		"value": "Relative cooked tuna"
+	  },
+	  "release": "7/9/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Relative"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "cooked",
+		  "end": {
+			"value": [
+			  "tuna",
+			  "aunt"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "aunt"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "190",
+	  "clid": "190",
+	  "clue": {
+		"value": "Beg in low church"
+	  },
+	  "release": "7/8/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Beg"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "low",
+		  "end": {
+			"value": [
+			  "moo"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "church",
+		  "end": {
+			"value": [
+			  "ch"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "mooch"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "187",
+	  "clid": "187",
+	  "clue": {
+		"value": "Erica's stirring words of sympathy"
+	  },
+	  "release": "7/7/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"words of sympathy"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "stirring",
+		  "end": {
+			"value": [
+			  "Erica",
+			  "icarE"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "I care"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "186",
+	  "clid": "186",
+	  "clue": {
+		"value": "Monthly payment is torn"
+	  },
+	  "release": "7/6/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Monthly payment",
+		"torn"
+	  ],
+	  "solution": {
+		"value": "rent"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "185",
+	  "clid": "185",
+	  "clue": {
+		"value": "Notably, Omar Khayyam met Ken, Art, Dotty"
+	  },
+	  "release": "7/5/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Notably, Omar Khayyam"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Dotty",
+		  "end": {
+			"value": [
+			  "met Ken, Art",
+			  "tentmAKer"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tentmaker"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "184",
+	  "clid": "184",
+	  "clue": {
+		"value": "Spanish adult resort"
+	  },
+	  "release": "7/4/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"resort"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Spanish",
+		  "end": {
+			"value": [
+			  "sp"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "adult",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "spa"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "183",
+	  "clid": "183",
+	  "clue": {
+		"value": "Brings home fisherman's equipment"
+	  },
+	  "release": "7/3/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Brings home",
+		"fisherman's equipment"
+	  ],
+	  "solution": {
+		"value": "nets"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "182",
+	  "clid": "182",
+	  "clue": {
+		"value": "Certain servers stop, interrupting trades"
+	  },
+	  "release": "7/2/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Certain servers"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "stop",
+		  "end": {
+			"value": [
+			  "end"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "trades",
+		  "end": {
+			"value": [
+			  "barters"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "interrupting",
+		  "end": {
+			"value": [
+			  "bart",
+			  "end",
+			  "ers"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bartenders"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "180",
+	  "clid": "180",
+	  "clue": {
+		"value": "Storyteller's train heading back"
+	  },
+	  "release": "7/1/2025",
+	  "difficulty": "1",
+	  "ready": "TRUE",
+	  "type": "reversal",
+	  "definition": [
+		"Storyteller"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "train",
+		  "end": {
+			"value": [
+			  "rail"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "heading back",
+		  "end": {
+			"value": [
+			  "rail",
+			  "liar"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "liar"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "179",
+	  "clid": "179",
+	  "clue": {
+		"value": "We hear four couples had dinner"
+	  },
+	  "release": "6/30/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"had dinner"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "four couples",
+		  "end": {
+			"value": [
+			  "eight"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "We hear",
+		  "end": {
+			"value": [
+			  "eight",
+			  "ate"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "178",
+	  "clid": "178",
+	  "clue": {
+		"value": "Settlement reportedly stuffed in a suitcase"
+	  },
+	  "release": "6/29/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"Settlement"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "stuffed in a suitcase",
+		  "end": {
+			"value": [
+			  "packed"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "reportedly",
+		  "end": {
+			"value": [
+			  "packed",
+			  "pact"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pact"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "177",
+	  "clid": "177",
+	  "clue": {
+		"value": "Religious sect member, repulsed, beats a retreat inside"
+	  },
+	  "release": "6/28/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "hidden word, reversal",
+	  "definition": [
+		"Religious sect member"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "inside",
+		  "end": {
+			"value": [
+			  "beats a retreat",
+			  "atsar"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "repulsed",
+		  "end": {
+			"value": [
+			  "atsar",
+			  "rasta"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "Rasta"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "175",
+	  "clid": "175",
+	  "clue": {
+		"value": "UPS Store stocks attention-getter"
+	  },
+	  "release": "6/27/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"attention-getter"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "stocks",
+		  "end": {
+			"value": [
+			  "UPS Store",
+			  "psst"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "psst"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "173",
+	  "clid": "173",
+	  "clue": {
+		"value": "Messes up chores and departs"
+	  },
+	  "release": "6/26/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Messes up"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "chores",
+		  "end": {
+			"value": [
+			  "errands"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "and departs",
+		  "end": {
+			"value": [
+			  "errands",
+			  "err",
+			  "s"
+			]
+		  },
+		  "explainer": "Remove the word \"and\" from errands"
+		}
+	  ],
+	  "solution": {
+		"value": "errs"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "172",
+	  "clid": "172",
+	  "clue": {
+		"value": "I ran into upstanding couple in the tabloids"
+	  },
+	  "release": "6/25/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"couple in the tabloids"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "I"
+		},
+		{
+		  "category": "synonym",
+		  "value": "ran into",
+		  "end": {
+			"value": [
+			  "met"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upstanding",
+		  "end": {
+			"value": [
+			  "met",
+			  "tem"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "item"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "171",
+	  "clid": "171",
+	  "clue": {
+		"value": "Identify leader of employees' and staff's revolt"
+	  },
+	  "release": "6/24/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"Identify"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "leader of employees'",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "staff",
+		  "end": {
+			"value": [
+			  "man"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "revolt",
+		  "end": {
+			"value": [
+			  "eman",
+			  "name"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "name"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "170",
+	  "clid": "170",
+	  "clue": {
+		"value": "Female friend left in commotion"
+	  },
+	  "release": "6/23/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"commotion"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Female",
+		  "end": {
+			"value": [
+			  "F"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "friend",
+		  "end": {
+			"value": [
+			  "pal"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "left",
+		  "end": {
+			"value": [
+			  "pal",
+			  "lap"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "flap"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "168",
+	  "clid": "168",
+	  "clue": {
+		"value": "Prepared a salad dish, originally, then flipped over endless dessert"
+	  },
+	  "release": "6/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"Prepared a salad"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "dish, originally",
+		  "end": {
+			"value": [
+			  "d"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "endless dessert",
+		  "end": {
+			"value": [
+			  "desser"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "flipped over",
+		  "end": {
+			"value": [
+			  "desser",
+			  "ressed"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dressed"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "167",
+	  "clid": "167",
+	  "clue": {
+		"value": "Like a no-good member of royalty"
+	  },
+	  "release": "6/21/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Like"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "a"
+		},
+		{
+		  "category": "synonym",
+		  "value": "member of royalty",
+		  "end": {
+			"value": [
+			  "king"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "no-good",
+		  "end": {
+			"value": [
+			  "king",
+			  "kin"
+			]
+		  },
+		  "explainer": "Good can be \"g\", and it is deleted from king."
+		}
+	  ],
+	  "solution": {
+		"value": "akin"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "166",
+	  "clid": "166",
+	  "clue": {
+		"value": "Mean and unhappy, I stick almost to the end"
+	  },
+	  "release": "6/20/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Mean"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "unhappy",
+		  "end": {
+			"value": [
+			  "sad"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "I"
+		},
+		{
+		  "category": "particle",
+		  "value": "stick almost to the end",
+		  "end": {
+			"value": [
+			  "stic"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sadistic"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "165",
+	  "clid": "165",
+	  "clue": {
+		"value": "When interrupted, start to talk in Polish"
+	  },
+	  "release": "6/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Polish"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "When interrupted",
+		  "end": {
+			"value": [
+			  "whe"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "start to talk",
+		  "end": {
+			"value": [
+			  "t"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "whet"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "161",
+	  "clid": "161",
+	  "clue": {
+		"value": "Ran with brio, initially, and was in front"
+	  },
+	  "release": "6/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Ran"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "brio, initially",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "was in front",
+		  "end": {
+			"value": [
+			  "led"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "bled"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "159",
+	  "clid": "159",
+	  "clue": {
+		"value": "Loud noise of red propeller"
+	  },
+	  "release": "6/17/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Loud noise"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "red",
+		  "end": {
+			"value": [
+			  "r"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "propeller",
+		  "end": {
+			"value": [
+			  "oar"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "roar"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "157",
+	  "clid": "157",
+	  "clue": {
+		"value": "Sculpted swan shaped with a blade"
+	  },
+	  "release": "6/16/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"shaped with a blade"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Sculpted",
+		  "end": {
+			"value": [
+			  "swan",
+			  "sawn"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "sawn"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "155",
+	  "clid": "155",
+	  "clue": {
+		"value": "Uptight teens milling around"
+	  },
+	  "release": "6/15/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Uptight"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "milling around",
+		  "end": {
+			"value": [
+			  "teens",
+			  "tense"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tense"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "154",
+	  "clid": "154",
+	  "clue": {
+		"value": "Makes real cut as Eliza's treated"
+	  },
+	  "release": "6/14/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Makes real"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "treated",
+		  "end": {
+			"value": [
+			  "cut as Eliza",
+			  "actualizEs"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "actualizes"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "153",
+	  "clid": "153",
+	  "clue": {
+		"value": "Stood up awkwardly, sore"
+	  },
+	  "release": "6/13/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Stood up"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "awkwardly",
+		  "end": {
+			"value": [
+			  "sore",
+			  "rose"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "rose"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "150",
+	  "clid": "150",
+	  "clue": {
+		"value": "GOP argues inanely for generations"
+	  },
+	  "release": "6/12/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"generations"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "inanely",
+		  "end": {
+			"value": [
+			  "GOP argues",
+			  "age GrOuPs"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "age groups"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "149",
+	  "clid": "149",
+	  "clue": {
+		"value": "Horrific fad lured Rocky"
+	  },
+	  "release": "6/11/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Horrific"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Rocky",
+		  "end": {
+			"value": [
+			  "fad lured",
+			  "dreadful"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dreadful"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "148",
+	  "clid": "148",
+	  "clue": {
+		"value": "Carry on a cup holding a spot of tea"
+	  },
+	  "release": "6/10/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Carry on"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "a cup"
+		},
+		{
+		  "category": "particle",
+		  "value": "spot of tea",
+		  "end": {
+			"value": [
+			  "t"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "holding",
+		  "end": {
+			"value": [
+			  "a c",
+			  "t",
+			  "up"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "act up"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "147",
+	  "clid": "147",
+	  "clue": {
+		"value": "References describing one of Indonesia's metropolitan areas"
+	  },
+	  "release": "6/9/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"metropolitan areas"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "one of Indonesia",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "References",
+		  "end": {
+			"value": [
+			  "cites"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "describing",
+		  "end": {
+			"value": [
+			  "cit",
+			  "I",
+			  "es"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "cities"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "146",
+	  "clid": "146",
+	  "clue": {
+		"value": "For each ingénue ultimately smothered by hype"
+	  },
+	  "release": "6/8/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"For each"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "ingénue ultimately",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "hype",
+		  "end": {
+			"value": [
+			  "PR"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "smothered by",
+		  "end": {
+			"value": [
+			  "P",
+			  "e",
+			  "R"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "per"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "145",
+	  "clid": "145",
+	  "clue": {
+		"value": "Men taking interest in races"
+	  },
+	  "release": "6/7/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"races"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Men",
+		  "end": {
+			"value": [
+			  "hes"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "interest",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "taking",
+		  "end": {
+			"value": [
+			  "h",
+			  "I",
+			  "es"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "hies"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "143",
+	  "clid": "143",
+	  "clue": {
+		"value": "Ordered document receives half-credit"
+	  },
+	  "release": "6/6/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Ordered"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "document",
+		  "end": {
+			"value": [
+			  "deed"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "half-credit",
+		  "end": {
+			"value": [
+			  "cre"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "receives",
+		  "end": {
+			"value": [
+			  "de",
+			  "cre",
+			  "ed"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "decreed"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "142",
+	  "clid": "142",
+	  "clue": {
+		"value": "Aide's new concept"
+	  },
+	  "release": "6/5/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"concept"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "Aide",
+			  "ideA"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "idea"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "141",
+	  "clid": "141",
+	  "clue": {
+		"value": "Ring pursuing spy group's informal greeting"
+	  },
+	  "release": "6/4/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"informal greeting"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "spy group",
+		  "end": {
+			"value": [
+			  "CIA"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Ring",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ciao"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "139",
+	  "clid": "139",
+	  "clue": {
+		"value": "Expert's unsatisfactory toupee rejected"
+	  },
+	  "release": "6/3/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"Expert"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "unsatisfactory",
+		  "end": {
+			"value": [
+			  "u"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "toupee",
+		  "end": {
+			"value": [
+			  "rug"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "rejected",
+		  "end": {
+			"value": [
+			  "urug",
+			  "guru"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "guru"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "136",
+	  "clid": "136",
+	  "clue": {
+		"value": "Topless Cleo narrated abridged story, ignoring radical Russian novelist"
+	  },
+	  "release": "6/2/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "charade, deletion",
+	  "definition": [
+		"Russian novelist"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "Topless Cleo",
+		  "end": {
+			"value": [
+			  "leo"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "narrated",
+		  "end": {
+			"value": [
+			  "told"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "abridged",
+		  "end": {
+			"value": [
+			  "told",
+			  "tol"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "story"
+		},
+		{
+		  "category": "deletion",
+		  "value": "ignoring radical",
+		  "end": {
+			"value": [
+			  "story",
+			  "sto",
+			  "y"
+			]
+		  },
+		  "explainer": "radical can be \"r\""
+		}
+	  ],
+	  "solution": {
+		"value": "Leo Tolstoy"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "135",
+	  "clid": "135",
+	  "clue": {
+		"value": "A song describing a couple of quirky fish tanks"
+	  },
+	  "release": "6/1/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"fish tanks"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "A song",
+		  "end": {
+			"value": [
+			  "aria"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "a"
+		},
+		{
+		  "category": "particle",
+		  "value": "couple of quirky",
+		  "end": {
+			"value": [
+			  "qu"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "describing",
+		  "end": {
+			"value": [
+			  "a",
+			  "qu",
+			  "a",
+			  "ria"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "aquaria"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "133",
+	  "clid": "133",
+	  "clue": {
+		"value": "Witty comment from detective interrupting Marge's comeback"
+	  },
+	  "release": "5/31/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "container, reversal",
+	  "definition": [
+		"Witty comment"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "detective",
+		  "end": {
+			"value": [
+			  "PI"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Marge"
+		},
+		{
+		  "category": "reversal",
+		  "value": "comeback",
+		  "end": {
+			"value": [
+			  "Marge",
+			  "egraM"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "interrupting",
+		  "end": {
+			"value": [
+			  "e",
+			  "PI",
+			  "graM"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "epigram"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "132",
+	  "clid": "132",
+	  "clue": {
+		"value": "Jump with energy and desire"
+	  },
+	  "release": "5/30/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"desire"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Jump",
+		  "end": {
+			"value": [
+			  "hop"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "energy",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "hope"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "130",
+	  "clid": "130",
+	  "clue": {
+		"value": "One peer sheathes sword"
+	  },
+	  "release": "5/29/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"sword"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "sheathes",
+		  "end": {
+			"value": [
+			  "One peer",
+			  "epee"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "epee"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "128",
+	  "clid": "128",
+	  "clue": {
+		"value": "Land surrounded by water is rented"
+	  },
+	  "release": "5/28/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Land surrounded by water"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "is",
+		  "end": {
+			"value": [
+			  "is"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "rented",
+		  "end": {
+			"value": [
+			  "let"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "islet"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "127",
+	  "clid": "127",
+	  "clue": {
+		"value": "Stirred frying pan eagerly at first"
+	  },
+	  "release": "5/27/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Stirred"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "frying pan",
+		  "end": {
+			"value": [
+			  "wok"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "eagerly at first",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "woke"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "123",
+	  "clid": "123",
+	  "clue": {
+		"value": "Certain picture-takers came across a bur, surprisingly"
+	  },
+	  "release": "5/26/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Certain picture-takers"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "surprisingly",
+		  "end": {
+			"value": [
+			  "came across a bur",
+			  "camera obscuras"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "camera obscuras"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "121",
+	  "clid": "121",
+	  "clue": {
+		"value": "Trees initially cut short"
+	  },
+	  "release": "5/25/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "deletion",
+	  "definition": [
+		"Trees"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "initially",
+		  "end": {
+			"value": [
+			  "first"
+			]
+		  }
+		},
+		{
+		  "category": "deletion",
+		  "value": "cut short",
+		  "end": {
+			"value": [
+			  "first",
+			  "firs"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "firs"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "120",
+	  "clid": "120",
+	  "clue": {
+		"value": "Spanish artist is returning finally to edgy place?"
+	  },
+	  "release": "5/24/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"Spanish artist"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "finally to",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "edgy place",
+		  "end": {
+			"value": [
+			  "rim"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "returning",
+		  "end": {
+			"value": [
+			  "orim",
+			  "miro"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "miro"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "119",
+	  "clid": "119",
+	  "clue": {
+		"value": "Make the grade in Utah, sporting trio of citations"
+	  },
+	  "release": "5/23/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Make the grade"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Utah",
+		  "end": {
+			"value": [
+			  "UT"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "trio of citations",
+		  "end": {
+			"value": [
+			  "cit"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "sporting",
+		  "end": {
+			"value": [
+			  "c",
+			  "UT",
+			  "it"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "cut it"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "118",
+	  "clid": "118",
+	  "clue": {
+		"value": "Sajak wearing a thin coat"
+	  },
+	  "release": "5/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"thin coat"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Sajak",
+		  "end": {
+			"value": [
+			  "Pat"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "wearing",
+		  "end": {
+			"value": [
+			  "in"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "a",
+		  "end": {
+			"value": [
+			  "a"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "patina"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "117",
+	  "clid": "117",
+	  "clue": {
+		"value": "Venerated ones go down south"
+	  },
+	  "release": "5/21/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Venerated ones"
+	  ],
+	  "hints": [
+		{
+		  "category": "direct",
+		  "value": "go",
+		  "end": {
+			"value": [
+			  "go"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "down",
+		  "end": {
+			"value": [
+			  "d"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "south",
+		  "end": {
+			"value": [
+			  "s"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "gods"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "116",
+	  "clid": "116",
+	  "clue": {
+		"value": "Rehash sourest expulsions"
+	  },
+	  "release": "5/20/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"expulsions"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Rehash",
+		  "end": {
+			"value": [
+			  "sourest",
+			  "ousters"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ousters"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "115",
+	  "clid": "115",
+	  "clue": {
+		"value": "Six score, essentially"
+	  },
+	  "release": "5/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"essentially"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Six",
+		  "end": {
+			"value": [
+			  "vi"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "score",
+		  "end": {
+			"value": [
+			  "tally"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "vitally"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "114",
+	  "clid": "114",
+	  "clue": {
+		"value": "Endeavor to read novel"
+	  },
+	  "release": "5/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Endeavor"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "novel",
+		  "end": {
+			"value": [
+			  "read",
+			  "dare"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "dare"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "113",
+	  "clid": "113",
+	  "clue": {
+		"value": "Pass up Peter, taking issue ultimately with one pulling the strings"
+	  },
+	  "release": "5/17/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"one pulling the strings"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "Pass",
+		  "end": {
+			"value": [
+			  "P"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "up Peter"
+		},
+		{
+		  "category": "particle",
+		  "value": "issue ultimately",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "taking",
+		  "end": {
+			"value": [
+			  "P",
+			  "up pet",
+			  "e",
+			  "er"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "puppeteer"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "110",
+	  "clid": "110",
+	  "clue": {
+		"value": "Top of gym circled by chopper"
+	  },
+	  "release": "5/16/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Top"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "gym",
+		  "end": {
+			"value": [
+			  "PE"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "chopper",
+		  "end": {
+			"value": [
+			  "ax"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "circled by",
+		  "end": {
+			"value": [
+			  "a",
+			  "PE",
+			  "x"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "apex"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "109",
+	  "clid": "109",
+	  "clue": {
+		"value": "Thompson cut Rocky's facial hair"
+	  },
+	  "release": "5/15/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"facial hair"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "Rocky",
+		  "end": {
+			"value": [
+			  "Thompson cut",
+			  "muTtonchops"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "muttonchops"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "103",
+	  "clid": "103",
+	  "clue": {
+		"value": "Described haughty streak"
+	  },
+	  "release": "5/14/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"streak"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "haughty",
+		  "end": {
+			"value": [
+			  "vain"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Described",
+		  "end": {
+			"value": [
+			  "vain",
+			  "vein"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "vein"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "100",
+	  "clid": "100",
+	  "clue": {
+		"value": "Chicken Little, having wings, is in Montana"
+	  },
+	  "release": "5/13/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"Chicken Little"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "having wings",
+		  "end": {
+			"value": [
+			  "alar"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "is"
+		},
+		{
+		  "category": "symbol",
+		  "value": "Montana",
+		  "end": {
+			"value": [
+			  "MT"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "in",
+		  "end": {
+			"value": [
+			  "alar",
+			  "M",
+			  "is",
+			  "T"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "alarmist"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "98",
+	  "clid": "98",
+	  "clue": {
+		"value": "Experience shifting ground around start of earthquake"
+	  },
+	  "release": "5/12/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "anagram, container",
+	  "definition": [
+		"Experience"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "shifting",
+		  "end": {
+			"value": [
+			  "ground",
+			  "undrgo"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "start of earthquake",
+		  "end": {
+			"value": [
+			  "e"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "around",
+		  "end": {
+			"value": [
+			  "und",
+			  "e",
+			  "rgo"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "undergo"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "96",
+	  "clid": "96",
+	  "clue": {
+		"value": "Speak with difficulty about Republican braggart"
+	  },
+	  "release": "5/11/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"braggart"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Speak with difficulty",
+		  "end": {
+			"value": [
+			  "stutter"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "Republican",
+		  "end": {
+			"value": [
+			  "R"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "st",
+			  "R",
+			  "utter"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "strutter"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "95",
+	  "clid": "95",
+	  "clue": {
+		"value": "Awareness of policy expert turned up large advantage"
+	  },
+	  "release": "5/10/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "reversal, charade",
+	  "definition": [
+		"Awareness"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "policy expert",
+		  "end": {
+			"value": [
+			  "wonk"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "turned up",
+		  "end": {
+			"value": [
+			  "wonk",
+			  "know"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "large",
+		  "end": {
+			"value": [
+			  "L"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "advantage",
+		  "end": {
+			"value": [
+			  "edge"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "knowledge"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "94",
+	  "clid": "94",
+	  "clue": {
+		"value": "Just passing soldier wearing small shoe"
+	  },
+	  "release": "5/9/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container, charade",
+	  "definition": [
+		"shoe"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Just passing",
+		  "end": {
+			"value": [
+			  "D"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "soldier",
+		  "end": {
+			"value": [
+			  "GI"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "small",
+		  "end": {
+			"value": [
+			  "wee"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "wearing",
+		  "end": {
+			"value": [
+			  "we",
+			  "D",
+			  "GI",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "wedgie"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "93",
+	  "clid": "93",
+	  "clue": {
+		"value": "Unfavorable criticism about wife, a potential queen?"
+	  },
+	  "release": "5/8/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"a potential queen"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Unfavorable criticism",
+		  "end": {
+			"value": [
+			  "pan"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "wife",
+		  "end": {
+			"value": [
+			  "W"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "pa",
+			  "W",
+			  "n"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pawn"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "92",
+	  "clid": "92",
+	  "clue": {
+		"value": "Tabloid recalled NY baseball team receiving new attire"
+	  },
+	  "release": "5/7/2025",
+	  "difficulty": "4",
+	  "ready": "TRUE",
+	  "type": "charade, reversal, container",
+	  "definition": [
+		"attire"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Tabloid",
+		  "end": {
+			"value": [
+			  "rag"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "recalled",
+		  "end": {
+			"value": [
+			  "rag",
+			  "gar"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "NY baseball team",
+		  "end": {
+			"value": [
+			  "Mets"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "new",
+		  "end": {
+			"value": [
+			  "N"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "receiving",
+		  "end": {
+			"value": [
+			  "gar",
+			  "Me",
+			  "N",
+			  "ts"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "garments"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "90",
+	  "clid": "90",
+	  "clue": {
+		"value": "Multitudes of African predators consuming half of eggs"
+	  },
+	  "release": "5/6/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container, deletion",
+	  "definition": [
+		"Multitudes"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "African predators",
+		  "end": {
+			"value": [
+			  "lions"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "half of eggs",
+		  "end": {
+			"value": [
+			  "eg"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "consuming",
+		  "end": {
+			"value": [
+			  "l",
+			  "eg",
+			  "ions"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legions"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "89",
+	  "clid": "89",
+	  "clue": {
+		"value": "Father and staff upset former airline"
+	  },
+	  "release": "5/5/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"former airline"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Father",
+		  "end": {
+			"value": [
+			  "pa"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "staff",
+		  "end": {
+			"value": [
+			  "man"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "upset",
+		  "end": {
+			"value": [
+			  "man",
+			  "nam"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pan am"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "88",
+	  "clid": "88",
+	  "clue": {
+		"value": "On the way back, spots unsatisfactory stamp found on some meat"
+	  },
+	  "release": "5/4/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, reversal",
+	  "definition": [
+		"stamp found on some meat"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "spots",
+		  "end": {
+			"value": [
+			  "ads"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "unsatisfactory",
+		  "end": {
+			"value": [
+			  "u"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "On the way back",
+		  "end": {
+			"value": [
+			  "adsu",
+			  "usda"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "usda"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "87",
+	  "clid": "87",
+	  "clue": {
+		"value": "Element of exotic isle menu"
+	  },
+	  "release": "5/3/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Element"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "exotic",
+		  "end": {
+			"value": [
+			  "isle menu",
+			  "selenium"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "selenium"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "80",
+	  "clid": "80",
+	  "clue": {
+		"value": "Margaret and Susan nearly backing a horse that really took off?"
+	  },
+	  "release": "5/2/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, deletion, reversal",
+	  "definition": [
+		"a horse that really took off"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Margaret",
+		  "end": {
+			"value": [
+			  "Peg"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "Susan nearly",
+		  "end": {
+			"value": [
+			  "Susa"
+			]
+		  }
+		},
+		{
+		  "category": "reversal",
+		  "value": "backing",
+		  "end": {
+			"value": [
+			  "Susa",
+			  "asuS"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "pegasus"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "79",
+	  "clid": "79",
+	  "clue": {
+		"value": "Believes in supporting device holding ton"
+	  },
+	  "release": "5/1/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Believes in"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "supporting device",
+		  "end": {
+			"value": [
+			  "truss"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "ton",
+		  "end": {
+			"value": [
+			  "t"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "holding",
+		  "end": {
+			"value": [
+			  "trus",
+			  "t",
+			  "s"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "trusts"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "78",
+	  "clid": "78",
+	  "clue": {
+		"value": "One hands out cards with goals"
+	  },
+	  "release": "4/30/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"goals"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "One",
+		  "end": {
+			"value": [
+			  "I"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "hands out cards",
+		  "end": {
+			"value": [
+			  "deals"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "ideals"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "77",
+	  "clid": "77",
+	  "clue": {
+		"value": "Confederate general carries gun for ambassador"
+	  },
+	  "release": "4/29/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"ambassador"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Confederate general",
+		  "end": {
+			"value": [
+			  "Lee"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "gun",
+		  "end": {
+			"value": [
+			  "gat"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "carries",
+		  "end": {
+			"value": [
+			  "Le",
+			  "gat",
+			  "e"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "legate"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "76",
+	  "clid": "76",
+	  "clue": {
+		"value": "Unfluctuating feature of muzzle velocity"
+	  },
+	  "release": "4/28/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"Unfluctuating"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "feature of",
+		  "end": {
+			"value": [
+			  "muzzle velocity",
+			  "level"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "level"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "75",
+	  "clid": "75",
+	  "clue": {
+		"value": "That girl's beginning to bother Ginger, among others"
+	  },
+	  "release": "4/27/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Ginger, among others"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "That girl",
+		  "end": {
+			"value": [
+			  "her"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "beginning to bother",
+		  "end": {
+			"value": [
+			  "b"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "herb"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "72",
+	  "clid": "72",
+	  "clue": {
+		"value": "Moving in a mass of loot, including trimmed ermine"
+	  },
+	  "release": "4/26/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container, deletion",
+	  "definition": [
+		"Moving in a mass"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "loot",
+		  "end": {
+			"value": [
+			  "swag"
+			]
+		  }
+		},
+		{
+		  "category": "particle",
+		  "value": "trimmed ermine",
+		  "end": {
+			"value": [
+			  "rmin"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "including",
+		  "end": {
+			"value": [
+			  "swa",
+			  "rmin",
+			  "g"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "swarming"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "71",
+	  "clid": "71",
+	  "clue": {
+		"value": "Chilled, a mud wren shivers"
+	  },
+	  "release": "4/25/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram",
+	  "definition": [
+		"Chilled"
+	  ],
+	  "hints": [
+		{
+		  "category": "anagram",
+		  "value": "shivers",
+		  "end": {
+			"value": [
+			  "a mud wren",
+			  "unwarmed"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "unwarmed"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "70",
+	  "clid": "70",
+	  "clue": {
+		"value": "Discussed minor problem with certain fabric"
+	  },
+	  "release": "4/24/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "homophone",
+	  "definition": [
+		"certain fabric"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "minor problem",
+		  "end": {
+			"value": [
+			  "nit"
+			]
+		  }
+		},
+		{
+		  "category": "homophone",
+		  "value": "Discussed",
+		  "end": {
+			"value": [
+			  "nit",
+			  "knit"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "knit"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "69",
+	  "clid": "69",
+	  "clue": {
+		"value": "Hurt most unusual rodents"
+	  },
+	  "release": "4/23/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "anagram, charade",
+	  "definition": [
+		"rodents"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Hurt",
+		  "end": {
+			"value": [
+			  "mar"
+			]
+		  }
+		},
+		{
+		  "category": "anagram",
+		  "value": "unusual",
+		  "end": {
+			"value": [
+			  "most",
+			  "mots"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "marmots"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "66",
+	  "clid": "66",
+	  "clue": {
+		"value": "Fulminate against providing drink"
+	  },
+	  "release": "4/22/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "hidden word",
+	  "definition": [
+		"drink"
+	  ],
+	  "hints": [
+		{
+		  "category": "hidden word",
+		  "value": "providing",
+		  "end": {
+			"value": [
+			  "Fulminate against",
+			  "tea"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "tea"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "64",
+	  "clid": "64",
+	  "clue": {
+		"value": "Former Secretary of State's survey involving our group"
+	  },
+	  "release": "4/21/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "container",
+	  "definition": [
+		"Former Secretary of State"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "survey",
+		  "end": {
+			"value": [
+			  "poll"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "our group",
+		  "end": {
+			"value": [
+			  "we"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "involving",
+		  "end": {
+			"value": [
+			  "po",
+			  "we",
+			  "ll"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "powell"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "63",
+	  "clid": "63",
+	  "clue": {
+		"value": "Inquires nosily about despicable general's perks"
+	  },
+	  "release": "4/20/2025",
+	  "difficulty": "3",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"perks"
+	  ],
+	  "hints": [
+		{
+		  "category": "synonym",
+		  "value": "Inquires nosily",
+		  "end": {
+			"value": [
+			  "pries"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "despicable",
+		  "end": {
+			"value": [
+			  "vile"
+			]
+		  }
+		},
+		{
+		  "category": "symbol",
+		  "value": "general",
+		  "end": {
+			"value": [
+			  "G"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "about",
+		  "end": {
+			"value": [
+			  "pri",
+			  "vile",
+			  "G",
+			  "es"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "privileges"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "62",
+	  "clid": "62",
+	  "clue": {
+		"value": "Starting after first of January working from home?"
+	  },
+	  "release": "4/19/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade",
+	  "definition": [
+		"Starting"
+	  ],
+	  "hints": [
+		{
+		  "category": "particle",
+		  "value": "first of January",
+		  "end": {
+			"value": [
+			  "J"
+			]
+		  }
+		},
+		{
+		  "category": "synonym",
+		  "value": "working from home",
+		  "end": {
+			"value": [
+			  "umping"
+			]
+		  },
+		  "explainer": "In this case, \"starting\" means \"moving suddenly and violently from a state of stillness or rest\""
+		}
+	  ],
+	  "solution": {
+		"value": "jumping"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "61",
+	  "clid": "61",
+	  "clue": {
+		"value": "Fixate on ring Bess gets Sunday"
+	  },
+	  "release": "4/18/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "charade, container",
+	  "definition": [
+		"Fixate on"
+	  ],
+	  "hints": [
+		{
+		  "category": "symbol",
+		  "value": "ring",
+		  "end": {
+			"value": [
+			  "o"
+			]
+		  }
+		},
+		{
+		  "category": "direct",
+		  "value": "Bess"
+		},
+		{
+		  "category": "symbol",
+		  "value": "Sunday",
+		  "end": {
+			"value": [
+			  "S"
+			]
+		  }
+		},
+		{
+		  "category": "container",
+		  "value": "gets",
+		  "end": {
+			"value": [
+			  "o",
+			  "B",
+			  "S",
+			  "ess"
+			]
+		  }
+		}
+	  ],
+	  "solution": {
+		"value": "obsess"
+	  },
+	  "source": {
+		"value": "Kegler"
+	  }
+	},
+	{
+	  "id": "51",
+	  "clid": "51",
+	  "clue": {
+		"value": "Leave the better part of Southern Arizona"
+	  },
+	  "release": "4/17/2025",
+	  "difficulty": "2",
+	  "ready": "TRUE",
+	  "type": "double definition",
+	  "definition": [
+		"Leave",
+		"the better part of Southern Arizona"
+	  ],
+	  "solution": {
+		"value": "desert"
+	  },
+	  "source": {
+		"value": "Midas"
+	  }
+	},
+	{
 	  "id": "181",
 	  "clid": "181",
 	  "clue": {

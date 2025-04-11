@@ -105,7 +105,7 @@ const Learn = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='learn-question'>What differnt types of wordplay will I find?</h2>
+					<h2 className='learn-question'>What different types of wordplay will I find?</h2>
 					<p className='learn-answer'>Tap a type below to learn more:</p>
 					<ul className='learn-types no-dec'>{types}</ul>
 				</div>

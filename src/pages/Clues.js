@@ -63,8 +63,8 @@ const Clues = ({ data }) => {
 
 		const stats = completedClue && <>
 			<div className="tile-stats">
-				<span className='stat-hints'><span className="stat">{completedClue.hints}</span>&nbsp;h</span>
-				<span className='stat-guesses'><span className="stat">{completedClue.guesses}</span>&nbsp;g</span>
+				<span className='stat-hints'><span className="stat">{completedClue.hints}</span>&nbsp;{completedClue.hints === 1 ? 'hint' : 'hints'}</span>
+				<span className='stat-guesses'><span className="stat">{completedClue.guesses}</span>&nbsp;{completedClue.guesses === 1 ? 'guess' : 'guesses'}</span>
 			</div>
 		</>
 

@@ -89,12 +89,13 @@
 				font-size: 11px;
 				font-weight: 600;
 				font-family: $lc-font--sans;
-				text-transform: uppercase;
+				// text-transform: uppercase;
 				
 				.stat-guesses, .stat-hints {
 					margin: 2px auto;
-					padding: 2px 3px;
+					padding: 2px 4px;
 					border-radius: 4px;
+					width: 100%;
 					
 					.stat {
 						font-size: 13px;

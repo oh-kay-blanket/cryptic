@@ -31,7 +31,7 @@ const CluePage = ({ data }) => {
 		<><li className='eyecon'><button onClick={()=>setShowType(true)} aria-label="Show type"><img src={eyeOpen} alt="" /></button></li><li className='type-text'><button onClick={()=>setShowType(true)} aria-label="Expand type">See type</button></li></>
 
 	// stats HTML
-	const statsInsert = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;h</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;g</span></div></>
+	const statsInsert = <><div className="clue-stats"><span className='stat-hints'><span className="stat">{stats.hints}</span>&nbsp;{stats.hints === 1 ? 'hint' : 'hints'}</span><span className='stat-guesses'><span className="stat">{stats.guesses}</span>&nbsp;{stats.guesses === 1 ? 'guess' : 'guesses'}</span></div></>
 
 	// clue HTML
 	const clueInsert = activeClue.clue.arr.map((letter, index) => <span key={`cluearr_${index}`} ref={activeClue.clue.ref.current[index]} className='letter'>{letter}</span>)
