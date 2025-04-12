@@ -59,7 +59,7 @@ const Clues = ({ data }) => {
 			    }
 		}
 
-		const completedClue = completedClues.find(c => c.id === clue.id)
+		const completedClue = completedClues.find(c => c.clid === clue.clid)
 
 		const stats = completedClue && <>
 			<div className="tile-stats">

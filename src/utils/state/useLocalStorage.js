@@ -35,7 +35,7 @@ const useLocalStorage = () => {
 	const addCompletedClue = (activeClue, stats, type) => {
 		const guesses = type === 'g' ? stats.guesses + 1 : stats.guesses
 		const hints = type === 'h' ? stats.hints + 1 : stats.hints
-		const repeat = completedClues.find(completed => completed.id === activeClue.id)
+		const repeat = completedClues.find(completed => completed.clid === activeClue.clid)
 		// const knownUser = completedClues && completedClues.length > 0
 
 		// Only update if not already in completedClues
@@ -43,7 +43,7 @@ const useLocalStorage = () => {
 			setLcState({
 				...lcState,
 				completedClues: [...lcState.completedClues, { 
-					id: activeClue.id,
+					id: activeClue.clid,
 					guesses: guesses,
 					hints: hints,
 					how: type 

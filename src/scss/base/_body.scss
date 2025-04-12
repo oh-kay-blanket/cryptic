@@ -2,6 +2,8 @@
 @use './media' as *;
 
 html, body {
+	max-width: 100%;
+  	overflow-x: hidden;
 	font-size: 18px;
 	margin: 0;
 
@@ -21,6 +23,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 body {
     display: flex;
+	color: $lc-text;
 }
 
 main {
@@ -43,4 +46,7 @@ img {
 button {
 	background-color: unset;
 	border: unset;
+	color: $lc-text;
+	appearance: none;
+	-webkit-appearance: none;
 }
