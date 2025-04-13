@@ -1,4 +1,4 @@
-const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns) => {
+const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic) => {
 
 	// buttons
 	const buttons = {
@@ -63,10 +63,28 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 				setStats({ guesses: 0, hints: 0, how: '' });
 			}
 		},
+		endClueShowLogic: {
+			name: 'Show logic',
+			style: 'alt',
+			onClick: function() {
+				setShowLogic(true)
+				setCheckAns(false)
+				setShowMessage(true)
+			}
+		},
+		nextLogic: {
+			name: 'Next',
+			style: 'alt',
+			onClick: function() {
+				setNextHint(nextHint + 1)
+				setCheckAns(false)
+				setShowMessage(true)
+			}
+		},
 		returnLearn: {
 			path: `/learn/${returnLearn}#next`,
 			name: 'Return',
-			style: 'alt',
+			style: 'gray',
 			onClick: function(){
 				setReturnLearn(false)
 				setStats({ guesses: 0, hints: 0, how: '' });

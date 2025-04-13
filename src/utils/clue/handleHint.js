@@ -3,7 +3,7 @@ import highlightLetters from './highlightLetters'
 import changeColor from './changeColor'
 import moveLetters from "./moveLetters"
 
-const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
+const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 	// Run if showing a message & not checking answer
 	if (showMessage && !checkAns) {
@@ -199,9 +199,10 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns) => {
 			setTimeout(()=> { try {activeClue.solution.sectionRef.current.classList.add('reveal-solution') } catch(e){console.log(e)} }, 2500)
 			setTimeout(()=> { try {activeClue.source.ref.current.classList.add('show') } catch(e){console.log(e)} }, 3000)
 		}
-
+	} 
+	
 	// Change last hint to gray when going back to play
-	} else if (!showMessage && !checkAns && nextHint > 1) {
+	if ((!showMessage && !checkAns && nextHint > 1) || (showLogic && nextHint > 1)) {
 		const prevHint = activeClue.hints[nextHint - 1]
 		try {
 			highlightLetters(prevHint.ref, false, true)

@@ -10,6 +10,7 @@ const useManageClue = (activeClue) => {
 	const [nextHint, setNextHint] = useState(0)
 	const [showMessage, setShowMessage] = useState(false)
 	const [checkAns, setCheckAns] = useState(false)
+	const [showLogic, setShowLogic] = useState(false)
 
     // handle input
     const handleInput = (press) => {
@@ -26,10 +27,10 @@ const useManageClue = (activeClue) => {
 	
 	// runs every change of showMessage
 	useEffect(() => {
-		handleHint(activeClue, nextHint, showMessage, checkAns)
+		handleHint(activeClue, nextHint, showMessage, checkAns, showLogic)
 	}, [showMessage, activeClue, nextHint, checkAns])
 
-	return { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns }
+	return { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns, showLogic, setShowLogic }
 }
 
 export default useManageClue

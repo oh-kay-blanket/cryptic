@@ -22,7 +22,7 @@ const CluePage = ({ data }) => {
 
 	// Set up activeClue
 	let { activeClue } = prepClue(dataClue)
-	let { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns } = manageClue(activeClue)
+	let { stats, setStats, input, setInput, handleInput, nextHint, setNextHint, showMessage, setShowMessage, checkAns, setCheckAns, showLogic, setShowLogic } = manageClue(activeClue)
 
 	// type HTML
 	const pillList = activeClue.type.map((t, index) => <li key={`type_${index}`} className='type-pill tooltip-parent' aria-describedby="tooltip-id">{t}<Tooltip text={t} /></li>)
@@ -98,6 +98,8 @@ const CluePage = ({ data }) => {
 				setStats={setStats}
 				returnLearn={returnLearn}
 				setReturnLearn={setReturnLearn}
+				showLogic={showLogic}
+				setShowLogic={setShowLogic}
 			/>
 		</Layout>
 	)
