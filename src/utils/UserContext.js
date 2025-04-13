@@ -8,15 +8,15 @@ export const UserProvider = ({ children }) => {
 
     // manage lcState
 	const [lcState, setLcState] = useState(() => {
-		// Check if localStorage has the item
-		const storedState = localStorage.getItem("lcState")
-		if (storedState) {
-			return JSON.parse(storedState); // Parse and use the stored value
-		} else {
-			// Return a default value if it doesn't exist
-			return { completedClues: [], showType: true, typeViewed: [] }
+		if (typeof window !== "undefined") {
+			const storedState = localStorage.getItem("lcState")
+			if (storedState) {
+				return JSON.parse(storedState)
+			}
 		}
+		return { completedClues: [], showType: true, typeViewed: [] }
 	})
+	
 
 	// Variables
 	let completedClues = lcState.completedClues
@@ -40,7 +40,7 @@ export const UserProvider = ({ children }) => {
 			setLcState({
 				...lcState,
 				completedClues: [...lcState.completedClues, { 
-					clid: activeClue.clid,
+					id: activeClue.clid,
 					guesses: guesses,
 					hints: hints,
 					how: type 

@@ -12,7 +12,7 @@ import ex from '../assets/img/learn/example.jpg'
 
 const Learn = () => {
 
-	const { typeViewed, setTypeViewed } = useContext(UserContext);
+	const { typeViewed } = useContext(UserContext);
 
 	// buttons
 	const buttons = {
