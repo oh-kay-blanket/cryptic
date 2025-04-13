@@ -40,7 +40,7 @@ export const UserProvider = ({ children }) => {
 			setLcState({
 				...lcState,
 				completedClues: [...lcState.completedClues, { 
-					id: activeClue.clid,
+					clid: activeClue.clid,
 					guesses: guesses,
 					hints: hints,
 					how: type 

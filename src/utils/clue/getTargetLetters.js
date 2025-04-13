@@ -39,18 +39,13 @@ const getTargetLetters = (letters, activeClue, hint) => {
 
 				targetLettersStart = freshValue.indexOf(` ${letters}`) + 1
 
-				console.log(freshValue, freshValueIndex, targetLettersStart)
-
 				strSlice = activeClue.clue.ref.current.slice((freshValueIndex + targetLettersStart), ((freshValueIndex + targetLettersStart) + letters.length))
 			} else {
 				targetLettersStart = activeClue.clue.value.indexOf(letters)
 				strSlice = activeClue.clue.ref.current.slice(targetLettersStart, (targetLettersStart + letters.length))
 			}
-
-
-			// console.log(letters, hint, strSlice)			
-			return strSlice
 	
+			return strSlice	
 		}
 }
 
