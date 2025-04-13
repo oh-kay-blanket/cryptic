@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from "gatsby"
 
 import Layout from '../components/Layout'
@@ -41,9 +41,25 @@ const Learn = () => {
 	]
 
 	const types = typesArr.map(type => {
-		const isViewed = typeViewed.find(viewed => viewed === type.name)
-		return <li key={type.id} className={isViewed ? 'viewed' : ''}><Link to={type.id} onClick={()=>setTypeViewed(type.name)}>{type.name}</Link></li>
+		const isViewed = typeViewed.find(viewed => viewed === type.id)
+		return <li key={type.id} className={isViewed ? 'viewed' : ''}><Link to={type.id} >{type.name}</Link></li>
 	})
+
+	// Handle anchor link
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+		  const hash = window.location.hash
+		  if (hash) {
+			// slight delay ensures element is present
+			setTimeout(() => {
+			  const el = document.querySelector(hash)
+			  if (el) {
+				el.scrollIntoView({ behavior: 'instant' })
+			  }
+			}, 1)
+		  }
+		}
+	  }, [])
 
 	return (
 		<Layout>
@@ -104,7 +120,7 @@ const Learn = () => {
 					</ul>
 				</div>
 
-				<div className='learn-section'>
+				<div id='learn-types' className='learn-section'>
 					<h2 className='learn-question'>What different types of wordplay will I find?</h2>
 					<p className='learn-answer'>Tap a type below to learn more:</p>
 					<ul className='learn-types no-dec'>{types}</ul>
@@ -113,9 +129,6 @@ const Learn = () => {
 				<div className='learn-section'>
 					<h2 className='learn-question'>Anything else I need to know?</h2>
 					<p className='learn-answer'>Now that you understand the basics of how cryptic clues are constructed and are familiar with some of the different types of hints, dive in and try a few!</p>
-				</div>
-
-				<div className='learn-section'>
 					<ButtonContainer
 						btnArr={btnArr}
 						stack={true}

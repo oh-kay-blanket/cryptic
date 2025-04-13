@@ -64,7 +64,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			}
 		},
 		returnLearn: {
-			path: `/learn/${returnLearn}`,
+			path: `/learn/${returnLearn}#next`,
 			name: 'Return',
 			style: 'alt',
 			onClick: function(){
