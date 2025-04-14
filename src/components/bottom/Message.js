@@ -17,18 +17,20 @@ const Message = ({ activeClue, nextHint, input, checkAns, isCorrectAns, isSoluti
 
 	const explainer = activeClue.hints[nextHint].explainer ? activeClue.hints[nextHint].explainer : false
 	
-	// choose message button
-	// let messageButton = isSolution ? [buttons.endClueHint] : checkAns && isCorrectAns ? [buttons.endClueGuess] : [buttons.continue]
-
+	// Prep message button
 	let messageButton; 
 
 	// Completed with hint, more clues
-	if (isSolution) {
+	if (isSolution && !showLogic) {
 		messageButton = [buttons.endClueHint]
 	
+	// Completed with guess and finished logic
+	} else if (isSolution && showLogic) {
+		messageButton = [buttons.shareScore, buttons.endClueHint]
+
 	// Completed with guess, more clues
 	} else if (checkAns && isCorrectAns) {
-		messageButton = [buttons.endClueShowLogic, buttons.endClueGuess]
+		messageButton = [buttons.endClueShowLogic, buttons.shareScore, buttons.endClueGuess]
 
 	// Completed with returnLearn == true
 	} else if ((isSolution || (checkAns && isCorrectAns)) && returnLearn) {
