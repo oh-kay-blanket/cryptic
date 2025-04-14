@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 
-import { UserContext } from '../utils/UserContext';
+import { UserContext } from '../utils/UserContext'
 
-import logo from '../assets/img/logo-short.png';
+import logo from '../assets/img/logo-short.png'
 
 const TopBar = () => {
 
-	const { setReturnLearn } = useContext(UserContext);
+	const { setReturnLearn } = useContext(UserContext)
 
 	const clickTitle = () => {
 		setReturnLearn(false)

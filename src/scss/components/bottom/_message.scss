@@ -24,13 +24,13 @@
 		opacity: 0;
 		visibility: hidden;
 		animation-name: fadein;
-		animation-delay: .5s;
-		animation-duration: 1.5s;
+		// animation-delay: .5s;
+		animation-duration: 1s;
 		animation-fill-mode: forwards;
 	}
 
 	&.is-correct-ans {
-		background-color: $lc-primary--light;
+		// background-color: $lc-primary--light;
 		margin: 0;
 	}
 

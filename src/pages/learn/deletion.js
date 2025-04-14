@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
 
 const Deletion = () => {
 
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext);
+	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
 		
 	const hasBeenViewed = typeViewed.find(viewed => viewed === 'deletion')
 	useEffect(() => {
@@ -132,4 +132,4 @@ const Deletion = () => {
 	)
 }
 
-export default Deletion;
+export default Deletion

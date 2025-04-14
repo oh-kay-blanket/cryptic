@@ -60,7 +60,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 							changeColor(h.addLetters.ref.current, '#ccc')
 						}
 						return false
-					});
+					})
 
 					// Make moving letters dark
 					changeColor(hint.addLetters.ref.current.slice(0, hint.end.value.join("").split('').length), '#222')
@@ -197,7 +197,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 		if (hint.reveals) {
 			setTimeout(()=> { try {activeClue.solution.sectionRef.current.classList.add('hide-input') } catch(e){console.log(e)} }, 2500)
 			setTimeout(()=> { try {activeClue.solution.sectionRef.current.classList.add('reveal-solution') } catch(e){console.log(e)} }, 2500)
-			setTimeout(()=> { try {activeClue.source.ref.current.classList.add('show') } catch(e){console.log(e)} }, 3000)
+			setTimeout(()=> { try {activeClue.source.ref.current.classList.add('show') } catch(e){console.log(e)} }, 2500)
 		}
 	} 
 	

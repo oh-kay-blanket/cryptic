@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Button from './Button'
 
 const ButtonContainer = ({ btnArr, isSolution, stack = false }) => {

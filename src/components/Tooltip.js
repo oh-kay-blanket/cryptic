@@ -13,7 +13,7 @@ const Tooltip = ({ text }) => {
 				}
 			}
 		}
-	`);
+	`)
 	
 	const matchType = data.allTypeJson.nodes.find(type => type.type.toUpperCase() === text.toUpperCase())
 
@@ -25,4 +25,4 @@ const Tooltip = ({ text }) => {
     )
 }
 
-export default Tooltip;
+export default Tooltip

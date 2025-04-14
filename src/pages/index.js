@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
-import ButtonContainer from '../components/bottom/ButtonContainer';
-import logo from '../assets/img/logo.png';
-import { UserContext } from '../utils/UserContext';
+import ButtonContainer from '../components/bottom/ButtonContainer'
+import logo from '../assets/img/logo.png'
+import { UserContext } from '../utils/UserContext'
 
 const Title = ({ data }) => {
 
@@ -10,8 +10,8 @@ const Title = ({ data }) => {
 	const { completedClues } = useContext(UserContext)
 
 	const knownUser = (completedClues && completedClues.length > 0) ? true : false
-	const avgGuesses = knownUser ? (completedClues.reduce((sum, item) => sum + item.guesses, 0) / completedClues.length).toFixed(0) : 0;
-	const avgHints = knownUser ? (completedClues.reduce((sum, item) => sum + item.hints, 0) / completedClues.length).toFixed(0) : 0;
+	const avgGuesses = knownUser ? (completedClues.reduce((sum, item) => sum + item.guesses, 0) / completedClues.length).toFixed(0) : 0
+	const avgHints = knownUser ? (completedClues.reduce((sum, item) => sum + item.hints, 0) / completedClues.length).toFixed(0) : 0
 
 	const stats = <div className='title-stats'>
 		<p className='stats-clues'>Clues solved: <span>{completedClues.length}</span></p>
@@ -25,15 +25,14 @@ const Title = ({ data }) => {
 	</div>
 
 	// Today clue
-	// const today = new Date();
 	const todayClue = cluesData.find(clue => {
 
-		const date1 = new Date(clue.release);
-		const date2 = new Date();
+		const date1 = new Date(clue.release)
+		const date2 = new Date()
 
 		// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-		const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
-		const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+		const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
+		const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
 
 		return d1.getTime() === d2.getTime()
 	})

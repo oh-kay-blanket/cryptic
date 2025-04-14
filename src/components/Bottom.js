@@ -42,4 +42,4 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 	)
 }
 
-export default Bottom;
+export default Bottom

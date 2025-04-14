@@ -1,6 +1,6 @@
 import React, { useRef, createRef, useContext } from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import { UserContext } from '../utils/UserContext'
 
 import d1 from '../assets/img/difficulty/1.svg'
@@ -20,20 +20,20 @@ const Clues = ({ data }) => {
 
 		function isTodayOrBefore(date1Str) {
 
-			const date1 = new Date(date1Str);
-        		const date2 = new Date();
+			const date1 = new Date(date1Str)
+        		const date2 = new Date()
 
 			// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-			const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
-			const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+			const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
+			const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
 		
 			// Compare the two dates
 			if (d1.getTime() === d2.getTime()) {
-				return true; // Same day
+				return true // Same day
 			} else if (d1.getTime() < d2.getTime()) {
-				return true; // date1 is before date2
+				return true // date1 is before date2
 			} else {
-				return false; // date1 is after date2
+				return false // date1 is after date2
 			}
 		}
 

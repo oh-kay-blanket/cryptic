@@ -86,5 +86,5 @@ export const UserProvider = ({ children }) => {
 		<UserContext.Provider value={{ completedClues, addCompletedClue, showType, setShowType, typeViewed, setTypeViewed, returnLearn, setReturnLearn }}>
 			{children}
 		</UserContext.Provider>
-	);
-};
+	)
+}

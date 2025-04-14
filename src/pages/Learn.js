@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from "gatsby"
 
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 
 import { UserContext } from '../utils/UserContext'
@@ -12,7 +12,7 @@ import ex from '../assets/img/learn/example.jpg'
 
 const Learn = () => {
 
-	const { typeViewed } = useContext(UserContext);
+	const { typeViewed } = useContext(UserContext)
 
 	// buttons
 	const buttons = {
@@ -140,4 +140,4 @@ const Learn = () => {
 }
 
 
-export default Learn;
+export default Learn

@@ -16,9 +16,9 @@ const useManageClue = (activeClue) => {
     const handleInput = (press) => {
 		setInput((prevInput) => {
             if (press !== 'del' && (prevInput.length < activeClue.solution.arr.length)) {
-                return [...prevInput, press];
+                return [...prevInput, press]
             } else if (press === 'del') {
-                return prevInput.slice(0, -1); // `slice` creates a new array without the last element
+                return prevInput.slice(0, -1) // `slice` creates a new array without the last element
             } else {
 				return prevInput
 			}

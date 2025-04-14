@@ -1,6 +1,6 @@
 import React from 'react'
 import ButtonContainer from '../components/bottom/ButtonContainer'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 const NotFound = () => {
 
@@ -27,4 +27,4 @@ const NotFound = () => {
 	)
 }
 
-export default NotFound;
+export default NotFound

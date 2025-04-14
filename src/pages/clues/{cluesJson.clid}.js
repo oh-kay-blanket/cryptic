@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import { UserContext } from '../../utils/UserContext'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 import Bottom from '../../components/Bottom'
 import Tooltip from '../../components/Tooltip'
 import prepClue from '../../utils/clue/usePrepClue'
@@ -14,7 +14,7 @@ import eyeClosed from '../../assets/img/eye--closed.svg'
 const CluePage = ({ data }) => {
 
 	if (typeof window !== 'undefined') {
-		window.scrollTo(0, 0);
+		window.scrollTo(0, 0)
 	}
 	
 	const dataClue = data.cluesJson

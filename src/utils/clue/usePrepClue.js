@@ -8,7 +8,7 @@ const usePrepClue = (dataClue) => {
 
 	let activeClue = structuredClone(dataClue)
 	
-	useEffect(() => console.log(activeClue), [dataClue]);
+	useEffect(() => console.log(activeClue), [dataClue])
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
@@ -61,7 +61,7 @@ const usePrepClue = (dataClue) => {
 			if (obj.category === 'letter bank') { return [{ ...obj, explainer: "" }, { ...obj, category: 'lb-2' }] }
 			return [obj]
 		}
-		  );
+		  )
 	} else {
 		activeClue.hints = []
 	}

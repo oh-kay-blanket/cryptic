@@ -1,40 +1,40 @@
-import React from "react";
+import React from "react"
 
 const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic) => {
 	
 	const shareScore = async () => {
-		const date = new Date(activeClue.release); // or your clue.date
+		const date = new Date(activeClue.release) // or your clue.date
 		const dateFormatted = new Intl.DateTimeFormat('en-US', {
 			month: 'long',
 			day: 'numeric',
 			year: 'numeric',
-		}).format(date);
+		}).format(date)
 
-		const scoreText = `Learn Cryptic #${activeClue.clid}\n${dateFormatted}\n${stats.guesses} ${stats.guesses == 1 ? 'guess' : 'guesses'}. ${stats.hints} ${stats.hints == 1 ? 'hint' : 'hints'}.`.trim();
+		const scoreText = `Learn Cryptic #${activeClue.clid}\n${dateFormatted}\n${stats.guesses} ${stats.guesses == 1 ? 'guess' : 'guesses'}. ${stats.hints} ${stats.hints == 1 ? 'hint' : 'hints'}.`.trim()
 
-		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
 		if (isMobile && navigator.share) {
 			try {
 				await navigator.share({
-					title: 'Game Score',
+					title: 'Clue Score',
 					text: scoreText,
-				});
-				console.log('Shared successfully');
+				})
+				console.log('Shared successfully')
 			} catch (err) {
 				if (err.name !== 'AbortError') {
-					console.error('Share failed:', err);
-					alert('Could not share your score.');
+					console.error('Share failed:', err)
+					alert('Could not share your score.')
 				}
 			}
 		} else {
 			// Desktop or fallback
 			try {
-				await navigator.clipboard.writeText(scoreText);
-				alert('Score copied to clipboard!');
+				await navigator.clipboard.writeText(scoreText)
+				alert('Score copied to clipboard!')
 			} catch (err) {
-				console.error('Clipboard copy failed:', err);
-				alert('Could not copy your score.');
+				console.error('Clipboard copy failed:', err)
+				alert('Could not copy your score.')
 			}
 		}
 	}
@@ -45,7 +45,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			name:'Show hint',
 			style: 'secondary',
 			onClick: function() {
-				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1}));
+				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1}))
 				setCheckAns(false)
 				setShowMessage(true)
 			}
@@ -55,7 +55,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			style: 'alt', 
 			onClick: function() {
 				addCompletedClue(activeClue, stats, 'h')
-				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1 }));
+				setStats(prevStats => ({ ...prevStats, hints: prevStats.hints + 1 }))
 				setShowMessage(true)
 				setInput([])
 			} 
@@ -64,15 +64,15 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			name:'Check answer', 
 			style: 'primary', 
 			onClick: function() {
-				let correct = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase();
+				let correct = input.join('').toUpperCase() === activeClue.solution.arr.join('').toUpperCase()
 				if (correct) {
-					addCompletedClue(activeClue, stats, 'g');
-					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }));
+					addCompletedClue(activeClue, stats, 'g')
+					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }))
 				} else {
-					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }));
+					setStats(prevStats => ({ ...prevStats, guesses: prevStats.guesses + 1 }))
 				}
-				setCheckAns(true);
-				setShowMessage(true);
+				setCheckAns(true)
+				setShowMessage(true)
 			} 
 		},
 		continue: {
@@ -90,7 +90,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			style: 'secondary',
 			onClick: function(){
 				setReturnLearn(false)
-				setStats({ guesses: 0, hints: 0, how: '' });
+				setStats({ guesses: 0, hints: 0, how: '' })
 			}
 		},
 		endClueGuess: {
@@ -99,11 +99,11 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 			style: 'secondary',
 			onClick: function(){
 				setReturnLearn(false)
-				setStats({ guesses: 0, hints: 0, how: '' });
+				setStats({ guesses: 0, hints: 0, how: '' })
 			}
 		},
 		shareScore: {
-			name: `Share`,
+			name: `Share score`,
 			img: (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -149,10 +149,10 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 		returnLearn: {
 			path: `/learn/${returnLearn}#next`,
 			name: 'Return',
-			style: 'gray',
+			style: 'secondary',
 			onClick: function(){
 				setReturnLearn(false)
-				setStats({ guesses: 0, hints: 0, how: '' });
+				setStats({ guesses: 0, hints: 0, how: '' })
 			}
 		}
 	}

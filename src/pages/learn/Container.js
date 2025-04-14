@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
 
 const Container = () => {
 
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext);
+	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
 		
 	const hasBeenViewed = typeViewed.find(viewed => viewed === 'container')
 	useEffect(() => {
@@ -135,4 +135,4 @@ const Container = () => {
 	)
 }
 
-export default Container;
+export default Container
