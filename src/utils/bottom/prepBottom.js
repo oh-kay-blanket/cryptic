@@ -14,7 +14,7 @@ const prepBottom = (activeClue, nextHint, setNextHint, input, setInput, setShowM
 
 		const emoji = (stats.guesses == 1 && stats.hints == 0) ? perfectEmojis[Math.floor(Math.random() * perfectEmojis.length)] : '🎉'
 
-		const scoreText = `Learn Cryptic #${activeClue.clid}\n${dateFormatted}\n${emoji} ${stats.guesses} ${stats.guesses == 1 ? 'guess' : 'guesses'}. ${stats.hints} ${stats.hints == 1 ? 'hint' : 'hints'}.`.trim()
+		const scoreText = `Learn Cryptic #${activeClue.clid}\n${dateFormatted}\n${emoji} ${stats.guesses} ${stats.guesses == 1 ? 'guess' : 'guesses'}, ${stats.hints} ${stats.hints == 1 ? 'hint' : 'hints'}\nlearncryptic.com`.trim()
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
