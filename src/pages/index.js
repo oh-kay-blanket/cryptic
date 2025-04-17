@@ -9,14 +9,16 @@ const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
 	const { completedClues } = useContext(UserContext)
 
-	const knownUser = (completedClues && completedClues.length > 0) ? true : false
-	const avgGuesses = knownUser ? (completedClues.reduce((sum, item) => sum + item.guesses, 0) / completedClues.length).toFixed(0) : 0
-	const avgHints = knownUser ? (completedClues.reduce((sum, item) => sum + item.hints, 0) / completedClues.length).toFixed(0) : 0
+	const completedGuess = completedClues.filter(clue => clue.how == 'g')
+
+	const knownUser = (completedGuess && completedGuess.length > 0) ? true : false
+	const avgGuesses = knownUser ? (completedGuess.reduce((sum, item) => sum + item.guesses, 0) / completedGuess.length).toFixed(0) : 0
+	const avgHints = knownUser ? (completedGuess.reduce((sum, item) => sum + item.hints, 0) / completedGuess.length).toFixed(0) : 0
 
 	const stats = <div className='title-stats'>
-		<p className='stats-clues'>Clues solved: <span>{completedClues.length}</span></p>
-		<p className='stats-hints'>Average hints: <span>{avgHints}</span></p>
+		<p className='stats-clues'>Clues solved: <span>{completedGuess.length}</span></p>
 		<p className='stats-guesses'>Average guesses: <span>{avgGuesses}</span></p>
+		<p className='stats-hints'>Average hints: <span>{avgHints}</span></p>
 	</div>
 
 	const intro = <div className='title-intro'>
@@ -64,7 +66,7 @@ const Title = ({ data }) => {
 	let btnArr = []
 	
 	if (knownUser) {
-		btnArr = todayClue ? [buttons.learn, buttons.todayClue, buttons.allClues] : [buttons.learn, buttons.viewClues]
+		btnArr = todayClue ? [buttons.todayClue, buttons.learn, buttons.allClues] : [buttons.viewClues, buttons.learn]
 	} else {
 		btnArr = todayClue ? [buttons.learn, buttons.todayClue] : [buttons.learn, buttons.viewClues]
 	}
