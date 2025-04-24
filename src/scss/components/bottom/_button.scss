@@ -27,7 +27,7 @@
 	max-width: 300px;
 
 	@include max(500px) {
-		font-size: 16px;
+		font-size: .85rem;
 	}
 
 	&:hover, &:active {

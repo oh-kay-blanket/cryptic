@@ -92,7 +92,7 @@ const Clues = ({ data }) => {
 
 	return(
 		<Layout>
-			<div className='archive container'>
+			<div className='clues container'>
 				{archiveTiles}
 			</div>
 		</Layout>

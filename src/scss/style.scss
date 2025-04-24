@@ -3,15 +3,17 @@
 @use './base/typo';
 @use './base/bootstrap';
 
+// Pages
+@use './pages/clue';
+@use './pages/clues';
+@use './pages/learn';
+@use './pages/title';
+@use './pages/container-404';
+
 // Components
-@use './components/title.scss';
 @use './components/top-bar';
-@use './components/learn';
-@use './components/archive';
-@use './components/clue-container';
 @use './components/input';
 @use './components/tooltip';
-@use './components/container-404';
 
 // Bottom
 @use './components/bottom/bottom';

@@ -1,11 +1,13 @@
 @use '../../base/var' as *;
 
 .bottom {
-	position: fixed;
+	// position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: $lc-bottom-height;
+	min-height: fit-content;
+	// flex-grow: 1;
+	height: 40%;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;

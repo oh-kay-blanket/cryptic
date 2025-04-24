@@ -70,37 +70,39 @@ const CluePage = ({ data }) => {
 
 	return(
 		<Layout>
-			<div id='clue-container' className='clue container'>
-				<ul className='type'>{typeInsert}</ul>
-				{statsInsert}
-				<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
-					<div>{clueInsert} {solLength}</div>
+			<div className='clue-page'>
+				<div id='clue-container' className='clue container'>
+					<ul className='type'>{typeInsert}</ul>
+					{statsInsert}
+					<div id='clueSectionRef' ref={activeClue.clue.sectionRef} className='clue'>
+						<div>{clueInsert} {solLength}</div>
+					</div>
+					<div className='addLetters'>{addInsert}</div>
+					<div style={{position:'relative'}} className='sol-section'>
+						<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
+						<div id='sourceRef' ref={activeClue.source.ref} className='source'>by {sourceInsert}</div>
+					</div>
 				</div>
-				<div className='addLetters'>{addInsert}</div>
-				<div style={{position:'relative'}} className='sol-section'>
-					<div id='solSectionRef' ref={activeClue.solution.sectionRef} className='solution'>{solInsert}</div>
-					<div id='sourceRef' ref={activeClue.source.ref} className='source'>by {sourceInsert}</div>
-				</div>
+				<Bottom
+					showMessage={showMessage}
+					setShowMessage={setShowMessage}
+					nextHint={nextHint}
+					setNextHint={setNextHint}
+					activeClue={activeClue}
+					addCompletedClue={addCompletedClue}
+					input={input}
+					setInput={setInput}
+					handleInput={handleInput}
+					checkAns={checkAns}
+					setCheckAns={setCheckAns}
+					stats={stats}
+					setStats={setStats}
+					returnLearn={returnLearn}
+					setReturnLearn={setReturnLearn}
+					showLogic={showLogic}
+					setShowLogic={setShowLogic}
+				/>
 			</div>
-			<Bottom
-				showMessage={showMessage}
-				setShowMessage={setShowMessage}
-				nextHint={nextHint}
-				setNextHint={setNextHint}
-				activeClue={activeClue}
-				addCompletedClue={addCompletedClue}
-				input={input}
-				setInput={setInput}
-				handleInput={handleInput}
-				checkAns={checkAns}
-				setCheckAns={setCheckAns}
-				stats={stats}
-				setStats={setStats}
-				returnLearn={returnLearn}
-				setReturnLearn={setReturnLearn}
-				showLogic={showLogic}
-				setShowLogic={setShowLogic}
-			/>
 		</Layout>
 	)
 }
