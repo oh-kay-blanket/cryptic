@@ -13,9 +13,9 @@ import eyeClosed from '../../assets/img/eye--closed.svg'
 
 const CluePage = ({ data }) => {
 
-	if (typeof window !== 'undefined') {
-		window.scrollTo(0, 0)
-	}
+	// if (typeof window !== 'undefined') {
+	// 	window.scrollTo(0, 0)
+	// }
 	
 	const dataClue = data.cluesJson
 	const { addCompletedClue, showType, setShowType, returnLearn, setReturnLearn } = useContext(UserContext)

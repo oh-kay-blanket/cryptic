@@ -69,7 +69,7 @@ const Clues = ({ data }) => {
 		</>
 
 		return (
-		<Link to={`/clues/${clue.clid}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
+		<Link to={`/clues/${clue.clid}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id} onClick={() => { window.scrollTo(0, 0); }}>
 			<div className='archive-release'>
 				<span>
 					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
