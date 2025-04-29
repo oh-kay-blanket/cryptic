@@ -20,7 +20,7 @@
 		height: 60%;
 		// height: $lc-clue-container-height;
 		margin: 0 auto;
-		padding: 0 2rem;
+		padding: 0 1rem;
 		text-align: center;
 		font-size: 1.15rem;
 		text-wrap: balance;
@@ -186,7 +186,7 @@
 				transition: opacity $lc-transition--short ease;
 				text-align: center;
 				text-transform: uppercase;
-				margin: 1rem auto 0;
+				margin-top: 1rem;
 				font-size: 1.25rem;
 
 				@media (max-height: 600px) {
