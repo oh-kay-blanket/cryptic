@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
 				return JSON.parse(storedState)
 			}
 		}
-		return { completedClues: [], showType: true, typeViewed: [] }
+		return { completedClues: [], showType: true, typeViewed: [], streak: 0, lastSolved: '' }
 	})
 	
 
@@ -23,9 +23,34 @@ export const UserProvider = ({ children }) => {
 	let showType = lcState.showType
 	let typeViewed = lcState.typeViewed
 
-	// Persist state to localStorage whenever it changes
 	useEffect(() => {
+		
+		// Whether or not to show type pills in clue container
+		const checkStreak = () => {
+			console.log('checking streak')
+			function isOlderThanYesterday(dateToCheck) {
+				const checkedDate = new Date(dateToCheck);
+				const now = new Date();
+				const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1); // Yesterday at 00:00
+				
+				return checkedDate < yesterday;
+			}
+			console.log('lastSolved', lcState.lastSolved)
+			console.log('streak', lcState.streak)
+			
+			if (isOlderThanYesterday(lcState.lastSolved)) {
+				console.log('streak broken, resetting')
+				setLcState({
+					...lcState,
+					streak: 0
+				})
+			} else {
+				console.log('streak intact, retaining')
+			}
+		}
+		checkStreak()
 		localStorage.setItem("lcState", JSON.stringify(lcState))
+
 	}, [lcState])
 
 	// Functions
@@ -35,15 +60,29 @@ export const UserProvider = ({ children }) => {
 		const repeat = completedClues.find(completed => completed.clid === activeClue.clid)
 		const knownUser = completedClues && completedClues.length > 0
 
+		const isTodayClue = (activeClue) => {
+			const date1 = new Date(activeClue.release)
+			const date2 = new Date()
+		
+			// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
+			const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
+			const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
+		
+			return d1.getTime() === d2.getTime()
+		}	
+		const streak = isTodayClue(activeClue) ? lcState.streak + 1 : lcState.streak
+
 		// Only update if not already in completedClues
 		if (!repeat) {
 			setLcState({
 				...lcState,
+				streak: streak,
+				lastSolved: activeClue.release,	
 				completedClues: [...lcState.completedClues, { 
 					clid: activeClue.clid,
 					guesses: guesses,
 					hints: hints,
-					how: type 
+					how: type,
 				}]
 			})
 		} else {

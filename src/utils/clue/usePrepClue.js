@@ -8,7 +8,7 @@ const usePrepClue = (dataClue) => {
 
 	let activeClue = structuredClone(dataClue)
 	
-	useEffect(() => console.log(activeClue), [dataClue])
+	// useEffect(() => console.log(dataClue), [dataClue])
 
 	// get solution letters
 	const getSolutionLetters = solution => solution.value.split(' ').map(word => word.length)
@@ -125,7 +125,7 @@ const usePrepClue = (dataClue) => {
 		activeClue.hints.forEach((hint, index) => {
 			hint && hint.category && fixList.includes(hint.category) && fixLetters(activeClue, hint, index)
 		})
-	}, [])
+	}, [activeClue])
 
 	return { activeClue }
 }

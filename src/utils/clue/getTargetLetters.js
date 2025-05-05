@@ -15,6 +15,7 @@ const getTargetLetters = (letters, activeClue, hint) => {
 					if (!!h.end && h.end.value[0] === letters[0]) {
 						return h.addLetters.ref.current
 					}
+					return false
 				})
 				
 			// Ref found in clue

@@ -9,7 +9,7 @@ const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
 	const { completedClues } = useContext(UserContext)
 
-	const completedGuess = completedClues.filter(clue => clue.how == 'g')
+	const completedGuess = completedClues.filter(clue => clue.how === 'g')
 
 	const knownUser = (completedGuess && completedGuess.length > 0) ? true : false
 	const avgGuesses = knownUser ? (completedGuess.reduce((sum, item) => sum + item.guesses, 0) / completedGuess.length).toFixed(0) : 0
@@ -41,10 +41,15 @@ const Title = ({ data }) => {
 
 	// buttons
 	const buttons = {
-		learn: {
+		learnNew: {
 			path: '/learn',
 			name: "Learn about cryptics",
 			style: 'alt'
+		},
+		learn: {
+			path: '/learn',
+			name: "Learn about cryptics",
+			style: 'secondary'
 		},
 		todayClue: {
 			path: `/clues/${todayClue.clid}`,
@@ -66,9 +71,9 @@ const Title = ({ data }) => {
 	let btnArr = []
 	
 	if (knownUser) {
-		btnArr = todayClue ? [buttons.todayClue, buttons.learn, buttons.allClues] : [buttons.viewClues, buttons.learn]
+		btnArr = todayClue ? [buttons.todayClue, buttons.allClues, buttons.learn] : [buttons.viewClues, buttons.learn]
 	} else {
-		btnArr = todayClue ? [buttons.learn, buttons.todayClue] : [buttons.learn, buttons.viewClues]
+		btnArr = todayClue ? [buttons.learnNew, buttons.todayClue] : [buttons.learn, buttons.viewClues]
 	}
 
   return (
@@ -79,7 +84,7 @@ const Title = ({ data }) => {
 			<ButtonContainer
 				btnArr={btnArr}
 				stack={true}
-				/>
+			/>
 		</div>
 	</div>
   )

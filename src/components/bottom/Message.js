@@ -1,4 +1,4 @@
-import React, { act, useRef } from 'react'
+import React, { useRef } from 'react'
 import ButtonContainer from './ButtonContainer'
 
 import getMessage from '../../utils/bottom/getMessage'
