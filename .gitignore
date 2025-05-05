@@ -1,5 +1,6 @@
 # Misc
 /node_modules
+/public
 
 # Local files
 **/.DS_Store

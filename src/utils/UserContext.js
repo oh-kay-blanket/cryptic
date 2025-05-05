@@ -16,7 +16,6 @@ export const UserProvider = ({ children }) => {
 		}
 		return { completedClues: [], showType: true, typeViewed: [], streak: 0, lastSolved: '' }
 	})
-	
 
 	// Variables
 	let completedClues = lcState.completedClues
@@ -27,7 +26,6 @@ export const UserProvider = ({ children }) => {
 		
 		// Whether or not to show type pills in clue container
 		const checkStreak = () => {
-			console.log('checking streak')
 			function isOlderThanYesterday(dateToCheck) {
 				const checkedDate = new Date(dateToCheck);
 				const now = new Date();
@@ -59,6 +57,7 @@ export const UserProvider = ({ children }) => {
 		const hints = type === 'h' ? stats.hints + 1 : stats.hints
 		const repeat = completedClues.find(completed => completed.clid === activeClue.clid)
 		const knownUser = completedClues && completedClues.length > 0
+		let streak = lcState.streak == null ? 0 : lcState.streak
 
 		const isTodayClue = (activeClue) => {
 			const date1 = new Date(activeClue.release)
@@ -69,8 +68,9 @@ export const UserProvider = ({ children }) => {
 			const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
 		
 			return d1.getTime() === d2.getTime()
-		}	
-		const streak = isTodayClue(activeClue) ? lcState.streak + 1 : lcState.streak
+		}
+
+		isTodayClue(activeClue) && streak++
 
 		// Only update if not already in completedClues
 		if (!repeat) {
