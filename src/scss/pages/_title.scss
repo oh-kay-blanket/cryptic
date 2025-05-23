@@ -11,7 +11,7 @@
 	.title-logo {
 		max-width: 70px;
 	}
- 
+
 	.title-gif {
 		max-width: 280px;
 	}
@@ -32,7 +32,9 @@
 		border-radius: .5rem;
 		padding: 1rem 2rem;
 
-		.stats-clues, .stats-guesses, .stats-hints {
+		.stats-streak,
+		.stats-guesses,
+		.stats-hints {
 			// display: flex;
 			// justify-content: flex-end;
 			text-align: center;
@@ -48,8 +50,8 @@
 				// background-color: green;
 			}
 		}
-		
-		.stats-clues {
+
+		.stats-streak {
 			// background-color: $lc-gray--light;
 			border: 1px solid $lc-gray--dark;
 		}
