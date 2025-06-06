@@ -73,7 +73,8 @@ const Learn = () => {
 						A “cryptic,” or “British-style” crossword is one in which each clue
 						is a puzzle in itself, involving wordplay such as anagrams,
 						homophones, hidden words, and other devilish tricks.
-						<br />
+					</p>
+					<p>
 						Each clue reads as a sentence, but it’s important to recognize that
 						the meaning of the sentence—its “surface reading”—is not important.
 						Rather, the clue hints at the answer in two different ways, and thus
@@ -85,8 +86,8 @@ const Learn = () => {
 								<strong>Definition</strong>
 							</p>
 							<p>
-								The rest of the clue is a sort of enigmatic hint, in which
-								wordplay gives a second path to the answer.
+								A straightforward (or thinly or thickly disguised!) definition
+								of the answer word(s) appears at the start or end of the clue.
 							</p>
 						</li>
 						<li className='mt-3'>
@@ -94,8 +95,8 @@ const Learn = () => {
 								<strong>Wordplay</strong>
 							</p>
 							<p>
-								A cryptic hint involving anagrams, reversals, hidden words,
-								homophones, or other forms of word manipulation.
+								The rest of the clue is a sort of enigmatic hint, in which
+								wordplay gives a second path to the answer.
 							</p>
 						</li>
 					</ul>
@@ -136,7 +137,8 @@ const Learn = () => {
 					<p className='learn-answer'>
 						Learn Cryptic is a daily game that teaches the cryptic-curious how
 						to decipher clues.
-						<br />
+					</p>
+					<p>
 						As with regular American-style crosswords, it takes a lot of
 						practice to get good at solving cryptic puzzles. For beginners, the
 						learning curve can be steep. To help guide you to the answer, the
