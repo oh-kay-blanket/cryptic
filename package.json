@@ -9,7 +9,8 @@
 		"start": "npm run convert-csv && gatsby clean && gatsby develop",
 		"build": "npm run convert-csv && gatsby clean && gatsby build --prefix-paths",
 		"predeploy": "npm run convert-csv && gatsby clean && gatsby build --prefix-paths",
-		"deploy": "gh-pages -d public --cname learncryptic.com"
+		"deploy": "gh-pages -d public --cname learncryptic.com",
+		"serve": "gatsby serve"
 	},
 	"keywords": [],
 	"author": "",

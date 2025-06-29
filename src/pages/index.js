@@ -8,6 +8,18 @@ const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
 	const { completedClues, streak } = useContext(UserContext)
 
+	// Add loading state to prevent flicker
+	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
+
+	React.useEffect(() => {
+		// Set context as loaded after a brief delay to ensure localStorage has been read
+		const timer = setTimeout(() => {
+			setIsContextLoaded(true)
+		}, 100)
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
@@ -116,6 +128,29 @@ const Title = ({ data }) => {
 		btnArr = todayClue
 			? [buttons.learnNew, buttons.todayClue]
 			: [buttons.learn, buttons.viewClues]
+	}
+
+	// Don't render conditional content until context is loaded
+	if (!isContextLoaded) {
+		return (
+			<div className='title container'>
+				<img className='title-gif' src={logo} alt='' />
+				<div className='title-stats' style={{ visibility: 'hidden' }}>
+					<p className='stats-streak'>
+						Current streak: <span>0 days</span>
+					</p>
+					<p className='stats-guesses'>
+						Average guesses: <span>0</span>
+					</p>
+					<p className='stats-hints'>
+						Average hints: <span>0</span>
+					</p>
+				</div>
+				<div className='title-actions'>
+					<ButtonContainer btnArr={btnArr} stack={true} />
+				</div>
+			</div>
+		)
 	}
 
 	return (
