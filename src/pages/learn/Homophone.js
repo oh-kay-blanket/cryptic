@@ -60,14 +60,20 @@ const Homophone = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const hash = window.location.hash
-			if (hash) {
+			// Only proceed if hash exists and is not empty
+			if (hash && hash.length > 1) {
 				// slight delay ensures element is present
 				setTimeout(() => {
-					const el = document.querySelector(hash)
-					if (el) {
-						el.scrollIntoView({ behavior: 'instant' })
+					try {
+						const el = document.querySelector(hash)
+						if (el) {
+							el.scrollIntoView({ behavior: 'instant' })
+						}
+					} catch (error) {
+						// Silently handle any errors with scrollIntoView
+						console.warn('Error scrolling to anchor:', error)
 					}
-				}, 1)
+				}, 10) // Increased timeout for better reliability
 			}
 		}
 	}, [])

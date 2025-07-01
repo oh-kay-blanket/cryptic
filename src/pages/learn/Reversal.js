@@ -70,14 +70,20 @@ const Reversal = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const hash = window.location.hash
-			if (hash) {
+			// Only proceed if hash exists and is not empty
+			if (hash && hash.length > 1) {
 				// slight delay ensures element is present
 				setTimeout(() => {
-					const el = document.querySelector(hash)
-					if (el) {
-						el.scrollIntoView({ behavior: 'instant' })
+					try {
+						const el = document.querySelector(hash)
+						if (el) {
+							el.scrollIntoView({ behavior: 'instant' })
+						}
+					} catch (error) {
+						// Silently handle any errors with scrollIntoView
+						console.warn('Error scrolling to anchor:', error)
 					}
-				}, 1)
+				}, 10) // Increased timeout for better reliability
 			}
 		}
 	}, [])
@@ -98,7 +104,7 @@ const Reversal = () => {
 					<ul className='indicators'>{indicators}</ul>
 					<span style={{ fontSize: 0.8 + 'rem' }}>
 						*In a normal cryptic puzzle with across and down entries, a reversal
-						in a down entry can be indicated by a word like “up” or “north”.
+						in a down entry can be indicated by a word like "up" or "north".
 					</span>
 				</div>
 

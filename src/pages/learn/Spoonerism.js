@@ -55,14 +55,20 @@ const Spoonerism = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const hash = window.location.hash
-			if (hash) {
+			// Only proceed if hash exists and is not empty
+			if (hash && hash.length > 1) {
 				// slight delay ensures element is present
 				setTimeout(() => {
-					const el = document.querySelector(hash)
-					if (el) {
-						el.scrollIntoView({ behavior: 'instant' })
+					try {
+						const el = document.querySelector(hash)
+						if (el) {
+							el.scrollIntoView({ behavior: 'instant' })
+						}
+					} catch (error) {
+						// Silently handle any errors with scrollIntoView
+						console.warn('Error scrolling to anchor:', error)
 					}
-				}, 1)
+				}, 10) // Increased timeout for better reliability
 			}
 		}
 	}, [])
@@ -74,12 +80,11 @@ const Spoonerism = () => {
 
 				<div className='learn-section'>
 					<h1>Spoonerism</h1>
-					<p>Swap the sounds at beginnings of two words.</p>
 					<p>
-						Named for a British Oxford don, Reverend William Archibald Spooner
-						(1844–1930), who was reputed to make this speaking error with some
-						frequency. A spoonerism clue will make reference to Reverend
-						Spooner.
+						Swap the sounds at beginnings of two words. Named for a British
+						Oxford don, Reverend William Archibald Spooner (1844–1930), who was
+						reputed to make this speaking error with some frequency. A
+						spoonerism clue will make reference to Reverend Spooner.
 					</p>
 				</div>
 
@@ -92,38 +97,7 @@ const Spoonerism = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
-					<div className='example-container'>
-						<p className='example'>
-							Clean up, shake a tower, then spoon (4,1,6)
-						</p>
-						<div className='explanation'>
-							<ul className='mt-0'>
-								<li>
-									The definition is <strong>Clean up</strong>
-								</li>
-								<li>
-									<strong>then spoon</strong> indicates a spoonerism
-								</li>
-							</ul>
-							<p className='text-center'>
-								<strong>shake a tower</strong> → <strong>take a shower</strong>
-							</p>
-							<div className='solution'>
-								<span className='letter'>t</span>
-								<span className='letter'>a</span>
-								<span className='letter'>k</span>
-								<span className='letter'>e</span>
-								<span className='letter'>a</span>
-								<span className='letter'>s</span>
-								<span className='letter'>h</span>
-								<span className='letter'>o</span>
-								<span className='letter'>w</span>
-								<span className='letter'>e</span>
-								<span className='letter'>r</span>
-							</div>
-						</div>
-					</div>
+					<h2>Example</h2>
 
 					<div className='example-container'>
 						<p className='example'>

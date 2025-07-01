@@ -49,14 +49,20 @@ const Combination = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const hash = window.location.hash
-			if (hash) {
+			// Only proceed if hash exists and is not empty
+			if (hash && hash.length > 1) {
 				// slight delay ensures element is present
 				setTimeout(() => {
-					const el = document.querySelector(hash)
-					if (el) {
-						el.scrollIntoView({ behavior: 'instant' })
+					try {
+						const el = document.querySelector(hash)
+						if (el) {
+							el.scrollIntoView({ behavior: 'instant' })
+						}
+					} catch (error) {
+						// Silently handle any errors with scrollIntoView
+						console.warn('Error scrolling to anchor:', error)
 					}
-				}, 1)
+				}, 10) // Increased timeout for better reliability
 			}
 		}
 	}, [])
@@ -69,38 +75,35 @@ const Combination = () => {
 				<div className='learn-section'>
 					<h1>Combination</h1>
 					<p>
-						It’s common for clues to employ more than one type of wordplay. A
-						single clue will often involve two, three, or even more types of
-						wordplay. Learn Cryptic will show you how wordplay types can be
-						combined in a single clue.{' '}
+						It's common for a clue to employ more than one type of wordplay—a
+						single clue will often involve two, or sometimes even three (or
+						more) varieties. Learn Cryptic will show you how multiple kinds of
+						wordplay can appear in a single clue.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2>Example</h2>
 					<div className='example-container'>
 						<p className='example'>
-							Boosting not nearly all of a musical sound (5)
+							Republican rejecting one city in Nevada (4)
 						</p>
 						<div className='explanation'>
 							<ul className='mt-0'>
 								<li>
-									The definition is <strong>of a musical sound</strong>
+									The definition is <strong>CITY IN NEVADA</strong>
 								</li>
 								<li>
-									A clue like this would be used in a Down crossword clue.{' '}
-									<strong>Boosting</strong> instructs us to write{' '}
-									<strong>not</strong> upward (a reversal), giving us{' '}
-									<strong>ton</strong>
+									<strong>REPUBLICAN</strong> can be <strong>R</strong>
 								</li>
 								<li>
-									<strong>nearly</strong> indicates a deletion on{' '}
-									<strong>all</strong>, giving us <strong>al</strong>
+									<strong>REJECTING</strong> indicates a reversal of{' '}
+									<strong>ONE</strong>, giving us <strong>ENO</strong>
 								</li>
 							</ul>
 							<p className='text-center'>
-								<strong>ton</strong> + <strong>al</strong> ={' '}
-								<strong>tonal</strong>
+								<strong>R</strong> + <strong>ENO</strong> ={' '}
+								<strong>RENO</strong>
 							</p>
 							<div className='solution'>
 								<span className='letter'>t</span>
@@ -117,6 +120,15 @@ const Combination = () => {
 							Caressed, Don excitedly bolted outside (7)
 						</p>
 						<div className='explanation'>
+							<p
+								style={{
+									fontWeight: '500',
+									marginBottom: '0.5rem',
+									fontStyle: 'italic',
+								}}
+							>
+								This clue combines an anagram with a container
+							</p>
 							<ul className='mt-0'>
 								<li>
 									The definition is <strong>Caressed</strong>

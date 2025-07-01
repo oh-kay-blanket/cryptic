@@ -52,14 +52,20 @@ const Learn = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const hash = window.location.hash
-			if (hash) {
+			// Only proceed if hash exists and is not empty
+			if (hash && hash.length > 1) {
 				// slight delay ensures element is present
 				setTimeout(() => {
-					const el = document.querySelector(hash)
-					if (el) {
-						el.scrollIntoView({ behavior: 'instant' })
+					try {
+						const el = document.querySelector(hash)
+						if (el) {
+							el.scrollIntoView({ behavior: 'instant' })
+						}
+					} catch (error) {
+						// Silently handle any errors with scrollIntoView
+						console.warn('Error scrolling to anchor:', error)
 					}
-				}, 1)
+				}, 10) // Increased timeout for better reliability
 			}
 		}
 	}, [])
@@ -70,13 +76,13 @@ const Learn = () => {
 				<div className='learn-section'>
 					<h2 className='learn-question'>What is a cryptic crossword?</h2>
 					<p className='learn-answer'>
-						A “cryptic,” or “British-style” crossword is one in which each clue
+						A "cryptic," or "British-style" crossword is one in which each clue
 						is a puzzle in itself, involving wordplay such as anagrams,
 						homophones, hidden words, and other devilish tricks.
 					</p>
 					<p>
-						Each clue reads as a sentence, but it’s important to recognize that
-						the meaning of the sentence—its “surface reading”—is not important.
+						Each clue reads as a sentence, but it's important to recognize that
+						the meaning of the sentence—its "surface reading"—is not important.
 						Rather, the clue hints at the answer in two different ways, and thus
 						is composed of two parts:
 					</p>
@@ -112,7 +118,7 @@ const Learn = () => {
 								</li>
 								<li>
 									<strong>WILD</strong> indicates an anagram—picture the letters
-									in the word <strong>WEST</strong> “going wild”
+									in the word <strong>WEST</strong> "going wild"
 								</li>
 								<li>
 									<strong>WEST</strong> anagrams to <strong>STEW</strong>,
@@ -183,10 +189,10 @@ const Learn = () => {
 					<ul className='learn-answer'>
 						<li>
 							A new clue is released each day. Access past clues from the main
-							menu via the “See all clues” button.
+							menu via the "See all clues" button.
 						</li>
 						<li>
-							For each day’s clue, the app keeps track of how many guesses it
+							For each day's clue, the app keeps track of how many guesses it
 							took you to find the solution, and how many hints you used.{' '}
 						</li>
 						<li>
@@ -194,15 +200,15 @@ const Learn = () => {
 							pills that indicate the clue type(s).
 						</li>
 						<li>
-							If you’ve correctly guessed the answer but you’re not sure how the
-							clue works, press the “Show logic” button to be guided through the
+							If you've correctly guessed the answer but you're not sure how the
+							clue works, press the "Show logic" button to be guided through the
 							steps.
 						</li>
 						<li>
-							Share your results with friends using the “Share score” button.
+							Share your results with friends using the "Share score" button.
 						</li>
 					</ul>
-					<p>Now let’s dive in and try a few clues!</p>
+					<p>Now let's dive in and try a few clues!</p>
 					<ButtonContainer btnArr={btnArr} stack={true} />
 				</div>
 			</div>
