@@ -89,14 +89,6 @@ const Spoonerism = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>
-						Spoonerisms will include some reference to a spoon or Reverand
-						Spooner (the person who invented spoonerisms)
-					</p>
-				</div>
-
-				<div className='learn-section'>
 					<h2>Example</h2>
 
 					<div className='example-container'>

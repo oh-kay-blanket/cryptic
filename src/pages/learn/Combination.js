@@ -77,8 +77,7 @@ const Combination = () => {
 					<p>
 						It's common for a clue to employ more than one type of wordplay—a
 						single clue will often involve two, or sometimes even three (or
-						more) varieties. Learn Cryptic will show you how multiple kinds of
-						wordplay can appear in a single clue.
+						more) varieties.
 					</p>
 				</div>
 
@@ -89,6 +88,15 @@ const Combination = () => {
 							Republican rejecting one city in Nevada (4)
 						</p>
 						<div className='explanation'>
+							<p
+								style={{
+									fontWeight: '500',
+									marginBottom: '0.5rem',
+									fontStyle: 'italic',
+								}}
+							>
+								This clue combines a charade with a reversal
+							</p>
 							<ul className='mt-0'>
 								<li>
 									The definition is <strong>CITY IN NEVADA</strong>
