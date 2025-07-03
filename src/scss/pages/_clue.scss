@@ -48,7 +48,7 @@
 				align-items: center;
 				margin: 0 .5rem 0 0;
 				cursor: pointer;
-				
+
 				&.type-pill {
 					padding: .25rem .5rem;
 					font-family: $lc-font--sans;
@@ -64,7 +64,7 @@
 					font-family: $lc-font--sans;
 					font-weight: 500;
 					color: $lc-text--light;
-					
+
 					button {
 						font-size: .7rem;
 					}
@@ -75,7 +75,7 @@
 					padding: 0;
 				}
 			}
-			
+
 		}
 
 		.clue-stats {
@@ -93,18 +93,19 @@
 			@media (max-height: 600px) {
 				margin: .5rem;
 			}
-			
-			.stat-guesses, .stat-hints {
+
+			.stat-guesses,
+			.stat-hints {
 				margin: 2px auto;
 				padding: 2px 3px;
 				border-radius: 4px;
-				
+
 				.stat {
 					font-size: .85rem;
 					font-weight: 700;
 				}
 			}
-			
+
 			.stat-hints {
 				background-color: $lc-secondary--light;
 				margin-right: .5rem;
@@ -149,7 +150,7 @@
 			user-select: none;
 
 			.word {
-				
+
 				.letter {
 					pointer-events: none;
 					user-select: none;
@@ -181,6 +182,9 @@
 			align-items: center;
 
 			.solution {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
 				font-family: $lc-font--alt;
 				z-index: 10;
 				transition: opacity $lc-transition--short ease;
@@ -215,7 +219,8 @@
 						transition: opacity $lc-transition--short ease;
 					}
 
-					.typeLetter, .solLetter {
+					.typeLetter,
+					.solLetter {
 						position: absolute;
 						top: 50%;
 						left: 50%;
