@@ -70,26 +70,26 @@ const HiddenWord = () => {
 	))
 
 	// Handle anchor link
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			const hash = window.location.hash
-			// Only proceed if hash exists and is not empty
-			if (hash && hash.length > 1) {
-				// slight delay ensures element is present
-				setTimeout(() => {
-					try {
-						const el = document.querySelector(hash)
-						if (el) {
-							el.scrollIntoView({ behavior: 'instant' })
-						}
-					} catch (error) {
-						// Silently handle any errors with scrollIntoView
-						console.warn('Error scrolling to anchor:', error)
-					}
-				}, 10) // Increased timeout for better reliability
-			}
-		}
-	}, [])
+	// useEffect(() => {
+	// if (typeof window !== 'undefined') {
+	// 	const hash = window.location.hash
+	// 	// Only proceed if hash exists and is not empty
+	// 	if (hash && hash.length > 1) {
+	// 		// slight delay ensures element is present
+	// 		setTimeout(() => {
+	// 			try {
+	// 				const el = document.querySelector(hash)
+	// 				if (el) {
+	// 					el.scrollIntoView({ behavior: 'instant' })
+	// 				}
+	// 			} catch (error) {
+	// 				// Silently handle any errors with scrollIntoView
+	// 				console.warn('Error scrolling to anchor:', error)
+	// 			}
+	// 		}, 10) // Increased timeout for better reliability
+	// 	}
+	// }
+	// }, [])
 
 	return (
 		<Layout>
