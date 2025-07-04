@@ -73,26 +73,30 @@ const Deletion = () => {
 	))
 
 	// Handle anchor link
-	// useEffect(() => {
-	// if (typeof window !== 'undefined') {
-	// 	const hash = window.location.hash
-	// 	// Only proceed if hash exists and is not empty
-	// 	if (hash && hash.length > 1) {
-	// 		// slight delay ensures element is present
-	// 		setTimeout(() => {
-	// 			try {
-	// 				const el = document.querySelector(hash)
-	// 				if (el) {
-	// 					el.scrollIntoView({ behavior: 'instant' })
-	// 				}
-	// 			} catch (error) {
-	// 				// Silently handle any errors with scrollIntoView
-	// 				console.warn('Error scrolling to anchor:', error)
-	// 			}
-	// 		}, 10) // Increased timeout for better reliability
-	// 	}
-	// }
-	// }, [])
+	useEffect(() => {
+		if (
+			typeof window !== 'undefined' &&
+			window.location.hash &&
+			window.location.hash.length > 1
+		) {
+			const hash = window.location.hash
+
+			// slight delay ensures element is present
+			setTimeout(() => {
+				try {
+					const el = document.querySelector(hash)
+					if (el) {
+						el.scrollIntoView({ behavior: 'instant' })
+					}
+				} catch (error) {
+					// Silently handle any errors with scrollIntoView
+					console.warn('Error scrolling to anchor:', error)
+				}
+			}, 10) // Increased timeout for better reliability
+		} else {
+			document.body.scrollTo(0, 0)
+		}
+	}, [])
 
 	return (
 		<Layout>
