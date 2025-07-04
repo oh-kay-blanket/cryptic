@@ -146,7 +146,7 @@ const Title = ({ data }) => {
 						Average hints: <span>0</span>
 					</p>
 				</div>
-				<div className='title-actions'>
+				<div className='title-actions' style={{ visibility: 'hidden' }}>
 					<ButtonContainer btnArr={btnArr} stack={true} />
 				</div>
 			</div>
