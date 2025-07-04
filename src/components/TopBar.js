@@ -59,6 +59,7 @@ const TopBar = () => {
 		setReturnLearn,
 		completedClues = [],
 		streak = 0,
+		longestStreak = 0,
 	} = useContext(UserContext)
 	const [helpOpen, setHelpOpen] = useState(false)
 	const [statsOpen, setStatsOpen] = useState(false)
@@ -74,14 +75,14 @@ const TopBar = () => {
 			? (
 					completedClues.reduce((sum, c) => sum + (c.guesses || 0), 0) /
 					totalSolved
-			  ).toFixed(2)
+			  ).toFixed(0)
 			: '0'
 	const avgHints =
 		totalSolved > 0
 			? (
 					completedClues.reduce((sum, c) => sum + (c.hints || 0), 0) /
 					totalSolved
-			  ).toFixed(2)
+			  ).toFixed(0)
 			: '0'
 
 	return (
@@ -112,9 +113,12 @@ const TopBar = () => {
 			<Modal open={helpOpen} onClose={() => setHelpOpen(false)}>
 				<h2>About Cryptic</h2>
 				<p>
-					Welcome to Cryptic! If you're having difficulty understanding the
-					clues, visit the <Link to='/learn'>Learn</Link> page to learn more
-					about cryptics and practice with more basic clues.
+					Welcome to Learn Cryptic! If you're having difficulty understanding
+					the clues, visit the{' '}
+					<Link to='/learn' className='bold'>
+						Learn
+					</Link>{' '}
+					page to learn more about cryptics and practice with more basic clues.
 				</p>
 				<p>
 					Have questions, comments, or want to contribute future cryptic clues?{' '}
@@ -122,21 +126,24 @@ const TopBar = () => {
 				</p>
 			</Modal>
 			<Modal open={statsOpen} onClose={() => setStatsOpen(false)}>
-				<h2>Your Stats</h2>
-				<ul>
-					<li>
-						<strong>Streak:</strong> {streak}
-					</li>
-					<li>
-						<strong>Total clues solved:</strong> {totalSolved}
-					</li>
-					<li>
-						<strong>Average guesses per clue:</strong> {avgGuesses}
-					</li>
-					<li>
-						<strong>Average hints per clue:</strong> {avgHints}
-					</li>
-				</ul>
+				<h2>Statistics</h2>
+				<div className='stats-list'>
+					<div className='stat-item'>
+						🔥 <strong>Current Streak:</strong> {streak}
+					</div>
+					<div className='stat-item'>
+						🏆 <strong>Longest Streak:</strong> {longestStreak}
+					</div>
+					<div className='stat-item'>
+						🧩 <strong>Clues solved:</strong> {totalSolved}
+					</div>
+					<div className='stat-item'>
+						🎯 <strong>Avg guesses:</strong> {avgGuesses}
+					</div>
+					<div className='stat-item'>
+						💡 <strong>Avg hints:</strong> {avgHints}
+					</div>
+				</div>
 			</Modal>
 		</>
 	)

@@ -23,6 +23,7 @@ export const UserProvider = ({ children }) => {
 			showType: true,
 			typeViewed: [],
 			streak: 0,
+			longestStreak: 0,
 			lastSolved: '',
 		}
 	})
@@ -32,6 +33,7 @@ export const UserProvider = ({ children }) => {
 	let showType = lcState.showType
 	let typeViewed = lcState.typeViewed
 	let streak = lcState.streak
+	let longestStreak = lcState.longestStreak
 
 	useEffect(() => {
 		// Whether or not to show type pills in clue container
@@ -73,6 +75,8 @@ export const UserProvider = ({ children }) => {
 		)
 		const knownUser = completedClues && completedClues.length > 0
 		let streak = lcState.streak == null ? 0 : lcState.streak
+		let longestStreak =
+			lcState.longestStreak == null ? 0 : lcState.longestStreak
 
 		const isTodayClue = (activeClue) => {
 			const date1 = new Date(activeClue.release)
@@ -95,11 +99,17 @@ export const UserProvider = ({ children }) => {
 
 		isTodayClue(activeClue) && streak++
 
+		// Update longest streak if current streak is longer
+		if (streak > longestStreak) {
+			longestStreak = streak
+		}
+
 		// Only update if not already in completedClues
 		if (!repeat) {
 			setLcState({
 				...lcState,
 				streak: streak,
+				longestStreak: longestStreak,
 				lastSolved: activeClue.release,
 				completedClues: [
 					...lcState.completedClues,
@@ -158,6 +168,7 @@ export const UserProvider = ({ children }) => {
 			completedClues,
 			addCompletedClue,
 			streak,
+			longestStreak,
 			showType,
 			setShowType,
 			typeViewed,
@@ -165,7 +176,7 @@ export const UserProvider = ({ children }) => {
 			returnLearn,
 			setReturnLearn,
 		}),
-		[completedClues, streak, showType, typeViewed, returnLearn]
+		[completedClues, streak, longestStreak, showType, typeViewed, returnLearn]
 	)
 
 	return (

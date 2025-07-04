@@ -63,6 +63,7 @@
 	background: #fff;
 	padding: 2rem;
 	border-radius: 8px;
+	width: 400px;
 	max-width: 90vw;
 	max-height: 90vh;
 	overflow-y: auto;
@@ -83,4 +84,20 @@
 	border: none;
 	font-size: 2rem;
 	cursor: pointer;
+	color: #aaa;
+}
+
+.stats-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.stat-item {
+	display: flex;
+	align-items: center;
+
+	strong {
+		margin: 0 0.5rem;
+	}
 }
