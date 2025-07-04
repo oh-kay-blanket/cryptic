@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
+import Layout from '../components/layout'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
@@ -133,34 +134,38 @@ const Title = ({ data }) => {
 	// Don't render conditional content until context is loaded
 	if (!isContextLoaded) {
 		return (
-			<div className='title container'>
-				<img className='title-gif' src={logo} alt='' />
-				<div className='title-stats' style={{ visibility: 'hidden' }}>
-					<p className='stats-streak'>
-						Current streak: <span>0 days</span>
-					</p>
-					<p className='stats-guesses'>
-						Average guesses: <span>0</span>
-					</p>
-					<p className='stats-hints'>
-						Average hints: <span>0</span>
-					</p>
+			<Layout>
+				<div className='title container'>
+					<img className='title-gif' src={logo} alt='' />
+					<div className='title-stats' style={{ visibility: 'hidden' }}>
+						<p className='stats-streak'>
+							Current streak: <span>0 days</span>
+						</p>
+						<p className='stats-guesses'>
+							Average guesses: <span>0</span>
+						</p>
+						<p className='stats-hints'>
+							Average hints: <span>0</span>
+						</p>
+					</div>
+					<div className='title-actions' style={{ visibility: 'hidden' }}>
+						<ButtonContainer btnArr={btnArr} stack={true} />
+					</div>
 				</div>
-				<div className='title-actions' style={{ visibility: 'hidden' }}>
-					<ButtonContainer btnArr={btnArr} stack={true} />
-				</div>
-			</div>
+			</Layout>
 		)
 	}
 
 	return (
-		<div className='title container'>
-			<img className='title-gif' src={logo} alt='' />
-			{knownUser ? stats : intro}
-			<div className='title-actions'>
-				<ButtonContainer btnArr={btnArr} stack={true} />
+		<Layout>
+			<div className='title container'>
+				<img className='title-gif' src={logo} alt='' />
+				{knownUser ? stats : intro}
+				<div className='title-actions'>
+					<ButtonContainer btnArr={btnArr} stack={true} />
+				</div>
 			</div>
-		</div>
+		</Layout>
 	)
 }
 

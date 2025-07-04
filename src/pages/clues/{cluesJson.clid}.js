@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql } from 'gatsby'
 import { UserContext } from '../../utils/UserContext'
 import Layout from '../../components/layout'
@@ -9,6 +9,10 @@ import manageClue from '../../utils/clue/useManageClue'
 
 import eyeOpen from '../../assets/img/eye--open.svg'
 import eyeClosed from '../../assets/img/eye--closed.svg'
+import d1 from '../../assets/img/difficulty/1.svg'
+import d2 from '../../assets/img/difficulty/2.svg'
+import d3 from '../../assets/img/difficulty/3.svg'
+import d4 from '../../assets/img/difficulty/4.svg'
 
 const CluePage = ({ data }) => {
 	// if (typeof window !== 'undefined') {
@@ -16,6 +20,38 @@ const CluePage = ({ data }) => {
 	// }
 
 	const dataClue = data.cluesJson
+	const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false)
+
+	// Helper functions for difficulty
+	const getImg = (difficulty) => {
+		switch (Number(difficulty)) {
+			case 1:
+				return d1
+			case 2:
+				return d2
+			case 3:
+				return d3
+			case 4:
+				return d4
+			default:
+				return d1
+		}
+	}
+
+	const getDifficultyText = (difficulty) => {
+		switch (Number(difficulty)) {
+			case 1:
+				return 'Easy'
+			case 2:
+				return 'Moderate'
+			case 3:
+				return 'Difficult'
+			case 4:
+				return 'Very Difficult'
+			default:
+				return 'Easy'
+		}
+	}
 	const {
 		addCompletedClue,
 		showType,
@@ -228,6 +264,34 @@ const CluePage = ({ data }) => {
 						<div id='sourceRef' ref={activeClue.source.ref} className='source'>
 							by {sourceInsert}
 						</div>
+					</div>
+					<div className='clue-difficulty'>
+						<button
+							className='difficulty-button'
+							aria-label={`Difficulty: ${getDifficultyText(
+								dataClue.difficulty
+							)}`}
+							onMouseEnter={() => setShowDifficultyTooltip(true)}
+							onMouseLeave={() => setShowDifficultyTooltip(false)}
+							onClick={() => setShowDifficultyTooltip(!showDifficultyTooltip)}
+							onKeyDown={(e) => {
+								if (e.key === 'Enter' || e.key === ' ') {
+									e.preventDefault()
+									setShowDifficultyTooltip(!showDifficultyTooltip)
+								}
+							}}
+						>
+							<img
+								className='difficulty-icon'
+								src={getImg(dataClue.difficulty)}
+								alt={`Difficulty level ${dataClue.difficulty}`}
+							/>
+						</button>
+						{showDifficultyTooltip && (
+							<div className='difficulty-tooltip'>
+								{getDifficultyText(dataClue.difficulty)}
+							</div>
+						)}
 					</div>
 				</div>
 				<Bottom

@@ -8,15 +8,78 @@
 	left: 0;
 	background-color: $lc-gray--light;
 	z-index: 1;
-	
+
 	.container {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 		align-items: center;
 		padding: .5rem;
+	}
 
-		a img {
-			max-width: 40px;
+	.topbar-left {
+		display: flex;
+		align-items: center;
+	}
+
+	.icon-btn {
+		background: none;
+		border: none;
+		margin-right: .5rem;
+		margin-left: 0;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		img,
+		svg {
+			filter: grayscale(1) brightness(0.7);
 		}
 	}
+
+	.topbar-logo img {
+		max-width: 40px;
+	}
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-content {
+	background: #fff;
+	padding: 2rem;
+	border-radius: 8px;
+	max-width: 90vw;
+	max-height: 90vh;
+	overflow-y: auto;
+	position: relative;
+	min-width: 300px;
+
+	@media (max-width: 600px) {
+		padding: 1rem;
+		min-width: 0;
+	}
+}
+
+.modal-close {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	background: none;
+	border: none;
+	font-size: 2rem;
+	cursor: pointer;
 }

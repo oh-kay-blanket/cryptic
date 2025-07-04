@@ -15,7 +15,7 @@
 		font-size: 14px;
 		text-transform: none;
 		color: #fff;
-		background-color: $lc-secondary--dark;
+		background-color: #444;
 		padding: .5rem .25rem;
 		border-radius: 4px;
 		z-index: 7;
@@ -34,7 +34,7 @@
 			border-style: solid;
 			border-color: transparent transparent $lc-secondary--dark transparent;
 		}
-		
+
 		&.above:after {
 			border-color: $lc-secondary--dark transparent transparent transparent;
 		}
@@ -49,7 +49,9 @@
 		}
 	}
 
-	&:focus, &:active, &:hover {
+	&:focus,
+	&:active,
+	&:hover {
 		.tooltip {
 			visibility: visible;
 		}

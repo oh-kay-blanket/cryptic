@@ -2,7 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const Tooltip = ({ text }) => {
-
 	const data = useStaticQuery(graphql`
 		query AllTypeQuery {
 			allTypeJson {
@@ -14,15 +13,17 @@ const Tooltip = ({ text }) => {
 			}
 		}
 	`)
-	
-	const matchType = data.allTypeJson.nodes.find(type => type.type.toUpperCase() === text.toUpperCase())
 
-    return (
-        <div role="tooltip" className="tooltip" id={text}>
+	const matchType = data.allTypeJson.nodes.find(
+		(type) => type.type.toUpperCase() === text.toUpperCase()
+	)
+
+	return (
+		<div role='tooltip' className='tooltip' id={text}>
 			<p className='tooltip-description'>{matchType.description}</p>
 			<p className='tooltip-example'>{matchType.example}</p>
 		</div>
-    )
+	)
 }
 
 export default Tooltip
