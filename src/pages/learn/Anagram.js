@@ -103,20 +103,20 @@ const Anagram = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Anagram</h1>
-					<p>
+					<h2 className='text-4xl font-bold my-4'>Anagram</h2>
+					<p className='my-2'>
 						Reorder the letters of a given word (or words) to make a new word
 						(or words).
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>
 						An indicator will tip you off to the presence of an anagram. Common
 						indicators include:
 					</p>
@@ -124,11 +124,11 @@ const Anagram = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>One unusual role in "The Matrix" (3)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>role in "The Matrix"</strong>
 								</li>
@@ -151,7 +151,7 @@ const Anagram = () => {
 					<div className='example-container'>
 						<p className='example'>Altering odd three-sided figure (8)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>three-sided figure</strong>
 								</li>
@@ -175,7 +175,7 @@ const Anagram = () => {
 							</div>
 						</div>
 					</div>
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

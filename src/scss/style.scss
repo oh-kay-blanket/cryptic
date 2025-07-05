@@ -21,3 +21,8 @@
 @use './components/bottom/button';
 @use './components/bottom/keyboard';
 @use './components/bottom/message';
+
+// Tailwind CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

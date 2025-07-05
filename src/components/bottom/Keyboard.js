@@ -22,7 +22,7 @@ const Keyboard = ({ handleInput }) => {
     }, [handleInput])
 
 	return(
-		<div className='container keyboard'>
+		<div className='lc-container keyboard'>
 			<div className='k-row k-row-1'>
 				<button onClick={()=>handleInput('Q')}><span>Q</span></button>
 				<button onClick={()=>handleInput('W')}><span>W</span></button>

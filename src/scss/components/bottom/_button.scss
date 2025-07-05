@@ -3,11 +3,14 @@
 
 .button-container {
 	&.stack {
-		a, .show-btn {
+
+		a,
+		.show-btn {
 			min-width: fit-content;
 			width: 60%;
 			max-width: 300px;
 		}
+
 		a .show-btn {
 			width: 100%;
 		}
@@ -18,11 +21,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    outline: none;
-    border: none;
-    padding: .5rem .75rem;
-    margin: .5rem;
-    cursor: pointer;
+	outline: none;
+	border: none;
+	padding: .5rem .75rem;
+	margin: .25rem;
+	cursor: pointer;
 	border-radius: 50px;
 	max-width: 300px;
 
@@ -30,7 +33,8 @@
 		font-size: .85rem;
 	}
 
-	&:hover, &:active {
+	&:hover,
+	&:active {
 		filter: brightness(.95);
 	}
 
@@ -48,7 +52,8 @@
 		background: none;
 		border: 1px solid $lc-text;
 
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			filter: brightness(.95);
 			background-color: $lc-gray;
 			border: 1px solid $lc-gray;
@@ -60,7 +65,8 @@
 		background-color: $lc-gray--light;
 		border: 1px solid $lc-gray--light;
 
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			filter: brightness(.95);
 			background-color: $lc-gray;
 			border: 1px solid $lc-gray;

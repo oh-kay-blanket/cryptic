@@ -73,12 +73,12 @@ const Combination = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Combination</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Combination</h2>
+					<p className='my-2'>
 						It's common for a clue to employ more than one type of wordplay—a
 						single clue will often involve two, or sometimes even three (or
 						more) varieties.
@@ -86,7 +86,7 @@ const Combination = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Example</h2>
+					<h2 className='text-2xl font-bold my-4'>Example</h2>
 					<div className='example-container'>
 						<p className='example'>
 							Republican rejecting one city in Nevada (4)
@@ -101,7 +101,7 @@ const Combination = () => {
 							>
 								This clue combines a charade with a reversal
 							</p>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>CITY IN NEVADA</strong>
 								</li>
@@ -141,7 +141,7 @@ const Combination = () => {
 							>
 								This clue combines an anagram with a container
 							</p>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Caressed</strong>
 								</li>

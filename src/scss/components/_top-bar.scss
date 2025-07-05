@@ -3,13 +3,13 @@
 .top-bar {
 	position: fixed;
 	width: 100vw;
-	height: $lc-top-height;
+	// height: $lc-top-height;
 	top: 0;
 	left: 0;
 	background-color: $lc-gray--light;
 	z-index: 1;
 
-	.container {
+	.top-bar-container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -24,7 +24,7 @@
 	.icon-btn {
 		background: none;
 		border: none;
-		margin-right: .5rem;
+		margin-right: 1rem;
 		margin-left: 0;
 		cursor: pointer;
 		display: flex;
@@ -90,7 +90,7 @@
 .stats-list {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: .75rem;
 }
 
 .stat-item {

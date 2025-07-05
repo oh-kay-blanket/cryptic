@@ -81,22 +81,22 @@ const DoubleDefinition = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Double Definition</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Double Definition</h2>
+					<p className='my-2'>
 						The clue can be split into two parts that each define the solution.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Tightens up verb forms (6)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									Both <strong>Tightens up</strong> and{' '}
 									<strong>verb forms</strong> are definitions
@@ -122,7 +122,7 @@ const DoubleDefinition = () => {
 					<div className='example-container'>
 						<p className='example'>Throw black goo (5)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									Both <strong>Throw</strong> and <strong>black goo</strong> are
 									definitions
@@ -144,7 +144,7 @@ const DoubleDefinition = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

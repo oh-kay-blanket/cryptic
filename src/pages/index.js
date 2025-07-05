@@ -28,13 +28,13 @@ const Title = ({ data }) => {
 		? (
 				completedGuess.reduce((sum, item) => sum + item.guesses, 0) /
 				completedGuess.length
-		  ).toFixed(0)
+		  ).toFixed(1)
 		: 0
 	const avgHints = knownUser
 		? (
 				completedGuess.reduce((sum, item) => sum + item.hints, 0) /
 				completedGuess.length
-		  ).toFixed(0)
+		  ).toFixed(1)
 		: 0
 
 	// stats
@@ -135,8 +135,8 @@ const Title = ({ data }) => {
 	if (!isContextLoaded) {
 		return (
 			<Layout>
-				<div className='title container'>
-					<img className='title-gif' src={logo} alt='' />
+				<div className='title lc-container'>
+					<img className='title-img' src={logo} alt='' />
 					<div className='title-stats' style={{ visibility: 'hidden' }}>
 						<p className='stats-streak'>
 							Current streak: <span>0 days</span>
@@ -158,8 +158,8 @@ const Title = ({ data }) => {
 
 	return (
 		<Layout>
-			<div className='title container'>
-				<img className='title-gif' src={logo} alt='' />
+			<div className='title lc-container'>
+				<img className='title-img' src={logo} alt='' />
 				{knownUser ? stats : intro}
 				<div className='title-actions'>
 					<ButtonContainer btnArr={btnArr} stack={true} />

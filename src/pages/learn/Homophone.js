@@ -84,29 +84,29 @@ const Homophone = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Homophone</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Homophone</h2>
+					<p className='my-2'>
 						Clued words and/or letter(s) sound like the solution when spoken
 						aloud.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common homophone indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common homophone indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Group of lions was snoopy, we hear (5)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Group of lions</strong>
 								</li>
@@ -135,7 +135,7 @@ const Homophone = () => {
 							Produced blooms covered with white powder, say (8)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Produced blooms</strong>
 								</li>
@@ -163,7 +163,7 @@ const Homophone = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

@@ -240,7 +240,7 @@ const CluePage = ({ data }) => {
 	return (
 		<Layout>
 			<div className='clue-page'>
-				<div id='clue-container' className='clue container'>
+				<div id='clue-container' className='clue lc-container'>
 					<ul className='type'>{typeInsert}</ul>
 					{statsInsert}
 					<div

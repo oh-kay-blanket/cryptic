@@ -12,12 +12,14 @@
 		max-width: 70px;
 	}
 
-	.title-gif {
-		max-width: 280px;
+	.title-img {
+		width: 60%;
+		max-width: 300px;
 	}
 
 	.title-intro {
-		max-width: 350px;
+		width: 60%;
+		max-width: 300px;
 		text-align: left;
 
 		p {
@@ -28,42 +30,33 @@
 
 	.title-stats {
 		font-size: .85rem;
-		// border: 1px solid $lc-gray--dark;
 		border-radius: .5rem;
 		padding: 1rem 2rem;
 
 		.stats-streak,
 		.stats-guesses,
 		.stats-hints {
-			// display: flex;
-			// justify-content: flex-end;
 			text-align: center;
 			border-radius: 4px;
 			padding: .25rem 1rem;
+			margin: .5rem 0;
 			font-weight: 500;
 
 			span {
-				// margin-left: .5rem;
-				// width: 25px;
-				// text-align: center;
 				font-weight: 600;
-				// background-color: green;
 			}
 		}
 
 		.stats-streak {
-			// background-color: $lc-gray--light;
 			border: 1px solid $lc-gray--dark;
 		}
 
 		.stats-guesses {
 			background-color: $lc-primary--light;
-			// color: $lc-primary--dark;
 		}
 
 		.stats-hints {
 			background-color: $lc-secondary--light;
-			// color: $lc-secondary--dark;
 
 		}
 	}

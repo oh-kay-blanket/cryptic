@@ -94,17 +94,19 @@ const Reversal = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Reversal</h1>
-					<p>Reverse the letters to make a new word or words.</p>
+					<h2 className='text-3xl font-bold my-4'>Reversal</h2>
+					<p className='my-2'>
+						Reverse the letters to make a new word or words.
+					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common reversal indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common reversal indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 					<span style={{ fontSize: 0.8 + 'rem' }}>
 						*In a normal cryptic puzzle with across and down entries, a reversal
@@ -113,13 +115,13 @@ const Reversal = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>
 							King with a golden touch is unhappy I'm returning (5)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>King with a golden touch</strong>
 								</li>
@@ -152,7 +154,7 @@ const Reversal = () => {
 							(7)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>post office worker's sack</strong>
 								</li>
@@ -181,7 +183,7 @@ const Reversal = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

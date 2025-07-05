@@ -100,29 +100,29 @@ const Container = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Container</h1>
-					<p>
+					<h2 className='text-4xl font-bold my-4'>Container</h2>
+					<p className='my-2'>
 						A letter, a set of letters, or an entire word goes inside of another
 						word to make a new word.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common container indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common container indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Don eats Ann's brand of yogurt (6)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>brand of yogurt</strong>
 								</li>
@@ -150,7 +150,7 @@ const Container = () => {
 							Spanish gentlemen taking interest in old people (7)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>old people</strong>
 								</li>
@@ -185,7 +185,7 @@ const Container = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

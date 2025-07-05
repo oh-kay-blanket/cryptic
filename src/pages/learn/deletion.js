@@ -100,29 +100,29 @@ const Deletion = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Deletion</h1>
-					<p>
+					<h2 className='text-4xl font-bold my-4'>Deletion</h2>
+					<p className='my-2'>
 						Remove a letter, set of letters, or an entire word from the
 						beginning, middle, or end of a word.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common deletion indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common deletion indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Different parent starts late (6)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>different</strong>
 								</li>
@@ -152,7 +152,7 @@ const Deletion = () => {
 							French city park is excluding kids, at first (5)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>French city</strong>
 								</li>
@@ -177,7 +177,7 @@ const Deletion = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

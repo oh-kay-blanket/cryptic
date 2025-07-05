@@ -79,12 +79,12 @@ const Spoonerism = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Spoonerism</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Spoonerism</h2>
+					<p className='my-2'>
 						Swap the sounds at beginnings of two words. Named for a British
 						Oxford don, Reverend William Archibald Spooner (1844–1930), who was
 						reputed to make this speaking error with some frequency. A
@@ -93,14 +93,14 @@ const Spoonerism = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Example</h2>
+					<h2 className='text-2xl font-bold my-4'>Example</h2>
 
 					<div className='example-container'>
 						<p className='example'>
 							Restaurant supervisors marry bigots, per Rev. Spooner (4,7)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Restaurant supervisors</strong>
 								</li>
@@ -133,7 +133,7 @@ const Spoonerism = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

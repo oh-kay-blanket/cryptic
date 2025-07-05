@@ -79,20 +79,20 @@ const Lit = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>& Lit.</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>& Lit.</h2>
+					<p className='my-2'>
 						& Lit. is short for “and literally so,” because the entire clue
 						functions as a definition.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>
 						& Lit. clues are always indicated by an exclamation mark (!) at the
 						end of the clue. The wordplay element can be any of the other clue
 						types (e.g. anagram, charade, container, etc.)
@@ -100,11 +100,11 @@ const Lit = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>I only appear manipulated! (6, 5)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>I only appear manipulated</strong>
 								</li>
@@ -136,7 +136,7 @@ const Lit = () => {
 							Starting with a core of knowledge, gain deeper understanding! (5)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is{' '}
 									<strong>
@@ -164,7 +164,7 @@ const Lit = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

@@ -97,26 +97,28 @@ const HiddenWord = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Hidden Word</h1>
-					<p>The answer is a string of letters embedded in the clue.</p>
+					<h2 className='text-3xl font-bold my-4'>Hidden Word</h2>
+					<p className='my-2'>
+						The answer is a string of letters embedded in the clue.
+					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common hidden word indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common hidden word indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Field in Far East (4)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Field</strong>
 								</li>
@@ -141,7 +143,7 @@ const HiddenWord = () => {
 							Focus too much on portion of job session (6)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Focus too much on</strong>
 								</li>
@@ -163,7 +165,7 @@ const HiddenWord = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

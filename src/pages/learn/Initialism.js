@@ -96,32 +96,32 @@ const Initialism = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Initialism</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Initialism</h2>
+					<p className='my-2'>
 						The first (or last, or even middle) letters of series of words form
 						the answer.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common initialism indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common initialism indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>
 							Starts to dream about living large amid suburban Texas metropolis
 							(6)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Texas metropolis</strong>
 								</li>
@@ -150,7 +150,7 @@ const Initialism = () => {
 							European capital starts to open some legislative offices (4)
 						</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>European capital</strong>
 								</li>
@@ -171,7 +171,7 @@ const Initialism = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>

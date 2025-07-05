@@ -75,20 +75,20 @@ const TopBar = () => {
 			? (
 					completedClues.reduce((sum, c) => sum + (c.guesses || 0), 0) /
 					totalSolved
-			  ).toFixed(0)
+			  ).toFixed(1)
 			: '0'
 	const avgHints =
 		totalSolved > 0
 			? (
 					completedClues.reduce((sum, c) => sum + (c.hints || 0), 0) /
 					totalSolved
-			  ).toFixed(0)
+			  ).toFixed(1)
 			: '0'
 
 	return (
 		<>
 			<header className='top-bar'>
-				<div className='container'>
+				<div className='top-bar-container lc-container'>
 					<div className='topbar-left'>
 						<button
 							className='icon-btn'
@@ -111,22 +111,26 @@ const TopBar = () => {
 				</div>
 			</header>
 			<Modal open={helpOpen} onClose={() => setHelpOpen(false)}>
-				<h2>About Cryptic</h2>
-				<p>
+				<p className='mt-4'>
 					Welcome to Learn Cryptic! If you're having difficulty understanding
 					the clues, visit the{' '}
-					<Link to='/learn' className='bold'>
+					<Link to='/learn' className='font-bold underline'>
 						Learn
 					</Link>{' '}
 					page to learn more about cryptics and practice with more basic clues.
 				</p>
-				<p>
-					Have questions, comments, or want to contribute future cryptic clues?{' '}
-					<a href='mailto:learncrypticgame@gmail.com'>Contact us</a>!
+				<p className='mt-4'>
+					Have questions, comments, or want to contribute future cryptic clues?
+					<a
+						href='mailto:learncrypticgame@gmail.com?subject=Learn Cryptic Feedback'
+						className='font-bold underline mt-2 text-center block'
+					>
+						Email us
+					</a>
 				</p>
 			</Modal>
 			<Modal open={statsOpen} onClose={() => setStatsOpen(false)}>
-				<h2>Statistics</h2>
+				<h2 className='my-3 text-xl font-bold'>Statistics</h2>
 				<div className='stats-list'>
 					<div className='stat-item'>
 						🔥 <strong>Current Streak:</strong> {streak}

@@ -105,7 +105,7 @@ const Message = ({
 	return (
 		<div className={`message ${messageStyle}`} ref={msgContainer}>
 			{message && (
-				<div className={'message-copy container'}>
+				<div className={'message-copy lc-container'}>
 					{message}
 					{explainer && <div className={'explainer'}>{explainer}</div>}
 				</div>

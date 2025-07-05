@@ -91,12 +91,12 @@ const LetterBank = () => {
 
 	return (
 		<Layout>
-			<div className='learn container'>
+			<div className='learn lc-container'>
 				{backButton}
 
 				<div className='learn-section'>
-					<h1>Letter Bank</h1>
-					<p>
+					<h2 className='text-3xl font-bold my-4'>Letter Bank</h2>
+					<p className='my-2'>
 						Letters are rearranged like in an anagram, but the letters in the
 						source word(s) can be repeated—think of a "bank" of letters from
 						which you can make as many withdrawals as needed.
@@ -104,17 +104,17 @@ const LetterBank = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2>Indicators</h2>
-					<p>Common letter bank indicators include:</p>
+					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<p className='my-2'>Common letter bank indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2>Examples</h2>
+					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Repeatedly retain host (11)</p>
 						<div className='explanation'>
-							<ul className='mt-0'>
+							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>host</strong>
 								</li>
@@ -141,7 +141,7 @@ const LetterBank = () => {
 						</div>
 					</div>
 
-					<div id='next'>
+					<div id='next' className='mt-4'>
 						<ButtonContainer btnArr={btnArr1} />
 					</div>
 				</div>
