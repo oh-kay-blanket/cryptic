@@ -11,6 +11,15 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-transformer-remark`,
 		`gatsby-plugin-sass`,
+		{
+			resolve: `gatsby-plugin-postcss`,
+			options: {
+				postCssPlugins: [
+					require(`tailwindcss`),
+					require(`autoprefixer`),
+				],
+			},
+		},
 		`gatsby-transformer-json`,
 		`gatsby-plugin-sitemap`,
 		{
