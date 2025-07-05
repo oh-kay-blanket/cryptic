@@ -36,35 +36,54 @@ export const UserProvider = ({ children }) => {
 	let longestStreak = lcState.longestStreak
 
 	useEffect(() => {
-		// Whether or not to show type pills in clue container
 		const checkStreak = () => {
-			function isOlderThanYesterday(dateToCheck) {
-				const checkedDate = new Date(dateToCheck)
-				const now = new Date()
-				const yesterday = new Date(
-					now.getFullYear(),
-					now.getMonth(),
-					now.getDate() - 1
-				) // Yesterday at 00:00
+			function shouldResetStreak(lastSolvedDate) {
+				if (!lastSolvedDate || lcState.streak === 0) {
+					return false
+				}
 
-				return checkedDate < yesterday
+				const lastSolved = new Date(lastSolvedDate)
+				const now = new Date()
+
+				// Set both dates to start of day for proper comparison
+				const lastSolvedDay = new Date(
+					lastSolved.getFullYear(),
+					lastSolved.getMonth(),
+					lastSolved.getDate()
+				)
+				const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+				const yesterday = new Date(today)
+				yesterday.setDate(yesterday.getDate() - 1)
+
+				// Calculate the difference in days
+				const daysDifference = Math.floor(
+					(today - lastSolvedDay) / (1000 * 60 * 60 * 24)
+				)
+
+				// Reset streak only if more than 1 day has passed
+				// (0 = today, 1 = yesterday, 2+ = streak should break)
+				return daysDifference > 1
 			}
+
 			console.log('lastSolved', lcState.lastSolved)
 			console.log('streak', lcState.streak)
 
-			if (isOlderThanYesterday(lcState.lastSolved) && lcState.streak !== 0) {
-				console.log('streak broken, resetting')
-				setLcState({
-					...lcState,
+			if (shouldResetStreak(lcState.lastSolved)) {
+				console.log(
+					'streak broken, resetting - more than 1 day since last solve'
+				)
+				setLcState((prevState) => ({
+					...prevState,
 					streak: 0,
-				})
+				}))
 			} else {
 				console.log('streak intact, retaining')
 			}
 		}
+
 		checkStreak()
 		localStorage.setItem('lcState', JSON.stringify(lcState))
-	}, [lcState])
+	}, [lcState.lastSolved, lcState.streak]) // Only depend on the specific values that matter
 
 	// Functions
 	const addCompletedClue = (activeClue, stats, type) => {
@@ -138,11 +157,11 @@ export const UserProvider = ({ children }) => {
 				avg_guesses: (
 					completedClues.reduce((sum, item) => sum + item.guesses, 0) /
 					completedClues.length
-				).toFixed(0),
+				).toFixed(1),
 				avg_hints: (
 					completedClues.reduce((sum, item) => sum + item.hints, 0) /
 					completedClues.length
-				).toFixed(0),
+				).toFixed(1),
 			})
 		}
 	}
