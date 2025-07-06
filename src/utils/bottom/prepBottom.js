@@ -17,6 +17,25 @@ const prepBottom = (
 	showLogic,
 	setShowLogic
 ) => {
+	// Check if this is today's clue
+	const isTodaysClue = () => {
+		const clueDate = new Date(activeClue.release)
+		const today = new Date()
+		
+		// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
+		const clueDay = new Date(
+			clueDate.getFullYear(),
+			clueDate.getMonth(),
+			clueDate.getDate()
+		)
+		const todayDay = new Date(
+			today.getFullYear(),
+			today.getMonth(),
+			today.getDate()
+		)
+		
+		return clueDay.getTime() === todayDay.getTime()
+	}
 	const shareScore = async () => {
 		const date = new Date(activeClue.release) // or your clue.date
 		const dateFormatted = new Intl.DateTimeFormat('en-US', {
@@ -202,16 +221,35 @@ const prepBottom = (
 				setStats({ guesses: 0, hints: 0, how: '' })
 			},
 		},
+		noMoreClues: {
+			name: 'No more clues available',
+			style: 'gray',
+			disabled: true,
+			onClick: function () {
+				// Do nothing - this is just a message
+			},
+		},
 	}
 
 	let btnArr = [buttons.showHint]
 
 	if (activeClue.hints[nextHint].reveals) {
-		btnArr = [buttons.revealSolution]
+		// Only show "Reveal Solution" if it's not today's clue
+		if (!isTodaysClue()) {
+			btnArr = [buttons.revealSolution]
+		} else {
+			// For today's clue, show no buttons when it would reveal solution
+			btnArr = []
+		}
 	}
 
 	if (input.length === activeClue.solution.arr.length) {
 		btnArr.push(buttons.checkAnswer)
+	}
+
+	// If no buttons are available (today's clue at reveal stage), show message
+	if (btnArr.length === 0 && activeClue.hints[nextHint].reveals && isTodaysClue()) {
+		btnArr = [buttons.noMoreClues]
 	}
 
 	const isCorrectAns =

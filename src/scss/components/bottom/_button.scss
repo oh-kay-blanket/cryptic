@@ -127,4 +127,16 @@
 		height: 1rem;
 		width: 1rem;
 	}
+
+	&.disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+
+		&:hover,
+		&:active {
+			filter: none;
+			background-color: inherit;
+			border-color: inherit;
+		}
+	}
 }
