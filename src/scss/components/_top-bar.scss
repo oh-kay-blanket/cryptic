@@ -59,6 +59,11 @@
 	justify-content: center;
 }
 
+// Darker overlay in dark mode
+html.dark .modal-overlay {
+	background: rgba(0, 0, 0, 0.7);
+}
+
 .modal-content {
 	background: #fff;
 	padding: 2rem;

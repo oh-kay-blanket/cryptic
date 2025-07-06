@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 
 import { UserContext } from '../utils/UserContext'
@@ -43,6 +43,24 @@ const BarGraphIcon = () => (
 )
 
 const Modal = ({ open, onClose, children }) => {
+	useEffect(() => {
+		const preventDefault = (e) => {
+			e.preventDefault()
+		}
+
+		if (open) {
+			// Prevent scrolling by blocking wheel and touch events
+			document.addEventListener('wheel', preventDefault, { passive: false })
+			document.addEventListener('touchmove', preventDefault, { passive: false })
+		}
+
+		// Cleanup function to remove event listeners
+		return () => {
+			document.removeEventListener('wheel', preventDefault)
+			document.removeEventListener('touchmove', preventDefault)
+		}
+	}, [open])
+
 	if (!open) return null
 	return (
 		<div className='modal-overlay' onClick={onClose}>
