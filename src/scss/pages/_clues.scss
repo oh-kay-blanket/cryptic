@@ -16,6 +16,8 @@
 		flex-wrap: nowrap;
 		align-items: center;
 		position: relative;
+		width: 100%;
+		min-width: 0; // Allow content to shrink for text truncation
 
 		.archive-release {
 			width: 60px;
@@ -25,12 +27,51 @@
 			font-family: $lc-font--sans;
 			font-weight: 600;
 			flex-shrink: 0;
+			position: relative; // Needed for absolute positioning of :before
+			z-index: 0; // Keep under TopBar (which has z-index: 1)
+		}
+
+		// Style for incomplete clues (not completed)
+		&:not(.completed) {
+			.archive-release {
+				position: relative; // Needed for absolute positioning of :before
+				
+				&:before {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					width: 60px;
+					height: 60px;
+					border-radius: .5rem;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+					display: block;
+					border: 1px solid var(--archive-border-color, #bbb);
+				}
+
+				span {
+					position: relative;
+					z-index: 0;
+				}
+
+				&:hover {
+					&:before {
+						background-color: var(--hover-bg) !important;
+						border-color: var(--hover-border) !important;
+					}
+					
+					& + .archive-tile-link .archive-tile {
+						background-color: var(--hover-bg) !important;
+					}
+				}
+			}
 		}
 
 		&.completed {
 			.archive-release:before {
-				content: " ";
-				position:absolute;
+				content: "";
+				position: absolute;
 				z-index: -1;
 				width: 60px;
 				height: 60px;
@@ -38,41 +79,63 @@
 				top: 50%;
 				transform: translateY(-50%);
 				left: 0;
+				display: block;
+			}
+
+			.archive-release span {
+				position: relative;
+				z-index: 0;
 			}
 
 			&.g .archive-release:before {
-				background-color: $lc-primary--light;
-				border: 1px solid $lc-primary--light;
+				background-color: var(--archive-bg, $lc-primary--light);
+				border: 1px solid var(--archive-bg, $lc-primary--light);
 			}
 
 			&.h .archive-release:before {
-				background-color: $lc-secondary--v-light;
-				border: 1px solid $lc-secondary--v-light;
+				background-color: var(--archive-bg, $lc-secondary--v-light);
+				border: 1px solid var(--archive-bg, $lc-secondary--v-light);
 			}
 		}
 	}
 
+	.archive-tile-link {
+		display: flex;
+		flex: 1; // Take remaining space after archive-release
+		min-width: 0; // Allow shrinking for text truncation
+		text-decoration: none;
+		color: inherit;
+	}
+
 	.archive-tile {
 		display: flex;
-		width: 100%;
+		width: 100%; // Fill the link container
 		align-items: center;
 		justify-content: flex-start;
 		margin: .5rem 0;
 		padding: .25rem 1rem;
 		height: 60px;
-		border: 1px solid $lc-gray--dark;
+		// border handled by Tailwind classes in React component
 		overflow: hidden;
 		border-radius: .5rem;
 		cursor: pointer;
+		min-width: 0; // Allow shrinking for text truncation
 		
 		&:hover, &:focus {
-			background-color: $lc-gray--light;
-			border: 1px solid $lc-gray--light;
+			background-color: #bbb !important; // darker gray for hover
+			border: 1px solid #bbb !important;
+
+			// Dark mode
+			:global(.dark) & {
+				background-color: #404040 !important; // neutral-700 equivalent
+				border: 1px solid #404040 !important;
+			}
 		}
 		
 		.tile-img-stats {
 			margin-right: .25rem;
 			display: flex;
+			flex-shrink: 0; // Don't shrink the stats/difficulty area
 	
 			.tile-difficulty {
 				align-self: center;
@@ -115,13 +178,34 @@
 
 		.tile-name {
 			overflow: hidden;
-			text-wrap:nowrap;
+			white-space: nowrap;
 			text-overflow: ellipsis;
 			line-height: 1;
 			font-size: .8rem;
-			flex-shrink: 10;
+			flex-grow: 1;
+			flex-shrink: 1;
+			min-width: 0;
 			padding: 2px 0;
 			font-family: $lc-font--serif;
+		}
+
+		.tile-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			font-size: .75rem;
+			line-height: 1.2;
+			flex-grow: 1;
+			flex-shrink: 1;
+			min-width: 0;
+			font-family: $lc-font--sans;
+
+			div {
+				margin: 1px 0;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }

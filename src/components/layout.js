@@ -4,11 +4,11 @@ import ScrollToTop from './ScrollToTop'
 
 const Layout = ({ children }) => {
 	return (
-		<>
+		<div className="min-h-screen bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 transition-colors duration-200 flex flex-col">
 			{/* <ScrollToTop /> */}
 			<TopBar />
-			<main>{children}</main>
-		</>
+			<main className="flex-1">{children}</main>
+		</div>
 	)
 }
 

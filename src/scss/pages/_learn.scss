@@ -32,6 +32,7 @@
 			border: 1px solid $lc-gray--dark;
 			border-radius: .5rem;
 			margin-bottom: 1rem;
+			overflow: hidden;
 
 			.example {
 				padding: 1.5rem .5rem .5rem;
@@ -94,6 +95,12 @@
 				font-family: $lc-font--serif;
 				background-color: $lc-secondary--v-light;
 				font-size: .9rem;
+
+				// Dark mode
+				:global(.dark) & {
+					background-color: #47387b;
+					color: #F5F5F5; // ensure text is readable
+				}
 			}
 		}
 	}
@@ -119,6 +126,13 @@
 			&.viewed {
 				border: 1px solid $lc-secondary--light;
 				background-color: $lc-secondary--light;
+
+				// Dark mode
+				:global(.dark) & {
+					border: 1px solid #47387b;
+					background-color: #47387b;
+					color: #F5F5F5; // ensure text is readable
+				}
 			}
 		}
 	}

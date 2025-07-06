@@ -59,6 +59,17 @@
 			border: 1px solid $lc-gray;
 		}
 
+		// Dark mode
+		:global(.dark) & {
+			border: 1px solid #d1d5db; // gray-300
+			color: #f9fafb; // gray-50
+
+			&:hover,
+			&:active {
+				background-color: #374151; // gray-700
+				border: 1px solid #374151;
+			}
+		}
 	}
 
 	&.gray {
@@ -70,6 +81,18 @@
 			filter: brightness(.95);
 			background-color: $lc-gray;
 			border: 1px solid $lc-gray;
+		}
+
+		// Dark mode
+		:global(.dark) & {
+			background-color: #4b5563; // gray-600
+			border: 1px solid #4b5563;
+
+			&:hover,
+			&:active {
+				background-color: #374151; // gray-700
+				border: 1px solid #374151;
+			}
 		}
 	}
 

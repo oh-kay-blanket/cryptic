@@ -42,7 +42,7 @@ const Learn = () => {
 	const types = typesArr.map((type) => {
 		const isViewed = typeViewed.find((viewed) => viewed === type.id)
 		return (
-			<li key={type.id} className={isViewed ? 'viewed' : ''}>
+			<li key={type.id} className={isViewed ? 'viewed dark:!bg-[#47387b] dark:!border-[#47387b] dark:!text-white' : ''}>
 				<Link to={type.id}>{type.name}</Link>
 			</li>
 		)
@@ -107,7 +107,7 @@ const Learn = () => {
 					<p className='font-bold my-4'>Example</p>
 					<div className='example-container'>
 						<p className='example'>Wild West goulash (4)</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition part is <strong>GOULASH</strong>

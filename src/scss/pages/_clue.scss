@@ -20,7 +20,7 @@
 		height: 60%;
 		// height: $lc-clue-container-height;
 		margin: 0 auto;
-		padding: 0 1rem;
+		padding: 1rem;
 		text-align: center;
 		font-size: 1.15rem;
 		text-wrap: balance;
@@ -36,7 +36,7 @@
 			top: 0;
 			left: 0;
 			padding-left: 0;
-			margin: 1rem;
+			margin: 1.25rem;
 			list-style-type: none;
 
 			@media (max-height: 600px) {
@@ -57,13 +57,18 @@
 					text-transform: uppercase;
 					color: $lc-text;
 					border-radius: 50px;
-					background-color: $lc-secondary--light;
+					// background-color handled by Tailwind classes in React component
 				}
 
 				&.type-text {
 					font-family: $lc-font--sans;
 					font-weight: 500;
 					color: $lc-text--light;
+
+					// Dark mode
+					:global(.dark) & {
+						color: #a3a3a3; // neutral-400
+					}
 
 					button {
 						font-size: .7rem;
@@ -86,7 +91,7 @@
 			font-size: .75rem;
 			font-weight: 600;
 			font-family: $lc-font--sans;
-			margin: 1rem;
+			margin: 1.25rem;
 			pointer-events: none;
 			user-select: none;
 
@@ -109,10 +114,14 @@
 			.stat-hints {
 				background-color: $lc-secondary--light;
 				margin-right: .5rem;
+
+				// Dark mode - handled by Tailwind classes in React component
 			}
 
 			.stat-guesses {
 				background-color: $lc-primary--light;
+
+				// Dark mode - handled by Tailwind classes in React component
 			}
 		}
 
@@ -172,6 +181,11 @@
 					opacity $lc-transition--short ease 0s,
 					color $lc-transition--short ease 0s,
 					background-color $lc-transition--short ease;
+
+				// Dark mode
+				:global(.dark) & {
+					fill: #737373; // neutral-500 - true medium gray for dark mode
+				}
 			}
 		}
 
@@ -205,11 +219,11 @@
 					display: inline-block;
 					width: 30px;
 					height: 30px;
-					border: .75px solid $lc-text;
+					// border handled by Tailwind classes in React component
 					// border-right: none;
 
 					&:last-child {
-						border-right: 1px solid $lc-text;
+						// border-right handled by Tailwind classes in React component
 					}
 
 					.solLetter {
@@ -253,6 +267,11 @@
 				a {
 					color: $lc-primary--dark;
 					text-decoration: underline;
+
+					// Dark mode
+					:global(.dark) & {
+						color: #fbbf24; // amber-400 - good link color for dark mode
+					}
 				}
 
 				&.show {
@@ -271,7 +290,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin: 1rem;
+			margin: 1.25rem;
 			z-index: 10;
 
 			@media (max-height: 600px) {
@@ -300,6 +319,8 @@
 				margin-right: -10px;
 				transition: opacity $lc-transition--short ease;
 				transform: rotate(270deg);
+				object-fit: contain; // Prevent distortion
+				aspect-ratio: auto; // Maintain original aspect ratio
 
 				&:hover {
 					opacity: 1;
@@ -322,6 +343,12 @@
 				opacity: 0;
 				transform: translateY(5px);
 				animation: fadeIn 0.15s ease-out forwards;
+
+				// Dark mode
+				:global(.dark) & {
+					background-color: #525252; // neutral-600
+					color: #f5f5f5; // neutral-100
+				}
 
 				@media (max-width: 768px) {
 					right: 2px;

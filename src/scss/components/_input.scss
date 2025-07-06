@@ -25,7 +25,16 @@
 
 				&:last-child {
 					border-right: 1px solid $lc-text;
-					;
+				}
+
+				// Dark mode
+				:global(.dark) & {
+					border-color: #D4D4D4; // neutral-300 - true light gray border for dark mode
+					color: #F5F5F5; // neutral-100 - true light gray text for dark mode
+
+					&:last-child {
+						border-right-color: #D4D4D4; // neutral-300
+					}
 				}
 			}
 		}

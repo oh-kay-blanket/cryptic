@@ -20,6 +20,12 @@
 		border-radius: 4px;
 		z-index: 7;
 
+		// Dark mode - invert colors for better visibility
+		:global(.dark) & {
+			color: #171717; // neutral-900 - true dark text
+			background-color: #F5F5F5; // neutral-100 - true light background
+		}
+
 		@media (min-width: 769px) {
 			max-width: 250px;
 		}
@@ -32,11 +38,21 @@
 			margin-left: -5px;
 			border-width: 5px;
 			border-style: solid;
-			border-color: transparent transparent $lc-secondary--dark transparent;
+			border-color: transparent transparent #444 transparent;
+
+			// Dark mode - match tooltip background
+			:global(.dark) & {
+				border-color: transparent transparent #F5F5F5 transparent;
+			}
 		}
 
 		&.above:after {
-			border-color: $lc-secondary--dark transparent transparent transparent;
+			border-color: #444 transparent transparent transparent;
+
+			// Dark mode - match tooltip background
+			:global(.dark) & {
+				border-color: #F5F5F5 transparent transparent transparent;
+			}
 		}
 
 		.tooltip-description {

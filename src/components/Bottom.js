@@ -11,7 +11,7 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 	let { buttons, btnArr, isSolution, isCorrectAns } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic)
 
 	return(
-		<div className='bottom'>			
+		<div className='bottom bg-white dark:!bg-neutral-800 border-t border-neutral-200 dark:!border-neutral-700'>			
 			{showMessage ? 
 				<Message
 					setShowMessage={setShowMessage}

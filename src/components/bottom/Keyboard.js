@@ -1,60 +1,195 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from 'react'
 
 import backspace from '../../assets/img/backspace.svg'
 
 const Keyboard = ({ handleInput }) => {
-
 	// handle keyboard hardware press
-    useEffect(() => {
-        const handleKeyDown = (e) => {
+	useEffect(() => {
+		const handleKeyDown = (e) => {
 			if (/^[a-zA-Z]$/.test(e.key)) {
 				handleInput(e.key.toUpperCase())
 			} else if (e.key === 'Backspace' || e.key === 'Delete') {
 				handleInput('del')
 			}
-        }
+		}
 
-        document.addEventListener("keydown", handleKeyDown)
+		document.addEventListener('keydown', handleKeyDown)
 
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown)
-        }
-    }, [handleInput])
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown)
+		}
+	}, [handleInput])
 
-	return(
+	return (
 		<div className='lc-container keyboard'>
 			<div className='k-row k-row-1'>
-				<button onClick={()=>handleInput('Q')}><span>Q</span></button>
-				<button onClick={()=>handleInput('W')}><span>W</span></button>
-				<button onClick={()=>handleInput('E')}><span>E</span></button>
-				<button onClick={()=>handleInput('R')}><span>R</span></button>
-				<button onClick={()=>handleInput('T')}><span>T</span></button>
-				<button onClick={()=>handleInput('Y')}><span>Y</span></button>
-				<button onClick={()=>handleInput('U')}><span>U</span></button>
-				<button onClick={()=>handleInput('I')}><span>I</span></button>
-				<button onClick={()=>handleInput('O')}><span>O</span></button>
-				<button onClick={()=>handleInput('P')}><span>P</span></button>
+				<button
+					onClick={() => handleInput('Q')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>Q</span>
+				</button>
+				<button
+					onClick={() => handleInput('W')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>W</span>
+				</button>
+				<button
+					onClick={() => handleInput('E')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>E</span>
+				</button>
+				<button
+					onClick={() => handleInput('R')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>R</span>
+				</button>
+				<button
+					onClick={() => handleInput('T')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>T</span>
+				</button>
+				<button
+					onClick={() => handleInput('Y')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>Y</span>
+				</button>
+				<button
+					onClick={() => handleInput('U')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>U</span>
+				</button>
+				<button
+					onClick={() => handleInput('I')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>I</span>
+				</button>
+				<button
+					onClick={() => handleInput('O')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>O</span>
+				</button>
+				<button
+					onClick={() => handleInput('P')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>P</span>
+				</button>
 			</div>
 			<div className='k-row k-row-2'>
-				<button onClick={()=>handleInput('A')}><span>A</span></button>
-				<button onClick={()=>handleInput('S')}><span>S</span></button>
-				<button onClick={()=>handleInput('D')}><span>D</span></button>
-				<button onClick={()=>handleInput('F')}><span>F</span></button>
-				<button onClick={()=>handleInput('G')}><span>G</span></button>
-				<button onClick={()=>handleInput('H')}><span>H</span></button>
-				<button onClick={()=>handleInput('J')}><span>J</span></button>
-				<button onClick={()=>handleInput('K')}><span>K</span></button>
-				<button onClick={()=>handleInput('L')}><span>L</span></button>
+				<button
+					onClick={() => handleInput('A')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>A</span>
+				</button>
+				<button
+					onClick={() => handleInput('S')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>S</span>
+				</button>
+				<button
+					onClick={() => handleInput('D')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>D</span>
+				</button>
+				<button
+					onClick={() => handleInput('F')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>F</span>
+				</button>
+				<button
+					onClick={() => handleInput('G')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>G</span>
+				</button>
+				<button
+					onClick={() => handleInput('H')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>H</span>
+				</button>
+				<button
+					onClick={() => handleInput('J')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>J</span>
+				</button>
+				<button
+					onClick={() => handleInput('K')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>K</span>
+				</button>
+				<button
+					onClick={() => handleInput('L')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>L</span>
+				</button>
 			</div>
 			<div className='k-row k-row-3'>
-				<button onClick={()=>handleInput('Z')}><span>Z</span></button>
-				<button onClick={()=>handleInput('X')}><span>X</span></button>
-				<button onClick={()=>handleInput('C')}><span>C</span></button>
-				<button onClick={()=>handleInput('V')}><span>V</span></button>
-				<button onClick={()=>handleInput('B')}><span>B</span></button>
-				<button onClick={()=>handleInput('N')}><span>N</span></button>
-				<button onClick={()=>handleInput('M')}><span>M</span></button>
-				<button onClick={()=>handleInput('del')} id='backspace'><img src={backspace} alt="backspace" /></button>
+				<button
+					onClick={() => handleInput('Z')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>Z</span>
+				</button>
+				<button
+					onClick={() => handleInput('X')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>X</span>
+				</button>
+				<button
+					onClick={() => handleInput('C')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>C</span>
+				</button>
+				<button
+					onClick={() => handleInput('V')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>V</span>
+				</button>
+				<button
+					onClick={() => handleInput('B')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>B</span>
+				</button>
+				<button
+					onClick={() => handleInput('N')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>N</span>
+				</button>
+				<button
+					onClick={() => handleInput('M')}
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
+				>
+					<span>M</span>
+				</button>
+				<button
+					onClick={() => handleInput('del')}
+					id='backspace'
+					className='bg-neutral-400 dark:!bg-neutral-700 dark:!text-neutral-100 hover:bg-neutral-500 hover:dark:!bg-neutral-600'
+				>
+					<img src={backspace} alt='backspace' className='dark:invert' />
+				</button>
 			</div>
 		</div>
 	)

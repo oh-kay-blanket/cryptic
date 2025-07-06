@@ -11,5 +11,5 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
-	background-color: $lc-gray--light;
+	// background-color handled by Tailwind classes in React component
 }

@@ -55,10 +55,10 @@ const Title = ({ data }) => {
 	const stats = (
 		<div className='title-stats'>
 			{statsStreak}
-			<p className='stats-guesses'>
+			<p className='stats-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white'>
 				Average guesses: <span>{avgGuesses}</span>
 			</p>
-			<p className='stats-hints'>
+			<p className='stats-hints dark:!bg-[#4A3F6B] dark:!text-white'>
 				Average hints: <span>{avgHints}</span>
 			</p>
 		</div>
@@ -135,16 +135,16 @@ const Title = ({ data }) => {
 	if (!isContextLoaded) {
 		return (
 			<Layout>
-				<div className='title lc-container'>
+				<div className='title lc-container h-full'>
 					<img className='title-img' src={logo} alt='' />
 					<div className='title-stats' style={{ visibility: 'hidden' }}>
 						<p className='stats-streak'>
 							Current streak: <span>0 days</span>
 						</p>
-						<p className='stats-guesses'>
+						<p className='stats-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white'>
 							Average guesses: <span>0</span>
 						</p>
-						<p className='stats-hints'>
+						<p className='stats-hints dark:!bg-[#4A3F6B] dark:!text-white'>
 							Average hints: <span>0</span>
 						</p>
 					</div>
@@ -158,7 +158,7 @@ const Title = ({ data }) => {
 
 	return (
 		<Layout>
-			<div className='title lc-container'>
+			<div className='title lc-container h-full'>
 				<img className='title-img' src={logo} alt='' />
 				{knownUser ? stats : intro}
 				<div className='title-actions'>

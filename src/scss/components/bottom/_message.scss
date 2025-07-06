@@ -6,7 +6,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: $lc-gray--light;
+	// background-color handled by Tailwind classes in React component
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -20,7 +20,7 @@
 	}
 
 	&.solution {
-		background-color: $lc-gray--light;
+		// background-color handled by Tailwind classes in React component
 		opacity: 0;
 		visibility: hidden;
 		animation-name: fadein;
@@ -47,5 +47,10 @@
 		margin-top: 1rem;
 		font-size: 16px;
 		color: $lc-text--light;
+
+		// Dark mode
+		:global(.dark) & {
+			color: #a3a3a3; // neutral-400
+		}
 	}
 }

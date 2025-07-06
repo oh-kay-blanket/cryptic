@@ -16,7 +16,7 @@ const Initialism = () => {
 	const backButton = (
 		<button onClick={() => window.history.back()} aria-label='Go back'>
 			<svg
-				className='back-button'
+				className='back-button fill-neutral-600 dark:fill-neutral-400'
 				xmlns='http://www.w3.org/2000/svg'
 				width='25px'
 				height='25px'
@@ -65,7 +65,7 @@ const Initialism = () => {
 		'ultimate',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
 	))
 
 	// Handle anchor link
@@ -120,7 +120,7 @@ const Initialism = () => {
 							Starts to dream about living large amid suburban Texas metropolis
 							(6)
 						</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Texas metropolis</strong>
@@ -149,7 +149,7 @@ const Initialism = () => {
 						<p className='example'>
 							European capital starts to open some legislative offices (4)
 						</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>European capital</strong>

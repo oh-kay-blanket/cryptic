@@ -1,4 +1,4 @@
-import React, { useRef, createRef, useContext } from 'react'
+import React, { useRef, createRef, useContext, useState, useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { UserContext } from '../utils/UserContext'
@@ -12,6 +12,34 @@ const Clues = ({ data }) => {
 	
 	const cluesData = data.allCluesJson.nodes	    
 	const { completedClues } = useContext(UserContext)
+	
+	// Track dark mode state
+	const [isDarkMode, setIsDarkMode] = useState(false)
+	const [hoveredClue, setHoveredClue] = useState(null)
+	const [hoveredRelease, setHoveredRelease] = useState(null)
+	
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			// Initial check
+			setIsDarkMode(document.documentElement.classList.contains('dark'))
+			
+			// Watch for dark mode changes
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.attributeName === 'class') {
+						setIsDarkMode(document.documentElement.classList.contains('dark'))
+					}
+				})
+			})
+			
+			observer.observe(document.documentElement, {
+				attributes: true,
+				attributeFilter: ['class']
+			})
+			
+			return () => observer.disconnect()
+		}
+	}, [])
 
 	let tilesRef = useRef(cluesData.map(() => createRef()))
 
@@ -63,14 +91,44 @@ const Clues = ({ data }) => {
 
 		const stats = completedClue && <>
 			<div className="tile-stats">
-				<span className='stat-hints'><span className="stat">{completedClue.hints}</span>&nbsp;{completedClue.hints === 1 ? 'hint' : 'hints'}</span>
-				<span className='stat-guesses'><span className="stat">{completedClue.guesses}</span>&nbsp;{completedClue.guesses === 1 ? 'guess' : 'guesses'}</span>
+				<span className='stat-hints dark:!bg-[#4A3F6B] dark:!text-white'><span className="stat">{completedClue.hints}</span>&nbsp;{completedClue.hints === 1 ? 'hint' : 'hints'}</span>
+				<span className='stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white'><span className="stat">{completedClue.guesses}</span>&nbsp;{completedClue.guesses === 1 ? 'guess' : 'guesses'}</span>
 			</div>
 		</>
 
+		const isHovered = hoveredClue === clue.clid
+		const completionText = completedClue 
+			? (completedClue.how === 'g' ? 'Solved by guess' : 'Solved by hint')
+			: 'Not completed'
+
 		return (
-		<Link to={`/clues/${clue.clid}`} className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id} onClick={() => { window.scrollTo(0, 0); }}>
-			<div className='archive-release'>
+		<div className={`archive-clue${!!completedClue ? ' completed' : ''} ${completedClue && completedClue.how}`} key={clue.id}>
+			<div 
+				className='archive-release'
+				style={{
+					cursor: 'pointer',
+					'--hover-bg': isDarkMode ? '#404040' : '#bbb',
+					'--hover-border': isDarkMode ? '#404040' : '#bbb',
+					...(completedClue ? {
+						'--archive-bg': isDarkMode 
+							? (completedClue.how === 'g' ? 'rgb(120, 70, 45)' : '#4A3F6B')
+							: (completedClue.how === 'g' ? '#FFCBAB' : '#eae4ff')
+					} : {})
+				}}
+				onMouseEnter={() => {
+					setHoveredClue(clue.clid)
+					setHoveredRelease(clue.clid)
+				}}
+				onMouseLeave={() => {
+					setHoveredClue(null)
+					setHoveredRelease(null)
+				}}
+				onClick={(e) => {
+					e.preventDefault()
+					e.stopPropagation()
+					setHoveredClue(hoveredClue === clue.clid ? null : clue.clid)
+				}}
+			>
 				<span>
 					<span>{getRelease(clue.release).toLocaleString('en-us', { month: 'short' })}</span>&nbsp;
 					<span>{getRelease(clue.release).getDate()}</span>
@@ -78,15 +136,37 @@ const Clues = ({ data }) => {
 				<br></br>
 				<span>{getRelease(clue.release).getFullYear()}</span>
 			</div>
-			<div id={clue.id} className='archive-tile' ref={tilesRef.current[index]} >
-				<div className='tile-img-stats'>
-					{stats}
-					<img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />
+			<Link to={`/clues/${clue.clid}`} className='archive-tile-link' onClick={() => { window.scrollTo(0, 0); }}>
+				<div 
+					id={clue.id} 
+					className='archive-tile border border-[#bbb] dark:!border-[#404040] hover:dark:!bg-neutral-700 hover:dark:!border-neutral-700' 
+					ref={tilesRef.current[index]}
+					style={{
+						...(isHovered && completedClue ? {
+							backgroundColor: isDarkMode 
+								? (completedClue.how === 'g' ? 'rgb(120, 70, 45)' : '#4A3F6B')
+								: (completedClue.how === 'g' ? '#FFCBAB' : '#eae4ff'),
+							color: isDarkMode ? 'white' : 'black'
+						} : {}),
+						...(hoveredRelease === clue.clid && !completedClue ? {
+							backgroundColor: isDarkMode ? '#404040' : '#bbb'
+						} : {})
+					}}
+				>
+					<div className='tile-img-stats'>
+						{!isHovered && stats}
+						{!isHovered && <img className='tile-difficulty' src={getImg(clue.difficulty)} title={clue.difficulty} aria-label='difficulty' />}
+					</div>
+					{isHovered ? (
+						<div className='tile-info'>
+							<span>Clue #{clue.clid} • by {clue.source?.value || 'Unknown'} • {completionText}</span>
+						</div>
+					) : (
+						<span className='tile-name'>{clue.clue.value}</span>
+					)}
 				</div>
-				<span className='tile-name'>{clue.clue.value}</span>
-				{/* <span className='tile-source'>{clue.source.value}</span> */}
-			</div>
-		</Link>
+			</Link>
+		</div>
 		)
 	})
 
@@ -106,6 +186,9 @@ export const query = graphql`
 		allCluesJson {
 			nodes {
 				clue {
+					value
+				}
+				source {
 					value
 				}
 				difficulty

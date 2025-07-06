@@ -22,6 +22,12 @@
 		padding: 1.5rem .5rem 1rem;
 		border-radius: 8px;
 
+		// Dark mode
+		:global(.dark) & {
+			background-color: #262626; // neutral-800 - true dark modal background
+			color: #F5F5F5; // neutral-100 - true light text
+		}
+
 		button {
 			margin-top: 1rem;
 		}

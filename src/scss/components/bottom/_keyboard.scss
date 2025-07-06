@@ -18,7 +18,7 @@
 
 		button {
 			position: relative;
-			background-color: $lc-gray;
+			// background-color handled by Tailwind classes in React component
 			border: none;
 			width: 100%;
 			height: 48px;
@@ -32,7 +32,7 @@
 
 			&#backspace {
 				width: 150%;
-				background-color: $lc-gray--dark;
+				// background-color handled by Tailwind classes in React component
 			}
 
 			span,

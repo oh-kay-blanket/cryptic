@@ -103,7 +103,7 @@ const Message = ({
 		: 'continue'
 
 	return (
-		<div className={`message ${messageStyle}`} ref={msgContainer}>
+		<div className={`message ${messageStyle} bg-white dark:!bg-neutral-800 dark:!text-neutral-100`} ref={msgContainer}>
 			{message && (
 				<div className={'message-copy lc-container'}>
 					{message}

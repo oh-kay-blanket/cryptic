@@ -82,7 +82,7 @@ const CluePage = ({ data }) => {
 	const pillList = activeClue.type.map((t, index) => (
 		<li
 			key={`type_${index}`}
-			className='type-pill tooltip-parent'
+			className='type-pill tooltip-parent bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
 			aria-describedby='tooltip-id'
 		>
 			{t}
@@ -118,11 +118,11 @@ const CluePage = ({ data }) => {
 	const statsInsert = (
 		<>
 			<div className='clue-stats'>
-				<span className='stat-hints'>
+				<span className='stat-hints dark:!bg-[#4A3F6B] dark:!text-white'>
 					<span className='stat'>{stats.hints}</span>&nbsp;
 					{stats.hints === 1 ? 'hint' : 'hints'}
 				</span>
-				<span className='stat-guesses'>
+				<span className='stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white'>
 					<span className='stat'>{stats.guesses}</span>&nbsp;
 					{stats.guesses === 1 ? 'guess' : 'guesses'}
 				</span>
@@ -205,7 +205,7 @@ const CluePage = ({ data }) => {
 
 	// solution HTML
 	const solInsert = activeClue.solution.arr.map((letter, index) => (
-		<span key={`solarr_${index}`} id={`i${index}`} className='letter'>
+		<span key={`solarr_${index}`} id={`i${index}`} className='letter border-neutral-900 dark:!border-white' style={{ borderWidth: '0.75px' }}>
 			<span
 				id={`sl${index}`}
 				ref={activeClue.solution.ref.current[index]}

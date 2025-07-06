@@ -16,7 +16,7 @@ const Anagram = () => {
 	const backButton = (
 		<button onClick={() => window.history.back()} aria-label='Go back'>
 			<svg
-				className='back-button'
+				className='back-button fill-neutral-600 dark:fill-neutral-400'
 				xmlns='http://www.w3.org/2000/svg'
 				width='25px'
 				height='25px'
@@ -70,7 +70,7 @@ const Anagram = () => {
 		'stirred',
 	]
 	const indicators = indicatorArr.map((indicator, index) => (
-		<li key={index} className='indicator'>
+		<li key={index} className='indicator dark:!bg-[#47387b] dark:!text-white'>
 			{indicator.toLowerCase()}
 		</li>
 	))
@@ -127,7 +127,7 @@ const Anagram = () => {
 					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>One unusual role in "The Matrix" (3)</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>role in "The Matrix"</strong>
@@ -138,7 +138,7 @@ const Anagram = () => {
 								</li>
 							</ul>
 							<p className='text-center'>
-								<strong>neo</strong> → <strong>one</strong>
+								<strong>one</strong> → <strong>neo</strong>
 							</p>
 							<div className='solution'>
 								<span className='letter'>n</span>
@@ -150,7 +150,7 @@ const Anagram = () => {
 
 					<div className='example-container'>
 						<p className='example'>Altering odd three-sided figure (8)</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>three-sided figure</strong>

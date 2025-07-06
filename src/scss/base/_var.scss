@@ -39,3 +39,26 @@ $lc-clue-container-height: 65%;
 $lc-font--serif: 'Georgia', 'Times New Roman', serif;
 $lc-font--sans: 'Roboto', 'Open Sans', 'Arial', 'Open Sans', sans;
 $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
+
+// CSS Custom Properties for dynamic colors (used by JavaScript utilities)
+:root {
+  // Light mode colors
+  --lc-highlight-text: #7457D6;
+  --lc-highlight-bg: #E1D8FF;
+  --lc-text-primary: #0B0B0B;
+  --lc-text-secondary: #222;
+  --lc-text-muted: #ccc;
+  --lc-bg-muted: #E2E2E2;
+  --archive-border-color: #bbb;
+}
+
+// Dark mode colors
+:root.dark {
+  --lc-highlight-text: #9B8FE8; // desaturated lighter purple for dark mode
+  --lc-highlight-bg: #4A3F6B; // desaturated darker purple background
+  --lc-text-primary: #E5E5E5; // softer off-white text (instead of pure white)
+  --lc-text-secondary: #D0D0D0; // slightly darker off-white
+  --lc-text-muted: #888888; // true medium gray for muted text
+  --lc-bg-muted: #525252; // lighter muted background (neutral-600)
+  --archive-border-color: #404040;
+}

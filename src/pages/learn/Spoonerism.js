@@ -16,7 +16,7 @@ const Spoonerism = () => {
 	const backButton = (
 		<button onClick={() => window.history.back()} aria-label='Go back'>
 			<svg
-				className='back-button'
+				className='back-button fill-neutral-600 dark:fill-neutral-400'
 				xmlns='http://www.w3.org/2000/svg'
 				width='25px'
 				height='25px'
@@ -99,7 +99,7 @@ const Spoonerism = () => {
 						<p className='example'>
 							Restaurant supervisors marry bigots, per Rev. Spooner (4,7)
 						</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Restaurant supervisors</strong>

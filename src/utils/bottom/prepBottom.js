@@ -124,7 +124,7 @@ const prepBottom = (
 		},
 		continue: {
 			name: 'Continue',
-			style: 'secondary',
+			style: 'primary',
 			onClick: function () {
 				setShowMessage(false)
 				!checkAns && setNextHint(nextHint + 1)

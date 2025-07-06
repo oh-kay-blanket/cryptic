@@ -16,7 +16,7 @@ const Charade = () => {
 	const backButton = (
 		<button onClick={() => window.history.back()} aria-label='Go back'>
 			<svg
-				className='back-button'
+				className='back-button fill-neutral-600 dark:fill-neutral-400'
 				xmlns='http://www.w3.org/2000/svg'
 				width='25px'
 				height='25px'
@@ -94,7 +94,7 @@ const Charade = () => {
 					<h2 className='text-2xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Come to AT&T objective (6)</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Come to</strong>
@@ -125,7 +125,7 @@ const Charade = () => {
 						<p className='example'>
 							Digests runny cheese before Friday and Saturday (6)
 						</p>
-						<div className='explanation'>
+						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
 									The definition is <strong>Digests</strong>

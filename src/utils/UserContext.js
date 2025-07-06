@@ -25,6 +25,7 @@ export const UserProvider = ({ children }) => {
 			streak: 0,
 			longestStreak: 0,
 			lastSolved: '',
+			darkMode: null, // null = system preference, true = dark, false = light
 		}
 	})
 
@@ -34,6 +35,7 @@ export const UserProvider = ({ children }) => {
 	let typeViewed = lcState.typeViewed
 	let streak = lcState.streak
 	let longestStreak = lcState.longestStreak
+	let darkMode = lcState.darkMode
 
 	useEffect(() => {
 		const checkStreak = () => {
@@ -84,6 +86,39 @@ export const UserProvider = ({ children }) => {
 		checkStreak()
 		localStorage.setItem('lcState', JSON.stringify(lcState))
 	}, [lcState.lastSolved, lcState.streak]) // Only depend on the specific values that matter
+
+	// Dark mode effect
+	useEffect(() => {
+		const applyDarkMode = () => {
+			let shouldUseDark = false
+
+			if (darkMode === null) {
+				// Use system preference
+				shouldUseDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+			} else {
+				// Use user preference
+				shouldUseDark = darkMode
+			}
+
+			if (shouldUseDark) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		}
+
+		if (typeof window !== 'undefined') {
+			applyDarkMode()
+
+			// Listen for system theme changes when using system preference
+			if (darkMode === null) {
+				const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+				const handleChange = () => applyDarkMode()
+				mediaQuery.addListener(handleChange)
+				return () => mediaQuery.removeListener(handleChange)
+			}
+		}
+	}, [darkMode])
 
 	// Functions
 	const addCompletedClue = (activeClue, stats, type) => {
@@ -182,6 +217,14 @@ export const UserProvider = ({ children }) => {
 		})
 	}
 
+	// Dark mode setting
+	const setDarkMode = (newMode) => {
+		setLcState({
+			...lcState,
+			darkMode: newMode,
+		})
+	}
+
 	const contextValue = useMemo(
 		() => ({
 			completedClues,
@@ -194,8 +237,10 @@ export const UserProvider = ({ children }) => {
 			setTypeViewed,
 			returnLearn,
 			setReturnLearn,
+			darkMode,
+			setDarkMode,
 		}),
-		[completedClues, streak, longestStreak, showType, typeViewed, returnLearn]
+		[completedClues, streak, longestStreak, showType, typeViewed, returnLearn, darkMode]
 	)
 
 	return (
