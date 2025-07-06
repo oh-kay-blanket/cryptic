@@ -1,6 +1,6 @@
 @use '../base/var' as *;
 
-.authors {
+.constructors {
 	padding: 2rem 1rem;
 	max-width: 1200px;
 	
@@ -8,8 +8,8 @@
 		font-family: $lc-font--alt;
 	}
 	
-	.authors-grid {
-		.author-card {
+	.constructors-grid {
+		.constructor-card {
 			transition: transform 0.2s ease, box-shadow 0.2s ease;
 			
 			&:hover {
@@ -22,7 +22,7 @@
 				}
 			}
 			
-			.author-image {
+			.constructor-image {
 				.gatsby-image-wrapper {
 					border: 3px solid $lc-secondary--light;
 					
@@ -33,7 +33,7 @@
 				}
 			}
 			
-			.author-info {
+			.constructor-info {
 				h2 {
 					color: $lc-text;
 					

@@ -140,32 +140,7 @@ const TopBar = () => {
 				</div>
 			</header>
 			<Modal open={helpOpen} onClose={() => setHelpOpen(false)}>
-				<p className='mt-4'>
-					Welcome to Learn Cryptic! If you're having difficulty understanding
-					the clues, visit the{' '}
-					<Link to='/learn' className='font-bold underline'>
-						Learn
-					</Link>{' '}
-					page to learn more about cryptics and practice with more basic clues.
-				</p>
-				
-				<p className='mt-4'>
-					Interested in the puzzle constructors behind our clues? Check out our{' '}
-					<Link to='/authors' className='font-bold underline'>
-						Authors
-					</Link>{' '}
-					page to learn more about the talented creators who make Learn Cryptic possible.
-				</p>
-				
-				<p className='mt-4'>
-					Looking for more cryptic puzzles to solve? Visit our{' '}
-					<Link to='/resources' className='font-bold underline'>
-						Resources
-					</Link>{' '}
-					page for links to free puzzles, apps, books, and communities.
-				</p>
-
-				<div className='mt-6 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
+				<div className='mt-6'>
 					<h3 className='font-bold mb-3'>Theme</h3>
 					<div className='flex justify-center mb-4'>
 						<div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
@@ -225,7 +200,32 @@ const TopBar = () => {
 							</label>
 						</div>
 					</div>
-					<div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
+					<p className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
+						Need help with cryptics? Visit our{' '}
+						<Link to='/learn' className='font-bold underline'>
+							Learn
+						</Link>{' '}
+						page for more information and practice with more basic clues.
+					</p>
+
+					<p className='mt-4'>
+						See our{' '}
+						<Link to='/constructors' className='font-bold underline'>
+							Constructors
+						</Link>{' '}
+						page to learn more about the talented folks who make Learn Cryptic
+						possible.
+					</p>
+
+					<p className='mt-4'>
+						Need more cryptics in your life? We get it. Visit{' '}
+						<Link to='/resources' className='font-bold underline'>
+							Resources
+						</Link>{' '}
+						for links to free puzzles, apps, books, and communities.
+					</p>
+
+					<div className='pt-4'>
 						<p>
 							Have questions, comments, or want to contribute future cryptic
 							clues?

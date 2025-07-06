@@ -10,7 +10,7 @@ const Resources = () => {
 					name: "Kegler's Cryptic Archive",
 					url: 'https://kegler.gitlab.io',
 					description:
-						'An extensive collection of free cryptic crosswords by Kegler, one of our featured authors. Perfect for daily practice with puzzles of varying difficulty levels.',
+						'An extensive collection of free cryptic crosswords by Kegler, one of our featured constructors. Perfect for daily practice with puzzles of varying difficulty levels.',
 					featured: true,
 				},
 				{
