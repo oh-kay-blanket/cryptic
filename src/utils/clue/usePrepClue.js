@@ -3,6 +3,7 @@ import { useRef, createRef, useEffect } from 'react'
 import getTargetLetters from './getTargetLetters'
 import fixLetters from './fixLetters'
 import addLetters from './addLetters'
+import authors from '../../assets/data/authors.json'
 
 const usePrepClue = (dataClue) => {
 	let activeClue = structuredClone(dataClue)
@@ -26,29 +27,13 @@ const usePrepClue = (dataClue) => {
 	activeClue.type = activeClue.type.split(', ')
 
 	// clue source
-	switch (activeClue.source.value) {
-		case 'Fraz':
-			activeClue.source.href =
-				'https://www.theglobeandmail.com/puzzles-and-crosswords/article-how-to-solve-the-cryptic-crossword-fraser-simson/'
-			break
-		case 'Midas':
-			activeClue.source.href = 'https://www.marcmaximov.net'
-			break
-		case 'plunk it':
-			activeClue.source.href = 'https://ohkayblanket.com'
-			break
-		case 'Kegler':
-			activeClue.source.href = 'https://kegler.gitlab.io'
-			break
-		case 'Ucaoimhu':
-			activeClue.source.href = 'https://www.ucaoimhu.com'
-			break
-		case 'Hex':
-			activeClue.source.href = 'https://coxrathvon.com'
-			break
-		default:
-			activeClue.source.href = false
-			break
+	const author = authors.find(
+		(author) => author.nom === activeClue.source.value
+	)
+	if (author) {
+		activeClue.source.href = author.link
+	} else {
+		activeClue.source.href = false
 	}
 
 	// add hint type

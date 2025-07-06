@@ -148,6 +148,22 @@ const TopBar = () => {
 					</Link>{' '}
 					page to learn more about cryptics and practice with more basic clues.
 				</p>
+				
+				<p className='mt-4'>
+					Interested in the puzzle constructors behind our clues? Check out our{' '}
+					<Link to='/authors' className='font-bold underline'>
+						Authors
+					</Link>{' '}
+					page to learn more about the talented creators who make Learn Cryptic possible.
+				</p>
+				
+				<p className='mt-4'>
+					Looking for more cryptic puzzles to solve? Visit our{' '}
+					<Link to='/resources' className='font-bold underline'>
+						Resources
+					</Link>{' '}
+					page for links to free puzzles, apps, books, and communities.
+				</p>
 
 				<div className='mt-6 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
 					<h3 className='font-bold mb-3'>Theme</h3>
