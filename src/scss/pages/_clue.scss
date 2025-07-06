@@ -17,10 +17,10 @@
 		justify-content: space-evenly;
 		align-self: center;
 		width: 100%;
-		height: 60%;
+		height: 65%;
 		// height: $lc-clue-container-height;
 		margin: 0 auto;
-		padding: 1rem;
+		padding: 1.5rem 1rem;
 		text-align: center;
 		font-size: 1.15rem;
 		text-wrap: balance;
@@ -36,7 +36,7 @@
 			top: 0;
 			left: 0;
 			padding-left: 0;
-			margin: 1.25rem;
+			margin: 1.5rem 1.25rem;
 			list-style-type: none;
 
 			@media (max-height: 600px) {
@@ -65,11 +65,6 @@
 					font-weight: 500;
 					color: $lc-text--light;
 
-					// Dark mode
-					:global(.dark) & {
-						color: #a3a3a3; // neutral-400
-					}
-
 					button {
 						font-size: .7rem;
 					}
@@ -83,6 +78,22 @@
 
 		}
 
+		// Dark mode type-text styling
+		html.dark & ul.type li.type-text {
+			color: #d1d5db !important; // neutral-300 - better contrast for ADA compliance
+		}
+
+		// Make eye icons match type-text color
+		ul.type li.eyecon img {
+			// Light mode: match $lc-text--light (#666)
+			filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+		}
+
+		// Dark mode: make eye icons match the improved type-text color
+		html.dark & ul.type li.eyecon img {
+			filter: brightness(0) saturate(100%) invert(83%) sepia(8%) saturate(196%) hue-rotate(202deg) brightness(95%) contrast(88%);
+		}
+
 		.clue-stats {
 			position: absolute;
 			bottom: 0;
@@ -91,7 +102,7 @@
 			font-size: .75rem;
 			font-weight: 600;
 			font-family: $lc-font--sans;
-			margin: 1.25rem;
+			margin: 1.5rem 1.25rem;
 			pointer-events: none;
 			user-select: none;
 
@@ -290,7 +301,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin: 1.25rem;
+			margin: 1.5rem 1.25rem;
 			z-index: 10;
 
 			@media (max-height: 600px) {

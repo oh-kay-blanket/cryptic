@@ -186,7 +186,7 @@ const Keyboard = ({ handleInput }) => {
 				<button
 					onClick={() => handleInput('del')}
 					id='backspace'
-					className='bg-neutral-400 dark:!bg-neutral-700 dark:!text-neutral-100 hover:bg-neutral-500 hover:dark:!bg-neutral-600'
+					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'
 				>
 					<img src={backspace} alt='backspace' className='dark:invert' />
 				</button>

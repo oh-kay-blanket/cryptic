@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
@@ -19,6 +19,16 @@ const Title = ({ data }) => {
 		}, 100)
 
 		return () => clearTimeout(timer)
+	}, [])
+
+	// Add fixed-page class to prevent scrolling
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			document.body.classList.add('fixed-page')
+			return () => {
+				document.body.classList.remove('fixed-page')
+			}
+		}
 	}, [])
 
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')

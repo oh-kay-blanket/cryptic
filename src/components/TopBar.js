@@ -12,7 +12,7 @@ const InfoIcon = () => (
 		viewBox='0 0 24 24'
 		fill='none'
 		xmlns='http://www.w3.org/2000/svg'
-		className='text-neutral-500 dark:text-neutral-400'
+		className='text-neutral-500 dark:text-neutral-200'
 	>
 		<circle
 			cx='12'
@@ -34,7 +34,7 @@ const BarGraphIcon = () => (
 		viewBox='0 0 24 24'
 		fill='none'
 		xmlns='http://www.w3.org/2000/svg'
-		className='text-neutral-500 dark:text-neutral-400'
+		className='text-neutral-500 dark:text-neutral-200'
 	>
 		<rect x='3' y='10' width='4' height='8' rx='1' fill='currentColor' />
 		<rect x='9' y='6' width='4' height='12' rx='1' fill='currentColor' />

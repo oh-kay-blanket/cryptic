@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { UserContext } from '../../utils/UserContext'
 import Layout from '../../components/layout'
@@ -21,6 +21,16 @@ const CluePage = ({ data }) => {
 
 	const dataClue = data.cluesJson
 	const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false)
+
+	// Add fixed-page class to prevent scrolling
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			document.body.classList.add('fixed-page')
+			return () => {
+				document.body.classList.remove('fixed-page')
+			}
+		}
+	}, [])
 
 	// Helper functions for difficulty
 	const getImg = (difficulty) => {
