@@ -21,7 +21,7 @@ const prepBottom = (
 	const isTodaysClue = () => {
 		const clueDate = new Date(activeClue.release)
 		const today = new Date()
-		
+
 		// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
 		const clueDay = new Date(
 			clueDate.getFullYear(),
@@ -33,7 +33,7 @@ const prepBottom = (
 			today.getMonth(),
 			today.getDate()
 		)
-		
+
 		return clueDay.getTime() === todayDay.getTime()
 	}
 	const shareScore = async () => {
@@ -112,8 +112,8 @@ const prepBottom = (
 			name: 'Reveal solution',
 			style: 'alt',
 			onClick: function () {
-				addCompletedClue(activeClue, stats, 'h')
-				setStats((prevStats) => ({ ...prevStats, hints: prevStats.hints + 1 }))
+				// addCompletedClue(activeClue, stats, 'h')
+				// setStats((prevStats) => ({ ...prevStats, hints: prevStats.hints + 1 }))
 				setShowMessage(true)
 				setInput([])
 			},
@@ -248,7 +248,11 @@ const prepBottom = (
 	}
 
 	// If no buttons are available (today's clue at reveal stage), show message
-	if (btnArr.length === 0 && activeClue.hints[nextHint].reveals && isTodaysClue()) {
+	if (
+		btnArr.length === 0 &&
+		activeClue.hints[nextHint].reveals &&
+		isTodaysClue()
+	) {
 		btnArr = [buttons.noMoreClues]
 	}
 

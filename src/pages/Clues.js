@@ -118,16 +118,15 @@ const Clues = ({ data }) => {
 
 		const isHovered = hoveredClue === clue.clid
 		const isReleaseHovered = hoveredRelease === clue.clid
-		const completionText = completedClue
-			? completedClue.how === 'g'
-				? 'Solved by guess'
-				: 'Solved by hint'
-			: 'Not completed'
+		const completionText =
+			completedClue && completedClue.how === 'g' ? 'Solved' : 'Not solved'
 
 		return (
 			<div
-				className={`archive-clue${!!completedClue ? ' completed' : ''} ${
-					completedClue && completedClue.how
+				className={`archive-clue${
+					!!completedClue && completedClue.how === 'g' ? ' completed' : ''
+				} ${
+					!!completedClue && completedClue.how === 'g' ? completedClue.how : ''
 				}`}
 				key={clue.id}
 			>
@@ -189,32 +188,27 @@ const Clues = ({ data }) => {
 						className={`archive-tile border border-[#ddd] dark:!border-[#404040] hover:dark:!bg-neutral-700 hover:dark:!border-neutral-800 `}
 						ref={tilesRef.current[index]}
 						style={{
-							...(isHovered && completedClue
+							...(isHovered && !!completedClue && completedClue.how === 'g'
 								? {
 										backgroundColor: isDarkMode
-											? completedClue.how === 'g'
-												? 'rgb(120, 70, 45)'
-												: '#4A3F6B'
-											: completedClue.how === 'g'
-											? '#FFCBAB'
-											: '#eae4ff',
+											? 'rgb(120, 70, 45)'
+											: '#4A3F6B',
 										color: isDarkMode ? 'white' : 'black',
 								  }
 								: {}),
-							...(isReleaseHovered && completedClue
+							...(isReleaseHovered &&
+							!!completedClue &&
+							completedClue.how === 'g'
 								? {
 										// For completed clues: match the archive-release color
 										backgroundColor: isDarkMode
-											? completedClue.how === 'g'
-												? 'rgb(120, 70, 45)'
-												: '#4A3F6B'
-											: completedClue.how === 'g'
-											? '#FFCBAB'
-											: '#eae4ff',
+											? 'rgb(120, 70, 45)'
+											: '#FFCBAB',
 										color: isDarkMode ? 'white' : 'black',
 								  }
 								: {}),
-							...(isReleaseHovered && !completedClue
+							...(isReleaseHovered &&
+							(!completedClue || completedClue.how !== 'g')
 								? {
 										// For incomplete clues: subtle gray background
 										backgroundColor: isDarkMode ? '#404040' : '#ddd',
@@ -223,7 +217,10 @@ const Clues = ({ data }) => {
 						}}
 					>
 						<div className='tile-img-stats'>
-							{!isHovered && stats}
+							{!isHovered &&
+								!!completedClue &&
+								completedClue.how === 'g' &&
+								stats}
 							{!isHovered && (
 								<img
 									className='tile-difficulty'
@@ -235,9 +232,9 @@ const Clues = ({ data }) => {
 						</div>
 						{isHovered ? (
 							<div className='tile-info'>
-								<span>
-									Clue #{clue.clid} • by {clue.source?.value || 'Unknown'} •{' '}
-									{completionText}
+								<span className='text-md'>
+									{completionText} • Clue #{clue.clid} • by{' '}
+									{clue.source?.value || 'Unknown'}
 								</span>
 							</div>
 						) : (
