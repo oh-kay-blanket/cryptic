@@ -47,7 +47,7 @@
 					transform: translateY(-50%);
 					left: 0;
 					display: block;
-					border: 1px solid var(--archive-border-color, #bbb);
+					border: 1px solid var(--archive-border-color, #ddd);
 				}
 
 				span {
@@ -120,8 +120,8 @@
 
 		&:hover,
 		&:focus {
-			background-color: #bbb !important; // darker gray for hover
-			border: 1px solid #bbb !important;
+			background-color: #ddd !important; // darker gray for hover
+			border: 1px solid #ddd !important;
 
 			// Dark mode
 			:global(.dark) & {
@@ -131,7 +131,7 @@
 		}
 
 		&.archive-tile-release-hovered {
-			background-color: #bbb !important;
+			background-color: #ddd !important;
 
 			// Dark mode
 			:global(.dark) & {

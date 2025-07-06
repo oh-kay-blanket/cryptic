@@ -101,3 +101,13 @@
 		margin: 0 0.5rem;
 	}
 }
+
+// Theme picker background for newspaper feel
+.theme-picker-bg {
+	background-color: $lc-gray--dark !important; // warm gray for newspaper feel
+}
+
+// Dark mode theme picker background
+html.dark .theme-picker-bg {
+	background-color: #333 !important; // neutral-700
+}

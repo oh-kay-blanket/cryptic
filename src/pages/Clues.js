@@ -137,8 +137,8 @@ const Clues = ({ data }) => {
 					}`}
 					style={{
 						cursor: 'pointer',
-						'--hover-bg': isDarkMode ? '#404040' : '#bbb',
-						'--hover-border': isDarkMode ? '#404040' : '#bbb',
+						'--hover-bg': isDarkMode ? '#404040' : '#ddd',
+						'--hover-border': isDarkMode ? '#404040' : '#ddd',
 						...(completedClue
 							? {
 									'--archive-bg': isDarkMode
@@ -186,7 +186,7 @@ const Clues = ({ data }) => {
 				>
 					<div
 						id={clue.id}
-						className={`archive-tile border border-[#bbb] dark:!border-[#404040] hover:dark:!bg-neutral-700 hover:dark:!border-neutral-800 `}
+						className={`archive-tile border border-[#ddd] dark:!border-[#404040] hover:dark:!bg-neutral-700 hover:dark:!border-neutral-800 `}
 						ref={tilesRef.current[index]}
 						style={{
 							...(isHovered && completedClue
@@ -217,7 +217,7 @@ const Clues = ({ data }) => {
 							...(isReleaseHovered && !completedClue
 								? {
 										// For incomplete clues: subtle gray background
-										backgroundColor: isDarkMode ? '#404040' : '#bbb',
+										backgroundColor: isDarkMode ? '#404040' : '#ddd',
 								  }
 								: {}),
 						}}

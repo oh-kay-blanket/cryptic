@@ -14,14 +14,14 @@ $lc-secondary--dark: #68589E;
 $lc-hint0: $lc-primary;
 $lc-hint0--dark: $lc-primary--dark;
 
-// Grays
-$lc-text: #222;
+// Grays - with subtle newspaper feel
+$lc-text: #1a1a1a; // slightly softer than pure black
 $lc-text--light: #666;
-$lc-black: #222;
-$lc-gray: #E2E2E2;
-$lc-gray--light: #F3F3F3;
-$lc-gray--v-light: #F9F9F9;
-$lc-gray--dark: #d2d2d2;
+$lc-black: #1a1a1a;
+$lc-gray: #E8E6E1; // warm off-white with beige undertone
+$lc-gray--light: #F5F3EE; // newsprint-like background
+$lc-gray--v-light: #FAF9F6; // very light cream
+$lc-gray--dark: #D4D2CD; // warm gray border
 
 // Transition
 $lc-transition: 2.5s;
@@ -42,15 +42,15 @@ $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
 
 // CSS Custom Properties for dynamic colors (used by JavaScript utilities)
 :root {
-  // Light mode colors
+  // Light mode colors - newspaper feel
   --lc-highlight-text: #7457D6;
   --lc-highlight-bg: #E1D8FF;
-  --lc-text-primary: #0B0B0B;
-  --lc-text-secondary: #222;
+  --lc-text-primary: #1a1a1a; // softer black for newspaper feel
+  --lc-text-secondary: #1a1a1a;
   --lc-text-muted: #ccc;
-  --lc-bg-muted: #E2E2E2;
-  --archive-border-color: #bbb;
-  --solution-letter-border: #222;
+  --lc-bg-muted: #E8E6E1; // warm off-white
+  --archive-border-color: #D4D2CD; // warm gray borders
+  --solution-letter-border: #1a1a1a;
 }
 
 // Dark mode colors

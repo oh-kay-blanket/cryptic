@@ -33,6 +33,24 @@ body,
 body {
 	display: flex;
 	color: $lc-text;
+	background-color: $lc-gray--v-light; // warm cream background for newspaper feel
+}
+
+// Dark mode body background
+html.dark body {
+	background-color: #1a1a1a !important;
+}
+
+// Override any white backgrounds for newspaper feel (light mode only)
+html:not(.dark) .bg-white,
+html:not(.dark) [class*="bg-white"] {
+	background-color: $lc-gray--v-light !important;
+}
+
+// Also override any elements that might have white background set directly (light mode only)
+html:not(.dark) [style*="background-color: white"],
+html:not(.dark) [style*="background: white"] {
+	background-color: $lc-gray--v-light !important;
 }
 
 main {

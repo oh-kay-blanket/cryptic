@@ -134,7 +134,7 @@ const TopBar = () => {
 				<div className='mt-6 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
 					<h3 className='font-bold mb-3'>Theme</h3>
 					<div className='flex justify-center mb-4'>
-						<div className='flex bg-neutral-100 dark:bg-neutral-700 rounded-lg p-1 gap-1'>
+						<div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
 							<label className='flex items-center cursor-pointer'>
 								<input
 									type='radio'
@@ -147,7 +147,7 @@ const TopBar = () => {
 									className={`px-3 py-1 text-sm rounded-md transition-colors ${
 										darkMode === null
 											? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
-											: 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+											: 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
 									}`}
 								>
 									System
@@ -165,7 +165,7 @@ const TopBar = () => {
 									className={`px-3 py-1 text-sm rounded-md transition-colors ${
 										darkMode === false
 											? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
-											: 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+											: 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
 									}`}
 								>
 									Light
@@ -183,7 +183,7 @@ const TopBar = () => {
 									className={`px-3 py-1 text-sm rounded-md transition-colors ${
 										darkMode === true
 											? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
-											: 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+											: 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
 									}`}
 								>
 									Dark

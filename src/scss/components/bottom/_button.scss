@@ -41,11 +41,37 @@
 	&.primary {
 		background-color: $lc-primary--light;
 		border: 1px solid $lc-primary--light;
+
+		// Dark mode
+		:global(.dark) & {
+			background-color: rgb(120, 70, 45); // desaturated orange from earlier work
+			border: 1px solid rgb(120, 70, 45);
+
+			&:hover,
+			&:active {
+				background-color: rgb(110, 65, 42); // slightly darker for subtle hover
+				border: 1px solid rgb(110, 65, 42);
+				filter: none; // remove brightness filter
+			}
+		}
 	}
 
 	&.alt {
 		background-color: $lc-secondary--light;
 		border: 1px solid $lc-secondary--light;
+
+		// Dark mode
+		:global(.dark) & {
+			background-color: #4A3F6B; // desaturated purple from earlier work
+			border: 1px solid #4A3F6B;
+
+			&:hover,
+			&:active {
+				background-color: #423859; // slightly darker for subtle hover
+				border: 1px solid #423859;
+				filter: none; // remove brightness filter
+			}
+		}
 	}
 
 	&.secondary {
