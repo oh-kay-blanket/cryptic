@@ -30,7 +30,7 @@ const HiddenWord = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/2',
+			path: '/clues/52',
 			name: 'Play a hidden word clue',
 			style: 'primary',
 			onClick: function () {
@@ -66,7 +66,9 @@ const HiddenWord = () => {
 		'sheath',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>
+			{indicator.toLowerCase()}
+		</li>
 	))
 
 	// Handle anchor link
