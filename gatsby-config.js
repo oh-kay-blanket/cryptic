@@ -1,9 +1,10 @@
 module.exports = {
 	siteMetadata: {
-		title: `Cryptic`,
-		description: `A description of your project`,
+		title: `Learn Cryptic - Daily Cryptic Crossword Clues`,
+		description: `Learn and practice cryptic crossword clues with our daily game. Perfect for beginners and experienced solvers alike. Improve your cryptic crossword skills with guided hints and explanations.`,
 		author: `@oh-kay-blanket`,
-		siteUrl: `https://learncryptic.com`
+		siteUrl: `https://learncryptic.com`,
+		keywords: `cryptic crossword, crossword clues, word puzzles, daily puzzle, learn cryptic, cryptic clues, wordplay`
 	},
 	plugins: [
 		`gatsby-plugin-image`,
@@ -21,17 +22,93 @@ module.exports = {
 			},
 		},
 		`gatsby-transformer-json`,
-		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				excludes: [`/futureclues`],
+				query: `
+					{
+						site {
+							siteMetadata {
+								siteUrl
+							}
+						}
+						allSitePage {
+							nodes {
+								path
+								pageContext
+							}
+						}
+						allCluesJson {
+							nodes {
+								clid
+								release
+							}
+						}
+					}
+				`,
+				resolvePages: ({
+					allSitePage: { nodes: allPages },
+					allCluesJson: { nodes: allClues }
+				}) => {
+					const pages = allPages.map(page => {
+						// Add priority and changefreq based on page type
+						let priority = 0.5
+						let changefreq = 'monthly'
+						
+						if (page.path === '/') {
+							priority = 1.0
+							changefreq = 'daily'
+						} else if (page.path === '/learn/') {
+							priority = 0.8
+							changefreq = 'weekly'
+						} else if (page.path === '/clues/') {
+							priority = 0.7
+							changefreq = 'daily'
+						} else if (page.path.startsWith('/clues/')) {
+							// Individual clue pages
+							priority = 0.6
+							changefreq = 'weekly'
+						} else if (page.path.startsWith('/learn/')) {
+							// Individual learn pages
+							priority = 0.7
+							changefreq = 'monthly'
+						}
+						
+						return {
+							path: page.path,
+							priority,
+							changefreq
+						}
+					})
+					
+					return pages
+				},
+				serialize: ({ path, priority, changefreq }) => {
+					return {
+						url: path,
+						priority,
+						changefreq,
+						lastmod: new Date().toISOString().split('T')[0]
+					}
+				}
+			}
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: "Learn Cryptic",
-				short_name: "LC",
+				name: "Learn Cryptic - Daily Cryptic Crossword Clues",
+				short_name: "Learn Cryptic",
+				description: "Learn and practice cryptic crossword clues with our daily game",
 				start_url: "/",
-				background_color: "#ffffff",
+				background_color: "#FAF9F6",
 				theme_color: "#E1D8FF",
 				display: "standalone",
-				icon: "src/assets/img/favicon.png", // Path to your favicon (512x512 recommended)
+				orientation: "portrait",
+				icon: "src/assets/img/favicon.png",
+				categories: ["games", "education", "puzzle"],
+				lang: "en",
+				scope: "/",
 			},
 		},
 		{
@@ -82,7 +159,13 @@ module.exports = {
 			options: {
 				host: 'https://learncryptic.com',
 				sitemap: 'https://learncryptic.com/sitemap-index.xml',
-				policy: [{userAgent: '*', allow: '/'}]
+				policy: [
+					{
+						userAgent: '*',
+						allow: '/',
+						disallow: ['/futureclues']
+					}
+				]
 			}
 		}
 	],

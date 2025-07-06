@@ -211,3 +211,11 @@ const Learn = () => {
 }
 
 export default Learn
+
+export const Head = () => (
+	<>
+		<title>Learn Cryptic Crosswords - Complete Guide & Tutorial</title>
+		<meta name="description" content="Master cryptic crosswords with our comprehensive guide. Learn anagrams, charades, containers, and more. Interactive tutorials for all skill levels." />
+		<link rel="canonical" href="https://learncryptic.com/learn" />
+	</>
+)

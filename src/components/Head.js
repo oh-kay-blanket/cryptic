@@ -1,14 +1,73 @@
 import React from 'react'
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-export const Head = () => <>
-	<meta charSet="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
-	<meta property="og:title" content="Learn Cryptic" />
-	<meta property="og:description" content="Learn Cryptic is a daily game to help you learn about, practice, and solve cryptic crossword clues." />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://learncryptic.com" />
-	<meta property="og:image" content="https://learncryptic.com/favicon.png" />
-	<title>Learn Cryptic</title>
-	<link rel="icon" href="https://learncryptic.com/favicon.png" />
-</>
+export const Head = ({ title, description, pathname, children }) => {
+	const { title: defaultTitle, description: defaultDescription, siteUrl, keywords } = useSiteMetadata()
+	
+	const seo = {
+		title: title || defaultTitle,
+		description: description || defaultDescription,
+		url: `${siteUrl}${pathname || '/'}`,
+	}
+
+	return (
+		<>
+			<meta charSet="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
+			
+			{/* Primary Meta Tags */}
+			<title>{seo.title}</title>
+			<meta name="title" content={seo.title} />
+			<meta name="description" content={seo.description} />
+			<meta name="keywords" content={keywords} />
+			<meta name="author" content="Learn Cryptic" />
+			<meta name="language" content="English" />
+			
+			{/* Canonical URL */}
+			<link rel="canonical" href={seo.url} />
+			
+			{/* Open Graph / Facebook */}
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content={seo.url} />
+			<meta property="og:title" content={seo.title} />
+			<meta property="og:description" content={seo.description} />
+			<meta property="og:image" content={`${siteUrl}/favicon.png`} />
+			<meta property="og:site_name" content="Learn Cryptic" />
+			<meta property="og:locale" content="en_US" />
+			
+			{/* Twitter */}
+			<meta property="twitter:card" content="summary_large_image" />
+			<meta property="twitter:url" content={seo.url} />
+			<meta property="twitter:title" content={seo.title} />
+			<meta property="twitter:description" content={seo.description} />
+			<meta property="twitter:image" content={`${siteUrl}/favicon.png`} />
+			
+			{/* Favicon */}
+			<link rel="icon" type="image/png" href="/favicon.png" />
+			<link rel="apple-touch-icon" href="/favicon.png" />
+			
+			{/* Theme Color */}
+			<meta name="theme-color" content="#E1D8FF" />
+			<meta name="msapplication-TileColor" content="#E1D8FF" />
+			
+			{/* Additional structured data */}
+			<script type="application/ld+json">
+				{JSON.stringify({
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					"name": "Learn Cryptic",
+					"description": seo.description,
+					"url": siteUrl,
+					"potentialAction": {
+						"@type": "SearchAction",
+						"target": `${siteUrl}/clues`,
+						"query-input": "required name=search_term_string"
+					}
+				})}
+			</script>
+			
+			{children}
+		</>
+	)
+}

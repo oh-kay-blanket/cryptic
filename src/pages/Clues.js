@@ -255,6 +255,14 @@ const Clues = ({ data }) => {
 
 export default Clues
 
+export const Head = () => (
+	<>
+		<title>All Cryptic Crossword Clues - Learn Cryptic Archive</title>
+		<meta name="description" content="Browse all daily cryptic crossword clues. Practice with past puzzles, track your solving statistics, and improve your cryptic crossword skills." />
+		<link rel="canonical" href="https://learncryptic.com/clues" />
+	</>
+)
+
 export const query = graphql`
 	query {
 		allCluesJson {

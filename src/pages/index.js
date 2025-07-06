@@ -212,7 +212,13 @@ const Title = ({ data }) => {
 
 export default Title
 
-export { Head } from '../components/Head'
+export const Head = () => (
+	<>
+		<title>Learn Cryptic - Daily Cryptic Crossword Clues & Puzzles</title>
+		<meta name="description" content="Master cryptic crosswords with our daily interactive clues. Perfect for beginners and experts. Learn wordplay techniques, practice with hints, and track your progress." />
+		<link rel="canonical" href="https://learncryptic.com/" />
+	</>
+)
 
 export const query = graphql`
 	query {

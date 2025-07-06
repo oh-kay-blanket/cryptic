@@ -360,3 +360,43 @@ export const query = graphql`
 `
 
 export default CluePage
+
+export const Head = ({ data }) => {
+	const clue = data.cluesJson
+	const clueDate = new Date(clue.release).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	})
+	
+	return (
+		<>
+			<title>{`Cryptic Clue #${clue.clid} - ${clueDate} | Learn Cryptic`}</title>
+			<meta name="description" content={`Solve today's cryptic crossword clue: "${clue.clue.value}". Interactive hints and explanations to help you learn cryptic crossword techniques.`} />
+			<link rel="canonical" href={`https://learncryptic.com/clues/${clue.clid}`} />
+			<script type="application/ld+json">
+				{JSON.stringify({
+					"@context": "https://schema.org",
+					"@type": "Question",
+					"name": `Cryptic Clue #${clue.clid}`,
+					"text": clue.clue.value,
+					"datePublished": clue.release,
+					"author": {
+						"@type": "Organization",
+						"name": "Learn Cryptic"
+					},
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": clue.solution.value
+					},
+					"difficulty": clue.difficulty,
+					"about": {
+						"@type": "Thing",
+						"name": "Cryptic Crossword",
+						"description": "A type of crossword puzzle where each clue is a word puzzle in itself"
+					}
+				})}
+			</script>
+		</>
+	)
+}
