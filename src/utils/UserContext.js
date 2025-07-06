@@ -37,6 +37,32 @@ export const UserProvider = ({ children }) => {
 	let longestStreak = lcState.longestStreak
 	let darkMode = lcState.darkMode
 
+	// Listen for localStorage changes from other tabs
+	useEffect(() => {
+		const handleStorageChange = (e) => {
+			if (e.key === 'lcState' && e.newValue) {
+				try {
+					const newState = JSON.parse(e.newValue)
+					setLcState(newState)
+				} catch (error) {
+					console.error('Failed to parse localStorage data:', error)
+				}
+			}
+		}
+
+		if (typeof window !== 'undefined') {
+			window.addEventListener('storage', handleStorageChange)
+			return () => window.removeEventListener('storage', handleStorageChange)
+		}
+	}, [])
+
+	// Save to localStorage whenever lcState changes
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			localStorage.setItem('lcState', JSON.stringify(lcState))
+		}
+	}, [lcState])
+
 	useEffect(() => {
 		const checkStreak = () => {
 			function shouldResetStreak(lastSolvedDate) {
@@ -84,7 +110,6 @@ export const UserProvider = ({ children }) => {
 		}
 
 		checkStreak()
-		localStorage.setItem('lcState', JSON.stringify(lcState))
 	}, [lcState.lastSolved, lcState.streak]) // Only depend on the specific values that matter
 
 	// Dark mode effect

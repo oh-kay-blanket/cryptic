@@ -50,6 +50,7 @@ $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
   --lc-text-muted: #ccc;
   --lc-bg-muted: #E2E2E2;
   --archive-border-color: #bbb;
+  --solution-letter-border: #222;
 }
 
 // Dark mode colors
@@ -61,4 +62,5 @@ $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
   --lc-text-muted: #888888; // true medium gray for muted text
   --lc-bg-muted: #525252; // lighter muted background (neutral-600)
   --archive-border-color: #404040;
+  --solution-letter-border: white;
 }
