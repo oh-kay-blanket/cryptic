@@ -18,61 +18,44 @@
 	}
 
 	.title-intro {
-		width: 60%;
-		max-width: 300px;
-		text-align: left;
+		width: 75%;
+		max-width: 400px;
+		text-align: justify;
 
 		p {
+			letter-spacing: 0.5px;
 			font-size: 1rem;
 			margin-bottom: 1rem;
-		}
-	}
-
-	.title-stats {
-		font-size: .85rem;
-		border-radius: .5rem;
-		padding: 1rem 2rem;
-
-		.stats-streak,
-		.stats-guesses,
-		.stats-hints {
-			text-align: center;
-			border-radius: 4px;
-			padding: .25rem 1rem;
-			margin: .5rem 0;
-			font-weight: 500;
 
 			span {
+				padding: 0 0.15rem;
 				font-weight: 600;
+
+				&.highlight-guesses {
+					background-color: $lc-primary--light;
+					color: $lc-text;
+				}
+
+				&.highlight-hints {
+					background-color: $lc-secondary--light;
+					color: $lc-text;
+				}
 			}
 		}
 
-		.stats-streak {
-			border: 1px solid $lc-gray--dark;
-		}
+		.title-actions {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
 
-		.stats-guesses {
-			background-color: $lc-primary--light;
-		}
-
-		.stats-hints {
-			background-color: $lc-secondary--light;
-
-		}
-	}
-
-	.title-actions {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-
-		.title-date {
-			margin: .5rem auto;
-			font-family: $lc-font--sans;
-			font-size: .85rem;
-			color: $lc-text--light;
+			.title-date {
+				margin: .5rem auto;
+				font-family: $lc-font--sans;
+				font-size: .85rem;
+				color: $lc-text--light;
+			}
 		}
 	}
 }

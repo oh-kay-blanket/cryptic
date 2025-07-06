@@ -119,7 +119,9 @@ export const UserProvider = ({ children }) => {
 
 			if (darkMode === null) {
 				// Use system preference
-				shouldUseDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+				shouldUseDark =
+					window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches
 			} else {
 				// Use user preference
 				shouldUseDark = darkMode
@@ -265,7 +267,15 @@ export const UserProvider = ({ children }) => {
 			darkMode,
 			setDarkMode,
 		}),
-		[completedClues, streak, longestStreak, showType, typeViewed, returnLearn, darkMode]
+		[
+			completedClues,
+			streak,
+			longestStreak,
+			showType,
+			typeViewed,
+			returnLearn,
+			darkMode,
+		]
 	)
 
 	return (

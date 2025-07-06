@@ -24,7 +24,7 @@
 	outline: none;
 	border: none;
 	padding: .5rem .75rem;
-	margin: .25rem;
+	margin: .5rem;
 	cursor: pointer;
 	border-radius: 50px;
 	max-width: 300px;
@@ -121,6 +121,18 @@
 			}
 		}
 	}
+
+	&.tertiary {
+		background: none;
+		border: none;
+		text-decoration: underline;
+
+		// Dark mode
+		:global(.dark) & {
+			color: #f9fafb; // gray-50
+		}
+	}
+
 
 	svg {
 		margin-left: .5rem;
