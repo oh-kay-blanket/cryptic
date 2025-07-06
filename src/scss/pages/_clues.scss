@@ -35,7 +35,7 @@
 		&:not(.completed) {
 			.archive-release {
 				position: relative; // Needed for absolute positioning of :before
-				
+
 				&:before {
 					content: "";
 					position: absolute;
@@ -55,14 +55,11 @@
 					z-index: 0;
 				}
 
-				&:hover {
+				&:hover,
+				&.archive-release-hovered {
 					&:before {
 						background-color: var(--hover-bg) !important;
 						border-color: var(--hover-border) !important;
-					}
-					
-					& + .archive-tile-link .archive-tile {
-						background-color: var(--hover-bg) !important;
 					}
 				}
 			}
@@ -120,8 +117,9 @@
 		border-radius: .5rem;
 		cursor: pointer;
 		min-width: 0; // Allow shrinking for text truncation
-		
-		&:hover, &:focus {
+
+		&:hover,
+		&:focus {
 			background-color: #bbb !important; // darker gray for hover
 			border: 1px solid #bbb !important;
 
@@ -131,16 +129,25 @@
 				border: 1px solid #404040 !important;
 			}
 		}
-		
+
+		&.archive-tile-release-hovered {
+			background-color: #bbb !important;
+
+			// Dark mode
+			:global(.dark) & {
+				background-color: #404040 !important;
+			}
+		}
+
 		.tile-img-stats {
 			margin-right: .25rem;
 			display: flex;
 			flex-shrink: 0; // Don't shrink the stats/difficulty area
-	
+
 			.tile-difficulty {
 				align-self: center;
 				width: 36px;
-				height:	fit-content;
+				height: fit-content;
 				line-height: 1;
 				transform: rotate(270deg);
 			}
@@ -153,19 +160,20 @@
 				font-weight: 600;
 				font-family: $lc-font--sans;
 				// text-transform: uppercase;
-				
-				.stat-guesses, .stat-hints {
+
+				.stat-guesses,
+				.stat-hints {
 					margin: 2px auto;
 					padding: 2px 4px;
 					border-radius: 4px;
 					width: 100%;
-					
+
 					.stat {
 						font-size: .75rem;
 						font-weight: 700;
 					}
 				}
-				
+
 				.stat-guesses {
 					background-color: $lc-primary--light;
 				}
