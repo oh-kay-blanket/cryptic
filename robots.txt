@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /futureclues
 Sitemap: https://learncryptic.com/sitemap-index.xml
 Host: https://learncryptic.com
