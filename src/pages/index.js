@@ -92,19 +92,21 @@ const Title = ({ data }) => {
 				<>
 					<div className='title-intro text-center'>
 						<p>
-							You've completed today's clue with{' '}
-							<span className='highlight-guesses'>
+							You solved today's clue with{' '}
+							<span className='highlight-guesses whitespace-nowrap'>
 								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
 							</span>{' '}
 							and{' '}
-							<span className='highlight-hints'>
+							<span className='highlight-hints whitespace-nowrap'>
 								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
 							</span>
+						</p>
+						<p className='!text-2xl'>
 							{todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'}
 						</p>
 						<p>
 							Current streak:{' '}
-							<span>
+							<span className='whitespace-nowrap'>
 								{streak} {streak === 1 ? 'day' : 'days'}
 								{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}
 							</span>
@@ -125,7 +127,7 @@ const Title = ({ data }) => {
 					<div className='title-intro'>
 						<p>Welcome back!</p>
 						<p>
-							You're on a {streak}-day streak! Keep it up by playing today's
+							You're on a {streak}-day streak! Keep it up by solving today's
 							clue.
 						</p>
 					</div>
@@ -144,9 +146,12 @@ const Title = ({ data }) => {
 					<div className='title-intro'>
 						<p>Welcome back!</p>
 						<p>
-							You've completed {completedGuess.length}{' '}
-							{completedGuess.length === 1 ? 'clue' : 'clues'} so far. Keep it
-							up by playing today's clue.
+							You have solved{' '}
+							<span className='font-bold whitespace-nowrap'>
+								{completedGuess.length}{' '}
+								{completedGuess.length === 1 ? 'clue' : 'clues'}
+							</span>{' '}
+							so far. Keep it up by playing today's clue.
 						</p>
 					</div>
 					<div className='title-actions'>
@@ -215,8 +220,11 @@ export default Title
 export const Head = () => (
 	<>
 		<title>Learn Cryptic - Daily Cryptic Crossword Clues & Puzzles</title>
-		<meta name="description" content="Master cryptic crosswords with our daily interactive clues. Perfect for beginners and experts. Learn wordplay techniques, practice with hints, and track your progress." />
-		<link rel="canonical" href="https://learncryptic.com/" />
+		<meta
+			name='description'
+			content='Master cryptic crosswords with our daily interactive clues. Perfect for beginners and experts. Learn wordplay techniques, practice with hints, and track your progress.'
+		/>
+		<link rel='canonical' href='https://learncryptic.com/' />
 	</>
 )
 
