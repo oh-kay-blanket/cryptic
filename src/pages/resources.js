@@ -10,7 +10,7 @@ const Resources = () => {
 					name: "Kegler's Cryptic Archive",
 					url: 'https://kegler.gitlab.io',
 					description:
-						'An extensive collection of free cryptic crosswords by Kegler, one of our featured constructors. Perfect for daily practice with puzzles of varying difficulty levels.',
+						'An extensive collection of free cryptic crosswords by Kegler, one of our featured creators. Perfect for daily practice with puzzles of varying difficulty levels.',
 					featured: true,
 				},
 				{
@@ -241,25 +241,6 @@ const Resources = () => {
 								share tips and solutions.
 							</p>
 						</div>
-					</div>
-				</div>
-
-				{/* Contribute Section */}
-				<div className='contribute bg-purple-50 dark:bg-purple-900/20 rounded-lg p-8 mt-8 border border-purple-200 dark:border-purple-700'>
-					<h2 className='text-2xl font-bold mb-4 text-center'>
-						Know of Other Great Resources?
-					</h2>
-					<p className='text-center mb-6 max-w-2xl mx-auto'>
-						Help us improve this list! If you know of excellent cryptic
-						crossword resources we've missed, we'd love to hear about them.
-					</p>
-					<div className='text-center'>
-						<a
-							href='mailto:learncrypticgame@gmail.com?subject=Resource Suggestion'
-							className='inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-6 rounded-lg transition-colors'
-						>
-							Suggest a Resource
-						</a>
 					</div>
 				</div>
 			</div>
