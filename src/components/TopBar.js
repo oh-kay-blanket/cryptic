@@ -210,8 +210,8 @@ const TopBar = () => {
 
 					<p className='mt-4'>
 						See our{' '}
-						<Link to='/constructors' className='font-bold underline'>
-							Constructors
+						<Link to='/creators' className='font-bold underline'>
+							Creators
 						</Link>{' '}
 						page to learn more about the talented folks who make Learn Cryptic
 						possible.

@@ -1,6 +1,6 @@
 @use '../base/var' as *;
 
-.constructors {
+.creators {
 	padding: 2rem 1rem;
 	max-width: 1200px;
 	
@@ -8,8 +8,8 @@
 		font-family: $lc-font--alt;
 	}
 	
-	.constructors-grid {
-		.constructor-card {
+	.creators-grid {
+		.creator-card {
 			transition: transform 0.2s ease, box-shadow 0.2s ease;
 			
 			&:hover {
@@ -22,7 +22,7 @@
 				}
 			}
 			
-			.constructor-image {
+			.creator-image {
 				.gatsby-image-wrapper {
 					border: 3px solid $lc-secondary--light;
 					
@@ -33,7 +33,7 @@
 				}
 			}
 			
-			.constructor-info {
+			.creator-info {
 				h2 {
 					color: $lc-text;
 					

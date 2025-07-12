@@ -3,7 +3,7 @@ import { useRef, createRef, useEffect } from 'react'
 import getTargetLetters from './getTargetLetters'
 import fixLetters from './fixLetters'
 import addLetters from './addLetters'
-import constructors from '../../assets/data/constructors.json'
+import creators from '../../assets/data/creators.json'
 
 const usePrepClue = (dataClue) => {
 	let activeClue = structuredClone(dataClue)
@@ -27,11 +27,11 @@ const usePrepClue = (dataClue) => {
 	activeClue.type = activeClue.type.split(', ')
 
 	// clue source
-	const constructor = constructors.find(
-		(constructor) => constructor.nom === activeClue.source.value
+	const creator = creators.find(
+		(creator) => creator.nom === activeClue.source.value
 	)
-	if (constructor) {
-		activeClue.source.href = constructor.link
+	if (creator) {
+		activeClue.source.href = creator.link
 	} else {
 		activeClue.source.href = false
 	}

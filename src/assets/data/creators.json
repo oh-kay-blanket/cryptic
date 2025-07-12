@@ -1,0 +1,20 @@
+[
+	{
+		"nom": "Kegler",
+		"name": "Ron Sweet",
+		"link": "https://kegler.gitlab.io",
+		"bio": "Ron has been constructing cryptic crosswords since 2001."
+	},
+	{
+		"nom": "Midas",
+		"name": "Marc Maximov",
+		"link": "https://www.marcmaximov.net",
+		"bio": "Marc is an audio producer, multimedia creator, and writer based in Durham, NC."
+	},
+	{
+		"nom": "plunk it",
+		"name": "Kayla Plunkett",
+		"link": "https://ohkayblanket.com",
+		"bio": "Kayla is a software engineer and puzzle lover based in Dallas, TX."
+	}
+]
