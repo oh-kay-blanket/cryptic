@@ -95,7 +95,7 @@ function csvToJson(csvText) {
 			let parsed = value
 			if (value.startsWith('{') || value.startsWith('[')) {
 				try {
-					parsed = JSON.parse(value.replace(/""/g, '"'))
+					parsed = JSON.parse(value)
 				} catch {
 					parsed = value
 				}
@@ -132,16 +132,36 @@ function parseCSVLine(line, delimiter) {
 	const result = []
 	let current = ''
 	let inQuotes = false
+	let fieldStart = true
 
 	for (let i = 0; i < line.length; i++) {
 		const char = line[i]
 		if (char === '"') {
-			inQuotes = !inQuotes
+			// Only treat quotes as field delimiters if they're at the start of a field
+			if (fieldStart) {
+				inQuotes = !inQuotes
+				fieldStart = false
+			} else if (inQuotes) {
+				// Check if this is an escaped quote (double quote)
+				if (i + 1 < line.length && line[i + 1] === '"') {
+					// This is an escaped quote, add a single quote to current and skip next char
+					current += '"'
+					i++ // Skip the next quote
+				} else {
+					// This is the closing quote for the field
+					inQuotes = false
+				}
+			} else {
+				// Quote is inside unquoted field content, treat as literal
+				current += char
+			}
 		} else if (char === delimiter && !inQuotes) {
 			result.push(current)
 			current = ''
+			fieldStart = true
 		} else {
 			current += char
+			fieldStart = false
 		}
 	}
 
