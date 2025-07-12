@@ -134,16 +134,56 @@ function parseCSVLine(line, delimiter) {
 	let inQuotes = false
 	let fieldStart = true
 
-	for (let i = 0; i < line.length; i++) {
-		const char = line[i]
+	// Normalize different quote characters to standard ASCII quotes
+	const normalizedLine = line
+		.replace(/[\u201C\u201D]/g, '"') // Replace Unicode smart quotes with regular quotes
+		.replace(/[\u2018\u2019]/g, "'") // Replace Unicode smart apostrophes with regular apostrophes
+
+	// Helper function to check if a field starting with a quote is properly quoted
+	const isProperlyQuotedField = (startPos) => {
+		let quoteCount = 0
+		for (let j = startPos; j < normalizedLine.length; j++) {
+			const char = normalizedLine[j]
+			if (char === '"') {
+				quoteCount++
+				// Check for escaped quotes
+				if (j + 1 < normalizedLine.length && normalizedLine[j + 1] === '"') {
+					j++ // Skip the next quote
+				} else if (quoteCount % 2 === 0) {
+					// Found closing quote, check if next non-whitespace char is delimiter or end
+					for (let k = j + 1; k < normalizedLine.length; k++) {
+						if (normalizedLine[k] === delimiter || k === normalizedLine.length - 1) {
+							return true
+						}
+						if (normalizedLine[k] !== ' ' && normalizedLine[k] !== '\t') {
+							break
+						}
+					}
+				}
+			} else if (char === delimiter && quoteCount % 2 === 1) {
+				// Found delimiter while inside quotes
+				break
+			}
+		}
+		return false
+	}
+
+	for (let i = 0; i < normalizedLine.length; i++) {
+		const char = normalizedLine[i]
 		if (char === '"') {
-			// Only treat quotes as field delimiters if they're at the start of a field
+			// Only treat quotes as field delimiters if they're at the start of a field AND it's properly quoted
 			if (fieldStart) {
-				inQuotes = !inQuotes
-				fieldStart = false
+				if (isProperlyQuotedField(i)) {
+					inQuotes = !inQuotes
+					fieldStart = false
+				} else {
+					// Quote is part of field content, not a delimiter
+					current += char
+					fieldStart = false
+				}
 			} else if (inQuotes) {
 				// Check if this is an escaped quote (double quote)
-				if (i + 1 < line.length && line[i + 1] === '"') {
+				if (i + 1 < normalizedLine.length && normalizedLine[i + 1] === '"') {
 					// This is an escaped quote, add a single quote to current and skip next char
 					current += '"'
 					i++ // Skip the next quote
