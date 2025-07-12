@@ -178,7 +178,10 @@ export const UserProvider = ({ children }) => {
 			return d1.getTime() === d2.getTime()
 		}
 
-		isTodayClue(activeClue) && streak++
+		const isToday = isTodayClue(activeClue)
+		if (isToday) {
+			streak++
+		}
 
 		// Update longest streak if current streak is longer
 		if (streak > longestStreak) {
@@ -187,11 +190,10 @@ export const UserProvider = ({ children }) => {
 
 		// Only update if not already in completedClues
 		if (!repeat) {
-			setLcState({
+			const newState = {
 				...lcState,
 				streak: streak,
 				longestStreak: longestStreak,
-				lastSolved: activeClue.release,
 				completedClues: [
 					...lcState.completedClues,
 					{
@@ -201,7 +203,14 @@ export const UserProvider = ({ children }) => {
 						how: type,
 					},
 				],
-			})
+			}
+
+			// Only update lastSolved if this is today's clue
+			if (isToday) {
+				newState.lastSolved = activeClue.release
+			}
+
+			setLcState(newState)
 		} else {
 			console.log('clue locked, no update to stats')
 		}
