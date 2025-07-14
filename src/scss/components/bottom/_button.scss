@@ -33,6 +33,10 @@
 		font-size: .85rem;
 	}
 
+	@include max(414px) {
+		margin: .25rem;
+	}
+
 	&:hover,
 	&:active {
 		filter: brightness(.95);

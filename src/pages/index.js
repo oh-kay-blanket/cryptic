@@ -4,6 +4,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
+import { Link } from 'gatsby'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
@@ -92,7 +93,7 @@ const Title = ({ data }) => {
 				<>
 					<div className='title-intro text-center'>
 						<p>
-							You solved today's clue with{' '}
+							You solved today's clue with <br />
 							<span className='highlight-guesses whitespace-nowrap'>
 								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
 							</span>{' '}
@@ -100,12 +101,10 @@ const Title = ({ data }) => {
 							<span className='highlight-hints whitespace-nowrap'>
 								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
 							</span>
-						</p>
-						<p className='!text-2xl'>
-							{todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'}
+							{/* {todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'} */}
 						</p>
 						<p>
-							Current streak:{' '}
+							Streak:{' '}
 							<span className='whitespace-nowrap'>
 								{streak} {streak === 1 ? 'day' : 'days'}
 								{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}
@@ -124,11 +123,14 @@ const Title = ({ data }) => {
 			// User has completed a clue but not today's and has a streak
 			return (
 				<>
-					<div className='title-intro'>
-						<p>Welcome back!</p>
+					<div className='title-intro text-center'>
+						<p className=''>Welcome back 👋</p>
 						<p>
-							You're on a {streak}-day streak! Keep it up by solving today's
-							clue.
+							You're on a{' '}
+							<span className='font-bold whitespace-nowrap'>
+								{streak}-day streak
+							</span>
+							! Keep it up by solving today's clue 👇
 						</p>
 					</div>
 					<div className='title-actions'>
@@ -143,16 +145,17 @@ const Title = ({ data }) => {
 			// User has completed a clue but not today's and has no streak
 			return (
 				<>
-					<div className='title-intro'>
-						<p>Welcome back!</p>
+					<div className='title-intro text-center'>
+						<p>Welcome back 👋</p>
 						<p>
 							You have solved{' '}
 							<span className='font-bold whitespace-nowrap'>
 								{completedGuess.length}{' '}
 								{completedGuess.length === 1 ? 'clue' : 'clues'}
-							</span>{' '}
-							so far. Keep it up by playing today's clue.
+							</span>
+							.
 						</p>
+						<p>Keep it up by playing today's clue 👇</p>
 					</div>
 					<div className='title-actions'>
 						<ButtonContainer
@@ -169,12 +172,13 @@ const Title = ({ data }) => {
 					<div className='title-intro'>
 						<p>
 							Welcome to Learn Cryptic — a daily game to help you learn about,
-							practice, and solve cryptic crossword clues.
+							practice, and solve{' '}
+							<Link to='/learn'>cryptic crossword clues</Link>.
 						</p>
 						<p>
-							This is for both beginners who are wanting to learn about cryptic
-							crosswords and those already familiar with this wonderful form of
-							wordplay.
+							Learn Cryptic is for both beginners who are wanting to learn about
+							cryptic crosswords and those already familiar with this wonderful
+							form of wordplay.
 						</p>
 					</div>
 					<div className='title-actions'>
