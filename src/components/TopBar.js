@@ -141,8 +141,8 @@ const TopBar = () => {
 			</header>
 			<Modal open={helpOpen} onClose={() => setHelpOpen(false)}>
 				<div className='mt-6'>
-					<h3 className='font-bold mb-3'>Theme</h3>
-					<div className='flex justify-center mb-4'>
+					<h3 className='font-semibold mb-3'>Theme</h3>
+					<div className='flex mb-4'>
 						<div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
 							<label className='flex items-center cursor-pointer'>
 								<input
@@ -200,38 +200,33 @@ const TopBar = () => {
 							</label>
 						</div>
 					</div>
-					<p className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-						Need help with cryptics? Visit our{' '}
-						<Link to='/learn' className='font-bold underline'>
-							Learn
-						</Link>{' '}
-						page for more information and practice with more basic clues.
-					</p>
+					<div className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
+						<p>
+							<Link to='/learn' className='underline'>
+								What are cryptics?
+							</Link>
+						</p>
 
-					<p className='mt-4'>
-						See our{' '}
-						<Link to='/creators' className='font-bold underline'>
-							Creators
-						</Link>{' '}
-						page to learn more about the talented folks who make Learn Cryptic
-						possible.
-					</p>
+						<p className='mt-2'>
+							<Link to='/creators' className='underline'>
+								About us
+							</Link>
+						</p>
 
-					<p className='mt-4'>
-						Need more cryptics in your life? We get it. Visit{' '}
-						<Link to='/resources' className='font-bold underline'>
-							Resources
-						</Link>{' '}
-						for links to free puzzles, apps, books, and communities.
-					</p>
+						<p className='mt-2'>
+							<Link to='/resources' className='underline'>
+								Resources
+							</Link>
+						</p>
+					</div>
 
-					<div className='pt-4'>
+					<div className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
 						<p>
 							Have questions, comments, or want to contribute future cryptic
 							clues?
 							<a
 								href='mailto:learncrypticgame@gmail.com?subject=Learn Cryptic Feedback'
-								className='font-bold underline mt-2 text-center block'
+								className='underline mt-2 block'
 							>
 								Email us
 							</a>
@@ -240,22 +235,26 @@ const TopBar = () => {
 				</div>
 			</Modal>
 			<Modal open={statsOpen} onClose={() => setStatsOpen(false)}>
-				<h2 className='my-3 text-xl font-bold'>Statistics</h2>
+				<h2 className='my-3 text-xl font-semibold'>Statistics</h2>
 				<div className='stats-list'>
 					<div className='stat-item'>
-						🔥 <strong>Current Streak:</strong> {streak}
+						🔥 <span className='font-medium mx-1'>Current Streak:</span>{' '}
+						{streak}
 					</div>
 					<div className='stat-item'>
-						🏆 <strong>Longest Streak:</strong> {longestStreak}
+						🏆 <span className='font-medium mx-1'>Longest Streak:</span>{' '}
+						{longestStreak}
 					</div>
 					<div className='stat-item'>
-						🧩 <strong>Clues solved:</strong> {totalSolved}
+						🧩 <span className='font-medium mx-1'>Clues solved:</span>{' '}
+						{totalSolved}
 					</div>
 					<div className='stat-item'>
-						🎯 <strong>Avg guesses:</strong> {avgGuesses}
+						🎯 <span className='font-medium mx-1'>Avg guesses:</span>{' '}
+						{avgGuesses}
 					</div>
 					<div className='stat-item'>
-						💡 <strong>Avg hints:</strong> {avgHints}
+						💡 <span className='font-medium mx-1'>Avg hints:</span> {avgHints}
 					</div>
 				</div>
 			</Modal>

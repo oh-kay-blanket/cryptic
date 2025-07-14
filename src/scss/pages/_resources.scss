@@ -1,4 +1,5 @@
 @use '../base/var' as *;
+@use 'sass:color';
 
 .resources {
 	padding: 2rem 1rem;
@@ -88,7 +89,7 @@
 			background-color: $lc-secondary--dark;
 			
 			&:hover {
-				background-color: darken($lc-secondary--dark, 10%);
+				background-color: color.adjust($lc-secondary--dark, $lightness: -10%);
 			}
 			
 			// Dark mode
