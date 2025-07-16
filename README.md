@@ -54,7 +54,7 @@ The production server will run at `http://localhost:9000`.
 
 ## Contributing
 
-Contributions, suggestions, and new clue submissions are welcome! Please open an issue or submit a pull request.
+Contributions, suggestions, and new clue submissions are welcome. Please open an issue or submit a pull request.
 
 ## License
 
