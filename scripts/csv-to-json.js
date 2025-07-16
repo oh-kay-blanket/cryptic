@@ -140,8 +140,11 @@ function parseCSVLine(line, delimiter) {
 		.replace(/[\u2018\u2019]/g, "'") // Replace Unicode smart apostrophes with regular apostrophes
 
 	// Helper function to check if a field starting with a quote is properly quoted
+	// Fixed to only scan until the end of the current field to prevent interference from later fields
 	const isProperlyQuotedField = (startPos) => {
 		let quoteCount = 0
+		let foundClosingQuote = false
+		
 		for (let j = startPos; j < normalizedLine.length; j++) {
 			const char = normalizedLine[j]
 			if (char === '"') {
@@ -150,22 +153,36 @@ function parseCSVLine(line, delimiter) {
 				if (j + 1 < normalizedLine.length && normalizedLine[j + 1] === '"') {
 					j++ // Skip the next quote
 				} else if (quoteCount % 2 === 0) {
-					// Found closing quote, check if next non-whitespace char is delimiter or end
+					// Found potential closing quote
+					foundClosingQuote = true
+					// Check if next non-whitespace char is delimiter or end
 					for (let k = j + 1; k < normalizedLine.length; k++) {
-						if (normalizedLine[k] === delimiter || k === normalizedLine.length - 1) {
-							return true
+						const nextChar = normalizedLine[k]
+						if (nextChar === delimiter) {
+							return true // Properly quoted field
 						}
-						if (normalizedLine[k] !== ' ' && normalizedLine[k] !== '\t') {
-							break
+						if (k === normalizedLine.length - 1) {
+							return true // Properly quoted field at end of line
+						}
+						if (nextChar !== ' ' && nextChar !== '\t') {
+							// Found non-whitespace content after quote, this is not a properly quoted field
+							return false
 						}
 					}
 				}
-			} else if (char === delimiter && quoteCount % 2 === 1) {
-				// Found delimiter while inside quotes
-				break
+			} else if (char === delimiter) {
+				// Reached end of current field
+				if (quoteCount % 2 === 1) {
+					// Odd number of quotes means we're still inside quotes, improperly terminated
+					return false
+				}
+				// Even number of quotes, but we need to check if we found a proper closing quote
+				return foundClosingQuote
 			}
 		}
-		return false
+		
+		// Reached end of line
+		return foundClosingQuote && quoteCount % 2 === 0
 	}
 
 	for (let i = 0; i < normalizedLine.length; i++) {
