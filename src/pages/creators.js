@@ -22,12 +22,10 @@ const Creators = ({ data }) => {
   return (
     <Layout>
       <div className='creators lc-container'>
-        <h1 className='text-4xl font-bold text-center mb-8'>
-          Meet Our Creators
-        </h1>
-        <p className='text-lg text-center mb-12 max-w-2xl mx-auto'>
-          Learn Cryptic is made possible by a small team of talented puzzle
-          designers, software developers, and clue writers.
+        <h1 className='text-4xl max-w-xl mx-auto font-bold mb-8'>Meet Our Creators</h1>
+        <p className='text-lg mb-12 max-w-xl mx-auto'>
+          Learn Cryptic is made possible by a small team of talented puzzle designers, software
+          developers, and clue writers.
         </p>
 
         <div className='creators-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16'>
@@ -49,11 +47,12 @@ const Creators = ({ data }) => {
                     />
                   </div>
                 )}
-                <div className='creator-info text-center'>
-                  <h2 className='text-xl font-bold mb-2'>{creator.name}</h2>
-                  <p className='text-neutral-600 dark:text-neutral-300 mb-4'>
-                    {creator.bio}
-                  </p>
+                <div className='creator-info'>
+                  <h2 className='text-xl font-bold mb-2'>
+                    {creator.name}{' '}
+                    <span className='!text-base !font-medium text-gray-700'>({creator.nom})</span>
+                  </h2>
+                  <p className='text-neutral-600 dark:text-neutral-300 mb-4'>{creator.bio}</p>
                   {creator.link && (
                     <a
                       href={creator.link}
@@ -71,16 +70,15 @@ const Creators = ({ data }) => {
         </div>
 
         {/* Call to Action */}
-        <div className='cta-section bg-neutral-100 dark:bg-neutral-800 rounded-lg p-8 text-center border border-neutral-200 dark:border-neutral-700'>
+        <div className='cta-section bg-neutral-100 dark:bg-neutral-800 rounded-lg p-8 max-w-xl mx-auto border border-neutral-200 dark:border-neutral-700'>
           <h2 className='text-2xl font-bold mb-4'>Want to Contribute?</h2>
           <p className='text-lg mb-6 max-w-2xl mx-auto'>
-            Are you a cryptic crossword creator interested in sharing your clues
-            with our learning community? We'd love to hear from you!
+            Are you a cryptic crossword creator interested in sharing your clues with our learning
+            community? We'd love to hear from you!
           </p>
           <p className='text-neutral-600 dark:text-neutral-300 mb-6'>
-            Whether you're an experienced setter or just starting out, we
-            welcome submissions that help teach and engage puzzle enthusiasts of
-            all skill levels.
+            Whether you're an experienced setter or just starting out, we welcome submissions that
+            help teach and engage puzzle enthusiasts of all skill levels.
           </p>
           <a
             href='mailto:learncrypticgame@gmail.com?subject=Creator Submission - Learn Cryptic'
@@ -127,12 +125,7 @@ export const query = graphql`
       nodes {
         name
         childImageSharp {
-          gatsbyImageData(
-            width: 96
-            height: 96
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
+          gatsbyImageData(width: 96, height: 96, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }

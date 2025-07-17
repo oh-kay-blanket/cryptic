@@ -126,7 +126,7 @@ const TopBar = () => {
           </Link>
         </div>
       </header>
-      <Modal open={helpOpen} onClose={() => setHelpOpen(false)}>
+      <Modal id='modal-info' open={helpOpen} onClose={() => setHelpOpen(false)}>
         <div className='mt-6'>
           <h3 className='font-semibold mb-3'>Theme</h3>
           <div className='flex mb-4'>
@@ -214,7 +214,7 @@ const TopBar = () => {
           </div>
         </div>
       </Modal>
-      <Modal open={statsOpen} onClose={() => setStatsOpen(false)}>
+      <Modal id='modal-stats' open={statsOpen} onClose={() => setStatsOpen(false)}>
         <h2 className='my-3 text-xl font-semibold'>Statistics</h2>
         <div className='stats-list'>
           <div className='stat-item'>

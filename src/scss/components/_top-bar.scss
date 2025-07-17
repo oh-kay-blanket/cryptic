@@ -1,120 +1,121 @@
 @use '../base/var' as *;
 
 .top-bar {
-	position: fixed;
-	width: 100vw;
-	// height: $lc-top-height;
-	top: 0;
-	left: 0;
-	background-color: $lc-gray--light;
-	z-index: 1;
+  position: fixed;
+  width: 100vw;
+  // height: $lc-top-height;
+  top: 0;
+  left: 0;
+  background-color: $lc-gray--light;
+  z-index: 1;
 
-	.top-bar-container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: .5rem;
-	}
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
 
-	.topbar-left {
-		display: flex;
-		align-items: center;
-	}
+  .topbar-left {
+    display: flex;
+    align-items: center;
+  }
 
-	.icon-btn {
-		background: none;
-		border: none;
-		margin-right: 1rem;
-		margin-left: 0;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
+  .icon-btn {
+    background: none;
+    border: none;
+    margin-right: 1rem;
+    margin-left: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 
-		&:last-child {
-			margin-right: 0;
-		}
+    &:last-child {
+      margin-right: 0;
+    }
 
-		img,
-		svg {
-			filter: grayscale(1) brightness(0.7);
-		}
-	}
+    img,
+    svg {
+      filter: grayscale(1) brightness(0.7);
+    }
+  }
 
-	.topbar-logo img {
-		max-width: 40px;
-		padding: 6px;
-	}
+  .topbar-logo img {
+    max-width: 40px;
+    padding: 6px;
+  }
 }
 
 .modal-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.4);
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // Darker overlay in dark mode
 html.dark .modal-overlay {
-	background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-	background: #fff;
-	padding: 2rem;
-	border-radius: 8px;
-	width: 400px;
-	max-width: 90vw;
-	max-height: 90vh;
-	overflow-y: auto;
-	position: relative;
-	min-width: 300px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  min-width: 300px;
 
-	@media (max-width: 600px) {
-		padding: 1rem;
-		min-width: 0;
-	}
+  @media (max-width: 600px) {
+    padding: 1rem;
+    min-width: 0;
+    width: 80vw;
+    max-width: 80vw;
+  }
 }
 
 .modal-close {
-	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
-	background: none;
-	border: none;
-	font-size: 2rem;
-	cursor: pointer;
-	color: #aaa;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #aaa;
 }
 
 .stats-list {
-	display: flex;
-	flex-direction: column;
-	gap: .75rem;
-	width: fit-content;
-	margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .stat-item {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	strong {
-		margin: 0 0.5rem;
-	}
+  strong {
+    margin: 0 0.5rem;
+  }
 }
 
 // Theme picker background for newspaper feel
 .theme-picker-bg {
-	background-color: $lc-gray--dark !important; // warm gray for newspaper feel
+  background-color: $lc-gray--dark !important; // warm gray for newspaper feel
 }
 
 // Dark mode theme picker background
 html.dark .theme-picker-bg {
-	background-color: #333 !important; // neutral-700
+  background-color: #333 !important; // neutral-700
 }
