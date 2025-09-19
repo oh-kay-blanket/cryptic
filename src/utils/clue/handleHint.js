@@ -303,7 +303,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 			}
 
 			if (prevHint.category !== 'deletion') {
-				changeColor(prevHint.addLetters.ref.current, false, true)
+				// For anagrams in logic display, keep letters gray instead of resetting to primary
+				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank')) {
+					changeColor(prevHint.addLetters.ref.current, '#ccc')
+				} else {
+					changeColor(prevHint.addLetters.ref.current, false, true)
+				}
 			} else {
 				changeColor(
 					activeClue.hints[nextHint - 2].addLetters.ref.current,
