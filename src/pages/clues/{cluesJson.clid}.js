@@ -338,7 +338,6 @@ export const query = graphql`
 			}
 			release
 			difficulty
-			ready
 			type
 			definition
 			hints {

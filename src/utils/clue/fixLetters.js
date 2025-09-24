@@ -2,7 +2,6 @@ import removeSpecial from './removeSpecialChar'
 
 // locks letters into a fixed position based on their initial render position
 const fixLetters = (activeClue, hint, index) => {
-	console.log('fixing letters')
 
 	// FN to position letters //
 	const positionLetters = (
@@ -113,7 +112,6 @@ const fixLetters = (activeClue, hint, index) => {
 			break
 
 		case 'hw-2':
-			console.log(prevHint.addLetters.ref)
 			let solIndex = removeSpecial(prevHint.end.value[0].toUpperCase()).indexOf(
 				removeSpecial(hint.end.value[1].toUpperCase())
 			)
@@ -156,45 +154,27 @@ const fixLetters = (activeClue, hint, index) => {
 				}
 			})
 
-			// anchorSplit - get anchor word that is split //
-			hint.fix.anchorSplit = prevHints.find((h, hIndex) => {
-				// Standard container
-				if (
-					hint.end.value.length === 3 ||
-					h.rightValue ===
-						[hint.end.value[0], hint.end.value[2]].join('').toUpperCase()
-				) {
-					hint.fix.joinIndex = [0, 2]
-					hint.fix.indicatorMatch = hIndex
-					return (
-						h.rightValue ===
-						[hint.end.value[0], hint.end.value[2]].join('').toUpperCase()
-					)
+			// Find word that is split
+			const possibleSplits = [[0,2], [0,3], [1,3], [0,4], [1,4], [2,4]]
 
-					// complex containers w/more than 3 parts
-				} else if (
-					h.rightValue ===
-					[hint.end.value[0], hint.end.value[3]].join('').toUpperCase()
-				) {
-					hint.fix.joinIndex = [0, 3]
+			// Look at past hints to find which word is split
+			hint.fix.anchorSplit = prevHints.find((h, hIndex) => {
+
+				// Try to find a match
+				const foundSplit = possibleSplits.find(split => (h.rightValue === [hint.end.value[split[0]], hint.end.value[split[1]]].join('').toUpperCase() && !!hint.end.value[split[1]]));
+
+				// If match found, add the data
+				const logSplits = foundSplit => {
+					hint.fix.joinIndex = [foundSplit[0], foundSplit[1]]
 					hint.fix.indicatorMatch = hIndex
-					return (
-						h.rightValue ===
-						[hint.end.value[0], hint.end.value[3]].join('').toUpperCase()
-					)
-				} else if (
-					h.rightValue ===
-					[hint.end.value[1], hint.end.value[3]].join('').toUpperCase()
-				) {
-					hint.fix.joinIndex = [1, 3]
-					hint.fix.indicatorMatch = hIndex
-					return (
-						h.rightValue ===
-						[hint.end.value[1], hint.end.value[3]].join('').toUpperCase()
-					)
-				}
-				return false
+					return h.rightValue === [hint.end.value[foundSplit[0]], hint.end.value[foundSplit[1]]].join('').toUpperCase()
+				};
+
+				console.log(foundSplit)
+
+				return foundSplit ? logSplits(foundSplit) : false;
 			})
+			console.log(hint.fix.anchorSplit)
 
 			// Remove duplicate letter from special hints
 			const doubleHints = ['ag-2', 'lb-2', 'reversal']
