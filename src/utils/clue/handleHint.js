@@ -4,10 +4,12 @@ import changeColor from './changeColor'
 import moveLetters from './moveLetters'
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
+	
+	const hint = activeClue.hints[nextHint]
+	const prevHint = activeClue.hints[nextHint - 1]
+
 	// Run if showing a message & not checking answer
 	if (showMessage && !checkAns) {
-		// Get hint
-		const hint = activeClue.hints[nextHint]
 
 		// Definition
 		if (nextHint === 0) {
@@ -15,8 +17,6 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 			// Indicators
 		} else {
-			const prevHint = activeClue.hints[nextHint - 1]
-
 			switch (hint.category) {
 				case 'anagram':
 				case 'letter bank':
@@ -288,33 +288,28 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 	}
 
 	// Change last hint to gray when going back to play
-	if (
-		(!showMessage && !checkAns && nextHint > 1) ||
-		(showLogic && nextHint > 1)
-	) {
-		const prevHint = activeClue.hints[nextHint - 1]
+	if (nextHint > 1 && ((!showMessage && !checkAns) || (showLogic && nextHint > 1))) {
+		
 		try {
+			// Gray out highlighting
 			highlightLetters(prevHint.ref, false, true)
 
+			// Gray last added letters
 			if (prevHint.end) {
 				changeColor(prevHint.end.ref, false, true)
 			} else {
 				changeColor(prevHint.ref, false, true)
 			}
 
+			// For hints in logic display, keep letters gray instead of resetting to primary
 			if (prevHint.category !== 'deletion') {
-				// For anagrams in logic display, keep letters gray instead of resetting to primary
-				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank')) {
+				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank'|| hint.category === 'container')) {
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 				} else {
-					changeColor(prevHint.addLetters.ref.current, false, true)
+					changeColor(prevHint.addLetters.ref.current, false, true)					
 				}
 			} else {
-				changeColor(
-					activeClue.hints[nextHint - 2].addLetters.ref.current,
-					false,
-					true
-				)
+				changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
 			}
 		} catch (err) {
 			console.log(err)

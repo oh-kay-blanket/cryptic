@@ -170,11 +170,8 @@ const fixLetters = (activeClue, hint, index) => {
 					return h.rightValue === [hint.end.value[foundSplit[0]], hint.end.value[foundSplit[1]]].join('').toUpperCase()
 				};
 
-				console.log(foundSplit)
-
 				return foundSplit ? logSplits(foundSplit) : false;
 			})
-			console.log(hint.fix.anchorSplit)
 
 			// Remove duplicate letter from special hints
 			const doubleHints = ['ag-2', 'lb-2', 'reversal']

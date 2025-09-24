@@ -8,7 +8,7 @@ import creators from '../../assets/data/creators.json'
 const usePrepClue = (dataClue) => {
 	let activeClue = structuredClone(dataClue)
 
-	// useEffect(() => console.log(dataClue), [dataClue])
+	useEffect(() => console.log(activeClue), [dataClue])
 
 	// get solution letters
 	const getSolutionLetters = (solution) =>
