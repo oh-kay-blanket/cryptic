@@ -13,7 +13,7 @@ const fixLetters = (activeClue, hint, index) => {
 		let anchorUsed = []
 
 		moving.forEach((ref) => {
-			ref.current.style.position = 'absolute'
+			ref.current.style.position = 'fixed'
 		})
 
 		moving.forEach((ref) => {
@@ -44,22 +44,19 @@ const fixLetters = (activeClue, hint, index) => {
 
 			// Add position attributes
 			ref.current.style.top = !!currentDestLetter.current.style.top
-				? currentDestLetter.current.style.top
-				: `${currentDestLetter.current.getBoundingClientRect().top}px`
+				? `${Math.round(Number(currentDestLetter.current.style.top.slice(0, -2)))}px`
+				: `${Math.round(currentDestLetter.current.getBoundingClientRect().top)}px`
 			ref.current.style.left = !!currentDestLetter.current.style.left
-				? currentDestLetter.current.style.left
-				: `${currentDestLetter.current.getBoundingClientRect().left}px`
+				? `${Math.round(Number(currentDestLetter.current.style.left.slice(0, -2)))}px`
+				: `${Math.round(currentDestLetter.current.getBoundingClientRect().left)}px`
 		})
 
-		// Fix after adding position attributes
-		moving.forEach((ref) => {
-			ref.current.style.position = 'fixed'
-		})
+		// Letters are already set to fixed position above
 
 		// Add position attributes
 		hint.fix.endPt.forEach((ref) => {
-			let left = ref.current.getBoundingClientRect().left
-			let top = ref.current.getBoundingClientRect().top
+			let left = Math.round(ref.current.getBoundingClientRect().left)
+			let top = Math.round(ref.current.getBoundingClientRect().top)
 			ref.current.style.left = `${left}px`
 			ref.current.style.top = `${top}px`
 			return [left, top]

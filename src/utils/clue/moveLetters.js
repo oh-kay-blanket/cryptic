@@ -29,12 +29,12 @@ const moveLetters = (
 		destLettersRef.splice(destIndex, 1)
 
 		ref.current.style.textTransform = 'uppercase'
-		ref.current.style.top = `${Number(
+		ref.current.style.top = `${Math.round(Number(
 			currentDestLetter.current.style.top.slice(0, -2)
-		)}px`
-		ref.current.style.left = `${Number(
+		))}px`
+		ref.current.style.left = `${Math.round(Number(
 			currentDestLetter.current.style.left.slice(0, -2)
-		)}px`
+		))}px`
 
 		switch (timing) {
 			case 'shuffle':
