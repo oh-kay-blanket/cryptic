@@ -214,18 +214,28 @@ const CluePage = ({ data }) => {
 	})
 
 	// solution HTML
-	const solInsert = activeClue.solution.arr.map((letter, index) => (
-		<span key={`solarr_${index}`} id={`i${index}`} className='letter border-neutral-900 dark:!border-white' style={{ borderWidth: '0.75px' }}>
+	const solInsert = activeClue.solution.arr.map((letter, index) => {
+		const isActive = index === input.length && input.length < activeClue.solution.arr.length
+		const activeStyle = isActive ? { backgroundColor: 'var(--lc-highlight-bg)' } : {}
+
+		return (
 			<span
-				id={`sl${index}`}
-				ref={activeClue.solution.ref.current[index]}
-				className='solLetter'
+				key={`solarr_${index}`}
+				id={`i${index}`}
+				className='letter border-neutral-900 dark:!border-white'
+				style={{ borderWidth: '0.75px', ...activeStyle }}
 			>
-				{letter}
+				<span
+					id={`sl${index}`}
+					ref={activeClue.solution.ref.current[index]}
+					className='solLetter'
+				>
+					{letter}
+				</span>
+				<span className='typeLetter'>{input[index]}</span>
 			</span>
-			<span className='typeLetter'>{input[index]}</span>
-		</span>
-	))
+		)
+	})
 
 	// solution length
 	const solLength = (
