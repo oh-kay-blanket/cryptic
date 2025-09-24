@@ -215,7 +215,7 @@ const CluePage = ({ data }) => {
 
 	// solution HTML
 	const solInsert = activeClue.solution.arr.map((letter, index) => {
-		const isActive = index === input.length && input.length < activeClue.solution.arr.length
+		const isActive = index === input.length && input.length < activeClue.solution.arr.length && !showMessage
 		const activeStyle = isActive ? { backgroundColor: 'var(--lc-highlight-bg)' } : {}
 
 		return (
