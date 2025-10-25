@@ -144,7 +144,7 @@ const Learn = () => {
 						As with regular American-style crosswords, it takes a lot of
 						practice to get good at solving cryptic puzzles. For beginners, the
 						learning curve can be steep. To help guide you to the answer, the
-						app has two kinds of hints:
+						app has several kinds of hints:
 					</p>
 					<ul className='no-dec'>
 						<li className='mt-3'>
@@ -164,6 +164,17 @@ const Learn = () => {
 								each step of deciphering the clue.
 							</p>
 							<img className='border' src={showHint} alt='' />
+						</li>
+						<li className='mt-3'>
+							<p className='font-bold'>Reveal letter</p>
+							<p className='my-2'>
+								Need help with just one letter? Tap any blank square in the
+								solution box to reveal that specific letter. This counts as a
+								hint. Revealed letters appear in purple and cannot be changed.
+								You cannot reveal the final letter—you'll need to solve that
+								one yourself!
+							</p>
+							{/* TODO: Add screenshot of reveal letter prompt */}
 						</li>
 					</ul>
 				</div>
