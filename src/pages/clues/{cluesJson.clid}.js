@@ -408,9 +408,7 @@ const CluePage = ({ data }) => {
 						onKeyDown={(e) => e.stopPropagation()}
 						role='document'
 					>
-						<p id='reveal-letter-title' style={{ marginBottom: '1rem' }}>
-							Reveal letter {revealPromptIndex + 1}? This counts as a hint.
-						</p>
+						<p id='reveal-letter-title' style={{ marginBottom: '1rem' }}>Reveal letter?</p>
 						<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
 							<button
 								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'

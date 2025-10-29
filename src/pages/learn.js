@@ -8,7 +8,7 @@ import { UserContext } from '../utils/UserContext'
 
 import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
-import ex from '../assets/img/learn/example.jpg'
+import reveal from '../assets/img/learn/reveal.png'
 
 const Learn = () => {
 	const { typeViewed } = useContext(UserContext)
@@ -169,12 +169,9 @@ const Learn = () => {
 							<p className='font-bold'>Reveal letter</p>
 							<p className='my-2'>
 								Need help with just one letter? Tap any blank square in the
-								solution box to reveal that specific letter. This counts as a
-								hint. Revealed letters appear in purple and cannot be changed.
-								You cannot reveal the final letter—you'll need to solve that
-								one yourself!
+								solution box to reveal that specific letter.
 							</p>
-							{/* TODO: Add screenshot of reveal letter prompt */}
+							<img className='border' src={reveal} alt='' />
 						</li>
 					</ul>
 				</div>
