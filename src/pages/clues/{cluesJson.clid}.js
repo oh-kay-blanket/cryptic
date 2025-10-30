@@ -86,6 +86,12 @@ const CluePage = ({ data }) => {
 		setCheckAns,
 		showLogic,
 		setShowLogic,
+		revealedLetters,
+		showRevealPrompt,
+		setShowRevealPrompt,
+		revealPromptIndex,
+		handleRevealLetter,
+		handleSquareClick,
 	} = manageClue(activeClue)
 
 	// type HTML
@@ -213,17 +219,59 @@ const CluePage = ({ data }) => {
 		}
 	})
 
+	// Find the first empty, non-revealed position for the cursor
+	const getCursorPosition = () => {
+		for (let i = 0; i < activeClue.solution.arr.length; i++) {
+			if ((!input[i] || input[i] === '') && !revealedLetters.includes(i)) {
+				return i
+			}
+		}
+		return activeClue.solution.arr.length
+	}
+	const cursorPosition = showMessage ? -1 : getCursorPosition()
+
 	// solution HTML
 	const solInsert = activeClue.solution.arr.map((letter, index) => {
-		const isActive = index === input.length && input.length < activeClue.solution.arr.length && !showMessage
-		const activeStyle = isActive ? { backgroundColor: 'var(--lc-highlight-bg)' } : {}
+		const isActive = index === cursorPosition
+		const isRevealed = revealedLetters.includes(index)
+		const isEmpty = !input[index] || input[index] === ''
+		const wouldBeLastLetter = revealedLetters.length >= activeClue.solution.arr.length - 1
+		const canReveal = isEmpty && !isRevealed && !showMessage && !wouldBeLastLetter
+
+		let backgroundColor = 'transparent'
+		let cursor = 'default'
+
+		if (isActive) {
+			backgroundColor = 'var(--lc-highlight-bg)'
+		}
+
+		if (canReveal) {
+			cursor = 'pointer'
+		}
+
+		const squareStyle = {
+			borderWidth: '0.75px',
+			backgroundColor,
+			cursor,
+			pointerEvents: canReveal ? 'auto' : 'none'
+		}
 
 		return (
 			<span
 				key={`solarr_${index}`}
 				id={`i${index}`}
 				className='letter border-neutral-900 dark:!border-white'
-				style={{ borderWidth: '0.75px', ...activeStyle }}
+				style={squareStyle}
+				onClick={() => handleSquareClick(index)}
+				onKeyDown={(e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault()
+						handleSquareClick(index)
+					}
+				}}
+				role={canReveal ? 'button' : 'presentation'}
+				tabIndex={canReveal ? 0 : -1}
+				aria-label={canReveal ? `Reveal letter ${index + 1}` : undefined}
 			>
 				<span
 					id={`sl${index}`}
@@ -232,7 +280,12 @@ const CluePage = ({ data }) => {
 				>
 					{letter}
 				</span>
-				<span className='typeLetter'>{input[index]}</span>
+				<span
+					className='typeLetter'
+					style={isRevealed ? { color: 'var(--lc-highlight-text)' } : {}}
+				>
+					{input[index]}
+				</span>
 			</span>
 		)
 	})
@@ -332,8 +385,49 @@ const CluePage = ({ data }) => {
 					setReturnLearn={setReturnLearn}
 					showLogic={showLogic}
 					setShowLogic={setShowLogic}
+					revealedLetters={revealedLetters}
 				/>
 			</div>
+
+			{showRevealPrompt && revealPromptIndex !== null && (
+				<div
+					className='modal-bg'
+					onClick={() => setShowRevealPrompt(false)}
+					onKeyDown={(e) => {
+						if (e.key === 'Escape') {
+							setShowRevealPrompt(false)
+						}
+					}}
+					role='dialog'
+					aria-modal='true'
+					aria-labelledby='reveal-letter-title'
+				>
+					<div
+						className='modal dark:!bg-neutral-800 dark:!text-neutral-100'
+						onClick={(e) => e.stopPropagation()}
+						onKeyDown={(e) => e.stopPropagation()}
+						role='document'
+					>
+						<p id='reveal-letter-title' style={{ marginBottom: '1rem' }}>Reveal letter?</p>
+						<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+							<button
+								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
+								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+								onClick={() => handleRevealLetter(revealPromptIndex)}
+							>
+								Reveal
+							</button>
+							<button
+								className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100'
+								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+								onClick={() => setShowRevealPrompt(false)}
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			)}
 		</Layout>
 	)
 }

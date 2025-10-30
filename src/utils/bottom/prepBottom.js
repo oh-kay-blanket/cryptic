@@ -15,7 +15,8 @@ const prepBottom = (
 	checkAns,
 	setCheckAns,
 	showLogic,
-	setShowLogic
+	setShowLogic,
+	revealedLetters = []
 ) => {
 	// Check if this is today's clue
 	const isTodaysClue = () => {
@@ -243,7 +244,12 @@ const prepBottom = (
 		}
 	}
 
-	if (input.length === activeClue.solution.arr.length) {
+	// Check if all positions are filled (either typed or revealed)
+	const allPositionsFilled = activeClue.solution.arr.every((_, index) => {
+		return input[index] && input[index] !== ''
+	})
+
+	if (allPositionsFilled) {
 		btnArr.push(buttons.checkAnswer)
 	}
 

@@ -8,7 +8,7 @@ import { UserContext } from '../utils/UserContext'
 
 import typePill from '../assets/img/learn/type-pill-reveal.png'
 import showHint from '../assets/img/learn/show-hint.png'
-import ex from '../assets/img/learn/example.jpg'
+import reveal from '../assets/img/learn/reveal.png'
 
 const Learn = () => {
 	const { typeViewed } = useContext(UserContext)
@@ -144,7 +144,7 @@ const Learn = () => {
 						As with regular American-style crosswords, it takes a lot of
 						practice to get good at solving cryptic puzzles. For beginners, the
 						learning curve can be steep. To help guide you to the answer, the
-						app has two kinds of hints:
+						app has several kinds of hints:
 					</p>
 					<ul className='no-dec'>
 						<li className='mt-3'>
@@ -164,6 +164,14 @@ const Learn = () => {
 								each step of deciphering the clue.
 							</p>
 							<img className='border' src={showHint} alt='' />
+						</li>
+						<li className='mt-3'>
+							<p className='font-bold'>Reveal letter</p>
+							<p className='my-2'>
+								Need help with just one letter? Tap any blank square in the
+								solution box to reveal that specific letter.
+							</p>
+							<img className='border' src={reveal} alt='' />
 						</li>
 					</ul>
 				</div>
