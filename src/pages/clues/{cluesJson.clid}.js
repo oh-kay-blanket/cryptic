@@ -32,6 +32,35 @@ const CluePage = ({ data }) => {
 		}
 	}, [])
 
+	// Track when users start today's daily clue
+	useEffect(() => {
+		const isTodayClue = () => {
+			const clueDate = new Date(dataClue.release)
+			const today = new Date()
+
+			const clueDay = new Date(
+				clueDate.getFullYear(),
+				clueDate.getMonth(),
+				clueDate.getDate()
+			)
+			const todayDay = new Date(
+				today.getFullYear(),
+				today.getMonth(),
+				today.getDate()
+			)
+
+			return clueDay.getTime() === todayDay.getTime()
+		}
+
+		if (isTodayClue() && typeof window.gtag !== 'undefined') {
+			window.gtag('event', 'started_daily_clue', {
+				clid: dataClue.clid,
+				difficulty: dataClue.difficulty,
+				streak: streak,
+			})
+		}
+	}, [dataClue.clid, dataClue.release, dataClue.difficulty, streak])
+
 	// Helper functions for difficulty
 	const getImg = (difficulty) => {
 		switch (Number(difficulty)) {
@@ -68,6 +97,7 @@ const CluePage = ({ data }) => {
 		setShowType,
 		returnLearn,
 		setReturnLearn,
+		streak,
 	} = useContext(UserContext)
 
 	// Set up activeClue

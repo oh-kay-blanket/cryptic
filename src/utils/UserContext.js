@@ -215,13 +215,15 @@ export const UserProvider = ({ children }) => {
 			console.log('clue locked, no update to stats')
 		}
 
-		// GA event
-		if (typeof window.gtag !== 'undefined') {
-			window.gtag('event', 'completed_clue', {
+		// GA event - only track daily clue completions
+		if (isToday && typeof window.gtag !== 'undefined') {
+			window.gtag('event', 'completed_daily_clue', {
 				clid: activeClue.clid,
+				difficulty: activeClue.difficulty,
 				hints: hints,
 				guesses: guesses,
 				how: type,
+				streak: streak,
 				total_completed: knownUser && completedClues.length + 1,
 				repeat: !!repeat,
 				known_user: knownUser,
