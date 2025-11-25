@@ -223,6 +223,7 @@ export const UserProvider = ({ children }) => {
 				hints: hints,
 				guesses: guesses,
 				how: type,
+				dow: activeClue.dow,
 				streak: streak,
 				total_completed: knownUser && completedClues.length + 1,
 				repeat: !!repeat,
