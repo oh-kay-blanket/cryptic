@@ -7,7 +7,19 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        neutral: {
+          800: '#2a2a2a',
+        },
+        purple: {
+          600: '#6B5F8F', // Less intense purple for dark mode hover
+        },
+        orange: {
+          600: '#9B6F50', // Less intense orange for dark mode hover
+        },
+      },
+    },
   },
   plugins: [],
 }
