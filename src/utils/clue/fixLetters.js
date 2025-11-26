@@ -45,7 +45,7 @@ const fixLetters = (activeClue, hint, index) => {
 			// Add position attributes
 			ref.current.style.top = !!currentDestLetter.current.style.top
 				? `${Math.round(Number(currentDestLetter.current.style.top.slice(0, -2)))}px`
-				: `${Math.round(currentDestLetter.current.getBoundingClientRect().top)}px`
+				: `${Math.round(currentDestLetter.current.getBoundingClientRect().top + 1)}px`
 			ref.current.style.left = !!currentDestLetter.current.style.left
 				? `${Math.round(Number(currentDestLetter.current.style.left.slice(0, -2)))}px`
 				: `${Math.round(currentDestLetter.current.getBoundingClientRect().left)}px`
@@ -56,7 +56,7 @@ const fixLetters = (activeClue, hint, index) => {
 		// Add position attributes
 		hint.fix.endPt.forEach((ref) => {
 			let left = Math.round(ref.current.getBoundingClientRect().left)
-			let top = Math.round(ref.current.getBoundingClientRect().top)
+			let top = Math.round(ref.current.getBoundingClientRect().top + 2)
 			ref.current.style.left = `${left}px`
 			ref.current.style.top = `${top}px`
 			return [left, top]
