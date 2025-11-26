@@ -219,6 +219,7 @@ export const UserProvider = ({ children }) => {
 		if (isToday && typeof window.gtag !== 'undefined') {
 			window.gtag('event', 'completed_daily_clue', {
 				clid: activeClue.clid,
+				release: activeClue.release,
 				difficulty: activeClue.difficulty,
 				hints: hints,
 				guesses: guesses,
