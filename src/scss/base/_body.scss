@@ -1,6 +1,11 @@
 @use './var' as *;
 @use './media' as *;
 
+* {
+	-webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
 html,
 body {
 	max-width: 100%;
