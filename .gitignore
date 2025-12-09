@@ -5,6 +5,7 @@
 # Local files
 **/.DS_Store
 .DS_Store
+.claude/
 
 # Cache
 .cache
