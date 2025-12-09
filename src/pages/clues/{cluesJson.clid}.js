@@ -472,6 +472,7 @@ export const query = graphql`
 			}
 			release
 			difficulty
+			dow
 			type
 			definition
 			hints {
