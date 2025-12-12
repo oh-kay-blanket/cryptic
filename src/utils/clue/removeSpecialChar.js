@@ -2,7 +2,7 @@
 
 const removeSpecial = (charArr) => {
 	
-	const specialChar = [' ', ',', '-', '_', ':', ':', '"', "'"]
+	const specialChar = [' ', ',', '-', '_', ':', ':', '"', "'", '?', '!', '.', ';', '(', ')', '[', ']', '{', '}', '/', '\\']
 
 
 	if (typeof(charArr) === 'string') {

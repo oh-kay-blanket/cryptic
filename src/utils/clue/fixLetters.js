@@ -42,6 +42,11 @@ const fixLetters = (activeClue, hint, index) => {
 				}
 			})
 
+			// Skip positioning if no matching letter found (e.g., special characters)
+			if (!currentDestLetter) {
+				return
+			}
+
 			// Add position attributes
 			ref.current.style.top = !!currentDestLetter.current.style.top
 				? `${Math.round(Number(currentDestLetter.current.style.top.slice(0, -2)))}px`
