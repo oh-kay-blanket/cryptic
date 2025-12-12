@@ -102,7 +102,7 @@ module.exports = {
 				description: "Learn and practice cryptic crossword clues with our daily game",
 				start_url: "/",
 				background_color: "#FAF9F6",
-				theme_color: "#E1D8FF",
+				theme_color: "#faf9f6",
 				display: "standalone",
 				orientation: "portrait",
 				icon: "src/assets/img/favicon.png",

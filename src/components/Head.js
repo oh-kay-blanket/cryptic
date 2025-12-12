@@ -48,8 +48,8 @@ export const Head = ({ title, description, pathname, children }) => {
 			<link rel="apple-touch-icon" href="/favicon.png" />
 			
 			{/* Theme Color */}
-			<meta name="theme-color" content="#E1D8FF" />
-			<meta name="msapplication-TileColor" content="#E1D8FF" />
+			<meta name="theme-color" content="#faf9f6" />
+			<meta name="msapplication-TileColor" content="#faf9f6" />
 			
 			{/* Additional structured data */}
 			<script type="application/ld+json">
