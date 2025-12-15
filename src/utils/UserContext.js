@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo } from 'react'
+import { isSameDay, shouldResetStreak } from './dateHelpers'
 
 export const UserContext = createContext({
 	completedClues: [],
@@ -65,38 +66,10 @@ export const UserProvider = ({ children }) => {
 
 	useEffect(() => {
 		const checkStreak = () => {
-			function shouldResetStreak(lastSolvedDate) {
-				if (!lastSolvedDate || lcState.streak === 0) {
-					return false
-				}
-
-				const lastSolved = new Date(lastSolvedDate)
-				const now = new Date()
-
-				// Set both dates to start of day for proper comparison
-				const lastSolvedDay = new Date(
-					lastSolved.getFullYear(),
-					lastSolved.getMonth(),
-					lastSolved.getDate()
-				)
-				const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-				const yesterday = new Date(today)
-				yesterday.setDate(yesterday.getDate() - 1)
-
-				// Calculate the difference in days
-				const daysDifference = Math.floor(
-					(today - lastSolvedDay) / (1000 * 60 * 60 * 24)
-				)
-
-				// Reset streak only if more than 1 day has passed
-				// (0 = today, 1 = yesterday, 2+ = streak should break)
-				return daysDifference > 1
-			}
-
 			console.log('lastSolved', lcState.lastSolved)
 			console.log('streak', lcState.streak)
 
-			if (shouldResetStreak(lcState.lastSolved)) {
+			if (shouldResetStreak(lcState.lastSolved, lcState.streak)) {
 				console.log(
 					'streak broken, resetting - more than 1 day since last solve'
 				)
@@ -159,26 +132,7 @@ export const UserProvider = ({ children }) => {
 		let longestStreak =
 			lcState.longestStreak == null ? 0 : lcState.longestStreak
 
-		const isTodayClue = (activeClue) => {
-			const date1 = new Date(activeClue.release)
-			const date2 = new Date()
-
-			// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-			const d1 = new Date(
-				date1.getFullYear(),
-				date1.getMonth(),
-				date1.getDate()
-			)
-			const d2 = new Date(
-				date2.getFullYear(),
-				date2.getMonth(),
-				date2.getDate()
-			)
-
-			return d1.getTime() === d2.getTime()
-		}
-
-		const isToday = isTodayClue(activeClue)
+		const isToday = isSameDay(activeClue.release, new Date())
 		if (isToday) {
 			streak++
 		}

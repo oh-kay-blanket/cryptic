@@ -6,6 +6,7 @@ import Bottom from '../../components/Bottom'
 import Tooltip from '../../components/Tooltip'
 import prepClue from '../../utils/clue/usePrepClue'
 import manageClue from '../../utils/clue/useManageClue'
+import { isTodayClue } from '../../utils/dateHelpers'
 
 import eyeOpen from '../../assets/img/eye--open.svg'
 import eyeClosed from '../../assets/img/eye--closed.svg'
@@ -34,25 +35,7 @@ const CluePage = ({ data }) => {
 
 	// Track when users start today's daily clue
 	useEffect(() => {
-		const isTodayClue = () => {
-			const clueDate = new Date(dataClue.release)
-			const today = new Date()
-
-			const clueDay = new Date(
-				clueDate.getFullYear(),
-				clueDate.getMonth(),
-				clueDate.getDate()
-			)
-			const todayDay = new Date(
-				today.getFullYear(),
-				today.getMonth(),
-				today.getDate()
-			)
-
-			return clueDay.getTime() === todayDay.getTime()
-		}
-
-		if (isTodayClue() && typeof window.gtag !== 'undefined') {
+		if (isTodayClue(dataClue) && typeof window.gtag !== 'undefined') {
 			window.gtag('event', 'started_daily_clue', {
 				clid: dataClue.clid,
 				difficulty: dataClue.difficulty,

@@ -5,6 +5,7 @@ import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
+import { isTodayClue } from '../utils/dateHelpers'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
@@ -13,16 +14,7 @@ const Title = ({ data }) => {
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
 	// Today clue
-	const todayClue = cluesData.find((clue) => {
-		const date1 = new Date(clue.release)
-		const date2 = new Date()
-
-		// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-		const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
-		const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
-
-		return d1.getTime() === d2.getTime()
-	})
+	const todayClue = cluesData.find(isTodayClue)
 	const todayCompleted =
 		todayClue && completedGuess.find((clue) => clue.clid === todayClue.clid)
 			? true

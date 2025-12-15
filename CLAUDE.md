@@ -20,6 +20,14 @@ npm run build    # Build with path prefix
 npm run serve    # Serve production build at localhost:9000
 ```
 
+### Testing
+```bash
+npm test                    # Run all tests
+npm test -- --watch        # Watch mode (re-runs on file changes)
+npm test -- --coverage     # Generate coverage report
+npm test dateHelpers       # Run specific test file
+```
+
 ### Data Conversion
 ```bash
 npm run convert-csv
@@ -114,13 +122,35 @@ The hint system (`src/utils/clue/handleHint.js`) uses element refs and imperativ
 
 ## Key Implementation Details
 
-### Date Handling
-When comparing dates (streaks, today's clue), always strip time components:
+### Date Handling & Utilities
+
+**IMPORTANT**: Always use the centralized date utilities from `src/utils/dateHelpers.js` instead of duplicating date logic.
+
+**Available Utilities**:
+- `stripTime(date)`: Removes time component from a date, returning midnight
+- `isSameDay(date1, date2)`: Compares two dates at day level (ignoring time)
+- `isTodayClue(clue)`: Checks if a clue's release date is today
+- `daysBetween(date1, date2)`: Calculates days between two dates
+- `shouldResetStreak(lastSolvedDate, currentStreak)`: Determines if streak should reset (>1 day gap)
+
+**Usage Example**:
 ```javascript
-const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
-const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
-return d1.getTime() === d2.getTime()
+import { isTodayClue, shouldResetStreak } from '../utils/dateHelpers'
+
+// Check if clue is today's clue
+const todayClue = cluesData.find(isTodayClue)
+
+// Check if streak should reset
+if (shouldResetStreak(lastSolvedDate, currentStreak)) {
+  // Reset streak to 0
+}
 ```
+
+**Why Use These Utilities**:
+- Single source of truth for date logic
+- Properly handles timezone issues by stripping time components
+- Well-tested with comprehensive edge cases
+- Eliminates code duplication
 
 ### Revealed Letters Feature
 Users can click empty solution squares to reveal individual letters (costs a hint). Implementation in `useManageClue.js`:
@@ -150,3 +180,63 @@ Google Analytics events tracked via `gatsby-plugin-google-gtag`:
 **Dark Mode Colors**: Use Tailwind with `dark:` prefix. Inline styles should use `!` to ensure specificity: `dark:!bg-[#4A3F6B]`
 
 **Loading States**: Homepage implements context loading delay (100ms timeout) to prevent flicker when reading from localStorage.
+
+## Testing
+
+### Testing Infrastructure
+
+The project uses **Jest** with **React Testing Library** for testing. Configuration:
+- `jest.config.js`: Main Jest configuration (Gatsby-optimized)
+- `jest.setup.js`: Global test environment setup
+- `__mocks__/`: Mock implementations for Gatsby modules and static assets
+
+### Test Organization
+
+Tests are located in `__tests__` directories next to the source files they test:
+```
+src/utils/
+├── dateHelpers.js
+└── __tests__/
+    ├── dateHelpers.test.js
+    └── UserContext.test.js
+
+src/utils/clue/
+├── useManageClue.js
+└── __tests__/
+    └── useManageClue.test.js
+```
+
+### Testing Patterns
+
+**1. Pure Function Testing** (`dateHelpers.test.js`):
+- Arrange-Act-Assert pattern
+- Edge case testing (month boundaries, year boundaries, null values)
+- Mocking time with `jest.useFakeTimers()` and `jest.setSystemTime()`
+
+**2. React Context Testing** (`UserContext.test.js`):
+- Render components with `render()` from testing-library
+- Query elements with `screen.getByTestId()`
+- Test async state updates with `waitFor()`
+- Mock localStorage with fresh instances in `beforeEach`
+
+**3. Custom Hook Testing** (`useManageClue.test.js`):
+- Use `renderHook()` from testing-library
+- Wrap state updates in `act()`
+- Create mock data matching expected structure
+
+### Writing New Tests
+
+When adding tests:
+1. Place in `__tests__` directory next to source file
+2. Name file `*.test.js`
+3. Use descriptive test names: `should [expected behavior] when [condition]`
+4. Follow Arrange-Act-Assert pattern
+5. Test edge cases and error conditions
+6. Add comments explaining complex test logic
+
+### Test Coverage Goals
+
+- Aim for 80%+ coverage on critical paths (UserContext, clue utilities)
+- Test edge cases and error conditions
+- Don't obsess over 100% coverage
+- Focus on testing behavior users depend on

@@ -1,4 +1,5 @@
 import React from 'react'
+import { isTodayClue } from '../dateHelpers'
 
 const prepBottom = (
 	activeClue,
@@ -19,24 +20,7 @@ const prepBottom = (
 	revealedLetters = []
 ) => {
 	// Check if this is today's clue
-	const isTodaysClue = () => {
-		const clueDate = new Date(activeClue.release)
-		const today = new Date()
-
-		// Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-		const clueDay = new Date(
-			clueDate.getFullYear(),
-			clueDate.getMonth(),
-			clueDate.getDate()
-		)
-		const todayDay = new Date(
-			today.getFullYear(),
-			today.getMonth(),
-			today.getDate()
-		)
-
-		return clueDay.getTime() === todayDay.getTime()
-	}
+	const isTodaysClue = () => isTodayClue(activeClue)
 	const shareScore = async () => {
 		const date = new Date(activeClue.release) // or your clue.date
 		const dateFormatted = new Intl.DateTimeFormat('en-US', {
