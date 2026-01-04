@@ -83,7 +83,7 @@ const Title = ({ data }) => {
 			// User has completed today's clue
 			return (
 				<>
-					<div className='title-intro text-center'>
+					<div className='title-intro text-center' data-testid='title-intro'>
 						<p>
 							You solved today's clue with <br />
 							<span className='highlight-guesses whitespace-nowrap'>
@@ -95,7 +95,7 @@ const Title = ({ data }) => {
 							</span>
 							{/* {todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'} */}
 						</p>
-						<p>
+						<p data-testid='streak-display'>
 							Streak:{' '}
 							<span className='whitespace-nowrap'>
 								{streak} {streak === 1 ? 'day' : 'days'}
@@ -115,9 +115,9 @@ const Title = ({ data }) => {
 			// User has completed a clue but not today's and has a streak
 			return (
 				<>
-					<div className='title-intro text-center'>
+					<div className='title-intro text-center' data-testid='title-intro'>
 						<p className=''>Welcome back 👋</p>
-						<p>
+						<p data-testid='streak-display'>
 							You're on a{' '}
 							<span className='font-bold whitespace-nowrap'>
 								{streak}-day streak
@@ -137,7 +137,7 @@ const Title = ({ data }) => {
 			// User has completed a clue but not today's and has no streak
 			return (
 				<>
-					<div className='title-intro text-center'>
+					<div className='title-intro text-center' data-testid='title-intro'>
 						<p>Welcome back 👋</p>
 						<p>
 							You have solved{' '}
@@ -161,7 +161,7 @@ const Title = ({ data }) => {
 			// New user
 			return (
 				<>
-					<div className='title-intro'>
+					<div className='title-intro' data-testid='title-intro'>
 						<p>
 							Welcome to Learn Cryptic — a daily game to help you learn about,
 							practice, and solve{' '}

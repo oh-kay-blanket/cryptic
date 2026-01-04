@@ -147,11 +147,11 @@ const CluePage = ({ data }) => {
 	const statsInsert = (
 		<>
 			<div className='clue-stats'>
-				<span className='stat-hints dark:!bg-[#4A3F6B] dark:!text-white'>
+				<span className='stat-hints dark:!bg-[#4A3F6B] dark:!text-white' data-testid='stat-hints'>
 					<span className='stat'>{stats.hints}</span>&nbsp;
 					{stats.hints === 1 ? 'hint' : 'hints'}
 				</span>
-				<span className='stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white'>
+				<span className='stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white' data-testid='stat-guesses'>
 					<span className='stat'>{stats.guesses}</span>&nbsp;
 					{stats.guesses === 1 ? 'guess' : 'guesses'}
 				</span>
@@ -285,6 +285,8 @@ const CluePage = ({ data }) => {
 				role={canReveal ? 'button' : 'presentation'}
 				tabIndex={canReveal ? 0 : -1}
 				aria-label={canReveal ? `Reveal letter ${index + 1}` : undefined}
+				data-testid={`solution-square-${index}`}
+				data-revealed={isRevealed ? 'true' : 'false'}
 			>
 				<span
 					id={`sl${index}`}
@@ -309,6 +311,7 @@ const CluePage = ({ data }) => {
 			id='solLengthRef'
 			ref={activeClue.solution.length.ref}
 			className='solution-letters'
+			data-testid='solution-length'
 		>
 			&nbsp;{activeClue.solution.length.value}
 		</span>
@@ -326,13 +329,14 @@ const CluePage = ({ data }) => {
 	return (
 		<Layout>
 			<div className='clue-page'>
-				<div id='clue-container' className='clue lc-container'>
+				<div id='clue-container' className='clue lc-container' data-testid='clue-container'>
 					<ul className='type'>{typeInsert}</ul>
 					{statsInsert}
 					<div
 						id='clueSectionRef'
 						ref={activeClue.clue.sectionRef}
 						className='clue'
+						data-testid='clue-text'
 					>
 						<div>
 							{clueInsert} {solLength}
@@ -427,6 +431,7 @@ const CluePage = ({ data }) => {
 								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
 								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
 								onClick={() => handleRevealLetter(revealPromptIndex)}
+								data-testid='modal-reveal-confirm'
 							>
 								Reveal
 							</button>
@@ -434,6 +439,7 @@ const CluePage = ({ data }) => {
 								className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100'
 								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
 								onClick={() => setShowRevealPrompt(false)}
+								data-testid='modal-reveal-cancel'
 							>
 								Cancel
 							</button>

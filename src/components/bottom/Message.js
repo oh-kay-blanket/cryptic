@@ -20,16 +20,16 @@ const Message = ({
 	// figure out which text to display
 	const message = checkAns ? (
 		isCorrectAns ? (
-			<>
+			<div data-testid='message-success'>
 				<strong>{input.join('').toUpperCase()}</strong> is correct.
 				<br />
 				Nice work!
-			</>
+			</div>
 		) : (
-			<>
+			<div data-testid='message-error'>
 				<strong>{input.join('').toUpperCase()}</strong> is not the correct
 				answer.
-			</>
+			</div>
 		)
 	) : (
 		getMessage(activeClue.hints[nextHint])

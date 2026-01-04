@@ -1,0 +1,33 @@
+{
+	"newUser": {
+		"completedClues": [],
+		"showType": true,
+		"typeViewed": [],
+		"streak": 0,
+		"longestStreak": 0,
+		"lastSolved": "",
+		"darkMode": null
+	},
+	"returningUserWithStreak": {
+		"completedClues": [
+			{ "clid": "379", "guesses": 2, "hints": 1, "how": "g" }
+		],
+		"streak": 5,
+		"longestStreak": 5,
+		"lastSolved": "2025-12-22",
+		"showType": true,
+		"typeViewed": ["anagram", "container"],
+		"darkMode": null
+	},
+	"todayCompleted": {
+		"completedClues": [
+			{ "clid": "387", "guesses": 1, "hints": 0, "how": "g" }
+		],
+		"streak": 1,
+		"longestStreak": 1,
+		"lastSolved": "2025-12-23",
+		"showType": true,
+		"typeViewed": [],
+		"darkMode": null
+	}
+}
