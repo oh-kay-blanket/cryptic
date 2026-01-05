@@ -8,7 +8,7 @@
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
 		"convert-csv": "node scripts/csv-to-json.js",
-		"start": "npm run convert-csv && gatsby clean && gatsby develop",
+		"start": "npm run convert-csv && mkdir -p .cache && gatsby develop",
 		"build": "npm run convert-csv && gatsby clean && gatsby build --prefix-paths",
 		"predeploy": "npm run convert-csv && gatsby clean && gatsby build --prefix-paths",
 		"deploy": "gh-pages -d public --cname learncryptic.com",
