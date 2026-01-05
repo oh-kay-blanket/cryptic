@@ -5,9 +5,10 @@ module.exports = defineConfig({
 		// Base URLs
 		baseUrl: 'http://localhost:8000', // Dev server
 
-		// Viewport (mobile-first, as this is a fixed-page app)
+		// Viewport - set to 850px+ to ensure keyboard is visible for tests
+		// (keyboard is hidden on desktop when height < 850px)
 		viewportWidth: 375,
-		viewportHeight: 812,
+		viewportHeight: 900,
 
 		// Test file patterns
 		specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
