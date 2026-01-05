@@ -13,3 +13,11 @@
 	align-items: flex-end;
 	// background-color handled by Tailwind classes in React component
 }
+
+// Center buttons vertically when keyboard is hidden on desktop
+@media (hover: hover) and (max-height: 849px) {
+	.bottom {
+		align-items: center;
+		justify-content: center;
+	}
+}

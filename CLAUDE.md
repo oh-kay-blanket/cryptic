@@ -181,6 +181,8 @@ Google Analytics events tracked via `gatsby-plugin-google-gtag`:
 
 **Loading States**: Homepage implements context loading delay (100ms timeout) to prevent flicker when reading from localStorage.
 
+**Keyboard Visibility**: The on-screen keyboard is hidden on desktop devices (with hover capability) when viewport height is less than 850px. Users rely on hardware keyboard for input. The hardware keyboard listener in `Keyboard.js` remains active even when the component is visually hidden via CSS.
+
 ## Testing
 
 ### Testing Infrastructure
