@@ -47,9 +47,9 @@
 	}
 }
 
-// Hide keyboard on desktop devices with limited height
+// Hide keyboard on desktop devices (wider screens) with limited height
 // Users will use hardware keyboard for input
-@media (hover: hover) and (max-height: 849px) {
+@media (min-width: 768px) and (max-height: 849px) {
 	.keyboard {
 		display: none;
 	}
