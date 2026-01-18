@@ -8,3 +8,9 @@ export const wrapRootElement = ({ element }) => (
 	  	{element}
 	</UserProvider>
 )
+
+// Disable Gatsby's automatic scroll restoration to prevent scroll jumps during navigation
+// Combined with body.fixed-page CSS, this ensures pages always start at top position
+export const shouldUpdateScroll = () => {
+	return false;
+}

@@ -16,10 +16,6 @@ import d3 from '../../assets/img/difficulty/3.svg'
 import d4 from '../../assets/img/difficulty/4.svg'
 
 const CluePage = ({ data }) => {
-	// if (typeof window !== 'undefined') {
-	// 	window.scrollTo(0, 0)
-	// }
-
 	const dataClue = data.cluesJson
 	const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false)
 

@@ -45,9 +45,8 @@ body {
 body.fixed-page {
 	overflow: hidden;
 	height: 100vh;
-	position: fixed;
 	width: 100%;
-	
+
 	// Prevent address bar hiding on mobile
 	@media screen and (max-width: 768px) {
 		min-height: 100vh;
