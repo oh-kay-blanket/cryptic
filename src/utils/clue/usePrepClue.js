@@ -138,13 +138,19 @@ const usePrepClue = (dataClue) => {
 	})
 
 	useEffect(() => {
-		// Fix letters
-		const fixList = ['ag-2', 'hw-2', 'lb-2', 'container', 'reversal']
-		activeClue.hints.forEach((hint, index) => {
-			hint &&
-				hint.category &&
-				fixList.includes(hint.category) &&
-				fixLetters(activeClue, hint, index)
+		// Fix letters - use double requestAnimationFrame to ensure flexbox layout has settled
+		// This is critical for mobile where the addLetters flexbox container needs time to calculate
+		// final positions before getBoundingClientRect() is called
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				const fixList = ['ag-2', 'hw-2', 'lb-2', 'container', 'reversal']
+				activeClue.hints.forEach((hint, index) => {
+					hint &&
+						hint.category &&
+						fixList.includes(hint.category) &&
+						fixLetters(activeClue, hint, index)
+				})
+			})
 		})
 	}, [])
 
