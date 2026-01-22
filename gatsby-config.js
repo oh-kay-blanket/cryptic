@@ -25,7 +25,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {
-				excludes: [`/futureclues`],
+				excludes: [`/futureclues`, `/go/*`],
 				query: `
 					{
 						site {
@@ -163,7 +163,7 @@ module.exports = {
 					{
 						userAgent: '*',
 						allow: '/',
-						disallow: ['/futureclues']
+						disallow: ['/futureclues', '/go/']
 					}
 				]
 			}
