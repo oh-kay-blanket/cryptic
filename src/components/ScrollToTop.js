@@ -5,7 +5,10 @@ const ScrollToTop = () => {
 	const { pathname } = useLocation()
 
 	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
+		// Use instant scroll and target multiple elements for iOS Safari compatibility
+		window.scrollTo(0, 0)
+		document.documentElement.scrollTop = 0
+		document.body.scrollTop = 0
 	}, [pathname])
 
 	return null

@@ -8,6 +8,11 @@
 	min-height: calc(100vh - 60px);
 	font-family: $lc-font--sans;
 
+	// Ensure content fits on smaller viewports (iPhone 16, etc.)
+	@supports (height: 100dvh) {
+		min-height: calc(100dvh - 60px - env(safe-area-inset-bottom, 0));
+	}
+
 	.title-logo {
 		max-width: 70px;
 	}
@@ -15,6 +20,12 @@
 	.title-img {
 		width: 60%;
 		max-width: 300px;
+
+		// Smaller logo on short viewports
+		@media (max-height: 700px) {
+			width: 50%;
+			max-width: 200px;
+		}
 	}
 
 	.title-intro {
@@ -54,20 +65,20 @@
 				}
 			}
 		}
+	}
 
-		.title-actions {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
+	.title-actions {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
 
-			.title-date {
-				margin: .5rem auto;
-				font-family: $lc-font--sans;
-				font-size: .85rem;
-				color: $lc-text--light;
-			}
+		.title-date {
+			margin: .5rem auto;
+			font-family: $lc-font--sans;
+			font-size: .85rem;
+			color: $lc-text--light;
 		}
 	}
 }
