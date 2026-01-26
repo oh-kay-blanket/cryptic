@@ -17,8 +17,14 @@ const NotFound = () => {
   return (
     <Layout>
       <section
-        className='lc-container container_404'
-        style={{ marginTop: '5rem' }}
+        className='container_404'
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: 'calc(80vh - 60px)',
+        }}
       >
         <h1 style={{ textAlign: 'center' }}>Page not found</h1>
         <ButtonContainer btnArr={btnArr} />
