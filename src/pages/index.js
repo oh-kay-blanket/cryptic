@@ -221,6 +221,13 @@ export const Head = () => (
 			content='Master cryptic crosswords with our daily interactive clues. Perfect for beginners and experts. Learn wordplay techniques, practice with hints, and track your progress.'
 		/>
 		<link rel='canonical' href='https://learncryptic.com/' />
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content='https://learncryptic.com/' />
+		<meta property='og:title' content='Learn Cryptic - Daily Cryptic Crossword Clues & Puzzles' />
+		<meta property='og:description' content='Master cryptic crosswords with our daily interactive clues. Perfect for beginners and experts.' />
+		<meta property='og:image' content='https://learncryptic.com/social.jpg' />
+		<meta property='twitter:card' content='summary_large_image' />
+		<meta property='twitter:image' content='https://learncryptic.com/social.jpg' />
 	</>
 )
 
