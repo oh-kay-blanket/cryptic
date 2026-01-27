@@ -1,20 +1,15 @@
 import React, { useEffect } from 'react'
-import { navigate } from 'gatsby'
 
 const SubredditRedirect = ({ params }) => {
   const slug = params.slug || 'unknown'
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
-      window.gtag('event', 'reddit_referral', {
-        event_category: 'acquisition',
-        event_label: slug,
-      })
+    if (typeof window !== 'undefined') {
+      // Use full page redirect so GA picks up UTM params on page load
+      window.location.replace(
+        `/?utm_source=social&utm_medium=social&utm_campaign=social_share&utm_content=${slug}`
+      )
     }
-
-    navigate(`/?utm_source=reddit&utm_medium=social&utm_campaign=reddit_share&utm_content=${slug}`, {
-      replace: true
-    })
   }, [slug])
 
   return null
