@@ -91,7 +91,7 @@ const Lit = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>
 						& Lit. clues are always indicated by an exclamation mark (!) at the
 						end of the clue. The wordplay element can be any of the other clue
@@ -100,13 +100,13 @@ const Lit = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>I only appear manipulated! (6, 5)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>I only appear manipulated</strong>
+									<strong>I only appear manipulated</strong> is the definition
 								</li>
 								<li>
 									<strong>manipulated</strong> indicates an anagram
@@ -138,10 +138,10 @@ const Lit = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is{' '}
 									<strong>
 										Starting with a core of knowledge, gain deeper understanding
-									</strong>
+									</strong>{' '}
+									is the definition
 								</li>
 								<li>
 									<strong>core of knowledge</strong> can be <strong>l</strong>

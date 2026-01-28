@@ -92,7 +92,7 @@ const DoubleDefinition = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Tightens up verb forms (6)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

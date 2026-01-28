@@ -110,19 +110,19 @@ const HiddenWord = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>Common hidden word indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Field in Far East (4)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Field</strong>
+									<strong>Field</strong> is the definition
 								</li>
 								<li>
 									<strong>in</strong> indicates a hidden word
@@ -147,7 +147,7 @@ const HiddenWord = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Focus too much on</strong>
+									<strong>Focus too much on</strong> is the definition
 								</li>
 								<li>
 									<strong>portion of</strong> indicates a hidden word

@@ -86,7 +86,7 @@ const Combination = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Example</h2>
+					<h2 className='text-xl font-bold my-4'>Example</h2>
 					<div className='example-container'>
 						<p className='example'>
 							Republican rejecting one city in Nevada (4)
@@ -103,7 +103,7 @@ const Combination = () => {
 							</p>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>CITY IN NEVADA</strong>
+									<strong>City in Nevada</strong> is the definition
 								</li>
 								<li>
 									<strong>REPUBLICAN</strong> can be <strong>R</strong>
@@ -143,7 +143,7 @@ const Combination = () => {
 							</p>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Caressed</strong>
+									<strong>Caressed</strong> is the definition
 								</li>
 								<li>
 									<strong>bolted</strong> can be <strong>fled</strong>

@@ -96,19 +96,19 @@ const Homophone = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>Common homophone indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Group of lions was snoopy, we hear (5)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Group of lions</strong>
+									<strong>Group of lions</strong> is the definition
 								</li>
 								<li>
 									<strong>we hear</strong> indicates a homophone
@@ -137,7 +137,7 @@ const Homophone = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Produced blooms</strong>
+									<strong>Produced blooms</strong> is the definition
 								</li>
 								<li>
 									<strong>say</strong> indicates a homophone

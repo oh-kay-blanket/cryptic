@@ -115,7 +115,7 @@ const Anagram = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>
 						An indicator will tip you off to the presence of an anagram. Common
 						indicators include:
@@ -124,13 +124,13 @@ const Anagram = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>One unusual role in "The Matrix" (3)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>role in "The Matrix"</strong>
+									<strong>Role in "The Matrix"</strong> is the definition
 								</li>
 								<li>
 									<strong>unusual</strong> is a signal to anagram the letters in{' '}
@@ -153,7 +153,7 @@ const Anagram = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>three-sided figure</strong>
+									<strong>Three-sided figure</strong> is the definition
 								</li>
 								<li>
 									<strong>odd</strong> indicates that <strong>Altering</strong>{' '}

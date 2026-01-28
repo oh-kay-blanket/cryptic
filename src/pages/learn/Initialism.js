@@ -108,13 +108,13 @@ const Initialism = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>Common initialism indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>
 							Starts to dream about living large amid suburban Texas metropolis
@@ -123,7 +123,7 @@ const Initialism = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>Texas metropolis</strong>
+									<strong>Texas metropolis</strong> is the definition
 								</li>
 								<li>
 									<strong>Starts to</strong> indicates initialism
@@ -152,7 +152,7 @@ const Initialism = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>European capital</strong>
+									<strong>European capital</strong> is the definition
 								</li>
 								<li>
 									<strong>starts to</strong> indicates initialism

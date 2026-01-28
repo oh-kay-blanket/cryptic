@@ -105,7 +105,7 @@ const Reversal = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>Common reversal indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 					<span style={{ fontSize: 0.8 + 'rem' }}>
@@ -115,7 +115,7 @@ const Reversal = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>
 							King with a golden touch is unhappy I'm returning (5)
@@ -123,7 +123,7 @@ const Reversal = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>King with a golden touch</strong>
+									<strong>King with a golden touch</strong> is the definition
 								</li>
 								<li>
 									<strong>unhappy</strong> can be <strong>sad</strong>
@@ -156,7 +156,7 @@ const Reversal = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>post office worker's sack</strong>
+									<strong>Post office worker's sack</strong> is the definition
 								</li>
 								<li>
 									<strong>Idly chat</strong> can be <strong>gab</strong>

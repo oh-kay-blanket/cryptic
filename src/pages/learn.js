@@ -94,29 +94,29 @@ const Learn = ({ data }) => {
             What is a cryptic crossword?
           </h2>
           <p className="my-2">
-            A "cryptic," or "British-style" crossword is one in which each clue
-            is a puzzle in itself, involving wordplay such as anagrams,
-            homophones, hidden words, and other devilish tricks.
+            In a cryptic (British-style) crossword, each clue is a little puzzle
+            in itself—involving wordplay such as anagrams, homophones, hidden
+            words, and other devilish tricks.
           </p>
           <p className="my-2">
-            Each clue reads as a sentence, but it's important to recognize that
-            the meaning of the sentence—its "surface reading"—is not important.
-            Rather, the clue hints at the answer in two different ways, and thus
-            is composed of two parts:
+            The surface reading of the clue is not important. Rather, the clue
+            hints at the solution in two different ways, and thus is composed of
+            two parts:
           </p>
           <ul className="no-dec">
             <li className="mt-4">
-              <p className="font-bold">Definition</p>
+              <p className="font-bold">The definition</p>
               <p className="my-2">
-                A straightforward (or thinly or thickly disguised!) definition
-                of the answer word(s) appears at the start or end of the clue.
+                This part of the clue is a straightforward (or thinly/thickly disguised) definition
+                of the solution. The definition always appears at the start or end of the
+                clue.
               </p>
             </li>
             <li className="mt-4">
-              <p className="font-bold">Wordplay</p>
+              <p className="font-bold">The wordplay</p>
               <p className="my-2">
-                The rest of the clue is a sort of enigmatic hint, in which
-                wordplay gives a second path to the answer.
+                The rest of the clue is an enigmatic hint, in which
+                wordplay gives a second path to the solution.
               </p>
             </li>
           </ul>
@@ -126,20 +126,15 @@ const Learn = ({ data }) => {
             <div className="explanation dark:!bg-neutral-700 dark:!text-neutral-100">
               <ul className="mt-0 list-disc my-3">
                 <li>
-                  The definition part is <strong>GOULASH</strong>
+                  <strong>GOULASH</strong> is the definition
                 </li>
                 <li>
-                  <strong>WILD</strong> indicates an anagram—picture the letters
-                  in the word <strong>WEST</strong> "going wild"
+                  <strong>WILD</strong> indicates an anagram of <strong>WEST</strong>
                 </li>
                 <li>
-                  <strong>WEST</strong> anagrams to <strong>STEW</strong>,
-                  defined by <strong>GOULASH</strong>
+                  <strong>WEST</strong> anagrams to <strong>STEW</strong>
                 </li>
               </ul>
-              <p className="text-center">
-                <strong>west</strong> → <strong>stew</strong>
-              </p>
               <div className="solution">
                 <span className="letter">s</span>
                 <span className="letter">t</span>
@@ -157,10 +152,10 @@ const Learn = ({ data }) => {
             to decipher clues.
           </p>
           <p className="my-2">
-            As with regular American-style crosswords, it takes a lot of
+            As with regular (American-style) crosswords, it takes a lot of
             practice to get good at solving cryptic puzzles. For beginners, the
-            learning curve can be steep. To help guide you to the answer, the
-            app has several kinds of hints:
+            learning curve can be steep. There are several kinds of hints to
+            help guide you:
           </p>
           <ul className="no-dec">
             <li className="mt-4">
@@ -168,9 +163,8 @@ const Learn = ({ data }) => {
               <p className="my-2">
                 At the top left of the screen, purple pills tell you the type(s)
                 of wordplay used. A single clue can use as many as four
-                different types of wordplay! Hover over or tap the pills to see
-                a brief description and example of each type. Tap the eye to
-                toggle this feature off and on.
+                different types of wordplay. Tap the pills to learn about each
+                type. Tap the eye to toggle this feature off and on.
               </p>
               <img className="border" src={typePill} alt="" />
             </li>
@@ -179,7 +173,7 @@ const Learn = ({ data }) => {
               <p className="my-2">
                 The "Show hint" and "Reveal solution" buttons guide you through
                 each step of deciphering the clue. If you've correctly guessed
-                the answer but you're not sure how the clue works, press the
+                the solution but you're not sure how the clue works, press the
                 "Show logic" button to be guided through the steps.{" "}
               </p>
               <img className="border" src={showHint} alt="" />
@@ -209,7 +203,7 @@ const Learn = ({ data }) => {
           <h2 className="text-2xl font-bold my-4">
             What different types of wordplay will I find?
           </h2>
-          <p className="my-2">Tap a type below to learn more:</p>
+          <p className="mb-3">Tap a type below to explore:</p>
           <ul className="learn-types no-dec">{types}</ul>
         </div>
 

@@ -112,19 +112,19 @@ const Container = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Indicators</h2>
+					<h2 className='text-xl font-bold my-4'>Indicators</h2>
 					<p className='my-2'>Common container indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-2xl font-bold my-4'>Examples</h2>
+					<h2 className='text-xl font-bold my-4'>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Don eats Ann's brand of yogurt (6)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>brand of yogurt</strong>
+									<strong>Brand of yogurt</strong> is the definition
 								</li>
 								<li>
 									<strong>eats</strong> indicates a container
@@ -152,7 +152,7 @@ const Container = () => {
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>
-									The definition is <strong>old people</strong>
+									<strong>Old people</strong> is the definition
 								</li>
 								<li>
 									<strong>Spanish gentlemen</strong> can be{' '}
