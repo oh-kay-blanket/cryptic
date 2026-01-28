@@ -4,7 +4,6 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
-import { Link } from 'gatsby'
 import { isTodayClue } from '../utils/dateHelpers'
 
 const Title = ({ data }) => {
@@ -53,8 +52,8 @@ const Title = ({ data }) => {
 	const buttons = {
 		learnNew: {
 			path: '/learn',
-			name: 'Learn about cryptics',
-			style: 'tertiary',
+			name: 'Start here',
+			style: 'alt',
 		},
 		learn: {
 			path: '/learn',
@@ -62,6 +61,11 @@ const Title = ({ data }) => {
 			style: 'tertiary',
 		},
 		todayClue: {
+			path: `/clues/${todayClue.clid}`,
+			name: "Play today's clue",
+			style: 'primary',
+		},
+		todayClueSecondary: {
 			path: `/clues/${todayClue.clid}`,
 			name: "Play today's clue",
 			style: 'primary',
@@ -163,19 +167,22 @@ const Title = ({ data }) => {
 				<>
 					<div className='title-intro' data-testid='title-intro'>
 						<p>
-							Welcome to Learn Cryptic — a daily game to help you learn about,
-							practice, and solve{' '}
-							<Link to='/learn'>cryptic crossword clues</Link>.
-						</p>
-						<p>
-							Learn Cryptic is for both beginners who are wanting to learn about
-							cryptic crosswords and those already familiar with this wonderful
-							form of wordplay.
+							Welcome to Learn Cryptic — a daily game to help you master the art of cryptic crosswords.
 						</p>
 					</div>
-					<div className='title-actions'>
+					<div className='title-actions' data-testid='title-actions'>
+						<p className="mb-2">
+							New to cryptics?
+						</p>
 						<ButtonContainer
-							btnArr={[buttons.todayClue, buttons.learnNew]}
+							btnArr={[buttons.learnNew]}
+							stack={true}
+						/>
+						<p className="mt-4 mb-2">
+							Already know the basics?
+						</p>
+						<ButtonContainer
+							btnArr={[buttons.todayClueSecondary]}
 							stack={true}
 						/>
 					</div>

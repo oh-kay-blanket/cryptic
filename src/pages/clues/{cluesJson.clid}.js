@@ -425,15 +425,15 @@ const CluePage = ({ data }) => {
 						<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
 							<button
 								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
-								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+								style={{ padding: '0.5rem 1rem', borderRadius: '50px', border: 'none', cursor: 'pointer' }}
 								onClick={() => handleRevealLetter(revealPromptIndex)}
 								data-testid='modal-reveal-confirm'
 							>
 								Reveal
 							</button>
 							<button
-								className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100'
-								style={{ padding: '0.5rem 1rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+								className='bg-neutral-200 dark:!bg-neutral-600 dark:!text-neutral-100'
+								style={{ padding: '0.25rem 1rem', borderRadius: '50px', border: 'none', cursor: 'pointer' }}
 								onClick={() => setShowRevealPrompt(false)}
 								data-testid='modal-reveal-cancel'
 							>
