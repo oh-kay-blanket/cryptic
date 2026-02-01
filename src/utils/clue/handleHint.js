@@ -303,7 +303,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 			// For hints in logic display, keep letters gray instead of resetting to primary
 			if (prevHint.category !== 'deletion') {
-				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank'|| hint.category === 'container')) {
+				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank' || prevHint.category === 'reversal' || hint.category === 'container')) {
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 				} else {
 					changeColor(prevHint.addLetters.ref.current, false, true)					
