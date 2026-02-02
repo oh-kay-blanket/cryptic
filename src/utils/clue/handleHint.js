@@ -288,7 +288,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 	}
 
 	// Change last hint to gray when going back to play
-	if (nextHint > 1 && ((!showMessage && !checkAns) || (showLogic && nextHint > 1))) {
+	if (nextHint > 1 && !showMessage && !checkAns) {
 		
 		try {
 			// Gray out highlighting
@@ -303,14 +303,23 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 			// For hints in logic display, keep letters gray instead of resetting to primary
 			if (prevHint.category !== 'deletion') {
-				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank' || prevHint.category === 'reversal' || hint.category === 'container')) {
+				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank'|| hint.category === 'container')) {
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 				} else {
-					changeColor(prevHint.addLetters.ref.current, false, true)					
+					changeColor(prevHint.addLetters.ref.current, false, true)
 				}
 			} else {
 				changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
 			}
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	// Gray out previous hint's background during showLogic stepping
+	if (showLogic && nextHint > 1 && showMessage) {
+		try {
+			highlightLetters(prevHint.ref, false, true)
 		} catch (err) {
 			console.log(err)
 		}
