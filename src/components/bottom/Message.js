@@ -107,7 +107,7 @@ const Message = ({
 			{message && (
 				<div className={'message-copy lc-container'}>
 					{message}
-					{explainer && <div className={'explainer'}>{explainer}</div>}
+					{explainer && (!checkAns || isCorrectAns) && <div className={'explainer'}>{explainer}</div>}
 				</div>
 			)}
 
