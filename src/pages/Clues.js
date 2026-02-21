@@ -14,6 +14,59 @@ import d2 from "../assets/img/difficulty/2.svg";
 import d3 from "../assets/img/difficulty/3.svg";
 import d4 from "../assets/img/difficulty/4.svg";
 
+// Filter modal component
+const FilterModal = ({ open, onClose, children }) => {
+  useEffect(() => {
+    const preventDefault = (e) => e.preventDefault();
+    if (open) {
+      document.addEventListener('wheel', preventDefault, { passive: false });
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    }
+    return () => {
+      document.removeEventListener('wheel', preventDefault);
+      document.removeEventListener('touchmove', preventDefault);
+    };
+  }, [open]);
+
+  if (!open) return null;
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div
+        className="modal-content bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="modal-close text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Filter icon component
+const FilterIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="inline-block"
+  >
+    <path
+      d="M3 4.5h18M6 9.5h12M9 14.5h6M11 19.5h2"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
 const Clues = ({ data }) => {
   const cluesData = data.allCluesJson.nodes;
   const { completedClues } = useContext(UserContext);
@@ -22,6 +75,21 @@ const Clues = ({ data }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [hoveredClue, setHoveredClue] = useState(null);
   const [hoveredRelease, setHoveredRelease] = useState(null);
+
+  // Filter state
+  const [difficultyFilter, setDifficultyFilter] = useState("all");
+  const [authorFilter, setAuthorFilter] = useState("all");
+  const [unsolvedFilter, setUnsolvedFilter] = useState(false);
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [filterModalOpen, setFilterModalOpen] = useState(false);
+
+  // Get unique authors and types for filter dropdowns
+  const uniqueAuthors = [...new Set(cluesData.map(c => c.source?.value).filter(Boolean))].sort();
+  const uniqueTypes = [...new Set(
+    cluesData
+      .flatMap(c => c.type ? c.type.split(", ").map(t => t.trim()) : [])
+      .filter(Boolean)
+  )].sort();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -48,35 +116,49 @@ const Clues = ({ data }) => {
 
   let tilesRef = useRef(cluesData.map(() => createRef()));
 
-  // only past clues
+  // Helper function to check if clue is today or before
+  const isTodayOrBefore = (date1Str) => {
+    const date1 = new Date(date1Str);
+    const date2 = new Date();
+    const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
+    const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+    return d1.getTime() <= d2.getTime();
+  };
+
+  // Filter clues
   let archiveTiles = cluesData.filter((clue) => {
-    function isTodayOrBefore(date1Str) {
-      const date1 = new Date(date1Str);
-      const date2 = new Date();
+    // Only past clues
+    if (!isTodayOrBefore(clue.release)) return false;
 
-      // Strip time part by setting hours, minutes, seconds, and milliseconds to zero
-      const d1 = new Date(
-        date1.getFullYear(),
-        date1.getMonth(),
-        date1.getDate()
-      );
-      const d2 = new Date(
-        date2.getFullYear(),
-        date2.getMonth(),
-        date2.getDate()
-      );
+    // Difficulty filter
+    if (difficultyFilter !== "all" && String(clue.difficulty) !== difficultyFilter) {
+      return false;
+    }
 
-      // Compare the two dates
-      if (d1.getTime() === d2.getTime()) {
-        return true; // Same day
-      } else if (d1.getTime() < d2.getTime()) {
-        return true; // date1 is before date2
-      } else {
-        return false; // date1 is after date2
+    // Author filter
+    if (authorFilter !== "all" && clue.source?.value !== authorFilter) {
+      return false;
+    }
+
+    // Type filter
+    if (typeFilter !== "all") {
+      const clueTypes = clue.type ? clue.type.split(", ").map(t => t.trim()) : [];
+      if (!clueTypes.includes(typeFilter)) {
+        return false;
       }
     }
 
-    return isTodayOrBefore(clue.release);
+    // Unsolved filter
+    if (unsolvedFilter) {
+      const completedClue = completedClues.find(
+        (c) => c.id === clue.clid || c.clid === clue.clid
+      );
+      if (completedClue && completedClue.how === "g") {
+        return false;
+      }
+    }
+
+    return true;
   });
 
   archiveTiles = archiveTiles.map((clue, index) => {
@@ -246,9 +328,144 @@ const Clues = ({ data }) => {
     );
   });
 
+  const clearFilters = () => {
+    setDifficultyFilter("all");
+    setAuthorFilter("all");
+    setUnsolvedFilter(false);
+    setTypeFilter("all");
+  };
+
+  const hasActiveFilters = difficultyFilter !== "all" || authorFilter !== "all" || unsolvedFilter || typeFilter !== "all";
+
+  const activeFilterCount = [
+    difficultyFilter !== "all",
+    authorFilter !== "all",
+    typeFilter !== "all",
+    unsolvedFilter
+  ].filter(Boolean).length;
+
   return (
     <Layout>
-      <div className="clues lc-container">{archiveTiles}</div>
+      <div className="clues lc-container">
+        <div className="filters-bar">
+          <button
+            onClick={() => setFilterModalOpen(true)}
+            className={`filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors ${
+              hasActiveFilters
+                ? 'bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700 text-purple-800 dark:text-purple-200'
+                : 'bg-white dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-600'
+            }`}
+          >
+            <FilterIcon />
+            <span>Filter</span>
+            {activeFilterCount > 0 && (
+              <span className="filter-badge bg-purple-500 text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
+                {activeFilterCount}
+              </span>
+            )}
+          </button>
+
+          {hasActiveFilters && (
+            <button
+              onClick={clearFilters}
+              className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 underline"
+            >
+              Clear
+            </button>
+          )}
+
+          <span className="filter-count text-neutral-500 dark:text-neutral-400 ml-auto">
+            {archiveTiles.length} clue{archiveTiles.length !== 1 ? 's' : ''}
+          </span>
+        </div>
+
+        <div className="clues-grid">{archiveTiles}</div>
+      </div>
+
+      <FilterModal open={filterModalOpen} onClose={() => setFilterModalOpen(false)}>
+        <h2 className="text-lg font-semibold mb-4">Filter Clues</h2>
+
+        <div className="filter-group mb-4">
+          <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
+            Type
+          </label>
+          <select
+            value={typeFilter}
+            onChange={(e) => setTypeFilter(e.target.value)}
+            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
+          >
+            <option value="all">All types</option>
+            {uniqueTypes.map((type) => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="filter-group mb-4">
+          <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
+            Difficulty
+          </label>
+          <select
+            value={difficultyFilter}
+            onChange={(e) => setDifficultyFilter(e.target.value)}
+            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
+          >
+            <option value="all">All difficulties</option>
+            <option value="1">Easy (1)</option>
+            <option value="2">Medium (2)</option>
+            <option value="3">Hard (3)</option>
+            <option value="4">Expert (4)</option>
+          </select>
+        </div>
+
+        <div className="filter-group mb-4">
+          <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
+            Author
+          </label>
+          <select
+            value={authorFilter}
+            onChange={(e) => setAuthorFilter(e.target.value)}
+            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
+          >
+            <option value="all">All authors</option>
+            {uniqueAuthors.map((author) => (
+              <option key={author} value={author}>{author}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="filter-group mb-4">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={unsolvedFilter}
+              onChange={(e) => setUnsolvedFilter(e.target.checked)}
+              className="rounded w-4 h-4"
+            />
+            <span className="text-sm text-neutral-700 dark:text-neutral-300">Show unsolved only</span>
+          </label>
+        </div>
+
+        <div className="flex gap-2 mt-6">
+          <button
+            onClick={() => setFilterModalOpen(false)}
+            className="flex-1 px-4 py-2 rounded bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors"
+          >
+            Apply
+          </button>
+          {hasActiveFilters && (
+            <button
+              onClick={() => {
+                clearFilters();
+                setFilterModalOpen(false);
+              }}
+              className="px-4 py-2 rounded border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
+            >
+              Clear all
+            </button>
+          )}
+        </div>
+      </FilterModal>
     </Layout>
   );
 };
@@ -303,6 +520,7 @@ export const query = graphql`
         source {
           value
         }
+        type
         difficulty
         release
         clid
