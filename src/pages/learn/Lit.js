@@ -83,7 +83,7 @@ const Lit = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-3xl font-bold my-4'>& Lit.</h2>
+					<h1 className='text-3xl font-bold my-4'>& Lit.</h1>
 					<p className='my-2'>
 						& Lit. is short for “and literally so,” because the entire clue
 						functions as a definition.
@@ -178,3 +178,39 @@ const Lit = () => {
 }
 
 export default Lit
+
+export const Head = () => (
+	<>
+		<title>& Lit. Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve & Lit. (and literally so) clues in cryptic crosswords. The entire clue functions as the definition, always marked with an exclamation mark."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/lit" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/lit" />
+		<meta property="og:title" content="& Lit. Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve & Lit. clues where the entire clue functions as the definition." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve & Lit. Clues in Cryptic Crosswords",
+				"description": "Learn how to solve & Lit. (and literally so) clues in cryptic crosswords. The entire clue functions as the definition, always marked with an exclamation mark.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/lit",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "& Lit." }
+					]
+				}
+			})}
+		</script>
+	</>
+)

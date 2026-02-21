@@ -83,7 +83,7 @@ const Spoonerism = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-3xl font-bold my-4'>Spoonerism</h2>
+					<h1 className='text-3xl font-bold my-4'>Spoonerism</h1>
 					<p className='my-2'>
 						Swap the sounds at beginnings of two words. Named for a British
 						Oxford don, Reverend William Archibald Spooner (1844–1930), who was
@@ -147,3 +147,39 @@ const Spoonerism = () => {
 }
 
 export default Spoonerism
+
+export const Head = () => (
+	<>
+		<title>Spoonerism Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve spoonerism clues in cryptic crosswords. Named after Rev. Spooner, these clues swap sounds at word beginnings. See worked examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/spoonerism" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/spoonerism" />
+		<meta property="og:title" content="Spoonerism Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve spoonerism clues. Swap the sounds at the beginning of two words." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Spoonerism Clues in Cryptic Crosswords",
+				"description": "Learn how to solve spoonerism clues in cryptic crosswords. Named after Rev. Spooner, these clues swap sounds at word beginnings. See worked examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/spoonerism",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Spoonerism" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

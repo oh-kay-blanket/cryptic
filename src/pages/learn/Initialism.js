@@ -100,7 +100,7 @@ const Initialism = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-3xl font-bold my-4'>Initialism</h2>
+					<h1 className='text-3xl font-bold my-4'>Initialism</h1>
 					<p className='my-2'>
 						The first (or last, or even middle) letters of series of words form
 						the answer.
@@ -185,3 +185,39 @@ const Initialism = () => {
 }
 
 export default Initialism
+
+export const Head = () => (
+	<>
+		<title>Initialism Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve initialism (acrostic) clues in cryptic crosswords. Spot indicators like 'starts', 'first', 'beginnings', and 'ends' with worked examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/initialism" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/initialism" />
+		<meta property="og:title" content="Initialism Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve initialism clues. First letters of words form the answer." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Initialism Clues in Cryptic Crosswords",
+				"description": "Learn how to solve initialism (acrostic) clues in cryptic crosswords. Spot indicators like 'starts', 'first', 'beginnings', and 'ends' with worked examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/initialism",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Initialism" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

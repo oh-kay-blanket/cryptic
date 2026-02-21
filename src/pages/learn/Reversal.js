@@ -98,7 +98,7 @@ const Reversal = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-3xl font-bold my-4'>Reversal</h2>
+					<h1 className='text-3xl font-bold my-4'>Reversal</h1>
 					<p className='my-2'>
 						Reverse the letters to make a new word or words.
 					</p>
@@ -197,3 +197,39 @@ const Reversal = () => {
 }
 
 export default Reversal
+
+export const Head = () => (
+	<>
+		<title>Reversal Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve reversal clues in cryptic crosswords. Spot indicators like 'returning', 'back', 'backwards', and 'reverse' with step-by-step examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/reversal" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/reversal" />
+		<meta property="og:title" content="Reversal Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve reversal clues. Words or letters reversed give the answer." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Reversal Clues in Cryptic Crosswords",
+				"description": "Learn how to solve reversal clues in cryptic crosswords. Spot indicators like 'returning', 'back', 'backwards', and 'reverse' with step-by-step examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/reversal",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Reversal" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

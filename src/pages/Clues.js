@@ -263,6 +263,33 @@ export const Head = () => (
       content="Browse all daily cryptic crossword clues. Practice with past puzzles, track your solving statistics, and improve your cryptic crossword skills."
     />
     <link rel="canonical" href="https://learncryptic.com/clues" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://learncryptic.com/clues" />
+    <meta property="og:title" content="All Cryptic Crossword Clues - Learn Cryptic Archive" />
+    <meta property="og:description" content="Browse all daily cryptic crossword clues. Practice with past puzzles and improve your cryptic crossword skills." />
+    <meta property="og:image" content="https://learncryptic.com/social.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "All Cryptic Crossword Clues",
+        "description": "Browse all daily cryptic crossword clues. Practice with past puzzles, track your solving statistics, and improve your cryptic crossword skills.",
+        "url": "https://learncryptic.com/clues",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Learn Cryptic",
+          "url": "https://learncryptic.com"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+            { "@type": "ListItem", "position": 2, "name": "All Clues" }
+          ]
+        }
+      })}
+    </script>
   </>
 );
 

@@ -88,7 +88,7 @@ const Homophone = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-3xl font-bold my-4'>Homophone</h2>
+					<h1 className='text-3xl font-bold my-4'>Homophone</h1>
 					<p className='my-2'>
 						Clued words and/or letter(s) sound like the solution when spoken
 						aloud.
@@ -177,3 +177,39 @@ const Homophone = () => {
 }
 
 export default Homophone
+
+export const Head = () => (
+	<>
+		<title>Homophone Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve homophone clues in cryptic crosswords. Spot indicators like 'sounds like', 'we hear', and 'say' with step-by-step examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/homophone" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/homophone" />
+		<meta property="og:title" content="Homophone Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve homophone clues. Words that sound alike when spoken lead to the answer." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Homophone Clues in Cryptic Crosswords",
+				"description": "Learn how to solve homophone clues in cryptic crosswords. Spot indicators like 'sounds like', 'we hear', and 'say' with step-by-step examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/homophone",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Homophone" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

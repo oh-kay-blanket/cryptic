@@ -107,7 +107,7 @@ const Anagram = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-4xl font-bold my-4'>Anagram</h2>
+					<h1 className='text-4xl font-bold my-4'>Anagram</h1>
 					<p className='my-2'>
 						Reorder the letters of a given word (or words) to make a new word
 						(or words).
@@ -189,3 +189,39 @@ const Anagram = () => {
 }
 
 export default Anagram
+
+export const Head = () => (
+	<>
+		<title>Anagram Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve anagram clues in cryptic crosswords. Discover common anagram indicators like 'broken', 'mad', 'wild', and 'scrambled' with worked examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/anagram" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/anagram" />
+		<meta property="og:title" content="Anagram Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve anagram clues in cryptic crosswords. Discover common anagram indicators with worked examples." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Anagram Clues in Cryptic Crosswords",
+				"description": "Learn how to solve anagram clues in cryptic crosswords. Discover common anagram indicators like 'broken', 'mad', 'wild', and 'scrambled' with worked examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/anagram",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Anagram" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

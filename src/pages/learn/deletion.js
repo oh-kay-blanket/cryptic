@@ -104,7 +104,7 @@ const Deletion = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h2 className='text-4xl font-bold my-4'>Deletion</h2>
+					<h1 className='text-4xl font-bold my-4'>Deletion</h1>
 					<p className='my-2'>
 						Remove a letter, set of letters, or an entire word from the
 						beginning, middle, or end of a word.
@@ -191,3 +191,39 @@ const Deletion = () => {
 }
 
 export default Deletion
+
+export const Head = () => (
+	<>
+		<title>Deletion Clues in Cryptic Crosswords - How to Solve | Learn Cryptic</title>
+		<meta
+			name="description"
+			content="Learn how to solve deletion clues in cryptic crosswords. Spot indicators like 'missing', 'without', 'headless', and 'endless' with step-by-step examples."
+		/>
+		<link rel="canonical" href="https://learncryptic.com/learn/deletion" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://learncryptic.com/learn/deletion" />
+		<meta property="og:title" content="Deletion Clues in Cryptic Crosswords - How to Solve" />
+		<meta property="og:description" content="Learn how to solve deletion clues. Remove letters from the beginning, middle, or end of a word." />
+		<meta property="og:image" content="https://learncryptic.com/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "How to Solve Deletion Clues in Cryptic Crosswords",
+				"description": "Learn how to solve deletion clues in cryptic crosswords. Spot indicators like 'missing', 'without', 'headless', and 'endless' with step-by-step examples.",
+				"author": { "@type": "Organization", "name": "Learn Cryptic" },
+				"publisher": { "@type": "Organization", "name": "Learn Cryptic", "url": "https://learncryptic.com" },
+				"mainEntityOfPage": "https://learncryptic.com/learn/deletion",
+				"breadcrumb": {
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
+						{ "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://learncryptic.com/learn" },
+						{ "@type": "ListItem", "position": 3, "name": "Deletion" }
+					]
+				}
+			})}
+		</script>
+	</>
+)

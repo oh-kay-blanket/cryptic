@@ -89,6 +89,7 @@ const Learn = ({ data }) => {
   return (
     <Layout>
       <div className="learn lc-container">
+        <h1 className="text-3xl font-bold my-4">Learn Cryptic Crosswords</h1>
         <div className="learn-section">
           <h2 className="text-2xl font-bold my-4">
             What is a cryptic crossword?
@@ -166,7 +167,7 @@ const Learn = ({ data }) => {
                 different types of wordplay. Tap the pills to learn about each
                 type. Tap the eye to toggle this feature off and on.
               </p>
-              <img className="border" src={typePill} alt="" />
+              <img className="border" src={typePill} alt="Screenshot showing purple clue type pills that reveal the wordplay type used in each cryptic clue" />
             </li>
             <li className="mt-4">
               <p className="font-bold">Hints</p>
@@ -176,7 +177,7 @@ const Learn = ({ data }) => {
                 the solution but you're not sure how the clue works, press the
                 "Show logic" button to be guided through the steps.{" "}
               </p>
-              <img className="border" src={showHint} alt="" />
+              <img className="border" src={showHint} alt="Screenshot showing the Show hint and Reveal solution buttons that guide you through solving cryptic clues" />
             </li>
             <li className="mt-4">
               <p className="font-bold">Reveal letter</p>
@@ -184,7 +185,7 @@ const Learn = ({ data }) => {
                 Need help with just one letter? Tap any blank square in the
                 solution box to reveal that specific letter.
               </p>
-              <img className="border" src={reveal} alt="" />
+              <img className="border" src={reveal} alt="Screenshot showing how to tap a blank square to reveal a single letter in the solution" />
             </li>
             <li className="mt-4">
               <p className="font-bold">Difficulty</p>
@@ -194,7 +195,7 @@ const Learn = ({ data }) => {
                 are the trickiest. The difficulty indicator will tell you how
                 challenging a clue might be.
               </p>
-              <img className="border" src={difficulty} alt="" />
+              <img className="border" src={difficulty} alt="Screenshot showing the difficulty indicator that rates clues from easy Monday puzzles to challenging Sunday puzzles" />
             </li>
           </ul>
         </div>
@@ -233,6 +234,30 @@ export const Head = () => (
       content="Master cryptic crosswords with our comprehensive guide. Learn anagrams, charades, containers, and more. Interactive tutorials for all skill levels."
     />
     <link rel="canonical" href="https://learncryptic.com/learn" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://learncryptic.com/learn" />
+    <meta property="og:title" content="Learn Cryptic Crosswords - Complete Guide & Tutorial" />
+    <meta property="og:description" content="Master cryptic crosswords with our comprehensive guide. Learn anagrams, charades, containers, and more." />
+    <meta property="og:image" content="https://learncryptic.com/social.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Learn Cryptic Crosswords",
+        "description": "Master cryptic crosswords with our comprehensive guide covering anagrams, charades, containers, double definitions, and more.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Learn Cryptic",
+          "url": "https://learncryptic.com"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "online",
+          "courseWorkload": "PT1H"
+        }
+      })}
+    </script>
   </>
 );
 
