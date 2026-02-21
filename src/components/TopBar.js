@@ -35,6 +35,21 @@ const BarGraphIcon = () => (
   </svg>
 );
 
+const ListIcon = () => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className='text-neutral-500 dark:text-neutral-200'
+  >
+    <rect x='3' y='4' width='18' height='3' rx='1' fill='currentColor' />
+    <rect x='3' y='10.5' width='18' height='3' rx='1' fill='currentColor' />
+    <rect x='3' y='17' width='18' height='3' rx='1' fill='currentColor' />
+  </svg>
+);
+
 const Modal = ({ open, onClose, children }) => {
   useEffect(() => {
     const preventDefault = (e) => {
@@ -106,19 +121,26 @@ const TopBar = () => {
       <header className='top-bar bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700'>
         <div className='top-bar-container lc-container'>
           <div className='topbar-left'>
-            <button
+            <Link
+              to='/clues'
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
-              aria-label='Help'
-              onClick={() => setHelpOpen(true)}
+              aria-label='All clues'
             >
-              <InfoIcon />
-            </button>
+              <ListIcon />
+            </Link>
             <button
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
               aria-label='Stats'
               onClick={() => setStatsOpen(true)}
             >
               <BarGraphIcon />
+            </button>
+            <button
+              className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
+              aria-label='Help'
+              onClick={() => setHelpOpen(true)}
+            >
+              <InfoIcon />
             </button>
           </div>
           <Link to='/' onClick={clickTitle} className='topbar-logo'>
