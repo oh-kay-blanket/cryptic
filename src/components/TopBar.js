@@ -35,7 +35,7 @@ const BarGraphIcon = () => (
   </svg>
 );
 
-const ListIcon = () => (
+const GridIcon = () => (
   <svg
     width='24'
     height='24'
@@ -44,9 +44,10 @@ const ListIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='4' width='18' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='10.5' width='18' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='17' width='18' height='3' rx='1' fill='currentColor' />
+    <rect x='3' y='3' width='8' height='8' rx='1.5' fill='currentColor' />
+    <rect x='13' y='3' width='8' height='8' rx='1.5' fill='currentColor' />
+    <rect x='3' y='13' width='8' height='8' rx='1.5' fill='currentColor' />
+    <rect x='13' y='13' width='8' height='8' rx='1.5' fill='currentColor' />
   </svg>
 );
 
@@ -126,7 +127,7 @@ const TopBar = () => {
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
               aria-label='All clues'
             >
-              <ListIcon />
+              <GridIcon />
             </Link>
             <button
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
