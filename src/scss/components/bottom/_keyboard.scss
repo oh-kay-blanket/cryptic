@@ -30,9 +30,21 @@
 				height: 34px;
 			}
 
+			// Larger keys on desktop
+			@media (min-width: 768px) {
+				width: 44px;
+				height: 52px;
+				margin: 0 .2rem;
+				font-size: 1.1rem;
+			}
+
 			&#backspace {
 				width: 48px;
 				// background-color handled by Tailwind classes in React component
+
+				@media (min-width: 768px) {
+					width: 66px;
+				}
 			}
 
 			&#enter-key {
@@ -40,6 +52,11 @@
 				font-size: 0.75rem;
 				font-weight: 600;
 				// background-color handled by Tailwind classes in React component
+
+				@media (min-width: 768px) {
+					width: 66px;
+					font-size: 0.85rem;
+				}
 			}
 
 			span,
