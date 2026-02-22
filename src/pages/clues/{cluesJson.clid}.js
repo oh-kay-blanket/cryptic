@@ -18,6 +18,7 @@ import d4 from '../../assets/img/difficulty/4.svg'
 const CluePage = ({ data }) => {
 	const dataClue = data.cluesJson
 	const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false)
+	const [revealPopupPosition, setRevealPopupPosition] = useState(null)
 
 	// Add fixed-page class to prevent scrolling
 	useEffect(() => {
@@ -102,6 +103,22 @@ const CluePage = ({ data }) => {
 		handleRevealLetter,
 		handleSquareClick,
 	} = manageClue(activeClue)
+
+	// Calculate popup position when reveal prompt is shown
+	useEffect(() => {
+		if (showRevealPrompt && revealPromptIndex !== null) {
+			const element = document.getElementById(`i${revealPromptIndex}`)
+			if (element) {
+				const rect = element.getBoundingClientRect()
+				setRevealPopupPosition({
+					top: rect.top,
+					left: rect.left + rect.width / 2
+				})
+			}
+		} else {
+			setRevealPopupPosition(null)
+		}
+	}, [showRevealPrompt, revealPromptIndex])
 
 	// type HTML
 	const pillList = activeClue.type.map((t, index) => (
@@ -402,30 +419,46 @@ const CluePage = ({ data }) => {
 				/>
 			</div>
 
-			{showRevealPrompt && revealPromptIndex !== null && (
-				<div
-					className='modal-bg'
-					onClick={() => setShowRevealPrompt(false)}
-					onKeyDown={(e) => {
-						if (e.key === 'Escape') {
-							setShowRevealPrompt(false)
-						}
-					}}
-					role='dialog'
-					aria-modal='true'
-					aria-labelledby='reveal-letter-title'
-				>
+			{showRevealPrompt && revealPromptIndex !== null && revealPopupPosition && (
+				<>
 					<div
-						className='modal dark:!bg-neutral-800 dark:!text-neutral-100'
+						className='modal-bg'
+						style={{ background: 'transparent' }}
+						onClick={() => setShowRevealPrompt(false)}
+						onKeyDown={(e) => {
+							if (e.key === 'Escape') {
+								setShowRevealPrompt(false)
+							}
+						}}
+						role='dialog'
+						aria-modal='true'
+						aria-labelledby='reveal-letter-title'
+					/>
+					<div
+						className='reveal-popup dark:!bg-neutral-800 dark:!text-neutral-100'
+						style={{
+							position: 'fixed',
+							top: revealPopupPosition.top - 10,
+							left: revealPopupPosition.left,
+							transform: 'translate(-50%, -100%)',
+							zIndex: 11,
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							backgroundColor: '#fff',
+							padding: '0.75rem 1rem 0.5rem',
+							borderRadius: '8px',
+							boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+						}}
 						onClick={(e) => e.stopPropagation()}
 						onKeyDown={(e) => e.stopPropagation()}
 						role='document'
 					>
-						<p id='reveal-letter-title' style={{ marginBottom: '1rem' }}>Reveal letter?</p>
+						<p id='reveal-letter-title' style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>Reveal letter?</p>
 						<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
 							<button
 								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
-								style={{ padding: '0.5rem 1rem', borderRadius: '50px', border: 'none', cursor: 'pointer' }}
+								style={{ padding: '0.35rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
 								onClick={() => handleRevealLetter(revealPromptIndex)}
 								data-testid='modal-reveal-confirm'
 							>
@@ -433,15 +466,18 @@ const CluePage = ({ data }) => {
 							</button>
 							<button
 								className='bg-neutral-200 dark:!bg-neutral-600 dark:!text-neutral-100'
-								style={{ padding: '0.25rem 1rem', borderRadius: '50px', border: 'none', cursor: 'pointer' }}
+								style={{ padding: '0.25rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
 								onClick={() => setShowRevealPrompt(false)}
 								data-testid='modal-reveal-cancel'
 							>
 								Cancel
 							</button>
 						</div>
+						<div
+							className='popup-arrow'
+						/>
 					</div>
-				</div>
+				</>
 			)}
 		</Layout>
 	)
