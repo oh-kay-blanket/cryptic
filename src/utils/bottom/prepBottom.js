@@ -222,7 +222,7 @@ const prepBottom = (
 			},
 		},
 		noMoreClues: {
-			name: 'No more clues available',
+			name: 'No more hints available',
 			style: 'gray',
 			disabled: true,
 			onClick: function () {
