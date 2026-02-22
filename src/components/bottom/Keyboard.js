@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import backspace from '../../assets/img/backspace.svg'
 
-const Keyboard = ({ handleInput }) => {
+const Keyboard = ({ handleInput, onEnter, canCheckAnswer }) => {
 	// handle keyboard hardware press
 	useEffect(() => {
 		const handleKeyDown = (e) => {
@@ -10,6 +10,8 @@ const Keyboard = ({ handleInput }) => {
 				handleInput(e.key.toUpperCase())
 			} else if (e.key === 'Backspace' || e.key === 'Delete') {
 				handleInput('del')
+			} else if (e.key === 'Enter' && canCheckAnswer) {
+				onEnter()
 			}
 		}
 
@@ -18,7 +20,7 @@ const Keyboard = ({ handleInput }) => {
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown)
 		}
-	}, [handleInput])
+	}, [handleInput, onEnter, canCheckAnswer])
 
 	return (
 		<div className='lc-container keyboard'>
@@ -160,6 +162,16 @@ const Keyboard = ({ handleInput }) => {
 				</button>
 			</div>
 			<div className='k-row k-row-3'>
+				<button
+					onClick={canCheckAnswer ? onEnter : undefined}
+					id='enter-key'
+					className={canCheckAnswer
+						? 'bg-[#FFCBAB] dark:!bg-[rgb(120,70,45)] dark:!text-neutral-100 hover:bg-[#f5c1a1] hover:dark:!bg-[rgb(110,65,42)]'
+						: 'bg-neutral-200 dark:!bg-neutral-700 text-neutral-400 dark:!text-neutral-500 cursor-default'}
+					data-testid='keyboard-ENTER'
+				>
+					<span>Enter</span>
+				</button>
 				<button
 					onClick={() => handleInput('Z')}
 					className='bg-neutral-300 dark:!bg-neutral-600 dark:!text-neutral-100 hover:bg-neutral-400 hover:dark:!bg-neutral-500'

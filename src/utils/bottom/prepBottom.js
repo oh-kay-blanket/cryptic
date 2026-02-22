@@ -248,10 +248,6 @@ const prepBottom = (
 		return input[index] && input[index] !== ''
 	})
 
-	if (allPositionsFilled) {
-		btnArr.push(buttons.checkAnswer)
-	}
-
 	// If no buttons are available (today's clue at reveal stage), show message
 	if (
 		btnArr.length === 0 &&
@@ -266,7 +262,7 @@ const prepBottom = (
 		activeClue.solution.arr.join('').toUpperCase()
 	const isSolution = activeClue.hints.length - 1 === nextHint && !checkAns
 
-	return { buttons, btnArr, checkAns, setCheckAns, isSolution, isCorrectAns }
+	return { buttons, btnArr, checkAns, setCheckAns, isSolution, isCorrectAns, allPositionsFilled, checkAnswer: buttons.checkAnswer.onClick }
 }
 
 export default prepBottom

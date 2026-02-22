@@ -8,7 +8,7 @@ import prepBottom from '../utils/bottom/prepBottom'
 
 const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, stats, setStats, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters }) => {
 
-	let { buttons, btnArr, isSolution, isCorrectAns } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters)
+	let { buttons, btnArr, isSolution, isCorrectAns, allPositionsFilled, checkAnswer } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters)
 
 	return(
 		<div className='bottom bg-white dark:!bg-neutral-800 border-t border-neutral-200 dark:!border-neutral-700'>			
@@ -35,6 +35,8 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 					/>
 					<Keyboard
 						handleInput={handleInput}
+						onEnter={checkAnswer}
+						canCheckAnswer={allPositionsFilled}
 					/>
 				</>
 			}

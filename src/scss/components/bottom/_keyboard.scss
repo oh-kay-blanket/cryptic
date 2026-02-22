@@ -13,14 +13,14 @@
 
 	.k-row {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: center;
 		margin: .25rem 0;
 
 		button {
 			position: relative;
 			// background-color handled by Tailwind classes in React component
 			border: none;
-			width: 100%;
+			width: 32px;
 			height: 44px;
 			border-radius: 8px;
 			margin: 0 .125rem;
@@ -31,7 +31,14 @@
 			}
 
 			&#backspace {
-				width: 150%;
+				width: 48px;
+				// background-color handled by Tailwind classes in React component
+			}
+
+			&#enter-key {
+				width: 48px;
+				font-size: 0.75rem;
+				font-weight: 600;
 				// background-color handled by Tailwind classes in React component
 			}
 
