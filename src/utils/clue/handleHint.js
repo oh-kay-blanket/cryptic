@@ -51,8 +51,15 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 				case 'charade':
 				case 'symbol':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current)
+					break
+
 				case 'synonym':
 					highlightLetters(hint.ref)
+					break
+
+				case 'sy-2':
 					changeColor(hint.addLetters.ref.current)
 					break
 

@@ -70,6 +70,12 @@ const usePrepClue = (dataClue) => {
 					{ ...obj, category: 'lb-2' },
 				]
 			}
+			if (obj.category === 'synonym') {
+				return [
+					{ ...obj, explainer: '' },
+					{ ...obj, category: 'sy-2' },
+				]
+			}
 			return [obj]
 		})
 	} else {

@@ -16,8 +16,15 @@ const addLetters = (activeClue, hint) => {
 			case 'hidden word':
 			case 'letter bank':
 			case 'particle':
-			case 'synonym':
 			case 'symbol':
+				hint.addLetters.value = hint.end.value[0] ? hint.end.value[0].split('') : []
+				break
+
+			case 'synonym':
+				hint.addLetters.value = []
+				break
+
+			case 'sy-2':
 				hint.addLetters.value = hint.end.value[0] ? hint.end.value[0].split('') : []
 				break
 

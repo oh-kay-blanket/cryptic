@@ -50,6 +50,8 @@ const getMessage = hint => {
 				case 'reversal':
 					return <><strong>{hint.value.toUpperCase()}</strong> indicates a reversal of <strong>{hint.end.value[0].toUpperCase()}</strong>, making <strong>{hint.end.value[1].toUpperCase()}</strong></>
 				case 'synonym':
+					return <>Find a synonym for <strong>{hint.value.toUpperCase()}</strong></>
+				case 'sy-2':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'symbol':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
