@@ -29,9 +29,9 @@ const BarGraphIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='10' width='4' height='8' rx='1' fill='currentColor' />
-    <rect x='9' y='6' width='4' height='12' rx='1' fill='currentColor' />
-    <rect x='15' y='13' width='4' height='5' rx='1' fill='currentColor' />
+    <rect x='3' y='9' width='3' height='12' rx='1' fill='currentColor' />
+    <rect x='10.5' y='3' width='3' height='18' rx='1' fill='currentColor' />
+    <rect x='18' y='12' width='3' height='9' rx='1' fill='currentColor' />
   </svg>
 );
 
@@ -44,12 +44,12 @@ const ListIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <circle cx='5' cy='6' r='2' fill='currentColor' />
-    <circle cx='5' cy='12' r='2' fill='currentColor' />
-    <circle cx='5' cy='18' r='2' fill='currentColor' />
-    <rect x='10' y='5' width='11' height='2' rx='1' fill='currentColor' />
-    <rect x='10' y='11' width='11' height='2' rx='1' fill='currentColor' />
-    <rect x='10' y='17' width='11' height='2' rx='1' fill='currentColor' />
+    <rect x='3' y='3' width='3' height='3' rx='1' fill='currentColor' />
+    <rect x='3' y='10.5' width='3' height='3' rx='1' fill='currentColor' />
+    <rect x='3' y='18' width='3' height='3' rx='1' fill='currentColor' />
+    <rect x='8' y='3' width='13' height='3' rx='1' fill='currentColor' />
+    <rect x='8' y='10.5' width='13' height='3' rx='1' fill='currentColor' />
+    <rect x='8' y='18' width='13' height='3' rx='1' fill='currentColor' />
   </svg>
 );
 

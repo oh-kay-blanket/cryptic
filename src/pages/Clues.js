@@ -71,9 +71,9 @@ const FilterIcon = () => (
     className="inline-block"
   >
     <path
-      d="M3 4.5h18M6 9.5h12M9 14.5h6M11 19.5h2"
+      d="M3 4.5h18M6 12h12M9 19.5h6"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="3"
       strokeLinecap="round"
     />
   </svg>
@@ -360,7 +360,7 @@ const Clues = ({ data }) => {
             }`}
           >
             <FilterIcon />
-            <span>Filter</span>
+            <span className="text-xs">Filter</span>
             {activeFilterCount > 0 && (
               <span className="filter-badge bg-purple-500 text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
                 {activeFilterCount}
