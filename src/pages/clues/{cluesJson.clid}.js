@@ -264,12 +264,7 @@ const CluePage = ({ data }) => {
 		const wouldBeLastLetter = revealedLetters.length >= activeClue.solution.arr.length - 1
 		const canReveal = isEmpty && !isRevealed && !showMessage && !wouldBeLastLetter
 
-		let backgroundColor = 'transparent'
 		let cursor = 'default'
-
-		if (isActive) {
-			backgroundColor = 'var(--lc-highlight-bg)'
-		}
 
 		if (canReveal) {
 			cursor = 'pointer'
@@ -277,9 +272,9 @@ const CluePage = ({ data }) => {
 
 		const squareStyle = {
 			borderWidth: '0.75px',
-			backgroundColor,
 			cursor,
-			pointerEvents: canReveal ? 'auto' : 'none'
+			pointerEvents: canReveal ? 'auto' : 'none',
+			...(isActive && { backgroundColor: 'var(--lc-highlight-bg)' })
 		}
 
 		return (
