@@ -10,10 +10,6 @@ import { isTodayClue } from '../../utils/dateHelpers'
 
 import eyeOpen from '../../assets/img/eye--open.svg'
 import eyeClosed from '../../assets/img/eye--closed.svg'
-import d1 from '../../assets/img/difficulty/1.svg'
-import d2 from '../../assets/img/difficulty/2.svg'
-import d3 from '../../assets/img/difficulty/3.svg'
-import d4 from '../../assets/img/difficulty/4.svg'
 
 const CluePage = ({ data }) => {
 	const dataClue = data.cluesJson
@@ -42,22 +38,7 @@ const CluePage = ({ data }) => {
 		}
 	}, [dataClue.clid, dataClue.release, dataClue.difficulty, streak])
 
-	// Helper functions for difficulty
-	const getImg = (difficulty) => {
-		switch (Number(difficulty)) {
-			case 1:
-				return d1
-			case 2:
-				return d2
-			case 3:
-				return d3
-			case 4:
-				return d4
-			default:
-				return d1
-		}
-	}
-
+	// Helper function for difficulty
 	const getDifficultyText = (difficulty) => {
 		switch (Number(difficulty)) {
 			case 1:
@@ -394,11 +375,14 @@ const CluePage = ({ data }) => {
 								}
 							}}
 						>
-							<img
-								className='difficulty-icon'
-								src={getImg(dataClue.difficulty)}
-								alt={`Difficulty level ${dataClue.difficulty}`}
-							/>
+							<div className={`difficulty-grid difficulty-${dataClue.difficulty}`} aria-hidden='true'>
+								{[0, 1, 2, 3].map((i) => (
+									<div
+										key={i}
+										className={`difficulty-square ${i < dataClue.difficulty ? 'filled' : ''}`}
+									/>
+								))}
+							</div>
 						</button>
 						{showDifficultyTooltip && (
 							<div className='difficulty-tooltip'>

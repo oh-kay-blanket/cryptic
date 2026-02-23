@@ -35,7 +35,7 @@ const BarGraphIcon = () => (
   </svg>
 );
 
-const GridIcon = () => (
+const ListIcon = () => (
   <svg
     width='24'
     height='24'
@@ -44,10 +44,12 @@ const GridIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='3' width='8' height='8' rx='1.5' fill='currentColor' />
-    <rect x='13' y='3' width='8' height='8' rx='1.5' fill='currentColor' />
-    <rect x='3' y='13' width='8' height='8' rx='1.5' fill='currentColor' />
-    <rect x='13' y='13' width='8' height='8' rx='1.5' fill='currentColor' />
+    <circle cx='5' cy='6' r='2' fill='currentColor' />
+    <circle cx='5' cy='12' r='2' fill='currentColor' />
+    <circle cx='5' cy='18' r='2' fill='currentColor' />
+    <rect x='10' y='5' width='11' height='2' rx='1' fill='currentColor' />
+    <rect x='10' y='11' width='11' height='2' rx='1' fill='currentColor' />
+    <rect x='10' y='17' width='11' height='2' rx='1' fill='currentColor' />
   </svg>
 );
 
@@ -127,7 +129,7 @@ const TopBar = () => {
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
               aria-label='All clues'
             >
-              <GridIcon />
+              <ListIcon />
             </Link>
             <button
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'

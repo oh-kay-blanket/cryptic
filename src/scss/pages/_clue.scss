@@ -1,413 +1,466 @@
-@use '../base/var' as *;
+@use "../base/var" as *;
 
 .clue-page {
-	display: flex;
-	flex-direction: column;
-	height: calc(100dvh - 60px);
-	max-height: 100%;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 60px);
+  max-height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 
+  #clue-container {
+    position: relative;
+    z-index: 20;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    width: 100%;
+    height: 65%;
+    // height: $lc-clue-container-height;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 1.15rem;
+    text-wrap: balance;
 
-	#clue-container {
-		position: relative;
-		z-index: 20;
-		overflow: visible;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-self: center;
-		width: 100%;
-		height: 65%;
-		// height: $lc-clue-container-height;
-		margin: 0 auto;
-		padding: 1.5rem 1rem;
-		text-align: center;
-		font-size: 1.15rem;
-		text-wrap: balance;
+    .disabled {
+      cursor: default;
+    }
 
-		.disabled {
-			cursor: default;
-		}
+    ul.type {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0;
+      margin: 1.5rem 1.25rem;
+      list-style-type: none;
 
-		ul.type {
-			display: flex;
-			align-items: center;
-			position: absolute;
-			top: 0;
-			left: 0;
-			padding-left: 0;
-			margin: 1.5rem 1.25rem;
-			list-style-type: none;
+      @media (max-height: 600px) {
+        margin: 0.5rem;
+      }
 
-			@media (max-height: 600px) {
-				margin: .5rem;
-			}
+      li {
+        display: flex;
+        align-items: center;
+        margin: 0 0.5rem 0 0;
+        cursor: pointer;
 
-			li {
-				display: flex;
-				align-items: center;
-				margin: 0 .5rem 0 0;
-				cursor: pointer;
+        &.type-pill {
+          padding: 0.25rem 0.5rem;
+          font-family: $lc-font--sans;
+          font-size: 0.65rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: $lc-text;
+          border-radius: 50px;
+          // background-color handled by Tailwind classes in React component
+        }
 
-				&.type-pill {
-					padding: .25rem .5rem;
-					font-family: $lc-font--sans;
-					font-size: .65rem;
-					font-weight: 500;
-					text-transform: uppercase;
-					color: $lc-text;
-					border-radius: 50px;
-					// background-color handled by Tailwind classes in React component
-				}
+        &.type-text {
+          font-family: $lc-font--sans;
+          font-weight: 500;
+          color: $lc-text--light;
 
-				&.type-text {
-					font-family: $lc-font--sans;
-					font-weight: 500;
-					color: $lc-text--light;
+          button {
+            font-size: 0.7rem;
+          }
+        }
 
-					button {
-						font-size: .7rem;
-					}
-				}
+        &.eyecon button {
+          display: flex;
+          padding: 0;
+        }
+      }
+    }
 
-				&.eyecon button {
-					display: flex;
-					padding: 0;
-				}
-			}
+    // Dark mode type-text styling
+    html.dark & ul.type li.type-text {
+      color: #d1d5db !important; // neutral-300 - better contrast for ADA compliance
+    }
 
-		}
+    // Make eye icons match type-text color
+    ul.type li.eyecon img {
+      // Light mode: match $lc-text--light (#666)
+      filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%)
+        hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
 
-		// Dark mode type-text styling
-		html.dark & ul.type li.type-text {
-			color: #d1d5db !important; // neutral-300 - better contrast for ADA compliance
-		}
+    // Dark mode: make eye icons match the improved type-text color
+    html.dark & ul.type li.eyecon img {
+      filter: brightness(0) saturate(100%) invert(83%) sepia(8%) saturate(196%)
+        hue-rotate(202deg) brightness(95%) contrast(88%);
+    }
 
-		// Make eye icons match type-text color
-		ul.type li.eyecon img {
-			// Light mode: match $lc-text--light (#666)
-			filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-		}
+    .clue-stats {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: $lc-font--sans;
+      margin: 1.5rem 1.25rem;
+      pointer-events: none;
+      user-select: none;
 
-		// Dark mode: make eye icons match the improved type-text color
-		html.dark & ul.type li.eyecon img {
-			filter: brightness(0) saturate(100%) invert(83%) sepia(8%) saturate(196%) hue-rotate(202deg) brightness(95%) contrast(88%);
-		}
+      @media (max-height: 600px) {
+        margin: 0.5rem;
+      }
 
-		.clue-stats {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			display: flex;
-			font-size: .75rem;
-			font-weight: 600;
-			font-family: $lc-font--sans;
-			margin: 1.5rem 1.25rem;
-			pointer-events: none;
-			user-select: none;
+      .stat-guesses,
+      .stat-hints {
+        margin: 2px auto;
+        padding: 2px 3px;
+        border-radius: 4px;
 
-			@media (max-height: 600px) {
-				margin: .5rem;
-			}
+        .stat {
+          font-size: 0.85rem;
+          font-weight: 700;
+        }
+      }
 
-			.stat-guesses,
-			.stat-hints {
-				margin: 2px auto;
-				padding: 2px 3px;
-				border-radius: 4px;
+      .stat-hints {
+        background-color: $lc-secondary--light;
+        margin-right: 0.5rem;
 
-				.stat {
-					font-size: .85rem;
-					font-weight: 700;
-				}
-			}
+        // Dark mode - handled by Tailwind classes in React component
+      }
 
-			.stat-hints {
-				background-color: $lc-secondary--light;
-				margin-right: .5rem;
+      .stat-guesses {
+        background-color: $lc-primary--light;
 
-				// Dark mode - handled by Tailwind classes in React component
-			}
+        // Dark mode - handled by Tailwind classes in React component
+      }
+    }
 
-			.stat-guesses {
-				background-color: $lc-primary--light;
+    .clue {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: opacity 0.25s ease;
+      flex-grow: 1;
 
-				// Dark mode - handled by Tailwind classes in React component
-			}
-		}
+      .letter {
+        position: relative;
+        font-family: $lc-font--serif;
+        transition:
+          opacity $lc-transition--short ease 0s,
+          color $lc-transition--short ease 0s,
+          background-color $lc-transition--short ease;
 
-		.clue {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
-			transition: opacity .25s ease;
-			flex-grow: 1;
+        &.underline {
+          text-decoration: underline;
+        }
+      }
+    }
 
-			.letter {
-				position: relative;
-				font-family: $lc-font--serif;
-				transition:
-					opacity $lc-transition--short ease 0s,
-					color $lc-transition--short ease 0s,
-					background-color $lc-transition--short ease;
+    .addLetters {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      font-family: $lc-font--serif;
+      text-transform: uppercase;
+      pointer-events: none;
+      user-select: none;
 
-				&.underline {
-					text-decoration: underline;
-				}
-			}
-		}
+      .word {
+        .letter {
+          pointer-events: none;
+          user-select: none;
+          color: transparent;
+          line-height: 23px;
+          opacity: 0;
+          transition:
+            opacity $lc-transition--short ease 0s,
+            color $lc-transition--short ease 0s,
+            background-color $lc-transition--short ease;
+        }
+      }
 
-		.addLetters {
-			flex-grow: 1;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-wrap: wrap;
-			align-content: center;
-			font-family: $lc-font--serif;
-			text-transform: uppercase;
-			pointer-events: none;
-			user-select: none;
+      svg {
+        fill: #ccc;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition:
+          opacity $lc-transition--short ease 0s,
+          color $lc-transition--short ease 0s,
+          background-color $lc-transition--short ease;
 
-			.word {
+        // Dark mode
+        :global(.dark) & {
+          fill: #737373; // neutral-500 - true medium gray for dark mode
+        }
+      }
+    }
 
-				.letter {
-					pointer-events: none;
-					user-select: none;
-					color: transparent;
-					line-height: 23px;
-					opacity: 0;
-					transition:
-						opacity $lc-transition--short ease 0s,
-						color $lc-transition--short ease 0s,
-						background-color $lc-transition--short ease;
-				}
-			}
+    .sol-section {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 20;
 
-			svg {
-				fill: #ccc;
-				transform: rotate(45deg);
-				opacity: 0;
-				transition:
-					opacity $lc-transition--short ease 0s,
-					color $lc-transition--short ease 0s,
-					background-color $lc-transition--short ease;
+      .solution {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-family: $lc-font--alt;
+        z-index: 20;
+        transition: opacity $lc-transition--short ease;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        font-size: 1.25rem;
+        background-color: $lc-gray--v-light;
 
-				// Dark mode
-				:global(.dark) & {
-					fill: #737373; // neutral-500 - true medium gray for dark mode
-				}
-			}
-		}
+        html.dark & {
+          background-color: #171717; // neutral-900
+        }
 
-		.sol-section {
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			position: relative;
-			z-index: 20;
+        @media (max-height: 600px) {
+          margin: 0 auto;
+        }
 
-			.solution {
-				display: flex;
-				justify-content: center;
-				flex-wrap: wrap;
-				font-family: $lc-font--alt;
-				z-index: 20;
-				transition: opacity $lc-transition--short ease;
-				text-align: center;
-				text-transform: uppercase;
-				margin-top: 1rem;
-				font-size: 1.25rem;
-				background-color: $lc-gray--v-light;
+        .letter {
+          position: relative;
+          pointer-events: none;
+          user-select: none;
+          text-align: center;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          background-color: white;
+          // border handled by Tailwind classes in React component
+          // border-right: none;
 
-				html.dark & {
-					background-color: #171717; // neutral-900
-				}
+          html.dark & {
+            background-color: #2a2a2a; // match page background
+          }
 
-				@media (max-height: 600px) {
-					margin: 0 auto;
-				}
+          .solLetter {
+            opacity: 0;
+            pointer-events: none;
+            user-select: none;
+            transition: opacity $lc-transition--short ease;
+          }
 
-				.letter {
-					position: relative;
-					pointer-events: none;
-					user-select: none;
-					text-align: center;
-					display: inline-block;
-					width: 30px;
-					height: 30px;
-					background-color: white;
-					// border handled by Tailwind classes in React component
-					// border-right: none;
+          .typeLetter,
+          .solLetter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
 
-					html.dark & {
-						background-color: #2a2a2a; // match page background
-					}
+        &.hide-input .letter .typeLetter {
+          opacity: 0;
+          pointer-events: none;
+          user-select: none;
+          transition: opacity $lc-transition--short ease;
+        }
 
-					&:last-child {
-						// border-right handled by Tailwind classes in React component
-					}
+        &.reveal-solution .letter .solLetter {
+          opacity: 1;
+          transition: opacity $lc-transition--short ease;
+        }
+      }
 
-					.solLetter {
-						opacity: 0;
-						pointer-events: none;
-						user-select: none;
-						transition: opacity $lc-transition--short ease;
-					}
+      .source {
+        opacity: 0;
+        transition: opacity $lc-transition--short ease;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        font-family: $lc-font--sans;
+        pointer-events: none;
+        user-select: none;
 
-					.typeLetter,
-					.solLetter {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-					}
-				}
+        a {
+          color: $lc-primary--dark;
+          text-decoration: underline;
 
-				&.hide-input .letter .typeLetter {
-					opacity: 0;
-					pointer-events: none;
-					user-select: none;
-					transition: opacity $lc-transition--short ease;
-				}
+          // Dark mode
+          :global(.dark) & {
+            color: #fbbf24; // amber-400 - good link color for dark mode
+          }
+        }
 
-				&.reveal-solution .letter .solLetter {
-					opacity: 1;
-					transition: opacity $lc-transition--short ease;
-				}
-			}
+        &.show {
+          opacity: 1;
+          transition: opacity $lc-transition--short ease;
+          pointer-events: all;
+          user-select: all;
+        }
+      }
+    }
 
-			.source {
-				opacity: 0;
-				transition: opacity $lc-transition--short ease;
-				margin-top: 1rem;
-				font-size: .85rem;
-				font-family: $lc-font--sans;
-				pointer-events: none;
-				user-select: none;
+    .clue-difficulty {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 1.25rem;
+      z-index: 25;
 
-				a {
-					color: $lc-primary--dark;
-					text-decoration: underline;
+      @media (max-height: 600px) {
+        margin: 0.5rem;
+      }
 
-					// Dark mode
-					:global(.dark) & {
-						color: #fbbf24; // amber-400 - good link color for dark mode
-					}
-				}
+      .difficulty-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
 
-				&.show {
-					opacity: 1;
-					transition: opacity $lc-transition--short ease;
-					pointer-events: all;
-					user-select: all;
-				}
-			}
-		}
+        &:focus {
+          outline: none;
+        }
+      }
 
-		.clue-difficulty {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 1.5rem 1.25rem;
-			z-index: 25;
+      .difficulty-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2px;
+        width: 16px;
+        height: 16px;
 
-			@media (max-height: 600px) {
-				margin: .5rem;
-			}
+        .difficulty-square {
+          width: 6px;
+          height: 6px;
+          border: 1px solid #999;
+          border-radius: 1px;
+          background-color: transparent;
+          transition: background-color $lc-transition--short ease;
+        }
 
-			.difficulty-button {
-				background: none;
-				border: none;
-				padding: 0;
-				cursor: pointer;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: relative;
+        // Difficulty level colors
+        &.difficulty-1 .difficulty-square.filled {
+          background-color: #22c55e; // green-500
+          border-color: #22c55e;
+        }
 
-				&:focus {
-					outline: none;
-				}
-			}
+        &.difficulty-2 .difficulty-square.filled {
+          background-color: #eab308; // yellow-500
+          border-color: #eab308;
+        }
 
-			.difficulty-icon {
-				width: auto;
-				height: 10px;
-				margin-bottom: 12px;
-				margin-right: -10px;
-				transition: opacity $lc-transition--short ease;
-				transform: rotate(270deg);
-				object-fit: contain; // Prevent distortion
-				aspect-ratio: auto; // Maintain original aspect ratio
+        &.difficulty-3 .difficulty-square.filled {
+          background-color: #f97316; // orange-500
+          border-color: #f97316;
+        }
 
-				&:hover {
-					opacity: 1;
-				}
-			}
+        &.difficulty-4 .difficulty-square.filled {
+          background-color: #ef4444; // red-500
+          border-color: #ef4444;
+        }
+      }
 
-			.difficulty-tooltip {
-				position: absolute;
-				bottom: calc(100% + 12px);
-				right: -4px;
-				background-color: #fff;
-				color: #171717;
-				padding: 0.5rem;
-				border-radius: 4px;
-				font-size: .8rem;
-				white-space: nowrap;
-				z-index: 1000;
-				margin-bottom: 0.5rem;
-				pointer-events: none;
-				opacity: 0;
-				transform: translateY(5px);
-				animation: fadeIn 0.15s ease-out forwards;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      // Dark mode difficulty grid
+      html.dark & .difficulty-grid {
+        .difficulty-square {
+          border-color: #737373;
+        }
 
-				@media (max-width: 768px) {
-					right: 2px;
-					max-width: calc(100vw - 2rem);
-					white-space: normal;
-					word-wrap: break-word;
-				}
+        &.difficulty-1 .difficulty-square.filled {
+          background-color: #4ade80; // green-400
+          border-color: #4ade80;
+        }
 
-				&::after {
-					content: '';
-					position: absolute;
-					top: 100%;
-					right: 0.5rem;
-					border: 6px solid transparent;
-					border-top-color: #fff;
+        &.difficulty-2 .difficulty-square.filled {
+          background-color: #facc15; // yellow-400
+          border-color: #facc15;
+        }
 
-					@media (max-width: 768px) {
-						right: 0.25rem;
-					}
-				}
-			}
-		}
-	}
+        &.difficulty-3 .difficulty-square.filled {
+          background-color: #fb923c; // orange-400
+          border-color: #fb923c;
+        }
+
+        &.difficulty-4 .difficulty-square.filled {
+          background-color: #f87171; // red-400
+          border-color: #f87171;
+        }
+      }
+
+      .difficulty-tooltip {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: -8px;
+        background-color: #fff;
+        color: #171717;
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        z-index: 1000;
+        margin-top: 0.5rem;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-5px);
+        animation: fadeInDown 0.15s ease-out forwards;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+        @media (max-width: 768px) {
+          right: 2px;
+          max-width: calc(100vw - 2rem);
+          white-space: normal;
+          word-wrap: break-word;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          right: 0.5rem;
+          border: 6px solid transparent;
+          border-bottom-color: #fff;
+
+          @media (max-width: 768px) {
+            right: 0.25rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Dark mode difficulty tooltip
 html.dark .clue-page #clue-container .clue-difficulty .difficulty-tooltip {
-	background-color: #3d3d3d;
-	color: #f5f5f5;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background-color: #3d3d3d;
+  color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
-	&::after {
-		border-top-color: #3d3d3d;
-	}
+  &::after {
+    border-bottom-color: #3d3d3d;
+  }
 }
 
 @keyframes fadeIn {
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

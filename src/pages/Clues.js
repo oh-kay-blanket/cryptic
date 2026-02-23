@@ -9,10 +9,17 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
 
-import d1 from "../assets/img/difficulty/1.svg";
-import d2 from "../assets/img/difficulty/2.svg";
-import d3 from "../assets/img/difficulty/3.svg";
-import d4 from "../assets/img/difficulty/4.svg";
+// Difficulty grid component
+const DifficultyGrid = ({ difficulty }) => (
+  <div className={`difficulty-grid difficulty-${difficulty}`} aria-label={`Difficulty ${difficulty}`}>
+    {[0, 1, 2, 3].map((i) => (
+      <div
+        key={i}
+        className={`difficulty-square ${i < difficulty ? 'filled' : ''}`}
+      />
+    ))}
+  </div>
+);
 
 // Filter modal component
 const FilterModal = ({ open, onClose, children }) => {
@@ -164,21 +171,6 @@ const Clues = ({ data }) => {
   archiveTiles = archiveTiles.map((clue, index) => {
     const getRelease = (release) => new Date(release);
 
-    const getImg = (difficulty) => {
-      switch (Number(difficulty)) {
-        case 1:
-          return d1;
-        case 2:
-          return d2;
-        case 3:
-          return d3;
-        case 4:
-          return d4;
-        default:
-          return d1;
-      }
-    };
-
     const completedClue = completedClues.find(
       (c) => c.id === clue.clid || c.clid === clue.clid
     );
@@ -304,12 +296,7 @@ const Clues = ({ data }) => {
                 completedClue.how === "g" &&
                 stats}
               {!isHovered && (
-                <img
-                  className="tile-difficulty"
-                  src={getImg(clue.difficulty)}
-                  title={clue.difficulty}
-                  aria-label="difficulty"
-                />
+                <DifficultyGrid difficulty={clue.difficulty} />
               )}
             </div>
             {isHovered ? (

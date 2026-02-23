@@ -1,246 +1,304 @@
-@use '../base/var' as *;
+@use "../base/var" as *;
 
 .clues {
-	// position: relative;
-	// overflow-y: auto;
-	padding: 1rem .5rem 2rem;
+  // position: relative;
+  // overflow-y: auto;
+  padding: 1rem 0.5rem 2rem;
 
-	.filters-bar {
-		padding: 0 0 0.75rem;
-		margin-bottom: 0.5rem;
-		font-size: 0.8rem;
-		display: flex;
-		gap: 0.75rem;
-		align-items: center;
+  .filters-bar {
+    padding: 0 0 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
 
-		.filter-btn {
-			font-size: 0.8rem;
-			font-weight: 500;
-		}
+    .filter-btn {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
 
-		.filter-badge {
-			font-size: 0.65rem;
-			line-height: 1;
-		}
+    .filter-badge {
+      font-size: 0.65rem;
+      line-height: 1;
+    }
 
-		.filter-count {
-			font-size: 0.75rem;
-		}
-	}
+    .filter-count {
+      font-size: 0.75rem;
+    }
+  }
 
-	.clues-grid {
-		// Container for the clue tiles
-	}
+  .clues-grid {
+    // Container for the clue tiles
+  }
 
-	h1 {
-		font-family: $lc-font--alt;
-		font-size: 2rem;
+  h1 {
+    font-family: $lc-font--alt;
+    font-size: 2rem;
+  }
 
-	}
+  .archive-clue {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-width: 0; // Allow content to shrink for text truncation
 
-	.archive-clue {
-		display: flex;
-		flex-wrap: nowrap;
-		align-items: center;
-		position: relative;
-		width: 100%;
-		min-width: 0; // Allow content to shrink for text truncation
+    .archive-release {
+      width: 60px;
+      font-size: 0.65rem;
+      margin-right: 8px;
+      text-align: center;
+      font-family: $lc-font--sans;
+      font-weight: 600;
+      flex-shrink: 0;
+      position: relative; // Needed for absolute positioning of :before
+      z-index: 0; // Keep under TopBar (which has z-index: 1)
+    }
 
-		.archive-release {
-			width: 60px;
-			font-size: .65rem;
-			margin-right: 8px;
-			text-align: center;
-			font-family: $lc-font--sans;
-			font-weight: 600;
-			flex-shrink: 0;
-			position: relative; // Needed for absolute positioning of :before
-			z-index: 0; // Keep under TopBar (which has z-index: 1)
-		}
+    // Style for incomplete clues (not completed)
+    &:not(.completed) {
+      .archive-release {
+        position: relative; // Needed for absolute positioning of :before
 
-		// Style for incomplete clues (not completed)
-		&:not(.completed) {
-			.archive-release {
-				position: relative; // Needed for absolute positioning of :before
+        &:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 60px;
+          height: 60px;
+          border-radius: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          display: block;
+          border: 1px solid var(--archive-border-color, #ddd);
+        }
 
-				&:before {
-					content: "";
-					position: absolute;
-					z-index: -1;
-					width: 60px;
-					height: 60px;
-					border-radius: .5rem;
-					top: 50%;
-					transform: translateY(-50%);
-					left: 0;
-					display: block;
-					border: 1px solid var(--archive-border-color, #ddd);
-				}
+        span {
+          position: relative;
+          z-index: 0;
+        }
 
-				span {
-					position: relative;
-					z-index: 0;
-				}
+        &:hover,
+        &.archive-release-hovered {
+          &:before {
+            background-color: var(--hover-bg) !important;
+            border-color: var(--hover-border) !important;
+          }
+        }
+      }
+    }
 
-				&:hover,
-				&.archive-release-hovered {
-					&:before {
-						background-color: var(--hover-bg) !important;
-						border-color: var(--hover-border) !important;
-					}
-				}
-			}
-		}
+    &.completed {
+      .archive-release:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 60px;
+        height: 60px;
+        border-radius: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        display: block;
+      }
 
-		&.completed {
-			.archive-release:before {
-				content: "";
-				position: absolute;
-				z-index: -1;
-				width: 60px;
-				height: 60px;
-				border-radius: .5rem;
-				top: 50%;
-				transform: translateY(-50%);
-				left: 0;
-				display: block;
-			}
+      .archive-release span {
+        position: relative;
+        z-index: 0;
+      }
 
-			.archive-release span {
-				position: relative;
-				z-index: 0;
-			}
+      &.g .archive-release:before {
+        background-color: var(--archive-bg, $lc-primary--light);
+        border: 1px solid var(--archive-bg, $lc-primary--light);
+      }
 
-			&.g .archive-release:before {
-				background-color: var(--archive-bg, $lc-primary--light);
-				border: 1px solid var(--archive-bg, $lc-primary--light);
-			}
+      &.h .archive-release:before {
+        background-color: var(--archive-bg, $lc-secondary--v-light);
+        border: 1px solid var(--archive-bg, $lc-secondary--v-light);
+      }
+    }
+  }
 
-			&.h .archive-release:before {
-				background-color: var(--archive-bg, $lc-secondary--v-light);
-				border: 1px solid var(--archive-bg, $lc-secondary--v-light);
-			}
-		}
-	}
+  .archive-tile-link {
+    display: flex;
+    flex: 1; // Take remaining space after archive-release
+    min-width: 0; // Allow shrinking for text truncation
+    text-decoration: none;
+    color: inherit;
+  }
 
-	.archive-tile-link {
-		display: flex;
-		flex: 1; // Take remaining space after archive-release
-		min-width: 0; // Allow shrinking for text truncation
-		text-decoration: none;
-		color: inherit;
-	}
+  .archive-tile {
+    display: flex;
+    width: 100%; // Fill the link container
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.5rem 0;
+    padding: 0.25rem 1rem;
+    height: 60px;
+    // border handled by Tailwind classes in React component
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    min-width: 0; // Allow shrinking for text truncation
 
-	.archive-tile {
-		display: flex;
-		width: 100%; // Fill the link container
-		align-items: center;
-		justify-content: flex-start;
-		margin: .5rem 0;
-		padding: .25rem 1rem;
-		height: 60px;
-		// border handled by Tailwind classes in React component
-		overflow: hidden;
-		border-radius: .5rem;
-		cursor: pointer;
-		min-width: 0; // Allow shrinking for text truncation
+    &:hover,
+    &:focus {
+      background-color: #ddd !important; // darker gray for hover
+      border: 1px solid #ddd !important;
 
-		&:hover,
-		&:focus {
-			background-color: #ddd !important; // darker gray for hover
-			border: 1px solid #ddd !important;
+      // Dark mode
+      :global(.dark) & {
+        background-color: #404040 !important; // neutral-700 equivalent
+        border: 1px solid #404040 !important;
+      }
+    }
 
-			// Dark mode
-			:global(.dark) & {
-				background-color: #404040 !important; // neutral-700 equivalent
-				border: 1px solid #404040 !important;
-			}
-		}
+    &.archive-tile-release-hovered {
+      background-color: #ddd !important;
 
-		&.archive-tile-release-hovered {
-			background-color: #ddd !important;
+      // Dark mode
+      :global(.dark) & {
+        background-color: #404040 !important;
+      }
+    }
 
-			// Dark mode
-			:global(.dark) & {
-				background-color: #404040 !important;
-			}
-		}
+    .tile-img-stats {
+      margin-right: 0.5rem;
+      display: flex;
+      flex-shrink: 0; // Don't shrink the stats/difficulty area
 
-		.tile-img-stats {
-			margin-right: .25rem;
-			display: flex;
-			flex-shrink: 0; // Don't shrink the stats/difficulty area
+      .difficulty-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2px;
+        width: 16px;
+        height: 16px;
+        align-self: center;
 
-			.tile-difficulty {
-				align-self: center;
-				width: 36px;
-				height: fit-content;
-				line-height: 1;
-				transform: rotate(270deg);
-			}
+        .difficulty-square {
+          width: 6px;
+          height: 6px;
+          border: 1px solid #999;
+          border-radius: 1px;
+          background-color: transparent;
+        }
 
-			.tile-stats {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				font-size: .65rem;
-				font-weight: 600;
-				font-family: $lc-font--sans;
-				// text-transform: uppercase;
+        // Difficulty level colors
+        &.difficulty-1 .difficulty-square.filled {
+          background-color: #22c55e; // green-500
+          border-color: #22c55e;
+        }
 
-				.stat-guesses,
-				.stat-hints {
-					margin: 2px auto;
-					padding: 2px 4px;
-					border-radius: 4px;
-					width: 100%;
+        &.difficulty-2 .difficulty-square.filled {
+          background-color: #eab308; // yellow-500
+          border-color: #eab308;
+        }
 
-					.stat {
-						font-size: .75rem;
-						font-weight: 700;
-					}
-				}
+        &.difficulty-3 .difficulty-square.filled {
+          background-color: #f97316; // orange-500
+          border-color: #f97316;
+        }
 
-				.stat-guesses {
-					background-color: $lc-primary--light;
-				}
+        &.difficulty-4 .difficulty-square.filled {
+          background-color: #ef4444; // red-500
+          border-color: #ef4444;
+        }
+      }
 
-				.stat-hints {
-					background-color: $lc-secondary--light;
-				}
-			}
-		}
+      // Dark mode difficulty grid
+      html.dark & .difficulty-grid {
+        .difficulty-square {
+          border-color: #737373;
+        }
 
-		.tile-name {
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			line-height: 1;
-			font-size: .8rem;
-			flex-grow: 1;
-			flex-shrink: 1;
-			min-width: 0;
-			padding: 2px 0;
-			font-family: $lc-font--serif;
-		}
+        &.difficulty-1 .difficulty-square.filled {
+          background-color: #4ade80; // green-400
+          border-color: #4ade80;
+        }
 
-		.tile-info {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			font-size: .75rem;
-			line-height: 1.2;
-			flex-grow: 1;
-			flex-shrink: 1;
-			min-width: 0;
-			font-family: $lc-font--sans;
+        &.difficulty-2 .difficulty-square.filled {
+          background-color: #facc15; // yellow-400
+          border-color: #facc15;
+        }
 
-			div {
-				margin: 1px 0;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-			}
-		}
-	}
+        &.difficulty-3 .difficulty-square.filled {
+          background-color: #fb923c; // orange-400
+          border-color: #fb923c;
+        }
+
+        &.difficulty-4 .difficulty-square.filled {
+          background-color: #f87171; // red-400
+          border-color: #f87171;
+        }
+      }
+
+      .tile-stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 600;
+        font-family: $lc-font--sans;
+        margin-right: 0.5rem;
+        // text-transform: uppercase;
+
+        .stat-guesses,
+        .stat-hints {
+          margin: 2px auto;
+          padding: 2px 4px;
+          border-radius: 4px;
+          width: 100%;
+
+          .stat {
+            font-size: 0.75rem;
+            font-weight: 700;
+          }
+        }
+
+        .stat-guesses {
+          background-color: $lc-primary--light;
+        }
+
+        .stat-hints {
+          background-color: $lc-secondary--light;
+        }
+      }
+    }
+
+    .tile-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 1;
+      font-size: 0.8rem;
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 0;
+      padding: 2px 0;
+      font-family: $lc-font--serif;
+    }
+
+    .tile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 0.75rem;
+      line-height: 1.2;
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 0;
+      font-family: $lc-font--sans;
+
+      div {
+        margin: 1px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
