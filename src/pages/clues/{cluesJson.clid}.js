@@ -8,8 +8,65 @@ import prepClue from '../../utils/clue/usePrepClue'
 import manageClue from '../../utils/clue/useManageClue'
 import { isTodayClue } from '../../utils/dateHelpers'
 
-import eyeOpen from '../../assets/img/eye--open.svg'
-import eyeClosed from '../../assets/img/eye--closed.svg'
+// Eye icon components using currentColor to match TopBar icons
+const EyeOpenIcon = () => (
+	<svg
+		width='20'
+		height='20'
+		viewBox='0 0 20 20'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+		className='text-neutral-500 dark:text-neutral-200'
+	>
+		<g clipPath='url(#clip0_eye_open)'>
+			<path
+				d='M0.833984 10.0002C0.833984 10.0002 4.16732 3.3335 10.0007 3.3335C15.834 3.3335 19.1673 10.0002 19.1673 10.0002C19.1673 10.0002 15.834 16.6668 10.0007 16.6668C4.16732 16.6668 0.833984 10.0002 0.833984 10.0002Z'
+				stroke='currentColor'
+				strokeWidth='2'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
+			<path
+				d='M10.0007 12.5002C11.3814 12.5002 12.5007 11.3809 12.5007 10.0002C12.5007 8.61945 11.3814 7.50016 10.0007 7.50016C8.61994 7.50016 7.50065 8.61945 7.50065 10.0002C7.50065 11.3809 8.61994 12.5002 10.0007 12.5002Z'
+				stroke='currentColor'
+				strokeWidth='2'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
+		</g>
+		<defs>
+			<clipPath id='clip0_eye_open'>
+				<rect width='20' height='20' fill='white' />
+			</clipPath>
+		</defs>
+	</svg>
+)
+
+const EyeClosedIcon = () => (
+	<svg
+		width='20'
+		height='20'
+		viewBox='0 0 20 20'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+		className='text-neutral-500 dark:text-neutral-200'
+	>
+		<g clipPath='url(#clip0_eye_closed)'>
+			<path
+				d='M14.9507 14.9502C13.5261 16.036 11.7916 16.6375 10.0007 16.6668C4.16732 16.6668 0.833984 10.0002 0.833984 10.0002C1.87056 8.06841 3.30826 6.38067 5.05065 5.05016M8.25065 3.5335C8.82426 3.39923 9.41154 3.33211 10.0007 3.3335C15.834 3.3335 19.1673 10.0002 19.1673 10.0002C18.6615 10.9465 18.0582 11.8374 17.3673 12.6585M11.7673 11.7668C11.5384 12.0125 11.2624 12.2095 10.9558 12.3461C10.6491 12.4827 10.3181 12.5562 9.98239 12.5621C9.64672 12.5681 9.31329 12.5063 9.00199 12.3806C8.6907 12.2548 8.40792 12.0677 8.17052 11.8303C7.93313 11.5929 7.74598 11.3101 7.62024 10.9988C7.4945 10.6875 7.43276 10.3541 7.43868 10.0184C7.4446 9.68274 7.51807 9.3517 7.65471 9.04504C7.79135 8.73837 7.98836 8.46237 8.23398 8.2335M0.833984 0.833496L19.1673 19.1668'
+				stroke='currentColor'
+				strokeWidth='2'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
+		</g>
+		<defs>
+			<clipPath id='clip0_eye_closed'>
+				<rect width='20' height='20' fill='white' />
+			</clipPath>
+		</defs>
+	</svg>
+)
 
 const CluePage = ({ data }) => {
 	const dataClue = data.cluesJson
@@ -132,7 +189,7 @@ const CluePage = ({ data }) => {
 		<>
 			<li className='eyecon'>
 				<button aria-label='Hide type' onClick={() => setShowType(false)}>
-					<img src={eyeClosed} alt='' />
+					<EyeClosedIcon />
 				</button>
 			</li>
 			{pillList}
@@ -141,7 +198,7 @@ const CluePage = ({ data }) => {
 		<>
 			<li className='eyecon'>
 				<button onClick={() => setShowType(true)} aria-label='Show type'>
-					<img src={eyeOpen} alt='' />
+					<EyeOpenIcon />
 				</button>
 			</li>
 			<li className='type-text'>
