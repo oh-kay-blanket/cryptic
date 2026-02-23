@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import ButtonContainer from './ButtonContainer'
+import Celebration from './Celebration'
 
 import getMessage from '../../utils/bottom/getMessage'
 
@@ -104,6 +105,7 @@ const Message = ({
 
 	return (
 		<div className={`message ${messageStyle} bg-white dark:!bg-neutral-800 dark:!text-neutral-100`} ref={msgContainer}>
+			{checkAns && isCorrectAns && <Celebration />}
 			{message && (
 				<div className={'message-copy lc-container'}>
 					{message}
