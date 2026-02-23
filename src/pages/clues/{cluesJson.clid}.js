@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 import { UserContext } from '../../utils/UserContext'
 import Layout from '../../components/layout'
@@ -19,6 +19,7 @@ const CluePage = ({ data }) => {
 	const dataClue = data.cluesJson
 	const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false)
 	const [revealPopupPosition, setRevealPopupPosition] = useState(null)
+	const revealPopupRef = useRef(null)
 
 	// Add fixed-page class to prevent scrolling
 	useEffect(() => {
@@ -119,6 +120,20 @@ const CluePage = ({ data }) => {
 			setRevealPopupPosition(null)
 		}
 	}, [showRevealPrompt, revealPromptIndex])
+
+	// Close reveal popup when clicking outside
+	useEffect(() => {
+		if (!showRevealPrompt) return
+
+		const handleClickOutside = (e) => {
+			if (revealPopupRef.current && !revealPopupRef.current.contains(e.target)) {
+				setShowRevealPrompt(false)
+			}
+		}
+
+		document.addEventListener('click', handleClickOutside, true)
+		return () => document.removeEventListener('click', handleClickOutside, true)
+	}, [showRevealPrompt, setShowRevealPrompt])
 
 	// type HTML
 	const pillList = activeClue.type.map((t, index) => (
@@ -415,61 +430,45 @@ const CluePage = ({ data }) => {
 			</div>
 
 			{showRevealPrompt && revealPromptIndex !== null && revealPopupPosition && (
-				<>
-					<div
-						className='modal-bg'
-						style={{ background: 'transparent' }}
-						onClick={() => setShowRevealPrompt(false)}
-						onKeyDown={(e) => {
-							if (e.key === 'Escape') {
-								setShowRevealPrompt(false)
-							}
-						}}
-						role='dialog'
-						aria-modal='true'
-						aria-labelledby='reveal-letter-title'
-					/>
-					<div
-						className='reveal-popup'
-						style={{
-							position: 'fixed',
-							top: revealPopupPosition.top - 10,
-							left: revealPopupPosition.left,
-							transform: 'translate(-50%, -100%)',
-							zIndex: 11,
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							padding: '0.75rem 1rem 0.5rem'
-						}}
-						onClick={(e) => e.stopPropagation()}
-						onKeyDown={(e) => e.stopPropagation()}
-						role='document'
-					>
-						<p id='reveal-letter-title' style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>Reveal letter?</p>
-						<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
-							<button
-								className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
-								style={{ padding: '0.35rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
-								onClick={() => handleRevealLetter(revealPromptIndex)}
-								data-testid='modal-reveal-confirm'
-							>
-								Reveal
-							</button>
-							<button
-								className='bg-neutral-200 dark:!bg-neutral-600 dark:!text-neutral-100'
-								style={{ padding: '0.25rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
-								onClick={() => setShowRevealPrompt(false)}
-								data-testid='modal-reveal-cancel'
-							>
-								Cancel
-							</button>
-						</div>
-						<div
-							className='popup-arrow'
-						/>
+				<div
+					ref={revealPopupRef}
+					className='reveal-popup'
+					style={{
+						position: 'fixed',
+						top: revealPopupPosition.top - 10,
+						left: revealPopupPosition.left,
+						transform: 'translate(-50%, -100%)',
+						zIndex: 100,
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						padding: '0.75rem 1rem 0.5rem'
+					}}
+					role='dialog'
+					aria-modal='true'
+					aria-labelledby='reveal-letter-title'
+				>
+					<p id='reveal-letter-title' style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>Reveal letter?</p>
+					<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+						<button
+							className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
+							style={{ padding: '0.35rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
+							onClick={() => handleRevealLetter(revealPromptIndex)}
+							data-testid='modal-reveal-confirm'
+						>
+							Reveal
+						</button>
+						<button
+							className='bg-neutral-200 dark:!bg-neutral-600 dark:!text-neutral-100'
+							style={{ padding: '0.25rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
+							onClick={() => setShowRevealPrompt(false)}
+							data-testid='modal-reveal-cancel'
+						>
+							Cancel
+						</button>
 					</div>
-				</>
+					<div className='popup-arrow' />
+				</div>
 			)}
 		</Layout>
 	)
