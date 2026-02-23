@@ -175,13 +175,13 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 2px;
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         align-self: center;
 
         .difficulty-square {
-          width: 6px;
-          height: 6px;
+          width: 8px;
+          height: 8px;
           border: 1px solid #999;
           border-radius: 1px;
           background-color: transparent;
@@ -189,23 +189,23 @@
 
         // Difficulty level colors
         &.difficulty-1 .difficulty-square.filled {
-          background-color: #22c55e; // green-500
-          border-color: #22c55e;
+          background-color: #b0d237;
+          border-color: #b0d237;
         }
 
         &.difficulty-2 .difficulty-square.filled {
-          background-color: #eab308; // yellow-500
-          border-color: #eab308;
+          background-color: #ffdc7a;
+          border-color: #ffdc7a;
         }
 
         &.difficulty-3 .difficulty-square.filled {
-          background-color: #f97316; // orange-500
-          border-color: #f97316;
+          background-color: #eb9561;
+          border-color: #eb9561;
         }
 
         &.difficulty-4 .difficulty-square.filled {
-          background-color: #ef4444; // red-500
-          border-color: #ef4444;
+          background-color: #e35952;
+          border-color: #e35952;
         }
       }
 
@@ -216,23 +216,23 @@
         }
 
         &.difficulty-1 .difficulty-square.filled {
-          background-color: #4ade80; // green-400
-          border-color: #4ade80;
+          background-color: #b0d237;
+          border-color: #b0d237;
         }
 
         &.difficulty-2 .difficulty-square.filled {
-          background-color: #facc15; // yellow-400
-          border-color: #facc15;
+          background-color: #ffdc7a;
+          border-color: #ffdc7a;
         }
 
         &.difficulty-3 .difficulty-square.filled {
-          background-color: #fb923c; // orange-400
-          border-color: #fb923c;
+          background-color: #eb9561;
+          border-color: #eb9561;
         }
 
         &.difficulty-4 .difficulty-square.filled {
-          background-color: #f87171; // red-400
-          border-color: #f87171;
+          background-color: #e35952;
+          border-color: #e35952;
         }
       }
 
