@@ -448,25 +448,15 @@ const CluePage = ({ data }) => {
 					aria-modal='true'
 					aria-labelledby='reveal-letter-title'
 				>
-					<p id='reveal-letter-title' style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>Reveal letter?</p>
-					<div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
-						<button
-							className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
-							style={{ padding: '0.35rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
-							onClick={() => handleRevealLetter(revealPromptIndex)}
-							data-testid='modal-reveal-confirm'
-						>
-							Reveal
-						</button>
-						<button
-							className='bg-neutral-200 dark:!bg-neutral-600 dark:!text-neutral-100'
-							style={{ padding: '0.25rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
-							onClick={() => setShowRevealPrompt(false)}
-							data-testid='modal-reveal-cancel'
-						>
-							Cancel
-						</button>
-					</div>
+					<p id='reveal-letter-title' style={{ margin: '0 0 0.5rem 0', fontSize: '0.8rem' }}>Reveal letter?</p>
+					<button
+						className='bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white'
+						style={{ padding: '0.35rem 0.75rem', borderRadius: '50px', border: 'none', cursor: 'pointer', fontSize: '0.8rem' }}
+						onClick={() => handleRevealLetter(revealPromptIndex)}
+						data-testid='modal-reveal-confirm'
+					>
+						Reveal
+					</button>
 					<div className='popup-arrow' />
 				</div>
 			)}
