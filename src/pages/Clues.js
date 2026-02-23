@@ -253,6 +253,11 @@ const Clues = ({ data }) => {
           }}
         >
           <span>
+            {getRelease(clue.release).toLocaleString("en-us", {
+              weekday: "short",
+            })}
+          </span>
+          <span>
             <span>
               {getRelease(clue.release).toLocaleString("en-us", {
                 month: "short",
@@ -261,7 +266,6 @@ const Clues = ({ data }) => {
             &nbsp;
             <span>{getRelease(clue.release).getDate()}</span>
           </span>
-          <br></br>
           <span>{getRelease(clue.release).getFullYear()}</span>
         </div>
         <Link
@@ -355,14 +359,14 @@ const Clues = ({ data }) => {
             onClick={() => setFilterModalOpen(true)}
             className={`filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors ${
               hasActiveFilters
-                ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700 text-purple-800 dark:text-purple-200"
-                : "bg-white dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-600"
+                ? "bg-[#eae4ff] dark:bg-[#4A3F6B] border-[#b9ace2] dark:border-[#68589E] text-[#68589E] dark:text-[#9B8FE8]"
+                : "bg-neutral-200 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-600"
             }`}
           >
             <FilterIcon />
             <span className="text-xs">Filter</span>
             {activeFilterCount > 0 && (
-              <span className="filter-badge bg-purple-500 text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
+              <span className="filter-badge bg-[#68589E] text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
                 {activeFilterCount}
               </span>
             )}
@@ -461,7 +465,7 @@ const Clues = ({ data }) => {
         <div className="flex gap-2 mt-6">
           <button
             onClick={() => setFilterModalOpen(false)}
-            className="flex-1 px-4 py-2 rounded bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors"
+            className="flex-1 px-4 py-2 rounded bg-[#68589E] hover:bg-[#5a4b88] text-white font-medium transition-colors"
           >
             Apply
           </button>

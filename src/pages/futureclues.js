@@ -163,6 +163,11 @@ const Clues = ({ data }) => {
             }}
           >
             <span>
+              {getRelease(clue.release).toLocaleString("en-us", {
+                weekday: "short",
+              })}
+            </span>
+            <span>
               <span>
                 {getRelease(clue.release).toLocaleString("en-us", {
                   month: "short",
@@ -171,7 +176,6 @@ const Clues = ({ data }) => {
               &nbsp;
               <span>{getRelease(clue.release).getDate()}</span>
             </span>
-            <br></br>
             <span>{getRelease(clue.release).getFullYear()}</span>
           </div>
           <Link
