@@ -24,21 +24,25 @@
 		padding: 1.5rem .5rem 1rem;
 		border-radius: 8px;
 
-		// Dark mode
-		:global(.dark) & {
-			background-color: #262626; // neutral-800 - true dark modal background
-			color: #F5F5F5; // neutral-100 - true light text
-		}
-
 		button {
 			margin-top: 1rem;
 		}
 	}
 }
 
+// Dark mode modal
+html.dark .modal-bg .modal {
+	background-color: #3d3d3d;
+	color: #F5F5F5;
+}
+
 // Reveal letter popup that floats above the clicked tile
 .reveal-popup {
 	font-family: $lc-font--sans;
+	background-color: #fff;
+	color: #171717;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
 	.popup-arrow {
 		position: absolute;
@@ -51,14 +55,15 @@
 		border-right: 6px solid transparent;
 		border-top: 6px solid #fff;
 	}
+}
 
-	// Dark mode
-	:global(.dark) & {
-		background-color: #262626;
-		color: #F5F5F5;
+// Dark mode reveal popup
+html.dark .reveal-popup {
+	background-color: #3d3d3d;
+	color: #f5f5f5;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
-		.popup-arrow {
-			border-top-color: #262626;
-		}
+	.popup-arrow {
+		border-top-color: #3d3d3d;
 	}
 }

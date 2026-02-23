@@ -14,45 +14,15 @@
 		font-family: $lc-font--sans;
 		font-size: 14px;
 		text-transform: none;
-		color: #fff;
-		background-color: #444;
+		color: #171717;
+		background-color: #fff;
 		padding: .5rem .25rem;
 		border-radius: 4px;
 		z-index: 7;
-
-		// Dark mode - invert colors for better visibility
-		:global(.dark) & {
-			color: #171717; // neutral-900 - true dark text
-			background-color: #F5F5F5; // neutral-100 - true light background
-		}
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
 		@media (min-width: 769px) {
 			max-width: 250px;
-		}
-
-		&:after {
-			content: "";
-			position: absolute;
-			bottom: 100%;
-			left: 50%;
-			margin-left: -5px;
-			border-width: 5px;
-			border-style: solid;
-			border-color: transparent transparent #444 transparent;
-
-			// Dark mode - match tooltip background
-			:global(.dark) & {
-				border-color: transparent transparent #F5F5F5 transparent;
-			}
-		}
-
-		&.above:after {
-			border-color: #444 transparent transparent transparent;
-
-			// Dark mode - match tooltip background
-			:global(.dark) & {
-				border-color: #F5F5F5 transparent transparent transparent;
-			}
 		}
 
 		.tooltip-description {
@@ -65,11 +35,32 @@
 		}
 	}
 
-	&:focus,
-	&:active,
-	&:hover {
-		.tooltip {
-			visibility: visible;
-		}
+	.tooltip::before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		border: 6px solid transparent;
+		border-bottom-color: #fff;
+	}
+}
+
+// Dark mode - outside .tooltip-parent for proper specificity
+html.dark .tooltip-parent .tooltip {
+	color: #f5f5f5;
+	background-color: #3d3d3d;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .tooltip-parent .tooltip::before {
+	border-bottom-color: #3d3d3d;
+}
+
+.tooltip-parent:focus,
+.tooltip-parent:active,
+.tooltip-parent:hover {
+	.tooltip {
+		visibility: visible;
 	}
 }

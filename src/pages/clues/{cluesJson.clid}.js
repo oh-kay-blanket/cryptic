@@ -435,7 +435,7 @@ const CluePage = ({ data }) => {
 						aria-labelledby='reveal-letter-title'
 					/>
 					<div
-						className='reveal-popup dark:!bg-neutral-800 dark:!text-neutral-100'
+						className='reveal-popup'
 						style={{
 							position: 'fixed',
 							top: revealPopupPosition.top - 10,
@@ -445,10 +445,7 @@ const CluePage = ({ data }) => {
 							display: 'flex',
 							flexDirection: 'column',
 							alignItems: 'center',
-							backgroundColor: '#fff',
-							padding: '0.75rem 1rem 0.5rem',
-							borderRadius: '8px',
-							boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+							padding: '0.75rem 1rem 0.5rem'
 						}}
 						onClick={(e) => e.stopPropagation()}
 						onKeyDown={(e) => e.stopPropagation()}
