@@ -23,19 +23,19 @@
       // Width calculated so 10 keys (row 1) fill the screen
       // 10 keys * 2 margins * 0.125rem = 2.5rem + 0.5rem padding = 3rem
       width: calc((100% - 2.5rem) / 10);
-      height: 44px;
+      height: 52px;
       border-radius: 8px;
       margin: 0 0.125rem;
       padding: 0;
 
       @media (max-height: 600px) {
-        height: 34px;
+        height: 42px;
       }
 
       // Larger keys on desktop
       @media (min-width: 768px) {
         width: 44px;
-        height: 52px;
+        height: 54px;
         margin: 0 0.2rem;
         font-size: 1.1rem;
       }

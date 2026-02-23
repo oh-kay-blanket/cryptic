@@ -54,7 +54,6 @@
           padding: 0.25rem 0.5rem;
           font-family: $lc-font--sans;
           font-size: 0.65rem;
-          font-weight: 500;
           color: $lc-text;
           border-radius: 50px;
           // background-color handled by Tailwind classes in React component
@@ -82,14 +81,12 @@
       color: #d1d5db !important; // neutral-300 - better contrast for ADA compliance
     }
 
-
     .clue-stats {
       position: absolute;
       bottom: 0;
       left: 0;
       display: flex;
       font-size: 0.75rem;
-      font-weight: 600;
       font-family: $lc-font--sans;
       margin: 1.5rem 1.25rem;
       pointer-events: none;
