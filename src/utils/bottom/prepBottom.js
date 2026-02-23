@@ -223,7 +223,7 @@ const prepBottom = (
 		},
 	}
 
-	let btnArr = [buttons.showHint]
+	let btnArr = []
 
 	if (activeClue.hints[nextHint].reveals) {
 		// Only show "Reveal Solution" if it's not today's clue

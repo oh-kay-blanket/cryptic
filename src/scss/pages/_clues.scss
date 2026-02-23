@@ -199,27 +199,11 @@
           border: 1px solid #999;
           border-radius: 1px;
           background-color: transparent;
-        }
 
-        // Difficulty level colors
-        &.difficulty-1 .difficulty-square.filled {
-          background-color: #b0d237;
-          border-color: #b0d237;
-        }
-
-        &.difficulty-2 .difficulty-square.filled {
-          background-color: #ffdc7a;
-          border-color: #ffdc7a;
-        }
-
-        &.difficulty-3 .difficulty-square.filled {
-          background-color: #eb9561;
-          border-color: #eb9561;
-        }
-
-        &.difficulty-4 .difficulty-square.filled {
-          background-color: #ef736d;
-          border-color: #ef736d;
+          &.filled {
+            background-color: #666;
+            border-color: #666;
+          }
         }
       }
 
@@ -227,26 +211,11 @@
       html.dark & .difficulty-grid {
         .difficulty-square {
           border-color: #737373;
-        }
 
-        &.difficulty-1 .difficulty-square.filled {
-          background-color: #b0d237;
-          border-color: #b0d237;
-        }
-
-        &.difficulty-2 .difficulty-square.filled {
-          background-color: #ffdc7a;
-          border-color: #ffdc7a;
-        }
-
-        &.difficulty-3 .difficulty-square.filled {
-          background-color: #eb9561;
-          border-color: #eb9561;
-        }
-
-        &.difficulty-4 .difficulty-square.filled {
-          background-color: #ef736d;
-          border-color: #ef736d;
+          &.filled {
+            background-color: #ccc;
+            border-color: #ccc;
+          }
         }
       }
 

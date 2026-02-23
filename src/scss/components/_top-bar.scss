@@ -1,4 +1,4 @@
-@use '../base/var' as *;
+@use "../base/var" as *;
 
 .top-bar {
   position: fixed;
@@ -43,6 +43,72 @@
   .topbar-logo img {
     max-width: 40px;
     padding: 6px;
+  }
+
+  .current-stats {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $lc-font--sans;
+    margin-left: 0.5rem;
+
+    .stat {
+      font-size: 0.75rem;
+    }
+
+    .stat-separator {
+      font-size: 0.85rem;
+      margin: 0 2px;
+      opacity: 0.7;
+    }
+
+    .current-stats-tooltip {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background-color: #fff;
+      color: #171717;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      z-index: 1000;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-5px);
+      animation: fadeInDown 0.15s ease-out forwards;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 1rem;
+        border: 6px solid transparent;
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}
+
+// Dark mode current stats tooltip
+html.dark .top-bar .current-stats .current-stats-tooltip {
+  background-color: #3d3d3d;
+  color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    border-bottom-color: #3d3d3d;
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

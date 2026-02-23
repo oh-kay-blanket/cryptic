@@ -45,6 +45,7 @@ $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
   // Light mode colors - newspaper feel
   --lc-highlight-text: #7457D6;
   --lc-highlight-bg: #E1D8FF;
+  --lc-active-bg: #FFCBAB;
   --lc-text-primary: #1a1a1a; // softer black for newspaper feel
   --lc-text-secondary: #1a1a1a;
   --lc-text-muted: #ccc;
@@ -57,6 +58,7 @@ $lc-font--alt: 'Caveat', 'Helvetica', 'Arial', 'Open Sans', sans;
 :root.dark {
   --lc-highlight-text: #9B8FE8; // desaturated lighter purple for dark mode
   --lc-highlight-bg: #4A3F6B; // desaturated darker purple background
+  --lc-active-bg: #78462D; // darker orange for dark mode
   --lc-text-primary: #E5E5E5; // softer off-white text (instead of pure white)
   --lc-text-secondary: #D0D0D0; // slightly darker off-white
   --lc-text-muted: #888888; // true medium gray for muted text

@@ -10,6 +10,7 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
 	const [returnLearn, setReturnLearn] = useState(false)
+	const [currentStats, setCurrentStats] = useState(null) // { hints: 0, guesses: 0 } when on clue page
 
 	// manage lcState
 	const [lcState, setLcState] = useState(() => {
@@ -233,6 +234,8 @@ export const UserProvider = ({ children }) => {
 			setReturnLearn,
 			darkMode,
 			setDarkMode,
+			currentStats,
+			setCurrentStats,
 		}),
 		[
 			completedClues,
@@ -242,6 +245,7 @@ export const UserProvider = ({ children }) => {
 			typeViewed,
 			returnLearn,
 			darkMode,
+			currentStats,
 		]
 	)
 

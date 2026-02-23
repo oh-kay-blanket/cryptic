@@ -100,9 +100,11 @@ const TopBar = () => {
     longestStreak = 0,
     darkMode,
     setDarkMode,
+    currentStats,
   } = useContext(UserContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
+  const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
 
   const clickTitle = () => {
     setReturnLearn(false);
@@ -145,6 +147,31 @@ const TopBar = () => {
             >
               <InfoIcon />
             </button>
+            {currentStats && (
+              <div
+                className='current-stats bg-neutral-200 dark:bg-neutral-600 dark:text-white'
+                onMouseEnter={() => setShowCurrentStatsTooltip(true)}
+                onMouseLeave={() => setShowCurrentStatsTooltip(false)}
+                onClick={() => setShowCurrentStatsTooltip(!showCurrentStatsTooltip)}
+                role='button'
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setShowCurrentStatsTooltip(!showCurrentStatsTooltip);
+                  }
+                }}
+              >
+                <span className='stat'>{currentStats.hints}</span>
+                <span className='stat-separator'>:</span>
+                <span className='stat'>{currentStats.guesses}</span>
+                {showCurrentStatsTooltip && (
+                  <div className='current-stats-tooltip'>
+                    {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}, {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           <Link to='/' onClick={clickTitle} className='topbar-logo'>
             <img src={logo} alt='' />

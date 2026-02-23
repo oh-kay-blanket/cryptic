@@ -81,52 +81,6 @@
       color: #d1d5db !important; // neutral-300 - better contrast for ADA compliance
     }
 
-    .clue-stats {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      font-size: 0.75rem;
-      font-family: $lc-font--sans;
-      margin: 1.5rem 1.25rem;
-      pointer-events: none;
-      user-select: none;
-
-      @media (max-height: 600px) {
-        margin: 0.5rem;
-      }
-
-      .stat-guesses,
-      .stat-hints {
-        margin: 2px auto;
-        padding: 2px 3px;
-        border-radius: 4px;
-
-        .stat {
-          font-size: 0.85rem;
-          font-weight: 700;
-        }
-
-        .stat-label {
-          font-size: 0.7rem;
-          opacity: 0.7;
-        }
-      }
-
-      .stat-hints {
-        background-color: $lc-secondary--light;
-        margin-right: 0.5rem;
-
-        // Dark mode - handled by Tailwind classes in React component
-      }
-
-      .stat-guesses {
-        background-color: $lc-primary--light;
-
-        // Dark mode - handled by Tailwind classes in React component
-      }
-    }
-
     .clue {
       display: flex;
       flex-direction: column;
@@ -191,12 +145,16 @@
     }
 
     .sol-section {
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
       z-index: 20;
+
+      .solution-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
 
       .solution {
         display: flex;
@@ -207,7 +165,6 @@
         transition: opacity $lc-transition--short ease;
         text-align: center;
         text-transform: uppercase;
-        margin-top: 1rem;
         font-size: 1.25rem;
         background-color: $lc-gray--v-light;
 
@@ -292,6 +249,30 @@
       }
     }
 
+    .solution-wrapper .hint-button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &.hint-right {
+        left: calc(100% + 12px);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.hint-below {
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     .clue-difficulty {
       position: absolute;
       top: 0;
@@ -335,28 +316,11 @@
           border: 1px solid #999;
           border-radius: 1px;
           background-color: transparent;
-          transition: background-color $lc-transition--short ease;
-        }
 
-        // Difficulty level colors
-        &.difficulty-1 .difficulty-square.filled {
-          background-color: #b0d237;
-          border-color: #b0d237;
-        }
-
-        &.difficulty-2 .difficulty-square.filled {
-          background-color: #ffdc7a;
-          border-color: #ffdc7a;
-        }
-
-        &.difficulty-3 .difficulty-square.filled {
-          background-color: #eb9561;
-          border-color: #eb9561;
-        }
-
-        &.difficulty-4 .difficulty-square.filled {
-          background-color: #ef736d;
-          border-color: #ef736d;
+          &.filled {
+            background-color: #666;
+            border-color: #666;
+          }
         }
       }
 
@@ -364,26 +328,11 @@
       html.dark & .difficulty-grid {
         .difficulty-square {
           border-color: #737373;
-        }
 
-        &.difficulty-1 .difficulty-square.filled {
-          background-color: #b0d237;
-          border-color: #b0d237;
-        }
-
-        &.difficulty-2 .difficulty-square.filled {
-          background-color: #ffdc7a;
-          border-color: #ffdc7a;
-        }
-
-        &.difficulty-3 .difficulty-square.filled {
-          background-color: #eb9561;
-          border-color: #eb9561;
-        }
-
-        &.difficulty-4 .difficulty-square.filled {
-          background-color: #ef736d;
-          border-color: #ef736d;
+          &.filled {
+            background-color: #ccc;
+            border-color: #ccc;
+          }
         }
       }
 
