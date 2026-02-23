@@ -55,7 +55,6 @@
           font-family: $lc-font--sans;
           font-size: 0.65rem;
           font-weight: 500;
-          text-transform: uppercase;
           color: $lc-text;
           border-radius: 50px;
           // background-color handled by Tailwind classes in React component
@@ -121,6 +120,11 @@
         .stat {
           font-size: 0.85rem;
           font-weight: 700;
+        }
+
+        .stat-label {
+          font-size: 0.7rem;
+          opacity: 0.7;
         }
       }
 
@@ -238,7 +242,7 @@
           display: inline-block;
           width: 30px;
           height: 30px;
-          background-color: white;
+          background-color: $lc-gray--v-light;
           // border handled by Tailwind classes in React component
           // border-right: none;
 

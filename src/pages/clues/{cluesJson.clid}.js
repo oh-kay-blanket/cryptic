@@ -158,11 +158,11 @@ const CluePage = ({ data }) => {
 			<div className='clue-stats'>
 				<span className='stat-hints dark:!bg-[#4A3F6B] dark:!text-white' data-testid='stat-hints'>
 					<span className='stat'>{stats.hints}</span>&nbsp;
-					{stats.hints === 1 ? 'hint' : 'hints'}
+					<span className='stat-label'>{stats.hints === 1 ? 'hint' : 'hints'}</span>
 				</span>
 				<span className='stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white' data-testid='stat-guesses'>
 					<span className='stat'>{stats.guesses}</span>&nbsp;
-					{stats.guesses === 1 ? 'guess' : 'guesses'}
+					<span className='stat-label'>{stats.guesses === 1 ? 'guess' : 'guesses'}</span>
 				</span>
 			</div>
 		</>
