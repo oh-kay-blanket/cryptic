@@ -221,14 +221,6 @@ const prepBottom = (
 				setStats({ guesses: 0, hints: 0, how: '' })
 			},
 		},
-		noMoreClues: {
-			name: 'No more hints available',
-			style: 'gray',
-			disabled: true,
-			onClick: function () {
-				// Do nothing - this is just a message
-			},
-		},
 	}
 
 	let btnArr = [buttons.showHint]
@@ -247,15 +239,6 @@ const prepBottom = (
 	const allPositionsFilled = activeClue.solution.arr.every((_, index) => {
 		return input[index] && input[index] !== ''
 	})
-
-	// If no buttons are available (today's clue at reveal stage), show message
-	if (
-		btnArr.length === 0 &&
-		activeClue.hints[nextHint].reveals &&
-		isTodaysClue()
-	) {
-		btnArr = [buttons.noMoreClues]
-	}
 
 	const isCorrectAns =
 		input.join('').toUpperCase() ===
