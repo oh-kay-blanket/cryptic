@@ -146,9 +146,13 @@ const useManageClue = (activeClue) => {
         })
     }
 	
-	// runs every change of showMessage
+	// runs when showMessage changes or during showLogic stepping
 	useEffect(() => {
-		handleHint(activeClue, nextHint, showMessage, checkAns, showLogic)
+		// Only run handleHint when showMessage is true (showing completion/logic message)
+		// In regular hint mode, handleHint is called directly from handleShowHint
+		if (showMessage) {
+			handleHint(activeClue, nextHint, showMessage, checkAns, showLogic)
+		}
 	}, [showMessage, activeClue, nextHint, checkAns, showLogic])
 
 	return {

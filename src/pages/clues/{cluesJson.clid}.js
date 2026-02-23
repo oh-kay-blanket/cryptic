@@ -1,11 +1,15 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef, useCallback } from "react";
 import { graphql } from "gatsby";
 import { UserContext } from "../../utils/UserContext";
 import Layout from "../../components/layout";
 import Bottom from "../../components/Bottom";
 import Tooltip from "../../components/Tooltip";
+import HintTooltip from "../../components/HintTooltip";
 import prepClue from "../../utils/clue/usePrepClue";
 import manageClue from "../../utils/clue/useManageClue";
+import handleHint from "../../utils/clue/handleHint";
+import highlightLetters from "../../utils/clue/highlightLetters";
+import changeColor from "../../utils/clue/changeColor";
 import { isTodayClue } from "../../utils/dateHelpers";
 
 // Eye icon components using currentColor to match TopBar icons
@@ -49,10 +53,10 @@ const HintIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ color: "var(--lc-highlight-text)" }}
+    className="text-neutral-500 dark:text-neutral-200"
   >
     <path
-      d="M9 21h6M12 3a6 6 0 0 0-6 6c0 2.22 1.21 4.16 3 5.19V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.81c1.79-1.03 3-2.97 3-5.19a6 6 0 0 0-6-6z"
+      d="M9 21h6M9 19h6M12 3a6 6 0 0 0-6 6c0 2.22 1.21 4.16 3 5.19V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.81c1.79-1.03 3-2.97 3-5.19a6 6 0 0 0-6-6z"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
@@ -92,7 +96,16 @@ const CluePage = ({ data }) => {
   const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false);
   const [revealPopupPosition, setRevealPopupPosition] = useState(null);
   const [hintPosition, setHintPosition] = useState("right"); // "right" or "below"
+  const [activeTooltipHint, setActiveTooltipHint] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState(null);
+  const [showRevealSolutionConfirm, setShowRevealSolutionConfirm] = useState(false);
+  const [revealSolutionPopupPosition, setRevealSolutionPopupPosition] = useState(null);
+  const [solutionRevealedViaHint, setSolutionRevealedViaHint] = useState(false);
+  const [showNoMoreHintsTooltip, setShowNoMoreHintsTooltip] = useState(false);
+  const [noMoreHintsTooltipPosition, setNoMoreHintsTooltipPosition] = useState(null);
   const revealPopupRef = useRef(null);
+  const revealSolutionPopupRef = useRef(null);
+  const activeTooltipHintRef = useRef(null);
 
   // Add fixed-page class to prevent scrolling
   useEffect(() => {
@@ -170,16 +183,237 @@ const CluePage = ({ data }) => {
     return () => setCurrentStats(null);
   }, [stats, setCurrentStats]);
 
+  // Calculate tooltip position based on hint refs
+  const calculateTooltipPosition = useCallback((hintIndex) => {
+    const hint = activeClue.hints[hintIndex];
+    if (!hint || !hint.ref || hint.ref.length === 0) return null;
+
+    // Get bounding boxes of all highlighted letters
+    let minTop = Infinity;
+    let leftmost = Infinity;
+    let rightmost = -Infinity;
+
+    hint.ref.forEach((ref) => {
+      if (ref && ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        if (rect.top < minTop) minTop = rect.top;
+        if (rect.left < leftmost) leftmost = rect.left;
+        if (rect.right > rightmost) rightmost = rect.right;
+      }
+    });
+
+    if (minTop === Infinity) return null;
+
+    // Position tooltip centered above the highlighted span
+    const centerX = (leftmost + rightmost) / 2;
+    return { x: centerX, y: minTop };
+  }, [activeClue.hints]);
+
   // Handle show hint click
   const handleShowHint = () => {
+    // Check if this is the last hint (reveals solution)
+    const isRevealingHint = activeClue.hints[nextHint]?.reveals;
+
+    // For today's clue, don't allow revealing the solution
+    if (isRevealingHint && isTodayClue(dataClue)) {
+      return;
+    }
+
+    if (isRevealingHint) {
+      // Show confirmation popup instead of revealing immediately
+      const hintButton = document.querySelector(".hint-button");
+      if (hintButton) {
+        const rect = hintButton.getBoundingClientRect();
+        setRevealSolutionPopupPosition({
+          top: rect.top,
+          left: rect.left + rect.width / 2,
+        });
+      }
+      setShowRevealSolutionConfirm(true);
+      return;
+    }
+
+    // Gray out the previous hint if one is active
+    const prevHintIndex = activeTooltipHintRef.current;
+    if (prevHintIndex !== null && prevHintIndex > 0) {
+      const prevHint = activeClue.hints[prevHintIndex];
+      if (prevHint && prevHint.ref) {
+        highlightLetters(prevHint.ref, false, true);
+        if (prevHint.addLetters && prevHint.addLetters.ref && prevHint.addLetters.ref.current) {
+          changeColor(prevHint.addLetters.ref.current, false, true);
+        }
+      }
+    }
+
+    // Store current hint index and refs before state updates
+    const currentHintIndex = nextHint;
+    const currentHint = activeClue.hints[currentHintIndex];
+
     setStats((prevStats) => ({ ...prevStats, hints: prevStats.hints + 1 }));
     setCheckAns(false);
-    setShowMessage(true);
+    setNextHint(currentHintIndex + 1);
+
+    // Calculate position and show tooltip
+    const position = calculateTooltipPosition(currentHintIndex);
+    setTooltipPosition(position);
+    setActiveTooltipHint(currentHintIndex);
+    activeTooltipHintRef.current = currentHintIndex;
+
+    // Run the hint animation after state updates are processed
+    // Use the captured hint to ensure we have the correct refs
+    setTimeout(() => {
+      if (currentHintIndex === 0 && currentHint.ref) {
+        // Definition hint - underline directly
+        currentHint.ref.forEach((ref) => {
+          if (ref && ref.current) {
+            ref.current.classList.add("underline");
+          }
+        });
+      }
+      handleHint(activeClue, currentHintIndex, true, false, showLogic);
+    }, 0);
   };
 
+  // Handle reveal solution confirmation
+  const handleRevealSolution = () => {
+    setShowRevealSolutionConfirm(false);
+    setRevealSolutionPopupPosition(null);
+
+    // Store current hint index before state updates
+    const currentHintIndex = nextHint;
+
+    // Mark as revealed via hint (so Message hides the text, tooltip shows it)
+    setSolutionRevealedViaHint(true);
+
+    // Increment hints count
+    setStats((prevStats) => ({ ...prevStats, hints: prevStats.hints + 1 }));
+    setCheckAns(false);
+
+    // Calculate position and show tooltip with final hint
+    const position = calculateTooltipPosition(currentHintIndex);
+    setTooltipPosition(position);
+    setActiveTooltipHint(currentHintIndex);
+    activeTooltipHintRef.current = currentHintIndex;
+
+    // Clear input and show message (for buttons)
+    setInput([]);
+    setShowMessage(true);
+
+    // Run the hint animation
+    setTimeout(() => {
+      handleHint(activeClue, currentHintIndex, true, false, showLogic);
+    }, 0);
+  };
+
+  // Dismiss tooltip and gray out the hint
+  const dismissTooltip = useCallback(() => {
+    const hintIndex = activeTooltipHintRef.current;
+    if (hintIndex !== null && !showLogic) {
+      const hint = activeClue.hints[hintIndex];
+      // Only gray out non-definition hints (definition is underlined, not highlighted)
+      if (hint && hint.ref && hintIndex > 0) {
+        // Gray out the highlight background
+        highlightLetters(hint.ref, false, true);
+        // Gray out text color for addLetters
+        if (hint.addLetters && hint.addLetters.ref && hint.addLetters.ref.current) {
+          changeColor(hint.addLetters.ref.current, false, true);
+        }
+      }
+    }
+    activeTooltipHintRef.current = null;
+    setActiveTooltipHint(null);
+    setTooltipPosition(null);
+  }, [showLogic, activeClue.hints]);
+
+  // Click outside to dismiss tooltip
+  useEffect(() => {
+    if (activeTooltipHint === null) return;
+
+    const handleClickOutside = () => {
+      dismissTooltip();
+    };
+
+    // Use a slight delay to avoid immediate dismissal
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("click", handleClickOutside);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [activeTooltipHint, dismissTooltip]);
+
+  // Show tooltip during "Show logic" mode
+  useEffect(() => {
+    if (showLogic && showMessage && !checkAns) {
+      const currentHint = activeClue.hints[nextHint];
+      if (!currentHint) return;
+
+      // Calculate position and show tooltip
+      const position = calculateTooltipPosition(nextHint);
+      setTooltipPosition(position);
+      setActiveTooltipHint(nextHint);
+      activeTooltipHintRef.current = nextHint;
+
+      // Run hint animation
+      setTimeout(() => {
+        handleHint(activeClue, nextHint, true, false, showLogic);
+      }, 0);
+    }
+  }, [showLogic, showMessage, nextHint, checkAns, activeClue, calculateTooltipPosition]);
+
+  // Map first-step hint categories to their second-step counterparts
+  const twoStepHintMap = {
+    'anagram': 'ag-2',
+    'hidden word': 'hw-2',
+    'homophone': 'hp-2',
+    'letter bank': 'lb-2',
+    'synonym': 'sy-2',
+  };
+
+  // Handle clicking on highlighted clue text to re-show hint tooltip
+  const handleClueLetterClick = useCallback((index) => {
+    // Check if this letter is part of any revealed hint (hints 0 through nextHint-1)
+    for (let hintIndex = 0; hintIndex < nextHint; hintIndex++) {
+      const hint = activeClue.hints[hintIndex];
+      if (hint && hint.ref) {
+        const isPartOfHint = hint.ref.some((ref) => {
+          // Check if this ref corresponds to the clicked letter index
+          return ref && ref.current === activeClue.clue.ref.current[index]?.current;
+        });
+
+        if (isPartOfHint) {
+          let targetHintIndex = hintIndex;
+
+          // Check if this is a first-step hint with a revealed second-step
+          const secondStepCategory = twoStepHintMap[hint.category];
+          if (secondStepCategory) {
+            const nextHintObj = activeClue.hints[hintIndex + 1];
+            // If the next hint is the corresponding second-step and has been revealed
+            if (nextHintObj?.category === secondStepCategory && hintIndex + 1 < nextHint) {
+              targetHintIndex = hintIndex + 1;
+            }
+          }
+
+          const position = calculateTooltipPosition(targetHintIndex);
+          setTooltipPosition(position);
+          setActiveTooltipHint(targetHintIndex);
+          activeTooltipHintRef.current = targetHintIndex;
+          return;
+        }
+      }
+    }
+  }, [activeClue.hints, activeClue.clue.ref, nextHint, calculateTooltipPosition]);
+
   // Determine if hint button should be shown
-  const isLastHint = activeClue.hints[nextHint]?.reveals;
-  const showHintButton = !showMessage && !isLastHint;
+  // Hide when showing completion message (answer checked or solution revealed)
+  const showHintButton = !showMessage;
+
+  // Check if this is today's clue and if hints are exhausted (next hint would reveal solution)
+  const isTodaysClue = isTodayClue(dataClue);
+  const isRevealingHint = activeClue.hints[nextHint]?.reveals;
+  const hintsExhaustedForToday = isTodaysClue && isRevealingHint;
 
   // Calculate hint button position based on available space
   useEffect(() => {
@@ -232,6 +466,45 @@ const CluePage = ({ data }) => {
       document.removeEventListener("click", handleClickOutside, true);
   }, [showRevealPrompt, setShowRevealPrompt]);
 
+  // Close reveal solution popup when clicking outside
+  useEffect(() => {
+    if (!showRevealSolutionConfirm) return;
+
+    const handleClickOutside = (e) => {
+      if (
+        revealSolutionPopupRef.current &&
+        !revealSolutionPopupRef.current.contains(e.target)
+      ) {
+        setShowRevealSolutionConfirm(false);
+        setRevealSolutionPopupPosition(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside, true);
+    return () =>
+      document.removeEventListener("click", handleClickOutside, true);
+  }, [showRevealSolutionConfirm]);
+
+  // Close no more hints tooltip when clicking outside
+  useEffect(() => {
+    if (!showNoMoreHintsTooltip) return;
+
+    const handleClickOutside = () => {
+      setShowNoMoreHintsTooltip(false);
+      setNoMoreHintsTooltipPosition(null);
+    };
+
+    // Use a slight delay to avoid immediate dismissal from the same click
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("click", handleClickOutside);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showNoMoreHintsTooltip]);
+
   // type HTML
   const pillList = activeClue.type.map((t, index) => (
     <li
@@ -268,16 +541,42 @@ const CluePage = ({ data }) => {
     </>
   );
 
+  // Check if a letter at given index is part of any revealed hint
+  const isLetterInRevealedHint = (index) => {
+    for (let hintIndex = 0; hintIndex < nextHint; hintIndex++) {
+      const hint = activeClue.hints[hintIndex];
+      if (hint && hint.ref) {
+        const isInHint = hint.ref.some(
+          (ref) => ref && ref.current === activeClue.clue.ref.current[index]?.current
+        );
+        if (isInHint) return true;
+      }
+    }
+    return false;
+  };
+
   // clue HTML
-  const clueInsert = activeClue.clue.arr.map((letter, index) => (
-    <span
-      key={`cluearr_${index}`}
-      ref={activeClue.clue.ref.current[index]}
-      className="letter"
-    >
-      {letter}
-    </span>
-  ));
+  const clueInsert = activeClue.clue.arr.map((letter, index) => {
+    const inRevealedHint = isLetterInRevealedHint(index);
+    return (
+      <span
+        key={`cluearr_${index}`}
+        ref={activeClue.clue.ref.current[index]}
+        className={`letter${inRevealedHint ? " hint-clickable" : ""}`}
+        onClick={
+          inRevealedHint
+            ? (e) => {
+                e.stopPropagation();
+                handleClueLetterClick(index);
+              }
+            : undefined
+        }
+        style={inRevealedHint ? { cursor: "pointer" } : undefined}
+      >
+        {letter}
+      </span>
+    );
+  });
 
   // addLetters HTML
   let addInsert = [];
@@ -463,9 +762,41 @@ const CluePage = ({ data }) => {
               </div>
               {showHintButton && (
                 <button
-                  className={`hint-button hint-${hintPosition}`}
-                  onClick={handleShowHint}
-                  aria-label="Show hint"
+                  className={`hint-button hint-${hintPosition}${hintsExhaustedForToday ? ' hint-disabled' : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (hintsExhaustedForToday) {
+                      const hintButton = e.currentTarget;
+                      const rect = hintButton.getBoundingClientRect();
+                      setNoMoreHintsTooltipPosition({
+                        top: rect.top,
+                        left: rect.left + rect.width / 2,
+                      });
+                      setShowNoMoreHintsTooltip(true);
+                    } else {
+                      handleShowHint();
+                    }
+                  }}
+                  onMouseEnter={() => {
+                    if (hintsExhaustedForToday) {
+                      const hintButton = document.querySelector(".hint-button");
+                      if (hintButton) {
+                        const rect = hintButton.getBoundingClientRect();
+                        setNoMoreHintsTooltipPosition({
+                          top: rect.top,
+                          left: rect.left + rect.width / 2,
+                        });
+                      }
+                      setShowNoMoreHintsTooltip(true);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hintsExhaustedForToday) {
+                      setShowNoMoreHintsTooltip(false);
+                      setNoMoreHintsTooltipPosition(null);
+                    }
+                  }}
+                  aria-label={hintsExhaustedForToday ? "No more hints available" : "Show hint"}
                 >
                   <HintIcon />
                 </button>
@@ -529,6 +860,7 @@ const CluePage = ({ data }) => {
           showLogic={showLogic}
           setShowLogic={setShowLogic}
           revealedLetters={revealedLetters}
+          solutionRevealedViaHint={solutionRevealedViaHint}
         />
       </div>
 
@@ -576,6 +908,75 @@ const CluePage = ({ data }) => {
             <div className="popup-arrow" />
           </div>
         )}
+
+      {showRevealSolutionConfirm && revealSolutionPopupPosition && (
+        <div
+          ref={revealSolutionPopupRef}
+          className="reveal-popup"
+          style={{
+            position: "fixed",
+            top: revealSolutionPopupPosition.top - 10,
+            left: revealSolutionPopupPosition.left,
+            transform: "translate(-50%, -100%)",
+            zIndex: 100,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "0.75rem 1rem 0.5rem",
+          }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="reveal-solution-title"
+        >
+          <p
+            id="reveal-solution-title"
+            style={{ margin: "0 0 0.5rem 0", fontSize: "0.8rem" }}
+          >
+            Reveal solution?
+          </p>
+          <button
+            className="bg-purple-200 dark:!bg-[#4A3F6B] dark:!text-white"
+            style={{
+              padding: "0.35rem 0.75rem",
+              borderRadius: "50px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "0.8rem",
+            }}
+            onClick={handleRevealSolution}
+            data-testid="modal-reveal-solution-confirm"
+          >
+            Reveal
+          </button>
+          <div className="popup-arrow" />
+        </div>
+      )}
+
+      {showNoMoreHintsTooltip && noMoreHintsTooltipPosition && (
+        <div
+          className="hint-tooltip no-more-hints-tooltip"
+          style={{
+            position: "fixed",
+            top: noMoreHintsTooltipPosition.top - 12,
+            left: noMoreHintsTooltipPosition.left,
+            transform: "translate(-50%, -100%)",
+            zIndex: 100,
+          }}
+        >
+          <div className="hint-tooltip-content">
+            <div className="hint-tooltip-message">No more hints available</div>
+          </div>
+          <div className="hint-tooltip-arrow" />
+        </div>
+      )}
+
+      {activeTooltipHint !== null && tooltipPosition && (
+        <HintTooltip
+          hint={activeClue.hints[activeTooltipHint]}
+          position={tooltipPosition}
+          onDismiss={dismissTooltip}
+        />
+      )}
     </Layout>
   );
 };

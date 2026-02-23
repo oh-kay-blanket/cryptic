@@ -5,13 +5,18 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	min-height: fit-content;
-	// flex-grow: 1;
-	height: 35%;
+	height: fit-content;
+	// Minimum height to match keyboard height (3 rows * 52px + margins + padding)
+	min-height: 200px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
+	padding: 0.75rem 0;
 	// background-color handled by Tailwind classes in React component
+
+	@media (max-height: 600px) {
+		min-height: 160px;
+	}
 }
 
 // Center buttons vertically when keyboard is hidden on desktop

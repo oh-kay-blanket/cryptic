@@ -1,0 +1,118 @@
+@use '../base/var' as *;
+
+.hint-tooltip {
+	font-family: $lc-font--sans;
+	background-color: $lc-secondary--v-light;
+	color: #171717;
+	border-radius: 8px;
+	border: 1px solid $lc-secondary;
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+	max-width: min(320px, calc(100vw - 32px));
+	opacity: 0;
+	animation: hintTooltipFadeIn 0.2s ease-out forwards;
+
+	.hint-tooltip-content {
+		padding: 0.625rem 0.875rem;
+		text-align: center;
+		line-height: 1.4;
+	}
+
+	.hint-tooltip-message {
+		font-size: 0.8rem;
+
+		strong {
+			font-family: $lc-font--serif;
+			font-weight: 600;
+		}
+	}
+
+	.hint-tooltip-explainer {
+		margin-top: 0.5rem;
+		font-size: 0.75rem;
+		color: $lc-text--light;
+	}
+
+	.hint-tooltip-arrow {
+		position: absolute;
+		bottom: -8px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-top: 9px solid $lc-secondary;
+
+		// Inner arrow same color as tooltip bg
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0;
+			height: 0;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 8px solid $lc-secondary--v-light;
+		}
+	}
+}
+
+// Dark mode hint tooltip
+html.dark .hint-tooltip {
+	background-color: var(--lc-highlight-bg);
+	color: #f5f5f5;
+	border-color: #6b5b95;
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+
+	.hint-tooltip-explainer {
+		color: #a3a3a3;
+	}
+
+	.hint-tooltip-arrow {
+		border-top-color: #6b5b95;
+
+		&::after {
+			border-top-color: var(--lc-highlight-bg);
+		}
+	}
+}
+
+@keyframes hintTooltipFadeIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, calc(-100% + 8px));
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -100%);
+	}
+}
+
+// No more hints tooltip - neutral styling
+.no-more-hints-tooltip {
+	background-color: #f5f5f5;
+	border-color: #d4d4d4;
+
+	.hint-tooltip-arrow {
+		border-top-color: #d4d4d4;
+
+		&::after {
+			border-top-color: #f5f5f5;
+		}
+	}
+}
+
+html.dark .no-more-hints-tooltip {
+	background-color: #404040;
+	border-color: #525252;
+
+	.hint-tooltip-arrow {
+		border-top-color: #525252;
+
+		&::after {
+			border-top-color: #404040;
+		}
+	}
+}

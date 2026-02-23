@@ -15,6 +15,7 @@ const Message = ({
 	buttons,
 	showLogic,
 	setShowLogic,
+	solutionRevealedViaHint,
 }) => {
 	const msgContainer = useRef()
 
@@ -32,6 +33,10 @@ const Message = ({
 				answer.
 			</div>
 		)
+	) : solutionRevealedViaHint && isSolution ? (
+		<div data-testid='message-revealed'>
+			The answer is <strong>{activeClue.solution.arr.join('').toUpperCase()}</strong>
+		</div>
 	) : (
 		getMessage(activeClue.hints[nextHint])
 	)
@@ -87,6 +92,14 @@ const Message = ({
 	} else if (showLogic && !activeClue.hints[nextHint].reveals) {
 		messageButton = [buttons.nextLogic]
 
+		// Completed with hint reveal && today's clue
+	} else if (isSolution && !showLogic && solutionRevealedViaHint && isTodayClue) {
+		messageButton = [buttons.shareScore, buttons.endClueHint]
+
+		// Completed with hint reveal && not today's clue
+	} else if (isSolution && !showLogic && solutionRevealedViaHint && !isTodayClue) {
+		messageButton = [buttons.endClueHint]
+
 		// Completed with hint, more clues
 	} else if (isSolution && !showLogic) {
 		messageButton = [buttons.endClueHint]
@@ -103,10 +116,13 @@ const Message = ({
 		? 'is-correct-ans'
 		: 'continue'
 
+	// Hide message text during showLogic mode (tooltip shows it instead)
+	const hideMessageInLogicMode = showLogic && !checkAns
+
 	return (
 		<div className={`message ${messageStyle} bg-white dark:!bg-neutral-800 dark:!text-neutral-100`} ref={msgContainer}>
 			{checkAns && isCorrectAns && <Celebration />}
-			{message && (
+			{message && !hideMessageInLogicMode && (
 				<div className={'message-copy lc-container'}>
 					{message}
 					{explainer && (!checkAns || isCorrectAns) && <div className={'explainer'}>{explainer}</div>}

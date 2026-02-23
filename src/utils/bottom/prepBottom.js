@@ -223,17 +223,8 @@ const prepBottom = (
 		},
 	}
 
+	// No buttons needed - hint icon with confirmation handles reveal
 	let btnArr = []
-
-	if (activeClue.hints[nextHint].reveals) {
-		// Only show "Reveal Solution" if it's not today's clue
-		if (!isTodaysClue()) {
-			btnArr = [buttons.revealSolution]
-		} else {
-			// For today's clue, show no buttons when it would reveal solution
-			btnArr = []
-		}
-	}
 
 	// Check if all positions are filled (either typed or revealed)
 	const allPositionsFilled = activeClue.solution.arr.every((_, index) => {

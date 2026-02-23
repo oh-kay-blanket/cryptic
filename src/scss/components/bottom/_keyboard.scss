@@ -3,13 +3,11 @@
 .keyboard {
   width: 100%;
   height: $lc-keyboard-height;
-  padding: 0 0 0.5rem;
+  // Use safe area inset for devices with home indicators (notched iPhones)
+  // Falls back to 0 on devices without safe areas
+  padding: 0 0 env(safe-area-inset-bottom, 0);
   text-align: center;
   align-self: flex-end;
-
-  @media (max-height: 600px) {
-    padding: 0 0 0.25rem;
-  }
 
   .k-row {
     display: flex;

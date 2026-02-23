@@ -39,31 +39,50 @@ html.dark .modal-bg .modal {
 // Reveal letter popup that floats above the clicked tile
 .reveal-popup {
 	font-family: $lc-font--sans;
-	background-color: #fff;
+	background-color: #f5f5f5;
+	border: 1px solid #d4d4d4;
 	color: #171717;
 	border-radius: 4px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
 	.popup-arrow {
 		position: absolute;
-		bottom: -6px;
+		bottom: -8px;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 0;
 		height: 0;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		border-top: 6px solid #fff;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 7px solid #d4d4d4;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0;
+			height: 0;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-top: 6px solid #f5f5f5;
+		}
 	}
 }
 
 // Dark mode reveal popup
 html.dark .reveal-popup {
-	background-color: #3d3d3d;
+	background-color: #404040;
+	border-color: #525252;
 	color: #f5f5f5;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
 	.popup-arrow {
-		border-top-color: #3d3d3d;
+		border-top-color: #525252;
+
+		&::after {
+			border-top-color: #404040;
+		}
 	}
 }
