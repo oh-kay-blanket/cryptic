@@ -11,11 +11,14 @@ import { UserContext } from "../utils/UserContext";
 
 // Difficulty grid component
 const DifficultyGrid = ({ difficulty }) => (
-  <div className={`difficulty-grid difficulty-${difficulty}`} aria-label={`Difficulty ${difficulty}`}>
+  <div
+    className={`difficulty-grid difficulty-${difficulty}`}
+    aria-label={`Difficulty ${difficulty}`}
+  >
     {[0, 1, 2, 3].map((i) => (
       <div
         key={i}
-        className={`difficulty-square ${i < difficulty ? 'filled' : ''}`}
+        className={`difficulty-square ${i < difficulty ? "filled" : ""}`}
       />
     ))}
   </div>
@@ -26,12 +29,14 @@ const FilterModal = ({ open, onClose, children }) => {
   useEffect(() => {
     const preventDefault = (e) => e.preventDefault();
     if (open) {
-      document.addEventListener('wheel', preventDefault, { passive: false });
-      document.addEventListener('touchmove', preventDefault, { passive: false });
+      document.addEventListener("wheel", preventDefault, { passive: false });
+      document.addEventListener("touchmove", preventDefault, {
+        passive: false,
+      });
     }
     return () => {
-      document.removeEventListener('wheel', preventDefault);
-      document.removeEventListener('touchmove', preventDefault);
+      document.removeEventListener("wheel", preventDefault);
+      document.removeEventListener("touchmove", preventDefault);
     };
   }, [open]);
 
@@ -91,12 +96,16 @@ const Clues = ({ data }) => {
   const [filterModalOpen, setFilterModalOpen] = useState(false);
 
   // Get unique authors and types for filter dropdowns
-  const uniqueAuthors = [...new Set(cluesData.map(c => c.source?.value).filter(Boolean))].sort();
-  const uniqueTypes = [...new Set(
-    cluesData
-      .flatMap(c => c.type ? c.type.split(", ").map(t => t.trim()) : [])
-      .filter(Boolean)
-  )].sort();
+  const uniqueAuthors = [
+    ...new Set(cluesData.map((c) => c.source?.value).filter(Boolean)),
+  ].sort();
+  const uniqueTypes = [
+    ...new Set(
+      cluesData
+        .flatMap((c) => (c.type ? c.type.split(", ").map((t) => t.trim()) : []))
+        .filter(Boolean),
+    ),
+  ].sort();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -138,7 +147,10 @@ const Clues = ({ data }) => {
     if (!isTodayOrBefore(clue.release)) return false;
 
     // Difficulty filter
-    if (difficultyFilter !== "all" && String(clue.difficulty) !== difficultyFilter) {
+    if (
+      difficultyFilter !== "all" &&
+      String(clue.difficulty) !== difficultyFilter
+    ) {
       return false;
     }
 
@@ -149,7 +161,9 @@ const Clues = ({ data }) => {
 
     // Type filter
     if (typeFilter !== "all") {
-      const clueTypes = clue.type ? clue.type.split(", ").map(t => t.trim()) : [];
+      const clueTypes = clue.type
+        ? clue.type.split(", ").map((t) => t.trim())
+        : [];
       if (!clueTypes.includes(typeFilter)) {
         return false;
       }
@@ -158,7 +172,7 @@ const Clues = ({ data }) => {
     // Unsolved filter
     if (unsolvedFilter) {
       const completedClue = completedClues.find(
-        (c) => c.id === clue.clid || c.clid === clue.clid
+        (c) => c.id === clue.clid || c.clid === clue.clid,
       );
       if (completedClue && completedClue.how === "g") {
         return false;
@@ -172,7 +186,7 @@ const Clues = ({ data }) => {
     const getRelease = (release) => new Date(release);
 
     const completedClue = completedClues.find(
-      (c) => c.id === clue.clid || c.clid === clue.clid
+      (c) => c.id === clue.clid || c.clid === clue.clid,
     );
 
     const stats = completedClue && (
@@ -219,8 +233,8 @@ const Clues = ({ data }) => {
                       ? "rgb(120, 70, 45)"
                       : "#4A3F6B"
                     : completedClue.how === "g"
-                    ? "#FFCBAB"
-                    : "#eae4ff",
+                      ? "#FFCBAB"
+                      : "#eae4ff",
                 }
               : {}),
           }}
@@ -291,13 +305,11 @@ const Clues = ({ data }) => {
             }}
           >
             <div className="tile-img-stats">
+              {!isHovered && <DifficultyGrid difficulty={clue.difficulty} />}
               {!isHovered &&
                 !!completedClue &&
                 completedClue.how === "g" &&
                 stats}
-              {!isHovered && (
-                <DifficultyGrid difficulty={clue.difficulty} />
-              )}
             </div>
             {isHovered ? (
               <div className="tile-info">
@@ -322,13 +334,17 @@ const Clues = ({ data }) => {
     setTypeFilter("all");
   };
 
-  const hasActiveFilters = difficultyFilter !== "all" || authorFilter !== "all" || unsolvedFilter || typeFilter !== "all";
+  const hasActiveFilters =
+    difficultyFilter !== "all" ||
+    authorFilter !== "all" ||
+    unsolvedFilter ||
+    typeFilter !== "all";
 
   const activeFilterCount = [
     difficultyFilter !== "all",
     authorFilter !== "all",
     typeFilter !== "all",
-    unsolvedFilter
+    unsolvedFilter,
   ].filter(Boolean).length;
 
   return (
@@ -339,8 +355,8 @@ const Clues = ({ data }) => {
             onClick={() => setFilterModalOpen(true)}
             className={`filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors ${
               hasActiveFilters
-                ? 'bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700 text-purple-800 dark:text-purple-200'
-                : 'bg-white dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-600'
+                ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700 text-purple-800 dark:text-purple-200"
+                : "bg-white dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-600"
             }`}
           >
             <FilterIcon />
@@ -362,14 +378,17 @@ const Clues = ({ data }) => {
           )}
 
           <span className="filter-count text-neutral-500 dark:text-neutral-400 ml-auto">
-            {archiveTiles.length} clue{archiveTiles.length !== 1 ? 's' : ''}
+            {archiveTiles.length} clue{archiveTiles.length !== 1 ? "s" : ""}
           </span>
         </div>
 
         <div className="clues-grid">{archiveTiles}</div>
       </div>
 
-      <FilterModal open={filterModalOpen} onClose={() => setFilterModalOpen(false)}>
+      <FilterModal
+        open={filterModalOpen}
+        onClose={() => setFilterModalOpen(false)}
+      >
         <h2 className="text-lg font-semibold mb-4">Filter Clues</h2>
 
         <div className="filter-group mb-4">
@@ -383,7 +402,9 @@ const Clues = ({ data }) => {
           >
             <option value="all">All types</option>
             {uniqueTypes.map((type) => (
-              <option key={type} value={type}>{type}</option>
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
           </select>
         </div>
@@ -416,7 +437,9 @@ const Clues = ({ data }) => {
           >
             <option value="all">All authors</option>
             {uniqueAuthors.map((author) => (
-              <option key={author} value={author}>{author}</option>
+              <option key={author} value={author}>
+                {author}
+              </option>
             ))}
           </select>
         </div>
@@ -429,7 +452,9 @@ const Clues = ({ data }) => {
               onChange={(e) => setUnsolvedFilter(e.target.checked)}
               className="rounded w-4 h-4"
             />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300">Show unsolved only</span>
+            <span className="text-sm text-neutral-700 dark:text-neutral-300">
+              Show unsolved only
+            </span>
           </label>
         </div>
 
@@ -469,29 +494,41 @@ export const Head = () => (
     <link rel="canonical" href="https://learncryptic.com/clues" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://learncryptic.com/clues" />
-    <meta property="og:title" content="All Cryptic Crossword Clues - Learn Cryptic Archive" />
-    <meta property="og:description" content="Browse all daily cryptic crossword clues. Practice with past puzzles and improve your cryptic crossword skills." />
+    <meta
+      property="og:title"
+      content="All Cryptic Crossword Clues - Learn Cryptic Archive"
+    />
+    <meta
+      property="og:description"
+      content="Browse all daily cryptic crossword clues. Practice with past puzzles and improve your cryptic crossword skills."
+    />
     <meta property="og:image" content="https://learncryptic.com/social.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "All Cryptic Crossword Clues",
-        "description": "Browse all daily cryptic crossword clues. Practice with past puzzles, track your solving statistics, and improve your cryptic crossword skills.",
-        "url": "https://learncryptic.com/clues",
-        "isPartOf": {
+        name: "All Cryptic Crossword Clues",
+        description:
+          "Browse all daily cryptic crossword clues. Practice with past puzzles, track your solving statistics, and improve your cryptic crossword skills.",
+        url: "https://learncryptic.com/clues",
+        isPartOf: {
           "@type": "WebSite",
-          "name": "Learn Cryptic",
-          "url": "https://learncryptic.com"
+          name: "Learn Cryptic",
+          url: "https://learncryptic.com",
         },
-        "breadcrumb": {
+        breadcrumb: {
           "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learncryptic.com" },
-            { "@type": "ListItem", "position": 2, "name": "All Clues" }
-          ]
-        }
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://learncryptic.com",
+            },
+            { "@type": "ListItem", position: 2, name: "All Clues" },
+          ],
+        },
       })}
     </script>
   </>
