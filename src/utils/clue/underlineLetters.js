@@ -1,11 +1,13 @@
+// Underlines definition letters using inline styles
+// Using inline styles instead of classList to prevent React from overwriting on re-render
+const underlineLetters = (definitionLettersRef) => {
+	if (!definitionLettersRef || !Array.isArray(definitionLettersRef)) return
 
-// moves letters from movementLettersRef to solutionLettersRef
-const underlineLetters = (defintionLettersRef) => {
-	
-	defintionLettersRef.forEach( ref => {
-		ref.current.classList.add('underline')
+	definitionLettersRef.forEach(ref => {
+		if (ref && ref.current) {
+			ref.current.style.textDecoration = 'underline'
+		}
 	})
-
 }
 
 export default underlineLetters

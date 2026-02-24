@@ -269,34 +269,26 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 		// If this is the revealing hint, end clue.
 		if (hint.reveals) {
 			setTimeout(() => {
-				try {
+				if (activeClue.solution.sectionRef?.current) {
 					activeClue.solution.sectionRef.current.classList.add('hide-input')
-				} catch (e) {
-					console.log(e)
 				}
 			}, 2500)
 			setTimeout(() => {
-				try {
-					activeClue.solution.sectionRef.current.classList.add(
-						'reveal-solution'
-					)
-				} catch (e) {
-					console.log(e)
+				if (activeClue.solution.sectionRef?.current) {
+					activeClue.solution.sectionRef.current.classList.add('reveal-solution')
 				}
 			}, 2500)
 			setTimeout(() => {
-				try {
+				if (activeClue.source.ref?.current) {
 					activeClue.source.ref.current.classList.add('show')
-				} catch (e) {
-					console.log(e)
 				}
 			}, 2500)
 		}
 	}
 
-	// Change last hint to gray when going back to play
-	if (nextHint > 1 && !showMessage && !checkAns) {
-		
+	// Change last hint to gray when going back to play (regular hint mode only)
+	// This runs when user dismisses a hint and continues playing
+	if (nextHint > 1 && !showMessage && !checkAns && !showLogic) {
 		try {
 			// Gray out highlighting
 			highlightLetters(prevHint.ref, false, true)
@@ -308,25 +300,12 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 				changeColor(prevHint.ref, false, true)
 			}
 
-			// For hints in logic display, keep letters gray instead of resetting to primary
+			// Reset addLetters to primary color
 			if (prevHint.category !== 'deletion') {
-				if (showLogic && (prevHint.category === 'anagram' || prevHint.category === 'letter bank'|| hint.category === 'container')) {
-					changeColor(prevHint.addLetters.ref.current, '#ccc')
-				} else {
-					changeColor(prevHint.addLetters.ref.current, false, true)
-				}
+				changeColor(prevHint.addLetters.ref.current, false, true)
 			} else {
 				changeColor(activeClue.hints[nextHint - 2].addLetters.ref.current, false, true)
 			}
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
-	// Gray out previous hint's background during showLogic stepping
-	if (showLogic && nextHint > 1 && showMessage) {
-		try {
-			highlightLetters(prevHint.ref, false, true)
 		} catch (err) {
 			console.log(err)
 		}

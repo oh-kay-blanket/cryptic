@@ -1,6 +1,7 @@
-
-// moves letters from movementLettersRef to solutionLettersRef
+// Highlights letters in the clue by setting background color
 const highlightLetters = (indicatedLettersRef, color = false, recheck) => {
+	// Guard against undefined or empty arrays
+	if (!indicatedLettersRef || !Array.isArray(indicatedLettersRef) || indicatedLettersRef.length === 0) return
 
 	// Helper function to get CSS custom property values
 	const getCSSVariable = (variable) => {
@@ -24,6 +25,7 @@ const highlightLetters = (indicatedLettersRef, color = false, recheck) => {
 	}
 	
 	indicatedLettersRef.forEach( ref => {
+		if (!ref || !ref.current) return
 		if (recheck) {
 			// Set to muted gray background to show previously highlighted
 			ref.current.style.backgroundColor = getCSSVariable('--lc-bg-muted')

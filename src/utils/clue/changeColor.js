@@ -1,4 +1,6 @@
 const changeColor = (toChange, color = false, recheck = false) => {
+	// Guard against undefined or null
+	if (!toChange) return
 
 	// Helper function to get CSS custom property values
 	const getCSSVariable = (variable) => {
@@ -28,7 +30,7 @@ const changeColor = (toChange, color = false, recheck = false) => {
 
 	if (Array.isArray(toChange)) {
 		toChange.forEach( ref => {
-
+			if (!ref || !ref.current) return
 			if (recheck) {
 				// Reset to primary text color
 				ref.current.style.color = getCSSVariable('--lc-text-primary')
@@ -38,6 +40,7 @@ const changeColor = (toChange, color = false, recheck = false) => {
 			}
 		})
 	} else {
+		if (!toChange || !toChange.current) return
 		if (recheck) {
 			// Reset to primary text color
 			toChange.current.style.color = getCSSVariable('--lc-text-primary')

@@ -187,12 +187,6 @@ const prepBottom = (
 			name: 'Show logic',
 			style: 'alt',
 			onClick: function () {
-				// Skip first part of two-step hints (synonym) in show logic mode
-				let startHint = nextHint
-				if (activeClue.hints[startHint]?.category === 'synonym') {
-					startHint++
-				}
-				setNextHint(startHint)
 				setShowLogic(true)
 				setCheckAns(false)
 				setShowMessage(true)
@@ -202,12 +196,7 @@ const prepBottom = (
 			name: 'Next',
 			style: 'alt',
 			onClick: function () {
-				// Skip first part of two-step hints (synonym) in show logic mode
-				let next = nextHint + 1
-				if (activeClue.hints[next]?.category === 'synonym') {
-					next++
-				}
-				setNextHint(next)
+				setNextHint(nextHint + 1)
 				setCheckAns(false)
 				setShowMessage(true)
 			},

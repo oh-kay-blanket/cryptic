@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import handleHint from './handleHint'
 
 const useManageClue = (activeClue) => {
+	// Keep a ref to always access the latest activeClue
+	const activeClueRef = useRef(activeClue)
+	activeClueRef.current = activeClue
 
 	// state
 	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
@@ -146,14 +149,15 @@ const useManageClue = (activeClue) => {
         })
     }
 	
-	// runs when showMessage changes or during showLogic stepping
+	// runs when showMessage changes (but not during showLogic - that's handled in CluePage)
 	useEffect(() => {
-		// Only run handleHint when showMessage is true (showing completion/logic message)
+		// Only run handleHint when showMessage is true and NOT in showLogic mode
+		// In showLogic mode, CluePage's effect handles calling handleHint
 		// In regular hint mode, handleHint is called directly from handleShowHint
-		if (showMessage) {
-			handleHint(activeClue, nextHint, showMessage, checkAns, showLogic)
+		if (showMessage && !showLogic) {
+			handleHint(activeClueRef.current, nextHint, showMessage, checkAns, showLogic)
 		}
-	}, [showMessage, activeClue, nextHint, checkAns, showLogic])
+	}, [showMessage, nextHint, checkAns, showLogic])
 
 	return {
 		stats,
