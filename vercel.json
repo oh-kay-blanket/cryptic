@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.learncryptic.com"
+        }
+      ],
+      "destination": "https://learncryptic.com/:path*",
+      "permanent": true
+    }
+  ]
+}
