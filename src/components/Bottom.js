@@ -32,6 +32,7 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 					showLogic={showLogic}
 					setShowLogic={setShowLogic}
 					solutionRevealedViaHint={solutionRevealedViaHint}
+					stats={stats}
 				/> :
 				<>
 					<ButtonContainer
