@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import TopBar from './TopBar'
 import ScrollToTop from './ScrollToTop'
 
@@ -8,6 +9,7 @@ const Layout = ({ children }) => {
 			<ScrollToTop />
 			<TopBar />
 			<main className="flex-1">{children}</main>
+			<Analytics />
 		</div>
 	)
 }
