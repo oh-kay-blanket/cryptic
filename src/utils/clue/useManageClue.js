@@ -7,6 +7,12 @@ const useManageClue = (activeClue) => {
 	const activeClueRef = useRef(activeClue)
 	activeClueRef.current = activeClue
 
+	// Timer - track when user started this clue
+	const startTime = useRef(Date.now())
+
+	// Get solve time in seconds
+	const getSolveTime = () => Math.round((Date.now() - startTime.current) / 1000)
+
 	// state
 	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
     const [input, setInput] = useState([])
@@ -179,7 +185,8 @@ const useManageClue = (activeClue) => {
 		setShowRevealPrompt,
 		revealPromptIndex,
 		handleRevealLetter,
-		handleSquareClick
+		handleSquareClick,
+		getSolveTime
 	}
 }
 

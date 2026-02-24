@@ -45,6 +45,15 @@
     width: 100%;
     min-width: 0; // Allow content to shrink for text truncation
 
+    // Alternating row backgrounds
+    &:nth-child(even) {
+      background-color: #fafafa;
+
+      html.dark & {
+        background-color: #262626;
+      }
+    }
+
     .archive-release {
       width: 60px;
       margin-right: 8px;
@@ -257,9 +266,10 @@
         margin-left: 0.5rem;
 
         .stat-hints,
-        .stat-guesses {
-          font-size: 0.8rem;
-          padding: 3px 6px;
+        .stat-guesses,
+        .stat-time {
+          font-size: 0.75rem;
+          padding: 2px 5px;
         }
 
         .stat-hints {
@@ -271,6 +281,21 @@
         .stat-guesses {
           background-color: var(--lc-active-bg);
           color: var(--lc-text-primary);
+          border-radius: 0;
+        }
+
+        .stat-time {
+          background-color: #e5e5e5;
+          color: var(--lc-text-primary);
+          border-radius: 0 4px 4px 0;
+
+          html.dark & {
+            background-color: #525252;
+          }
+        }
+
+        // When there's no time stat, guesses should have right border radius
+        .stat-guesses:last-child {
           border-radius: 0 4px 4px 0;
         }
       }

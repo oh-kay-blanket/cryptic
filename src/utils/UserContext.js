@@ -11,6 +11,8 @@ export const UserContext = createContext({
 export const UserProvider = ({ children }) => {
   const [returnLearn, setReturnLearn] = useState(false);
   const [currentStats, setCurrentStats] = useState(null); // { hints: 0, guesses: 0 } when on clue page
+  const [clueStartTime, setClueStartTime] = useState(null); // timestamp when clue was started
+  const [clueSolvedTime, setClueSolvedTime] = useState(null); // final solve time in seconds when clue is completed
 
   // manage lcState
   const [lcState, setLcState] = useState(() => {
@@ -122,7 +124,7 @@ export const UserProvider = ({ children }) => {
   }, [darkMode]);
 
   // Functions
-  const addCompletedClue = (activeClue, stats, type) => {
+  const addCompletedClue = (activeClue, stats, type, solveTime = null) => {
     const guesses = type === "g" ? stats.guesses + 1 : stats.guesses;
     const hints = type === "h" ? stats.hints + 1 : stats.hints;
     const repeat = completedClues.find(
@@ -145,19 +147,23 @@ export const UserProvider = ({ children }) => {
 
     // Only update if not already in completedClues
     if (!repeat) {
+      const completedClueEntry = {
+        clid: activeClue.clid,
+        guesses: guesses,
+        hints: hints,
+        how: type,
+      };
+
+      // Only add solveTime if provided
+      if (solveTime != null) {
+        completedClueEntry.solveTime = solveTime;
+      }
+
       const newState = {
         ...lcState,
         streak: streak,
         longestStreak: longestStreak,
-        completedClues: [
-          ...lcState.completedClues,
-          {
-            clid: activeClue.clid,
-            guesses: guesses,
-            hints: hints,
-            how: type,
-          },
-        ],
+        completedClues: [...lcState.completedClues, completedClueEntry],
       };
 
       // Only update lastSolved if this is today's clue
@@ -172,6 +178,16 @@ export const UserProvider = ({ children }) => {
 
     // GA event - only track daily clue completions
     if (isToday && typeof window.gtag !== "undefined") {
+      // Calculate average solve time from clues that have solveTime
+      const cluesWithTime = completedClues.filter((c) => c.solveTime != null);
+      const avgSolveTime =
+        cluesWithTime.length > 0
+          ? Math.round(
+              cluesWithTime.reduce((sum, c) => sum + c.solveTime, 0) /
+                cluesWithTime.length,
+            )
+          : null;
+
       window.gtag("event", "completed_daily_clue", {
         clid: activeClue.clid,
         release: activeClue.release,
@@ -193,6 +209,8 @@ export const UserProvider = ({ children }) => {
           completedClues.length
         ).toFixed(1),
         clue_complete_count: 1,
+        solve_time_seconds: solveTime,
+        avg_solve_time: avgSolveTime,
       });
     }
   };
@@ -237,6 +255,10 @@ export const UserProvider = ({ children }) => {
       setDarkMode,
       currentStats,
       setCurrentStats,
+      clueStartTime,
+      setClueStartTime,
+      clueSolvedTime,
+      setClueSolvedTime,
     }),
     [
       completedClues,
@@ -247,6 +269,8 @@ export const UserProvider = ({ children }) => {
       returnLearn,
       darkMode,
       currentStats,
+      clueStartTime,
+      clueSolvedTime,
     ],
   );
 

@@ -19,6 +19,7 @@ import {
 	isTodayClue,
 	daysBetween,
 	shouldResetStreak,
+	formatTime,
 } from '../dateHelpers'
 
 /**
@@ -264,6 +265,42 @@ describe('dateHelpers', () => {
 
 			expect(shouldResetStreak(yesterday, 5)).toBe(false)
 			expect(shouldResetStreak(twoDaysAgo, 5)).toBe(true)
+		})
+	})
+
+	/**
+	 * FUNCTION: formatTime()
+	 * Purpose: Format seconds to human-readable time string
+	 */
+	describe('formatTime', () => {
+		it('should format times under 60 seconds with "s" suffix', () => {
+			expect(formatTime(0)).toBe('0s')
+			expect(formatTime(1)).toBe('1s')
+			expect(formatTime(45)).toBe('45s')
+			expect(formatTime(59)).toBe('59s')
+		})
+
+		it('should format times at or above 60 seconds as M:SS', () => {
+			expect(formatTime(60)).toBe('1:00')
+			expect(formatTime(90)).toBe('1:30')
+			expect(formatTime(125)).toBe('2:05')
+			expect(formatTime(165)).toBe('2:45')
+		})
+
+		it('should pad seconds with leading zero', () => {
+			expect(formatTime(61)).toBe('1:01')
+			expect(formatTime(69)).toBe('1:09')
+			expect(formatTime(600)).toBe('10:00')
+		})
+
+		it('should return empty string for null or undefined', () => {
+			expect(formatTime(null)).toBe('')
+			expect(formatTime(undefined)).toBe('')
+		})
+
+		it('should handle large times', () => {
+			expect(formatTime(3600)).toBe('60:00')
+			expect(formatTime(3661)).toBe('61:01')
 		})
 	})
 })

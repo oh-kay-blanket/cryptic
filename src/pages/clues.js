@@ -8,6 +8,7 @@ import React, {
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
+import { formatTime } from "../utils/dateHelpers";
 
 // Difficulty grid component
 const DifficultyGrid = ({ difficulty }) => (
@@ -191,8 +192,11 @@ const Clues = ({ data }) => {
 
     const stats = completedClue && (
       <div className="tile-stats-cell">
-        <span className="stat-hints">{completedClue.hints}</span>
-        <span className="stat-guesses">{completedClue.guesses}</span>
+        <span className="stat-hints">{completedClue.hints}h</span>
+        <span className="stat-guesses">{completedClue.guesses}g</span>
+        {completedClue.solveTime != null && (
+          <span className="stat-time">{formatTime(completedClue.solveTime)}</span>
+        )}
       </div>
     );
 
@@ -338,6 +342,20 @@ const Clues = ({ data }) => {
                     >
                       {completedClue.guesses} {completedClue.guesses === 1 ? "guess" : "guesses"}
                     </span>
+                    {completedClue.solveTime != null && (
+                      <span
+                        style={{
+                          backgroundColor: "#e5e5e5",
+                          color: "var(--lc-text-primary)",
+                          padding: "2px 6px",
+                          borderRadius: "4px",
+                          fontSize: "0.75rem",
+                        }}
+                        className="dark:!bg-neutral-600"
+                      >
+                        {formatTime(completedClue.solveTime)}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>

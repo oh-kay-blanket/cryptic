@@ -107,3 +107,29 @@ export const shouldResetStreak = (lastSolvedDate, currentStreak = 0) => {
 	// 0 = today, 1 = yesterday, 2+ = streak broken
 	return daysDifference > 1
 }
+
+/**
+ * Formats a time in seconds to a human-readable string
+ *
+ * @param {number|null|undefined} seconds - Time in seconds
+ * @returns {string} Formatted time string ("M:SS" for >= 60s, "Xs" for < 60s)
+ *
+ * @example
+ * formatTime(45) // "45s"
+ * formatTime(90) // "1:30"
+ * formatTime(165) // "2:45"
+ * formatTime(null) // ""
+ */
+export const formatTime = (seconds) => {
+	if (seconds == null) {
+		return ''
+	}
+
+	if (seconds < 60) {
+		return `${seconds}s`
+	}
+
+	const minutes = Math.floor(seconds / 60)
+	const remainingSeconds = seconds % 60
+	return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`
+}

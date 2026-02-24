@@ -1,5 +1,5 @@
 import React from 'react'
-import { isTodayClue } from '../dateHelpers'
+import { isTodayClue, formatTime } from '../dateHelpers'
 
 const prepBottom = (
 	activeClue,
@@ -17,16 +17,17 @@ const prepBottom = (
 	setCheckAns,
 	showLogic,
 	setShowLogic,
-	revealedLetters = []
+	revealedLetters = [],
+	getSolveTime = null,
+	setClueSolvedTime = null
 ) => {
 	// Check if this is today's clue
 	const isTodaysClue = () => isTodayClue(activeClue)
-	const shareScore = async () => {
-		const date = new Date(activeClue.release) // or your clue.date
+	const shareScore = async (solveTime = null) => {
+		const date = new Date(activeClue.release)
 		const dateFormatted = new Intl.DateTimeFormat('en-US', {
-			month: 'long',
+			month: 'short',
 			day: 'numeric',
-			year: 'numeric',
 		}).format(date)
 
 		const perfectEmojis = [
@@ -47,13 +48,16 @@ const prepBottom = (
 				? perfectEmojis[Math.floor(Math.random() * perfectEmojis.length)]
 				: '🎉'
 
-		const scoreText = `Learn Cryptic #${
-			activeClue.clid
-		}\n${dateFormatted}\n${emoji} ${stats.guesses} ${
-			stats.guesses === 1 ? 'guess' : 'guesses'
-		}, ${stats.hints} ${
-			stats.hints === 1 ? 'hint' : 'hints'
-		}\nlearncryptic.com`.trim()
+		// Build stats line - prioritize stats over metadata
+		const guessText = `${stats.guesses} ${stats.guesses === 1 ? 'guess' : 'guesses'}`
+		const hintText = `${stats.hints} ${stats.hints === 1 ? 'hint' : 'hints'}`
+		const timeText = solveTime != null ? formatTime(solveTime) : null
+
+		const statsLine = timeText
+			? `${emoji} ${guessText} • ${hintText} • ${timeText}`
+			: `${emoji} ${guessText} • ${hintText}`
+
+		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid} • ${dateFormatted}\nlearncryptic.com`
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
@@ -111,7 +115,12 @@ const prepBottom = (
 					input.join('').toUpperCase() ===
 					activeClue.solution.arr.join('').toUpperCase()
 				if (correct) {
-					addCompletedClue(activeClue, stats, 'g')
+					const solveTime = getSolveTime ? getSolveTime() : null
+					addCompletedClue(activeClue, stats, 'g', solveTime)
+					// Stop the timer by setting the final solve time
+					if (setClueSolvedTime && solveTime != null) {
+						setClueSolvedTime(solveTime)
+					}
 					setStats((prevStats) => ({
 						...prevStats,
 						guesses: prevStats.guesses + 1,
@@ -220,7 +229,8 @@ const prepBottom = (
 			),
 			style: 'secondary',
 			onClick: function () {
-				shareScore()
+				const solveTime = getSolveTime ? getSolveTime() : null
+				shareScore(solveTime)
 			},
 		},
 		endClueShowLogic: {

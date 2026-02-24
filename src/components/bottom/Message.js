@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import ButtonContainer from "./ButtonContainer";
 import Celebration from "./Celebration";
 
 import getMessage from "../../utils/bottom/getMessage";
+import { formatTime } from "../../utils/dateHelpers";
 
 const Message = ({
   activeClue,
@@ -17,8 +18,17 @@ const Message = ({
   setShowLogic,
   solutionRevealedViaHint,
   stats,
+  getSolveTime,
 }) => {
   const msgContainer = useRef();
+
+  // Capture solve time once when component mounts (when answer is correct)
+  const solveTime = useMemo(() => {
+    if (checkAns && isCorrectAns && getSolveTime) {
+      return getSolveTime();
+    }
+    return null;
+  }, [checkAns, isCorrectAns, getSolveTime]);
 
   // figure out which text to display
   const message = checkAns ? (
@@ -57,6 +67,21 @@ const Message = ({
           >
             {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
           </span>
+          {solveTime != null && (
+            <span
+              style={{
+                backgroundColor: "#e5e5e5",
+                color: "var(--lc-text-primary)",
+                padding: "2px 6px",
+                lineHeight: "1.5",
+                borderRadius: "4px",
+                fontSize: "0.875rem",
+              }}
+              className="dark:!bg-neutral-600"
+            >
+              {formatTime(solveTime)}
+            </span>
+          )}
         </div>
       </div>
     ) : (

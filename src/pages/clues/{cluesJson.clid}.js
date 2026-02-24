@@ -175,6 +175,8 @@ const CluePage = ({ data }) => {
     setReturnLearn,
     streak,
     setCurrentStats,
+    setClueStartTime,
+    setClueSolvedTime,
   } = useContext(UserContext);
 
   // Set up activeClue
@@ -204,12 +206,24 @@ const CluePage = ({ data }) => {
     revealPromptIndex,
     handleRevealLetter,
     handleSquareClick,
+    getSolveTime,
   } = manageClue(activeClue);
 
-  // Sync stats to context for TopBar display
+  // Sync stats and start time to context for TopBar display
   useEffect(() => {
     setCurrentStats(stats);
-    return () => setCurrentStats(null);
+    setClueStartTime(Date.now());
+    setClueSolvedTime(null); // Reset solved time for new clue
+    return () => {
+      setCurrentStats(null);
+      setClueStartTime(null);
+      setClueSolvedTime(null);
+    };
+  }, [setCurrentStats, setClueStartTime, setClueSolvedTime]);
+
+  // Update stats in context when they change
+  useEffect(() => {
+    setCurrentStats(stats);
   }, [stats, setCurrentStats]);
 
   // Calculate tooltip position based on hint refs
@@ -991,6 +1005,8 @@ const CluePage = ({ data }) => {
           setShowLogic={setShowLogic}
           revealedLetters={revealedLetters}
           solutionRevealedViaHint={solutionRevealedViaHint}
+          getSolveTime={getSolveTime}
+          setClueSolvedTime={setClueSolvedTime}
         />
       </div>
 

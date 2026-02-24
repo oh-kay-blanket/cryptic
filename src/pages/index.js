@@ -4,7 +4,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
-import { isTodayClue } from '../utils/dateHelpers'
+import { isTodayClue, formatTime } from '../utils/dateHelpers'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
@@ -25,6 +25,9 @@ const Title = ({ data }) => {
 	const todayHints = completedGuess.find(
 		(clue) => clue.clid === todayClue.clid
 	)?.hints
+	const todaySolveTime = completedGuess.find(
+		(clue) => clue.clid === todayClue.clid
+	)?.solveTime
 
 	// Add loading state to prevent flicker
 	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
@@ -97,6 +100,15 @@ const Title = ({ data }) => {
 							<span className='highlight-hints whitespace-nowrap'>
 								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
 							</span>
+							{todaySolveTime != null && (
+								<>
+									{' '}
+									in{' '}
+									<span className='highlight-time whitespace-nowrap'>
+										{formatTime(todaySolveTime)}
+									</span>
+								</>
+							)}
 							{/* {todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'} */}
 						</p>
 						<p data-testid='streak-display'>

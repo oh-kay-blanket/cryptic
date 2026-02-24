@@ -6,9 +6,9 @@ import Message from './bottom/Message'
 
 import prepBottom from '../utils/bottom/prepBottom'
 
-const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, stats, setStats, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, solutionRevealedViaHint }) => {
+const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, stats, setStats, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, solutionRevealedViaHint, getSolveTime, setClueSolvedTime }) => {
 
-	let { buttons, btnArr, isSolution, isCorrectAns, allPositionsFilled, checkAnswer } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters)
+	let { buttons, btnArr, isSolution, isCorrectAns, allPositionsFilled, checkAnswer } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, getSolveTime, setClueSolvedTime)
 
 	// Show Message component for completion states (correct answer, incorrect answer feedback, solution revealed, or show logic mode)
 	const showCompletionMessage = checkAns || isSolution || showLogic
@@ -33,6 +33,7 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 					setShowLogic={setShowLogic}
 					solutionRevealedViaHint={solutionRevealedViaHint}
 					stats={stats}
+					getSolveTime={getSolveTime}
 				/> :
 				<>
 					<ButtonContainer

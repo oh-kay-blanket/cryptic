@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
+import { formatTime } from '../utils/dateHelpers';
 
 import logo from '../assets/img/logo-short.png';
 // Custom info icon component
@@ -101,12 +102,39 @@ const TopBar = () => {
     darkMode,
     setDarkMode,
     currentStats,
+    clueStartTime,
+    clueSolvedTime,
   } = useContext(UserContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
+
+  // Live timer update (stops when clue is solved)
+  useEffect(() => {
+    // If clue is solved, use the final solved time
+    if (clueSolvedTime != null) {
+      setElapsedTime(clueSolvedTime);
+      return;
+    }
+
+    if (!clueStartTime) {
+      setElapsedTime(0);
+      return;
+    }
+
+    // Initial calculation
+    setElapsedTime(Math.round((Date.now() - clueStartTime) / 1000));
+
+    // Update every second
+    const interval = setInterval(() => {
+      setElapsedTime(Math.round((Date.now() - clueStartTime) / 1000));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [clueStartTime, clueSolvedTime]);
 
   // Close tooltip when clicking outside
   useEffect(() => {
@@ -137,6 +165,15 @@ const TopBar = () => {
     totalSolved > 0
       ? (completedClues.reduce((sum, c) => sum + (c.hints || 0), 0) / totalSolved).toFixed(1)
       : '0';
+
+  // Calculate average solve time (only from clues that have solveTime)
+  const cluesWithTime = completedClues.filter((c) => c.solveTime != null);
+  const avgSolveTime =
+    cluesWithTime.length > 0
+      ? Math.round(
+          cluesWithTime.reduce((sum, c) => sum + c.solveTime, 0) / cluesWithTime.length
+        )
+      : null;
 
   return (
     <>
@@ -193,8 +230,9 @@ const TopBar = () => {
                   }
                 }}
               >
-                <span className='stat stat-hints'>{currentStats.hints}</span>
-                <span className='stat stat-guesses'>{currentStats.guesses}</span>
+                <span className='stat stat-hints'>{currentStats.hints}h</span>
+                <span className='stat stat-guesses'>{currentStats.guesses}g</span>
+                <span className='stat stat-time'>{formatTime(elapsedTime)}</span>
                 {showCurrentStatsTooltip && (
                   <div className='current-stats-tooltip'>
                     <span
@@ -220,6 +258,19 @@ const TopBar = () => {
                       }}
                     >
                       {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
+                    </span>
+                    <span
+                      style={{
+                        backgroundColor: '#e5e5e5',
+                        color: 'var(--lc-text-primary)',
+                        padding: '2px 6px',
+                        lineHeight: '1.5',
+                        borderRadius: '4px',
+                        fontSize: '0.875rem',
+                      }}
+                      className='dark:!bg-neutral-600'
+                    >
+                      {formatTime(elapsedTime)}
                     </span>
                   </div>
                 )}
@@ -337,6 +388,11 @@ const TopBar = () => {
           <div className='stat-item'>
             💡 <span className='font-medium mx-1'>Avg hints:</span> {avgHints}
           </div>
+          {avgSolveTime != null && (
+            <div className='stat-item'>
+              ⏱️ <span className='font-medium mx-1'>Avg time:</span> {formatTime(avgSolveTime)}
+            </div>
+          )}
         </div>
       </Modal>
     </>
