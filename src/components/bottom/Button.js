@@ -22,11 +22,12 @@ const Button = ({ btnInfo }) => {
 	}
 
 	const darkModeClasses = getDarkModeClasses(style)
+	const hasIconClass = img ? 'has-icon' : ''
 
 	return(<>
 		{path ?
-			<Link to={path} id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses} ${disabled ? 'disabled' : ''}`} type='button' onClick={disabled ? undefined : onClick}>{name}</Link> :
-			<button id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses} ${disabled ? 'disabled' : ''}`} type='button' disabled={disabled} onClick={disabled ? undefined : onClick}>{name}{img}</button>
+			<Link to={path} id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses} ${hasIconClass} ${disabled ? 'disabled' : ''}`} type='button' onClick={disabled ? undefined : onClick}>{img}{name}</Link> :
+			<button id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses} ${hasIconClass} ${disabled ? 'disabled' : ''}`} type='button' disabled={disabled} onClick={disabled ? undefined : onClick}>{img}{name}</button>
 		}
 	</>)
 }

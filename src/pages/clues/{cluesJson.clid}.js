@@ -48,15 +48,29 @@ const EyeOpenIcon = () => (
 
 const HintIcon = () => (
   <svg
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-500 dark:text-neutral-200"
   >
     <path
-      d="M9 21h6M9 19h6M12 3a6 6 0 0 0-6 6c0 2.22 1.21 4.16 3 5.19V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.81c1.79-1.03 3-2.97 3-5.19a6 6 0 0 0-6-6z"
+      d="M9 18h6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 22h4"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
@@ -987,12 +1001,13 @@ const CluePage = ({ data }) => {
             position: "fixed",
             top: revealSolutionPopupPosition.top - 10,
             left: revealSolutionPopupPosition.left,
-            transform: "translate(-50%, -100%)",
+            transform: "translate(-75%, -100%)",
             zIndex: 100,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             padding: "0.75rem 1rem 0.5rem",
+            whiteSpace: "nowrap",
           }}
           role="dialog"
           aria-modal="true"
@@ -1018,7 +1033,7 @@ const CluePage = ({ data }) => {
           >
             Reveal
           </button>
-          <div className="popup-arrow" />
+          <div className="popup-arrow" style={{ left: "75%" }} />
         </div>
       )}
 
@@ -1029,14 +1044,14 @@ const CluePage = ({ data }) => {
             position: "fixed",
             top: noMoreHintsTooltipPosition.top - 12,
             left: noMoreHintsTooltipPosition.left,
-            transform: "translate(-50%, -100%)",
+            transform: "translate(-75%, -100%)",
             zIndex: 100,
           }}
         >
           <div className="hint-tooltip-content">
             <div className="hint-tooltip-message">No more hints available</div>
           </div>
-          <div className="hint-tooltip-arrow" />
+          <div className="hint-tooltip-arrow" style={{ left: "75%" }} />
         </div>
       )}
 

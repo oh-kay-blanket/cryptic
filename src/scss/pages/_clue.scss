@@ -60,8 +60,7 @@
 
         &.type-text {
           font-family: $lc-font--sans;
-          font-weight: 500;
-          color: $lc-text--light;
+          color: #6b7280; // gray-500
 
           button {
             font-size: 0.7rem;
@@ -71,6 +70,10 @@
         &.eyecon button {
           display: flex;
           padding: 0;
+
+          svg {
+            filter: grayscale(1) brightness(0.7);
+          }
         }
       }
     }

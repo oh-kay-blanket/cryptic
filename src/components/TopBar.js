@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
@@ -14,7 +14,7 @@ const InfoIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <circle cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='1.5' fill='none' />
+    <circle cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='2.5' fill='none' />
     <circle cx='12' cy='9' r='1' fill='currentColor' />
     <path d='M11 12h2v5h-2z' fill='currentColor' />
   </svg>
@@ -105,6 +105,23 @@ const TopBar = () => {
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
+  const currentStatsRef = useRef(null);
+  const tooltipOpenedByClick = useRef(false);
+
+  // Close tooltip when clicking outside
+  useEffect(() => {
+    if (!showCurrentStatsTooltip) return;
+
+    const handleClickOutside = (e) => {
+      if (currentStatsRef.current && !currentStatsRef.current.contains(e.target)) {
+        setShowCurrentStatsTooltip(false);
+        tooltipOpenedByClick.current = false;
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside, true);
+    return () => document.removeEventListener('click', handleClickOutside, true);
+  }, [showCurrentStatsTooltip]);
 
   const clickTitle = () => {
     setReturnLearn(false);
@@ -149,25 +166,61 @@ const TopBar = () => {
             </button>
             {currentStats && (
               <div
-                className='current-stats bg-neutral-200 dark:bg-neutral-600 dark:text-white'
-                onMouseEnter={() => setShowCurrentStatsTooltip(true)}
-                onMouseLeave={() => setShowCurrentStatsTooltip(false)}
-                onClick={() => setShowCurrentStatsTooltip(!showCurrentStatsTooltip)}
+                ref={currentStatsRef}
+                className='current-stats'
+                onMouseEnter={() => {
+                  if (!tooltipOpenedByClick.current) {
+                    setShowCurrentStatsTooltip(true);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (!tooltipOpenedByClick.current) {
+                    setShowCurrentStatsTooltip(false);
+                  }
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  tooltipOpenedByClick.current = !showCurrentStatsTooltip;
+                  setShowCurrentStatsTooltip(!showCurrentStatsTooltip);
+                }}
                 role='button'
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    tooltipOpenedByClick.current = !showCurrentStatsTooltip;
                     setShowCurrentStatsTooltip(!showCurrentStatsTooltip);
                   }
                 }}
               >
-                <span className='stat'>{currentStats.hints}</span>
-                <span className='stat-separator'>:</span>
-                <span className='stat'>{currentStats.guesses}</span>
+                <span className='stat stat-hints'>{currentStats.hints}</span>
+                <span className='stat stat-guesses'>{currentStats.guesses}</span>
                 {showCurrentStatsTooltip && (
                   <div className='current-stats-tooltip'>
-                    {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}, {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
+                    <span
+                      style={{
+                        backgroundColor: 'var(--lc-highlight-bg)',
+                        color: 'var(--lc-text-primary)',
+                        padding: '2px 6px',
+                        lineHeight: '1.5',
+                        borderRadius: '4px',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}
+                    </span>
+                    <span
+                      style={{
+                        backgroundColor: 'var(--lc-active-bg)',
+                        color: 'var(--lc-text-primary)',
+                        padding: '2px 6px',
+                        lineHeight: '1.5',
+                        borderRadius: '4px',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
+                    </span>
                   </div>
                 )}
               </div>

@@ -190,18 +190,10 @@ const Clues = ({ data }) => {
     );
 
     const stats = completedClue && (
-      <>
-        <div className="tile-stats">
-          <span className="stat-hints dark:!bg-[#4A3F6B] dark:!text-white">
-            <span className="stat">{completedClue.hints}</span>&nbsp;
-            {completedClue.hints === 1 ? "hint" : "hints"}
-          </span>
-          <span className="stat-guesses dark:!bg-[rgb(120,70,45)] dark:!text-white">
-            <span className="stat">{completedClue.guesses}</span>&nbsp;
-            {completedClue.guesses === 1 ? "guess" : "guesses"}
-          </span>
-        </div>
-      </>
+      <div className="tile-stats-cell">
+        <span className="stat-hints">{completedClue.hints}</span>
+        <span className="stat-guesses">{completedClue.guesses}</span>
+      </div>
     );
 
     const isHovered = hoveredClue === clue.clid;
@@ -249,7 +241,11 @@ const Clues = ({ data }) => {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            setHoveredClue(hoveredClue === clue.clid ? null : clue.clid);
+            const newHoveredState = hoveredClue === clue.clid ? null : clue.clid;
+            setHoveredClue(newHoveredState);
+            if (!newHoveredState) {
+              setHoveredRelease(null);
+            }
           }}
         >
           <span>
@@ -280,15 +276,12 @@ const Clues = ({ data }) => {
             className={`archive-tile border border-[#ddd] dark:!border-[#404040] hover:dark:!bg-neutral-700 hover:dark:!border-neutral-800 `}
             ref={tilesRef.current[index]}
             style={{
-              ...(isHovered && !!completedClue && completedClue.how === "g"
+              ...(isHovered
                 ? {
-                    backgroundColor: isDarkMode
-                      ? "rgb(120, 70, 45)"
-                      : "#4A3F6B",
-                    color: isDarkMode ? "white" : "black",
+                    backgroundColor: isDarkMode ? "#404040" : "#ddd",
                   }
                 : {}),
-              ...(isReleaseHovered &&
+              ...(!isHovered && isReleaseHovered &&
               !!completedClue &&
               completedClue.how === "g"
                 ? {
@@ -299,7 +292,7 @@ const Clues = ({ data }) => {
                     color: isDarkMode ? "white" : "black",
                   }
                 : {}),
-              ...(isReleaseHovered &&
+              ...(!isHovered && isReleaseHovered &&
               (!completedClue || completedClue.how !== "g")
                 ? {
                     // For incomplete clues: subtle gray background
@@ -321,6 +314,32 @@ const Clues = ({ data }) => {
                   {completionText} • Clue #{clue.clid} • by{" "}
                   {clue.source?.value || "Unknown"}
                 </span>
+                {!!completedClue && completedClue.how === "g" && (
+                  <div className="tile-info-stats">
+                    <span
+                      style={{
+                        backgroundColor: "var(--lc-highlight-bg)",
+                        color: "var(--lc-text-primary)",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
+                    </span>
+                    <span
+                      style={{
+                        backgroundColor: "var(--lc-active-bg)",
+                        color: "var(--lc-text-primary)",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {completedClue.guesses} {completedClue.guesses === 1 ? "guess" : "guesses"}
+                    </span>
+                  </div>
+                )}
               </div>
             ) : (
               <span className="tile-name">{clue.clue.value}</span>

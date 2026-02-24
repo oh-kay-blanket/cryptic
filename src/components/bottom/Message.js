@@ -147,6 +147,10 @@ const Message = ({
   } else if (isSolution && !showLogic) {
     messageButton = [buttons.endClueHint];
 
+    // Incorrect answer - try again
+  } else if (checkAns && !isCorrectAns) {
+    messageButton = [buttons.tryAgain];
+
     // Not complete, continue with game
   } else {
     messageButton = [buttons.continue];
@@ -183,7 +187,7 @@ const Message = ({
       <ButtonContainer
         btnArr={messageButton}
         isSolution={isSolution}
-        stack={isSolution}
+        stack={isSolution && !showLogic}
       />
     </div>
   );

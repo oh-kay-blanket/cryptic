@@ -249,6 +249,31 @@
           background-color: $lc-secondary--light;
         }
       }
+
+      .tile-stats-cell {
+        display: flex;
+        align-items: center;
+        font-family: $lc-font--sans;
+        margin-left: 0.5rem;
+
+        .stat-hints,
+        .stat-guesses {
+          font-size: 0.8rem;
+          padding: 3px 6px;
+        }
+
+        .stat-hints {
+          background-color: var(--lc-highlight-bg);
+          color: var(--lc-text-primary);
+          border-radius: 4px 0 0 4px;
+        }
+
+        .stat-guesses {
+          background-color: var(--lc-active-bg);
+          color: var(--lc-text-primary);
+          border-radius: 0 4px 4px 0;
+        }
+      }
     }
 
     .tile-name {
@@ -275,11 +300,17 @@
       min-width: 0;
       font-family: $lc-font--sans;
 
-      div {
+      > span {
         margin: 1px 0;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+      }
+
+      .tile-info-stats {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
       }
     }
   }

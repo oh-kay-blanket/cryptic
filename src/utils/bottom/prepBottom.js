@@ -139,9 +139,33 @@ const prepBottom = (
 				setCheckAns(false)
 			},
 		},
+		tryAgain: {
+			name: 'Try again',
+			style: 'secondary',
+			onClick: function () {
+				setShowMessage(false)
+				setCheckAns(false)
+			},
+		},
 		endClueHint: {
 			path: '/clues',
 			name: 'Play more',
+			img: (
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='24'
+					height='24'
+					fill='currentColor'
+					viewBox='0 0 24 24'
+				>
+					<rect x='3' y='3' width='3' height='3' rx='1' />
+					<rect x='3' y='10.5' width='3' height='3' rx='1' />
+					<rect x='3' y='18' width='3' height='3' rx='1' />
+					<rect x='8' y='3' width='13' height='3' rx='1' />
+					<rect x='8' y='10.5' width='13' height='3' rx='1' />
+					<rect x='8' y='18' width='13' height='3' rx='1' />
+				</svg>
+			),
 			style: 'secondary',
 			onClick: function () {
 				setReturnLearn(false)
@@ -151,6 +175,22 @@ const prepBottom = (
 		endClueGuess: {
 			path: '/clues',
 			name: 'Play more',
+			img: (
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='24'
+					height='24'
+					fill='currentColor'
+					viewBox='0 0 24 24'
+				>
+					<rect x='3' y='3' width='3' height='3' rx='1' />
+					<rect x='3' y='10.5' width='3' height='3' rx='1' />
+					<rect x='3' y='18' width='3' height='3' rx='1' />
+					<rect x='8' y='3' width='13' height='3' rx='1' />
+					<rect x='8' y='10.5' width='13' height='3' rx='1' />
+					<rect x='8' y='18' width='13' height='3' rx='1' />
+				</svg>
+			),
 			style: 'secondary',
 			onClick: function () {
 				setReturnLearn(false)
@@ -185,7 +225,24 @@ const prepBottom = (
 		},
 		endClueShowLogic: {
 			name: 'Show logic',
-			style: 'alt',
+			img: (
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					width='24'
+					height='24'
+					fill='none'
+					stroke='currentColor'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
+					viewBox='0 0 24 24'
+				>
+					<path d='M9 18h6' />
+					<path d='M10 22h4' />
+					<path d='M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14' />
+				</svg>
+			),
+			style: 'secondary',
 			onClick: function () {
 				setShowLogic(true)
 				setCheckAns(false)
@@ -194,7 +251,7 @@ const prepBottom = (
 		},
 		nextLogic: {
 			name: 'Next',
-			style: 'alt',
+			style: 'secondary',
 			onClick: function () {
 				setNextHint(nextHint + 1)
 				setCheckAns(false)
