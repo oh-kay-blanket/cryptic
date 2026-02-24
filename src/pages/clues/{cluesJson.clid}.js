@@ -1,4 +1,10 @@
-import React, { useContext, useState, useEffect, useRef, useCallback } from "react";
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+} from "react";
 import { graphql } from "gatsby";
 import { UserContext } from "../../utils/UserContext";
 import Layout from "../../components/layout";
@@ -112,11 +118,14 @@ const CluePage = ({ data }) => {
   const [hintPosition, setHintPosition] = useState("right"); // "right" or "below"
   const [activeTooltipHint, setActiveTooltipHint] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState(null);
-  const [showRevealSolutionConfirm, setShowRevealSolutionConfirm] = useState(false);
-  const [revealSolutionPopupPosition, setRevealSolutionPopupPosition] = useState(null);
+  const [showRevealSolutionConfirm, setShowRevealSolutionConfirm] =
+    useState(false);
+  const [revealSolutionPopupPosition, setRevealSolutionPopupPosition] =
+    useState(null);
   const [solutionRevealedViaHint, setSolutionRevealedViaHint] = useState(false);
   const [showNoMoreHintsTooltip, setShowNoMoreHintsTooltip] = useState(false);
-  const [noMoreHintsTooltipPosition, setNoMoreHintsTooltipPosition] = useState(null);
+  const [noMoreHintsTooltipPosition, setNoMoreHintsTooltipPosition] =
+    useState(null);
   const revealPopupRef = useRef(null);
   const revealSolutionPopupRef = useRef(null);
   const activeTooltipHintRef = useRef(null);
@@ -138,6 +147,7 @@ const CluePage = ({ data }) => {
         clid: dataClue.clid,
         difficulty: dataClue.difficulty,
         streak: streak,
+        clue_start_count: 1,
       });
     }
   }, [dataClue.clid, dataClue.release, dataClue.difficulty, streak]);
@@ -225,7 +235,12 @@ const CluePage = ({ data }) => {
     }
 
     // If hint.ref didn't work, try addLetters refs as fallback
-    if (minTop === Infinity && hint.addLetters && hint.addLetters.ref && hint.addLetters.ref.current) {
+    if (
+      minTop === Infinity &&
+      hint.addLetters &&
+      hint.addLetters.ref &&
+      hint.addLetters.ref.current
+    ) {
       const addLettersRefs = hint.addLetters.ref.current;
       if (Array.isArray(addLettersRefs) && addLettersRefs.length > 0) {
         addLettersRefs.forEach((ref) => {
@@ -241,7 +256,7 @@ const CluePage = ({ data }) => {
 
     // If still no position found, try the clue section as last resort
     if (minTop === Infinity) {
-      const clueSection = document.getElementById('clueSectionRef');
+      const clueSection = document.getElementById("clueSectionRef");
       if (clueSection) {
         const rect = clueSection.getBoundingClientRect();
         return { x: rect.left + rect.width / 2, y: rect.top + rect.height };
@@ -284,7 +299,11 @@ const CluePage = ({ data }) => {
       const prevHint = activeClue.hints[prevHintIndex];
       if (prevHint && prevHint.ref) {
         highlightLetters(prevHint.ref, false, true);
-        if (prevHint.addLetters && prevHint.addLetters.ref && prevHint.addLetters.ref.current) {
+        if (
+          prevHint.addLetters &&
+          prevHint.addLetters.ref &&
+          prevHint.addLetters.ref.current
+        ) {
           changeColor(prevHint.addLetters.ref.current, false, true);
         }
       }
@@ -360,7 +379,11 @@ const CluePage = ({ data }) => {
         // Gray out the highlight background
         highlightLetters(hint.ref, false, true);
         // Gray out text color for addLetters
-        if (hint.addLetters && hint.addLetters.ref && hint.addLetters.ref.current) {
+        if (
+          hint.addLetters &&
+          hint.addLetters.ref &&
+          hint.addLetters.ref.current
+        ) {
           changeColor(hint.addLetters.ref.current, false, true);
         }
       }
@@ -399,7 +422,14 @@ const CluePage = ({ data }) => {
       if (!currentHint) return;
 
       // Two-step hint categories - these share source letters with their first step
-      const twoStepCategories = ['ag-2', 'hw-2', 'hp-2', 'in-2', 'lb-2', 'sy-2'];
+      const twoStepCategories = [
+        "ag-2",
+        "hw-2",
+        "hp-2",
+        "in-2",
+        "lb-2",
+        "sy-2",
+      ];
       const isTwoStepSecond = twoStepCategories.includes(currentHint.category);
 
       // Gray out previous hint when stepping forward (but not for two-step hints)
@@ -413,7 +443,12 @@ const CluePage = ({ data }) => {
       // Reset previous hint's addLetters to primary color
       if (nextHint > 0) {
         const prevHint = clue.hints[nextHint - 1];
-        if (prevHint && prevHint.addLetters && prevHint.addLetters.ref && prevHint.addLetters.ref.current) {
+        if (
+          prevHint &&
+          prevHint.addLetters &&
+          prevHint.addLetters.ref &&
+          prevHint.addLetters.ref.current
+        ) {
           changeColor(prevHint.addLetters.ref.current, false, true);
         }
       }
@@ -448,47 +483,53 @@ const CluePage = ({ data }) => {
 
   // Map first-step hint categories to their second-step counterparts
   const twoStepHintMap = {
-    'anagram': 'ag-2',
-    'hidden word': 'hw-2',
-    'homophone': 'hp-2',
-    'letter bank': 'lb-2',
-    'synonym': 'sy-2',
+    anagram: "ag-2",
+    "hidden word": "hw-2",
+    homophone: "hp-2",
+    "letter bank": "lb-2",
+    synonym: "sy-2",
   };
 
   // Handle clicking on highlighted clue text to re-show hint tooltip
-  const handleClueLetterClick = useCallback((index) => {
-    const clue = activeClueRef.current;
-    // Check if this letter is part of any revealed hint (hints 0 through nextHint-1)
-    for (let hintIndex = 0; hintIndex < nextHint; hintIndex++) {
-      const hint = clue.hints[hintIndex];
-      if (hint && hint.ref) {
-        const isPartOfHint = hint.ref.some((ref) => {
-          // Check if this ref corresponds to the clicked letter index
-          return ref && ref.current === clue.clue.ref.current[index]?.current;
-        });
+  const handleClueLetterClick = useCallback(
+    (index) => {
+      const clue = activeClueRef.current;
+      // Check if this letter is part of any revealed hint (hints 0 through nextHint-1)
+      for (let hintIndex = 0; hintIndex < nextHint; hintIndex++) {
+        const hint = clue.hints[hintIndex];
+        if (hint && hint.ref) {
+          const isPartOfHint = hint.ref.some((ref) => {
+            // Check if this ref corresponds to the clicked letter index
+            return ref && ref.current === clue.clue.ref.current[index]?.current;
+          });
 
-        if (isPartOfHint) {
-          let targetHintIndex = hintIndex;
+          if (isPartOfHint) {
+            let targetHintIndex = hintIndex;
 
-          // Check if this is a first-step hint with a revealed second-step
-          const secondStepCategory = twoStepHintMap[hint.category];
-          if (secondStepCategory) {
-            const nextHintObj = clue.hints[hintIndex + 1];
-            // If the next hint is the corresponding second-step and has been revealed
-            if (nextHintObj?.category === secondStepCategory && hintIndex + 1 < nextHint) {
-              targetHintIndex = hintIndex + 1;
+            // Check if this is a first-step hint with a revealed second-step
+            const secondStepCategory = twoStepHintMap[hint.category];
+            if (secondStepCategory) {
+              const nextHintObj = clue.hints[hintIndex + 1];
+              // If the next hint is the corresponding second-step and has been revealed
+              if (
+                nextHintObj?.category === secondStepCategory &&
+                hintIndex + 1 < nextHint
+              ) {
+                targetHintIndex = hintIndex + 1;
+              }
             }
-          }
 
-          const position = calculateTooltipPosition(targetHintIndex);
-          setTooltipPosition(position);
-          setActiveTooltipHint(targetHintIndex);
-          activeTooltipHintRef.current = targetHintIndex;
-          return;
+            const position = calculateTooltipPosition(targetHintIndex);
+            setTooltipPosition(position);
+            setActiveTooltipHint(targetHintIndex);
+            activeTooltipHintRef.current = targetHintIndex;
+            return;
+          }
         }
       }
-    }
-  }, [nextHint, calculateTooltipPosition]);
+    },
+    [nextHint, calculateTooltipPosition],
+  );
 
   // Determine if hint button should be shown
   // Hide when showing completion message (answer checked or solution revealed)
@@ -631,7 +672,8 @@ const CluePage = ({ data }) => {
       const hint = activeClue.hints[hintIndex];
       if (hint && hint.ref) {
         const isInHint = hint.ref.some(
-          (ref) => ref && ref.current === activeClue.clue.ref.current[index]?.current
+          (ref) =>
+            ref && ref.current === activeClue.clue.ref.current[index]?.current,
         );
         if (isInHint) return true;
       }
@@ -846,7 +888,7 @@ const CluePage = ({ data }) => {
               </div>
               {showHintButton && (
                 <button
-                  className={`hint-button hint-${hintPosition}${hintsExhaustedForToday ? ' hint-disabled' : ''}`}
+                  className={`hint-button hint-${hintPosition}${hintsExhaustedForToday ? " hint-disabled" : ""}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     if (hintsExhaustedForToday) {
@@ -880,7 +922,11 @@ const CluePage = ({ data }) => {
                       setNoMoreHintsTooltipPosition(null);
                     }
                   }}
-                  aria-label={hintsExhaustedForToday ? "No more hints available" : "Show hint"}
+                  aria-label={
+                    hintsExhaustedForToday
+                      ? "No more hints available"
+                      : "Show hint"
+                  }
                 >
                   <HintIcon />
                 </button>
