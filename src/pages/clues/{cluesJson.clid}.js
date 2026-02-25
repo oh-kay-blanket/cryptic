@@ -177,6 +177,7 @@ const CluePage = ({ data }) => {
     setCurrentStats,
     setClueStartTime,
     setClueSolvedTime,
+    clueSolvedTime,
   } = useContext(UserContext);
 
   // Set up activeClue
@@ -1012,6 +1013,7 @@ const CluePage = ({ data }) => {
           solutionRevealedViaHint={solutionRevealedViaHint}
           getSolveTime={getSolveTime}
           setClueSolvedTime={setClueSolvedTime}
+          clueSolvedTime={clueSolvedTime}
         />
       </div>
 

@@ -19,7 +19,8 @@ const prepBottom = (
 	setShowLogic,
 	revealedLetters = [],
 	getSolveTime = null,
-	setClueSolvedTime = null
+	setClueSolvedTime = null,
+	clueSolvedTime = null
 ) => {
 	// Check if this is today's clue
 	const isTodaysClue = () => isTodayClue(activeClue)
@@ -243,8 +244,8 @@ const prepBottom = (
 			img: shareIcon,
 			style: 'secondary',
 			onClick: function () {
-				const solveTime = getSolveTime ? getSolveTime() : null
-				shareScore(solveTime)
+				// Use the stored solve time from when the clue was solved, not the current time
+				shareScore(clueSolvedTime)
 			},
 		},
 		endClueShowLogic: {
