@@ -361,6 +361,10 @@ const CluePage = ({ data }) => {
     // Store current hint index before state updates
     const currentHintIndex = nextHint;
 
+    // Stop the timer by capturing and storing the solve time
+    const solveTime = getSolveTime();
+    setClueSolvedTime(solveTime);
+
     // Mark as revealed via hint (so Message hides the text, tooltip shows it)
     setSolutionRevealedViaHint(true);
 
