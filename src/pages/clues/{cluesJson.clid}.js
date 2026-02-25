@@ -545,9 +545,14 @@ const CluePage = ({ data }) => {
     [nextHint, calculateTooltipPosition],
   );
 
+  // Check if all positions are filled (enter button is active)
+  const allPositionsFilled = activeClue.solution.arr.every(
+    (_, index) => input[index] && input[index] !== "",
+  );
+
   // Determine if hint button should be shown
-  // Hide when showing completion message (answer checked or solution revealed)
-  const showHintButton = !showMessage;
+  // Hide when showing completion message or when all letters are typed (enter is active)
+  const showHintButton = !showMessage && !allPositionsFilled;
 
   // Check if this is today's clue and if hints are exhausted (next hint would reveal solution)
   const isTodaysClue = isTodayClue(dataClue);
