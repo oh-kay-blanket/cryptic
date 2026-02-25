@@ -4,10 +4,16 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - 60px);
+  height: calc(100svh - 60px);
   max-height: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  // Account for fixed bottom section (200px) + safe area
+  padding-bottom: calc(200px + env(safe-area-inset-bottom, 0px));
+
+  @media (max-height: 600px) {
+    padding-bottom: calc(160px + env(safe-area-inset-bottom, 0px));
+  }
 
   #clue-container {
     position: relative;
