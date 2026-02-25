@@ -130,9 +130,10 @@ const CluePage = ({ data }) => {
   const revealSolutionPopupRef = useRef(null);
   const activeTooltipHintRef = useRef(null);
 
-  // Add fixed-page class to prevent scrolling
+  // Scroll to top to force mobile address bar to show, then add fixed-page class
   useEffect(() => {
     if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
       document.body.classList.add("fixed-page");
       return () => {
         document.body.classList.remove("fixed-page");

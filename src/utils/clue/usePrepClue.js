@@ -144,6 +144,9 @@ const usePrepClue = (dataClue) => {
 	})
 
 	useEffect(() => {
+		// Scroll to top to ensure address bar is visible on mobile before fixing letter positions
+		window.scrollTo(0, 0)
+
 		// Fix letters - use double requestAnimationFrame to ensure flexbox layout has settled
 		// This is critical for mobile where the addLetters flexbox container needs time to calculate
 		// final positions before getBoundingClientRect() is called
