@@ -51,37 +51,68 @@ const Title = ({ data }) => {
 		}
 	}, [])
 
+	// Icon components
+	const PlayIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor'>
+			<path d='M8 5v14l11-7z'/>
+		</svg>
+	)
+
+	const BookIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+			<path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/>
+			<path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/>
+		</svg>
+	)
+
+	const ListIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 24 24'>
+			<rect x='3' y='3' width='3' height='3' rx='1' />
+			<rect x='3' y='10.5' width='3' height='3' rx='1' />
+			<rect x='3' y='18' width='3' height='3' rx='1' />
+			<rect x='8' y='3' width='13' height='3' rx='1' />
+			<rect x='8' y='10.5' width='13' height='3' rx='1' />
+			<rect x='8' y='18' width='13' height='3' rx='1' />
+		</svg>
+	)
+
 	// buttons
 	const buttons = {
 		learnNew: {
 			path: '/learn',
 			name: 'Start here',
 			style: 'alt',
+			img: BookIcon,
 		},
 		learn: {
 			path: '/learn',
-			name: 'Learn about cryptics',
-			style: 'tertiary',
+			name: 'Learn',
+			style: 'secondary',
+			img: BookIcon,
 		},
 		todayClue: {
 			path: `/clues/${todayClue.clid}`,
 			name: "Play today's clue",
 			style: 'primary',
+			img: PlayIcon,
 		},
 		todayClueSecondary: {
 			path: `/clues/${todayClue.clid}`,
 			name: "Play today's clue",
 			style: 'primary',
+			img: PlayIcon,
 		},
 		allClues: {
 			path: '/clues',
-			name: 'See all clues',
+			name: 'All clues',
 			style: 'secondary',
+			img: ListIcon,
 		},
 		viewClues: {
 			path: '/clues',
 			name: 'View clues',
 			style: 'primary',
+			img: ListIcon,
 		},
 	}
 
@@ -122,7 +153,6 @@ const Title = ({ data }) => {
 					<div className='title-actions'>
 						<ButtonContainer
 							btnArr={[buttons.allClues, buttons.learn]}
-							stack={true}
 						/>
 					</div>
 				</>
@@ -144,7 +174,6 @@ const Title = ({ data }) => {
 					<div className='title-actions'>
 						<ButtonContainer
 							btnArr={[buttons.todayClue, buttons.learn]}
-							stack={true}
 						/>
 					</div>
 				</>
@@ -168,7 +197,6 @@ const Title = ({ data }) => {
 					<div className='title-actions'>
 						<ButtonContainer
 							btnArr={[buttons.todayClue, buttons.learn]}
-							stack={true}
 						/>
 					</div>
 				</>
@@ -188,14 +216,12 @@ const Title = ({ data }) => {
 						</p>
 						<ButtonContainer
 							btnArr={[buttons.learnNew]}
-							stack={true}
 						/>
 						<p className="mt-4 mb-2">
 							Already know the basics?
 						</p>
 						<ButtonContainer
 							btnArr={[buttons.todayClueSecondary]}
-							stack={true}
 						/>
 					</div>
 				</>
@@ -212,7 +238,6 @@ const Title = ({ data }) => {
 					<div className='title-actions' style={{ visibility: 'hidden' }}>
 						<ButtonContainer
 							btnArr={[buttons.learnNew, buttons.todayClue]}
-							stack={true}
 						/>
 					</div>
 				</div>

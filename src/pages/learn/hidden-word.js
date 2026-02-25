@@ -27,29 +27,63 @@ const HiddenWord = () => {
 		</button>
 	)
 
+	// Icon components
+	const PlayIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor'>
+			<path d='M8 5v14l11-7z'/>
+		</svg>
+	)
+	const ArrowLeftIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<line x1='19' y1='12' x2='5' y2='12' /><polyline points='12 19 5 12 12 5' />
+		</svg>
+	)
+	const ArrowRightIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<line x1='5' y1='12' x2='19' y2='12' /><polyline points='12 5 19 12 12 19' />
+		</svg>
+	)
+	const ListIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<line x1='8' y1='6' x2='21' y2='6' /><line x1='8' y1='12' x2='21' y2='12' /><line x1='8' y1='18' x2='21' y2='18' /><line x1='3' y1='6' x2='3.01' y2='6' /><line x1='3' y1='12' x2='3.01' y2='12' /><line x1='3' y1='18' x2='3.01' y2='18' />
+		</svg>
+	)
+
 	// buttons
 	const buttons = {
 		easyClue: {
 			path: '/clues/52',
 			name: 'Play a hidden word clue',
 			style: 'primary',
+			img: PlayIcon,
 			onClick: function () {
 				setReturnLearn('hidden-word')
 			},
 		},
-		return: {
-			path: '/learn#learn-types',
-			name: 'Back to Learn',
+		prev: {
+			path: '/learn/double-definition',
+			name: 'Double Def',
 			style: 'secondary',
+			img: ArrowLeftIcon,
+			stack: true,
+		},
+		learn: {
+			path: '/learn#learn-types',
+			name: 'All Types',
+			style: 'secondary',
+			img: ListIcon,
+			stack: true,
 		},
 		next: {
 			path: '/learn/homophone',
-			name: 'Next (Homophone)',
+			name: 'Homophone',
 			style: 'alt',
+			img: ArrowRightIcon,
+			stack: true,
 		},
 	}
 	const btnArr1 = [buttons.easyClue]
-	const btnArr2 = [buttons.return, buttons.next]
+	const btnArr2 = [buttons.prev, buttons.learn, buttons.next]
 
 	const indicatorArr = [
 		'concealed',
