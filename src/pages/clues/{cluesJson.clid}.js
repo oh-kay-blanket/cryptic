@@ -133,8 +133,14 @@ const CluePage = ({ data }) => {
   // Scroll to top to force mobile address bar to show, then add fixed-page class
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Scroll to top first
       window.scrollTo(0, 0);
-      document.body.classList.add("fixed-page");
+
+      // Delay adding fixed-page class to give browser time to show address bar
+      requestAnimationFrame(() => {
+        document.body.classList.add("fixed-page");
+      });
+
       return () => {
         document.body.classList.remove("fixed-page");
       };
