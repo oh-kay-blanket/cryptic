@@ -186,6 +186,13 @@ const CluePage = ({ data }) => {
     (c) => c.clid === dataClue.clid
   );
 
+  // Track whether the clue was already completed when the page loaded,
+  // so solving it during this session doesn't suppress the celebration
+  const wasCompletedOnLoad = useRef(null);
+  if (wasCompletedOnLoad.current === null) {
+    wasCompletedOnLoad.current = !!completedClueData;
+  }
+
   // Set up activeClue
   let { activeClue } = prepClue(dataClue);
 
@@ -1055,7 +1062,7 @@ const CluePage = ({ data }) => {
           getSolveTime={getSolveTime}
           setClueSolvedTime={setClueSolvedTime}
           clueSolvedTime={clueSolvedTime}
-          isReturningCompleted={!!completedClueData}
+          isReturningCompleted={wasCompletedOnLoad.current}
         />
       </div>
 
