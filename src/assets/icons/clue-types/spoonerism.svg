@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top spoon: oval bowl on left, tapered handle extending right with rounded end -->
+  <ellipse cx="5" cy="5.5" rx="5" ry="3" fill="currentColor"/>
+  <path d="M5 5 L20 4.5 Q23 4.5 23 5.5 Q23 6.5 20 6.5 L5 6 Z" fill="currentColor"/>
+
+  <!-- Bottom spoon: tapered handle on left with rounded end, oval bowl on right -->
+  <path d="M4 17.5 Q1 17.5 1 18.5 Q1 19.5 4 19.5 L19 19 L19 18 Z" fill="currentColor"/>
+  <ellipse cx="19" cy="18.5" rx="5" ry="3" fill="currentColor"/>
+</svg>

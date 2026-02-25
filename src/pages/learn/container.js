@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Container = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -138,7 +139,7 @@ const Container = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4'>Container</h1>
+					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Container <ClueTypeIcon type="container" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						A letter, a set of letters, or an entire word goes inside of another
 						word to make a new word.

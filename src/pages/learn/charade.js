@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Charade = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -118,7 +119,7 @@ const Charade = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4'>Charade</h1>
+					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Charade <ClueTypeIcon type="charade" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The solution is broken into parts that are clued separately and
 						arranged in order.

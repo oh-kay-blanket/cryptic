@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const LetterBank = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -129,7 +130,7 @@ const LetterBank = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Letter Bank</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Letter Bank <ClueTypeIcon type="letter-bank" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Letters are rearranged like in an anagram, but the letters in the
 						source word(s) can be repeated—think of a "bank" of letters from

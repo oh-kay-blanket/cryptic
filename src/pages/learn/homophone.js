@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Homophone = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -122,7 +123,7 @@ const Homophone = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Homophone</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Homophone <ClueTypeIcon type="homophone" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Clued words and/or letter(s) sound like the solution when spoken
 						aloud.

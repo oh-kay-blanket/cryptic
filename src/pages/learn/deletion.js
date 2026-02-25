@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Deletion = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -138,7 +139,7 @@ const Deletion = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4'>Deletion</h1>
+					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Deletion <ClueTypeIcon type="deletion" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Remove a letter, set of letters, or an entire word from the
 						beginning, middle, or end of a word.

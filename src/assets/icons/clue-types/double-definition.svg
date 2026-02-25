@@ -1,0 +1,6 @@
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top tilde -->
+  <path d="M3 8 C6 5, 10 5, 12 7 C14 9, 18 9, 21 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Bottom tilde -->
+  <path d="M3 18 C6 15, 10 15, 12 17 C14 19, 18 19, 21 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const HiddenWord = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -137,7 +138,7 @@ const HiddenWord = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Hidden Word</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Hidden Word <ClueTypeIcon type="hidden-word" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The answer is a string of letters embedded in the clue.
 					</p>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Lit = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -117,7 +118,7 @@ const Lit = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>& Lit.</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>& Lit. <ClueTypeIcon type="lit" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						& Lit. is short for “and literally so,” because the entire clue
 						functions as a definition.

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const DoubleDefinition = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -119,7 +120,7 @@ const DoubleDefinition = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Double Definition</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Double Definition <ClueTypeIcon type="double-definition" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The clue can be split into two parts that each define the solution.
 					</p>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Combination = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -105,7 +106,7 @@ const Combination = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Combination</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Combination <ClueTypeIcon type="combination" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						It's common for a clue to employ more than one type of wordplay—a
 						single clue will often involve two, or sometimes even three (or

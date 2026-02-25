@@ -7,6 +7,19 @@ module.exports = {
 		keywords: `cryptic crossword, crossword clues, word puzzles, daily puzzle, learn cryptic, cryptic clues, wordplay`
 	},
 	plugins: [
+		{
+			resolve: 'gatsby-plugin-svgr',
+			options: {
+				svgoConfig: {
+					plugins: [
+						{
+							name: 'removeViewBox',
+							active: false,
+						},
+					],
+				},
+			},
+		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,

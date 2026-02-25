@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import ButtonContainer from "../components/bottom/ButtonContainer";
+import { ClueTypeIcon } from "../components/ClueTypeIcons";
 
 import { UserContext } from "../utils/UserContext";
 import { isTodayClue } from "../utils/dateHelpers";
@@ -79,7 +80,12 @@ const Learn = ({ data }) => {
             : ""
         }
       >
-        <Link to={type.id}>{type.name}</Link>
+        <Link to={type.id} className="flex flex-col items-center justify-center gap-2 p-3 h-full">
+          <div className="w-5 h-5 flex items-center justify-center">
+            <ClueTypeIcon type={type.id} className="w-full h-full" />
+          </div>
+          <span className="text-sm text-center">{type.name}</span>
+        </Link>
       </li>
     );
   });

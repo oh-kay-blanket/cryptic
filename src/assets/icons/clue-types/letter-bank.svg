@@ -1,0 +1,12 @@
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lines connecting to centers (behind squares) -->
+  <path d="M12 5 L5 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M12 5 L19 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Big square at top -->
+  <rect x="8" y="1" width="8" height="8" rx="1" fill="currentColor"/>
+
+  <!-- Two squares below (same size) -->
+  <rect x="1" y="15" width="8" height="8" rx="1" fill="currentColor"/>
+  <rect x="15" y="15" width="8" height="8" rx="1" fill="currentColor"/>
+</svg>

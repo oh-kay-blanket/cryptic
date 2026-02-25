@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Reversal = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -132,7 +133,7 @@ const Reversal = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Reversal</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Reversal <ClueTypeIcon type="reversal" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Reverse the letters to make a new word or words.
 					</p>

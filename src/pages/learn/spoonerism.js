@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Spoonerism = () => {
 	const { typeViewed, setTypeViewed, setReturnLearn } = useContext(UserContext)
@@ -117,7 +118,7 @@ const Spoonerism = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4'>Spoonerism</h1>
+					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Spoonerism <ClueTypeIcon type="spoonerism" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Swap the sounds at beginnings of two words. Named for a British
 						Oxford don, Reverend William Archibald Spooner (1844–1930), who was

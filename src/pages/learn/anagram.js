@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
+import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Anagram = () => {
 	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
@@ -139,7 +140,7 @@ const Anagram = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4'>Anagram</h1>
+					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Anagram <ClueTypeIcon type="anagram" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Reorder the letters of a given word (or words) to make a new word
 						(or words).
