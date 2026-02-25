@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 import handleHint from './handleHint'
 
-const useManageClue = (activeClue) => {
+const useManageClue = (activeClue, initialState = null) => {
 	// Keep a ref to always access the latest activeClue
 	const activeClueRef = useRef(activeClue)
 	activeClueRef.current = activeClue
@@ -13,12 +13,16 @@ const useManageClue = (activeClue) => {
 	// Get solve time in seconds
 	const getSolveTime = () => Math.round((Date.now() - startTime.current) / 1000)
 
-	// state
-	const [stats, setStats] = useState({ guesses: 0, hints: 0, how: '' })
-    const [input, setInput] = useState([])
+	// state - use initial values if provided (for returning to completed clues)
+	const [stats, setStats] = useState(
+		initialState?.stats ?? { guesses: 0, hints: 0, how: '' }
+	)
+    const [input, setInput] = useState(
+		initialState?.input ?? []
+	)
 	const [nextHint, setNextHint] = useState(0)
-	const [showMessage, setShowMessage] = useState(false)
-	const [checkAns, setCheckAns] = useState(false)
+	const [showMessage, setShowMessage] = useState(initialState?.showMessage ?? false)
+	const [checkAns, setCheckAns] = useState(initialState?.checkAns ?? false)
 	const [showLogic, setShowLogic] = useState(false)
 	const [revealedLetters, setRevealedLetters] = useState([]) // Array of indices of revealed letters
 	const [showRevealPrompt, setShowRevealPrompt] = useState(false)

@@ -6,7 +6,7 @@ import Message from './bottom/Message'
 
 import prepBottom from '../utils/bottom/prepBottom'
 
-const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, stats, setStats, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, solutionRevealedViaHint, getSolveTime, setClueSolvedTime, clueSolvedTime }) => {
+const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint, addCompletedClue, handleInput, input, setInput, stats, setStats, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, solutionRevealedViaHint, getSolveTime, setClueSolvedTime, clueSolvedTime, isReturningCompleted }) => {
 
 	let { buttons, btnArr, isSolution, isCorrectAns, allPositionsFilled, checkAnswer } = prepBottom(activeClue, nextHint, setNextHint, input, setInput, setShowMessage, stats, setStats, addCompletedClue, returnLearn, setReturnLearn, checkAns, setCheckAns, showLogic, setShowLogic, revealedLetters, getSolveTime, setClueSolvedTime, clueSolvedTime)
 
@@ -34,6 +34,7 @@ const Bottom = ({ activeClue, showMessage, setShowMessage, nextHint, setNextHint
 					solutionRevealedViaHint={solutionRevealedViaHint}
 					stats={stats}
 					getSolveTime={getSolveTime}
+					isReturningCompleted={isReturningCompleted}
 				/> :
 				<>
 					<ButtonContainer

@@ -169,6 +169,7 @@ const CluePage = ({ data }) => {
   };
   const {
     addCompletedClue,
+    completedClues,
     showType,
     setShowType,
     returnLearn,
@@ -180,12 +181,32 @@ const CluePage = ({ data }) => {
     clueSolvedTime,
   } = useContext(UserContext);
 
+  // Check if this clue has already been completed
+  const completedClueData = completedClues?.find(
+    (c) => c.clid === dataClue.clid
+  );
+
   // Set up activeClue
   let { activeClue } = prepClue(dataClue);
 
   // Keep a ref to always access the latest activeClue in callbacks
   const activeClueRef = useRef(activeClue);
   activeClueRef.current = activeClue;
+
+  // Prepare initial state for completed clues (to avoid flash of input UI)
+  const completedInitialState = completedClueData
+    ? {
+        stats: {
+          guesses: completedClueData.guesses || 0,
+          hints: completedClueData.hints || 0,
+          how: completedClueData.how || "",
+          solveTime: completedClueData.solveTime ?? null,
+        },
+        input: activeClue.solution.arr,
+        showMessage: true,
+        checkAns: true,
+      }
+    : null;
 
   let {
     stats,
@@ -208,19 +229,35 @@ const CluePage = ({ data }) => {
     handleRevealLetter,
     handleSquareClick,
     getSolveTime,
-  } = manageClue(activeClue);
+  } = manageClue(activeClue, completedInitialState);
+
+  // If returning to a completed clue, show the source attribution
+  useEffect(() => {
+    if (completedClueData) {
+      // Show the source attribution after a short delay to ensure ref is available
+      setTimeout(() => {
+        if (activeClueRef.current.source?.ref?.current) {
+          activeClueRef.current.source.ref.current.classList.add("show");
+        }
+      }, 0);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataClue.clid]);
 
   // Sync stats and start time to context for TopBar display
   useEffect(() => {
     setCurrentStats(stats);
-    setClueStartTime(Date.now());
-    setClueSolvedTime(null); // Reset solved time for new clue
+    // Only start timer if this is a new (uncompleted) clue
+    if (!completedClueData) {
+      setClueStartTime(Date.now());
+    }
+    setClueSolvedTime(completedClueData?.solveTime ?? null);
     return () => {
       setCurrentStats(null);
       setClueStartTime(null);
       setClueSolvedTime(null);
     };
-  }, [setCurrentStats, setClueStartTime, setClueSolvedTime]);
+  }, [setCurrentStats, setClueStartTime, setClueSolvedTime, completedClueData]);
 
   // Update stats in context when they change
   useEffect(() => {
@@ -1018,6 +1055,7 @@ const CluePage = ({ data }) => {
           getSolveTime={getSolveTime}
           setClueSolvedTime={setClueSolvedTime}
           clueSolvedTime={clueSolvedTime}
+          isReturningCompleted={!!completedClueData}
         />
       </div>
 

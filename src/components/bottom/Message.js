@@ -19,16 +19,25 @@ const Message = ({
   solutionRevealedViaHint,
   stats,
   getSolveTime,
+  isReturningCompleted,
 }) => {
   const msgContainer = useRef();
 
   // Capture solve time once when component mounts (when answer is correct)
+  // Use saved solve time from stats if available (for returning to completed clues)
   const solveTime = useMemo(() => {
-    if (checkAns && isCorrectAns && getSolveTime) {
-      return getSolveTime();
+    if (checkAns && isCorrectAns) {
+      // Use saved solve time if available (returning to completed clue)
+      if (stats.solveTime != null) {
+        return stats.solveTime;
+      }
+      // Otherwise calculate current solve time
+      if (getSolveTime) {
+        return getSolveTime();
+      }
     }
     return null;
-  }, [checkAns, isCorrectAns, getSolveTime]);
+  }, [checkAns, isCorrectAns, getSolveTime, stats.solveTime]);
 
   // figure out which text to display
   const message = checkAns ? (
@@ -199,7 +208,7 @@ const Message = ({
       className={`message ${messageStyle} bg-white dark:!bg-neutral-800 dark:!text-neutral-100`}
       ref={msgContainer}
     >
-      {checkAns && isCorrectAns && <Celebration />}
+      {checkAns && isCorrectAns && !isReturningCompleted && <Celebration />}
       {message && !hideMessageForTooltip && (
         <div className={"message-copy lc-container"}>
           {message}
