@@ -31,32 +31,14 @@ const prepBottom = (
 			day: 'numeric',
 		}).format(date)
 
-		const perfectEmojis = [
-			'🤩',
-			'🚀',
-			'😎',
-			'💪🏿',
-			'🤯',
-			'🫨',
-			'😻',
-			'🏆',
-			'🪩',
-			'🪅',
-		]
-
-		const emoji =
-			stats.guesses === 1 && stats.hints === 0
-				? perfectEmojis[Math.floor(Math.random() * perfectEmojis.length)]
-				: '🎉'
-
 		// Build stats line - prioritize stats over metadata
 		const guessText = `${stats.guesses} ${stats.guesses === 1 ? 'guess' : 'guesses'}`
 		const hintText = `${stats.hints} ${stats.hints === 1 ? 'hint' : 'hints'}`
 		const timeText = solveTime != null ? formatTime(solveTime) : null
 
 		const statsLine = timeText
-			? `${emoji} ${guessText} • ${hintText} • ${timeText}`
-			: `${emoji} ${guessText} • ${hintText}`
+			? `${guessText} • ${hintText} • ${timeText}`
+			: `${guessText} • ${hintText}`
 
 		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid} • ${dateFormatted}\nlearncryptic.com`
 

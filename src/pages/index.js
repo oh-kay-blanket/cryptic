@@ -104,19 +104,13 @@ const Title = ({ data }) => {
 			day: 'numeric',
 		}).format(date)
 
-		const perfectEmojis = ['🤩', '🚀', '😎', '💪🏿', '🤯', '🫨', '😻', '🏆', '🪩', '🪅']
-		const emoji =
-			todayGuesses === 1 && todayHints === 0
-				? perfectEmojis[Math.floor(Math.random() * perfectEmojis.length)]
-				: '🎉'
-
 		const guessText = `${todayGuesses} ${todayGuesses === 1 ? 'guess' : 'guesses'}`
 		const hintText = `${todayHints} ${todayHints === 1 ? 'hint' : 'hints'}`
 		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
 
 		const statsLine = timeText
-			? `${emoji} ${guessText} • ${hintText} • ${timeText}`
-			: `${emoji} ${guessText} • ${hintText}`
+			? `${guessText} • ${hintText} • ${timeText}`
+			: `${guessText} • ${hintText}`
 
 		const scoreText = `${statsLine}\nLearn Cryptic #${todayClue.clid} • ${dateFormatted}\nlearncryptic.com`
 
@@ -200,7 +194,7 @@ const Title = ({ data }) => {
 					<div className='title-intro text-center' data-testid='title-intro'>
 						<div className='streak-display' data-testid='streak-display'>
 							<span className='streak-number'>{streak}</span>
-							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
+							<span className='streak-label'>day streak</span>
 						</div>
 						<p className='stats-label'>Today's clue</p>
 						<div
@@ -259,7 +253,7 @@ const Title = ({ data }) => {
 					<div className='title-intro text-center' data-testid='title-intro'>
 						<div className='streak-display' data-testid='streak-display'>
 							<span className='streak-number'>{streak}</span>
-							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
+							<span className='streak-label'>day streak</span>
 						</div>
 					</div>
 					<div className='title-actions'>
