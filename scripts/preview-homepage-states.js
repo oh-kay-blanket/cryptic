@@ -20,7 +20,6 @@ localStorage.setItem(
   JSON.stringify({
     completedClues: [{ clid: "old-clue", guesses: 2, hints: 1, how: "g" }],
     showType: true,
-    typeViewed: [],
     streak: 0,
     longestStreak: 3,
     lastSolved: "01/01/2024",
@@ -37,7 +36,6 @@ localStorage.setItem(
   JSON.stringify({
     completedClues: [{ clid: "old-clue", guesses: 2, hints: 1, how: "g" }],
     showType: true,
-    typeViewed: [],
     streak: 5,
     longestStreak: 5,
     lastSolved: new Date(Date.now() - 86400000).toLocaleDateString("en-US"), // yesterday
@@ -61,7 +59,7 @@ if (!todayClid) {
   console.log(`
 localStorage.setItem("lcState", JSON.stringify({
   completedClues: [{ clid: "YOUR_CLUE_ID", guesses: 3, hints: 1, how: "g", solveTime: 94 }],
-  showType: true, typeViewed: [], streak: 7, longestStreak: 7,
+  showType: true, streak: 7, longestStreak: 7,
   lastSolved: new Date().toLocaleDateString("en-US"), darkMode: null
 })); location.reload();
   `);
@@ -74,7 +72,6 @@ localStorage.setItem("lcState", JSON.stringify({
         { clid: todayClid, guesses: 3, hints: 1, how: "g", solveTime: 94 },
       ],
       showType: true,
-      typeViewed: [],
       streak: 7,
       longestStreak: 7,
       lastSolved: new Date().toLocaleDateString("en-US"),

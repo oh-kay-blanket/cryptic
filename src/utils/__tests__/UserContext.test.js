@@ -102,8 +102,7 @@ describe('UserContext', () => {
 				streak: 5,
 				longestStreak: 10,
 				showType: true,
-				typeViewed: [],
-				lastSolved: '2024-01-14T12:00:00',
+								lastSolved: '2024-01-14T12:00:00',
 				darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
@@ -135,8 +134,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-14T12:00:00', // Yesterday
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -165,8 +163,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-13T12:00:00', // 2 days ago
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -191,8 +188,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-10T12:00:00', // 5 days ago
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -222,8 +218,7 @@ describe('UserContext', () => {
 				longestStreak: 3,
 				lastSolved: '2024-01-14T12:00:00', // Yesterday
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -253,8 +248,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-14T12:00:00',
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -282,8 +276,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-14T12:00:00',
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 
@@ -335,8 +328,7 @@ describe('UserContext', () => {
 				longestStreak: 5,
 				lastSolved: '2024-01-15T10:00:00',
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			}
 			localStorage.getItem.mockReturnValue(JSON.stringify(savedState))
 

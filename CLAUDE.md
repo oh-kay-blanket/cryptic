@@ -72,7 +72,6 @@ npm run deploy
 - `streak` & `longestStreak`: Daily solving streaks
 - `lastSolved`: Last solve date for streak calculation
 - `showType`: Whether to display clue type pills
-- `typeViewed`: Learning module progress
 - `darkMode`: User theme preference (null = system, true/false = explicit)
 
 **Persistence**: All user state syncs to localStorage as `lcState`. The Context listens for `storage` events to sync across tabs.

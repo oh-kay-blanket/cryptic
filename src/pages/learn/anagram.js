@@ -1,18 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../../components/layout'
-import { UserContext } from '../../utils/UserContext'
 import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Anagram = () => {
-	const { typeViewed, setTypeViewed } = useContext(UserContext)
-
-	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'anagram')
-	useEffect(() => {
-		if (!hasBeenViewed && typeof setTypeViewed === 'function') {
-			setTypeViewed('anagram')
-		}
-	}, [hasBeenViewed, setTypeViewed])
 
 	const backButton = (
 		<button onClick={() => window.history.back()} aria-label='Go back'>
@@ -55,19 +46,25 @@ const Anagram = () => {
 		</svg>
 	)
 
+	const GridIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<rect x='3' y='3' width='7' height='7' /><rect x='14' y='3' width='7' height='7' /><rect x='3' y='14' width='7' height='7' /><rect x='14' y='14' width='7' height='7' />
+		</svg>
+	)
+
 	// buttons
 	const buttons = {
 		easyClue: {
 			path: '/clues?type=anagram',
 			name: 'Browse anagram clues',
 			style: 'primary',
-			img: ArrowRightIcon,
+			img: ListIcon,
 		},
 		learn: {
 			path: '/learn#learn-types',
 			name: 'All Types',
 			style: 'secondary',
-			img: ListIcon,
+			img: GridIcon,
 			stack: true,
 		},
 		next: {

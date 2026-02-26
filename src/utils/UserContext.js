@@ -4,7 +4,6 @@ import { isSameDay, shouldResetStreak } from "./dateHelpers";
 export const UserContext = createContext({
   completedClues: [],
   showType: true,
-  typeViewed: [],
   returnLearn: false,
 });
 
@@ -27,7 +26,6 @@ export const UserProvider = ({ children }) => {
     return {
       completedClues: [],
       showType: true,
-      typeViewed: [],
       streak: 0,
       longestStreak: 0,
       lastSolved: "",
@@ -40,7 +38,6 @@ export const UserProvider = ({ children }) => {
   // Variables
   let completedClues = lcState.completedClues;
   let showType = lcState.showType;
-  let typeViewed = lcState.typeViewed;
   let streak = lcState.streak;
   let longestStreak = lcState.longestStreak;
   let darkMode = lcState.darkMode;
@@ -231,14 +228,6 @@ export const UserProvider = ({ children }) => {
     });
   };
 
-  // List of types viewed in Learn module
-  const setTypeViewed = (newType) => {
-    setLcState({
-      ...lcState,
-      typeViewed: [...lcState.typeViewed, newType],
-    });
-  };
-
   // Dark mode setting
   const setDarkMode = (newMode) => {
     setLcState({
@@ -280,8 +269,6 @@ export const UserProvider = ({ children }) => {
       longestStreak,
       showType,
       setShowType,
-      typeViewed,
-      setTypeViewed,
       returnLearn,
       setReturnLearn,
       darkMode,
@@ -307,7 +294,6 @@ export const UserProvider = ({ children }) => {
       streak,
       longestStreak,
       showType,
-      typeViewed,
       returnLearn,
       darkMode,
       currentStats,

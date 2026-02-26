@@ -1,17 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import { ClueTypeIcon } from "../components/ClueTypeIcons";
 
-import { UserContext } from "../utils/UserContext";
-
 const Learn = () => {
-  const { typeViewed } = useContext(UserContext);
-
-  // Collapsible intro state - default collapsed for returning users
-  const isReturningUser = typeViewed.length > 0;
-  const [introExpanded, setIntroExpanded] = useState(!isReturningUser);
+  const [introExpanded, setIntroExpanded] = useState(true);
 
   // Types ordered by frequency (most common first)
   const typesArr = [
@@ -48,17 +42,9 @@ const Learn = () => {
   };
 
   const types = typesArr.map((type) => {
-    const isViewed = typeViewed.find((viewed) => viewed === type.id);
     const indicators = typeIndicators[type.id] || [];
     return (
-      <li
-        key={type.id}
-        className={
-          isViewed
-            ? "viewed dark:!bg-[#47387b] dark:!border-[#47387b] dark:!text-white"
-            : ""
-        }
-      >
+      <li key={type.id}>
         <Link to={type.id} className="flex flex-col items-center justify-center gap-1 p-2 h-full">
           <div className="w-5 h-5 flex items-center justify-center">
             <ClueTypeIcon type={type.id} className="w-full h-full" />

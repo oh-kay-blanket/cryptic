@@ -2,7 +2,6 @@
 	"newUser": {
 		"completedClues": [],
 		"showType": true,
-		"typeViewed": [],
 		"streak": 0,
 		"longestStreak": 0,
 		"lastSolved": "",
@@ -16,7 +15,6 @@
 		"longestStreak": 5,
 		"lastSolved": "2025-12-22",
 		"showType": true,
-		"typeViewed": ["anagram", "container"],
 		"darkMode": null
 	},
 	"todayCompleted": {
@@ -27,7 +25,6 @@
 		"longestStreak": 1,
 		"lastSolved": "2025-12-23",
 		"showType": true,
-		"typeViewed": [],
 		"darkMode": null
 	}
 }

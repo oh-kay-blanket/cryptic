@@ -113,8 +113,7 @@ describe('Daily Clue Solving Flow', () => {
 				longestStreak: 5,
 				lastSolved: yesterdayStr,
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			})
 
 			cy.visit('/')
@@ -137,8 +136,7 @@ describe('Daily Clue Solving Flow', () => {
 				longestStreak: 6,
 				lastSolved: TEST_DATE,
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			})
 
 			cy.visit('/')
@@ -166,8 +164,7 @@ describe('Daily Clue Solving Flow', () => {
 				longestStreak: 1,
 				lastSolved: yesterdayStr,
 				showType: true,
-				typeViewed: [],
-				darkMode: null,
+								darkMode: null,
 			})
 
 			cy.visit('/')
