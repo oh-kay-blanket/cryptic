@@ -44,10 +44,10 @@
 				font-size: 4rem;
 				font-weight: 700;
 				line-height: 1;
-				color: $lc-primary;
+				color: $lc-text;
 
 				html.dark & {
-					color: $lc-primary--light;
+					color: #f5f5f5;
 				}
 			}
 
