@@ -18,12 +18,53 @@
 	@media (max-height: 600px) {
 		height: 160px;
 	}
+
+	@media (min-width: 768px) {
+		height: 235px;
+	}
+
+	// Compact height for constrained screens
+	@media (min-width: 768px) and (max-height: 700px) and (min-height: 500px) {
+		height: 175px;
+	}
+
+	// Very constrained - keyboard hidden, minimal bottom area
+	@media (min-width: 768px) and (max-height: 499px) {
+		height: 120px;
+	}
 }
 
-// Center buttons vertically when keyboard is hidden on desktop
-@media (min-width: 768px) and (max-height: 849px) {
+// Center buttons vertically when keyboard is hidden on very constrained screens
+@media (min-width: 768px) and (max-height: 499px) {
 	.bottom {
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+// Rotate device message - shown when keyboard is hidden
+.rotate-message {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-size: 0.85rem;
+	color: #666;
+	padding: 0.5rem 1rem;
+
+	svg {
+		width: 20px;
+		height: 20px;
+		opacity: 0.7;
+	}
+
+	html.dark & {
+		color: #a3a3a3;
+	}
+}
+
+@media (min-width: 768px) and (max-height: 499px) {
+	.rotate-message {
+		display: flex;
 	}
 }

@@ -15,6 +15,21 @@
     padding-bottom: calc(160px + env(safe-area-inset-bottom, 0px));
   }
 
+  // Desktop with full keyboard
+  @media (min-width: 768px) {
+    padding-bottom: calc(235px + env(safe-area-inset-bottom, 0px));
+  }
+
+  // Compact keyboard on constrained heights
+  @media (min-width: 768px) and (max-height: 700px) and (min-height: 500px) {
+    padding-bottom: calc(175px + env(safe-area-inset-bottom, 0px));
+  }
+
+  // Very constrained - keyboard hidden
+  @media (min-width: 768px) and (max-height: 499px) {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+  }
+
   #clue-container {
     position: relative;
     z-index: 20;
