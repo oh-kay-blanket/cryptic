@@ -1,21 +1,9 @@
 import React, { useRef, useMemo } from "react";
-import { Link } from "gatsby";
 import ButtonContainer from "./ButtonContainer";
 import Celebration from "./Celebration";
 
 import getMessage from "../../utils/bottom/getMessage";
 import { formatTime } from "../../utils/dateHelpers";
-
-// Map type names to URL paths
-const getLearnPath = (type) => {
-  const map = {
-    "& Lit.": "lit",
-    "Double Definition": "double-definition",
-    "Hidden Word": "hidden-word",
-    "Letter Bank": "letter-bank",
-  };
-  return map[type] || type.toLowerCase();
-};
 
 const Message = ({
   activeClue,
@@ -104,14 +92,6 @@ const Message = ({
             </span>
           )}
         </div>
-        {activeClue.type && activeClue.type.length > 0 && (
-          <Link
-            to={`/learn/${getLearnPath(activeClue.type[0])}`}
-            className="learn-suggestion"
-          >
-            Learn about {activeClue.type[0].toLowerCase()} clues &rarr;
-          </Link>
-        )}
       </div>
     ) : (
       <div data-testid="message-error">
