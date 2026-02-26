@@ -465,13 +465,6 @@ const Clues = ({ data, location }) => {
             </button>
           )}
 
-          <Link
-            to="/learn#learn-types"
-            className="learn-types-link flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] hover:underline ml-auto"
-          >
-            <BookIcon /> Learn types
-          </Link>
-
           <span className="filter-count text-neutral-500 dark:text-neutral-400">
             {archiveTiles.length} clue{archiveTiles.length !== 1 ? "s" : ""}
           </span>
@@ -487,9 +480,17 @@ const Clues = ({ data, location }) => {
         <h2 className="text-lg font-semibold mb-4">Filter Clues</h2>
 
         <div className="filter-group mb-4">
-          <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
-            Type
-          </label>
+          <div className="flex items-center justify-between mb-1.5">
+            <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+              Type
+            </label>
+            <Link
+              to="/learn#learn-types"
+              className="flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] hover:underline"
+            >
+              <BookIcon /> Learn types
+            </Link>
+          </div>
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
