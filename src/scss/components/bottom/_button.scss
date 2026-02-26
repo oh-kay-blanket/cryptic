@@ -50,7 +50,7 @@
 		border: 1px solid $lc-primary--light;
 
 		// Dark mode
-		:global(.dark) & {
+		html.dark & {
 			background-color: rgb(120, 70, 45); // desaturated orange from earlier work
 			border: 1px solid rgb(120, 70, 45);
 
@@ -156,6 +156,43 @@
 
 	&.stacked {
 		padding: 0.5rem 0.75rem;
+	}
+
+	&.big {
+		padding: 0.75rem 1.75rem;
+		font-size: 1.1rem;
+
+		svg {
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+
+		.btn-stack {
+			gap: 0.35rem;
+		}
+
+		&.primary {
+			background-color: $lc-primary;
+			border-color: $lc-primary;
+
+			&:hover,
+			&:active {
+				background-color: $lc-primary--dark;
+				border-color: $lc-primary--dark;
+			}
+
+			// Dark mode
+			html.dark & {
+				background-color: var(--lc-active-bg);
+				border-color: var(--lc-active-bg);
+				color: #fff;
+
+				&:hover,
+				&:active {
+					filter: brightness(0.85);
+				}
+			}
+		}
 	}
 
 	&.disabled {

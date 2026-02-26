@@ -102,6 +102,13 @@ const Title = ({ data }) => {
 			style: 'primary',
 			img: PlayIcon,
 		},
+		play: {
+			path: `/clues/${todayClue.clid}`,
+			name: 'Play',
+			style: 'primary big',
+			img: PlayIcon,
+			stack: true,
+		},
 		allClues: {
 			path: '/clues',
 			name: 'All clues',
@@ -122,33 +129,24 @@ const Title = ({ data }) => {
 			return (
 				<>
 					<div className='title-intro text-center' data-testid='title-intro'>
-						<p>
-							You solved today's clue with <br />
-							<span className='highlight-guesses whitespace-nowrap'>
+						<div className='streak-display' data-testid='streak-display'>
+							<span className='streak-number'>{streak}</span>
+							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
+						</div>
+						<p className='stats-label'>Today's clue</p>
+						<div className='stats-row'>
+							<span className='highlight-guesses'>
 								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
-							</span>{' '}
-							and{' '}
-							<span className='highlight-hints whitespace-nowrap'>
+							</span>
+							<span className='highlight-hints'>
 								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
 							</span>
 							{todaySolveTime != null && (
-								<>
-									{' '}
-									in{' '}
-									<span className='highlight-time whitespace-nowrap'>
-										{formatTime(todaySolveTime)}
-									</span>
-								</>
+								<span className='highlight-time'>
+									{formatTime(todaySolveTime)}
+								</span>
 							)}
-							{/* {todayGuesses === 1 && todayHints === 0 ? ' 🥇' : '🎉'} */}
-						</p>
-						<p data-testid='streak-display'>
-							Streak:{' '}
-							<span className='whitespace-nowrap'>
-								{streak} {streak === 1 ? 'day' : 'days'}
-								{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}
-							</span>
-						</p>
+						</div>
 					</div>
 					<div className='title-actions'>
 						<ButtonContainer
@@ -162,14 +160,11 @@ const Title = ({ data }) => {
 			return (
 				<>
 					<div className='title-intro text-center' data-testid='title-intro'>
-						<p className=''>Welcome back 👋</p>
-						<p data-testid='streak-display'>
-							You're on a{' '}
-							<span className='font-bold whitespace-nowrap'>
-								{streak}-day streak
-							</span>
-							! Keep it up by solving today's clue 👇
-						</p>
+						<div className='streak-display' data-testid='streak-display'>
+							<span className='streak-number'>{streak}</span>
+							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
+						</div>
+						<p>Keep it going! Solve today's clue 👇</p>
 					</div>
 					<div className='title-actions'>
 						<ButtonContainer
@@ -203,26 +198,24 @@ const Title = ({ data }) => {
 			)
 		} else {
 			// New user
+			const releaseDate = new Date(todayClue.release)
+			const formattedDate = releaseDate.toLocaleDateString('en-US', {
+				month: 'long',
+				day: 'numeric',
+				year: 'numeric',
+			})
 			return (
 				<>
-					<div className='title-intro' data-testid='title-intro'>
-						<p>
-							Welcome to Learn Cryptic — a daily game to help you master the art of cryptic crosswords.
-						</p>
+					<div className='title-intro text-center' data-testid='title-intro'>
+						<p>Master the art of cryptic crosswords.</p>
 					</div>
 					<div className='title-actions' data-testid='title-actions'>
-						<p className="mb-2">
-							New to cryptics?
+						<ButtonContainer btnArr={[buttons.play]} />
+						<p className='clue-meta'>
+							{formattedDate}
+							<br />
+							#{todayClue.clid} · by {todayClue.source?.value}
 						</p>
-						<ButtonContainer
-							btnArr={[buttons.learnNew]}
-						/>
-						<p className="mt-4 mb-2">
-							Already know the basics?
-						</p>
-						<ButtonContainer
-							btnArr={[buttons.todayClueSecondary]}
-						/>
 					</div>
 				</>
 			)
@@ -282,6 +275,9 @@ export const query = graphql`
 				release
 				clid
 				id
+				source {
+					value
+				}
 			}
 		}
 	}

@@ -7,6 +7,9 @@ const Button = ({ btnInfo }) => {
 
 	// Add dark mode classes based on button style
 	const getDarkModeClasses = (style) => {
+		// Skip Tailwind dark classes for 'big' buttons - handled in SCSS
+		if (style.includes('big')) return ''
+
 		switch(style) {
 			case 'primary':
 				return 'dark:!bg-[rgb(120,70,45)] dark:!border-[rgb(120,70,45)] dark:hover:!bg-orange-600'
