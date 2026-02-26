@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Initialism = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'initialism')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const Initialism = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/324',
-			name: 'Play an initialism clue',
+			path: '/clues?type=initialism',
+			name: 'Browse initialism clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('initialism')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/homophone',

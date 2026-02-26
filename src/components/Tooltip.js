@@ -1,5 +1,16 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+
+// Map type names to URL paths
+const getLearnPath = (type) => {
+	const map = {
+		'& Lit.': 'lit',
+		'Double Definition': 'double-definition',
+		'Hidden Word': 'hidden-word',
+		'Letter Bank': 'letter-bank',
+	}
+	return map[type] || type.toLowerCase()
+}
 
 const Tooltip = ({ text }) => {
 	const data = useStaticQuery(graphql`
@@ -22,6 +33,9 @@ const Tooltip = ({ text }) => {
 		<div role='tooltip' className='tooltip' id={text}>
 			<p className='tooltip-description'>{matchType.description}</p>
 			<p className='tooltip-example'>{matchType.example}</p>
+			<Link to={`/learn/${getLearnPath(text)}`} className='tooltip-learn-link'>
+				Learn more &rarr;
+			</Link>
 		</div>
 	)
 }

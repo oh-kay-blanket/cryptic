@@ -53,4 +53,21 @@
 			color: #a3a3a3; // neutral-400
 		}
 	}
+
+	.learn-suggestion {
+		display: block;
+		margin-top: 0.75rem;
+		font-size: 0.8rem;
+		color: #68589E;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		// Dark mode
+		html.dark & {
+			color: #9B8FE8;
+		}
+	}
 }

@@ -1,9 +1,21 @@
 import React, { useRef, useMemo } from "react";
+import { Link } from "gatsby";
 import ButtonContainer from "./ButtonContainer";
 import Celebration from "./Celebration";
 
 import getMessage from "../../utils/bottom/getMessage";
 import { formatTime } from "../../utils/dateHelpers";
+
+// Map type names to URL paths
+const getLearnPath = (type) => {
+  const map = {
+    "& Lit.": "lit",
+    "Double Definition": "double-definition",
+    "Hidden Word": "hidden-word",
+    "Letter Bank": "letter-bank",
+  };
+  return map[type] || type.toLowerCase();
+};
 
 const Message = ({
   activeClue,
@@ -54,18 +66,6 @@ const Message = ({
         >
           <span
             style={{
-              backgroundColor: "var(--lc-highlight-bg)",
-              color: "var(--lc-text-primary)",
-              padding: "2px 6px",
-              lineHeight: "1.5",
-              borderRadius: "4px",
-              fontSize: "0.875rem",
-            }}
-          >
-            {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
-          </span>
-          <span
-            style={{
               backgroundColor: "var(--lc-active-bg)",
               color: "var(--lc-text-primary)",
               padding: "2px 6px",
@@ -75,6 +75,18 @@ const Message = ({
             }}
           >
             {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
+          </span>
+          <span
+            style={{
+              backgroundColor: "var(--lc-highlight-bg)",
+              color: "var(--lc-text-primary)",
+              padding: "2px 6px",
+              lineHeight: "1.5",
+              borderRadius: "4px",
+              fontSize: "0.875rem",
+            }}
+          >
+            {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
           </span>
           {solveTime != null && (
             <span
@@ -92,6 +104,14 @@ const Message = ({
             </span>
           )}
         </div>
+        {activeClue.type && activeClue.type.length > 0 && (
+          <Link
+            to={`/learn/${getLearnPath(activeClue.type[0])}`}
+            className="learn-suggestion"
+          >
+            Learn about {activeClue.type[0].toLowerCase()} clues &rarr;
+          </Link>
+        )}
       </div>
     ) : (
       <div data-testid="message-error">

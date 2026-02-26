@@ -13,6 +13,8 @@ export const UserProvider = ({ children }) => {
   const [currentStats, setCurrentStats] = useState(null); // { hints: 0, guesses: 0 } when on clue page
   const [clueStartTime, setClueStartTime] = useState(null); // timestamp when clue was started
   const [clueSolvedTime, setClueSolvedTime] = useState(null); // final solve time in seconds when clue is completed
+  const [triggerOnboarding, setTriggerOnboarding] = useState(false); // trigger to start tutorial from anywhere
+  const [timerPaused, setTimerPaused] = useState(false); // pause timer during onboarding
 
   // manage lcState
   const [lcState, setLcState] = useState(() => {
@@ -30,6 +32,8 @@ export const UserProvider = ({ children }) => {
       longestStreak: 0,
       lastSolved: "",
       darkMode: null, // null = system preference, true = dark, false = light
+      hasSeenOnboarding: false,
+      hasCompletedFirstClue: false,
     };
   });
 
@@ -40,6 +44,8 @@ export const UserProvider = ({ children }) => {
   let streak = lcState.streak;
   let longestStreak = lcState.longestStreak;
   let darkMode = lcState.darkMode;
+  let hasSeenOnboarding = lcState.hasSeenOnboarding;
+  let hasCompletedFirstClue = lcState.hasCompletedFirstClue;
 
   // Listen for localStorage changes from other tabs
   useEffect(() => {
@@ -241,6 +247,21 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  // Onboarding state
+  const setHasSeenOnboarding = (value) => {
+    setLcState({
+      ...lcState,
+      hasSeenOnboarding: value,
+    });
+  };
+
+  const setHasCompletedFirstClue = (value) => {
+    setLcState({
+      ...lcState,
+      hasCompletedFirstClue: value,
+    });
+  };
+
   // Refresh state from localStorage (used after migrations)
   const refreshFromStorage = () => {
     if (typeof window !== "undefined") {
@@ -272,6 +293,14 @@ export const UserProvider = ({ children }) => {
       clueSolvedTime,
       setClueSolvedTime,
       refreshFromStorage,
+      hasSeenOnboarding,
+      setHasSeenOnboarding,
+      hasCompletedFirstClue,
+      setHasCompletedFirstClue,
+      triggerOnboarding,
+      setTriggerOnboarding,
+      timerPaused,
+      setTimerPaused,
     }),
     [
       completedClues,
@@ -284,6 +313,10 @@ export const UserProvider = ({ children }) => {
       currentStats,
       clueStartTime,
       clueSolvedTime,
+      hasSeenOnboarding,
+      hasCompletedFirstClue,
+      triggerOnboarding,
+      timerPaused,
     ],
   );
 

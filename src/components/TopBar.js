@@ -146,6 +146,8 @@ const TopBar = () => {
     currentStats,
     clueStartTime,
     clueSolvedTime,
+    setTriggerOnboarding,
+    timerPaused,
   } = useContext(UserContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
@@ -154,7 +156,7 @@ const TopBar = () => {
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
 
-  // Live timer update (stops when clue is solved)
+  // Live timer update (stops when clue is solved or paused)
   useEffect(() => {
     // If clue is solved, use the final solved time
     if (clueSolvedTime != null) {
@@ -167,6 +169,11 @@ const TopBar = () => {
       return;
     }
 
+    // Don't update timer when paused (e.g., during onboarding)
+    if (timerPaused) {
+      return;
+    }
+
     // Initial calculation
     setElapsedTime(Math.round((Date.now() - clueStartTime) / 1000));
 
@@ -176,7 +183,7 @@ const TopBar = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [clueStartTime, clueSolvedTime]);
+  }, [clueStartTime, clueSolvedTime, timerPaused]);
 
   // Close tooltip when clicking outside
   useEffect(() => {
@@ -299,23 +306,11 @@ const TopBar = () => {
                   }
                 }}
               >
-                <span className='stat stat-hints'>{currentStats.hints}h</span>
                 <span className='stat stat-guesses'>{currentStats.guesses}g</span>
+                <span className='stat stat-hints'>{currentStats.hints}h</span>
                 <span className='stat stat-time'>{formatTime(elapsedTime)}</span>
                 {showCurrentStatsTooltip && (
                   <div className='current-stats-tooltip'>
-                    <span
-                      style={{
-                        backgroundColor: 'var(--lc-highlight-bg)',
-                        color: 'var(--lc-text-primary)',
-                        padding: '2px 6px',
-                        lineHeight: '1.5',
-                        borderRadius: '4px',
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}
-                    </span>
                     <span
                       style={{
                         backgroundColor: 'var(--lc-active-bg)',
@@ -327,6 +322,18 @@ const TopBar = () => {
                       }}
                     >
                       {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
+                    </span>
+                    <span
+                      style={{
+                        backgroundColor: 'var(--lc-highlight-bg)',
+                        color: 'var(--lc-text-primary)',
+                        padding: '2px 6px',
+                        lineHeight: '1.5',
+                        borderRadius: '4px',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}
                     </span>
                     <span
                       style={{
@@ -352,7 +359,7 @@ const TopBar = () => {
         </div>
       </header>
       <Modal id='modal-info' open={helpOpen} onClose={() => setHelpOpen(false)}>
-        <div className='mb-5 mt-4'>
+        <div className='mb-4 mt-4'>
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
             Theme
           </h3>
@@ -419,7 +426,27 @@ const TopBar = () => {
           </div>
         </div>
 
-        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+        {currentStats && (
+          <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
+            <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+              Tutorial
+            </h3>
+            <button
+              onClick={() => {
+                setHelpOpen(false);
+                setTriggerOnboarding(true);
+              }}
+              className='group flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
+            >
+              <span className='group-hover:underline'>Start tutorial</span>
+              <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
+                →
+              </span>
+            </button>
+          </div>
+        )}
+
+        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
             Learn More
           </h3>
@@ -445,7 +472,7 @@ const TopBar = () => {
           </div>
         </div>
 
-        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5'>
+        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
             Contact
           </h3>
@@ -476,7 +503,7 @@ const TopBar = () => {
             <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 mt-4'>
               Streaks
             </h3>
-            <div className='grid grid-cols-2 gap-4 mb-5'>
+            <div className='grid grid-cols-2 gap-4 mb-4'>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-neutral-900 dark:text-white'>{streak}</div>
                 <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
@@ -489,7 +516,7 @@ const TopBar = () => {
               </div>
             </div>
 
-            <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+            <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
               <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
                 Performance
               </h3>
@@ -547,7 +574,7 @@ const TopBar = () => {
             </div>
 
             {cluesWithDifficulty.length > 0 && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
                 <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
                   By Difficulty
                 </h3>
@@ -581,7 +608,7 @@ const TopBar = () => {
             )}
 
             {firstSolveDate && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5'>
+              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
                 <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
                   Playing Since
                 </h3>

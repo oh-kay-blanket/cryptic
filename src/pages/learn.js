@@ -1,76 +1,55 @@
-import React, { useContext, useEffect } from "react";
-import { Link, graphql } from "gatsby";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
-import ButtonContainer from "../components/bottom/ButtonContainer";
 import { ClueTypeIcon } from "../components/ClueTypeIcons";
 
 import { UserContext } from "../utils/UserContext";
-import { isTodayClue } from "../utils/dateHelpers";
 
-import typePill from "../assets/img/learn/type-pill-reveal.png";
-import showHint from "../assets/img/learn/show-hint.png";
-import reveal from "../assets/img/learn/reveal.png";
-import difficulty from "../assets/img/learn/difficulty.png";
-
-const Learn = ({ data }) => {
+const Learn = () => {
   const { typeViewed } = useContext(UserContext);
-  const cluesData = data.allCluesJson.nodes;
-  const todayClue = cluesData.find(isTodayClue);
 
-  // Icon components
-  const PlayIcon = (
-    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor'>
-      <path d='M8 5v14l11-7z'/>
-    </svg>
-  );
+  // Collapsible intro state - default collapsed for returning users
+  const isReturningUser = typeViewed.length > 0;
+  const [introExpanded, setIntroExpanded] = useState(!isReturningUser);
 
-  const ListIcon = (
-    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 24 24'>
-      <rect x='3' y='3' width='3' height='3' rx='1' />
-      <rect x='3' y='10.5' width='3' height='3' rx='1' />
-      <rect x='3' y='18' width='3' height='3' rx='1' />
-      <rect x='8' y='3' width='13' height='3' rx='1' />
-      <rect x='8' y='10.5' width='13' height='3' rx='1' />
-      <rect x='8' y='18' width='13' height='3' rx='1' />
-    </svg>
-  );
-
-  // buttons
-  const buttons = {
-    todayClue: {
-      path: `/clues/${todayClue.clid}`,
-      name: "Play today's clue",
-      style: "primary",
-      img: PlayIcon,
-    },
-    allClues: {
-      path: "/clues",
-      name: "All clues",
-      style: "secondary",
-      img: ListIcon,
-    },
-  };
-  const btnArr = [buttons.todayClue, buttons.allClues];
-
+  // Types ordered by frequency (most common first)
   const typesArr = [
     { name: "Anagram", id: "anagram" },
     { name: "Charade", id: "charade" },
     { name: "Container", id: "container" },
     { name: "Deletion", id: "deletion" },
-    { name: "Double Definition", id: "double-definition" },
-    { name: "Hidden Word", id: "hidden-word" },
     { name: "Homophone", id: "homophone" },
+    { name: "Hidden Word", id: "hidden-word" },
+    { name: "Double Definition", id: "double-definition" },
+    { name: "Reversal", id: "reversal" },
     { name: "Initialism", id: "initialism" },
     { name: "Letter Bank", id: "letter-bank" },
-    { name: "Reversal", id: "reversal" },
     { name: "Spoonerism", id: "spoonerism" },
     { name: "& Lit.", id: "lit" },
     { name: "Combination", id: "combination" },
   ];
 
+  // Indicator words for each type
+  const typeIndicators = {
+    anagram: ["wild", "crazy", "scrambled", "mixed"],
+    charade: [],
+    container: ["in", "around", "holding", "inside"],
+    deletion: ["losing", "without", "missing", "dropped"],
+    homophone: ["heard", "sounds like", "aloud", "spoken"],
+    "hidden-word": ["in", "within", "part of", "some"],
+    "double-definition": [],
+    reversal: ["back", "up", "returned", "flipped"],
+    initialism: ["initially", "first", "starts", "heads"],
+    "letter-bank": ["letters from", "using"],
+    spoonerism: ["Spooner", "spoonerism"],
+    lit: [],
+    combination: [],
+  };
+
   const types = typesArr.map((type) => {
     const isViewed = typeViewed.find((viewed) => viewed === type.id);
+    const indicators = typeIndicators[type.id] || [];
     return (
       <li
         key={type.id}
@@ -80,11 +59,16 @@ const Learn = ({ data }) => {
             : ""
         }
       >
-        <Link to={type.id} className="flex flex-col items-center justify-center gap-2 p-3 h-full">
+        <Link to={type.id} className="flex flex-col items-center justify-center gap-1 p-2 h-full">
           <div className="w-5 h-5 flex items-center justify-center">
             <ClueTypeIcon type={type.id} className="w-full h-full" />
           </div>
           <span className="text-sm text-center">{type.name}</span>
+          {indicators.length > 0 && (
+            <span className="type-indicators text-xs text-center text-neutral-500 dark:text-neutral-400">
+              {indicators.slice(0, 3).join(", ")}
+            </span>
+          )}
         </Link>
       </li>
     );
@@ -115,135 +99,80 @@ const Learn = ({ data }) => {
   return (
     <Layout>
       <div className="learn lc-container">
-        <h1 className="text-3xl font-bold my-4">Learn Cryptic Crosswords</h1>
-        <div className="learn-section">
-          <h2 className="text-2xl font-bold my-4">
-            What is a cryptic crossword?
-          </h2>
-          <p className="my-2">
-            In a cryptic (British-style) crossword, each clue is a little puzzle
-            in itself—involving wordplay such as anagrams, homophones, hidden
-            words, and other devilish tricks.
-          </p>
-          <p className="my-2">
-            The surface reading of the clue is not important. Rather, the clue
-            hints at the solution in two different ways, and thus is composed of
-            two parts:
-          </p>
-          <ul className="no-dec">
-            <li className="mt-4">
-              <p className="font-bold">The definition</p>
-              <p className="my-2">
-                This part of the clue is a straightforward (or thinly/thickly disguised) definition
-                of the solution. The definition always appears at the start or end of the
-                clue.
-              </p>
-            </li>
-            <li className="mt-4">
-              <p className="font-bold">The wordplay</p>
-              <p className="my-2">
-                The rest of the clue is an enigmatic hint, in which
-                wordplay gives a second path to the solution.
-              </p>
-            </li>
-          </ul>
-          <p className="font-bold my-4">Example</p>
-          <div className="example-container">
-            <p className="example">Wild West goulash (4)</p>
-            <div className="explanation dark:!bg-neutral-700 dark:!text-neutral-100">
-              <ul className="mt-0 list-disc my-3">
-                <li>
-                  <strong>GOULASH</strong> is the definition
-                </li>
-                <li>
-                  <strong>WILD</strong> indicates an anagram of <strong>WEST</strong>
-                </li>
-                <li>
-                  <strong>WEST</strong> anagrams to <strong>STEW</strong>
-                </li>
-              </ul>
-              <div className="solution">
-                <span className="letter">s</span>
-                <span className="letter">t</span>
-                <span className="letter">e</span>
-                <span className="letter">w</span>
+        <div className="learn-section learn-intro">
+          <button
+            className="learn-intro-header"
+            onClick={() => setIntroExpanded(!introExpanded)}
+            aria-expanded={introExpanded}
+          >
+            <h1 className="text-3xl font-bold my-4">
+              What are cryptic crosswords?
+            </h1>
+            <span className={`chevron ${introExpanded ? "expanded" : ""}`}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div className={`learn-intro-content ${introExpanded ? "expanded" : ""}`}>
+            <p className="my-2">
+              In a cryptic (British-style) crossword, each clue is a little puzzle
+              in itself—involving wordplay such as anagrams, homophones, hidden
+              words, and other devilish tricks.
+            </p>
+            <p className="my-2">
+              The surface reading of the clue is not important. Rather, the clue
+              hints at the solution in two different ways, and thus is composed of
+              two parts:
+            </p>
+            <ul className="no-dec">
+              <li className="mt-4">
+                <p className="font-bold">The definition</p>
+                <p className="my-2">
+                  This part of the clue is a straightforward (or thinly/thickly disguised) definition
+                  of the solution. The definition always appears at the start or end of the
+                  clue.
+                </p>
+              </li>
+              <li className="mt-4">
+                <p className="font-bold">The wordplay</p>
+                <p className="my-2">
+                  The rest of the clue is an enigmatic hint, in which
+                  wordplay gives a second path to the solution.
+                </p>
+              </li>
+            </ul>
+            <p className="font-bold my-4">Example</p>
+            <div className="example-container">
+              <p className="example">Wild West goulash (4)</p>
+              <div className="explanation dark:!bg-neutral-700 dark:!text-neutral-100">
+                <ul className="mt-0 list-disc my-3">
+                  <li>
+                    <strong>GOULASH</strong> is the definition
+                  </li>
+                  <li>
+                    <strong>WILD</strong> indicates an anagram of <strong>WEST</strong>
+                  </li>
+                  <li>
+                    <strong>WEST</strong> anagrams to <strong>STEW</strong>
+                  </li>
+                </ul>
+                <div className="solution">
+                  <span className="letter">s</span>
+                  <span className="letter">t</span>
+                  <span className="letter">e</span>
+                  <span className="letter">w</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="learn-section">
-          <h2 className="text-2xl font-bold my-4">What is Learn Cryptic?</h2>
-          <p className="my-2">
-            Learn Cryptic is a daily game that teaches the cryptic-curious how
-            to decipher clues.
-          </p>
-          <p className="my-2">
-            As with regular (American-style) crosswords, it takes a lot of
-            practice to get good at solving cryptic puzzles. For beginners, the
-            learning curve can be steep. There are several kinds of hints to
-            help guide you:
-          </p>
-          <ul className="no-dec">
-            <li className="mt-4">
-              <p className="font-bold">Clue type</p>
-              <p className="my-2">
-                At the top left of the screen, purple pills tell you the type(s)
-                of wordplay used. A single clue can use as many as four
-                different types of wordplay. Tap the pills to learn about each
-                type. Tap the eye to toggle this feature off and on.
-              </p>
-              <img className="border" src={typePill} alt="Screenshot showing purple clue type pills that reveal the wordplay type used in each cryptic clue" />
-            </li>
-            <li className="mt-4">
-              <p className="font-bold">Hints</p>
-              <p className="my-2">
-                The "Show hint" and "Reveal solution" buttons guide you through
-                each step of deciphering the clue. If you've correctly guessed
-                the solution but you're not sure how the clue works, press the
-                "Show logic" button to be guided through the steps.{" "}
-              </p>
-              <img className="border" src={showHint} alt="Screenshot showing the Show hint and Reveal solution buttons that guide you through solving cryptic clues" />
-            </li>
-            <li className="mt-4">
-              <p className="font-bold">Reveal letter</p>
-              <p className="my-2">
-                Need help with just one letter? Tap any blank square in the
-                solution box to reveal that specific letter.
-              </p>
-              <img className="border" src={reveal} alt="Screenshot showing how to tap a blank square to reveal a single letter in the solution" />
-            </li>
-            <li className="mt-4">
-              <p className="font-bold">Difficulty</p>
-              <p className="my-2">
-                A new clue is released each day. They progress in difficulty as
-                the week goes on—Monday's are the easiest clues, while Sunday's
-                are the trickiest. The difficulty indicator will tell you how
-                challenging a clue might be.
-              </p>
-              <img className="border" src={difficulty} alt="Screenshot showing the difficulty indicator that rates clues from easy Monday puzzles to challenging Sunday puzzles" />
-            </li>
-          </ul>
-        </div>
-
         <div id="learn-types" className="learn-section">
           <h2 className="text-2xl font-bold my-4">
-            What different types of wordplay will I find?
+            Types of wordplay
           </h2>
-          <p className="mb-3">Tap a type below to explore:</p>
           <ul className="learn-types no-dec">{types}</ul>
-        </div>
-
-        <div className="learn-section">
-          <h2 className="text-2xl font-bold my-4">
-            Anything else I should know?
-          </h2>
-          <p className="mb-3">
-            You now know the basics of cryptic crosswords, let's dive in!
-          </p>
-          <div className="mt-4">
-            <ButtonContainer btnArr={btnArr} />
-          </div>
         </div>
       </div>
     </Layout>
@@ -287,13 +216,3 @@ export const Head = () => (
   </>
 );
 
-export const query = graphql`
-  query {
-    allCluesJson {
-      nodes {
-        release
-        clid
-      }
-    }
-  }
-`;

@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Homophone = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'homophone')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const Homophone = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/188',
-			name: 'Play a homophone clue',
+			path: '/clues?type=homophone',
+			name: 'Browse homophone clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('homophone')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/hidden-word',

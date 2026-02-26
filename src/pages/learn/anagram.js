@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Anagram = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'anagram')
 	useEffect(() => {
@@ -58,13 +58,10 @@ const Anagram = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/97',
-			name: 'Play an anagram clue',
+			path: '/clues?type=anagram',
+			name: 'Browse anagram clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('anagram')
-			},
+			img: ArrowRightIcon,
 		},
 		learn: {
 			path: '/learn#learn-types',

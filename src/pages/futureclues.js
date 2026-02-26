@@ -99,8 +99,8 @@ const Clues = ({ data }) => {
 
       const stats = completedClue && (
         <div className="tile-stats-cell">
-          <span className="stat-hints">{completedClue.hints}</span>
           <span className="stat-guesses">{completedClue.guesses}</span>
+          <span className="stat-hints">{completedClue.hints}</span>
         </div>
       );
 

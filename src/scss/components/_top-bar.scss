@@ -58,14 +58,14 @@
       padding: 4px 8px;
     }
 
-    .stat-hints {
-      background-color: var(--lc-highlight-bg);
+    .stat-guesses {
+      background-color: var(--lc-active-bg);
       color: var(--lc-text-primary);
       border-radius: 4px 0 0 4px;
     }
 
-    .stat-guesses {
-      background-color: var(--lc-active-bg);
+    .stat-hints {
+      background-color: var(--lc-highlight-bg);
       color: var(--lc-text-primary);
       border-radius: 0;
     }

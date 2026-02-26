@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const HiddenWord = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'hidden-word')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const HiddenWord = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/52',
-			name: 'Play a hidden word clue',
+			path: '/clues?type=hidden%20word',
+			name: 'Browse hidden word clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('hidden-word')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/double-definition',

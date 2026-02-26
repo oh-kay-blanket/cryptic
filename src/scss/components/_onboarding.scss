@@ -1,0 +1,334 @@
+@use '../base/var' as *;
+
+// Spotlight overlay
+.onboarding-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+
+  svg {
+    pointer-events: none;
+
+    rect[mask] {
+      pointer-events: auto;
+    }
+  }
+}
+
+// Tooltip styles
+.onboarding-tooltip {
+  font-family: $lc-font--sans;
+  background-color: #fff;
+  color: #171717;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: min(360px, calc(100vw - 32px));
+  opacity: 0;
+  animation: onboardingTooltipFadeIn 0.25s ease-out forwards;
+
+  .onboarding-tooltip-content {
+    padding: 1rem 1.25rem;
+  }
+
+  .onboarding-tooltip-step {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $lc-secondary--dark;
+    margin-bottom: 0.5rem;
+  }
+
+  .onboarding-tooltip-message {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+
+    strong {
+      font-weight: 600;
+      color: $lc-secondary--dark;
+    }
+  }
+
+  .onboarding-tooltip-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  // Arrow pointing down (tooltip above target)
+  &.onboarding-tooltip-arrow-bottom .onboarding-tooltip-arrow {
+    position: absolute;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+  }
+
+  // Arrow pointing up (tooltip below target)
+  &.onboarding-tooltip-arrow-top .onboarding-tooltip-arrow {
+    position: absolute;
+    top: -10px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.05));
+  }
+}
+
+// Button styles
+.onboarding-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.onboarding-btn-skip {
+    background-color: transparent;
+    color: #666;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: #333;
+    }
+  }
+
+  &.onboarding-btn-back {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: #333;
+      border-color: #999;
+    }
+  }
+
+  &.onboarding-btn-next {
+    background-color: $lc-secondary--dark;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($lc-secondary--dark, 10%);
+    }
+  }
+}
+
+// Prompt overlay (for return visitor prompt)
+.onboarding-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: onboardingOverlayFadeIn 0.2s ease-out;
+}
+
+.onboarding-prompt {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  max-width: min(320px, calc(100vw - 48px));
+  animation: onboardingPromptSlideIn 0.25s ease-out;
+
+  .onboarding-prompt-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .onboarding-prompt-message {
+    font-family: $lc-font--sans;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .onboarding-prompt-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}
+
+// Follow-up overlay (for post-completion prompt)
+.onboarding-followup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: onboardingOverlayFadeIn 0.2s ease-out;
+}
+
+.onboarding-followup {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  max-width: min(340px, calc(100vw - 48px));
+  animation: onboardingPromptSlideIn 0.25s ease-out;
+
+  .onboarding-followup-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .onboarding-followup-title {
+    font-family: $lc-font--serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #171717;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .onboarding-followup-message {
+    font-family: $lc-font--sans;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .onboarding-followup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}
+
+// Dark mode styles
+html.dark {
+  .onboarding-tooltip {
+    background-color: #2d2d2d;
+    color: #f5f5f5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    .onboarding-tooltip-step {
+      color: $lc-secondary--light;
+    }
+
+    .onboarding-tooltip-message {
+      color: #e5e5e5;
+
+      strong {
+        color: $lc-secondary--light;
+      }
+    }
+
+    &.onboarding-tooltip-arrow-bottom .onboarding-tooltip-arrow {
+      border-top-color: #2d2d2d;
+    }
+
+    &.onboarding-tooltip-arrow-top .onboarding-tooltip-arrow {
+      border-bottom-color: #2d2d2d;
+    }
+  }
+
+  .onboarding-btn {
+    &.onboarding-btn-skip {
+      color: #a3a3a3;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e5e5e5;
+      }
+    }
+
+    &.onboarding-btn-back {
+      color: #a3a3a3;
+      border-color: #525252;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e5e5e5;
+        border-color: #737373;
+      }
+    }
+
+    &.onboarding-btn-next {
+      background-color: $lc-secondary;
+      color: #171717;
+
+      &:hover {
+        background-color: lighten($lc-secondary, 5%);
+      }
+    }
+  }
+
+  .onboarding-prompt,
+  .onboarding-followup {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+    .onboarding-prompt-message,
+    .onboarding-followup-message {
+      color: #d4d4d4;
+    }
+
+    .onboarding-followup-title {
+      color: #f5f5f5;
+    }
+  }
+}
+
+// Animations
+@keyframes onboardingTooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes onboardingOverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes onboardingPromptSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

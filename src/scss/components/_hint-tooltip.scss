@@ -7,7 +7,7 @@
 	border-radius: 8px;
 	border: 1px solid $lc-secondary;
 	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
-	max-width: min(320px, calc(100vw - 32px));
+	max-width: 320px;
 	opacity: 0;
 	animation: hintTooltipFadeIn 0.2s ease-out forwards;
 
@@ -82,11 +82,49 @@ html.dark .hint-tooltip {
 @keyframes hintTooltipFadeIn {
 	from {
 		opacity: 0;
-		transform: translate(-50%, calc(-100% + 8px));
+		transform: translateY(calc(-100% + 8px));
 	}
 	to {
 		opacity: 1;
-		transform: translate(-50%, -100%);
+		transform: translateY(-100%);
+	}
+}
+
+// Below placement (tooltip appears below the focus area)
+.hint-tooltip--below {
+	animation: hintTooltipFadeInBelow 0.2s ease-out forwards;
+
+	.hint-tooltip-arrow--top {
+		bottom: auto;
+		top: -8px;
+		border-top: none;
+		border-bottom: 9px solid $lc-secondary;
+
+		&::after {
+			bottom: auto;
+			top: 1px;
+			border-top: none;
+			border-bottom: 8px solid $lc-secondary--v-light;
+		}
+	}
+}
+
+html.dark .hint-tooltip--below .hint-tooltip-arrow--top {
+	border-bottom-color: #6b5b95;
+
+	&::after {
+		border-bottom-color: var(--lc-highlight-bg);
+	}
+}
+
+@keyframes hintTooltipFadeInBelow {
+	from {
+		opacity: 0;
+		transform: translateY(-8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 

@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Charade = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'charade')
 	useEffect(() => {
@@ -54,13 +54,10 @@ const Charade = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/163',
-			name: 'Play a charade clue',
+			path: '/clues?type=charade',
+			name: 'Browse charade clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('charade')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/anagram',

@@ -126,8 +126,8 @@ const Title = ({ data }) => {
 		},
 		browse: {
 			path: '/clues',
-			name: 'Play past clues',
-			style: 'primary big',
+			name: 'Browse clues',
+			style: 'secondary big',
 			img: ListIcon,
 			stack: true,
 		},
@@ -184,9 +184,9 @@ const Title = ({ data }) => {
 							<span className='streak-number'>{streak}</span>
 							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
 						</div>
-						<p>Keep it going</p>
 					</div>
 					<div className='title-actions'>
+						<p className='cta-text'>Keep it going</p>
 						<ButtonContainer btnArr={[buttons.play]} />
 						<p className='clue-meta'>
 							{formattedDate}
@@ -211,9 +211,9 @@ const Title = ({ data }) => {
 							<span className='streak-number'>0</span>
 							<span className='streak-label'>day streak</span>
 						</div>
-						<p>Start a new one today</p>
 					</div>
 					<div className='title-actions'>
+						<p className='cta-text'>Start a new one today</p>
 						<ButtonContainer btnArr={[buttons.play]} />
 						<p className='clue-meta'>
 							{formattedDate}

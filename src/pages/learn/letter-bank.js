@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const LetterBank = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'letter-bank')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const LetterBank = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/50',
-			name: 'Play a letter bank clue',
+			path: '/clues?type=letter%20bank',
+			name: 'Browse letter bank clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('letter-bank')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/initialism',

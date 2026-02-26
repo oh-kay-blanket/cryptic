@@ -272,14 +272,14 @@
           padding: 2px 5px;
         }
 
-        .stat-hints {
-          background-color: var(--lc-highlight-bg);
+        .stat-guesses {
+          background-color: var(--lc-active-bg);
           color: var(--lc-text-primary);
           border-radius: 4px 0 0 4px;
         }
 
-        .stat-guesses {
-          background-color: var(--lc-active-bg);
+        .stat-hints {
+          background-color: var(--lc-highlight-bg);
           color: var(--lc-text-primary);
           border-radius: 0;
         }
@@ -294,8 +294,8 @@
           }
         }
 
-        // When there's no time stat, guesses should have right border radius
-        .stat-guesses:last-child {
+        // When there's no time stat, hints should have right border radius
+        .stat-hints:last-child {
           border-radius: 0 4px 4px 0;
         }
       }

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 import handleHint from './handleHint'
 
@@ -12,6 +12,11 @@ const useManageClue = (activeClue, initialState = null) => {
 
 	// Get solve time in seconds
 	const getSolveTime = () => Math.round((Date.now() - startTime.current) / 1000)
+
+	// Adjust start time forward to account for paused duration (e.g., during onboarding)
+	const adjustStartTime = useCallback((pausedDuration) => {
+		startTime.current += pausedDuration
+	}, [])
 
 	// state - use initial values if provided (for returning to completed clues)
 	const [stats, setStats] = useState(
@@ -190,7 +195,8 @@ const useManageClue = (activeClue, initialState = null) => {
 		revealPromptIndex,
 		handleRevealLetter,
 		handleSquareClick,
-		getSolveTime
+		getSolveTime,
+		adjustStartTime
 	}
 }
 

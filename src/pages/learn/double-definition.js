@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const DoubleDefinition = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find(
 		(viewed) => viewed === 'double-definition'
@@ -55,13 +55,10 @@ const DoubleDefinition = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/101',
-			name: 'Play a double definition clue',
+			path: '/clues?type=double%20definition',
+			name: 'Browse double definition clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('double-definition')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/deletion',

@@ -58,8 +58,9 @@ const getMessage = hint => {
 				case 'spoonerism':
 					return <><strong>{hint.end.value[1].toUpperCase()}</strong> is a spoonerism of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'dd-2':
+					return <>The solution means both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong></>
 				case 'in-2':
-					return
+					return <><strong>{hint.end.value[1].toUpperCase()}</strong> comes from the first letters of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				default:
 					// One end point
 					if (hint.end.value.length === 1) {

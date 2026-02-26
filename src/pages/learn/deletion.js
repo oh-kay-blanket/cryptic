@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Deletion = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'deletion')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const Deletion = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/104',
-			name: 'Play a deletion clue',
+			path: '/clues?type=deletion',
+			name: 'Browse deletion clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('deletion')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/container',

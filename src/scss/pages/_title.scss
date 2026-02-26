@@ -5,7 +5,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1.5rem;
+	gap: 3rem;
 	min-height: calc(100vh - 60px);
 	font-family: $lc-font--sans;
 
@@ -170,6 +170,16 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+
+		.cta-text {
+			font-size: 1rem;
+			color: $lc-text--light;
+			margin-bottom: 0.5rem;
+
+			html.dark & {
+				color: #a3a3a3;
+			}
+		}
 
 		.title-date {
 			margin: .5rem auto;

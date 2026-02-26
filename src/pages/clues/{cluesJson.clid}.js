@@ -11,6 +11,9 @@ import Layout from "../../components/layout";
 import Bottom from "../../components/Bottom";
 import Tooltip from "../../components/Tooltip";
 import HintTooltip from "../../components/HintTooltip";
+import OnboardingGuide from "../../components/OnboardingGuide";
+import OnboardingPrompt from "../../components/OnboardingPrompt";
+import OnboardingFollowUp from "../../components/OnboardingFollowUp";
 import prepClue from "../../utils/clue/usePrepClue";
 import manageClue from "../../utils/clue/useManageClue";
 import handleHint from "../../utils/clue/handleHint";
@@ -131,6 +134,16 @@ const CluePage = ({ data }) => {
   const activeTooltipHintRef = useRef(null);
   const [solutionBreakIndex, setSolutionBreakIndex] = useState(null);
 
+  // Onboarding state
+  const [showOnboardingGuide, setShowOnboardingGuide] = useState(false);
+  const [showOnboardingPrompt, setShowOnboardingPrompt] = useState(false);
+  const [showOnboardingFollowUp, setShowOnboardingFollowUp] = useState(false);
+  const [followUpWasSolved, setFollowUpWasSolved] = useState(false);
+
+  // Timer pause tracking for onboarding
+  const pausedTimeRef = useRef(0); // Accumulated paused time in ms
+  const pauseStartRef = useRef(null); // When current pause started
+
   // Scroll to top to force mobile address bar to show, then add fixed-page class
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -187,7 +200,47 @@ const CluePage = ({ data }) => {
     setClueStartTime,
     setClueSolvedTime,
     clueSolvedTime,
+    hasSeenOnboarding,
+    setHasSeenOnboarding,
+    hasCompletedFirstClue,
+    setHasCompletedFirstClue,
+    triggerOnboarding,
+    setTriggerOnboarding,
+    setTimerPaused,
   } = useContext(UserContext);
+
+  // Track if we've already shown onboarding UI this session (to avoid re-prompting)
+  const hasShownOnboardingThisSession = useRef(false);
+
+  // Trigger onboarding guide or prompt based on user state (only on mount)
+  useEffect(() => {
+    // Only run once per session
+    if (hasShownOnboardingThisSession.current) return;
+
+    // Small delay to ensure the page has rendered
+    const timer = setTimeout(() => {
+      // First-time users: auto-show the guide
+      if (!hasSeenOnboarding) {
+        hasShownOnboardingThisSession.current = true;
+        setShowOnboardingGuide(true);
+      }
+      // Return visitors who haven't completed a clue yet: show prompt
+      else if (hasSeenOnboarding && completedClues && completedClues.length === 0) {
+        hasShownOnboardingThisSession.current = true;
+        setShowOnboardingPrompt(true);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [hasSeenOnboarding, completedClues]);
+
+  // Listen for trigger to start onboarding from TopBar help modal
+  useEffect(() => {
+    if (triggerOnboarding) {
+      setShowOnboardingGuide(true);
+      setTriggerOnboarding(false);
+    }
+  }, [triggerOnboarding, setTriggerOnboarding]);
 
   // Check if this clue has already been completed
   const completedClueData = completedClues?.find(
@@ -244,6 +297,7 @@ const CluePage = ({ data }) => {
     handleRevealLetter,
     handleSquareClick,
     getSolveTime,
+    adjustStartTime,
   } = manageClue(activeClue, completedInitialState);
 
   // If returning to a completed clue, show the source attribution
@@ -271,39 +325,76 @@ const CluePage = ({ data }) => {
       setCurrentStats(null);
       setClueStartTime(null);
       setClueSolvedTime(null);
+      setTimerPaused(false);
     };
-  }, [setCurrentStats, setClueStartTime, setClueSolvedTime, completedClueData]);
+  }, [setCurrentStats, setClueStartTime, setClueSolvedTime, setTimerPaused, completedClueData]);
+
+  // Pause/resume timer when onboarding guide shows/hides
+  useEffect(() => {
+    if (showOnboardingGuide) {
+      // Pause: record when pause started and tell TopBar to stop updating
+      pauseStartRef.current = Date.now();
+      setTimerPaused(true);
+    } else if (pauseStartRef.current !== null) {
+      // Resume: add paused duration to accumulated time and adjust start time
+      const pausedDuration = Date.now() - pauseStartRef.current;
+      pausedTimeRef.current += pausedDuration;
+      pauseStartRef.current = null;
+      // Adjust the start time forward to account for paused time (both display and solve time)
+      setClueStartTime((prev) => prev ? prev + pausedDuration : prev);
+      adjustStartTime(pausedDuration);
+      setTimerPaused(false);
+    }
+  }, [showOnboardingGuide, setClueStartTime, setTimerPaused, adjustStartTime]);
 
   // Update stats in context when they change
   useEffect(() => {
     setCurrentStats(stats);
   }, [stats, setCurrentStats]);
 
+  // Determine if clue is solved (for follow-up prompt)
+  const isSolution = activeClue.hints[nextHint]?.reveals;
+  const isCorrectAns = checkAns && input.join("").toLowerCase() === activeClue.solution.arr.join("").toLowerCase();
+
+  // Show follow-up prompt for first-time users after completion
+  useEffect(() => {
+    // Only show for first-time users who haven't completed a clue
+    if (hasCompletedFirstClue) return;
+
+    // Check if the clue was just completed (either by guessing or revealing)
+    const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
+
+    if (justCompleted && showMessage) {
+      // Delay showing the follow-up to let the celebration/message play
+      const timer = setTimeout(() => {
+        setFollowUpWasSolved(isCorrectAns);
+        setShowOnboardingFollowUp(true);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, hasCompletedFirstClue]);
+
   // Calculate tooltip position based on hint refs
   const calculateTooltipPosition = useCallback((hintIndex) => {
     const hint = activeClueRef.current.hints[hintIndex];
     if (!hint) return null;
 
-    // Get bounding boxes of all highlighted letters
-    let minTop = Infinity;
-    let leftmost = Infinity;
-    let rightmost = -Infinity;
+    // Collect all rects from the hint refs
+    const allRects = [];
 
     // Try hint.ref first (indicator word in clue)
     if (hint.ref && hint.ref.length > 0) {
       hint.ref.forEach((ref) => {
         if (ref && ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          if (rect.top < minTop) minTop = rect.top;
-          if (rect.left < leftmost) leftmost = rect.left;
-          if (rect.right > rightmost) rightmost = rect.right;
+          allRects.push(ref.current.getBoundingClientRect());
         }
       });
     }
 
     // If hint.ref didn't work, try addLetters refs as fallback
     if (
-      minTop === Infinity &&
+      allRects.length === 0 &&
       hint.addLetters &&
       hint.addLetters.ref &&
       hint.addLetters.ref.current
@@ -312,28 +403,62 @@ const CluePage = ({ data }) => {
       if (Array.isArray(addLettersRefs) && addLettersRefs.length > 0) {
         addLettersRefs.forEach((ref) => {
           if (ref && ref.current) {
-            const rect = ref.current.getBoundingClientRect();
-            if (rect.top < minTop) minTop = rect.top;
-            if (rect.left < leftmost) leftmost = rect.left;
-            if (rect.right > rightmost) rightmost = rect.right;
+            allRects.push(ref.current.getBoundingClientRect());
           }
         });
       }
     }
 
-    // If still no position found, try the clue section as last resort
-    if (minTop === Infinity) {
+    // If still no rects found, try the clue section as last resort
+    if (allRects.length === 0) {
       const clueSection = document.getElementById("clueSectionRef");
       if (clueSection) {
         const rect = clueSection.getBoundingClientRect();
-        return { x: rect.left + rect.width / 2, y: rect.top + rect.height };
+        return { x: rect.left + rect.width / 2, y: rect.top + rect.height, placement: "above" };
       }
       return null;
     }
 
-    // Position tooltip centered above the highlighted span
+    // Find the min/max positions
+    const minTop = Math.min(...allRects.map((rect) => rect.top));
+    const maxBottom = Math.max(...allRects.map((rect) => rect.bottom));
+
+    // Check if focus area is on the bottom line of a multi-line clue
+    let placement = "above";
+    const clueSection = document.getElementById("clueSectionRef");
+    if (clueSection) {
+      const clueRect = clueSection.getBoundingClientRect();
+      const lineHeight = allRects[0]?.height || 24;
+      // Clue has multiple lines if its height is greater than ~1.5 line heights
+      const isMultiLine = clueRect.height > lineHeight * 1.5;
+      // Focus area is on bottom line if all rects are near the clue bottom
+      const focusOnBottomLine = minTop > clueRect.bottom - lineHeight * 1.3;
+
+      if (isMultiLine && focusOnBottomLine) {
+        placement = "below";
+      }
+    }
+
+    // Filter to only rects on the relevant line (within 5px tolerance)
+    let targetLineRects;
+    let yPosition;
+
+    if (placement === "below") {
+      // For below placement, use the bottom line
+      targetLineRects = allRects.filter((rect) => maxBottom - rect.bottom < 5);
+      yPosition = maxBottom;
+    } else {
+      // For above placement, use the top line
+      targetLineRects = allRects.filter((rect) => rect.top - minTop < 5);
+      yPosition = minTop;
+    }
+
+    // Calculate horizontal center using only target line elements
+    const leftmost = Math.min(...targetLineRects.map((rect) => rect.left));
+    const rightmost = Math.max(...targetLineRects.map((rect) => rect.right));
+
     const centerX = (leftmost + rightmost) / 2;
-    return { x: centerX, y: minTop };
+    return { x: centerX, y: yPosition, placement };
   }, []);
 
   // Handle show hint click
@@ -1004,7 +1129,7 @@ const CluePage = ({ data }) => {
             className="clue"
             data-testid="clue-text"
           >
-            <div>
+            <div id="clueTextRef">
               {clueInsert} {solLength}
             </div>
           </div>
@@ -1242,6 +1367,34 @@ const CluePage = ({ data }) => {
           hint={activeClue.hints[activeTooltipHint]}
           position={tooltipPosition}
           onDismiss={dismissTooltip}
+        />
+      )}
+
+      {/* Onboarding Guide */}
+      <OnboardingGuide
+        isVisible={showOnboardingGuide}
+        onComplete={() => setShowOnboardingGuide(false)}
+      />
+
+      {/* Onboarding Prompt for return visitors */}
+      {showOnboardingPrompt && (
+        <OnboardingPrompt
+          onYes={() => {
+            setShowOnboardingPrompt(false);
+            setShowOnboardingGuide(true);
+          }}
+          onNo={() => {
+            setShowOnboardingPrompt(false);
+            setHasSeenOnboarding(true);
+          }}
+        />
+      )}
+
+      {/* Post-completion follow-up for first-time users */}
+      {showOnboardingFollowUp && (
+        <OnboardingFollowUp
+          wasSolved={followUpWasSolved}
+          onDismiss={() => setShowOnboardingFollowUp(false)}
         />
       )}
     </Layout>

@@ -80,20 +80,56 @@ const FilterIcon = () => (
   </svg>
 );
 
-const Clues = ({ data }) => {
+// Book icon component
+const BookIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="inline-block"
+  >
+    <path
+      d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const Clues = ({ data, location }) => {
   const cluesData = data.allCluesJson.nodes;
   const { completedClues } = useContext(UserContext);
+
+  // Read initial filter values from URL parameters
+  const getInitialFilter = (paramName, defaultValue) => {
+    if (typeof window !== "undefined" && location?.search) {
+      const params = new URLSearchParams(location.search);
+      return params.get(paramName) || defaultValue;
+    }
+    return defaultValue;
+  };
 
   // Track dark mode state
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [hoveredClue, setHoveredClue] = useState(null);
   const [hoveredRelease, setHoveredRelease] = useState(null);
 
-  // Filter state
-  const [difficultyFilter, setDifficultyFilter] = useState("all");
+  // Filter state - initialize from URL params if present
+  const [difficultyFilter, setDifficultyFilter] = useState(() => getInitialFilter("difficulty", "all"));
   const [authorFilter, setAuthorFilter] = useState("all");
   const [unsolvedFilter, setUnsolvedFilter] = useState(false);
-  const [typeFilter, setTypeFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState(() => getInitialFilter("type", "all"));
   const [filterModalOpen, setFilterModalOpen] = useState(false);
 
   // Get unique authors and types for filter dropdowns
@@ -107,6 +143,17 @@ const Clues = ({ data }) => {
         .filter(Boolean),
     ),
   ].sort();
+
+  // Read URL params on mount (for client-side navigation)
+  useEffect(() => {
+    if (typeof window !== "undefined" && location?.search) {
+      const params = new URLSearchParams(location.search);
+      const typeParam = params.get("type");
+      const difficultyParam = params.get("difficulty");
+      if (typeParam) setTypeFilter(typeParam);
+      if (difficultyParam) setDifficultyFilter(difficultyParam);
+    }
+  }, [location?.search]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -192,8 +239,8 @@ const Clues = ({ data }) => {
 
     const stats = completedClue && (
       <div className="tile-stats-cell">
-        <span className="stat-hints">{completedClue.hints}h</span>
         <span className="stat-guesses">{completedClue.guesses}g</span>
+        <span className="stat-hints">{completedClue.hints}h</span>
         {completedClue.solveTime != null && (
           <span className="stat-time">{formatTime(completedClue.solveTime)}</span>
         )}
@@ -322,17 +369,6 @@ const Clues = ({ data }) => {
                   <div className="tile-info-stats">
                     <span
                       style={{
-                        backgroundColor: "var(--lc-highlight-bg)",
-                        color: "var(--lc-text-primary)",
-                        padding: "2px 6px",
-                        borderRadius: "4px",
-                        fontSize: "0.75rem",
-                      }}
-                    >
-                      {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
-                    </span>
-                    <span
-                      style={{
                         backgroundColor: "var(--lc-active-bg)",
                         color: "var(--lc-text-primary)",
                         padding: "2px 6px",
@@ -341,6 +377,17 @@ const Clues = ({ data }) => {
                       }}
                     >
                       {completedClue.guesses} {completedClue.guesses === 1 ? "guess" : "guesses"}
+                    </span>
+                    <span
+                      style={{
+                        backgroundColor: "var(--lc-highlight-bg)",
+                        color: "var(--lc-text-primary)",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
                     </span>
                     {completedClue.solveTime != null && (
                       <span
@@ -418,7 +465,14 @@ const Clues = ({ data }) => {
             </button>
           )}
 
-          <span className="filter-count text-neutral-500 dark:text-neutral-400 ml-auto">
+          <Link
+            to="/learn#learn-types"
+            className="learn-types-link flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] hover:underline ml-auto"
+          >
+            <BookIcon /> Learn types
+          </Link>
+
+          <span className="filter-count text-neutral-500 dark:text-neutral-400">
             {archiveTiles.length} clue{archiveTiles.length !== 1 ? "s" : ""}
           </span>
         </div>

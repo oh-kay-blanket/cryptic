@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Spoonerism = () => {
-	const { typeViewed, setTypeViewed, setReturnLearn } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'spoonerism')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const Spoonerism = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/192',
-			name: 'Play a spoonerism clue',
+			path: '/clues?type=spoonerism',
+			name: 'Browse spoonerism clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('spoonerism')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/reversal',

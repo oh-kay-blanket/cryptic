@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Combination = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'combination')
 	useEffect(() => {
@@ -39,6 +39,11 @@ const Combination = () => {
 			<line x1='19' y1='12' x2='5' y2='12' /><polyline points='12 19 5 12 12 5' />
 		</svg>
 	)
+	const ArrowRightIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<line x1='5' y1='12' x2='19' y2='12' /><polyline points='12 5 19 12 12 19' />
+		</svg>
+	)
 	const ListIcon = (
 		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
 			<line x1='8' y1='6' x2='21' y2='6' /><line x1='8' y1='12' x2='21' y2='12' /><line x1='8' y1='18' x2='21' y2='18' /><line x1='3' y1='6' x2='3.01' y2='6' /><line x1='3' y1='12' x2='3.01' y2='12' /><line x1='3' y1='18' x2='3.01' y2='18' />
@@ -48,13 +53,10 @@ const Combination = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/122',
-			name: 'Play a combination clue',
+			path: '/clues',
+			name: 'Browse all clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('combination')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/lit',

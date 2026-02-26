@@ -5,7 +5,7 @@ import ButtonContainer from '../../components/bottom/ButtonContainer'
 import { ClueTypeIcon } from '../../components/ClueTypeIcons'
 
 const Reversal = () => {
-	const { setReturnLearn, typeViewed, setTypeViewed } = useContext(UserContext)
+	const { typeViewed, setTypeViewed } = useContext(UserContext)
 
 	const hasBeenViewed = typeViewed.find((viewed) => viewed === 'reversal')
 	useEffect(() => {
@@ -53,13 +53,10 @@ const Reversal = () => {
 	// buttons
 	const buttons = {
 		easyClue: {
-			path: '/clues/208',
-			name: 'Play a reversal clue',
+			path: '/clues?type=reversal',
+			name: 'Browse reversal clues',
 			style: 'primary',
-			img: PlayIcon,
-			onClick: function () {
-				setReturnLearn('reversal')
-			},
+			img: ArrowRightIcon,
 		},
 		prev: {
 			path: '/learn/letter-bank',
