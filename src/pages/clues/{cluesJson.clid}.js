@@ -423,19 +423,24 @@ const CluePage = ({ data }) => {
     const minTop = Math.min(...allRects.map((rect) => rect.top));
     const maxBottom = Math.max(...allRects.map((rect) => rect.bottom));
 
-    // Check if focus area is on the bottom line of a multi-line clue
+    // Determine tooltip placement based on clue layout
     let placement = "above";
-    const clueSection = document.getElementById("clueSectionRef");
-    if (clueSection) {
-      const clueRect = clueSection.getBoundingClientRect();
-      const lineHeight = allRects[0]?.height || 24;
-      // Clue has multiple lines if its height is greater than ~1.5 line heights
-      const isMultiLine = clueRect.height > lineHeight * 1.5;
-      // Focus area is on bottom line if all rects are near the clue bottom
-      const focusOnBottomLine = minTop > clueRect.bottom - lineHeight * 1.3;
+    const clueText = document.getElementById("clueTextRef");
+    if (clueText) {
+      // Use computed line-height for more accurate detection
+      const computedStyle = window.getComputedStyle(clueText);
+      const lineHeight = parseFloat(computedStyle.lineHeight) || 28;
+      const textRect = clueText.getBoundingClientRect();
+      // Single-line clues: text height fits within ~1.3 line heights
+      const isSingleLine = textRect.height <= lineHeight * 1.3;
 
-      if (isMultiLine && focusOnBottomLine) {
-        placement = "below";
+      // For single-line clues, always show tooltip above the text
+      // For multi-line clues, show below only when focus area is on the bottom line
+      if (!isSingleLine) {
+        const focusOnBottomLine = minTop > textRect.bottom - lineHeight * 1.3;
+        if (focusOnBottomLine) {
+          placement = "below";
+        }
       }
     }
 
