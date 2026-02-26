@@ -129,6 +129,7 @@ const CluePage = ({ data }) => {
   const revealPopupRef = useRef(null);
   const revealSolutionPopupRef = useRef(null);
   const activeTooltipHintRef = useRef(null);
+  const [solutionBreakIndex, setSolutionBreakIndex] = useState(null);
 
   // Scroll to top to force mobile address bar to show, then add fixed-page class
   useEffect(() => {
@@ -632,6 +633,46 @@ const CluePage = ({ data }) => {
     return () => window.removeEventListener("resize", calculateHintPosition);
   }, []);
 
+  // Detect when solution boxes overflow and need smart wrapping
+  useEffect(() => {
+    const checkSolutionOverflow = () => {
+      const solSection = document.getElementById("solSectionRef");
+      if (!solSection || !activeClue.solution.wordBreaks) return;
+
+      const containerWidth = solSection.parentElement?.clientWidth || window.innerWidth;
+      const boxSize = 30; // matches CSS .solution .letter width
+      const totalWidth = activeClue.solution.arr.length * boxSize;
+
+      if (totalWidth > containerWidth) {
+        // Find the best break point that keeps both lines balanced
+        const wordBreaks = activeClue.solution.wordBreaks;
+        let bestBreak = wordBreaks[0];
+
+        if (wordBreaks.length > 1) {
+          // For multi-word solutions, find the break closest to center
+          const midpoint = activeClue.solution.arr.length / 2;
+          let minDiff = Math.abs(wordBreaks[0] - midpoint);
+
+          for (const breakIdx of wordBreaks) {
+            const diff = Math.abs(breakIdx - midpoint);
+            if (diff < minDiff) {
+              minDiff = diff;
+              bestBreak = breakIdx;
+            }
+          }
+        }
+
+        setSolutionBreakIndex(bestBreak);
+      } else {
+        setSolutionBreakIndex(null);
+      }
+    };
+
+    checkSolutionOverflow();
+    window.addEventListener("resize", checkSolutionOverflow);
+    return () => window.removeEventListener("resize", checkSolutionOverflow);
+  }, [activeClue.solution.arr.length, activeClue.solution.wordBreaks]);
+
   // Calculate popup position when reveal prompt is shown
   useEffect(() => {
     if (showRevealPrompt && revealPromptIndex !== null) {
@@ -853,7 +894,7 @@ const CluePage = ({ data }) => {
   const cursorPosition = showMessage ? -1 : getCursorPosition();
 
   // solution HTML
-  const solInsert = activeClue.solution.arr.map((letter, index) => {
+  const solInsert = activeClue.solution.arr.flatMap((letter, index) => {
     const isActive = index === cursorPosition;
     const isRevealed = revealedLetters.includes(index);
     const isEmpty = !input[index] || input[index] === "";
@@ -875,7 +916,21 @@ const CluePage = ({ data }) => {
       ...(isActive && { backgroundColor: "var(--lc-active-bg)" }),
     };
 
-    return (
+    const elements = [];
+
+    // Insert line break before this letter if it's the break point
+    if (solutionBreakIndex !== null && index === solutionBreakIndex) {
+      elements.push(
+        <span
+          key="solution-break"
+          className="solution-break"
+          style={{ flexBasis: "100%", height: 0 }}
+          aria-hidden="true"
+        />
+      );
+    }
+
+    elements.push(
       <span
         key={`solarr_${index}`}
         id={`i${index}`}
@@ -909,6 +964,8 @@ const CluePage = ({ data }) => {
         </span>
       </span>
     );
+
+    return elements;
   });
 
   // solution length

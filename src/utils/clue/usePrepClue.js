@@ -23,6 +23,23 @@ const usePrepClue = (dataClue) => {
 	activeClue.solution.arr = activeClue.solution.value.split('')
 	activeClue.solution.arr = activeClue.solution.arr.filter((ltr) => ltr !== ' ')
 
+	// calculate word break indices for smart wrapping
+	// wordBreaks contains indices where a line break can be inserted (before that index)
+	const wordLengths = activeClue.solution.length.arr
+	if (wordLengths.length > 1) {
+		// Multi-word: break at word boundaries
+		activeClue.solution.wordBreaks = []
+		let pos = 0
+		for (let i = 0; i < wordLengths.length - 1; i++) {
+			pos += wordLengths[i]
+			activeClue.solution.wordBreaks.push(pos)
+		}
+	} else {
+		// Single word: break at midpoint for even split
+		const mid = Math.ceil(activeClue.solution.arr.length / 2)
+		activeClue.solution.wordBreaks = [mid]
+	}
+
 	// build type array
 	activeClue.type = activeClue.type.split(', ')
 
