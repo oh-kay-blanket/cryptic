@@ -31,6 +31,7 @@ export const UserProvider = ({ children }) => {
       lastSolved: "",
       darkMode: null, // null = system preference, true = dark, false = light
       hasSeenOnboarding: false,
+      hasSeenOnboardingPrompt: false,
       hasCompletedFirstClue: false,
     };
   });
@@ -42,6 +43,7 @@ export const UserProvider = ({ children }) => {
   let longestStreak = lcState.longestStreak;
   let darkMode = lcState.darkMode;
   let hasSeenOnboarding = lcState.hasSeenOnboarding;
+  let hasSeenOnboardingPrompt = lcState.hasSeenOnboardingPrompt;
   let hasCompletedFirstClue = lcState.hasCompletedFirstClue;
 
   // Listen for localStorage changes from other tabs
@@ -244,6 +246,13 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  const setHasSeenOnboardingPrompt = (value) => {
+    setLcState({
+      ...lcState,
+      hasSeenOnboardingPrompt: value,
+    });
+  };
+
   const setHasCompletedFirstClue = (value) => {
     setLcState({
       ...lcState,
@@ -282,6 +291,8 @@ export const UserProvider = ({ children }) => {
       refreshFromStorage,
       hasSeenOnboarding,
       setHasSeenOnboarding,
+      hasSeenOnboardingPrompt,
+      setHasSeenOnboardingPrompt,
       hasCompletedFirstClue,
       setHasCompletedFirstClue,
       triggerOnboarding,
@@ -300,6 +311,7 @@ export const UserProvider = ({ children }) => {
       clueStartTime,
       clueSolvedTime,
       hasSeenOnboarding,
+      hasSeenOnboardingPrompt,
       hasCompletedFirstClue,
       triggerOnboarding,
       timerPaused,

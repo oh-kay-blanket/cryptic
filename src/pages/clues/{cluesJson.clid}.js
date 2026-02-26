@@ -202,6 +202,8 @@ const CluePage = ({ data }) => {
     clueSolvedTime,
     hasSeenOnboarding,
     setHasSeenOnboarding,
+    hasSeenOnboardingPrompt,
+    setHasSeenOnboardingPrompt,
     hasCompletedFirstClue,
     setHasCompletedFirstClue,
     triggerOnboarding,
@@ -224,15 +226,15 @@ const CluePage = ({ data }) => {
         hasShownOnboardingThisSession.current = true;
         setShowOnboardingGuide(true);
       }
-      // Return visitors who haven't completed a clue yet: show prompt
-      else if (hasSeenOnboarding && completedClues && completedClues.length === 0) {
+      // Return visitors who haven't completed a clue yet and haven't seen the prompt: show prompt
+      else if (hasSeenOnboarding && !hasSeenOnboardingPrompt && completedClues && completedClues.length === 0) {
         hasShownOnboardingThisSession.current = true;
         setShowOnboardingPrompt(true);
       }
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [hasSeenOnboarding, completedClues]);
+  }, [hasSeenOnboarding, hasSeenOnboardingPrompt, completedClues]);
 
   // Listen for trigger to start onboarding from TopBar help modal
   useEffect(() => {
@@ -1386,11 +1388,12 @@ const CluePage = ({ data }) => {
         <OnboardingPrompt
           onYes={() => {
             setShowOnboardingPrompt(false);
+            setHasSeenOnboardingPrompt(true);
             setShowOnboardingGuide(true);
           }}
           onNo={() => {
             setShowOnboardingPrompt(false);
-            setHasSeenOnboarding(true);
+            setHasSeenOnboardingPrompt(true);
           }}
         />
       )}
