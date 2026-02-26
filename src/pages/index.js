@@ -32,6 +32,7 @@ const Title = ({ data }) => {
 
 	// Add loading state to prevent flicker
 	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
+	const [showStatsTooltip, setShowStatsTooltip] = React.useState(false)
 
 	React.useEffect(() => {
 		// Set context as loaded after a brief delay to ensure localStorage has been read
@@ -85,6 +86,60 @@ const Title = ({ data }) => {
 		</svg>
 	)
 
+	const ShareIcon = (
+		<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+			<circle cx='6' cy='12' r='2' />
+			<circle cx='18' cy='6' r='2' />
+			<circle cx='18' cy='18' r='2' />
+			<line x1='8' y1='11' x2='16' y2='7' />
+			<line x1='8' y1='13' x2='16' y2='17' />
+		</svg>
+	)
+
+	// Share score function
+	const handleShareScore = async () => {
+		const date = new Date(todayClue.release)
+		const dateFormatted = new Intl.DateTimeFormat('en-US', {
+			month: 'short',
+			day: 'numeric',
+		}).format(date)
+
+		const perfectEmojis = ['🤩', '🚀', '😎', '💪🏿', '🤯', '🫨', '😻', '🏆', '🪩', '🪅']
+		const emoji =
+			todayGuesses === 1 && todayHints === 0
+				? perfectEmojis[Math.floor(Math.random() * perfectEmojis.length)]
+				: '🎉'
+
+		const guessText = `${todayGuesses} ${todayGuesses === 1 ? 'guess' : 'guesses'}`
+		const hintText = `${todayHints} ${todayHints === 1 ? 'hint' : 'hints'}`
+		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
+
+		const statsLine = timeText
+			? `${emoji} ${guessText} • ${hintText} • ${timeText}`
+			: `${emoji} ${guessText} • ${hintText}`
+
+		const scoreText = `${statsLine}\nLearn Cryptic #${todayClue.clid} • ${dateFormatted}\nlearncryptic.com`
+
+		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+
+		if (isMobile && navigator.share) {
+			try {
+				await navigator.share({ title: 'Clue Score', text: scoreText })
+			} catch (err) {
+				if (err.name !== 'AbortError') {
+					alert('Could not share your score.')
+				}
+			}
+		} else {
+			try {
+				await navigator.clipboard.writeText(scoreText)
+				alert('Score copied to clipboard!')
+			} catch (err) {
+				alert('Could not copy your score.')
+			}
+		}
+	}
+
 	// buttons
 	const buttons = {
 		learnNew: {
@@ -114,9 +169,8 @@ const Title = ({ data }) => {
 		play: {
 			path: `/clues/${todayClue.clid}`,
 			name: 'Play',
-			style: 'primary big',
+			style: 'primary',
 			img: PlayIcon,
-			stack: true,
 		},
 		allClues: {
 			path: '/clues',
@@ -127,9 +181,8 @@ const Title = ({ data }) => {
 		browse: {
 			path: '/clues',
 			name: 'Browse clues',
-			style: 'secondary big',
+			style: 'secondary',
 			img: ListIcon,
-			stack: true,
 		},
 		viewClues: {
 			path: '/clues',
@@ -150,18 +203,42 @@ const Title = ({ data }) => {
 							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
 						</div>
 						<p className='stats-label'>Today's clue</p>
-						<div className='stats-row'>
-							<span className='highlight-guesses'>
-								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
-							</span>
-							<span className='highlight-hints'>
-								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
-							</span>
+						<div
+							className='stats-row'
+							onMouseEnter={() => setShowStatsTooltip(true)}
+							onMouseLeave={() => setShowStatsTooltip(false)}
+							onClick={() => setShowStatsTooltip(!showStatsTooltip)}
+						>
+							<span className='stat-guesses'>{todayGuesses}g</span>
+							<span className='stat-hints'>{todayHints}h</span>
 							{todaySolveTime != null && (
-								<span className='highlight-time'>
-									{formatTime(todaySolveTime)}
-								</span>
+								<span className='stat-time'>{formatTime(todaySolveTime)}</span>
 							)}
+							{showStatsTooltip && (
+								<div className='stats-tooltip'>
+									<span className='tooltip-guesses'>
+										{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
+									</span>
+									<span className='tooltip-hints'>
+										{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
+									</span>
+									{todaySolveTime != null && (
+										<span className='tooltip-time'>
+											{formatTime(todaySolveTime)}
+										</span>
+									)}
+								</div>
+							)}
+							<button
+								onClick={(e) => {
+									e.stopPropagation()
+									handleShareScore()
+								}}
+								className='share-icon-btn'
+								aria-label='Share score'
+							>
+								{ShareIcon}
+							</button>
 						</div>
 					</div>
 					<div className='title-actions'>

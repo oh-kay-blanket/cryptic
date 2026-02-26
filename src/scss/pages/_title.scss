@@ -76,20 +76,95 @@
 		}
 
 		.stats-row {
-			display: flex;
-			justify-content: center;
-			gap: 0.5rem;
-			flex-wrap: wrap;
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			margin: 0 auto;
 
-			span {
+			> span {
 				padding: 0.25rem 0.5rem;
-				border-radius: 4px;
-				font-size: 0.85rem;
-				font-weight: 500;
+				font-size: 0.9rem;
+			}
 
-				&.highlight-guesses {
+			.stat-guesses {
+				background-color: $lc-primary--light;
+				color: $lc-text;
+				border-radius: 4px 0 0 4px;
+
+				html.dark & {
+					background-color: rgb(120, 70, 45);
+					color: #f5f5f5;
+				}
+			}
+
+			.stat-hints {
+				background-color: $lc-secondary--light;
+				color: $lc-text;
+				border-radius: 0;
+
+				html.dark & {
+					background-color: #4A3F6B;
+					color: #f5f5f5;
+				}
+			}
+
+			.stat-time {
+				background-color: #e5e5e5;
+				color: $lc-text;
+				border-radius: 0 4px 4px 0;
+
+				html.dark & {
+					background-color: #525252;
+					color: #f5f5f5;
+				}
+			}
+
+			// When there's no time stat, hints should have right border radius
+			&:not(:has(.stat-time)) .stat-hints {
+				border-radius: 0 4px 4px 0;
+			}
+
+			.stats-tooltip {
+				position: absolute;
+				top: calc(100% + 8px);
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #fff;
+				color: #171717;
+				padding: 0.4rem;
+				border-radius: 4px;
+				font-size: 0.8rem;
+				white-space: nowrap;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+				z-index: 10;
+				display: flex;
+				gap: 0.25rem;
+
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					border: 6px solid transparent;
+					border-bottom-color: #fff;
+				}
+
+				html.dark & {
+					background-color: #3d3d3d;
+					color: #f5f5f5;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+					&::before {
+						border-bottom-color: #3d3d3d;
+					}
+				}
+
+				.tooltip-guesses {
 					background-color: $lc-primary--light;
 					color: $lc-text;
+					padding: 2px 6px;
+					border-radius: 4px;
 
 					html.dark & {
 						background-color: rgb(120, 70, 45);
@@ -97,9 +172,11 @@
 					}
 				}
 
-				&.highlight-hints {
+				.tooltip-hints {
 					background-color: $lc-secondary--light;
 					color: $lc-text;
+					padding: 2px 6px;
+					border-radius: 4px;
 
 					html.dark & {
 						background-color: #4A3F6B;
@@ -107,13 +184,42 @@
 					}
 				}
 
-				&.highlight-time {
+				.tooltip-time {
 					background-color: #e5e5e5;
 					color: $lc-text;
+					padding: 2px 6px;
+					border-radius: 4px;
 
 					html.dark & {
 						background-color: #525252;
 						color: #f5f5f5;
+					}
+				}
+			}
+
+			.share-icon-btn {
+				position: absolute;
+				left: 100%;
+				margin-left: 0.5rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: none;
+				border: none;
+				padding: 0.25rem;
+				cursor: pointer;
+				color: $lc-text--light;
+				transition: color 0.2s;
+
+				&:hover {
+					color: $lc-primary;
+				}
+
+				html.dark & {
+					color: #a3a3a3;
+
+					&:hover {
+						color: $lc-primary--light;
 					}
 				}
 			}
