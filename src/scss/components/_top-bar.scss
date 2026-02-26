@@ -148,6 +148,16 @@ html.dark .top-bar .current-stats .current-stats-tooltip {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 // Darker overlay in dark mode
@@ -158,48 +168,62 @@ html.dark .modal-overlay {
 .modal-content {
   background: #fff;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   max-width: 400px;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   min-width: 300px;
+  animation: modalFadeIn 0.2s ease-out;
 
   @media (max-width: 600px) {
     padding: 1rem;
     min-width: 0;
-    width: 80vw;
-    max-width: 80vw;
+    width: 85vw;
+    max-width: 85vw;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 .modal-close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 0.75rem;
   background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
-  color: #aaa;
-}
-
-.stats-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-.stat-item {
+  padding: 0.25rem;
+  border-radius: 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
 
-  strong {
-    margin: 0 0.5rem;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
   }
 }
+
+html.dark .modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 
 // Theme picker background for newspaper feel
 .theme-picker-bg {
@@ -209,4 +233,40 @@ html.dark .modal-overlay {
 // Dark mode theme picker background
 html.dark .theme-picker-bg {
   background-color: #333 !important; // neutral-700
+}
+
+// Difficulty grid for stats modal
+.modal-content .difficulty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+
+  .difficulty-square {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #999;
+    border-radius: 1px;
+    background-color: transparent;
+
+    &.filled {
+      background-color: #666;
+      border-color: #666;
+    }
+  }
+}
+
+// Dark mode difficulty grid in modal
+html.dark .modal-content .difficulty-grid {
+  .difficulty-square {
+    border-color: #737373;
+
+    &.filled {
+      background-color: #ccc;
+      border-color: #ccc;
+    }
+  }
 }

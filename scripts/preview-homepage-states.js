@@ -8,57 +8,81 @@
 // =============================================================================
 // 1. NEW USER - Clear everything
 // =============================================================================
-localStorage.removeItem('lcState');
+localStorage.removeItem("lcState");
 location.reload();
-
 
 // =============================================================================
 // 2. RETURNING USER - NO STREAK
 // (Has solved clues before, but streak is broken)
 // =============================================================================
-localStorage.setItem('lcState', JSON.stringify({
-  completedClues: [{ clid: 'old-clue', guesses: 2, hints: 1, how: 'g' }],
-  showType: true,
-  typeViewed: [],
-  streak: 0,
-  longestStreak: 3,
-  lastSolved: '01/01/2024',
-  darkMode: null
-}));
+localStorage.setItem(
+  "lcState",
+  JSON.stringify({
+    completedClues: [{ clid: "old-clue", guesses: 2, hints: 1, how: "g" }],
+    showType: true,
+    typeViewed: [],
+    streak: 0,
+    longestStreak: 3,
+    lastSolved: "01/01/2024",
+    darkMode: null,
+  }),
+);
 location.reload();
-
 
 // =============================================================================
 // 3. RETURNING USER - HAS STREAK, TODAY NOT SOLVED
 // =============================================================================
-localStorage.setItem('lcState', JSON.stringify({
-  completedClues: [{ clid: 'old-clue', guesses: 2, hints: 1, how: 'g' }],
-  showType: true,
-  typeViewed: [],
-  streak: 5,
-  longestStreak: 5,
-  lastSolved: new Date(Date.now() - 86400000).toLocaleDateString('en-US'),  // yesterday
-  darkMode: null
-}));
+localStorage.setItem(
+  "lcState",
+  JSON.stringify({
+    completedClues: [{ clid: "old-clue", guesses: 2, hints: 1, how: "g" }],
+    showType: true,
+    typeViewed: [],
+    streak: 5,
+    longestStreak: 5,
+    lastSolved: new Date(Date.now() - 86400000).toLocaleDateString("en-US"), // yesterday
+    darkMode: null,
+  }),
+);
 location.reload();
-
 
 // =============================================================================
 // 4. RETURNING USER - TODAY SOLVED
 // (Auto-detects today's clue ID from the page)
 // =============================================================================
-const todayClid = document.querySelector('a[href^="/clues/"]')?.href.split('/').pop();
-localStorage.setItem('lcState', JSON.stringify({
-  completedClues: [{ clid: todayClid, guesses: 3, hints: 1, how: 'g', solveTime: 94 }],
-  showType: true,
-  typeViewed: [],
-  streak: 7,
-  longestStreak: 7,
-  lastSolved: new Date().toLocaleDateString('en-US'),
-  darkMode: null
-}));
-location.reload();
-
+// Try multiple selectors to find the clue link
+const link = document.querySelector('#play') ||
+             document.querySelector('a[href*="/clues/"]') ||
+             document.querySelector('[data-testid="play"]');
+const href = link?.getAttribute('href') || link?.href;
+const todayClid = href ? href.replace(/\/$/, '').split('/').pop() : null;
+if (!todayClid) {
+  console.error('Could not find clue link. Run this instead with your clue ID:');
+  console.log(`
+localStorage.setItem("lcState", JSON.stringify({
+  completedClues: [{ clid: "YOUR_CLUE_ID", guesses: 3, hints: 1, how: "g", solveTime: 94 }],
+  showType: true, typeViewed: [], streak: 7, longestStreak: 7,
+  lastSolved: new Date().toLocaleDateString("en-US"), darkMode: null
+})); location.reload();
+  `);
+} else {
+  console.log('Found clue ID:', todayClid);
+  localStorage.setItem(
+    "lcState",
+    JSON.stringify({
+      completedClues: [
+        { clid: todayClid, guesses: 3, hints: 1, how: "g", solveTime: 94 },
+      ],
+      showType: true,
+      typeViewed: [],
+      streak: 7,
+      longestStreak: 7,
+      lastSolved: new Date().toLocaleDateString("en-US"),
+      darkMode: null,
+    }),
+  );
+  location.reload();
+}
 
 // =============================================================================
 // VARIATIONS - Adjust these values to test different scenarios

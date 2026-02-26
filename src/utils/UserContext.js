@@ -152,6 +152,8 @@ export const UserProvider = ({ children }) => {
         guesses: guesses,
         hints: hints,
         how: type,
+        difficulty: activeClue.difficulty,
+        completedAt: new Date().toISOString(),
       };
 
       // Only add solveTime if provided
@@ -239,6 +241,16 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  // Refresh state from localStorage (used after migrations)
+  const refreshFromStorage = () => {
+    if (typeof window !== "undefined") {
+      const storedState = localStorage.getItem("lcState");
+      if (storedState) {
+        setLcState(JSON.parse(storedState));
+      }
+    }
+  };
+
   const contextValue = useMemo(
     () => ({
       completedClues,
@@ -259,6 +271,7 @@ export const UserProvider = ({ children }) => {
       setClueStartTime,
       clueSolvedTime,
       setClueSolvedTime,
+      refreshFromStorage,
     }),
     [
       completedClues,

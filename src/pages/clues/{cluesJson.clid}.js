@@ -169,7 +169,7 @@ const CluePage = ({ data }) => {
       case 3:
         return "Difficult";
       case 4:
-        return "Very Difficult";
+        return "Expert";
       default:
         return "Easy";
     }

@@ -54,22 +54,64 @@ const ListIcon = () => (
   </svg>
 );
 
+const CloseIcon = () => (
+  <svg
+    width='20'
+    height='20'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M18 6L6 18M6 6l12 12'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const SystemIcon = () => (
+  <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect x='2' y='3' width='20' height='14' rx='2' stroke='currentColor' strokeWidth='2' />
+    <path d='M8 21h8M12 17v4' stroke='currentColor' strokeWidth='2' strokeLinecap='round' />
+  </svg>
+);
+
+const SunIcon = () => (
+  <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <circle cx='12' cy='12' r='4' stroke='currentColor' strokeWidth='2' />
+    <path
+      d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+    />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <path
+      d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
 const Modal = ({ open, onClose, children }) => {
   useEffect(() => {
-    const preventDefault = (e) => {
-      e.preventDefault();
-    };
-
     if (open) {
-      // Prevent scrolling by blocking wheel and touch events
-      document.addEventListener('wheel', preventDefault, { passive: false });
-      document.addEventListener('touchmove', preventDefault, { passive: false });
+      // Prevent background scrolling by hiding overflow on body
+      document.body.style.overflow = 'hidden';
     }
 
-    // Cleanup function to remove event listeners
     return () => {
-      document.removeEventListener('wheel', preventDefault);
-      document.removeEventListener('touchmove', preventDefault);
+      document.body.style.overflow = '';
     };
   }, [open]);
 
@@ -85,7 +127,7 @@ const Modal = ({ open, onClose, children }) => {
           onClick={onClose}
           aria-label='Close'
         >
-          &times;
+          <CloseIcon />
         </button>
         {children}
       </div>
@@ -159,12 +201,12 @@ const TopBar = () => {
   const totalSolved = completedClues.length;
   const avgGuesses =
     totalSolved > 0
-      ? (completedClues.reduce((sum, c) => sum + (c.guesses || 0), 0) / totalSolved).toFixed(1)
-      : '0';
+      ? Math.round(completedClues.reduce((sum, c) => sum + (c.guesses || 0), 0) / totalSolved)
+      : 0;
   const avgHints =
     totalSolved > 0
-      ? (completedClues.reduce((sum, c) => sum + (c.hints || 0), 0) / totalSolved).toFixed(1)
-      : '0';
+      ? Math.round(completedClues.reduce((sum, c) => sum + (c.hints || 0), 0) / totalSolved)
+      : 0;
 
   // Calculate average solve time (only from clues that have solveTime)
   const cluesWithTime = completedClues.filter((c) => c.solveTime != null);
@@ -172,6 +214,33 @@ const TopBar = () => {
     cluesWithTime.length > 0
       ? Math.round(
           cluesWithTime.reduce((sum, c) => sum + c.solveTime, 0) / cluesWithTime.length
+        )
+      : null;
+
+  // Perfect solves (0 hints and 1 guess)
+  const perfectSolves = completedClues.filter((c) => c.hints === 0 && c.guesses === 1).length;
+
+  // Best time (fastest solve) and which clue it was
+  const bestTimeClue =
+    cluesWithTime.length > 0
+      ? cluesWithTime.reduce((fastest, c) => (c.solveTime < fastest.solveTime ? c : fastest))
+      : null;
+  const bestTime = bestTimeClue ? bestTimeClue.solveTime : null;
+
+  // Difficulty breakdown (only for clues that have difficulty tracked)
+  const cluesWithDifficulty = completedClues.filter((c) => c.difficulty != null);
+  const difficultyBreakdown = [1, 2, 3, 4].map(
+    (level) => cluesWithDifficulty.filter((c) => Number(c.difficulty) === level).length
+  );
+
+  // First solve date
+  const cluesWithDate = completedClues.filter((c) => c.completedAt != null);
+  const firstSolveDate =
+    cluesWithDate.length > 0
+      ? new Date(
+          cluesWithDate.reduce((earliest, c) =>
+            new Date(c.completedAt) < new Date(earliest.completedAt) ? c : earliest
+          ).completedAt
         )
       : null;
 
@@ -283,9 +352,11 @@ const TopBar = () => {
         </div>
       </header>
       <Modal id='modal-info' open={helpOpen} onClose={() => setHelpOpen(false)}>
-        <div className='mt-6'>
-          <h3 className='font-semibold mb-3'>Theme</h3>
-          <div className='flex mb-4'>
+        <div className='mb-5 mt-4'>
+          <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+            Theme
+          </h3>
+          <div className='flex'>
             <div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
               <label className='flex items-center cursor-pointer'>
                 <input
@@ -296,12 +367,13 @@ const TopBar = () => {
                   className='sr-only'
                 />
                 <span
-                  className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                  className={`flex flex-col items-center gap-1 px-4 py-2 text-sm rounded-md transition-colors ${
                     darkMode === null
                       ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                       : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
                   }`}
                 >
+                  <SystemIcon />
                   System
                 </span>
               </label>
@@ -314,12 +386,13 @@ const TopBar = () => {
                   className='sr-only'
                 />
                 <span
-                  className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                  className={`flex flex-col items-center gap-1 px-4 py-2 text-sm rounded-md transition-colors ${
                     darkMode === false
                       ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                       : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
                   }`}
                 >
+                  <SunIcon />
                   Light
                 </span>
               </label>
@@ -332,68 +405,197 @@ const TopBar = () => {
                   className='sr-only'
                 />
                 <span
-                  className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                  className={`flex flex-col items-center gap-1 px-4 py-2 text-sm rounded-md transition-colors ${
                     darkMode === true
                       ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                       : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
                   }`}
                 >
+                  <MoonIcon />
                   Dark
                 </span>
               </label>
             </div>
           </div>
-          <div className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-            <p>
-              <Link to='/learn' className='underline'>
-                What are cryptics?
-              </Link>
-            </p>
+        </div>
 
-            <p className='mt-4'>
-              <Link to='/creators' className='underline'>
-                About us
-              </Link>
-            </p>
+        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+          <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+            Learn More
+          </h3>
+          <div className='flex flex-col gap-2'>
+            <Link
+              to='/learn'
+              className='group flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
+            >
+              <span className='group-hover:underline'>What are cryptics?</span>
+              <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
+                →
+              </span>
+            </Link>
+            <Link
+              to='/creators'
+              className='group flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
+            >
+              <span className='group-hover:underline'>About us</span>
+              <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
+                →
+              </span>
+            </Link>
           </div>
+        </div>
 
-          <div className='mt-4 border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-            <p>
-              Have questions, comments, or want to contribute future cryptic clues?
-              <a
-                href='mailto:learncrypticgame@gmail.com?subject=Learn Cryptic Feedback'
-                className='underline mt-2 block'
-              >
-                Email us
-              </a>
-            </p>
-          </div>
+        <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5'>
+          <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+            Contact
+          </h3>
+          <p className='text-neutral-600 dark:text-neutral-300 text-sm mb-2'>
+            Have questions, comments, or want to contribute future cryptic clues?
+          </p>
+          <a
+            href='mailto:learncrypticgame@gmail.com?subject=Learn Cryptic Feedback'
+            className='group inline-flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
+          >
+            <span className='group-hover:underline'>Email us</span>
+            <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
+              →
+            </span>
+          </a>
         </div>
       </Modal>
       <Modal id='modal-stats' open={statsOpen} onClose={() => setStatsOpen(false)}>
-        <h2 className='my-3 text-xl font-semibold'>Statistics</h2>
-        <div className='stats-list'>
-          <div className='stat-item'>
-            🔥 <span className='font-medium mx-1'>Current Streak:</span> {streak}
+        {totalSolved === 0 ? (
+          <div className='mt-4 text-center py-6'>
+            <p className='text-neutral-500 dark:text-neutral-400 mb-2'>No stats yet</p>
+            <p className='text-neutral-700 dark:text-neutral-200'>
+              Solve your first clue to start tracking your progress!
+            </p>
           </div>
-          <div className='stat-item'>
-            🏆 <span className='font-medium mx-1'>Longest Streak:</span> {longestStreak}
-          </div>
-          <div className='stat-item'>
-            🧩 <span className='font-medium mx-1'>Clues solved:</span> {totalSolved}
-          </div>
-          <div className='stat-item'>
-            🎯 <span className='font-medium mx-1'>Avg guesses:</span> {avgGuesses}
-          </div>
-          <div className='stat-item'>
-            💡 <span className='font-medium mx-1'>Avg hints:</span> {avgHints}
-          </div>
-          {avgSolveTime != null && (
-            <div className='stat-item'>
-              ⏱️ <span className='font-medium mx-1'>Avg time:</span> {formatTime(avgSolveTime)}
+        ) : (
+          <>
+            <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 mt-4'>
+              Streaks
+            </h3>
+            <div className='grid grid-cols-2 gap-4 mb-5'>
+              <div className='text-center'>
+                <div className='text-3xl font-bold text-neutral-900 dark:text-white'>{streak}</div>
+                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
+              </div>
+              <div className='text-center'>
+                <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                  {longestStreak}
+                </div>
+                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
+              </div>
             </div>
-          )}
-        </div>
+
+            <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+              <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+                Performance
+              </h3>
+              <div className='grid grid-cols-2 gap-4'>
+                <div className='text-center'>
+                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    {totalSolved}
+                  </div>
+                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
+                </div>
+                <div className='text-center'>
+                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    {perfectSolves}
+                  </div>
+                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
+                </div>
+                <div className='text-center'>
+                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    {avgGuesses}
+                  </div>
+                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
+                </div>
+                <div className='text-center'>
+                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    {avgHints}
+                  </div>
+                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
+                </div>
+                {bestTimeClue && (
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                      {formatTime(bestTime)}
+                    </div>
+                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>
+                      Best time{' '}
+                      <Link
+                        to={`/clues/${bestTimeClue.clid}`}
+                        className='text-neutral-600 dark:text-neutral-300 hover:underline'
+                        onClick={() => setStatsOpen(false)}
+                      >
+                        (#{bestTimeClue.clid})
+                      </Link>
+                    </div>
+                  </div>
+                )}
+                {avgSolveTime != null && (
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                      {formatTime(avgSolveTime)}
+                    </div>
+                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {cluesWithDifficulty.length > 0 && (
+              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5 mb-5'>
+                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+                  By Difficulty
+                </h3>
+                <div className='grid grid-cols-4 gap-2'>
+                  {difficultyBreakdown.map((count, index) => {
+                    const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
+                    return (
+                      <div key={index} className='flex flex-col items-center'>
+                        <div className='text-2xl font-bold text-neutral-900 dark:text-white'>
+                          {count}
+                        </div>
+                        <div
+                          className={`difficulty-grid difficulty-${index + 1}`}
+                          aria-hidden='true'
+                        >
+                          {[0, 1, 2, 3].map((i) => (
+                            <div
+                              key={i}
+                              className={`difficulty-square ${i < index + 1 ? 'filled' : ''}`}
+                            />
+                          ))}
+                        </div>
+                        <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
+                          {difficultyNames[index]}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {firstSolveDate && (
+              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-5'>
+                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
+                  Playing Since
+                </h3>
+                <p className='text-neutral-700 dark:text-neutral-200'>
+                  {firstSolveDate.toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </p>
+              </div>
+            )}
+          </>
+        )}
       </Modal>
     </>
   );

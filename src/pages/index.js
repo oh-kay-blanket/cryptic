@@ -5,10 +5,11 @@ import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
 import { isTodayClue, formatTime } from '../utils/dateHelpers'
+import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
-	const { completedClues, streak } = useContext(UserContext)
+	const { completedClues, streak, refreshFromStorage } = useContext(UserContext)
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
@@ -50,6 +51,14 @@ const Title = ({ data }) => {
 			}
 		}
 	}, [])
+
+	// Run one-time migration to backfill difficulty data
+	useEffect(() => {
+		const migrated = migrateCompletedCluesDifficulty(cluesData)
+		if (migrated) {
+			refreshFromStorage()
+		}
+	}, [cluesData, refreshFromStorage])
 
 	// Icon components
 	const PlayIcon = (
@@ -115,6 +124,13 @@ const Title = ({ data }) => {
 			style: 'secondary',
 			img: ListIcon,
 		},
+		browse: {
+			path: '/clues',
+			name: 'Play past clues',
+			style: 'primary big',
+			img: ListIcon,
+			stack: true,
+		},
 		viewClues: {
 			path: '/clues',
 			name: 'View clues',
@@ -149,14 +165,18 @@ const Title = ({ data }) => {
 						</div>
 					</div>
 					<div className='title-actions'>
-						<ButtonContainer
-							btnArr={[buttons.allClues, buttons.learn]}
-						/>
+						<ButtonContainer btnArr={[buttons.browse]} />
 					</div>
 				</>
 			)
 		} else if (knownUser && !todayCompleted && todayClue && streak > 0) {
 			// User has completed a clue but not today's and has a streak
+			const releaseDate = new Date(todayClue.release)
+			const formattedDate = releaseDate.toLocaleDateString('en-US', {
+				month: 'long',
+				day: 'numeric',
+				year: 'numeric',
+			})
 			return (
 				<>
 					<div className='title-intro text-center' data-testid='title-intro'>
@@ -164,35 +184,42 @@ const Title = ({ data }) => {
 							<span className='streak-number'>{streak}</span>
 							<span className='streak-label'>day streak{streak > 10 ? ' 😎' : streak > 1 ? ' 🔥' : ''}</span>
 						</div>
-						<p>Keep it going! Solve today's clue 👇</p>
+						<p>Keep it going</p>
 					</div>
 					<div className='title-actions'>
-						<ButtonContainer
-							btnArr={[buttons.todayClue, buttons.learn]}
-						/>
+						<ButtonContainer btnArr={[buttons.play]} />
+						<p className='clue-meta'>
+							{formattedDate}
+							<br />
+							#{todayClue.clid} · by {todayClue.source?.value}
+						</p>
 					</div>
 				</>
 			)
 		} else if (knownUser && !todayCompleted && todayClue && streak === 0) {
 			// User has completed a clue but not today's and has no streak
+			const releaseDate = new Date(todayClue.release)
+			const formattedDate = releaseDate.toLocaleDateString('en-US', {
+				month: 'long',
+				day: 'numeric',
+				year: 'numeric',
+			})
 			return (
 				<>
 					<div className='title-intro text-center' data-testid='title-intro'>
-						<p>Welcome back 👋</p>
-						<p>
-							You have solved{' '}
-							<span className='font-bold whitespace-nowrap'>
-								{completedGuess.length}{' '}
-								{completedGuess.length === 1 ? 'clue' : 'clues'}
-							</span>
-							.
-						</p>
-						<p>Keep it up by playing today's clue 👇</p>
+						<div className='streak-display' data-testid='streak-display'>
+							<span className='streak-number'>0</span>
+							<span className='streak-label'>day streak</span>
+						</div>
+						<p>Start a new one today</p>
 					</div>
 					<div className='title-actions'>
-						<ButtonContainer
-							btnArr={[buttons.todayClue, buttons.learn]}
-						/>
+						<ButtonContainer btnArr={[buttons.play]} />
+						<p className='clue-meta'>
+							{formattedDate}
+							<br />
+							#{todayClue.clid} · by {todayClue.source?.value}
+						</p>
 					</div>
 				</>
 			)
@@ -275,6 +302,7 @@ export const query = graphql`
 				release
 				clid
 				id
+				difficulty
 				source {
 					value
 				}
