@@ -108,9 +108,6 @@ const Message = ({
     getMessage(activeClue.hints[nextHint])
   );
 
-  const explainer = activeClue.hints[nextHint].explainer
-    ? activeClue.hints[nextHint].explainer
-    : false;
 
   // Prep message button
   let messageButton;
@@ -210,12 +207,7 @@ const Message = ({
     >
       {checkAns && isCorrectAns && !isReturningCompleted && <Celebration />}
       {message && !hideMessageForTooltip && (
-        <div className={"message-copy lc-container"}>
-          {message}
-          {explainer && (!checkAns || isCorrectAns) && (
-            <div className={"explainer"}>{explainer}</div>
-          )}
-        </div>
+        <div className={"message-copy lc-container"}>{message}</div>
       )}
 
       <ButtonContainer
