@@ -226,6 +226,7 @@ const Title = ({ data }) => {
 							<button
 								onClick={(e) => {
 									e.stopPropagation()
+									setShowStatsTooltip(false)
 									handleShareScore()
 								}}
 								className='share-icon-btn'
