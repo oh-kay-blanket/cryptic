@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 const OnboardingTooltip = ({
@@ -22,53 +22,66 @@ const OnboardingTooltip = ({
   }, []);
 
   // Calculate tooltip position based on target element
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!mounted || !targetRect || !tooltipRef.current) return;
 
-    const tooltip = tooltipRef.current;
-    const tooltipRect = tooltip.getBoundingClientRect();
-    const padding = 16;
-    const arrowHeight = 10;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
+    const calculatePosition = () => {
+      const tooltip = tooltipRef.current;
+      if (!tooltip) return;
 
-    // Calculate center of target
-    const targetCenterX = targetRect.left + targetRect.width / 2;
-    const targetCenterY = targetRect.top + targetRect.height / 2;
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const padding = 16;
+      const arrowHeight = 12;
+      const spotlightPadding = 8;
+      const arrowGap = 6; // Gap between arrow and spotlight
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
 
-    // Try positioning above the target first
-    let top = targetRect.top - tooltipRect.height - arrowHeight - 8;
-    let arrow = "bottom";
+      // Calculate center of target
+      const targetCenterX = targetRect.left + targetRect.width / 2;
 
-    // If not enough space above, position below
-    if (top < padding) {
-      top = targetRect.bottom + arrowHeight + 8;
-      arrow = "top";
-    }
+      // Try positioning above the target first (account for spotlight padding + gap)
+      let top = targetRect.top - tooltipRect.height - arrowHeight - spotlightPadding - arrowGap;
+      let arrow = "bottom";
 
-    // If still not enough space below, center vertically
-    if (top + tooltipRect.height > viewportHeight - padding) {
-      top = Math.max(padding, (viewportHeight - tooltipRect.height) / 2);
-    }
+      // If not enough space above, position below
+      if (top < padding) {
+        top = targetRect.bottom + arrowHeight + spotlightPadding + arrowGap;
+        arrow = "top";
+      }
 
-    // Calculate horizontal position (centered on target)
-    let left = targetCenterX - tooltipRect.width / 2;
+      // If still not enough space below, center vertically
+      if (top + tooltipRect.height > viewportHeight - padding) {
+        top = Math.max(padding, (viewportHeight - tooltipRect.height) / 2);
+      }
 
-    // Clamp to viewport bounds
-    if (left < padding) {
-      left = padding;
-    } else if (left + tooltipRect.width > viewportWidth - padding) {
-      left = viewportWidth - padding - tooltipRect.width;
-    }
+      // Calculate horizontal position (centered on target)
+      let left = targetCenterX - tooltipRect.width / 2;
 
-    // Calculate arrow offset to point at target center
-    const arrowLeftPx = targetCenterX - left;
-    const arrowOffsetPercent = (arrowLeftPx / tooltipRect.width) * 100;
-    const clampedArrowOffset = Math.max(10, Math.min(90, arrowOffsetPercent));
+      // Clamp to viewport bounds
+      if (left < padding) {
+        left = padding;
+      } else if (left + tooltipRect.width > viewportWidth - padding) {
+        left = viewportWidth - padding - tooltipRect.width;
+      }
 
-    setPosition({ top, left });
-    setArrowPosition(arrow);
-    setArrowOffset(clampedArrowOffset);
+      // Calculate arrow offset to point at target center
+      const arrowLeftPx = targetCenterX - left;
+      const arrowOffsetPercent = (arrowLeftPx / tooltipRect.width) * 100;
+      const clampedArrowOffset = Math.max(10, Math.min(90, arrowOffsetPercent));
+
+      setPosition({ top, left });
+      setArrowPosition(arrow);
+      setArrowOffset(clampedArrowOffset);
+    };
+
+    // Calculate immediately
+    calculatePosition();
+
+    // Recalculate after a frame to ensure accurate measurements
+    const frameId = requestAnimationFrame(calculatePosition);
+
+    return () => cancelAnimationFrame(frameId);
   }, [mounted, targetRect, step]);
 
   if (!mounted || !targetRect) return null;

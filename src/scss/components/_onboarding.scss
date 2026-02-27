@@ -65,7 +65,6 @@
   &.onboarding-tooltip-arrow-bottom .onboarding-tooltip-arrow {
     position: absolute;
     bottom: -10px;
-    transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 12px solid transparent;
@@ -78,7 +77,6 @@
   &.onboarding-tooltip-arrow-top .onboarding-tooltip-arrow {
     position: absolute;
     top: -10px;
-    transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 12px solid transparent;

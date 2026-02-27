@@ -86,7 +86,7 @@ const OnboardingGuide = ({ isVisible, onComplete }) => {
         element = document.getElementById("i0");
         break;
       case "difficulty-grid":
-        element = document.querySelector(".clue-difficulty");
+        element = document.querySelector(".difficulty-grid");
         break;
       default:
         element = document.getElementById(step.target);
