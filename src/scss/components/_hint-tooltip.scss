@@ -2,7 +2,7 @@
 
 .hint-tooltip {
 	font-family: $lc-font--sans;
-	background-color: $lc-secondary--v-light;
+	background-color: $lc-secondary--light;
 	color: #171717;
 	border-radius: 8px;
 	border: 1px solid $lc-secondary;
@@ -54,7 +54,7 @@
 			height: 0;
 			border-left: 8px solid transparent;
 			border-right: 8px solid transparent;
-			border-top: 8px solid $lc-secondary--v-light;
+			border-top: 8px solid $lc-secondary--light;
 		}
 	}
 }
@@ -104,7 +104,7 @@ html.dark .hint-tooltip {
 			bottom: auto;
 			top: 1px;
 			border-top: none;
-			border-bottom: 8px solid $lc-secondary--v-light;
+			border-bottom: 8px solid $lc-secondary--light;
 		}
 	}
 }

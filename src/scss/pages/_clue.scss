@@ -275,8 +275,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: $lc-secondary--v-light;
-      border: 1px solid $lc-secondary--light;
+      background: $lc-secondary--light;
+      border: none;
       border-radius: 50%;
       width: 40px;
       height: 40px;
@@ -322,12 +322,10 @@
 
     html.dark & .solution-wrapper .hint-button {
       background: var(--lc-highlight-bg);
-      border-color: rgba(155, 143, 232, 0.3);
     }
 
     .solution-wrapper .hint-button.hint-disabled {
       background: $lc-gray;
-      border-color: $lc-gray--dark;
       cursor: default;
       opacity: 0.6;
 
@@ -350,7 +348,6 @@
 
     html.dark & .solution-wrapper .hint-button.hint-disabled {
       background: #404040;
-      border-color: #525252;
     }
 
     .clue-difficulty {

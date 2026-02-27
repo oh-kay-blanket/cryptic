@@ -62,7 +62,7 @@ const HintIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="text-neutral-500 dark:text-neutral-200"
+    className="text-neutral-600 dark:text-neutral-200"
   >
     <path
       d="M9 18h6"

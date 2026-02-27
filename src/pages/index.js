@@ -197,38 +197,36 @@ const Title = ({ data }) => {
 							<span className='streak-label'>day streak</span>
 						</div>
 						<p className='stats-label'>Today's clue</p>
-						<div
-							className='stats-row'
-							onMouseEnter={() => setShowStatsTooltip(true)}
-							onMouseLeave={() => setShowStatsTooltip(false)}
-							onClick={() => setShowStatsTooltip(!showStatsTooltip)}
-						>
-							<span className='stat-guesses'>{todayGuesses}g</span>
-							<span className='stat-hints'>{todayHints}h</span>
-							{todaySolveTime != null && (
-								<span className='stat-time'>{formatTime(todaySolveTime)}</span>
-							)}
-							{showStatsTooltip && (
-								<div className='stats-tooltip'>
-									<span className='tooltip-guesses'>
-										{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
-									</span>
-									<span className='tooltip-hints'>
-										{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
-									</span>
-									{todaySolveTime != null && (
-										<span className='tooltip-time'>
-											{formatTime(todaySolveTime)}
+						<div className='stats-row-container'>
+							<div
+								className='stats-row'
+								onMouseEnter={() => setShowStatsTooltip(true)}
+								onMouseLeave={() => setShowStatsTooltip(false)}
+								onClick={() => setShowStatsTooltip(!showStatsTooltip)}
+							>
+								<span className='stat-guesses'>{todayGuesses}g</span>
+								<span className='stat-hints'>{todayHints}h</span>
+								{todaySolveTime != null && (
+									<span className='stat-time'>{formatTime(todaySolveTime)}</span>
+								)}
+								{showStatsTooltip && (
+									<div className='stats-tooltip'>
+										<span className='tooltip-guesses'>
+											{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
 										</span>
-									)}
-								</div>
-							)}
+										<span className='tooltip-hints'>
+											{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
+										</span>
+										{todaySolveTime != null && (
+											<span className='tooltip-time'>
+												{formatTime(todaySolveTime)}
+											</span>
+										)}
+									</div>
+								)}
+							</div>
 							<button
-								onClick={(e) => {
-									e.stopPropagation()
-									setShowStatsTooltip(false)
-									handleShareScore()
-								}}
+								onClick={handleShareScore}
 								className='share-icon-btn'
 								aria-label='Share score'
 							>
