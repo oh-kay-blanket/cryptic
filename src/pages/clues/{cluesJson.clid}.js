@@ -882,7 +882,7 @@ const CluePage = ({ data }) => {
   const pillList = activeClue.type.map((t, index) => (
     <li
       key={`type_${index}`}
-      className="type-pill tooltip-parent border border-neutral-400 dark:!border-neutral-500 dark:!text-white"
+      className="type-pill tooltip-parent tooltip-offset-left border border-neutral-400 dark:!border-neutral-500 dark:!text-white"
       aria-describedby="tooltip-id"
     >
       {t}

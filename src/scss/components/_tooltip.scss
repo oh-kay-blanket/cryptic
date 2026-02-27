@@ -7,7 +7,7 @@
 		position: absolute;
 		visibility: hidden;
 		width: max-content;
-		max-width: 150px;
+		max-width: 200px;
 		top: 32px;
 		left: 50%;
 		transform: translateX(-50%);
@@ -18,13 +18,13 @@
 		color: #171717;
 		background-color: #f5f5f5;
 		border: 1px solid #d4d4d4;
-		padding: .5rem .25rem;
+		padding: .5rem .75rem;
 		border-radius: 4px;
 		z-index: 7;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
 		@media (min-width: 769px) {
-			max-width: 250px;
+			max-width: 300px;
 		}
 
 		.tooltip-description {
@@ -60,7 +60,7 @@
 		content: '';
 		position: absolute;
 		bottom: 100%;
-		left: 50%;
+		left: var(--tooltip-arrow-left, 50%);
 		transform: translateX(-50%);
 		border: 7px solid transparent;
 		border-bottom: 7px solid #d4d4d4;
@@ -70,10 +70,26 @@
 		content: '';
 		position: absolute;
 		bottom: calc(100% - 1px);
-		left: 50%;
+		left: var(--tooltip-arrow-left, 50%);
 		transform: translateX(-50%);
 		border: 6px solid transparent;
 		border-bottom: 6px solid #f5f5f5;
+	}
+
+	// Offset tooltip positioning - aligns tooltip left edge near pill
+	&.tooltip-offset-left .tooltip {
+		left: 0;
+		transform: translateX(-10px);
+		--tooltip-arrow-left: 30px;
+		text-align: left;
+	}
+
+	&.tooltip-offset-right .tooltip {
+		left: auto;
+		right: 0;
+		transform: translateX(10px);
+		--tooltip-arrow-left: calc(100% - 30px);
+		text-align: left;
 	}
 }
 
@@ -92,6 +108,8 @@ html.dark .tooltip-parent .tooltip::before {
 html.dark .tooltip-parent .tooltip::after {
 	border-bottom-color: #404040;
 }
+
+// Dark mode offset arrow positioning (inherits --tooltip-arrow-left from parent)
 
 .tooltip-parent:focus,
 .tooltip-parent:active,
