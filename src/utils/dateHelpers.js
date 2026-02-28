@@ -135,3 +135,34 @@ export const formatTime = (seconds, short = false) => {
 	const remainingSeconds = seconds % 60
 	return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`
 }
+
+/**
+ * Formats time for sharing via SMS/text without triggering OS data detectors.
+ * Uses "Xm Ys" format instead of "M:SS" to prevent iOS/Android from
+ * interpreting the time as a calendar event link.
+ *
+ * @param {number|null|undefined} seconds - Time in seconds
+ * @returns {string} Formatted time string ("Xm Ys" for >= 60s, "Xs" for < 60s)
+ *
+ * @example
+ * formatTimeForShare(45) // "45s"
+ * formatTimeForShare(90) // "1m 30s"
+ * formatTimeForShare(60) // "1m"
+ * formatTimeForShare(165) // "2m 45s"
+ * formatTimeForShare(null) // ""
+ */
+export const formatTimeForShare = (seconds) => {
+	if (seconds == null) {
+		return ''
+	}
+
+	if (seconds < 60) {
+		return `${seconds}s`
+	}
+
+	const minutes = Math.floor(seconds / 60)
+	const remainingSeconds = seconds % 60
+	return remainingSeconds === 0
+		? `${minutes}m`
+		: `${minutes}m ${remainingSeconds}s`
+}
