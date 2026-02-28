@@ -109,10 +109,10 @@ const Title = ({ data }) => {
 		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
 
 		const statsLine = timeText
-			? `${guessText} • ${hintText} • ${timeText}`
-			: `${guessText} • ${hintText}`
+			? `🟧 ${guessText} • 🟪 ${hintText} • ⬜ ${timeText}`
+			: `🟧 ${guessText} • 🟪 ${hintText}`
 
-		const scoreText = `${statsLine}\nLearn Cryptic #${todayClue.clid} • ${dateFormatted}\nlearncryptic.com`
+		const scoreText = `Learn Cryptic #${todayClue.clid} • ${dateFormatted}\n${statsLine}`
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
