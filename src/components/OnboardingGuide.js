@@ -99,7 +99,43 @@ const OnboardingGuide = ({ isVisible, onComplete }) => {
   const updateTargetRect = useCallback(() => {
     const element = getTargetElement(currentStep);
     if (element) {
-      const rect = element.getBoundingClientRect();
+      let rect = element.getBoundingClientRect();
+
+      // For clueTextRef, compute tighter bounds from the actual text content
+      if (GUIDE_STEPS[currentStep].target === "clueTextRef") {
+        const letters = element.querySelectorAll(".letter");
+        const solLength = element.querySelector(".solution-letters");
+        if (letters.length > 0) {
+          let minLeft = Infinity;
+          let maxRight = -Infinity;
+          let minTop = Infinity;
+          let maxBottom = -Infinity;
+
+          letters.forEach((letter) => {
+            const letterRect = letter.getBoundingClientRect();
+            minLeft = Math.min(minLeft, letterRect.left);
+            maxRight = Math.max(maxRight, letterRect.right);
+            minTop = Math.min(minTop, letterRect.top);
+            maxBottom = Math.max(maxBottom, letterRect.bottom);
+          });
+
+          // Include solution length indicator
+          if (solLength) {
+            const solRect = solLength.getBoundingClientRect();
+            maxRight = Math.max(maxRight, solRect.right);
+          }
+
+          rect = {
+            left: minLeft,
+            right: maxRight,
+            top: minTop,
+            bottom: maxBottom,
+            width: maxRight - minLeft,
+            height: maxBottom - minTop,
+          };
+        }
+      }
+
       setTargetRect(rect);
     } else {
       // If target element doesn't exist, skip to next step
