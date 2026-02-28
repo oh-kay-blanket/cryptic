@@ -108,8 +108,8 @@ const Title = ({ data }) => {
 		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
 
 		const statsLine = timeText
-			? `⬜ ${timeText} • 🟧 ${guessText} • 🟪 ${hintText}`
-			: `🟧 ${guessText} • 🟪 ${hintText}`
+			? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
+			: `🟧 ${guessText} 🟪 ${hintText}`
 
 		const scoreText = `Learn Cryptic #${todayClue.clid} • ${dateFormatted}\n${statsLine}`
 
