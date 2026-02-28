@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Button = ({ btnInfo }) => {
 
-	const { path = false, name, style, onClick, img = false, disabled = false, stack = false } = btnInfo
+	const { path = false, name, style, onClick, img = false, disabled = false, stack = false, noFocus = false } = btnInfo
 
 	// Add dark mode classes based on button style
 	const getDarkModeClasses = (style) => {
@@ -38,8 +38,8 @@ const Button = ({ btnInfo }) => {
 
 	return(<>
 		{path ?
-			<Link to={path} id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses}${stackClass} ${disabled ? 'disabled' : ''}`} type='button' onClick={disabled ? undefined : onClick}>{content}</Link> :
-			<button id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses}${stackClass} ${disabled ? 'disabled' : ''}`} type='button' disabled={disabled} onClick={disabled ? undefined : onClick}>{content}</button>
+			<Link to={path} id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses}${stackClass} ${disabled ? 'disabled' : ''}`} type='button' onClick={disabled ? undefined : onClick} tabIndex={noFocus ? -1 : undefined}>{content}</Link> :
+			<button id={name.toLowerCase()} data-testid={name.toLowerCase()} className={`show-btn ${style} ${darkModeClasses}${stackClass} ${disabled ? 'disabled' : ''}`} type='button' disabled={disabled} onClick={disabled ? undefined : onClick} tabIndex={noFocus ? -1 : undefined}>{content}</button>
 		}
 	</>)
 }

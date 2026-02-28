@@ -245,6 +245,7 @@ const prepBottom = (
 			name: 'Next',
 			img: arrowRightIcon,
 			style: 'secondary',
+			noFocus: true,
 			onClick: function () {
 				setNextHint(nextHint + 1)
 				setCheckAns(false)
