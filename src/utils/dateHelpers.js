@@ -156,13 +156,17 @@ export const formatTimeForShare = (seconds) => {
 		return ''
 	}
 
+	// Zero-width space prevents iOS/Android from detecting duration patterns
+	// (e.g. "1m 7s") as actionable data in SMS messages
+	const ZWS = '\u200B'
+
 	if (seconds < 60) {
-		return `${seconds}s`
+		return `${seconds}${ZWS}s`
 	}
 
 	const minutes = Math.floor(seconds / 60)
 	const remainingSeconds = seconds % 60
 	return remainingSeconds === 0
-		? `${minutes}m`
-		: `${minutes}m ${remainingSeconds}s`
+		? `${minutes}${ZWS}m`
+		: `${minutes}${ZWS}m ${remainingSeconds}${ZWS}s`
 }

@@ -310,23 +310,27 @@ describe('dateHelpers', () => {
 	 * Purpose: Format seconds to share-safe string that won't trigger iOS/Android data detectors
 	 */
 	describe('formatTimeForShare', () => {
+		// Zero-width space (U+200B) is inserted between numbers and units
+		// to prevent iOS/Android data detectors from recognizing durations
+		const ZWS = '\u200B'
+
 		it('should format times under 60 seconds with "s" suffix', () => {
-			expect(formatTimeForShare(0)).toBe('0s')
-			expect(formatTimeForShare(1)).toBe('1s')
-			expect(formatTimeForShare(45)).toBe('45s')
-			expect(formatTimeForShare(59)).toBe('59s')
+			expect(formatTimeForShare(0)).toBe(`0${ZWS}s`)
+			expect(formatTimeForShare(1)).toBe(`1${ZWS}s`)
+			expect(formatTimeForShare(45)).toBe(`45${ZWS}s`)
+			expect(formatTimeForShare(59)).toBe(`59${ZWS}s`)
 		})
 
 		it('should format times at or above 60 seconds as Xm Ys', () => {
-			expect(formatTimeForShare(90)).toBe('1m 30s')
-			expect(formatTimeForShare(125)).toBe('2m 5s')
-			expect(formatTimeForShare(165)).toBe('2m 45s')
+			expect(formatTimeForShare(90)).toBe(`1${ZWS}m 30${ZWS}s`)
+			expect(formatTimeForShare(125)).toBe(`2${ZWS}m 5${ZWS}s`)
+			expect(formatTimeForShare(165)).toBe(`2${ZWS}m 45${ZWS}s`)
 		})
 
 		it('should omit seconds when exactly on the minute', () => {
-			expect(formatTimeForShare(60)).toBe('1m')
-			expect(formatTimeForShare(120)).toBe('2m')
-			expect(formatTimeForShare(600)).toBe('10m')
+			expect(formatTimeForShare(60)).toBe(`1${ZWS}m`)
+			expect(formatTimeForShare(120)).toBe(`2${ZWS}m`)
+			expect(formatTimeForShare(600)).toBe(`10${ZWS}m`)
 		})
 
 		it('should return empty string for null or undefined', () => {
@@ -335,8 +339,14 @@ describe('dateHelpers', () => {
 		})
 
 		it('should handle large times', () => {
-			expect(formatTimeForShare(3600)).toBe('60m')
-			expect(formatTimeForShare(3661)).toBe('61m 1s')
+			expect(formatTimeForShare(3600)).toBe(`60${ZWS}m`)
+			expect(formatTimeForShare(3661)).toBe(`61${ZWS}m 1${ZWS}s`)
+		})
+
+		it('should contain zero-width spaces to break data detection', () => {
+			const result = formatTimeForShare(90)
+			expect(result).toContain('\u200B')
+			expect(result.replace(/\u200B/g, '')).toBe('1m 30s')
 		})
 	})
 })
