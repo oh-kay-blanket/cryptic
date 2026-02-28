@@ -505,11 +505,11 @@ const TopBar = () => {
             </h3>
             <div className='grid grid-cols-2 gap-4 mb-4'>
               <div className='text-center'>
-                <div className='text-3xl font-bold text-neutral-900 dark:text-white'>{streak}</div>
+                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
                 <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
               </div>
               <div className='text-center'>
-                <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                   {longestStreak}
                 </div>
                 <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
@@ -522,32 +522,32 @@ const TopBar = () => {
               </h3>
               <div className='grid grid-cols-2 gap-4'>
                 <div className='text-center'>
-                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                     {totalSolved}
                   </div>
                   <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                     {perfectSolves}
                   </div>
                   <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                     {avgGuesses}
                   </div>
                   <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                     {avgHints}
                   </div>
                   <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
                 </div>
                 {bestTimeClue && (
                   <div className='text-center'>
-                    <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                       {formatTime(bestTime)}
                     </div>
                     <div className='text-sm text-neutral-500 dark:text-neutral-400'>
@@ -564,7 +564,7 @@ const TopBar = () => {
                 )}
                 {avgSolveTime != null && (
                   <div className='text-center'>
-                    <div className='text-3xl font-bold text-neutral-900 dark:text-white'>
+                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
                       {formatTime(avgSolveTime)}
                     </div>
                     <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
@@ -583,7 +583,7 @@ const TopBar = () => {
                     const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
                     return (
                       <div key={index} className='flex flex-col items-center'>
-                        <div className='text-2xl font-bold text-neutral-900 dark:text-white'>
+                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                           {count}
                         </div>
                         <div
@@ -612,7 +612,7 @@ const TopBar = () => {
                 <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
                   Playing Since
                 </h3>
-                <p className='text-neutral-700 dark:text-neutral-200'>
+                <p className='text-sm text-[#666] dark:text-neutral-100'>
                   {firstSolveDate.toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
