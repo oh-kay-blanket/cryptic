@@ -49,7 +49,6 @@
 		}
 
 		.stats-row {
-			position: relative;
 			display: inline-flex;
 			align-items: center;
 			gap: 0.5rem;
@@ -59,6 +58,16 @@
 				line-height: 1.5;
 				border-radius: 4px;
 				font-size: 0.875rem;
+			}
+
+			.stat-time {
+				background-color: #e5e5e5;
+				color: $lc-text;
+
+				html.dark & {
+					background-color: #525252;
+					color: #f5f5f5;
+				}
 			}
 
 			.stat-guesses {
@@ -81,20 +90,7 @@
 				}
 			}
 
-			.stat-time {
-				background-color: #e5e5e5;
-				color: $lc-text;
-
-				html.dark & {
-					background-color: #525252;
-					color: #f5f5f5;
-				}
-			}
-
 			.share-icon-btn {
-				position: absolute;
-				left: 100%;
-				margin-left: 0.5rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;

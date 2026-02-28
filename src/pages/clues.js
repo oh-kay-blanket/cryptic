@@ -239,11 +239,11 @@ const Clues = ({ data, location }) => {
 
     const stats = completedClue && (
       <div className="tile-stats-cell">
+        {completedClue.solveTime != null && (
+          <span className="stat-time">{formatTime(completedClue.solveTime, true)}</span>
+        )}
         <span className="stat-guesses">{completedClue.guesses}g</span>
         <span className="stat-hints">{completedClue.hints}h</span>
-        {completedClue.solveTime != null && (
-          <span className="stat-time">{formatTime(completedClue.solveTime)}</span>
-        )}
       </div>
     );
 
@@ -367,6 +367,20 @@ const Clues = ({ data, location }) => {
                 </span>
                 {!!completedClue && completedClue.how === "g" && (
                   <div className="tile-info-stats">
+                    {completedClue.solveTime != null && (
+                      <span
+                        style={{
+                          backgroundColor: "#e5e5e5",
+                          color: "var(--lc-text-primary)",
+                          padding: "2px 6px",
+                          borderRadius: "4px",
+                          fontSize: "0.75rem",
+                        }}
+                        className="dark:!bg-neutral-600"
+                      >
+                        {formatTime(completedClue.solveTime)}
+                      </span>
+                    )}
                     <span
                       style={{
                         backgroundColor: "var(--lc-active-bg)",
@@ -389,20 +403,6 @@ const Clues = ({ data, location }) => {
                     >
                       {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
                     </span>
-                    {completedClue.solveTime != null && (
-                      <span
-                        style={{
-                          backgroundColor: "#e5e5e5",
-                          color: "var(--lc-text-primary)",
-                          padding: "2px 6px",
-                          borderRadius: "4px",
-                          fontSize: "0.75rem",
-                        }}
-                        className="dark:!bg-neutral-600"
-                      >
-                        {formatTime(completedClue.solveTime)}
-                      </span>
-                    )}
                   </div>
                 )}
               </div>

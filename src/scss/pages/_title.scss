@@ -86,16 +86,27 @@
 			position: relative;
 			display: inline-flex;
 			align-items: center;
+			gap: 0.5rem;
 
 			> span {
 				padding: 0.25rem 0.5rem;
 				font-size: 0.9rem;
+				border-radius: 4px;
+			}
+
+			.stat-time {
+				background-color: #e5e5e5;
+				color: $lc-text;
+
+				html.dark & {
+					background-color: #525252;
+					color: #f5f5f5;
+				}
 			}
 
 			.stat-guesses {
 				background-color: $lc-primary--light;
 				color: $lc-text;
-				border-radius: 4px 0 0 4px;
 
 				html.dark & {
 					background-color: rgb(120, 70, 45);
@@ -106,28 +117,11 @@
 			.stat-hints {
 				background-color: $lc-secondary--light;
 				color: $lc-text;
-				border-radius: 0;
 
 				html.dark & {
 					background-color: #4A3F6B;
 					color: #f5f5f5;
 				}
-			}
-
-			.stat-time {
-				background-color: #e5e5e5;
-				color: $lc-text;
-				border-radius: 0 4px 4px 0;
-
-				html.dark & {
-					background-color: #525252;
-					color: #f5f5f5;
-				}
-			}
-
-			// When there's no time stat, hints should have right border radius
-			&:not(:has(.stat-time)) .stat-hints {
-				border-radius: 0 4px 4px 0;
 			}
 
 			.stats-tooltip {
@@ -206,9 +200,6 @@
 		}
 
 		.share-icon-btn {
-			position: absolute;
-			left: 100%;
-			margin-left: 0.5rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;

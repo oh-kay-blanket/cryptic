@@ -32,7 +32,6 @@ const Title = ({ data }) => {
 
 	// Add loading state to prevent flicker
 	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
-	const [showStatsTooltip, setShowStatsTooltip] = React.useState(false)
 
 	React.useEffect(() => {
 		// Set context as loaded after a brief delay to ensure localStorage has been read
@@ -109,7 +108,7 @@ const Title = ({ data }) => {
 		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
 
 		const statsLine = timeText
-			? `🟧 ${guessText} • 🟪 ${hintText} • ⬜ ${timeText}`
+			? `⬜ ${timeText} • 🟧 ${guessText} • 🟪 ${hintText}`
 			: `🟧 ${guessText} • 🟪 ${hintText}`
 
 		const scoreText = `Learn Cryptic #${todayClue.clid} • ${dateFormatted}\n${statsLine}`
@@ -197,34 +196,16 @@ const Title = ({ data }) => {
 							<span className='streak-label'>day streak</span>
 						</div>
 						<p className='stats-label'>Today's clue</p>
-						<div className='stats-row-container'>
-							<div
-								className='stats-row'
-								onMouseEnter={() => setShowStatsTooltip(true)}
-								onMouseLeave={() => setShowStatsTooltip(false)}
-								onClick={() => setShowStatsTooltip(!showStatsTooltip)}
-							>
-								<span className='stat-guesses'>{todayGuesses}g</span>
-								<span className='stat-hints'>{todayHints}h</span>
-								{todaySolveTime != null && (
-									<span className='stat-time'>{formatTime(todaySolveTime)}</span>
-								)}
-								{showStatsTooltip && (
-									<div className='stats-tooltip'>
-										<span className='tooltip-guesses'>
-											{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
-										</span>
-										<span className='tooltip-hints'>
-											{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
-										</span>
-										{todaySolveTime != null && (
-											<span className='tooltip-time'>
-												{formatTime(todaySolveTime)}
-											</span>
-										)}
-									</div>
-								)}
-							</div>
+						<div className='stats-row'>
+							{todaySolveTime != null && (
+								<span className='stat-time'>{formatTime(todaySolveTime)}</span>
+							)}
+							<span className='stat-guesses'>
+								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
+							</span>
+							<span className='stat-hints'>
+								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
+							</span>
 							<button
 								onClick={handleShareScore}
 								className='share-icon-btn'

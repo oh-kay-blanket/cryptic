@@ -77,7 +77,7 @@ const Message = ({
     const timeText = actualSolveTime != null ? formatTime(actualSolveTime) : null;
 
     const statsLine = timeText
-      ? `🟧 ${guessText} • 🟪 ${hintText} • ⬜ ${timeText}`
+      ? `⬜ ${timeText} • 🟧 ${guessText} • 🟪 ${hintText}`
       : `🟧 ${guessText} • 🟪 ${hintText}`;
 
     const scoreText = `Learn Cryptic #${activeClue.clid} • ${dateFormatted}\n${statsLine}`;
@@ -109,17 +109,17 @@ const Message = ({
         <strong>{input.join("").toUpperCase()}</strong> is correct!
         <div className="stats-row-wrapper">
           <div className="stats-row">
+            {solveTime != null && (
+              <span className="stat-time dark:!bg-neutral-600">
+                {formatTime(solveTime)}
+              </span>
+            )}
             <span className="stat-guesses">
               {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
             </span>
             <span className="stat-hints">
               {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
             </span>
-            {solveTime != null && (
-              <span className="stat-time dark:!bg-neutral-600">
-                {formatTime(solveTime)}
-              </span>
-            )}
             {isTodaysClue && (
               <button
                 onClick={handleShareScore}
@@ -240,17 +240,17 @@ const Message = ({
         <div className="message-copy lc-container">
           <div className="stats-row-wrapper">
             <div className="stats-row">
+              {stats.solveTime != null && (
+                <span className="stat-time dark:!bg-neutral-600">
+                  {formatTime(stats.solveTime)}
+                </span>
+              )}
               <span className="stat-guesses">
                 {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
               </span>
               <span className="stat-hints">
                 {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
               </span>
-              {stats.solveTime != null && (
-                <span className="stat-time dark:!bg-neutral-600">
-                  {formatTime(stats.solveTime)}
-                </span>
-              )}
               {isTodaysClue && (
                 <button
                   onClick={handleShareScore}

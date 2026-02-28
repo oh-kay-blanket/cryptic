@@ -306,11 +306,24 @@ const TopBar = () => {
                   }
                 }}
               >
+                <span className='stat stat-time'>{formatTime(elapsedTime, true)}</span>
                 <span className='stat stat-guesses'>{currentStats.guesses}g</span>
                 <span className='stat stat-hints'>{currentStats.hints}h</span>
-                <span className='stat stat-time'>{formatTime(elapsedTime)}</span>
                 {showCurrentStatsTooltip && (
                   <div className='current-stats-tooltip'>
+                    <span
+                      style={{
+                        backgroundColor: '#e5e5e5',
+                        color: 'var(--lc-text-primary)',
+                        padding: '2px 6px',
+                        lineHeight: '1.5',
+                        borderRadius: '4px',
+                        fontSize: '0.875rem',
+                      }}
+                      className='dark:!bg-neutral-600'
+                    >
+                      {formatTime(elapsedTime)}
+                    </span>
                     <span
                       style={{
                         backgroundColor: 'var(--lc-active-bg)',
@@ -334,19 +347,6 @@ const TopBar = () => {
                       }}
                     >
                       {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}
-                    </span>
-                    <span
-                      style={{
-                        backgroundColor: '#e5e5e5',
-                        color: 'var(--lc-text-primary)',
-                        padding: '2px 6px',
-                        lineHeight: '1.5',
-                        borderRadius: '4px',
-                        fontSize: '0.875rem',
-                      }}
-                      className='dark:!bg-neutral-600'
-                    >
-                      {formatTime(elapsedTime)}
                     </span>
                   </div>
                 )}

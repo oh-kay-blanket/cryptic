@@ -112,21 +112,23 @@ export const shouldResetStreak = (lastSolvedDate, currentStreak = 0) => {
  * Formats a time in seconds to a human-readable string
  *
  * @param {number|null|undefined} seconds - Time in seconds
- * @returns {string} Formatted time string ("M:SS" for >= 60s, "Xs" for < 60s)
+ * @param {boolean} short - Use short format ("s") instead of long ("sec")
+ * @returns {string} Formatted time string ("M:SS" for >= 60s, "X sec" or "Xs" for < 60s)
  *
  * @example
- * formatTime(45) // "45s"
+ * formatTime(45) // "45 sec"
+ * formatTime(45, true) // "45s"
  * formatTime(90) // "1:30"
  * formatTime(165) // "2:45"
  * formatTime(null) // ""
  */
-export const formatTime = (seconds) => {
+export const formatTime = (seconds, short = false) => {
 	if (seconds == null) {
 		return ''
 	}
 
 	if (seconds < 60) {
-		return `${seconds}s`
+		return short ? `${seconds}s` : `${seconds} sec`
 	}
 
 	const minutes = Math.floor(seconds / 60)
