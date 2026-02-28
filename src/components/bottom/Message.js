@@ -3,7 +3,7 @@ import ButtonContainer from "./ButtonContainer";
 import Celebration from "./Celebration";
 
 import getMessage from "../../utils/bottom/getMessage";
-import { formatTime, isTodayClue } from "../../utils/dateHelpers";
+import { formatTime, formatTimeForShare, isTodayClue } from "../../utils/dateHelpers";
 
 // Share icon component
 const ShareIcon = () => (
@@ -65,22 +65,16 @@ const Message = ({
 
   // Share score function (for today's clue only)
   const handleShareScore = async () => {
-    const date = new Date(activeClue.release);
-    const dateFormatted = new Intl.DateTimeFormat("en-US", {
-      month: "short",
-      day: "numeric",
-    }).format(date);
-
     const guessText = `${stats.guesses} ${stats.guesses === 1 ? "guess" : "guesses"}`;
     const hintText = `${stats.hints} ${stats.hints === 1 ? "hint" : "hints"}`;
     const actualSolveTime = solveTime ?? stats.solveTime;
-    const timeText = actualSolveTime != null ? formatTime(actualSolveTime) : null;
+    const timeText = actualSolveTime != null ? formatTimeForShare(actualSolveTime) : null;
 
     const statsLine = timeText
       ? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
       : `🟧 ${guessText} 🟪 ${hintText}`;
 
-    const scoreText = `Learn Cryptic #${activeClue.clid} • ${dateFormatted}\n${statsLine}`;
+    const scoreText = `Learn Cryptic #${activeClue.clid}\n${statsLine}`;
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 

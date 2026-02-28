@@ -20,6 +20,7 @@ import {
 	daysBetween,
 	shouldResetStreak,
 	formatTime,
+	formatTimeForShare,
 } from '../dateHelpers'
 
 /**
@@ -273,11 +274,11 @@ describe('dateHelpers', () => {
 	 * Purpose: Format seconds to human-readable time string
 	 */
 	describe('formatTime', () => {
-		it('should format times under 60 seconds with "s" suffix', () => {
-			expect(formatTime(0)).toBe('0s')
-			expect(formatTime(1)).toBe('1s')
-			expect(formatTime(45)).toBe('45s')
-			expect(formatTime(59)).toBe('59s')
+		it('should format times under 60 seconds with "sec" suffix', () => {
+			expect(formatTime(0)).toBe('0 sec')
+			expect(formatTime(1)).toBe('1 sec')
+			expect(formatTime(45)).toBe('45 sec')
+			expect(formatTime(59)).toBe('59 sec')
 		})
 
 		it('should format times at or above 60 seconds as M:SS', () => {
@@ -301,6 +302,51 @@ describe('dateHelpers', () => {
 		it('should handle large times', () => {
 			expect(formatTime(3600)).toBe('60:00')
 			expect(formatTime(3661)).toBe('61:01')
+		})
+	})
+
+	/**
+	 * FUNCTION: formatTimeForShare()
+	 * Purpose: Format seconds to share-safe string that won't trigger iOS/Android data detectors
+	 */
+	describe('formatTimeForShare', () => {
+		// Zero-width space (U+200B) is inserted between numbers and units
+		// to prevent iOS/Android data detectors from recognizing durations
+		const ZWS = '\u200B'
+
+		it('should format times under 60 seconds with "s" suffix', () => {
+			expect(formatTimeForShare(0)).toBe(`0${ZWS}s`)
+			expect(formatTimeForShare(1)).toBe(`1${ZWS}s`)
+			expect(formatTimeForShare(45)).toBe(`45${ZWS}s`)
+			expect(formatTimeForShare(59)).toBe(`59${ZWS}s`)
+		})
+
+		it('should format times at or above 60 seconds as Xm Ys', () => {
+			expect(formatTimeForShare(90)).toBe(`1${ZWS}m 30${ZWS}s`)
+			expect(formatTimeForShare(125)).toBe(`2${ZWS}m 5${ZWS}s`)
+			expect(formatTimeForShare(165)).toBe(`2${ZWS}m 45${ZWS}s`)
+		})
+
+		it('should omit seconds when exactly on the minute', () => {
+			expect(formatTimeForShare(60)).toBe(`1${ZWS}m`)
+			expect(formatTimeForShare(120)).toBe(`2${ZWS}m`)
+			expect(formatTimeForShare(600)).toBe(`10${ZWS}m`)
+		})
+
+		it('should return empty string for null or undefined', () => {
+			expect(formatTimeForShare(null)).toBe('')
+			expect(formatTimeForShare(undefined)).toBe('')
+		})
+
+		it('should handle large times', () => {
+			expect(formatTimeForShare(3600)).toBe(`60${ZWS}m`)
+			expect(formatTimeForShare(3661)).toBe(`61${ZWS}m 1${ZWS}s`)
+		})
+
+		it('should contain zero-width spaces to break data detection', () => {
+			const result = formatTimeForShare(90)
+			expect(result).toContain('\u200B')
+			expect(result.replace(/\u200B/g, '')).toBe('1m 30s')
 		})
 	})
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { isTodayClue, formatTime } from '../dateHelpers'
+import { isTodayClue, formatTimeForShare } from '../dateHelpers'
 
 const prepBottom = (
 	activeClue,
@@ -25,22 +25,16 @@ const prepBottom = (
 	// Check if this is today's clue
 	const isTodaysClue = () => isTodayClue(activeClue)
 	const shareScore = async (solveTime = null) => {
-		const date = new Date(activeClue.release)
-		const dateFormatted = new Intl.DateTimeFormat('en-US', {
-			month: 'short',
-			day: 'numeric',
-		}).format(date)
-
 		// Build stats line - prioritize stats over metadata
 		const guessText = `${stats.guesses} ${stats.guesses === 1 ? 'guess' : 'guesses'}`
 		const hintText = `${stats.hints} ${stats.hints === 1 ? 'hint' : 'hints'}`
-		const timeText = solveTime != null ? formatTime(solveTime) : null
+		const timeText = solveTime != null ? formatTimeForShare(solveTime) : null
 
 		const statsLine = timeText
 			? `${timeText} ${guessText} ${hintText}`
 			: `${guessText} ${hintText}`
 
-		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid} • ${dateFormatted}\nlearncryptic.com`
+		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid}\nlearncryptic.com`
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 

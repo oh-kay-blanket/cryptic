@@ -4,7 +4,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
-import { isTodayClue, formatTime } from '../utils/dateHelpers'
+import { isTodayClue, formatTime, formatTimeForShare } from '../utils/dateHelpers'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 
 const Title = ({ data }) => {
@@ -97,21 +97,15 @@ const Title = ({ data }) => {
 
 	// Share score function
 	const handleShareScore = async () => {
-		const date = new Date(todayClue.release)
-		const dateFormatted = new Intl.DateTimeFormat('en-US', {
-			month: 'short',
-			day: 'numeric',
-		}).format(date)
-
 		const guessText = `${todayGuesses} ${todayGuesses === 1 ? 'guess' : 'guesses'}`
 		const hintText = `${todayHints} ${todayHints === 1 ? 'hint' : 'hints'}`
-		const timeText = todaySolveTime != null ? formatTime(todaySolveTime) : null
+		const timeText = todaySolveTime != null ? formatTimeForShare(todaySolveTime) : null
 
 		const statsLine = timeText
 			? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
 			: `🟧 ${guessText} 🟪 ${hintText}`
 
-		const scoreText = `Learn Cryptic #${todayClue.clid} • ${dateFormatted}\n${statsLine}`
+		const scoreText = `Learn Cryptic #${todayClue.clid}\n${statsLine}`
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
