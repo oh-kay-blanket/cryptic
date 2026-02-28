@@ -34,6 +34,19 @@
       position: relative;
       // background-color handled by Tailwind classes in React component
       border: none;
+      // Disable tap highlight on touch devices
+      -webkit-tap-highlight-color: transparent;
+
+      // Only apply hover styles on devices that support hover (not touch)
+      @media (hover: hover) {
+        &:hover {
+          background-color: rgb(163 163 163); // neutral-400
+        }
+
+        html.dark &:hover {
+          background-color: rgb(115 115 115) !important; // neutral-500
+        }
+      }
       // Width calculated so 10 keys (row 1) fill the screen
       // 10 keys * 2 margins * 0.125rem = 2.5rem + 0.5rem padding = 3rem
       width: calc((100% - 2.5rem) / 10);
@@ -91,6 +104,17 @@
         @media (min-width: 768px) and (max-height: 899px) and (min-height: 700px) {
           width: 66px;
           font-size: 0.85rem;
+        }
+
+        // Only apply hover styles on devices that support hover (not touch)
+        @media (hover: hover) {
+          &:hover:not(.cursor-default) {
+            background-color: #f5c1a1;
+          }
+
+          html.dark &:hover:not(.cursor-default) {
+            background-color: rgb(110, 65, 42) !important;
+          }
         }
       }
 
