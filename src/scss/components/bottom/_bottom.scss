@@ -19,8 +19,14 @@
 		height: 160px;
 	}
 
+	// Normal/large phones: more room for keyboard area
+	@media (max-width: 767px) and (min-height: 700px) {
+		height: 220px;
+	}
+
 	@media (min-width: 768px) {
-		height: 235px;
+		height: 260px;
+		padding-bottom: 1.25rem;
 	}
 
 	// Compact height for constrained screens

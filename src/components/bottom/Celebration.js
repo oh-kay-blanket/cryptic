@@ -19,16 +19,13 @@ const Celebration = () => {
 		const viewportWidth = window.innerWidth
 		const velocityScale = viewportWidth > 768 ? 600 / viewportWidth : 1
 
-		const newParticles = Array.from({ length: 45 }, (_, i) => {
-			// Split into left side (180-260) and right side (280-360) to avoid straight up
-			const side = Math.random() > 0.5 ? 'left' : 'right'
-			const angle = side === 'left'
-				? 180 + Math.random() * 80   // 180-260 degrees
-				: 280 + Math.random() * 80   // 280-360 degrees
+		const newParticles = Array.from({ length: 100 }, (_, i) => {
+			// Even spread across the upper hemisphere (180-360 degrees)
+			const angle = 180 + Math.random() * 180
 			const angleRad = angle * (Math.PI / 180)
 
 			// Random velocity (how far the initial burst goes)
-			const velocity = (15 + Math.random() * 25) * velocityScale
+			const velocity = (20 + Math.random() * 35) * velocityScale
 
 			// Horizontal movement
 			const endX = Math.cos(angleRad) * velocity * 1.0
@@ -46,10 +43,10 @@ const Celebration = () => {
 				burstY,
 				gravity,
 				delay: Math.random() * 0.08,
-				duration: 1.0 + Math.random() * 0.4,
-				size: 5 + Math.random() * 6,
+				duration: 1.4 + Math.random() * 0.5,
+				size: 5 + Math.random() * 10,
 				color: Math.random() > 0.5 ? 'primary' : 'secondary',
-				rotation: 45 + Math.random() * 90, // ~1/4 turn (45-135 degrees)
+				rotation: 60 + Math.random() * 150, // ~1/4 to 1/2 turn (60-210 degrees)
 			}
 		})
 		setParticles(newParticles)
@@ -57,7 +54,7 @@ const Celebration = () => {
 		// Cleanup after animation completes
 		const timeout = setTimeout(() => {
 			setParticles([])
-		}, 2000)
+		}, 2800)
 
 		return () => clearTimeout(timeout)
 	}, [])
