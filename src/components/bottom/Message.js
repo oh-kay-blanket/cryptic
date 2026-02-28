@@ -77,8 +77,8 @@ const Message = ({
     const timeText = actualSolveTime != null ? formatTime(actualSolveTime) : null;
 
     const statsLine = timeText
-      ? `⬜ ${timeText} • 🟧 ${guessText} • 🟪 ${hintText}`
-      : `🟧 ${guessText} • 🟪 ${hintText}`;
+      ? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
+      : `🟧 ${guessText} 🟪 ${hintText}`;
 
     const scoreText = `Learn Cryptic #${activeClue.clid} • ${dateFormatted}\n${statsLine}`;
 

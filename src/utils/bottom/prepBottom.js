@@ -37,8 +37,8 @@ const prepBottom = (
 		const timeText = solveTime != null ? formatTime(solveTime) : null
 
 		const statsLine = timeText
-			? `${timeText} • ${guessText} • ${hintText}`
-			: `${guessText} • ${hintText}`
+			? `${timeText} ${guessText} ${hintText}`
+			: `${guessText} ${hintText}`
 
 		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid} • ${dateFormatted}\nlearncryptic.com`
 
