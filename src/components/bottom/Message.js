@@ -77,10 +77,10 @@ const Message = ({
     const timeText = actualSolveTime != null ? formatTime(actualSolveTime) : null;
 
     const statsLine = timeText
-      ? `${guessText} • ${hintText} • ${timeText}`
-      : `${guessText} • ${hintText}`;
+      ? `🟧 ${guessText} • 🟪 ${hintText} • ⬜ ${timeText}`
+      : `🟧 ${guessText} • 🟪 ${hintText}`;
 
-    const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid} • ${dateFormatted}\nlearncryptic.com`;
+    const scoreText = `Learn Cryptic #${activeClue.clid} • ${dateFormatted}\n${statsLine}`;
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
