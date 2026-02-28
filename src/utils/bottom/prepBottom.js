@@ -167,6 +167,7 @@ const prepBottom = (
 					setStats((prevStats) => ({
 						...prevStats,
 						guesses: prevStats.guesses + 1,
+						solveTime: solveTime,
 					}))
 					// Show source when correctly guessed
 					if (activeClue.source?.ref?.current) {
