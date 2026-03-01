@@ -32,12 +32,16 @@ const PostSolvePopup = ({
   onDismiss,
   onViewAchievements,
 }) => {
-  const { clearNewlyUnlockedAchievements, markAchievementsSeen } = useContext(UserContext);
+  const { clearNewlyUnlockedAchievements, markAchievementsSeen, setHasSeenAchievementsIntro } = useContext(UserContext);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    // If showing achievements, mark the intro as seen so homepage doesn't show redundant intro
+    if (unlockedAchievements.length > 0) {
+      setHasSeenAchievementsIntro(true);
+    }
+  }, [unlockedAchievements.length, setHasSeenAchievementsIntro]);
 
   const handleDismiss = () => {
     // Mark achievements as seen and clear from context
