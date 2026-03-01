@@ -95,8 +95,8 @@ const Learn = () => {
               What are cryptic crosswords?
             </h1>
             <span className={`chevron ${introExpanded ? "expanded" : ""}`}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                <path d="M6.1 9.2c1.9 1.8 3.9 3.7 5.8 5.6 2-1.9 3.9-3.9 5.9-5.8"></path>
               </svg>
             </span>
           </button>

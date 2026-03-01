@@ -13,7 +13,7 @@ import {
 import AchievementIcon from './AchievementIcon';
 
 import logo from '../assets/img/logo-short.png';
-// Custom info icon component
+// Hand-drawn style icons
 const InfoIcon = () => (
   <svg
     width='20'
@@ -23,9 +23,9 @@ const InfoIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <circle cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='2.5' fill='none' />
-    <circle cx='12' cy='9' r='1' fill='currentColor' />
-    <path d='M11 12h2v5h-2z' fill='currentColor' />
+    <path d='M12.2 2.1c2.8.2 5.4 1.3 7.2 3.3 1.9 2 2.9 4.6 2.7 7.3-.2 2.7-1.4 5.2-3.2 7-2 1.9-4.6 2.9-7.3 2.7-2.7-.2-5.1-1.4-6.9-3.3-1.9-2-2.8-4.6-2.6-7.3.2-2.6 1.3-5 3.2-6.8 1.8-1.8 4.3-2.8 6.9-2.9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M11.6 6.8c.7-.3 1.5.1 1.8.7.3.7 0 1.4-.6 1.8-.7.3-1.4 0-1.8-.6-.4-.7-.1-1.5.6-1.9' fill='currentColor' />
+    <path d='M12.1 11.8c-.1 1.2.1 2.4-.1 3.6' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -38,9 +38,9 @@ const BarGraphIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='9' width='3' height='12' rx='1' fill='currentColor' />
-    <rect x='10.5' y='3' width='3' height='18' rx='1' fill='currentColor' />
-    <rect x='18' y='12' width='3' height='9' rx='1' fill='currentColor' />
+    <path d='M3.2 21.1c-.1-4 .1-8-.1-12' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M10.1 21.2c.1-5.3-.1-10.6.1-15.9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M17.2 21.1c-.1-3 .1-6-.1-9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -53,12 +53,12 @@ const ListIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='3' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='10.5' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='18' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='3' width='13' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='10.5' width='13' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='18' width='13' height='3' rx='1' fill='currentColor' />
+    <path d='M3.5 4.8c.6-.2 1.3.2 1.5.8.3.6 0 1.3-.5 1.6-.6.3-1.3.1-1.6-.5-.4-.6-.1-1.4.6-1.9' fill='currentColor' />
+    <path d='M3.6 11.4c.6-.2 1.3.1 1.6.6.3.6.1 1.3-.4 1.7-.6.3-1.3.1-1.7-.5-.3-.6-.1-1.3.5-1.8' fill='currentColor' />
+    <path d='M3.5 17.8c.6-.2 1.3.1 1.6.7.3.6 0 1.3-.5 1.6-.6.3-1.3 0-1.6-.6-.3-.6 0-1.3.5-1.7' fill='currentColor' />
+    <path d='M8.2 5.9c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M8.1 12.1c4.4-.1 8.9.1 13.3-.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M8.2 18.2c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -70,44 +70,39 @@ const CloseIcon = () => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <path
-      d='M18 6L6 18M6 6l12 12'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
+    <path d='M6.2 6.1c3.9 3.8 7.7 7.8 11.6 11.7' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M17.9 6.2c-3.8 3.9-7.8 7.7-11.7 11.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const SystemIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect x='2' y='3' width='20' height='14' rx='2' stroke='currentColor' strokeWidth='2' />
-    <path d='M8 21h8M12 17v4' stroke='currentColor' strokeWidth='2' strokeLinecap='round' />
+    {/* Hand-drawn monitor */}
+    <path d='M4.1 3.2c5.2.1 10.5-.1 15.7.1.8.2 1.3.8 1.3 1.6-.1 3.1.1 6.3-.1 9.4-.2.7-.8 1.2-1.5 1.2-5.1-.1-10.3.1-15.4-.1-.7-.1-1.2-.6-1.3-1.3.1-3.2-.1-6.4.1-9.6.2-.7.6-1.2 1.2-1.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    {/* Stand */}
+    <path d='M9.2 15.8c-.3 1.5-.1 3.1-.2 4.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M14.9 15.7c.2 1.6-.1 3.2.1 4.8' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M6.8 20.8c3.4-.1 6.9.2 10.3-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const SunIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <circle cx='12' cy='12' r='4' stroke='currentColor' strokeWidth='2' />
-    <path
-      d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-    />
+    <path d='M12.2 8.1c1.2.1 2.3.6 3.1 1.5.8.9 1.2 2 1.1 3.2-.1 1.1-.6 2.2-1.4 2.9-.9.8-2 1.2-3.2 1.1-1.1-.1-2.2-.5-2.9-1.4-.8-.9-1.2-2-1.1-3.2.1-1.1.5-2.1 1.4-2.9.8-.7 1.9-1.2 3-1.2' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M12.1 2.2c-.1 1.2.1 2.4-.1 3.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M12.2 18.1c-.1 1.3.1 2.5-.1 3.8' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M5.1 5.2c.8.7 1.5 1.6 2.3 2.4' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M16.8 16.1c.7.8 1.6 1.5 2.4 2.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M2.2 12.1c1.2-.1 2.4.1 3.6-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M18.1 12.2c1.3-.1 2.5.1 3.8-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M5.2 18.9c.7-.8 1.6-1.5 2.4-2.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M16.9 7.1c.8-.7 1.5-1.6 2.3-2.4' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const MoonIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path
-      d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
+    <path d='M20.8 13.2c-.3 2.1-1.4 4-3 5.3-1.7 1.3-3.8 2-5.9 1.8-2.2-.2-4.2-1.2-5.6-2.8-1.5-1.6-2.3-3.7-2.1-5.9.2-2.1 1.2-4.1 2.8-5.5 1.5-1.4 3.5-2.2 5.6-2.1-.8 1.3-1.2 2.8-1.1 4.3.1 1.6.7 3.1 1.8 4.3 1.1 1.2 2.5 1.9 4.1 2.1 1.5.2 3-.1 4.4-.5' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 

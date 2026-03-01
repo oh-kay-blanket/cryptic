@@ -251,6 +251,12 @@ html.dark .theme-picker-bg {
     border-radius: 1px;
     background-color: transparent;
 
+    // Hand-drawn feel: slight rotations for each square
+    &:nth-child(1) { transform: rotate(-2deg); border-radius: 1px 2px 1px 1px; }
+    &:nth-child(2) { transform: rotate(3deg); border-radius: 2px 1px 1px 2px; }
+    &:nth-child(3) { transform: rotate(2deg); border-radius: 1px 1px 2px 1px; }
+    &:nth-child(4) { transform: rotate(-3deg); border-radius: 2px 1px 1px 1px; }
+
     &.filled {
       background-color: #444;
       border-color: #444;

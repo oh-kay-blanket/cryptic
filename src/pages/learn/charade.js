@@ -25,25 +25,36 @@ const Charade = () => {
 		</svg>
 	)
 	const ArrowLeftIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
-			<line x1='19' y1='12' x2='5' y2='12' /><polyline points='12 19 5 12 12 5' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round'>
+			<path d='M18.8 12.1c-4.5-.1-9 .1-13.5-.1' />
+			<path d='M11.2 5.2c-2 2.2-4.1 4.4-6.1 6.6 2.1 2.3 4.2 4.5 6.3 6.8' />
 		</svg>
 	)
+
 	const ArrowRightIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
-			<line x1='5' y1='12' x2='19' y2='12' /><polyline points='12 5 19 12 12 19' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round'>
+			<path d='M5.2 12.1c4.5-.1 9 .1 13.5-.1' />
+			<path d='M12.8 5.2c2 2.2 4.1 4.4 6.1 6.6-2.1 2.3-4.2 4.5-6.3 6.8' />
 		</svg>
 	)
 
 	const ListIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
-			<line x1='8' y1='6' x2='21' y2='6' /><line x1='8' y1='12' x2='21' y2='12' /><line x1='8' y1='18' x2='21' y2='18' /><line x1='3' y1='6' x2='3.01' y2='6' /><line x1='3' y1='12' x2='3.01' y2='12' /><line x1='3' y1='18' x2='3.01' y2='18' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'>
+			<path d='M3.5 4.8c.6-.2 1.3.2 1.5.8.3.6 0 1.3-.5 1.6-.6.3-1.3.1-1.6-.5-.4-.6-.1-1.4.6-1.9' fill='currentColor' />
+			<path d='M3.6 11.4c.6-.2 1.3.1 1.6.6.3.6.1 1.3-.4 1.7-.6.3-1.3.1-1.7-.5-.3-.6-.1-1.3.5-1.8' fill='currentColor' />
+			<path d='M3.5 17.8c.6-.2 1.3.1 1.6.7.3.6 0 1.3-.5 1.6-.6.3-1.3 0-1.6-.6-.3-.6 0-1.3.5-1.7' fill='currentColor' />
+			<path d='M8.2 5.9c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+			<path d='M8.1 12.1c4.4-.1 8.9.1 13.3-.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+			<path d='M8.2 18.2c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
 		</svg>
 	)
 
 	const GridIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
-			<rect x='3' y='3' width='7' height='7' /><rect x='14' y='3' width='7' height='7' /><rect x='3' y='14' width='7' height='7' /><rect x='14' y='14' width='7' height='7' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round'>
+			<path d='M3.2 3.1c2-.1 4.1.1 6.1-.1.5.1.9.5.9 1-.1 1.8.1 3.7-.1 5.5-.1.5-.5.9-1 .9-1.8-.1-3.7.1-5.5-.1-.5-.1-.9-.5-.9-1 .1-1.8-.1-3.7.1-5.5.1-.4.4-.7.9-.7' />
+			<path d='M14.2 3.2c2-.1 4.1.1 6.1-.1.5.1.9.5.9 1-.1 1.8.1 3.7-.1 5.5-.1.5-.5.9-1 .9-1.8-.1-3.7.1-5.5-.1-.5-.1-.9-.5-.9-1 .1-1.8-.1-3.7.1-5.5.1-.4.4-.7.9-.7' />
+			<path d='M3.1 14.2c2-.1 4.1.1 6.1-.1.5.1.9.5.9 1-.1 1.8.1 3.7-.1 5.5-.1.5-.5.9-1 .9-1.8-.1-3.7.1-5.5-.1-.5-.1-.9-.5-.9-1 .1-1.8-.1-3.7.1-5.5.1-.4.5-.7 1-.7' />
+			<path d='M14.1 14.1c2-.1 4.1.1 6.1-.1.5.1.9.5.9 1-.1 1.8.1 3.7-.1 5.5-.1.5-.5.9-1 .9-1.8-.1-3.7.1-5.5-.1-.5-.1-.9-.5-.9-1 .1-1.8-.1-3.7.1-5.5.1-.4.5-.7 1-.7' />
 		</svg>
 	)
 

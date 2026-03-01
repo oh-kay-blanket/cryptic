@@ -61,7 +61,7 @@ const FilterModal = ({ open, onClose, children }) => {
   );
 };
 
-// Filter icon component
+// Hand-drawn filter icon component
 const FilterIcon = () => (
   <svg
     width="18"
@@ -71,16 +71,13 @@ const FilterIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="inline-block"
   >
-    <path
-      d="M3 4.5h18M6 12h12M9 19.5h6"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
+    <path d="M3.1 4.6c5.9-.1 11.8.1 17.7-.1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M6.2 12.1c3.8-.1 7.7.1 11.5-.1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M9.1 19.5c2-.1 3.9.1 5.9-.1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
   </svg>
 );
 
-// Book icon component
+// Hand-drawn book icon component
 const BookIcon = () => (
   <svg
     width="16"
@@ -90,20 +87,8 @@ const BookIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="inline-block"
   >
-    <path
-      d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5.1 19.2c.4-.6 1.1-.9 1.8-.9 4.2.1 8.5-.1 12.7.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M6.2 2.1c4.4.1 8.9-.1 13.3.1.5.1.9.5.9 1-.1 5.4.1 10.9-.1 16.3-.1.5-.5.9-1 .9-4.2-.1-8.5.1-12.7-.1-1.1-.1-2.1.5-2.6 1.5.1-6.4-.1-12.9.1-19.3.1-.3.4-.5.7-.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 

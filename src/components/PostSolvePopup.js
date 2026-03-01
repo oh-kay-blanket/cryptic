@@ -4,7 +4,7 @@ import { UserContext } from '../utils/UserContext';
 import { formatTime, formatTimeForShare, isTodayClue } from '../utils/dateHelpers';
 import AchievementIcon from './AchievementIcon';
 
-// Share icon component
+// Hand-drawn share icon
 const ShareIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -14,14 +14,13 @@ const ShareIcon = () => (
     stroke='currentColor'
     strokeWidth='2'
     strokeLinecap='round'
-    strokeLinejoin='round'
     viewBox='0 0 24 24'
   >
-    <circle cx='6' cy='12' r='2' />
-    <circle cx='18' cy='6' r='2' />
-    <circle cx='18' cy='18' r='2' />
-    <line x1='8' y1='11' x2='16' y2='7' />
-    <line x1='8' y1='13' x2='16' y2='17' />
+    <path d='M17.8 4.2c.5-.2 1 0 1.4.3.4.4.6.9.5 1.4-.1.5-.5 1-1 1.2-.5.2-1.1.1-1.5-.3-.4-.4-.5-.9-.4-1.5.1-.5.5-.9 1-1.1' fill='currentColor'/>
+    <path d='M17.9 17.1c.5-.1 1 .1 1.4.4.4.4.5.9.4 1.4-.2.5-.6.9-1.1 1.1-.5.1-1.1 0-1.4-.4-.4-.4-.5-1-.3-1.5.2-.5.5-.9 1-1' fill='currentColor'/>
+    <path d='M5.8 10.2c.5-.2 1.1 0 1.4.4.4.4.5 1 .3 1.5-.2.5-.6.9-1.1 1-.5.2-1.1 0-1.5-.4-.3-.4-.4-1-.2-1.5.2-.5.6-.9 1.1-1' fill='currentColor'/>
+    <path d='M7.9 10.8c2.8-1.4 5.7-2.9 8.5-4.3'/>
+    <path d='M7.8 13.1c2.9 1.5 5.8 2.8 8.7 4.2'/>
   </svg>
 );
 
