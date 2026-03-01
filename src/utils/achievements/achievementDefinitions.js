@@ -487,13 +487,13 @@ export const achievements = [
     check: ({ justCompleted, cluesData }) => {
       if (!justCompleted || !cluesData) return false;
       const clue = cluesData.find((c) => c.clid === justCompleted.clid);
-      return clue?.type?.includes('lit');
+      return clue?.type?.includes('Lit');
     },
     retroactiveCheck: ({ completedClues, cluesData }) => {
       if (!cluesData) return false;
       return completedClues.some((completed) => {
         const clue = cluesData.find((c) => c.clid === completed.clid);
-        return clue?.type?.includes('lit');
+        return clue?.type?.includes('Lit');
       });
     },
   },
