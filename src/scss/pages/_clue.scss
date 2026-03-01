@@ -132,17 +132,22 @@
       justify-content: center;
       flex-wrap: wrap;
       align-content: center;
-      font-family: $lc-font--serif;
+      font-family: $lc-font--alt;
+      font-weight: 600;
+      font-size: 1.25rem;
       text-transform: uppercase;
       pointer-events: none;
       user-select: none;
 
       .word {
         .letter {
+          display: inline-block;
+          width: 15px;
+          text-align: center;
           pointer-events: none;
           user-select: none;
           color: transparent;
-          line-height: 23px;
+          line-height: 25px;
           opacity: 0;
           transition:
             opacity $lc-transition--short ease 0s,
@@ -186,6 +191,7 @@
         flex-wrap: wrap;
         row-gap: 6px;
         font-family: $lc-font--alt;
+        font-weight: 600;
         z-index: 20;
         transition: opacity $lc-transition--short ease;
         text-align: center;
