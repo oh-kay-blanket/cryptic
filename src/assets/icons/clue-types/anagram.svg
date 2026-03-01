@@ -1,6 +1,11 @@
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M17 2L20 5L17 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7 22L4 19L7 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M20 5H10C6.68629 5 4 7.68629 4 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M4 19H14C17.3137 19 20 16.3137 20 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Hand-drawn swap/exchange arrows for anagram -->
+
+  <!-- Top arrow: tail curves up from below, points right -->
+  <path d="M4.2 14.3 Q3.8 10.1 5.1 8.6 Q6.3 7.2 8.5 7.4 L17.8 7.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M14.8 4.9 L18.6 7.8 L15.2 11.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Bottom arrow: tail curves down from above, points left -->
+  <path d="M19.8 9.8 Q20.3 14.1 18.9 15.5 Q17.6 17 15.4 16.7 L6.2 16.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M9.3 19.2 L5.4 16.1 L8.9 13.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

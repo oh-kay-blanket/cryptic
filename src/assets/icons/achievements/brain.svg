@@ -1,10 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V22h-.5"/>
-  <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5"/>
-  <path d="M4.5 12a2.5 2.5 0 0 0 0 5H8"/>
-  <path d="M19.5 12a2.5 2.5 0 0 1 0 5H16"/>
-  <path d="M4.5 7a2.5 2.5 0 0 1 0 5H12"/>
-  <path d="M19.5 7a2.5 2.5 0 0 0 0 5H12"/>
-  <path d="M12 4.5a2.5 2.5 0 0 1-5 0"/>
-  <path d="M12 4.5a2.5 2.5 0 0 0 5 0"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Hand-drawn brain icon -->
+  <!-- Left hemisphere outline -->
+  <path d="M12 4.5c-1.2-.3-2.5-.1-3.6.4-1.2.5-2.2 1.4-2.8 2.5-.5 1-.6 2.2-.9 3.3-.4 1.2-1.2 2.2-1.5 3.4-.3 1.4.2 2.9 1.1 4 .9 1 2.2 1.6 3.5 1.7 1.4.1 2.8-.2 4.2-.3"/>
+  <!-- Right hemisphere outline -->
+  <path d="M12 4.5c1.2-.3 2.5-.1 3.6.4 1.2.5 2.2 1.4 2.8 2.5.5 1 .6 2.2.9 3.3.4 1.2 1.2 2.2 1.5 3.4.3 1.4-.2 2.9-1.1 4-.9 1-2.2 1.6-3.5 1.7-1.4.1-2.8-.2-4.2-.3"/>
+  <!-- Center stem -->
+  <path d="M12 4.5c.1 5.2-.1 10.3.1 15.5"/>
+  <!-- Left brain squiggle -->
+  <path d="M4.5 10c1.8.3 3.7-.1 5.5.2"/>
+  <path d="M5.5 14.5c1.6-.2 3.2.1 4.8-.1"/>
+  <!-- Right brain squiggle -->
+  <path d="M14 10c1.8-.2 3.6.1 5.4-.1"/>
+  <path d="M13.8 14.5c1.6.1 3.3-.1 4.9.1"/>
 </svg>
