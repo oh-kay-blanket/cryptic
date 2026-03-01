@@ -142,7 +142,7 @@ const FilterModal = ({ open, onClose, children }) => {
   );
 };
 
-// Hand-drawn filter/sliders icon component
+// Hand-drawn funnel filter icon component
 const FilterIcon = () => (
   <svg
     width="20"
@@ -152,18 +152,17 @@ const FilterIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="inline-block"
   >
-    {/* Top slider line */}
-    <path d="M3.1 5.2c5.8.1 11.9-.1 17.8.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    {/* Top slider knob */}
-    <circle cx="8" cy="5.2" r="2.5" stroke="currentColor" strokeWidth="2" fill="none" />
-    {/* Middle slider line */}
-    <path d="M3.2 12.1c5.7-.1 12 .1 17.7-.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    {/* Middle slider knob */}
-    <circle cx="16" cy="12" r="2.5" stroke="currentColor" strokeWidth="2" fill="none" />
-    {/* Bottom slider line */}
-    <path d="M3.1 18.9c5.9.1 11.8-.1 17.9.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    {/* Bottom slider knob */}
-    <circle cx="11" cy="19" r="2.5" stroke="currentColor" strokeWidth="2" fill="none" />
+    {/* Wobbly top edge */}
+    <path d="M3.1 5.2c2.9.2 5.9-.1 8.8.1 3.1-.2 6.1.1 9.1-.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Left side curving down */}
+    <path d="M3.2 5.1 Q4.1 8.2 5.8 10.1 Q7.6 12.3 9.2 13.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Right side curving down */}
+    <path d="M20.9 5.2 Q19.8 8.1 18.3 10.2 Q16.5 12.4 14.9 13.7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Wobbly stem */}
+    <path d="M9.3 13.9c.1 2.2-.1 4.4.1 6.6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M14.8 13.8c-.1 2.2.1 4.3-.1 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Wobbly bottom */}
+    <path d="M9.2 20.6c1.9.2 3.8-.1 5.7.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
