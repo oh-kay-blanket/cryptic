@@ -327,13 +327,13 @@ export const achievements = [
     check: ({ justCompleted, cluesData }) => {
       if (!justCompleted || !cluesData) return false;
       const clue = cluesData.find((c) => c.clid === justCompleted.clid);
-      return clue?.type?.includes('double-definition');
+      return clue?.type?.includes('double definition');
     },
     retroactiveCheck: ({ completedClues, cluesData }) => {
       if (!cluesData) return false;
       return completedClues.some((completed) => {
         const clue = cluesData.find((c) => c.clid === completed.clid);
-        return clue?.type?.includes('double-definition');
+        return clue?.type?.includes('double definition');
       });
     },
   },
@@ -347,13 +347,13 @@ export const achievements = [
     check: ({ justCompleted, cluesData }) => {
       if (!justCompleted || !cluesData) return false;
       const clue = cluesData.find((c) => c.clid === justCompleted.clid);
-      return clue?.type?.includes('hidden-word');
+      return clue?.type?.includes('hidden word');
     },
     retroactiveCheck: ({ completedClues, cluesData }) => {
       if (!cluesData) return false;
       return completedClues.some((completed) => {
         const clue = cluesData.find((c) => c.clid === completed.clid);
-        return clue?.type?.includes('hidden-word');
+        return clue?.type?.includes('hidden word');
       });
     },
   },
@@ -467,13 +467,13 @@ export const achievements = [
     check: ({ justCompleted, cluesData }) => {
       if (!justCompleted || !cluesData) return false;
       const clue = cluesData.find((c) => c.clid === justCompleted.clid);
-      return clue?.type?.includes('letter-bank');
+      return clue?.type?.includes('letter bank');
     },
     retroactiveCheck: ({ completedClues, cluesData }) => {
       if (!cluesData) return false;
       return completedClues.some((completed) => {
         const clue = cluesData.find((c) => c.clid === completed.clid);
-        return clue?.type?.includes('letter-bank');
+        return clue?.type?.includes('letter bank');
       });
     },
   },

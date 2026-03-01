@@ -122,7 +122,7 @@ describe('checkNewAchievements', () => {
 
   describe('type achievements', () => {
     it('should unlock "Anagram Ace" when solving an anagram clue', () => {
-      const cluesData = [{ clid: 1, type: ['anagram'] }];
+      const cluesData = [{ clid: 1, type: 'anagram' }];
       const context = {
         ...baseContext,
         completedClues: [{ clid: 1, hints: 0, guesses: 1 }],
@@ -134,8 +134,8 @@ describe('checkNewAchievements', () => {
       expect(unlocked.some((a) => a.id === 'type-anagram')).toBe(true);
     });
 
-    it('should unlock "Double Trouble" when solving a double-definition clue', () => {
-      const cluesData = [{ clid: 1, type: ['double-definition'] }];
+    it('should unlock "Double Trouble" when solving a double definition clue', () => {
+      const cluesData = [{ clid: 1, type: 'double definition' }];
       const context = {
         ...baseContext,
         completedClues: [{ clid: 1, hints: 0, guesses: 1 }],

@@ -26,9 +26,9 @@ describe('migrateAchievements', () => {
   });
 
   const cluesData = [
-    { clid: 1, type: ['anagram'], difficulty: 1 },
-    { clid: 2, type: ['charade'], difficulty: 2 },
-    { clid: 3, type: ['container'], difficulty: 3 },
+    { clid: 1, type: 'anagram', difficulty: 1 },
+    { clid: 2, type: 'charade', difficulty: 2 },
+    { clid: 3, type: 'container', difficulty: 3 },
   ];
 
   it('should return null if migration already ran', () => {
