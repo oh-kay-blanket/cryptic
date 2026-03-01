@@ -105,8 +105,9 @@ const Title = ({ data }) => {
 
 	// Hand-drawn icon components
 	const PlayIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor' strokeWidth='1' strokeLinecap='round'>
-			<path d='M7.2 4.1c.2 5.2-.1 10.5.1 15.7 4.3-2.5 8.5-5.2 12.8-7.8-4.3-2.6-8.6-5.3-12.9-7.9'/>
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'>
+			{/* Hand-drawn play triangle with organic edges */}
+			<path d='M7.2 4.2 Q7.1 12.1 7.3 19.7 Q13.2 15.9 19.2 12.1 Q13.3 8.2 7.2 4.2'/>
 		</svg>
 	)
 

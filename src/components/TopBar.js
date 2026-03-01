@@ -542,7 +542,7 @@ const TopBar = () => {
       </Modal>
       <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); setTooltipPosition(null); }}>
         {/* Tab switcher */}
-        <div className='flex gap-2 p-1 bg-neutral-100 dark:bg-neutral-700 rounded-lg mb-4 mt-4'>
+        <div className='flex gap-2 p-1 bg-neutral-200 dark:bg-neutral-700 rounded-lg mb-4 mt-4'>
           <button
             className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all ${
               statsTab === 'stats'
@@ -584,11 +584,11 @@ const TopBar = () => {
                 </h3>
                 <div className='grid grid-cols-2 gap-4 mb-4'>
                   <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
+                    <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
                     <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
                   </div>
                   <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                    <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                       {longestStreak}
                     </div>
                     <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
@@ -601,33 +601,33 @@ const TopBar = () => {
                   </h3>
                   <div className='grid grid-cols-2 gap-4'>
                     <div className='text-center'>
-                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                         {totalSolved}
                       </div>
                       <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
                     </div>
                     <div className='text-center'>
-                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                         {perfectSolves}
                       </div>
                       <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
                     </div>
                     <div className='text-center'>
-                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                         {avgGuesses}
                       </div>
                       <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
                     </div>
                     <div className='text-center'>
-                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
                         {avgHints}
                       </div>
                       <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
                     </div>
                     {bestTimeClue && (
                       <div className='text-center'>
-                        <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                          {formatTime(bestTime)}
+                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
+                          {bestTime < 60 ? <>{bestTime}<span className='text-sm font-normal'> sec</span></> : formatTime(bestTime)}
                         </div>
                         <div className='text-sm text-neutral-500 dark:text-neutral-400'>
                           Best time{' '}
@@ -643,8 +643,8 @@ const TopBar = () => {
                     )}
                     {avgSolveTime != null && (
                       <div className='text-center'>
-                        <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                          {formatTime(avgSolveTime)}
+                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
+                          {avgSolveTime < 60 ? <>{avgSolveTime}<span className='text-sm font-normal'> sec</span></> : formatTime(avgSolveTime)}
                         </div>
                         <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
                       </div>
@@ -662,7 +662,7 @@ const TopBar = () => {
                         const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
                         return (
                           <div key={index} className='flex flex-col items-center'>
-                            <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
+                            <div className='text-lg font-bold text-[#666] dark:text-neutral-100'>
                               {count}
                             </div>
                             <div
