@@ -42,16 +42,13 @@
 
   &.unlocked {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    color: #fff;
+    color: #78350f;
     box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
 
     .dark & {
       background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-    }
-
-    svg {
-      stroke: #fff;
+      color: #fff;
     }
   }
 
@@ -173,16 +170,13 @@
 
   &.unlocked {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    color: #fff;
+    color: #78350f;
     box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
 
     .dark & {
       background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-    }
-
-    svg {
-      stroke: #fff;
+      color: #fff;
     }
   }
 }
@@ -264,19 +258,19 @@
   height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  color: #fff;
+  color: #78350f;
   box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
   animation: badgeGlow 2s ease-in-out infinite;
 
   .dark & {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
   }
 
   svg {
     width: 20px;
     height: 20px;
     display: block;
-    stroke: #fff;
   }
 }
 
@@ -399,18 +393,18 @@
   height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  color: #fff;
+  color: #78350f;
   box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
 
   .dark & {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
   }
 
   svg {
     width: 20px;
     height: 20px;
     display: block;
-    stroke: #fff;
   }
 }
 

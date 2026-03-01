@@ -85,7 +85,7 @@ export const AchievementBadge = ({
 
   const iconClasses = [
     sizeStyle.icon,
-    unlocked ? 'text-white' : 'text-neutral-500 dark:text-neutral-400',
+    unlocked ? 'text-amber-900 dark:text-white' : 'text-neutral-500 dark:text-neutral-400',
   ].join(' ');
 
   return (
