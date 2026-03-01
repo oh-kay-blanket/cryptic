@@ -14,6 +14,7 @@ import HintTooltip from "../../components/HintTooltip";
 import OnboardingGuide from "../../components/OnboardingGuide";
 import OnboardingPrompt from "../../components/OnboardingPrompt";
 import OnboardingFollowUp from "../../components/OnboardingFollowUp";
+import PostSolvePopup from "../../components/PostSolvePopup";
 import prepClue from "../../utils/clue/usePrepClue";
 import manageClue from "../../utils/clue/useManageClue";
 import handleHint from "../../utils/clue/handleHint";
@@ -116,6 +117,7 @@ const EyeClosedIcon = () => (
 
 const CluePage = ({ data }) => {
   const dataClue = data.cluesJson;
+  const allCluesData = data.allCluesJson?.nodes || [];
   const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false);
   const [revealPopupPosition, setRevealPopupPosition] = useState(null);
   const [hintPosition, setHintPosition] = useState("right"); // "right" or "below"
@@ -140,6 +142,10 @@ const CluePage = ({ data }) => {
   const [showOnboardingFollowUp, setShowOnboardingFollowUp] = useState(false);
   const [followUpWasSolved, setFollowUpWasSolved] = useState(false);
 
+  // Post-solve popup state
+  const [showPostSolvePopup, setShowPostSolvePopup] = useState(false);
+  const [popupAchievements, setPopupAchievements] = useState([]);
+
   // Timer pause tracking for onboarding
   const pausedTimeRef = useRef(0); // Accumulated paused time in ms
   const pauseStartRef = useRef(null); // When current pause started
@@ -160,6 +166,13 @@ const CluePage = ({ data }) => {
       };
     }
   }, []);
+
+  // Set clues data for achievement type checking
+  useEffect(() => {
+    if (allCluesData.length > 0) {
+      setCluesDataRef(allCluesData);
+    }
+  }, [allCluesData, setCluesDataRef]);
 
   // Track when users start today's daily clue
   useEffect(() => {
@@ -209,6 +222,9 @@ const CluePage = ({ data }) => {
     triggerOnboarding,
     setTriggerOnboarding,
     setTimerPaused,
+    newlyUnlockedAchievements,
+    setCluesDataRef,
+    setOpenStatsWithTab,
   } = useContext(UserContext);
 
   // Track if we've already shown onboarding UI this session (to avoid re-prompting)
@@ -358,10 +374,32 @@ const CluePage = ({ data }) => {
   const isSolution = activeClue.hints[nextHint]?.reveals;
   const isCorrectAns = checkAns && input.join("").toLowerCase() === activeClue.solution.arr.join("").toLowerCase();
 
-  // Show follow-up prompt for first-time users after completion
+  // Show PostSolvePopup when clue is completed (not returning to a completed clue)
+  useEffect(() => {
+    // Don't show if returning to a completed clue or already showing
+    if (wasCompletedOnLoad.current || showPostSolvePopup) return;
+
+    // Check if the clue was just completed
+    const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
+
+    if (justCompleted && showMessage) {
+      // Delay showing popup to let celebration start
+      const timer = setTimeout(() => {
+        // Capture any newly unlocked achievements
+        setPopupAchievements(newlyUnlockedAchievements);
+        setShowPostSolvePopup(true);
+      }, 800);
+
+      return () => clearTimeout(timer);
+    }
+  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, showPostSolvePopup, newlyUnlockedAchievements]);
+
+  // Show follow-up prompt for first-time users after completion (after popup is dismissed)
   useEffect(() => {
     // Only show for first-time users who haven't completed a clue
     if (hasCompletedFirstClue) return;
+    // Wait for PostSolvePopup to be dismissed
+    if (showPostSolvePopup) return;
 
     // Check if the clue was just completed (either by guessing or revealing)
     const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
@@ -371,11 +409,11 @@ const CluePage = ({ data }) => {
       const timer = setTimeout(() => {
         setFollowUpWasSolved(isCorrectAns);
         setShowOnboardingFollowUp(true);
-      }, 2000);
+      }, 500);
 
       return () => clearTimeout(timer);
     }
-  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, hasCompletedFirstClue]);
+  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, hasCompletedFirstClue, showPostSolvePopup]);
 
   // Calculate tooltip position based on hint refs
   const calculateTooltipPosition = useCallback((hintIndex) => {
@@ -1398,6 +1436,21 @@ const CluePage = ({ data }) => {
         />
       )}
 
+      {/* Post-solve popup with achievements */}
+      {showPostSolvePopup && (
+        <PostSolvePopup
+          activeClue={activeClue}
+          stats={stats}
+          solveTime={clueSolvedTime}
+          unlockedAchievements={popupAchievements}
+          onDismiss={() => setShowPostSolvePopup(false)}
+          onViewAchievements={() => {
+            setShowPostSolvePopup(false);
+            setOpenStatsWithTab('achievements');
+          }}
+        />
+      )}
+
       {/* Post-completion follow-up for first-time users */}
       {showOnboardingFollowUp && (
         <OnboardingFollowUp
@@ -1435,6 +1488,12 @@ export const query = graphql`
       }
       source {
         value
+      }
+    }
+    allCluesJson {
+      nodes {
+        clid
+        type
       }
     }
   }

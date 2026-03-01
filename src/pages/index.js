@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
@@ -6,10 +6,12 @@ import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
 import { isTodayClue, formatTime, formatTimeForShare } from '../utils/dateHelpers'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
+import { migrateAchievements } from '../utils/achievements'
+import AchievementsIntroModal from '../components/AchievementsIntroModal'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
-	const { completedClues, streak, refreshFromStorage } = useContext(UserContext)
+	const { completedClues, streak, refreshFromStorage, achievements: userAchievements, setOpenStatsWithTab } = useContext(UserContext)
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
@@ -31,9 +33,13 @@ const Title = ({ data }) => {
 	)?.solveTime
 
 	// Add loading state to prevent flicker
-	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
+	const [isContextLoaded, setIsContextLoaded] = useState(false)
 
-	React.useEffect(() => {
+	// Achievements intro modal state
+	const [showAchievementsIntro, setShowAchievementsIntro] = useState(false)
+	const [retroactiveAchievements, setRetroactiveAchievements] = useState([])
+
+	useEffect(() => {
 		// Set context as loaded after a brief delay to ensure localStorage has been read
 		const timer = setTimeout(() => {
 			setIsContextLoaded(true)
@@ -59,6 +65,43 @@ const Title = ({ data }) => {
 			refreshFromStorage()
 		}
 	}, [cluesData, refreshFromStorage])
+
+	// Run one-time achievement migration for existing users
+	useEffect(() => {
+		if (!isContextLoaded) return
+
+		const result = migrateAchievements(cluesData)
+		if (result && result.migrated) {
+			refreshFromStorage()
+			// Show intro modal if user has retroactive achievements and hasn't seen intro
+			if (result.newAchievements.length > 0) {
+				setRetroactiveAchievements(result.newAchievements)
+				setShowAchievementsIntro(true)
+			}
+		}
+	}, [cluesData, refreshFromStorage, isContextLoaded])
+
+	// Also check if we should show intro for users who got achievements on a different page
+	useEffect(() => {
+		if (!isContextLoaded) return
+		if (showAchievementsIntro) return // Already showing
+
+		// Check if user has achievements but hasn't seen intro
+		const hasAchievements = Object.keys(userAchievements?.unlocked || {}).length > 0
+		const hasSeenIntro = userAchievements?.hasSeenAchievementsIntro
+
+		if (hasAchievements && !hasSeenIntro && knownUser) {
+			// Get all unlocked achievements for display
+			const { achievements: allAchievements } = require('../utils/achievements')
+			const unlockedAchievements = allAchievements.filter(
+				(a) => userAchievements.unlocked?.[a.id]
+			)
+			if (unlockedAchievements.length > 0) {
+				setRetroactiveAchievements(unlockedAchievements)
+				setShowAchievementsIntro(true)
+			}
+		}
+	}, [isContextLoaded, userAchievements, knownUser, showAchievementsIntro])
 
 	// Icon components
 	const PlayIcon = (
@@ -316,6 +359,16 @@ const Title = ({ data }) => {
 				<img className='title-img' src={logo} alt='' />
 				{getTitleContent()}
 			</div>
+			{showAchievementsIntro && (
+				<AchievementsIntroModal
+					retroactiveAchievements={retroactiveAchievements}
+					onDismiss={() => setShowAchievementsIntro(false)}
+					onViewAll={() => {
+						setShowAchievementsIntro(false)
+						setOpenStatsWithTab('achievements')
+					}}
+				/>
+			)}
 		</Layout>
 	)
 }
@@ -348,6 +401,7 @@ export const query = graphql`
 				clid
 				id
 				difficulty
+				type
 				source {
 					value
 				}

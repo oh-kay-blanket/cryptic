@@ -3,6 +3,13 @@ import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
 import { formatTime } from '../utils/dateHelpers';
+import {
+  achievements,
+  ACHIEVEMENT_CATEGORIES,
+  categoryDisplayNames,
+  getAchievementProgress,
+} from '../utils/achievements';
+import AchievementIcon from './AchievementIcon';
 
 import logo from '../assets/img/logo-short.png';
 // Custom info icon component
@@ -148,11 +155,16 @@ const TopBar = () => {
     clueSolvedTime,
     setTriggerOnboarding,
     timerPaused,
+    achievements: userAchievements = { unlocked: {} },
+    openStatsWithTab,
+    setOpenStatsWithTab,
   } = useContext(UserContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
+  const [statsTab, setStatsTab] = useState('stats'); // 'stats' or 'achievements'
   const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
 
@@ -199,6 +211,15 @@ const TopBar = () => {
     document.addEventListener('click', handleClickOutside, true);
     return () => document.removeEventListener('click', handleClickOutside, true);
   }, [showCurrentStatsTooltip]);
+
+  // Listen for external trigger to open stats modal
+  useEffect(() => {
+    if (openStatsWithTab) {
+      setStatsTab(openStatsWithTab);
+      setStatsOpen(true);
+      setOpenStatsWithTab(null); // Reset the trigger
+    }
+  }, [openStatsWithTab, setOpenStatsWithTab]);
 
   const clickTitle = () => {
     setReturnLearn(false);
@@ -490,138 +511,242 @@ const TopBar = () => {
           </a>
         </div>
       </Modal>
-      <Modal id='modal-stats' open={statsOpen} onClose={() => setStatsOpen(false)}>
-        {totalSolved === 0 ? (
-          <div className='mt-4 text-center py-6'>
-            <p className='text-neutral-500 dark:text-neutral-400 mb-2'>No stats yet</p>
-            <p className='text-neutral-700 dark:text-neutral-200'>
-              Solve your first clue to start tracking your progress!
-            </p>
-          </div>
-        ) : (
+      <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); }}>
+        {/* Tab switcher */}
+        <div className='flex border-b border-neutral-200 dark:border-neutral-600 mt-2 mb-4'>
+          <button
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${
+              statsTab === 'stats'
+                ? 'text-neutral-900 dark:text-white border-b-2 border-neutral-900 dark:border-white'
+                : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+            }`}
+            onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); }}
+          >
+            Stats
+          </button>
+          <button
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${
+              statsTab === 'achievements'
+                ? 'text-neutral-900 dark:text-white border-b-2 border-neutral-900 dark:border-white'
+                : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+            }`}
+            onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); }}
+          >
+            Achievements
+          </button>
+        </div>
+
+        {/* Stats tab content */}
+        {statsTab === 'stats' && (
           <>
-            <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 mt-4'>
-              Streaks
-            </h3>
-            <div className='grid grid-cols-2 gap-4 mb-4'>
-              <div className='text-center'>
-                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
-                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                  {longestStreak}
-                </div>
-                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
-              </div>
-            </div>
-
-            <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-              <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                Performance
-              </h3>
-              <div className='grid grid-cols-2 gap-4'>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {totalSolved}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {perfectSolves}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {avgGuesses}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {avgHints}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
-                </div>
-                {bestTimeClue && (
-                  <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                      {formatTime(bestTime)}
-                    </div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>
-                      Best time{' '}
-                      <Link
-                        to={`/clues/${bestTimeClue.clid}`}
-                        className='text-neutral-600 dark:text-neutral-300 hover:underline'
-                        onClick={() => setStatsOpen(false)}
-                      >
-                        (#{bestTimeClue.clid})
-                      </Link>
-                    </div>
-                  </div>
-                )}
-                {avgSolveTime != null && (
-                  <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                      {formatTime(avgSolveTime)}
-                    </div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {cluesWithDifficulty.length > 0 && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                  By Difficulty
-                </h3>
-                <div className='grid grid-cols-4 gap-2'>
-                  {difficultyBreakdown.map((count, index) => {
-                    const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
-                    return (
-                      <div key={index} className='flex flex-col items-center'>
-                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                          {count}
-                        </div>
-                        <div
-                          className={`difficulty-grid difficulty-${index + 1}`}
-                          aria-hidden='true'
-                        >
-                          {[0, 1, 2, 3].map((i) => (
-                            <div
-                              key={i}
-                              className={`difficulty-square ${i < index + 1 ? 'filled' : ''}`}
-                            />
-                          ))}
-                        </div>
-                        <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
-                          {difficultyNames[index]}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {firstSolveDate && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
-                  Playing Since
-                </h3>
-                <p className='text-sm text-[#666] dark:text-neutral-100'>
-                  {firstSolveDate.toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
+            {totalSolved === 0 ? (
+              <div className='text-center py-6'>
+                <p className='text-neutral-500 dark:text-neutral-400 mb-2'>No stats yet</p>
+                <p className='text-neutral-700 dark:text-neutral-200'>
+                  Solve your first clue to start tracking your progress!
                 </p>
               </div>
+            ) : (
+              <>
+                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+                  Streaks
+                </h3>
+                <div className='grid grid-cols-2 gap-4 mb-4'>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
+                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
+                  </div>
+                  <div className='text-center'>
+                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                      {longestStreak}
+                    </div>
+                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
+                  </div>
+                </div>
+
+                <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
+                  <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+                    Performance
+                  </h3>
+                  <div className='grid grid-cols-2 gap-4'>
+                    <div className='text-center'>
+                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                        {totalSolved}
+                      </div>
+                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
+                    </div>
+                    <div className='text-center'>
+                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                        {perfectSolves}
+                      </div>
+                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
+                    </div>
+                    <div className='text-center'>
+                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                        {avgGuesses}
+                      </div>
+                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
+                    </div>
+                    <div className='text-center'>
+                      <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                        {avgHints}
+                      </div>
+                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
+                    </div>
+                    {bestTimeClue && (
+                      <div className='text-center'>
+                        <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                          {formatTime(bestTime)}
+                        </div>
+                        <div className='text-sm text-neutral-500 dark:text-neutral-400'>
+                          Best time{' '}
+                          <Link
+                            to={`/clues/${bestTimeClue.clid}`}
+                            className='text-neutral-600 dark:text-neutral-300 hover:underline'
+                            onClick={() => setStatsOpen(false)}
+                          >
+                            (#{bestTimeClue.clid})
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                    {avgSolveTime != null && (
+                      <div className='text-center'>
+                        <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
+                          {formatTime(avgSolveTime)}
+                        </div>
+                        <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {cluesWithDifficulty.length > 0 && (
+                  <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
+                    <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
+                      By Difficulty
+                    </h3>
+                    <div className='grid grid-cols-4 gap-2'>
+                      {difficultyBreakdown.map((count, index) => {
+                        const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
+                        return (
+                          <div key={index} className='flex flex-col items-center'>
+                            <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
+                              {count}
+                            </div>
+                            <div
+                              className={`difficulty-grid difficulty-${index + 1}`}
+                              aria-hidden='true'
+                            >
+                              {[0, 1, 2, 3].map((i) => (
+                                <div
+                                  key={i}
+                                  className={`difficulty-square ${i < index + 1 ? 'filled' : ''}`}
+                                />
+                              ))}
+                            </div>
+                            <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
+                              {difficultyNames[index]}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {firstSolveDate && (
+                  <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
+                    <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
+                      Playing Since
+                    </h3>
+                    <p className='text-sm text-[#666] dark:text-neutral-100'>
+                      {firstSolveDate.toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}
+                    </p>
+                  </div>
+                )}
+              </>
             )}
           </>
+        )}
+
+        {/* Achievements tab content */}
+        {statsTab === 'achievements' && (
+          <div className='achievements-tab'>
+            {/* Selected achievement detail */}
+            {selectedAchievement && (
+              <div className='achievement-detail mb-4 p-3 bg-neutral-100 dark:bg-neutral-700 rounded-lg'>
+                <div className='flex items-center gap-3'>
+                  <div className={`achievement-badge-large ${userAchievements.unlocked?.[selectedAchievement.id] ? 'unlocked' : 'locked'}`}>
+                    <AchievementIcon icon={selectedAchievement.icon} className='w-8 h-8' />
+                  </div>
+                  <div>
+                    <div className='font-medium text-neutral-900 dark:text-white'>
+                      {selectedAchievement.name}
+                    </div>
+                    <div className='text-sm text-neutral-600 dark:text-neutral-300'>
+                      {selectedAchievement.description}
+                    </div>
+                    {(() => {
+                      const progress = getAchievementProgress(selectedAchievement.id, {
+                        completedClues,
+                        streak,
+                        longestStreak,
+                      });
+                      if (progress && !userAchievements.unlocked?.[selectedAchievement.id]) {
+                        return (
+                          <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
+                            {progress.current} / {progress.target}
+                          </div>
+                        );
+                      }
+                      return null;
+                    })()}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Achievement categories */}
+            {Object.values(ACHIEVEMENT_CATEGORIES).map((category) => {
+              const categoryAchievements = achievements.filter((a) => a.category === category);
+              const unlockedCount = categoryAchievements.filter(
+                (a) => userAchievements.unlocked?.[a.id]
+              ).length;
+
+              return (
+                <div key={category} className='mb-4'>
+                  <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2 flex justify-between'>
+                    <span>{categoryDisplayNames[category]}</span>
+                    <span className='text-xs'>
+                      {unlockedCount}/{categoryAchievements.length}
+                    </span>
+                  </h3>
+                  <div className='achievement-grid grid grid-cols-5 gap-2'>
+                    {categoryAchievements.map((achievement) => {
+                      const isUnlocked = userAchievements.unlocked?.[achievement.id];
+                      const isSelected = selectedAchievement?.id === achievement.id;
+
+                      return (
+                        <button
+                          key={achievement.id}
+                          className={`achievement-badge ${isUnlocked ? 'unlocked' : 'locked'} ${isSelected ? 'selected' : ''}`}
+                          onClick={() => setSelectedAchievement(isSelected ? null : achievement)}
+                          aria-label={`${achievement.name}: ${achievement.description}`}
+                        >
+                          <AchievementIcon icon={achievement.icon} className='w-5 h-5' />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         )}
       </Modal>
     </>

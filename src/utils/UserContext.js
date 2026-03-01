@@ -1,10 +1,13 @@
-import React, { createContext, useState, useEffect, useMemo } from "react";
+import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
 import { isSameDay, shouldResetStreak } from "./dateHelpers";
+import { checkNewAchievements, formatUnlockedAchievements } from "./achievements";
 
 export const UserContext = createContext({
   completedClues: [],
   showType: true,
   returnLearn: false,
+  achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
+  newlyUnlockedAchievements: [],
 });
 
 export const UserProvider = ({ children }) => {
@@ -14,6 +17,9 @@ export const UserProvider = ({ children }) => {
   const [clueSolvedTime, setClueSolvedTime] = useState(null); // final solve time in seconds when clue is completed
   const [triggerOnboarding, setTriggerOnboarding] = useState(false); // trigger to start tutorial from anywhere
   const [timerPaused, setTimerPaused] = useState(false); // pause timer during onboarding
+  const [newlyUnlockedAchievements, setNewlyUnlockedAchievements] = useState([]); // achievements unlocked in current session
+  const [cluesDataRef, setCluesDataRef] = useState(null); // clues data for achievement type checking
+  const [openStatsWithTab, setOpenStatsWithTab] = useState(null); // 'stats' | 'achievements' | null - triggers stats modal opening
 
   // manage lcState
   const [lcState, setLcState] = useState(() => {
@@ -33,6 +39,7 @@ export const UserProvider = ({ children }) => {
       hasSeenOnboarding: false,
       hasSeenOnboardingPrompt: false,
       hasCompletedFirstClue: false,
+      achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
     };
   });
 
@@ -45,6 +52,7 @@ export const UserProvider = ({ children }) => {
   let hasSeenOnboarding = lcState.hasSeenOnboarding;
   let hasSeenOnboardingPrompt = lcState.hasSeenOnboardingPrompt;
   let hasCompletedFirstClue = lcState.hasCompletedFirstClue;
+  let achievements = lcState.achievements || { unlocked: {}, hasSeenAchievementsIntro: false };
 
   // Listen for localStorage changes from other tabs
   useEffect(() => {
@@ -166,11 +174,38 @@ export const UserProvider = ({ children }) => {
         completedClueEntry.solveTime = solveTime;
       }
 
+      // Build new completed clues array
+      const newCompletedClues = [...lcState.completedClues, completedClueEntry];
+
+      // Check for newly unlocked achievements
+      const achievementContext = {
+        completedClues: newCompletedClues,
+        streak: streak,
+        longestStreak: longestStreak,
+        achievements: lcState.achievements || { unlocked: {} },
+      };
+
+      const newAchievements = checkNewAchievements(
+        achievementContext,
+        completedClueEntry,
+        cluesDataRef
+      );
+
+      // Format achievements for storage
+      const formattedAchievements = formatUnlockedAchievements(newAchievements);
+
       const newState = {
         ...lcState,
         streak: streak,
         longestStreak: longestStreak,
-        completedClues: [...lcState.completedClues, completedClueEntry],
+        completedClues: newCompletedClues,
+        achievements: {
+          ...lcState.achievements,
+          unlocked: {
+            ...(lcState.achievements?.unlocked || {}),
+            ...formattedAchievements,
+          },
+        },
       };
 
       // Only update lastSolved if this is today's clue
@@ -179,8 +214,17 @@ export const UserProvider = ({ children }) => {
       }
 
       setLcState(newState);
+
+      // Set newly unlocked achievements for display
+      if (newAchievements.length > 0) {
+        setNewlyUnlockedAchievements(newAchievements);
+      }
+
+      // Return newly unlocked achievements so caller can use them
+      return newAchievements;
     } else {
       console.log("clue locked, no update to stats");
+      return [];
     }
 
     // GA event - only track daily clue completions
@@ -270,6 +314,45 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  // Achievement functions
+  const setHasSeenAchievementsIntro = useCallback((value) => {
+    setLcState((prevState) => ({
+      ...prevState,
+      achievements: {
+        ...prevState.achievements,
+        hasSeenAchievementsIntro: value,
+      },
+    }));
+  }, []);
+
+  // Clear newly unlocked achievements (after displaying them)
+  const clearNewlyUnlockedAchievements = useCallback(() => {
+    setNewlyUnlockedAchievements([]);
+  }, []);
+
+  // Mark achievements as seen
+  const markAchievementsSeen = useCallback((achievementIds) => {
+    const now = new Date().toISOString();
+    setLcState((prevState) => {
+      const updatedUnlocked = { ...prevState.achievements?.unlocked };
+      achievementIds.forEach((id) => {
+        if (updatedUnlocked[id]) {
+          updatedUnlocked[id] = {
+            ...updatedUnlocked[id],
+            seenAt: now,
+          };
+        }
+      });
+      return {
+        ...prevState,
+        achievements: {
+          ...prevState.achievements,
+          unlocked: updatedUnlocked,
+        },
+      };
+    });
+  }, []);
+
   const contextValue = useMemo(
     () => ({
       completedClues,
@@ -299,6 +382,16 @@ export const UserProvider = ({ children }) => {
       setTriggerOnboarding,
       timerPaused,
       setTimerPaused,
+      // Achievements
+      achievements,
+      newlyUnlockedAchievements,
+      clearNewlyUnlockedAchievements,
+      setHasSeenAchievementsIntro,
+      markAchievementsSeen,
+      setCluesDataRef,
+      // Stats modal trigger
+      openStatsWithTab,
+      setOpenStatsWithTab,
     }),
     [
       completedClues,
@@ -314,7 +407,13 @@ export const UserProvider = ({ children }) => {
       hasSeenOnboardingPrompt,
       hasCompletedFirstClue,
       triggerOnboarding,
+      achievements,
+      newlyUnlockedAchievements,
+      clearNewlyUnlockedAchievements,
+      setHasSeenAchievementsIntro,
+      markAchievementsSeen,
       timerPaused,
+      openStatsWithTab,
     ],
   );
 
