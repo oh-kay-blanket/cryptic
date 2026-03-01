@@ -13,7 +13,6 @@ import Tooltip from "../../components/Tooltip";
 import HintTooltip from "../../components/HintTooltip";
 import OnboardingGuide from "../../components/OnboardingGuide";
 import OnboardingPrompt from "../../components/OnboardingPrompt";
-import OnboardingFollowUp from "../../components/OnboardingFollowUp";
 import PostSolvePopup from "../../components/PostSolvePopup";
 import prepClue from "../../utils/clue/usePrepClue";
 import manageClue from "../../utils/clue/useManageClue";
@@ -90,8 +89,6 @@ const CluePage = ({ data }) => {
   // Onboarding state
   const [showOnboardingGuide, setShowOnboardingGuide] = useState(false);
   const [showOnboardingPrompt, setShowOnboardingPrompt] = useState(false);
-  const [showOnboardingFollowUp, setShowOnboardingFollowUp] = useState(false);
-  const [followUpWasSolved, setFollowUpWasSolved] = useState(false);
 
   // Post-solve popup state
   const [showPostSolvePopup, setShowPostSolvePopup] = useState(false);
@@ -168,8 +165,6 @@ const CluePage = ({ data }) => {
     setHasSeenOnboarding,
     hasSeenOnboardingPrompt,
     setHasSeenOnboardingPrompt,
-    hasCompletedFirstClue,
-    setHasCompletedFirstClue,
     triggerOnboarding,
     setTriggerOnboarding,
     setTimerPaused,
@@ -345,26 +340,6 @@ const CluePage = ({ data }) => {
     }
   }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, showPostSolvePopup, newlyUnlockedAchievements]);
 
-  // Show follow-up prompt for first-time users after completion (after popup is dismissed)
-  useEffect(() => {
-    // Only show for first-time users who haven't completed a clue
-    if (hasCompletedFirstClue) return;
-    // Wait for PostSolvePopup to be dismissed
-    if (showPostSolvePopup) return;
-
-    // Check if the clue was just completed (either by guessing or revealing)
-    const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
-
-    if (justCompleted && showMessage) {
-      // Delay showing the follow-up to let the celebration/message play
-      const timer = setTimeout(() => {
-        setFollowUpWasSolved(isCorrectAns);
-        setShowOnboardingFollowUp(true);
-      }, 500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, hasCompletedFirstClue, showPostSolvePopup]);
 
   // Calculate tooltip position based on hint refs
   const calculateTooltipPosition = useCallback((hintIndex) => {
@@ -1402,13 +1377,6 @@ const CluePage = ({ data }) => {
         />
       )}
 
-      {/* Post-completion follow-up for first-time users */}
-      {showOnboardingFollowUp && (
-        <OnboardingFollowUp
-          wasSolved={followUpWasSolved}
-          onDismiss={() => setShowOnboardingFollowUp(false)}
-        />
-      )}
     </Layout>
   );
 };
