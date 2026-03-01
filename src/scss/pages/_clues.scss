@@ -1,5 +1,14 @@
 @use "../base/var" as *;
 
+// Custom dropdown button - override global button reset
+.custom-dropdown-btn {
+  border: 1px solid #d1d5db !important;
+
+  html.dark & {
+    border-color: #737373 !important;
+  }
+}
+
 .clues {
   // position: relative;
   // overflow-y: auto;
