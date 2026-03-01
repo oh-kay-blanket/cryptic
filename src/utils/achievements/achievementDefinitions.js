@@ -8,14 +8,6 @@ export const ACHIEVEMENT_CATEGORIES = {
   VOLUME: 'volume',
   SKILL: 'skill',
   TYPE: 'type',
-  FUN: 'fun',
-};
-
-// Helper to get hour from completedAt timestamp
-const getHour = (completedAt) => {
-  if (!completedAt) return null;
-  const date = new Date(completedAt);
-  return date.getHours();
 };
 
 // Achievement definitions
@@ -26,7 +18,7 @@ export const achievements = [
     category: ACHIEVEMENT_CATEGORIES.STREAK,
     name: 'Getting Started',
     description: '2 day streak',
-    icon: 'streak',
+    icon: 'calendar',
     tier: 1,
     check: ({ streak }) => streak >= 2,
     retroactiveCheck: ({ longestStreak }) => longestStreak >= 2,
@@ -36,7 +28,7 @@ export const achievements = [
     category: ACHIEVEMENT_CATEGORIES.STREAK,
     name: 'Weekly Warrior',
     description: '7 day streak',
-    icon: 'streak',
+    icon: 'calendar',
     tier: 2,
     check: ({ streak }) => streak >= 7,
     retroactiveCheck: ({ longestStreak }) => longestStreak >= 7,
@@ -46,7 +38,7 @@ export const achievements = [
     category: ACHIEVEMENT_CATEGORIES.STREAK,
     name: 'Monthly Master',
     description: '30 day streak',
-    icon: 'streak',
+    icon: 'calendar',
     tier: 3,
     check: ({ streak }) => streak >= 30,
     retroactiveCheck: ({ longestStreak }) => longestStreak >= 30,
@@ -56,7 +48,7 @@ export const achievements = [
     category: ACHIEVEMENT_CATEGORIES.STREAK,
     name: 'Century Club',
     description: '100 day streak',
-    icon: 'streak',
+    icon: 'calendar',
     tier: 4,
     check: ({ streak }) => streak >= 100,
     retroactiveCheck: ({ longestStreak }) => longestStreak >= 100,
@@ -66,7 +58,7 @@ export const achievements = [
     category: ACHIEVEMENT_CATEGORIES.STREAK,
     name: 'Year of Cryptics',
     description: '365 day streak',
-    icon: 'streak',
+    icon: 'calendar',
     tier: 5,
     check: ({ streak }) => streak >= 365,
     retroactiveCheck: ({ longestStreak }) => longestStreak >= 365,
@@ -206,6 +198,42 @@ export const achievements = [
       justCompleted && Number(justCompleted.difficulty) === 4,
     retroactiveCheck: ({ completedClues }) =>
       completedClues.some((c) => Number(c.difficulty) === 4),
+  },
+  {
+    id: 'skill-quick-thinker',
+    category: ACHIEVEMENT_CATEGORIES.SKILL,
+    name: 'Quick Thinker',
+    description: 'Solve in under 1 minute',
+    icon: 'lightning',
+    tier: 1,
+    check: ({ justCompleted }) =>
+      justCompleted?.solveTime != null && justCompleted.solveTime < 60,
+    retroactiveCheck: ({ completedClues }) =>
+      completedClues.some((c) => c.solveTime != null && c.solveTime < 60),
+  },
+  {
+    id: 'skill-speed-demon',
+    category: ACHIEVEMENT_CATEGORIES.SKILL,
+    name: 'Speed Demon',
+    description: 'Solve in under 30 seconds',
+    icon: 'lightning',
+    tier: 2,
+    check: ({ justCompleted }) =>
+      justCompleted?.solveTime != null && justCompleted.solveTime < 30,
+    retroactiveCheck: ({ completedClues }) =>
+      completedClues.some((c) => c.solveTime != null && c.solveTime < 30),
+  },
+  {
+    id: 'skill-lightning-fast',
+    category: ACHIEVEMENT_CATEGORIES.SKILL,
+    name: 'Lightning Fast',
+    description: 'Solve in under 15 seconds',
+    icon: 'lightning',
+    tier: 3,
+    check: ({ justCompleted }) =>
+      justCompleted?.solveTime != null && justCompleted.solveTime < 15,
+    retroactiveCheck: ({ completedClues }) =>
+      completedClues.some((c) => c.solveTime != null && c.solveTime < 15),
   },
 
   // TYPE ACHIEVEMENTS (first of each clue type)
@@ -409,83 +437,67 @@ export const achievements = [
       });
     },
   },
+  {
+    id: 'type-combination',
+    category: ACHIEVEMENT_CATEGORIES.TYPE,
+    name: 'Combo Breaker',
+    description: 'Solve your first combination',
+    icon: 'combination',
+    tier: 1,
+    check: ({ justCompleted, cluesData }) => {
+      if (!justCompleted || !cluesData) return false;
+      const clue = cluesData.find((c) => c.clid === justCompleted.clid);
+      return clue?.type?.includes('combination');
+    },
+    retroactiveCheck: ({ completedClues, cluesData }) => {
+      if (!cluesData) return false;
+      return completedClues.some((completed) => {
+        const clue = cluesData.find((c) => c.clid === completed.clid);
+        return clue?.type?.includes('combination');
+      });
+    },
+  },
+  {
+    id: 'type-letter-bank',
+    category: ACHIEVEMENT_CATEGORIES.TYPE,
+    name: 'Bank Robber',
+    description: 'Solve your first letter bank',
+    icon: 'letter-bank',
+    tier: 1,
+    check: ({ justCompleted, cluesData }) => {
+      if (!justCompleted || !cluesData) return false;
+      const clue = cluesData.find((c) => c.clid === justCompleted.clid);
+      return clue?.type?.includes('letter-bank');
+    },
+    retroactiveCheck: ({ completedClues, cluesData }) => {
+      if (!cluesData) return false;
+      return completedClues.some((completed) => {
+        const clue = cluesData.find((c) => c.clid === completed.clid);
+        return clue?.type?.includes('letter-bank');
+      });
+    },
+  },
+  {
+    id: 'type-lit',
+    category: ACHIEVEMENT_CATEGORIES.TYPE,
+    name: 'Literally Speaking',
+    description: 'Solve your first &lit clue',
+    icon: 'lit',
+    tier: 1,
+    check: ({ justCompleted, cluesData }) => {
+      if (!justCompleted || !cluesData) return false;
+      const clue = cluesData.find((c) => c.clid === justCompleted.clid);
+      return clue?.type?.includes('lit');
+    },
+    retroactiveCheck: ({ completedClues, cluesData }) => {
+      if (!cluesData) return false;
+      return completedClues.some((completed) => {
+        const clue = cluesData.find((c) => c.clid === completed.clid);
+        return clue?.type?.includes('lit');
+      });
+    },
+  },
 
-  // FUN ACHIEVEMENTS
-  {
-    id: 'fun-night-owl',
-    category: ACHIEVEMENT_CATEGORIES.FUN,
-    name: 'Night Owl',
-    description: 'Solve between midnight and 5am',
-    icon: 'moon',
-    tier: 1,
-    check: ({ justCompleted }) => {
-      if (!justCompleted?.completedAt) return false;
-      const hour = getHour(justCompleted.completedAt);
-      return hour !== null && hour >= 0 && hour < 5;
-    },
-    retroactiveCheck: ({ completedClues }) =>
-      completedClues.some((c) => {
-        const hour = getHour(c.completedAt);
-        return hour !== null && hour >= 0 && hour < 5;
-      }),
-  },
-  {
-    id: 'fun-early-bird',
-    category: ACHIEVEMENT_CATEGORIES.FUN,
-    name: 'Early Bird',
-    description: 'Solve between 5am and 7am',
-    icon: 'sun',
-    tier: 1,
-    check: ({ justCompleted }) => {
-      if (!justCompleted?.completedAt) return false;
-      const hour = getHour(justCompleted.completedAt);
-      return hour !== null && hour >= 5 && hour < 7;
-    },
-    retroactiveCheck: ({ completedClues }) =>
-      completedClues.some((c) => {
-        const hour = getHour(c.completedAt);
-        return hour !== null && hour >= 5 && hour < 7;
-      }),
-  },
-  {
-    id: 'fun-speed-demon',
-    category: ACHIEVEMENT_CATEGORIES.FUN,
-    name: 'Speed Demon',
-    description: 'Solve in under 30 seconds',
-    icon: 'lightning',
-    tier: 2,
-    check: ({ justCompleted }) =>
-      justCompleted?.solveTime != null && justCompleted.solveTime < 30,
-    retroactiveCheck: ({ completedClues }) =>
-      completedClues.some((c) => c.solveTime != null && c.solveTime < 30),
-  },
-  {
-    id: 'fun-comeback',
-    category: ACHIEVEMENT_CATEGORIES.FUN,
-    name: 'Comeback Kid',
-    description: 'Return after 7+ days away',
-    icon: 'calendar',
-    tier: 1,
-    // This is checked specially - we can only detect this on completion if we track last activity
-    // For now, we'll skip the live check and rely on retroactive (which also can't detect this easily)
-    check: () => false, // Cannot easily detect in real-time without additional state
-    retroactiveCheck: ({ completedClues }) => {
-      // Sort by completedAt and check for 7+ day gaps
-      const sorted = [...completedClues]
-        .filter((c) => c.completedAt)
-        .sort((a, b) => new Date(a.completedAt) - new Date(b.completedAt));
-
-      for (let i = 1; i < sorted.length; i++) {
-        const prev = new Date(sorted[i - 1].completedAt);
-        const curr = new Date(sorted[i].completedAt);
-        const daysDiff = (curr - prev) / (1000 * 60 * 60 * 24);
-        if (daysDiff >= 7) {
-          return true;
-        }
-      }
-      return false;
-    },
-  },
 ];
 
 // Get achievement by ID
@@ -505,7 +517,6 @@ export const categoryDisplayNames = {
   [ACHIEVEMENT_CATEGORIES.VOLUME]: 'Progress',
   [ACHIEVEMENT_CATEGORIES.SKILL]: 'Skills',
   [ACHIEVEMENT_CATEGORIES.TYPE]: 'Clue Types',
-  [ACHIEVEMENT_CATEGORIES.FUN]: 'Fun',
 };
 
 // Get progress info for incremental achievements (for UI display)

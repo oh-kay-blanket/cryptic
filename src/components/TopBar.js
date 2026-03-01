@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
@@ -165,6 +166,7 @@ const TopBar = () => {
   const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState(null);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
 
@@ -220,6 +222,38 @@ const TopBar = () => {
       setOpenStatsWithTab(null); // Reset the trigger
     }
   }, [openStatsWithTab, setOpenStatsWithTab]);
+
+  // Close achievement tooltip when clicking outside or scrolling
+  useEffect(() => {
+    if (!selectedAchievement || !statsOpen) return;
+
+    const handleClick = (e) => {
+      // Check if click is inside an achievement badge or tooltip
+      if (!e.target.closest('.achievement-badge') && !e.target.closest('.achievement-tooltip-portal')) {
+        setSelectedAchievement(null);
+        setTooltipPosition(null);
+      }
+    };
+
+    const handleScroll = () => {
+      setSelectedAchievement(null);
+      setTooltipPosition(null);
+    };
+
+    document.addEventListener('click', handleClick);
+    // Listen for scroll on the achievements tab
+    const achievementsTab = document.querySelector('.achievements-tab');
+    if (achievementsTab) {
+      achievementsTab.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+      if (achievementsTab) {
+        achievementsTab.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [selectedAchievement, statsOpen]);
 
   const clickTitle = () => {
     setReturnLearn(false);
@@ -511,7 +545,7 @@ const TopBar = () => {
           </a>
         </div>
       </Modal>
-      <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); }}>
+      <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); setTooltipPosition(null); }}>
         {/* Tab switcher */}
         <div className='flex gap-2 p-1 bg-neutral-100 dark:bg-neutral-700 rounded-lg mb-4 mt-4'>
           <button
@@ -520,7 +554,7 @@ const TopBar = () => {
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
             }`}
-            onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); }}
+            onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); setTooltipPosition(null); }}
           >
             Stats
           </button>
@@ -530,7 +564,7 @@ const TopBar = () => {
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
             }`}
-            onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); }}
+            onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); setTooltipPosition(null); }}
           >
             Achievements
           </button>
@@ -678,41 +712,17 @@ const TopBar = () => {
 
         {/* Achievements tab content */}
         {statsTab === 'achievements' && (
-          <div className='achievements-tab' style={{ height: '100%' }}>
-            {/* Selected achievement detail */}
-            {selectedAchievement && (
-              <div className='achievement-detail mb-4 p-3 bg-neutral-100 dark:bg-neutral-700 rounded-lg'>
-                <div className='flex items-center gap-3'>
-                  <div className={`achievement-badge-large ${userAchievements.unlocked?.[selectedAchievement.id] ? 'unlocked' : 'locked'}`}>
-                    <AchievementIcon icon={selectedAchievement.icon} className='w-8 h-8' />
-                  </div>
-                  <div>
-                    <div className='font-medium text-neutral-900 dark:text-white'>
-                      {selectedAchievement.name}
-                    </div>
-                    <div className='text-sm text-neutral-600 dark:text-neutral-300'>
-                      {selectedAchievement.description}
-                    </div>
-                    {(() => {
-                      const progress = getAchievementProgress(selectedAchievement.id, {
-                        completedClues,
-                        streak,
-                        longestStreak,
-                      });
-                      if (progress && !userAchievements.unlocked?.[selectedAchievement.id]) {
-                        return (
-                          <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
-                            {progress.current} / {progress.target}
-                          </div>
-                        );
-                      }
-                      return null;
-                    })()}
-                  </div>
-                </div>
-              </div>
-            )}
-
+          <div
+            className='achievements-tab'
+            style={{ height: '100%' }}
+            onClick={(e) => {
+              // Close tooltip when clicking on blank space (not on a badge)
+              if (!e.target.closest('.achievement-badge')) {
+                setSelectedAchievement(null);
+                setTooltipPosition(null);
+              }
+            }}
+          >
             {/* Achievement categories */}
             {Object.values(ACHIEVEMENT_CATEGORIES).map((category) => {
               const categoryAchievements = achievements.filter((a) => a.category === category);
@@ -737,7 +747,19 @@ const TopBar = () => {
                         <button
                           key={achievement.id}
                           className={`achievement-badge ${isUnlocked ? 'unlocked' : 'locked'} ${isSelected ? 'selected' : ''}`}
-                          onClick={() => setSelectedAchievement(isSelected ? null : achievement)}
+                          onClick={(e) => {
+                            if (isSelected) {
+                              setSelectedAchievement(null);
+                              setTooltipPosition(null);
+                            } else {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              setTooltipPosition({
+                                top: rect.bottom + 8,
+                                left: rect.left + rect.width / 2,
+                              });
+                              setSelectedAchievement(achievement);
+                            }
+                          }}
                           aria-label={`${achievement.name}: ${achievement.description}`}
                         >
                           <AchievementIcon icon={achievement.icon} className='w-5 h-5' />
@@ -750,6 +772,62 @@ const TopBar = () => {
             })}
           </div>
         )}
+
+        {/* Achievement tooltip rendered via portal */}
+        {selectedAchievement && tooltipPosition && typeof document !== 'undefined' && (() => {
+          const padding = 16;
+          const tooltipWidth = 180;
+          const halfWidth = tooltipWidth / 2;
+          const screenWidth = window.innerWidth;
+
+          // Calculate clamped left position
+          let left = tooltipPosition.left;
+          let arrowOffset = 0;
+
+          if (left - halfWidth < padding) {
+            // Too close to left edge
+            arrowOffset = left - (padding + halfWidth);
+            left = padding + halfWidth;
+          } else if (left + halfWidth > screenWidth - padding) {
+            // Too close to right edge
+            arrowOffset = left - (screenWidth - padding - halfWidth);
+            left = screenWidth - padding - halfWidth;
+          }
+
+          return createPortal(
+            <div
+              className='achievement-tooltip-portal'
+              style={{
+                position: 'fixed',
+                top: tooltipPosition.top,
+                left: left,
+                transform: 'translateX(-50%)',
+                zIndex: 10000,
+                '--arrow-offset': `${arrowOffset}px`,
+              }}
+            >
+            <div className='achievement-tooltip-name'>{selectedAchievement.name}</div>
+            <div className='achievement-tooltip-desc'>{selectedAchievement.description}</div>
+            {(() => {
+              const progress = getAchievementProgress(selectedAchievement.id, {
+                completedClues,
+                streak,
+                longestStreak,
+              });
+              const isUnlocked = userAchievements.unlocked?.[selectedAchievement.id];
+              if (progress && !isUnlocked) {
+                return (
+                  <div className='achievement-tooltip-progress'>
+                    {progress.current} / {progress.target}
+                  </div>
+                );
+              }
+              return null;
+            })()}
+          </div>,
+          document.body
+        );
+        })()}
         </div>
       </Modal>
     </>

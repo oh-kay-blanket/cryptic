@@ -23,6 +23,9 @@ import { ReactComponent as HomophoneSvg } from '../assets/icons/clue-types/homop
 import { ReactComponent as InitialismSvg } from '../assets/icons/clue-types/initialism.svg';
 import { ReactComponent as ReversalSvg } from '../assets/icons/clue-types/reversal.svg';
 import { ReactComponent as SpoonerismSvg } from '../assets/icons/clue-types/spoonerism.svg';
+import { ReactComponent as CombinationSvg } from '../assets/icons/clue-types/combination.svg';
+import { ReactComponent as LetterBankSvg } from '../assets/icons/clue-types/letter-bank.svg';
+import { ReactComponent as LitSvg } from '../assets/icons/clue-types/lit.svg';
 
 // Map icon names to components
 const iconComponents = {
@@ -48,6 +51,9 @@ const iconComponents = {
   initialism: InitialismSvg,
   reversal: ReversalSvg,
   spoonerism: SpoonerismSvg,
+  combination: CombinationSvg,
+  'letter-bank': LetterBankSvg,
+  lit: LitSvg,
 };
 
 /**
