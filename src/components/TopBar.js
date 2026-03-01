@@ -542,22 +542,22 @@ const TopBar = () => {
       </Modal>
       <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); setTooltipPosition(null); }}>
         {/* Tab switcher */}
-        <div className='flex gap-2 p-1 bg-neutral-200 dark:bg-neutral-700 rounded-lg mb-4 mt-4'>
+        <div className='flex gap-1 p-1 theme-picker-bg rounded-lg mb-4 mt-4'>
           <button
-            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all ${
+            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
               statsTab === 'stats'
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
-                : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+                : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
             }`}
             onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); setTooltipPosition(null); }}
           >
             Stats
           </button>
           <button
-            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all ${
+            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
               statsTab === 'achievements'
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
-                : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+                : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
             }`}
             onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); setTooltipPosition(null); }}
           >
@@ -566,7 +566,7 @@ const TopBar = () => {
         </div>
 
         {/* Tab content container - fixed height to prevent resize on tab switch */}
-        <div style={{ height: '60vh', minHeight: '300px', maxHeight: '500px', overflowY: 'auto' }}>
+        <div className='stats-modal-content'>
         {/* Stats tab content */}
         {statsTab === 'stats' && (
           <>
@@ -709,7 +709,6 @@ const TopBar = () => {
         {statsTab === 'achievements' && (
           <div
             className='achievements-tab'
-            style={{ height: '100%' }}
             onClick={(e) => {
               // Close tooltip when clicking on blank space (not on a badge)
               if (!e.target.closest('.achievement-badge')) {

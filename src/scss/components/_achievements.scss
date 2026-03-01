@@ -1,9 +1,12 @@
+@use "../base/var" as *;
+
 // Achievement badges and grid styles
 
 .achievement-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
+  justify-items: center;
 }
 
 .achievement-badge {
@@ -25,8 +28,8 @@
   }
 
   &.locked {
-    background-color: #e5e5e5;
-    color: #a3a3a3;
+    background-color: $lc-gray;
+    color: $lc-text--light;
     opacity: 0.6;
 
     .dark & {
@@ -155,8 +158,8 @@
   }
 
   &.locked {
-    background-color: #e5e5e5;
-    color: #a3a3a3;
+    background-color: $lc-gray;
+    color: $lc-text--light;
 
     .dark & {
       background-color: #404040;
@@ -197,28 +200,7 @@
 }
 
 .achievements-tab {
-  height: 100%;
-  overflow-y: auto;
-  padding-left: 6px;
   padding-right: 0.5rem;
-
-  // Custom scrollbar
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #d1d5db;
-    border-radius: 3px;
-
-    .dark & {
-      background-color: #525252;
-    }
-  }
 }
 
 // Post-solve popup achievement styles

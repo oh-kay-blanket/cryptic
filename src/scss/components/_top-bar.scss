@@ -234,6 +234,14 @@ html.dark .theme-picker-bg {
   background-color: #333 !important; // neutral-700
 }
 
+// Stats modal tab content container
+.stats-modal-content {
+  height: 60vh;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
 // Difficulty grid for stats modal
 .modal-content .difficulty-grid {
   display: grid;
