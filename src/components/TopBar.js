@@ -513,11 +513,11 @@ const TopBar = () => {
       </Modal>
       <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); }}>
         {/* Tab switcher */}
-        <div className='flex border-b border-neutral-200 dark:border-neutral-600 mt-2 mb-4'>
+        <div className='flex gap-2 p-1 bg-neutral-100 dark:bg-neutral-700 rounded-lg mb-4 mt-4'>
           <button
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all ${
               statsTab === 'stats'
-                ? 'text-neutral-900 dark:text-white border-b-2 border-neutral-900 dark:border-white'
+                ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
             }`}
             onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); }}
@@ -525,9 +525,9 @@ const TopBar = () => {
             Stats
           </button>
           <button
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all ${
               statsTab === 'achievements'
-                ? 'text-neutral-900 dark:text-white border-b-2 border-neutral-900 dark:border-white'
+                ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
             }`}
             onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); }}
@@ -536,6 +536,8 @@ const TopBar = () => {
           </button>
         </div>
 
+        {/* Tab content container - fixed height to prevent resize on tab switch */}
+        <div style={{ height: '60vh', minHeight: '300px', maxHeight: '500px', overflowY: 'auto' }}>
         {/* Stats tab content */}
         {statsTab === 'stats' && (
           <>
@@ -676,7 +678,7 @@ const TopBar = () => {
 
         {/* Achievements tab content */}
         {statsTab === 'achievements' && (
-          <div className='achievements-tab'>
+          <div className='achievements-tab' style={{ height: '100%' }}>
             {/* Selected achievement detail */}
             {selectedAchievement && (
               <div className='achievement-detail mb-4 p-3 bg-neutral-100 dark:bg-neutral-700 rounded-lg'>
@@ -748,6 +750,7 @@ const TopBar = () => {
             })}
           </div>
         )}
+        </div>
       </Modal>
     </>
   );
