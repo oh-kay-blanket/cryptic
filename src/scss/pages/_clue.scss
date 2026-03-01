@@ -208,7 +208,9 @@
           pointer-events: none;
           user-select: none;
           text-align: center;
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           width: 30px;
           height: 30px;
           background-color: $lc-gray--v-light;
@@ -229,9 +231,13 @@
           .typeLetter,
           .solLetter {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            line-height: 1;
+            transform: translateX(-2px); // optical adjustment for italic font
           }
         }
 
