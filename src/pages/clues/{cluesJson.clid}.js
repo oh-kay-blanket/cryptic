@@ -325,7 +325,7 @@ const CluePage = ({ data }) => {
   const isSolution = activeClue.hints[nextHint]?.reveals;
   const isCorrectAns = checkAns && input.join("").toLowerCase() === activeClue.solution.arr.join("").toLowerCase();
 
-  // Show PostSolvePopup when clue is completed (not returning to a completed clue)
+  // Show PostSolvePopup only when there are new achievements unlocked
   useEffect(() => {
     // Don't show if returning to a completed clue or already showing
     if (wasCompletedOnLoad.current || showPostSolvePopup) return;
@@ -333,10 +333,10 @@ const CluePage = ({ data }) => {
     // Check if the clue was just completed
     const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
 
-    if (justCompleted && showMessage) {
+    // Only show popup if there are achievements to display
+    if (justCompleted && showMessage && newlyUnlockedAchievements.length > 0) {
       // Delay showing popup to let celebration start
       const timer = setTimeout(() => {
-        // Capture any newly unlocked achievements
         setPopupAchievements(newlyUnlockedAchievements);
         setShowPostSolvePopup(true);
       }, 800);
