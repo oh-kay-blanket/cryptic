@@ -133,7 +133,7 @@
       flex-wrap: wrap;
       align-content: center;
       font-family: $lc-font--alt;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 1.25rem;
       text-transform: uppercase;
       pointer-events: none;
@@ -191,7 +191,7 @@
         flex-wrap: wrap;
         row-gap: 6px;
         font-family: $lc-font--alt;
-        font-weight: 600;
+        font-weight: 400;
         z-index: 20;
         transition: opacity $lc-transition--short ease;
         text-align: center;
@@ -237,7 +237,12 @@
             width: 100%;
             height: 100%;
             line-height: 1;
-            transform: translateX(-2px); // optical adjustment for italic font
+            transform: translateY(1px);
+            color: #444; // pen-like color
+
+            html.dark & {
+              color: #d0d0d0;
+            }
           }
         }
 
