@@ -34,18 +34,10 @@ const PostSolvePopup = ({
 }) => {
   const { clearNewlyUnlockedAchievements, markAchievementsSeen } = useContext(UserContext);
   const [mounted, setMounted] = useState(false);
-  const [showAchievements, setShowAchievements] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Stagger the achievement animation
-    if (unlockedAchievements.length > 0) {
-      const timer = setTimeout(() => {
-        setShowAchievements(true);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [unlockedAchievements.length]);
+  }, []);
 
   const handleDismiss = () => {
     // Mark achievements as seen and clear from context
@@ -133,7 +125,7 @@ const PostSolvePopup = ({
         </div>
 
         {/* Achievements section */}
-        {showAchievements && unlockedAchievements.length > 0 && (
+        {unlockedAchievements.length > 0 && (
           <div className='post-solve-achievements'>
             <p className='post-solve-achievements-title'>
               {unlockedAchievements.length === 1 ? 'Achievement unlocked!' : 'Achievements unlocked!'}

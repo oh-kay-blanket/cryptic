@@ -330,11 +330,11 @@ const CluePage = ({ data }) => {
 
     // Only show popup if there are achievements to display
     if (justCompleted && showMessage && newlyUnlockedAchievements.length > 0) {
-      // Delay showing popup to let celebration start
+      // Delay showing popup until celebration animation finishes (2800ms)
       const timer = setTimeout(() => {
         setPopupAchievements(newlyUnlockedAchievements);
         setShowPostSolvePopup(true);
-      }, 800);
+      }, 2800);
 
       return () => clearTimeout(timer);
     }
