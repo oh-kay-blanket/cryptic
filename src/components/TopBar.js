@@ -571,7 +571,7 @@ const TopBar = () => {
         {/* Tab switcher */}
         <div className='flex gap-1 p-1 theme-picker-bg rounded-lg mb-4 mt-4'>
           <button
-            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
+            className={`flex-1 py-2 px-3 text-sm font-normal rounded-md transition-colors ${
               statsTab === 'stats'
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
@@ -581,7 +581,7 @@ const TopBar = () => {
             Stats
           </button>
           <button
-            className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
+            className={`flex-1 py-2 px-3 text-sm font-normal rounded-md transition-colors ${
               statsTab === 'achievements'
                 ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
                 : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
@@ -613,7 +613,7 @@ const TopBar = () => {
                       <img src={CalendarIcon} alt='' />
                     </div>
                     <div className='hero-card-value'>{streak}</div>
-                    <div className='hero-card-label'>Day Streak</div>
+                    <div className='hero-card-label'>day streak</div>
                     <div className='hero-card-sub'>Best: {longestStreak}</div>
                   </div>
                   <div className='hero-card hero-card--solved'>
@@ -621,7 +621,7 @@ const TopBar = () => {
                       <img src={ClueIcon} alt='' />
                     </div>
                     <div className='hero-card-value'>{totalSolved}</div>
-                    <div className='hero-card-label'>Clues Solved</div>
+                    <div className='hero-card-label'>clues solved</div>
                     <div className='hero-card-sub'>{perfectSolves} perfect</div>
                   </div>
                 </div>
