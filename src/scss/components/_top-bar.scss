@@ -240,6 +240,11 @@ html.dark .theme-picker-bg {
   min-height: 300px;
   max-height: 500px;
   overflow-y: auto;
+
+  // Fixed width on desktop to prevent resize when switching tabs
+  @media (min-width: 601px) {
+    width: 336px; // 400px max-width - 2rem padding on each side
+  }
 }
 
 // Difficulty grid for stats modal
@@ -322,7 +327,7 @@ html.dark .modal-content .difficulty-grid {
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.1;
-    color: var(--lc-text-primary);
+    color: #525252;
   }
 
   .hero-card-label {
@@ -339,6 +344,10 @@ html.dark .modal-content .difficulty-grid {
     opacity: 0.7;
     margin-top: 0.25rem;
   }
+}
+
+html.dark .hero-card .hero-card-value {
+  color: #f5f5f5;
 }
 
 .hero-card--streak {
