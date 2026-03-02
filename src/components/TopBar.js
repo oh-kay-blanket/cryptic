@@ -3,7 +3,9 @@ import { createPortal } from 'react-dom';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
-import { formatTime } from '../utils/dateHelpers';
+import { formatTime, isSameDay, stripTime } from '../utils/dateHelpers';
+import CalendarIcon from '../assets/icons/achievements/calendar.svg';
+import ClueIcon from '../assets/icons/achievements/clue.svg';
 import {
   achievements,
   ACHIEVEMENT_CATEGORIES,
@@ -301,6 +303,31 @@ const TopBar = () => {
         )
       : null;
 
+  // Calculate last 7 days activity for the calendar
+  const getLast7DaysActivity = () => {
+    const today = stripTime(new Date());
+    const days = [];
+
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+
+      const solved = completedClues.some(clue => {
+        if (!clue.completedAt) return false;
+        return isSameDay(new Date(clue.completedAt), date);
+      });
+
+      days.push({
+        date,
+        solved,
+        dayLabel: date.toLocaleDateString('en-US', { weekday: 'narrow' }),
+      });
+    }
+    return days;
+  };
+
+  const last7Days = getLast7DaysActivity();
+
   return (
     <>
       <header className='top-bar bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700'>
@@ -579,84 +606,93 @@ const TopBar = () => {
               </div>
             ) : (
               <>
-                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                  Streaks
-                </h3>
-                <div className='grid grid-cols-2 gap-4 mb-4'>
-                  <div className='text-center'>
-                    <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
+                {/* Hero Cards */}
+                <div className='stats-hero-cards'>
+                  <div className='hero-card hero-card--streak'>
+                    <div className='hero-card-icon'>
+                      <img src={CalendarIcon} alt='' />
+                    </div>
+                    <div className='hero-card-value'>{streak}</div>
+                    <div className='hero-card-label'>Day Streak</div>
+                    <div className='hero-card-sub'>Best: {longestStreak}</div>
                   </div>
-                  <div className='text-center'>
-                    <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                      {longestStreak}
+                  <div className='hero-card hero-card--solved'>
+                    <div className='hero-card-icon'>
+                      <img src={ClueIcon} alt='' />
                     </div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
-                  </div>
-                </div>
-
-                <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-                  <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                    Performance
-                  </h3>
-                  <div className='grid grid-cols-2 gap-4'>
-                    <div className='text-center'>
-                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                        {totalSolved}
-                      </div>
-                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
-                    </div>
-                    <div className='text-center'>
-                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                        {perfectSolves}
-                      </div>
-                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
-                    </div>
-                    <div className='text-center'>
-                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                        {avgGuesses}
-                      </div>
-                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
-                    </div>
-                    <div className='text-center'>
-                      <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                        {avgHints}
-                      </div>
-                      <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
-                    </div>
-                    {bestTimeClue && (
-                      <div className='text-center'>
-                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                          {bestTime < 60 ? <>{bestTime}<span className='text-sm font-normal'> sec</span></> : formatTime(bestTime)}
-                        </div>
-                        <div className='text-sm text-neutral-500 dark:text-neutral-400'>
-                          Best time{' '}
-                          <Link
-                            to={`/clues/${bestTimeClue.clid}`}
-                            className='text-neutral-600 dark:text-neutral-300 hover:underline'
-                            onClick={() => setStatsOpen(false)}
-                          >
-                            (#{bestTimeClue.clid})
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                    {avgSolveTime != null && (
-                      <div className='text-center'>
-                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                          {avgSolveTime < 60 ? <>{avgSolveTime}<span className='text-sm font-normal'> sec</span></> : formatTime(avgSolveTime)}
-                        </div>
-                        <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
-                      </div>
-                    )}
+                    <div className='hero-card-value'>{totalSolved}</div>
+                    <div className='hero-card-label'>Clues Solved</div>
+                    <div className='hero-card-sub'>{perfectSolves} perfect</div>
                   </div>
                 </div>
 
+                {/* 7-Day Activity Calendar */}
+                <div className='stats-calendar'>
+                  <h3 className='stats-section-title'>Daily Clues - Last 7 Days</h3>
+                  <div className='calendar-row'>
+                    {last7Days.map((day, index) => (
+                      <div key={index} className='calendar-day'>
+                        <div className={`calendar-dot ${day.solved ? 'filled' : ''}`} />
+                        <div className='calendar-label'>{day.dayLabel}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Time Stats */}
+                {(bestTimeClue || avgSolveTime != null) && (
+                  <div className='stats-time-section'>
+                    <h3 className='stats-section-title'>Time</h3>
+                    <div className='stats-time-grid'>
+                      {bestTimeClue && (
+                        <div className='stats-time-item'>
+                          <div className='stats-time-value'>
+                            {bestTime < 60 ? <>{bestTime}<span className='stats-time-unit'>s</span></> : formatTime(bestTime)}
+                          </div>
+                          <div className='stats-time-label'>
+                            best{' '}
+                            <Link
+                              to={`/clues/${bestTimeClue.clid}`}
+                              className='stats-time-link'
+                              onClick={() => setStatsOpen(false)}
+                            >
+                              (#{bestTimeClue.clid})
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                      {avgSolveTime != null && (
+                        <div className='stats-time-item'>
+                          <div className='stats-time-value'>
+                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'>s</span></> : formatTime(avgSolveTime)}
+                          </div>
+                          <div className='stats-time-label'>average</div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Performance Stats */}
+                <div className='stats-performance-section'>
+                  <h3 className='stats-section-title'>Performance</h3>
+                  <div className='stats-performance-row'>
+                    <div className='stats-perf-item'>
+                      <span className='stats-perf-value'>{avgGuesses}</span>
+                      <span className='stats-perf-label'>avg guesses</span>
+                    </div>
+                    <div className='stats-perf-divider' />
+                    <div className='stats-perf-item'>
+                      <span className='stats-perf-value'>{avgHints}</span>
+                      <span className='stats-perf-label'>avg hints</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Difficulty Breakdown */}
                 {cluesWithDifficulty.length > 0 && (
-                  <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-                    <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                      By Difficulty
-                    </h3>
+                  <div className='stats-difficulty-section'>
+                    <h3 className='stats-section-title'>By Difficulty</h3>
                     <div className='grid grid-cols-4 gap-2'>
                       {difficultyBreakdown.map((count, index) => {
                         const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
@@ -686,18 +722,14 @@ const TopBar = () => {
                   </div>
                 )}
 
+                {/* Playing Since Footer */}
                 {firstSolveDate && (
-                  <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-                    <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
-                      Playing Since
-                    </h3>
-                    <p className='text-sm text-[#666] dark:text-neutral-100'>
-                      {firstSolveDate.toLocaleDateString('en-US', {
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
-                    </p>
+                  <div className='stats-footer'>
+                    Playing since {firstSolveDate.toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
                   </div>
                 )}
               </>
