@@ -9,8 +9,11 @@ const Creators = ({ data }) => {
 
   // Function to get creator image by name
   const getCreatorImage = (creatorName) => {
-    // Convert creator name to match filename format
-    const fileName = creatorName.toLowerCase().replace(/\s+/g, '-');
+    // Convert creator name to match filename format (lowercase, no punctuation, spaces to hyphens)
+    const fileName = creatorName
+      .toLowerCase()
+      .replace(/[,.']/g, '')
+      .replace(/\s+/g, '-');
     const imageNode = creatorImages.find(
       (node) =>
         node.name.toLowerCase() === fileName ||
@@ -22,45 +25,44 @@ const Creators = ({ data }) => {
   return (
     <Layout>
       <div className='creators lc-container'>
-        <h1 className='text-4xl max-w-xl mx-auto font-bold mb-8'>Meet Our Creators</h1>
-        <p className='text-lg mb-12 max-w-xl mx-auto'>
-          Learn Cryptic is made possible by a small team of talented puzzle designers, software
-          developers, and clue writers.
-        </p>
+        <div className='creators-header'>
+          <h1>Meet Our Creators</h1>
+          <p>
+            Learn Cryptic is made possible by a small team of talented puzzle designers, software
+            developers, and clue writers.
+          </p>
+        </div>
 
-        <div className='creators-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16'>
+        <div className='creators-grid'>
           {creatorsData.map((creator, index) => {
             const creatorImage = getCreatorImage(creator.nom);
 
             return (
-              <div
-                key={index}
-                className='creator-card bg-white dark:bg-neutral-800 rounded-lg p-6 shadow-md border border-neutral-200 dark:border-neutral-700'
-              >
+              <div key={index} className='creator-card'>
                 {creatorImage && (
-                  <div className='creator-image mb-4'>
+                  <div className='creator-image'>
                     <GatsbyImage
                       image={creatorImage}
                       alt={`${creator.name} - Cryptic Crossword Creator`}
-                      className='rounded-full w-24 h-24 mx-auto'
+                      className='creator-photo'
                       imgStyle={{ borderRadius: '50%' }}
                     />
                   </div>
                 )}
                 <div className='creator-info'>
-                  <h2 className='text-xl font-bold mb-2'>
-                    {creator.name}{' '}
-                    <span className='!text-base !font-medium text-gray-700'>({creator.nom})</span>
+                  <h2>
+                    {creator.name}
+                    <span className='creator-nom'>({creator.nom})</span>
                   </h2>
-                  <p className='text-neutral-600 dark:text-neutral-300 mb-4'>{creator.bio}</p>
+                  <p className='creator-bio'>{creator.bio}</p>
                   {creator.link && (
                     <a
                       href={creator.link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='inline-block text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-200 font-medium underline'
+                      className='creator-link'
                     >
-                      Visit Website
+                      Visit Website →
                     </a>
                   )}
                 </div>
@@ -70,21 +72,21 @@ const Creators = ({ data }) => {
         </div>
 
         {/* Call to Action */}
-        <div className='cta-section bg-neutral-100 dark:bg-neutral-800 rounded-lg p-8 max-w-xl mx-auto border border-neutral-200 dark:border-neutral-700'>
-          <h2 className='text-2xl font-bold mb-4'>Want to Contribute?</h2>
-          <p className='text-lg mb-6 max-w-2xl mx-auto'>
+        <div className='cta-section'>
+          <h2>Want to Contribute?</h2>
+          <p>
             Are you a cryptic crossword creator interested in sharing your clues with our learning
             community? We'd love to hear from you!
           </p>
-          <p className='text-neutral-600 dark:text-neutral-300 mb-6'>
+          <p className='cta-detail'>
             Whether you're an experienced setter or just starting out, we welcome submissions that
             help teach and engage puzzle enthusiasts of all skill levels.
           </p>
           <a
             href='mailto:learncrypticgame@gmail.com?subject=Creator Submission - Learn Cryptic'
-            className='inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-6 rounded-lg transition-colors'
+            className='cta-button'
           >
-            Email Us to Contribute
+            Get in Touch
           </a>
         </div>
       </div>
