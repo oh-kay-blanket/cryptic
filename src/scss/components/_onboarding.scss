@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../base/var' as *;
 
 // Spotlight overlay
@@ -127,7 +128,7 @@
     color: #fff;
 
     &:hover {
-      background-color: darken($lc-secondary--dark, 10%);
+      background-color: color.adjust($lc-secondary--dark, $lightness: -10%);
     }
   }
 }
@@ -278,7 +279,7 @@ html.dark {
       color: #171717;
 
       &:hover {
-        background-color: lighten($lc-secondary, 5%);
+        background-color: color.adjust($lc-secondary, $lightness: 5%);
       }
     }
   }

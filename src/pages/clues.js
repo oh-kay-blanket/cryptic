@@ -9,6 +9,66 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
 import { formatTime } from "../utils/dateHelpers";
+import ClueTypeIcon from "../components/ClueTypeIcons";
+
+// Custom dropdown component with icons
+const CustomDropdown = ({ value, onChange, options, placeholder, renderOption, openUpward = false, maxHeight = "max-h-48" }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const selectedOption = options.find((opt) => opt.value === value);
+
+  return (
+    <div ref={dropdownRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="custom-dropdown-btn w-full px-3 py-2 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm text-left flex items-center justify-between"
+      >
+        <span className="flex items-center gap-2">
+          {selectedOption ? renderOption(selectedOption) : placeholder}
+        </span>
+        <svg
+          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className={`absolute z-50 w-full bg-white dark:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 rounded shadow-lg ${maxHeight} overflow-y-auto ${openUpward ? "bottom-full mb-1" : "mt-1"}`}>
+          {options.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => {
+                onChange(option.value);
+                setIsOpen(false);
+              }}
+              className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-neutral-100 dark:hover:bg-neutral-600 ${
+                value === option.value ? "bg-neutral-100 dark:bg-neutral-600" : ""
+              }`}
+            >
+              {renderOption(option)}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 // Difficulty grid component
 const DifficultyGrid = ({ difficulty }) => (
@@ -25,10 +85,31 @@ const DifficultyGrid = ({ difficulty }) => (
   </div>
 );
 
+// Close icon for modal
+const CloseIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M6.2 6.1c3.9 3.8 7.7 7.8 11.6 11.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M17.9 6.2c-3.8 3.9-7.8 7.7-11.7 11.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
 // Filter modal component
 const FilterModal = ({ open, onClose, children }) => {
   useEffect(() => {
-    const preventDefault = (e) => e.preventDefault();
+    const preventDefault = (e) => {
+      // Allow scrolling inside scrollable dropdown menus
+      const scrollableParent = e.target.closest('.overflow-y-auto');
+      if (scrollableParent) {
+        return;
+      }
+      e.preventDefault();
+    };
     if (open) {
       document.addEventListener("wheel", preventDefault, { passive: false });
       document.addEventListener("touchmove", preventDefault, {
@@ -53,7 +134,7 @@ const FilterModal = ({ open, onClose, children }) => {
           onClick={onClose}
           aria-label="Close"
         >
-          &times;
+          <CloseIcon />
         </button>
         {children}
       </div>
@@ -61,26 +142,31 @@ const FilterModal = ({ open, onClose, children }) => {
   );
 };
 
-// Filter icon component
+// Hand-drawn funnel filter icon component
 const FilterIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="inline-block"
   >
-    <path
-      d="M3 4.5h18M6 12h12M9 19.5h6"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
+    {/* Wobbly top edge */}
+    <path d="M3.1 5.2c2.9.2 5.9-.1 8.8.1 3.1-.2 6.1.1 9.1-.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Left side curving down */}
+    <path d="M3.2 5.1 Q4.1 8.2 5.8 10.1 Q7.6 12.3 9.2 13.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Right side curving down */}
+    <path d="M20.9 5.2 Q19.8 8.1 18.3 10.2 Q16.5 12.4 14.9 13.7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Wobbly stem */}
+    <path d="M9.3 13.9c.1 2.2-.1 4.4.1 6.6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M14.8 13.8c-.1 2.2.1 4.3-.1 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Wobbly bottom */}
+    <path d="M9.2 20.6c1.9.2 3.8-.1 5.7.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
-// Book icon component
+// Hand-drawn book icon component
 const BookIcon = () => (
   <svg
     width="16"
@@ -90,20 +176,17 @@ const BookIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="inline-block"
   >
-    <path
-      d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    {/* Book spine */}
+    <path d="M5.2 4.1c.1 5.3-.1 10.7.1 15.9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Book cover top */}
+    <path d="M5.1 4.2c5.1-.2 10.2.1 15.1-.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Book cover right */}
+    <path d="M20.1 4.1c.1 5.2-.1 10.4.1 15.6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Book cover bottom */}
+    <path d="M5.2 19.9c5-.1 10.1.2 15-.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Page lines */}
+    <path d="M8.1 8.2c3.2-.1 6.3.1 9.5-.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M8.2 12.1c3.1.1 6.2-.1 9.3.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
@@ -438,32 +521,33 @@ const Clues = ({ data, location }) => {
   return (
     <Layout>
       <div className="clues lc-container">
-        <div className="filters-bar">
-          <button
-            onClick={() => setFilterModalOpen(true)}
-            className={`filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded border transition-colors ${
-              hasActiveFilters
-                ? "bg-[#eae4ff] dark:bg-[#4A3F6B] border-[#b9ace2] dark:border-[#68589E] text-[#68589E] dark:text-[#9B8FE8]"
-                : "bg-neutral-200 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-600"
-            }`}
-          >
-            <FilterIcon />
-            <span className="text-xs">Filter</span>
-            {activeFilterCount > 0 && (
-              <span className="filter-badge bg-[#68589E] text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
-                {activeFilterCount}
-              </span>
-            )}
-          </button>
-
-          {hasActiveFilters && (
+        <div className="filters-bar justify-between">
+          <div className="flex items-center gap-3">
             <button
-              onClick={clearFilters}
-              className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 underline"
+              onClick={() => setFilterModalOpen(true)}
+              className={`filter-btn flex items-center gap-1 px-2 py-1.5 rounded border transition-colors ${
+                hasActiveFilters
+                  ? "bg-[#eae4ff] dark:bg-[#4A3F6B] border-[#b9ace2] dark:border-[#68589E] text-[#68589E] dark:text-[#9B8FE8]"
+                  : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+            }`}
             >
-              Clear
+              <FilterIcon />
+              {activeFilterCount > 0 && (
+                <span className="filter-badge bg-[#68589E] text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
+                  {activeFilterCount}
+                </span>
+              )}
             </button>
-          )}
+
+            {hasActiveFilters && (
+              <button
+                onClick={clearFilters}
+                className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 underline"
+              >
+                Clear
+              </button>
+            )}
+          </div>
 
           <span className="filter-count text-neutral-500 dark:text-neutral-400">
             {archiveTiles.length} clue{archiveTiles.length !== 1 ? "s" : ""}
@@ -477,7 +561,7 @@ const Clues = ({ data, location }) => {
         open={filterModalOpen}
         onClose={() => setFilterModalOpen(false)}
       >
-        <h2 className="text-lg font-semibold mb-4">Filter Clues</h2>
+        <h3 className="text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 mt-4">Filter Clues</h3>
 
         <div className="filter-group mb-4">
           <div className="flex items-center justify-between mb-1.5">
@@ -486,58 +570,77 @@ const Clues = ({ data, location }) => {
             </label>
             <Link
               to="/learn#learn-types"
-              className="flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] hover:underline"
+              className="flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] underline"
             >
               <BookIcon /> Learn types
             </Link>
           </div>
-          <select
+          <CustomDropdown
             value={typeFilter}
-            onChange={(e) => setTypeFilter(e.target.value)}
-            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
-          >
-            <option value="all">All types</option>
-            {uniqueTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
+            onChange={setTypeFilter}
+            options={[
+              { value: "all", label: "All types" },
+              ...uniqueTypes.map((type) => ({ value: type, label: type })),
+            ]}
+            placeholder="All types"
+            renderOption={(option) => {
+              // Convert type value to icon key (spaces to hyphens, handle "& Lit.")
+              const iconKey = option.value === "& Lit."
+                ? "lit"
+                : option.value.toLowerCase().replace(/\s+/g, "-");
+              return (
+                <>
+                  {option.value !== "all" && (
+                    <ClueTypeIcon type={iconKey} className="w-4 h-4" />
+                  )}
+                  <span>{option.label}</span>
+                </>
+              );
+            }}
+          />
         </div>
 
         <div className="filter-group mb-4">
           <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
             Difficulty
           </label>
-          <select
+          <CustomDropdown
             value={difficultyFilter}
-            onChange={(e) => setDifficultyFilter(e.target.value)}
-            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
-          >
-            <option value="all">All difficulties</option>
-            <option value="1">Easy (1)</option>
-            <option value="2">Medium (2)</option>
-            <option value="3">Hard (3)</option>
-            <option value="4">Expert (4)</option>
-          </select>
+            onChange={setDifficultyFilter}
+            options={[
+              { value: "all", label: "All difficulties" },
+              { value: "1", label: "Easy", difficulty: 1 },
+              { value: "2", label: "Medium", difficulty: 2 },
+              { value: "3", label: "Hard", difficulty: 3 },
+              { value: "4", label: "Expert", difficulty: 4 },
+            ]}
+            placeholder="All difficulties"
+            renderOption={(option) => (
+              <>
+                {option.difficulty && (
+                  <DifficultyGrid difficulty={option.difficulty} />
+                )}
+                <span>{option.label}</span>
+              </>
+            )}
+          />
         </div>
 
         <div className="filter-group mb-4">
           <label className="block text-sm font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">
             Author
           </label>
-          <select
+          <CustomDropdown
             value={authorFilter}
-            onChange={(e) => setAuthorFilter(e.target.value)}
-            className="w-full px-3 py-2 rounded border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
-          >
-            <option value="all">All authors</option>
-            {uniqueAuthors.map((author) => (
-              <option key={author} value={author}>
-                {author}
-              </option>
-            ))}
-          </select>
+            onChange={setAuthorFilter}
+            options={[
+              { value: "all", label: "All authors" },
+              ...uniqueAuthors.map((author) => ({ value: author, label: author })),
+            ]}
+            placeholder="All authors"
+            renderOption={(option) => <span>{option.label}</span>}
+            maxHeight="max-h-28"
+          />
         </div>
 
         <div className="filter-group mb-4">
@@ -557,7 +660,7 @@ const Clues = ({ data, location }) => {
         <div className="flex gap-2 mt-6">
           <button
             onClick={() => setFilterModalOpen(false)}
-            className="flex-1 px-4 py-2 rounded bg-[#68589E] hover:bg-[#5a4b88] text-white font-medium transition-colors"
+            className="show-btn primary flex-1"
           >
             Apply
           </button>
@@ -567,7 +670,7 @@ const Clues = ({ data, location }) => {
                 clearFilters();
                 setFilterModalOpen(false);
               }}
-              className="px-4 py-2 rounded border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
+              className="show-btn secondary"
             >
               Clear all
             </button>

@@ -1,9 +1,9 @@
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Top spoon: oval bowl on left, tapered handle extending right with rounded end -->
-  <ellipse cx="5" cy="5.5" rx="5" ry="3" fill="currentColor"/>
-  <path d="M5 5 L20 4.5 Q23 4.5 23 5.5 Q23 6.5 20 6.5 L5 6 Z" fill="currentColor"/>
-
-  <!-- Bottom spoon: tapered handle on left with rounded end, oval bowl on right -->
-  <path d="M4 17.5 Q1 17.5 1 18.5 Q1 19.5 4 19.5 L19 19 L19 18 Z" fill="currentColor"/>
-  <ellipse cx="19" cy="18.5" rx="5" ry="3" fill="currentColor"/>
+  <!-- Hand-drawn two spoons facing opposite directions -->
+  <!-- Top spoon: oval bowl on left, handle extending right -->
+  <path d="M4.2 6.8 Q3.9 5.1 6.1 4.8 Q8.5 4.6 10.2 5.3 Q11.5 6.2 11.2 7.5 Q10.8 9 8.5 9.3 Q6 9.5 4.8 8.6 Q4 7.9 4.2 6.8" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M11 7.1 Q14.5 6.8 18 7.2 Q19.3 7.4 20.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Bottom spoon: oval bowl on right, handle extending left -->
+  <path d="M19.8 17.2 Q20.1 18.9 17.9 19.2 Q15.5 19.4 13.8 18.7 Q12.5 17.8 12.8 16.5 Q13.2 15 15.5 14.7 Q18 14.5 19.2 15.4 Q20 16.1 19.8 17.2" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M13 16.9 Q9.5 17.2 6 16.8 Q4.7 16.6 3.5 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

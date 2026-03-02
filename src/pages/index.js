@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
@@ -6,10 +6,12 @@ import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
 import { isTodayClue, formatTime, formatTimeForShare } from '../utils/dateHelpers'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
+import { migrateAchievements } from '../utils/achievements'
+import AchievementsIntroModal from '../components/AchievementsIntroModal'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
-	const { completedClues, streak, refreshFromStorage } = useContext(UserContext)
+	const { completedClues, streak, refreshFromStorage, achievements: userAchievements, setOpenStatsWithTab } = useContext(UserContext)
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
@@ -31,9 +33,13 @@ const Title = ({ data }) => {
 	)?.solveTime
 
 	// Add loading state to prevent flicker
-	const [isContextLoaded, setIsContextLoaded] = React.useState(false)
+	const [isContextLoaded, setIsContextLoaded] = useState(false)
 
-	React.useEffect(() => {
+	// Achievements intro modal state
+	const [showAchievementsIntro, setShowAchievementsIntro] = useState(false)
+	const [retroactiveAchievements, setRetroactiveAchievements] = useState([])
+
+	useEffect(() => {
 		// Set context as loaded after a brief delay to ensure localStorage has been read
 		const timer = setTimeout(() => {
 			setIsContextLoaded(true)
@@ -60,38 +66,76 @@ const Title = ({ data }) => {
 		}
 	}, [cluesData, refreshFromStorage])
 
-	// Icon components
+	// Run one-time achievement migration for existing users
+	useEffect(() => {
+		if (!isContextLoaded) return
+
+		const result = migrateAchievements(cluesData)
+		if (result && result.migrated) {
+			refreshFromStorage()
+			// Show intro modal if user has retroactive achievements and hasn't seen intro
+			if (result.newAchievements.length > 0) {
+				setRetroactiveAchievements(result.newAchievements)
+				setShowAchievementsIntro(true)
+			}
+		}
+	}, [cluesData, refreshFromStorage, isContextLoaded])
+
+	// Also check if we should show intro for users who got achievements on a different page
+	useEffect(() => {
+		if (!isContextLoaded) return
+		if (showAchievementsIntro) return // Already showing
+
+		// Check if user has achievements but hasn't seen intro
+		const hasAchievements = Object.keys(userAchievements?.unlocked || {}).length > 0
+		const hasSeenIntro = userAchievements?.hasSeenAchievementsIntro
+
+		if (hasAchievements && !hasSeenIntro && knownUser) {
+			// Get all unlocked achievements for display
+			const { achievements: allAchievements } = require('../utils/achievements')
+			const unlockedAchievements = allAchievements.filter(
+				(a) => userAchievements.unlocked?.[a.id]
+			)
+			if (unlockedAchievements.length > 0) {
+				setRetroactiveAchievements(unlockedAchievements)
+				setShowAchievementsIntro(true)
+			}
+		}
+	}, [isContextLoaded, userAchievements, knownUser, showAchievementsIntro])
+
+	// Hand-drawn icon components
 	const PlayIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor'>
-			<path d='M8 5v14l11-7z'/>
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'>
+			{/* Hand-drawn play triangle with organic edges */}
+			<path d='M7.2 4.2 Q7.1 12.1 7.3 19.7 Q13.2 15.9 19.2 12.1 Q13.3 8.2 7.2 4.2'/>
 		</svg>
 	)
 
 	const BookIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
-			<path d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/>
-			<path d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/>
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round'>
+			<path d='M5.1 19.2c.4-.6 1.1-.9 1.8-.9 4.2.1 8.5-.1 12.7.1'/>
+			<path d='M6.2 2.1c4.4.1 8.9-.1 13.3.1.5.1.9.5.9 1-.1 5.4.1 10.9-.1 16.3-.1.5-.5.9-1 .9-4.2-.1-8.5.1-12.7-.1-1.1-.1-2.1.5-2.6 1.5.1-6.4-.1-12.9.1-19.3.1-.3.4-.5.7-.5'/>
 		</svg>
 	)
 
 	const ListIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 24 24'>
-			<rect x='3' y='3' width='3' height='3' rx='1' />
-			<rect x='3' y='10.5' width='3' height='3' rx='1' />
-			<rect x='3' y='18' width='3' height='3' rx='1' />
-			<rect x='8' y='3' width='13' height='3' rx='1' />
-			<rect x='8' y='10.5' width='13' height='3' rx='1' />
-			<rect x='8' y='18' width='13' height='3' rx='1' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'>
+			<path d='M3.5 4.8c.6-.2 1.3.2 1.5.8.3.6 0 1.3-.5 1.6-.6.3-1.3.1-1.6-.5-.4-.6-.1-1.4.6-1.9' fill='currentColor' />
+			<path d='M3.6 11.4c.6-.2 1.3.1 1.6.6.3.6.1 1.3-.4 1.7-.6.3-1.3.1-1.7-.5-.3-.6-.1-1.3.5-1.8' fill='currentColor' />
+			<path d='M3.5 17.8c.6-.2 1.3.1 1.6.7.3.6 0 1.3-.5 1.6-.6.3-1.3 0-1.6-.6-.3-.6 0-1.3.5-1.7' fill='currentColor' />
+			<path d='M8.2 5.9c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+			<path d='M8.1 12.1c4.4-.1 8.9.1 13.3-.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+			<path d='M8.2 18.2c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
 		</svg>
 	)
 
 	const ShareIcon = (
-		<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
-			<circle cx='6' cy='12' r='2' />
-			<circle cx='18' cy='6' r='2' />
-			<circle cx='18' cy='18' r='2' />
-			<line x1='8' y1='11' x2='16' y2='7' />
-			<line x1='8' y1='13' x2='16' y2='17' />
+		<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round'>
+			<path d='M17.8 4.2c.5-.2 1 0 1.4.3.4.4.6.9.5 1.4-.1.5-.5 1-1 1.2-.5.2-1.1.1-1.5-.3-.4-.4-.5-.9-.4-1.5.1-.5.5-.9 1-1.1' fill='currentColor'/>
+			<path d='M17.9 17.1c.5-.1 1 .1 1.4.4.4.4.5.9.4 1.4-.2.5-.6.9-1.1 1.1-.5.1-1.1 0-1.4-.4-.4-.4-.5-1-.3-1.5.2-.5.5-.9 1-1' fill='currentColor'/>
+			<path d='M5.8 10.2c.5-.2 1.1 0 1.4.4.4.4.5 1 .3 1.5-.2.5-.6.9-1.1 1-.5.2-1.1 0-1.5-.4-.3-.4-.4-1-.2-1.5.2-.5.6-.9 1.1-1' fill='currentColor'/>
+			<path d='M7.9 10.8c2.8-1.4 5.7-2.9 8.5-4.3'/>
+			<path d='M7.8 13.1c2.9 1.5 5.8 2.8 8.7 4.2'/>
 		</svg>
 	)
 
@@ -316,6 +360,16 @@ const Title = ({ data }) => {
 				<img className='title-img' src={logo} alt='' />
 				{getTitleContent()}
 			</div>
+			{showAchievementsIntro && (
+				<AchievementsIntroModal
+					retroactiveAchievements={retroactiveAchievements}
+					onDismiss={() => setShowAchievementsIntro(false)}
+					onViewAll={() => {
+						setShowAchievementsIntro(false)
+						setOpenStatsWithTab('achievements')
+					}}
+				/>
+			)}
 		</Layout>
 	)
 }
@@ -348,6 +402,7 @@ export const query = graphql`
 				clid
 				id
 				difficulty
+				type
 				source {
 					value
 				}

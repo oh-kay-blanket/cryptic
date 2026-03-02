@@ -1,6 +1,9 @@
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M18 8L21 8L18 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M6 16L3 16L6 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M21 8H7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M3 16H17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Hand-drawn arrows pointing opposite directions for reversal -->
+  <!-- Left arrow pointing left -->
+  <path d="M11 12c-2.8.1-5.7-.1-8.5.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M5.5 8.5c-1.1 1.1-2.3 2.2-3.4 3.4 1.2 1.2 2.3 2.4 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right arrow pointing right -->
+  <path d="M13 12c2.8-.1 5.7.1 8.5-.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M18.5 8.5c1.1 1.1 2.3 2.2 3.4 3.4-1.2 1.2-2.3 2.4-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

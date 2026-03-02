@@ -1,11 +1,21 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
-import { formatTime } from '../utils/dateHelpers';
+import { formatTime, isSameDay, stripTime } from '../utils/dateHelpers';
+import CalendarIcon from '../assets/icons/achievements/calendar.svg';
+import ClueIcon from '../assets/icons/achievements/clue.svg';
+import {
+  achievements,
+  ACHIEVEMENT_CATEGORIES,
+  categoryDisplayNames,
+  getAchievementProgress,
+} from '../utils/achievements';
+import AchievementIcon from './AchievementIcon';
 
 import logo from '../assets/img/logo-short.png';
-// Custom info icon component
+// Hand-drawn style icons
 const InfoIcon = () => (
   <svg
     width='20'
@@ -15,9 +25,9 @@ const InfoIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <circle cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='2.5' fill='none' />
-    <circle cx='12' cy='9' r='1' fill='currentColor' />
-    <path d='M11 12h2v5h-2z' fill='currentColor' />
+    <path d='M12.2 2.1c2.8.2 5.4 1.3 7.2 3.3 1.9 2 2.9 4.6 2.7 7.3-.2 2.7-1.4 5.2-3.2 7-2 1.9-4.6 2.9-7.3 2.7-2.7-.2-5.1-1.4-6.9-3.3-1.9-2-2.8-4.6-2.6-7.3.2-2.6 1.3-5 3.2-6.8 1.8-1.8 4.3-2.8 6.9-2.9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M11.6 6.8c.7-.3 1.5.1 1.8.7.3.7 0 1.4-.6 1.8-.7.3-1.4 0-1.8-.6-.4-.7-.1-1.5.6-1.9' fill='currentColor' />
+    <path d='M12.1 11.8c-.1 1.2.1 2.4-.1 3.6' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -30,9 +40,9 @@ const BarGraphIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='9' width='3' height='12' rx='1' fill='currentColor' />
-    <rect x='10.5' y='3' width='3' height='18' rx='1' fill='currentColor' />
-    <rect x='18' y='12' width='3' height='9' rx='1' fill='currentColor' />
+    <path d='M3.2 21.1c-.1-4 .1-8-.1-12' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M10.1 21.2c.1-5.3-.1-10.6.1-15.9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M17.2 21.1c-.1-3 .1-6-.1-9' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -45,12 +55,12 @@ const ListIcon = () => (
     xmlns='http://www.w3.org/2000/svg'
     className='text-neutral-500 dark:text-neutral-200'
   >
-    <rect x='3' y='3' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='10.5' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='3' y='18' width='3' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='3' width='13' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='10.5' width='13' height='3' rx='1' fill='currentColor' />
-    <rect x='8' y='18' width='13' height='3' rx='1' fill='currentColor' />
+    <path d='M3.5 4.8c.6-.2 1.3.2 1.5.8.3.6 0 1.3-.5 1.6-.6.3-1.3.1-1.6-.5-.4-.6-.1-1.4.6-1.9' fill='currentColor' />
+    <path d='M3.6 11.4c.6-.2 1.3.1 1.6.6.3.6.1 1.3-.4 1.7-.6.3-1.3.1-1.7-.5-.3-.6-.1-1.3.5-1.8' fill='currentColor' />
+    <path d='M3.5 17.8c.6-.2 1.3.1 1.6.7.3.6 0 1.3-.5 1.6-.6.3-1.3 0-1.6-.6-.3-.6 0-1.3.5-1.7' fill='currentColor' />
+    <path d='M8.2 5.9c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M8.1 12.1c4.4-.1 8.9.1 13.3-.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    <path d='M8.2 18.2c4.4.1 8.8-.1 13.2.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -62,44 +72,39 @@ const CloseIcon = () => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <path
-      d='M18 6L6 18M6 6l12 12'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
+    <path d='M6.2 6.1c3.9 3.8 7.7 7.8 11.6 11.7' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M17.9 6.2c-3.8 3.9-7.8 7.7-11.7 11.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const SystemIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect x='2' y='3' width='20' height='14' rx='2' stroke='currentColor' strokeWidth='2' />
-    <path d='M8 21h8M12 17v4' stroke='currentColor' strokeWidth='2' strokeLinecap='round' />
+    {/* Hand-drawn monitor */}
+    <path d='M4.1 3.2c5.2.1 10.5-.1 15.7.1.8.2 1.3.8 1.3 1.6-.1 3.1.1 6.3-.1 9.4-.2.7-.8 1.2-1.5 1.2-5.1-.1-10.3.1-15.4-.1-.7-.1-1.2-.6-1.3-1.3.1-3.2-.1-6.4.1-9.6.2-.7.6-1.2 1.2-1.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    {/* Stand */}
+    <path d='M9.2 15.8c-.3 1.5-.1 3.1-.2 4.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M14.9 15.7c.2 1.6-.1 3.2.1 4.8' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M6.8 20.8c3.4-.1 6.9.2 10.3-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const SunIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <circle cx='12' cy='12' r='4' stroke='currentColor' strokeWidth='2' />
-    <path
-      d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-    />
+    <path d='M12.2 8.1c1.2.1 2.3.6 3.1 1.5.8.9 1.2 2 1.1 3.2-.1 1.1-.6 2.2-1.4 2.9-.9.8-2 1.2-3.2 1.1-1.1-.1-2.2-.5-2.9-1.4-.8-.9-1.2-2-1.1-3.2.1-1.1.5-2.1 1.4-2.9.8-.7 1.9-1.2 3-1.2' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M12.1 2.2c-.1 1.2.1 2.4-.1 3.6' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M12.2 18.1c-.1 1.3.1 2.5-.1 3.8' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M5.1 5.2c.8.7 1.5 1.6 2.3 2.4' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M16.8 16.1c.7.8 1.6 1.5 2.4 2.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M2.2 12.1c1.2-.1 2.4.1 3.6-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M18.1 12.2c1.3-.1 2.5.1 3.8-.1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M5.2 18.9c.7-.8 1.6-1.5 2.4-2.3' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
+    <path d='M16.9 7.1c.8-.7 1.5-1.6 2.3-2.4' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
 const MoonIcon = () => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path
-      d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
+    <path d='M20.8 13.2c-.3 2.1-1.4 4-3 5.3-1.7 1.3-3.8 2-5.9 1.8-2.2-.2-4.2-1.2-5.6-2.8-1.5-1.6-2.3-3.7-2.1-5.9.2-2.1 1.2-4.1 2.8-5.5 1.5-1.4 3.5-2.2 5.6-2.1-.8 1.3-1.2 2.8-1.1 4.3.1 1.6.7 3.1 1.8 4.3 1.1 1.2 2.5 1.9 4.1 2.1 1.5.2 3-.1 4.4-.5' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
   </svg>
 );
 
@@ -148,11 +153,17 @@ const TopBar = () => {
     clueSolvedTime,
     setTriggerOnboarding,
     timerPaused,
+    achievements: userAchievements = { unlocked: {} },
+    openStatsWithTab,
+    setOpenStatsWithTab,
   } = useContext(UserContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
+  const [statsTab, setStatsTab] = useState('stats'); // 'stats' or 'achievements'
   const [showCurrentStatsTooltip, setShowCurrentStatsTooltip] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState(null);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
 
@@ -199,6 +210,47 @@ const TopBar = () => {
     document.addEventListener('click', handleClickOutside, true);
     return () => document.removeEventListener('click', handleClickOutside, true);
   }, [showCurrentStatsTooltip]);
+
+  // Listen for external trigger to open stats modal
+  useEffect(() => {
+    if (openStatsWithTab) {
+      setStatsTab(openStatsWithTab);
+      setStatsOpen(true);
+      setOpenStatsWithTab(null); // Reset the trigger
+    }
+  }, [openStatsWithTab, setOpenStatsWithTab]);
+
+  // Close achievement tooltip when clicking outside or scrolling
+  useEffect(() => {
+    if (!selectedAchievement || !statsOpen) return;
+
+    const handleClick = (e) => {
+      // Check if click is inside an achievement badge or tooltip
+      if (!e.target.closest('.achievement-badge') && !e.target.closest('.achievement-tooltip-portal')) {
+        setSelectedAchievement(null);
+        setTooltipPosition(null);
+      }
+    };
+
+    const handleScroll = () => {
+      setSelectedAchievement(null);
+      setTooltipPosition(null);
+    };
+
+    document.addEventListener('click', handleClick);
+    // Listen for scroll on the achievements tab
+    const achievementsTab = document.querySelector('.achievements-tab');
+    if (achievementsTab) {
+      achievementsTab.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+      if (achievementsTab) {
+        achievementsTab.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [selectedAchievement, statsOpen]);
 
   const clickTitle = () => {
     setReturnLearn(false);
@@ -250,6 +302,31 @@ const TopBar = () => {
           ).completedAt
         )
       : null;
+
+  // Calculate last 7 days activity for the calendar
+  const getLast7DaysActivity = () => {
+    const today = stripTime(new Date());
+    const days = [];
+
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+
+      const solved = completedClues.some(clue => {
+        if (!clue.completedAt) return false;
+        return isSameDay(new Date(clue.completedAt), date);
+      });
+
+      days.push({
+        date,
+        solved,
+        dayLabel: date.toLocaleDateString('en-US', { weekday: 'narrow' }),
+      });
+    }
+    return days;
+  };
+
+  const last7Days = getLast7DaysActivity();
 
   return (
     <>
@@ -490,139 +567,294 @@ const TopBar = () => {
           </a>
         </div>
       </Modal>
-      <Modal id='modal-stats' open={statsOpen} onClose={() => setStatsOpen(false)}>
-        {totalSolved === 0 ? (
-          <div className='mt-4 text-center py-6'>
-            <p className='text-neutral-500 dark:text-neutral-400 mb-2'>No stats yet</p>
-            <p className='text-neutral-700 dark:text-neutral-200'>
-              Solve your first clue to start tracking your progress!
-            </p>
-          </div>
-        ) : (
+      <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); setTooltipPosition(null); }}>
+        {/* Tab switcher */}
+        <div className='flex gap-1 p-1 theme-picker-bg rounded-lg mb-4 mt-4'>
+          <button
+            className={`flex-1 py-2 px-3 text-sm font-normal rounded-md transition-colors ${
+              statsTab === 'stats'
+                ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
+                : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
+            }`}
+            onClick={() => { setStatsTab('stats'); setSelectedAchievement(null); setTooltipPosition(null); }}
+          >
+            Stats
+          </button>
+          <button
+            className={`flex-1 py-2 px-3 text-sm font-normal rounded-md transition-colors ${
+              statsTab === 'achievements'
+                ? 'bg-white dark:bg-neutral-600 text-neutral-900 dark:text-white shadow-sm'
+                : 'text-neutral-600 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white'
+            }`}
+            onClick={() => { setStatsTab('achievements'); setSelectedAchievement(null); setTooltipPosition(null); }}
+          >
+            Achievements
+          </button>
+        </div>
+
+        {/* Tab content container - fixed height to prevent resize on tab switch */}
+        <div className='stats-modal-content'>
+        {/* Stats tab content */}
+        {statsTab === 'stats' && (
           <>
-            <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 mt-4'>
-              Streaks
-            </h3>
-            <div className='grid grid-cols-2 gap-4 mb-4'>
-              <div className='text-center'>
-                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>{streak}</div>
-                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Current</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                  {longestStreak}
-                </div>
-                <div className='text-sm text-neutral-500 dark:text-neutral-400'>Longest</div>
-              </div>
-            </div>
-
-            <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-              <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                Performance
-              </h3>
-              <div className='grid grid-cols-2 gap-4'>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {totalSolved}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Solved</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {perfectSolves}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Perfect solves</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {avgGuesses}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average guesses</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                    {avgHints}
-                  </div>
-                  <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average hints</div>
-                </div>
-                {bestTimeClue && (
-                  <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                      {formatTime(bestTime)}
-                    </div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>
-                      Best time{' '}
-                      <Link
-                        to={`/clues/${bestTimeClue.clid}`}
-                        className='text-neutral-600 dark:text-neutral-300 hover:underline'
-                        onClick={() => setStatsOpen(false)}
-                      >
-                        (#{bestTimeClue.clid})
-                      </Link>
-                    </div>
-                  </div>
-                )}
-                {avgSolveTime != null && (
-                  <div className='text-center'>
-                    <div className='text-3xl font-bold text-[#666] dark:text-neutral-100'>
-                      {formatTime(avgSolveTime)}
-                    </div>
-                    <div className='text-sm text-neutral-500 dark:text-neutral-400'>Average time</div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {cluesWithDifficulty.length > 0 && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4 mb-4'>
-                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
-                  By Difficulty
-                </h3>
-                <div className='grid grid-cols-4 gap-2'>
-                  {difficultyBreakdown.map((count, index) => {
-                    const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
-                    return (
-                      <div key={index} className='flex flex-col items-center'>
-                        <div className='text-2xl font-bold text-[#666] dark:text-neutral-100'>
-                          {count}
-                        </div>
-                        <div
-                          className={`difficulty-grid difficulty-${index + 1}`}
-                          aria-hidden='true'
-                        >
-                          {[0, 1, 2, 3].map((i) => (
-                            <div
-                              key={i}
-                              className={`difficulty-square ${i < index + 1 ? 'filled' : ''}`}
-                            />
-                          ))}
-                        </div>
-                        <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
-                          {difficultyNames[index]}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {firstSolveDate && (
-              <div className='border-t border-neutral-200 dark:border-neutral-600 pt-4'>
-                <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2'>
-                  Playing Since
-                </h3>
-                <p className='text-sm text-[#666] dark:text-neutral-100'>
-                  {firstSolveDate.toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
+            {totalSolved === 0 ? (
+              <div className='text-center py-6'>
+                <p className='text-neutral-500 dark:text-neutral-400 mb-2'>No stats yet</p>
+                <p className='text-neutral-700 dark:text-neutral-200'>
+                  Solve your first clue to start tracking your progress!
                 </p>
               </div>
+            ) : (
+              <>
+                {/* Hero Cards */}
+                <div className='stats-hero-cards'>
+                  <div className='hero-card hero-card--streak'>
+                    <div className='hero-card-icon'>
+                      <img src={CalendarIcon} alt='' />
+                    </div>
+                    <div className='hero-card-value'>{streak}</div>
+                    <div className='hero-card-label'>day streak</div>
+                    <div className='hero-card-sub'>Best: {longestStreak}</div>
+                  </div>
+                  <div className='hero-card hero-card--solved'>
+                    <div className='hero-card-icon'>
+                      <img src={ClueIcon} alt='' />
+                    </div>
+                    <div className='hero-card-value'>{totalSolved}</div>
+                    <div className='hero-card-label'>clues solved</div>
+                    <div className='hero-card-sub'>{perfectSolves} perfect</div>
+                  </div>
+                </div>
+
+                {/* 7-Day Activity Calendar */}
+                <div className='stats-calendar'>
+                  <h3 className='stats-section-title'>Daily Clues - Last 7 Days</h3>
+                  <div className='calendar-row'>
+                    {last7Days.map((day, index) => (
+                      <div key={index} className='calendar-day'>
+                        <div className={`calendar-dot ${day.solved ? 'filled' : ''}`} />
+                        <div className='calendar-label'>{day.dayLabel}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Time Stats */}
+                {(bestTimeClue || avgSolveTime != null) && (
+                  <div className='stats-time-section'>
+                    <h3 className='stats-section-title'>Time</h3>
+                    <div className='stats-time-grid'>
+                      {bestTimeClue && (
+                        <div className='stats-time-item'>
+                          <div className='stats-time-value'>
+                            {bestTime < 60 ? <>{bestTime}<span className='stats-time-unit'>s</span></> : formatTime(bestTime)}
+                          </div>
+                          <div className='stats-time-label'>
+                            best{' '}
+                            <Link
+                              to={`/clues/${bestTimeClue.clid}`}
+                              className='stats-time-link'
+                              onClick={() => setStatsOpen(false)}
+                            >
+                              (#{bestTimeClue.clid})
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                      {avgSolveTime != null && (
+                        <div className='stats-time-item'>
+                          <div className='stats-time-value'>
+                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'>s</span></> : formatTime(avgSolveTime)}
+                          </div>
+                          <div className='stats-time-label'>average</div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Performance Stats */}
+                <div className='stats-performance-section'>
+                  <h3 className='stats-section-title'>Performance</h3>
+                  <div className='stats-performance-row'>
+                    <div className='stats-perf-item'>
+                      <span className='stats-perf-value'>{avgGuesses}</span>
+                      <span className='stats-perf-label'>avg guesses</span>
+                    </div>
+                    <div className='stats-perf-divider' />
+                    <div className='stats-perf-item'>
+                      <span className='stats-perf-value'>{avgHints}</span>
+                      <span className='stats-perf-label'>avg hints</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Difficulty Breakdown */}
+                {cluesWithDifficulty.length > 0 && (
+                  <div className='stats-difficulty-section'>
+                    <h3 className='stats-section-title'>By Difficulty</h3>
+                    <div className='grid grid-cols-4 gap-2'>
+                      {difficultyBreakdown.map((count, index) => {
+                        const difficultyNames = ['Easy', 'Moderate', 'Difficult', 'Expert'];
+                        return (
+                          <div key={index} className='flex flex-col items-center'>
+                            <div className='text-lg font-bold text-[#666] dark:text-neutral-100'>
+                              {count}
+                            </div>
+                            <div
+                              className={`difficulty-grid difficulty-${index + 1}`}
+                              aria-hidden='true'
+                            >
+                              {[0, 1, 2, 3].map((i) => (
+                                <div
+                                  key={i}
+                                  className={`difficulty-square ${i < index + 1 ? 'filled' : ''}`}
+                                />
+                              ))}
+                            </div>
+                            <div className='text-xs text-neutral-500 dark:text-neutral-400 mt-1'>
+                              {difficultyNames[index]}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Playing Since Footer */}
+                {firstSolveDate && (
+                  <div className='stats-footer'>
+                    Playing since {firstSolveDate.toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </div>
+                )}
+              </>
             )}
           </>
         )}
+
+        {/* Achievements tab content */}
+        {statsTab === 'achievements' && (
+          <div
+            className='achievements-tab'
+            onClick={(e) => {
+              // Close tooltip when clicking on blank space (not on a badge)
+              if (!e.target.closest('.achievement-badge')) {
+                setSelectedAchievement(null);
+                setTooltipPosition(null);
+              }
+            }}
+          >
+            {/* Achievement categories */}
+            {Object.values(ACHIEVEMENT_CATEGORIES).map((category) => {
+              const categoryAchievements = achievements.filter((a) => a.category === category);
+              const unlockedCount = categoryAchievements.filter(
+                (a) => userAchievements.unlocked?.[a.id]
+              ).length;
+
+              return (
+                <div key={category} className='mb-4'>
+                  <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-2 flex justify-between'>
+                    <span>{categoryDisplayNames[category]}</span>
+                    <span className='text-xs'>
+                      {unlockedCount}/{categoryAchievements.length}
+                    </span>
+                  </h3>
+                  <div className='achievement-grid grid grid-cols-5 gap-2'>
+                    {categoryAchievements.map((achievement) => {
+                      const isUnlocked = userAchievements.unlocked?.[achievement.id];
+                      const isSelected = selectedAchievement?.id === achievement.id;
+
+                      return (
+                        <button
+                          key={achievement.id}
+                          className={`achievement-badge ${isUnlocked ? 'unlocked' : 'locked'} ${isSelected ? 'selected' : ''}`}
+                          onClick={(e) => {
+                            if (isSelected) {
+                              setSelectedAchievement(null);
+                              setTooltipPosition(null);
+                            } else {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              setTooltipPosition({
+                                top: rect.bottom + 8,
+                                left: rect.left + rect.width / 2,
+                              });
+                              setSelectedAchievement(achievement);
+                            }
+                          }}
+                          aria-label={`${achievement.name}: ${achievement.description}`}
+                        >
+                          <AchievementIcon icon={achievement.icon} className='w-5 h-5' />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Achievement tooltip rendered via portal */}
+        {selectedAchievement && tooltipPosition && typeof document !== 'undefined' && (() => {
+          const padding = 16;
+          const tooltipWidth = 180;
+          const halfWidth = tooltipWidth / 2;
+          const screenWidth = window.innerWidth;
+
+          // Calculate clamped left position
+          let left = tooltipPosition.left;
+          let arrowOffset = 0;
+
+          if (left - halfWidth < padding) {
+            // Too close to left edge
+            arrowOffset = left - (padding + halfWidth);
+            left = padding + halfWidth;
+          } else if (left + halfWidth > screenWidth - padding) {
+            // Too close to right edge
+            arrowOffset = left - (screenWidth - padding - halfWidth);
+            left = screenWidth - padding - halfWidth;
+          }
+
+          return createPortal(
+            <div
+              className='achievement-tooltip-portal'
+              style={{
+                position: 'fixed',
+                top: tooltipPosition.top,
+                left: left,
+                transform: 'translateX(-50%)',
+                zIndex: 10000,
+                '--arrow-offset': `${arrowOffset}px`,
+              }}
+            >
+            <div className='achievement-tooltip-name'>{selectedAchievement.name}</div>
+            <div className='achievement-tooltip-desc'>{selectedAchievement.description}</div>
+            {(() => {
+              const progress = getAchievementProgress(selectedAchievement.id, {
+                completedClues,
+                streak,
+                longestStreak,
+              });
+              const isUnlocked = userAchievements.unlocked?.[selectedAchievement.id];
+              if (progress && !isUnlocked) {
+                return (
+                  <div className='achievement-tooltip-progress'>
+                    {progress.current} / {progress.target}
+                  </div>
+                );
+              }
+              return null;
+            })()}
+          </div>,
+          document.body
+        );
+        })()}
+        </div>
       </Modal>
     </>
   );

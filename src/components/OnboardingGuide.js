@@ -8,7 +8,7 @@ const GUIDE_STEPS = [
   {
     target: "clueTextRef",
     message:
-      'Each cryptic clue has TWO parts: a <strong>definition</strong> (always at the start or end) and <strong>wordplay</strong> that hints at the answer. Ignore the surface meaning - it\'s designed to mislead!',
+      'In a cryptic crossword, each clue is a little puzzle involving wordplay like anagrams, homophones, and hidden words. Every clue has TWO parts: a <strong>definition</strong> (at the start or end) and <strong>wordplay</strong> that hints at the answer.',
     padding: 8,
   },
   {

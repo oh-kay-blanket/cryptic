@@ -226,29 +226,53 @@ function parseCSVLine(line, delimiter) {
 	return result
 }
 
-// Main conversion function
-function convertCsvToJson() {
+// Simple CSV to JSON for flat files (no nested objects)
+function simpleCsvToJson(csvText) {
+	const lines = csvText.trim().split('\n')
+
+	// Detect delimiter (comma or tab)
+	const firstLine = lines[0]
+	const hasTabs = firstLine.includes('\t')
+	const delimiter = hasTabs ? '\t' : ','
+
+	const headers = lines[0].split(delimiter).map((h) => h.trim())
+	const result = []
+
+	for (let i = 1; i < lines.length; i++) {
+		const values = parseCSVLine(lines[i], delimiter)
+		const obj = {}
+		headers.forEach((header, idx) => {
+			const value = values[idx] || ''
+			if (value !== '') {
+				obj[header] = value
+			}
+		})
+		result.push(obj)
+	}
+	return result
+}
+
+// Convert clues.csv to clues.json
+function convertClues() {
 	const csvPath = path.join(__dirname, '../src/assets/data/clues.csv')
 	const jsonPath = path.join(__dirname, '../src/assets/data/clues.json')
 
 	try {
 		// Check if CSV file exists
 		if (!fs.existsSync(csvPath)) {
-			console.log('📝 CSV file not found. Creating empty clues.csv file...')
+			console.log('📝 clues.csv not found. Creating empty file...')
 			fs.writeFileSync(
 				csvPath,
 				'id,clid,clue.value,release,difficulty,ready,type,definition.0,hints.0.category,hints.0.value,hints.0.end.value.0,hints.0.explainer,solution.value,source.value\n'
 			)
-			console.log(
-				'✅ Created clues.csv with proper headers. Please paste your CSV data into this file and run the script again.'
-			)
+			console.log('✅ Created clues.csv with headers.')
 			return
 		}
 
 		// Read CSV file
 		const csvContent = fs.readFileSync(csvPath, 'utf8')
 
-		// Check if it has the expected headers (either comma or tab delimited)
+		// Check if it has the expected headers
 		const hasExpectedHeaders =
 			csvContent.trim().startsWith('id') &&
 			(csvContent.includes('clue.value') || csvContent.includes('clue\tvalue'))
@@ -258,24 +282,63 @@ function convertCsvToJson() {
 			const minifiedJson = JSON.stringify(jsonData)
 			fs.writeFileSync(jsonPath, minifiedJson)
 
-			console.log(`✅ Successfully converted CSV to JSON!`)
-			console.log(`📊 ${jsonData.length} clues processed`)
-			console.log(`📁 Output: ${jsonPath}`)
-			console.log(`📏 File size: ${(minifiedJson.length / 1024).toFixed(1)}KB`)
+			console.log(`✅ clues.csv → clues.json`)
+			console.log(`   ${jsonData.length} clues, ${(minifiedJson.length / 1024).toFixed(1)}KB`)
 
-			// Check if explainers are present
 			const explainerCount = jsonData.filter(
 				(clue) => clue.hints && clue.hints.some((hint) => hint.explainer)
 			).length
-			console.log(`💡 ${explainerCount} clues have explainers`)
+			console.log(`   ${explainerCount} clues have explainers`)
 		} else {
-			console.log('⚠️  CSV file is empty or missing expected headers.')
+			console.log('⚠️  clues.csv is empty or missing expected headers.')
 		}
 	} catch (error) {
-		console.error('❌ Error converting CSV to JSON:', error.message)
+		console.error('❌ Error converting clues.csv:', error.message)
 		process.exit(1)
 	}
 }
 
-// Run the conversion
-convertCsvToJson()
+// Convert creators.csv to creators.json
+function convertCreators() {
+	const csvPath = path.join(__dirname, '../src/assets/data/creators.csv')
+	const jsonPath = path.join(__dirname, '../src/assets/data/creators.json')
+
+	try {
+		// Check if CSV file exists
+		if (!fs.existsSync(csvPath)) {
+			console.log('📝 creators.csv not found. Skipping...')
+			return
+		}
+
+		// Read CSV file
+		const csvContent = fs.readFileSync(csvPath, 'utf8')
+
+		// Check if it has the expected headers
+		const hasExpectedHeaders = csvContent.trim().startsWith('nom')
+
+		if (hasExpectedHeaders) {
+			const jsonData = simpleCsvToJson(csvContent)
+			const minifiedJson = JSON.stringify(jsonData)
+			fs.writeFileSync(jsonPath, minifiedJson)
+
+			console.log(`✅ creators.csv → creators.json`)
+			console.log(`   ${jsonData.length} creators`)
+		} else {
+			console.log('⚠️  creators.csv is empty or missing expected headers.')
+		}
+	} catch (error) {
+		console.error('❌ Error converting creators.csv:', error.message)
+		process.exit(1)
+	}
+}
+
+// Run all conversions
+function convertAll() {
+	console.log('Converting CSV files to JSON...\n')
+	convertClues()
+	console.log('')
+	convertCreators()
+	console.log('\nDone!')
+}
+
+convertAll()

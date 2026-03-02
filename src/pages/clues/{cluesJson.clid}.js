@@ -13,7 +13,7 @@ import Tooltip from "../../components/Tooltip";
 import HintTooltip from "../../components/HintTooltip";
 import OnboardingGuide from "../../components/OnboardingGuide";
 import OnboardingPrompt from "../../components/OnboardingPrompt";
-import OnboardingFollowUp from "../../components/OnboardingFollowUp";
+import PostSolvePopup from "../../components/PostSolvePopup";
 import prepClue from "../../utils/clue/usePrepClue";
 import manageClue from "../../utils/clue/useManageClue";
 import handleHint from "../../utils/clue/handleHint";
@@ -21,37 +21,18 @@ import highlightLetters from "../../utils/clue/highlightLetters";
 import changeColor from "../../utils/clue/changeColor";
 import { isTodayClue } from "../../utils/dateHelpers";
 
-// Eye icon components using currentColor to match TopBar icons
+// Hand-drawn eye icon components
 const EyeOpenIcon = () => (
   <svg
     width="20"
     height="20"
-    viewBox="0 0 20 20"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-500 dark:text-neutral-200"
   >
-    <g clipPath="url(#clip0_eye_open)">
-      <path
-        d="M0.833984 10.0002C0.833984 10.0002 4.16732 3.3335 10.0007 3.3335C15.834 3.3335 19.1673 10.0002 19.1673 10.0002C19.1673 10.0002 15.834 16.6668 10.0007 16.6668C4.16732 16.6668 0.833984 10.0002 0.833984 10.0002Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M10.0007 12.5002C11.3814 12.5002 12.5007 11.3809 12.5007 10.0002C12.5007 8.61945 11.3814 7.50016 10.0007 7.50016C8.61994 7.50016 7.50065 8.61945 7.50065 10.0002C7.50065 11.3809 8.61994 12.5002 10.0007 12.5002Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_eye_open">
-        <rect width="20" height="20" fill="white" />
-      </clipPath>
-    </defs>
+    <path d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M12.1 8.2c1.1.1 2.1.6 2.8 1.4.7.8 1.1 1.8 1 2.9-.1 1-.5 2-1.3 2.7-.8.7-1.8 1.1-2.9 1-1-.1-2-.5-2.7-1.3-.7-.8-1-1.8-.9-2.9.1-1 .6-1.9 1.3-2.6.8-.7 1.7-1.1 2.7-1.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
@@ -64,27 +45,9 @@ const HintIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-600 dark:text-neutral-200"
   >
-    <path
-      d="M9 18h6"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M10 22h4"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M9.1 17.9c2-.1 3.9.1 5.9-.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M10.2 21.8c1.2.1 2.5-.1 3.7.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M15.2 14.1c.2-1 .7-1.8 1.5-2.6.9-.9 1.4-2.1 1.4-3.4 0-2.8-2.4-5.2-5.3-5.6-2.9-.4-5.6 1.4-6.4 4.1-.5 1.7-.1 3.5 1 4.9.8 1 1.3 1.8 1.5 2.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
@@ -92,30 +55,19 @@ const EyeClosedIcon = () => (
   <svg
     width="20"
     height="20"
-    viewBox="0 0 20 20"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-500 dark:text-neutral-200"
   >
-    <g clipPath="url(#clip0_eye_closed)">
-      <path
-        d="M14.9507 14.9502C13.5261 16.036 11.7916 16.6375 10.0007 16.6668C4.16732 16.6668 0.833984 10.0002 0.833984 10.0002C1.87056 8.06841 3.30826 6.38067 5.05065 5.05016M8.25065 3.5335C8.82426 3.39923 9.41154 3.33211 10.0007 3.3335C15.834 3.3335 19.1673 10.0002 19.1673 10.0002C18.6615 10.9465 18.0582 11.8374 17.3673 12.6585M11.7673 11.7668C11.5384 12.0125 11.2624 12.2095 10.9558 12.3461C10.6491 12.4827 10.3181 12.5562 9.98239 12.5621C9.64672 12.5681 9.31329 12.5063 9.00199 12.3806C8.6907 12.2548 8.40792 12.0677 8.17052 11.8303C7.93313 11.5929 7.74598 11.3101 7.62024 10.9988C7.4945 10.6875 7.43276 10.3541 7.43868 10.0184C7.4446 9.68274 7.51807 9.3517 7.65471 9.04504C7.79135 8.73837 7.98836 8.46237 8.23398 8.2335M0.833984 0.833496L19.1673 19.1668"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_eye_closed">
-        <rect width="20" height="20" fill="white" />
-      </clipPath>
-    </defs>
+    <path d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M3.1 3.2c5.9 5.8 11.7 11.8 17.6 17.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
 const CluePage = ({ data }) => {
   const dataClue = data.cluesJson;
+  const allCluesData = data.allCluesJson?.nodes || [];
   const [showDifficultyTooltip, setShowDifficultyTooltip] = useState(false);
   const [revealPopupPosition, setRevealPopupPosition] = useState(null);
   const [hintPosition, setHintPosition] = useState("right"); // "right" or "below"
@@ -137,8 +89,10 @@ const CluePage = ({ data }) => {
   // Onboarding state
   const [showOnboardingGuide, setShowOnboardingGuide] = useState(false);
   const [showOnboardingPrompt, setShowOnboardingPrompt] = useState(false);
-  const [showOnboardingFollowUp, setShowOnboardingFollowUp] = useState(false);
-  const [followUpWasSolved, setFollowUpWasSolved] = useState(false);
+
+  // Post-solve popup state
+  const [showPostSolvePopup, setShowPostSolvePopup] = useState(false);
+  const [popupAchievements, setPopupAchievements] = useState([]);
 
   // Timer pause tracking for onboarding
   const pausedTimeRef = useRef(0); // Accumulated paused time in ms
@@ -160,6 +114,13 @@ const CluePage = ({ data }) => {
       };
     }
   }, []);
+
+  // Set clues data for achievement type checking
+  useEffect(() => {
+    if (allCluesData.length > 0) {
+      setCluesDataRef(allCluesData);
+    }
+  }, [allCluesData, setCluesDataRef]);
 
   // Track when users start today's daily clue
   useEffect(() => {
@@ -204,11 +165,12 @@ const CluePage = ({ data }) => {
     setHasSeenOnboarding,
     hasSeenOnboardingPrompt,
     setHasSeenOnboardingPrompt,
-    hasCompletedFirstClue,
-    setHasCompletedFirstClue,
     triggerOnboarding,
     setTriggerOnboarding,
     setTimerPaused,
+    newlyUnlockedAchievements,
+    setCluesDataRef,
+    setOpenStatsWithTab,
   } = useContext(UserContext);
 
   // Track if we've already shown onboarding UI this session (to avoid re-prompting)
@@ -358,24 +320,26 @@ const CluePage = ({ data }) => {
   const isSolution = activeClue.hints[nextHint]?.reveals;
   const isCorrectAns = checkAns && input.join("").toLowerCase() === activeClue.solution.arr.join("").toLowerCase();
 
-  // Show follow-up prompt for first-time users after completion
+  // Show PostSolvePopup only when there are new achievements unlocked
   useEffect(() => {
-    // Only show for first-time users who haven't completed a clue
-    if (hasCompletedFirstClue) return;
+    // Don't show if returning to a completed clue or already showing
+    if (wasCompletedOnLoad.current || showPostSolvePopup) return;
 
-    // Check if the clue was just completed (either by guessing or revealing)
+    // Check if the clue was just completed
     const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
 
-    if (justCompleted && showMessage) {
-      // Delay showing the follow-up to let the celebration/message play
+    // Only show popup if there are achievements to display
+    if (justCompleted && showMessage && newlyUnlockedAchievements.length > 0) {
+      // Delay showing popup until celebration animation finishes (2800ms)
       const timer = setTimeout(() => {
-        setFollowUpWasSolved(isCorrectAns);
-        setShowOnboardingFollowUp(true);
-      }, 2000);
+        setPopupAchievements(newlyUnlockedAchievements);
+        setShowPostSolvePopup(true);
+      }, 2800);
 
       return () => clearTimeout(timer);
     }
-  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, hasCompletedFirstClue]);
+  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, showPostSolvePopup, newlyUnlockedAchievements]);
+
 
   // Calculate tooltip position based on hint refs
   const calculateTooltipPosition = useCallback((hintIndex) => {
@@ -1398,13 +1362,21 @@ const CluePage = ({ data }) => {
         />
       )}
 
-      {/* Post-completion follow-up for first-time users */}
-      {showOnboardingFollowUp && (
-        <OnboardingFollowUp
-          wasSolved={followUpWasSolved}
-          onDismiss={() => setShowOnboardingFollowUp(false)}
+      {/* Post-solve popup with achievements */}
+      {showPostSolvePopup && (
+        <PostSolvePopup
+          activeClue={activeClue}
+          stats={stats}
+          solveTime={clueSolvedTime}
+          unlockedAchievements={popupAchievements}
+          onDismiss={() => setShowPostSolvePopup(false)}
+          onViewAchievements={() => {
+            setShowPostSolvePopup(false);
+            setOpenStatsWithTab('achievements');
+          }}
         />
       )}
+
     </Layout>
   );
 };
@@ -1435,6 +1407,12 @@ export const query = graphql`
       }
       source {
         value
+      }
+    }
+    allCluesJson {
+      nodes {
+        clid
+        type
       }
     }
   }

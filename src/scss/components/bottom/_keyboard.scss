@@ -36,6 +36,13 @@
       border: none;
       // Disable tap highlight on touch devices
       -webkit-tap-highlight-color: transparent;
+      // Width calculated so 10 keys (row 1) fill the screen
+      // 10 keys * 2 margins * 0.125rem = 2.5rem + 0.5rem padding = 3rem
+      width: calc((100% - 2.5rem) / 10);
+      height: 52px;
+      border-radius: 8px;
+      margin: 0 0.125rem;
+      padding: 0;
 
       // Only apply hover styles on devices that support hover (not touch)
       @media (hover: hover) {
@@ -47,13 +54,6 @@
           background-color: rgb(115 115 115) !important; // neutral-500
         }
       }
-      // Width calculated so 10 keys (row 1) fill the screen
-      // 10 keys * 2 margins * 0.125rem = 2.5rem + 0.5rem padding = 3rem
-      width: calc((100% - 2.5rem) / 10);
-      height: 52px;
-      border-radius: 8px;
-      margin: 0 0.125rem;
-      padding: 0;
 
       @media (max-height: 600px) {
         height: 42px;

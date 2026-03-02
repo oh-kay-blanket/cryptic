@@ -1,0 +1,466 @@
+@use "../base/var" as *;
+
+// Achievement badges and grid styles
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  &.locked {
+    background-color: $lc-gray;
+    color: $lc-text--light;
+    opacity: 0.6;
+
+    .dark & {
+      background-color: #404040;
+      color: #737373;
+    }
+
+    svg {
+      opacity: 0.5;
+      stroke: currentColor;
+    }
+  }
+
+  &.unlocked {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #78350f;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+
+    .dark & {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+      color: #fff;
+    }
+  }
+
+  &.selected {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px var(--lc-highlight-bg);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: 2px solid var(--lc-highlight-bg);
+    outline-offset: 2px;
+  }
+}
+
+.achievement-tooltip-portal {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 180px;
+  text-align: center;
+  animation: tooltipFadeIn 0.15s ease;
+
+  .dark & {
+    background-color: #404040;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  // Arrow pointing up - offset when tooltip is clamped to edge
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: calc(50% + var(--arrow-offset, 0px));
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+  }
+}
+
+.dark .achievement-tooltip-portal::after {
+  border-bottom-color: #404040;
+}
+
+.achievement-tooltip-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #171717;
+  margin-bottom: 2px;
+
+  .dark & {
+    color: #f5f5f5;
+  }
+}
+
+.achievement-tooltip-desc {
+  font-size: 0.75rem;
+  color: #525252;
+  line-height: 1.3;
+
+  .dark & {
+    color: #d4d4d4;
+  }
+}
+
+.achievement-tooltip-progress {
+  font-size: 0.7rem;
+  color: #737373;
+  margin-top: 4px;
+
+  .dark & {
+    color: #a3a3a3;
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.achievement-badge-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  &.locked {
+    background-color: $lc-gray;
+    color: $lc-text--light;
+
+    .dark & {
+      background-color: #404040;
+      color: #737373;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  &.unlocked {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #78350f;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+
+    .dark & {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+      color: #fff;
+    }
+  }
+}
+
+.achievement-detail {
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.achievements-tab {
+  padding-right: 0.5rem;
+}
+
+// Post-solve popup achievement styles
+.post-solve-achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: rgba(251, 191, 36, 0.1);
+  border-radius: 0.5rem;
+  animation: achievementUnlock 0.5s ease;
+
+  .dark & {
+    background-color: rgba(251, 191, 36, 0.15);
+  }
+}
+
+@keyframes achievementUnlock {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.post-solve-achievement-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #78350f;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+  animation: badgeGlow 2s ease-in-out infinite;
+
+  .dark & {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}
+
+@keyframes badgeGlow {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    box-shadow: 0 2px 16px rgba(251, 191, 36, 0.7);
+  }
+}
+
+.post-solve-achievement-info {
+  flex: 1;
+
+  .achievement-name {
+    font-weight: 600;
+    color: var(--lc-text-primary);
+    font-size: 0.9rem;
+  }
+
+  .achievement-description {
+    font-size: 0.8rem;
+    color: var(--lc-text-muted);
+
+    .dark & {
+      color: #b3b3b3; // brighter than muted for better readability
+    }
+  }
+}
+
+// Achievements intro modal styles
+.achievements-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.achievements-intro-modal {
+  width: 100%;
+  max-width: 380px;
+  animation: slideUp 0.3s ease;
+}
+
+.achievements-intro-content {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.achievements-intro-header {
+  margin-bottom: 1.5rem;
+}
+
+.achievements-intro-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--lc-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.achievements-intro-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+
+  .dark & {
+    color: #b3b3b3;
+  }
+}
+
+.achievements-intro-earned {
+  background-color: rgba(251, 191, 36, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+
+  .dark & {
+    background-color: rgba(251, 191, 36, 0.15);
+  }
+}
+
+.achievements-intro-earned-text {
+  font-size: 0.9rem;
+  color: var(--lc-text-primary);
+  margin-bottom: 0.75rem;
+
+  strong {
+    color: #d97706;
+    font-weight: 600;
+
+    .dark & {
+      color: #fbbf24;
+    }
+  }
+}
+
+.achievements-intro-preview {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.achievement-preview-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #78350f;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+
+  .dark & {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}
+
+.achievement-preview-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  .dark & {
+    background-color: #525252;
+    color: #d1d5db;
+  }
+}
+
+.achievements-intro-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.achievements-intro-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+
+  &:focus {
+    outline: 2px solid var(--lc-highlight-bg);
+    outline-offset: 2px;
+  }
+}
+
+.achievements-intro-btn-primary {
+  background-color: #1f2937;
+  color: white;
+
+  &:hover {
+    background-color: #374151;
+  }
+
+  .dark & {
+    background-color: #e5e5e5;
+    color: #1f2937;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.achievements-intro-btn-secondary {
+  background-color: transparent;
+  color: #6b7280;
+
+  &:hover {
+    color: #374151;
+  }
+
+  .dark & {
+    color: #9ca3af;
+
+    &:hover {
+      color: #e5e5e5;
+    }
+  }
+}

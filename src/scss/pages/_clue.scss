@@ -132,17 +132,22 @@
       justify-content: center;
       flex-wrap: wrap;
       align-content: center;
-      font-family: $lc-font--serif;
+      font-family: $lc-font--alt;
+      font-weight: 400;
+      font-size: 1.25rem;
       text-transform: uppercase;
       pointer-events: none;
       user-select: none;
 
       .word {
         .letter {
+          display: inline-block;
+          min-width: 0.5em;
+          text-align: center;
           pointer-events: none;
           user-select: none;
           color: transparent;
-          line-height: 23px;
+          line-height: 25px;
           opacity: 0;
           transition:
             opacity $lc-transition--short ease 0s,
@@ -186,6 +191,7 @@
         flex-wrap: wrap;
         row-gap: 6px;
         font-family: $lc-font--alt;
+        font-weight: 400;
         z-index: 20;
         transition: opacity $lc-transition--short ease;
         text-align: center;
@@ -202,7 +208,9 @@
           pointer-events: none;
           user-select: none;
           text-align: center;
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           width: 30px;
           height: 30px;
           background-color: $lc-gray--v-light;
@@ -223,9 +231,14 @@
           .typeLetter,
           .solLetter {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            line-height: 1;
+            transform: translateY(1px);
+            color: var(--lc-text-handwritten);
           }
         }
 
@@ -393,6 +406,12 @@
           border: 1px solid #777;
           border-radius: 1px;
           background-color: transparent;
+
+          // Hand-drawn feel: slight rotations for each square
+          &:nth-child(1) { transform: rotate(-2deg); border-radius: 1px 2px 1px 1px; }
+          &:nth-child(2) { transform: rotate(3deg); border-radius: 2px 1px 1px 2px; }
+          &:nth-child(3) { transform: rotate(2deg); border-radius: 1px 1px 2px 1px; }
+          &:nth-child(4) { transform: rotate(-3deg); border-radius: 2px 1px 1px 1px; }
 
           &.filled {
             background-color: #444;

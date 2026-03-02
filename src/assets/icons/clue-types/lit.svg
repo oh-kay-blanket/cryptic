@@ -1,5 +1,7 @@
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Exclamation mark - centered -->
-  <path d="M12 2 Q15 2 15 5 L13.5 13 Q13 15 12 15 Q11 15 10.5 13 L9 5 Q9 2 12 2 Z" fill="currentColor"/>
-  <circle cx="12" cy="19" r="2.5" fill="currentColor"/>
+  <!-- Hand-drawn exclamation mark for &lit -->
+  <!-- Wobbly exclamation body -->
+  <path d="M12.1 2.2c.8-.1 1.6.2 2.2.8.5.6.7 1.4.6 2.2-.3 2.1-.5 4.3-.9 6.4-.2 1-.5 2.1-1 2.9-.4.6-1.1.9-1.8.8-.7-.1-1.2-.6-1.4-1.2-.4-1.2-.6-2.5-.8-3.7-.3-1.8-.5-3.6-.7-5.4.1-.8.4-1.6 1-2.1.6-.5 1.4-.8 2.8-.7" fill="currentColor"/>
+  <!-- Wobbly dot -->
+  <path d="M12.2 16.8c.7-.1 1.4.2 1.9.7.5.5.7 1.2.5 1.9-.2.7-.7 1.2-1.3 1.5-.7.3-1.5.2-2.1-.2-.6-.4-1-1.1-.9-1.8.1-.8.5-1.4 1.1-1.7.3-.2.5-.3.8-.4" fill="currentColor"/>
 </svg>

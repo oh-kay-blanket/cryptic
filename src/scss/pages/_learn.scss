@@ -139,6 +139,8 @@
 					height: 24px;
 					padding-top: 2px;
 					border: .75px solid var(--solution-letter-border);
+					font-family: $lc-font--alt;
+					color: var(--lc-text-handwritten);
 					// border-right: none;
 
 					&:last-child {
