@@ -528,7 +528,7 @@ const Clues = ({ data, location }) => {
               className={`filter-btn flex items-center gap-1 px-2 py-1.5 rounded border transition-colors ${
                 hasActiveFilters
                   ? "bg-[#eae4ff] dark:bg-[#4A3F6B] border-[#b9ace2] dark:border-[#68589E] text-[#68589E] dark:text-[#9B8FE8]"
-                  : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                  : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700"
             }`}
             >
               <FilterIcon />
