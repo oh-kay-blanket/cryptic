@@ -569,7 +569,7 @@ const TopBar = () => {
       </Modal>
       <Modal id='modal-stats' open={statsOpen} onClose={() => { setStatsOpen(false); setSelectedAchievement(null); setTooltipPosition(null); }}>
         {/* Tab switcher */}
-        <div className='flex gap-1 p-1 theme-picker-bg rounded-lg mb-4 mt-4'>
+        <div className='flex w-full gap-1 p-1 theme-picker-bg rounded-lg mb-4 mt-4'>
           <button
             className={`flex-1 py-2 px-3 text-sm font-normal rounded-md transition-colors ${
               statsTab === 'stats'
@@ -608,14 +608,6 @@ const TopBar = () => {
               <>
                 {/* Hero Cards */}
                 <div className='stats-hero-cards'>
-                  <div className='hero-card hero-card--streak'>
-                    <div className='hero-card-icon'>
-                      <img src={CalendarIcon} alt='' />
-                    </div>
-                    <div className='hero-card-value'>{streak}</div>
-                    <div className='hero-card-label'>day streak</div>
-                    <div className='hero-card-sub'>Best: {longestStreak}</div>
-                  </div>
                   <div className='hero-card hero-card--solved'>
                     <div className='hero-card-icon'>
                       <img src={ClueIcon} alt='' />
@@ -623,6 +615,14 @@ const TopBar = () => {
                     <div className='hero-card-value'>{totalSolved}</div>
                     <div className='hero-card-label'>clues solved</div>
                     <div className='hero-card-sub'>{perfectSolves} perfect</div>
+                  </div>
+                  <div className='hero-card hero-card--streak'>
+                    <div className='hero-card-icon'>
+                      <img src={CalendarIcon} alt='' />
+                    </div>
+                    <div className='hero-card-value'>{streak}</div>
+                    <div className='hero-card-label'>day streak</div>
+                    <div className='hero-card-sub'>Best: {longestStreak}</div>
                   </div>
                 </div>
 

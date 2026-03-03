@@ -4,66 +4,14 @@
  */
 
 export const ACHIEVEMENT_CATEGORIES = {
-  STREAK: 'streak',
   VOLUME: 'volume',
+  STREAK: 'streak',
   SKILL: 'skill',
   TYPE: 'type',
 };
 
 // Achievement definitions
 export const achievements = [
-  // STREAK ACHIEVEMENTS
-  {
-    id: 'streak-2',
-    category: ACHIEVEMENT_CATEGORIES.STREAK,
-    name: 'Getting Started',
-    description: '2 day streak',
-    icon: 'calendar',
-    tier: 1,
-    check: ({ streak }) => streak >= 2,
-    retroactiveCheck: ({ longestStreak }) => longestStreak >= 2,
-  },
-  {
-    id: 'streak-7',
-    category: ACHIEVEMENT_CATEGORIES.STREAK,
-    name: 'Weekly Warrior',
-    description: '7 day streak',
-    icon: 'calendar',
-    tier: 2,
-    check: ({ streak }) => streak >= 7,
-    retroactiveCheck: ({ longestStreak }) => longestStreak >= 7,
-  },
-  {
-    id: 'streak-30',
-    category: ACHIEVEMENT_CATEGORIES.STREAK,
-    name: 'Monthly Master',
-    description: '30 day streak',
-    icon: 'calendar',
-    tier: 3,
-    check: ({ streak }) => streak >= 30,
-    retroactiveCheck: ({ longestStreak }) => longestStreak >= 30,
-  },
-  {
-    id: 'streak-100',
-    category: ACHIEVEMENT_CATEGORIES.STREAK,
-    name: 'Century Club',
-    description: '100 day streak',
-    icon: 'calendar',
-    tier: 4,
-    check: ({ streak }) => streak >= 100,
-    retroactiveCheck: ({ longestStreak }) => longestStreak >= 100,
-  },
-  {
-    id: 'streak-365',
-    category: ACHIEVEMENT_CATEGORIES.STREAK,
-    name: 'Year of Cryptics',
-    description: '365 day streak',
-    icon: 'calendar',
-    tier: 5,
-    check: ({ streak }) => streak >= 365,
-    retroactiveCheck: ({ longestStreak }) => longestStreak >= 365,
-  },
-
   // VOLUME ACHIEVEMENTS
   {
     id: 'volume-1',
@@ -114,6 +62,58 @@ export const achievements = [
     tier: 5,
     check: ({ totalSolved }) => totalSolved >= 500,
     retroactiveCheck: ({ completedClues }) => completedClues.length >= 500,
+  },
+
+  // STREAK ACHIEVEMENTS
+  {
+    id: 'streak-2',
+    category: ACHIEVEMENT_CATEGORIES.STREAK,
+    name: 'Getting Started',
+    description: '2 day streak',
+    icon: 'calendar',
+    tier: 1,
+    check: ({ streak }) => streak >= 2,
+    retroactiveCheck: ({ longestStreak }) => longestStreak >= 2,
+  },
+  {
+    id: 'streak-7',
+    category: ACHIEVEMENT_CATEGORIES.STREAK,
+    name: 'Weekly Warrior',
+    description: '7 day streak',
+    icon: 'calendar',
+    tier: 2,
+    check: ({ streak }) => streak >= 7,
+    retroactiveCheck: ({ longestStreak }) => longestStreak >= 7,
+  },
+  {
+    id: 'streak-30',
+    category: ACHIEVEMENT_CATEGORIES.STREAK,
+    name: 'Monthly Master',
+    description: '30 day streak',
+    icon: 'calendar',
+    tier: 3,
+    check: ({ streak }) => streak >= 30,
+    retroactiveCheck: ({ longestStreak }) => longestStreak >= 30,
+  },
+  {
+    id: 'streak-100',
+    category: ACHIEVEMENT_CATEGORIES.STREAK,
+    name: 'Century Club',
+    description: '100 day streak',
+    icon: 'calendar',
+    tier: 4,
+    check: ({ streak }) => streak >= 100,
+    retroactiveCheck: ({ longestStreak }) => longestStreak >= 100,
+  },
+  {
+    id: 'streak-365',
+    category: ACHIEVEMENT_CATEGORIES.STREAK,
+    name: 'Year of Cryptics',
+    description: '365 day streak',
+    icon: 'calendar',
+    tier: 5,
+    check: ({ streak }) => streak >= 365,
+    retroactiveCheck: ({ longestStreak }) => longestStreak >= 365,
   },
 
   // SKILL ACHIEVEMENTS

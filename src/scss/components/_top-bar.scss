@@ -240,6 +240,8 @@ html.dark .theme-picker-bg {
   min-height: 300px;
   max-height: 500px;
   overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100%;
 
   // Fixed width on desktop to prevent resize when switching tabs
   @media (min-width: 601px) {
@@ -256,6 +258,7 @@ html.dark .theme-picker-bg {
   width: 17px;
   height: 17px;
   margin-top: 4px;
+  max-width: 100%;
 
   .difficulty-square {
     width: 7px;
@@ -299,6 +302,7 @@ html.dark .modal-content .difficulty-grid {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 .hero-card {
@@ -308,6 +312,7 @@ html.dark .modal-content .difficulty-grid {
   padding: 1rem 0.75rem;
   border-radius: 12px;
   text-align: center;
+  min-width: 0; // Allow shrinking
 
   .hero-card-icon {
     width: 24px;
@@ -382,6 +387,7 @@ html.dark .stats-section-title {
   border-top: 1px solid #e5e5e5;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 html.dark .stats-calendar {
@@ -391,7 +397,8 @@ html.dark .stats-calendar {
 .calendar-row {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.25rem; // Reduced gap to prevent overflow
+  width: 100%;
 }
 
 .calendar-day {
@@ -399,6 +406,7 @@ html.dark .stats-calendar {
   flex-direction: column;
   align-items: center;
   flex: 1;
+  min-width: 0;
 }
 
 .calendar-dot {
@@ -440,6 +448,7 @@ html.dark .calendar-label {
   border-top: 1px solid #e5e5e5;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 html.dark .stats-time-section {
@@ -448,7 +457,8 @@ html.dark .stats-time-section {
 
 .stats-time-grid {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem; // Reduced gap
+  flex-wrap: wrap;
 }
 
 .stats-time-item {
@@ -498,6 +508,7 @@ html.dark .stats-time-link {
   border-top: 1px solid #e5e5e5;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 html.dark .stats-performance-section {
@@ -508,6 +519,7 @@ html.dark .stats-performance-section {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .stats-perf-item {
@@ -550,6 +562,7 @@ html.dark .stats-perf-divider {
   border-top: 1px solid #e5e5e5;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100%;
 }
 
 html.dark .stats-difficulty-section {
