@@ -220,49 +220,49 @@ export const UserProvider = ({ children }) => {
         setNewlyUnlockedAchievements(newAchievements);
       }
 
+      // GA event - only track daily clue completions (new completions only)
+      if (isToday && typeof window.gtag !== "undefined") {
+        // Calculate average solve time from clues that have solveTime
+        const cluesWithTime = completedClues.filter((c) => c.solveTime != null);
+        const avgSolveTime =
+          cluesWithTime.length > 0
+            ? Math.round(
+                cluesWithTime.reduce((sum, c) => sum + c.solveTime, 0) /
+                  cluesWithTime.length,
+              )
+            : null;
+
+        window.gtag("event", "completed_daily_clue", {
+          clid: activeClue.clid,
+          release: activeClue.release,
+          difficulty: activeClue.difficulty,
+          hints: hints,
+          guesses: guesses,
+          how: type,
+          dow: activeClue.dow,
+          streak: streak,
+          total_completed: knownUser && completedClues.length + 1,
+          repeat: !!repeat,
+          known_user: knownUser,
+          avg_guesses: (
+            completedClues.reduce((sum, item) => sum + item.guesses, 0) /
+            completedClues.length
+          ).toFixed(1),
+          avg_hints: (
+            completedClues.reduce((sum, item) => sum + item.hints, 0) /
+            completedClues.length
+          ).toFixed(1),
+          clue_complete_count: 1,
+          solve_time_seconds: solveTime,
+          avg_solve_time: avgSolveTime,
+        });
+      }
+
       // Return newly unlocked achievements so caller can use them
       return newAchievements;
     } else {
       console.log("clue locked, no update to stats");
       return [];
-    }
-
-    // GA event - only track daily clue completions
-    if (isToday && typeof window.gtag !== "undefined") {
-      // Calculate average solve time from clues that have solveTime
-      const cluesWithTime = completedClues.filter((c) => c.solveTime != null);
-      const avgSolveTime =
-        cluesWithTime.length > 0
-          ? Math.round(
-              cluesWithTime.reduce((sum, c) => sum + c.solveTime, 0) /
-                cluesWithTime.length,
-            )
-          : null;
-
-      window.gtag("event", "completed_daily_clue", {
-        clid: activeClue.clid,
-        release: activeClue.release,
-        difficulty: activeClue.difficulty,
-        hints: hints,
-        guesses: guesses,
-        how: type,
-        dow: activeClue.dow,
-        streak: streak,
-        total_completed: knownUser && completedClues.length + 1,
-        repeat: !!repeat,
-        known_user: knownUser,
-        avg_guesses: (
-          completedClues.reduce((sum, item) => sum + item.guesses, 0) /
-          completedClues.length
-        ).toFixed(1),
-        avg_hints: (
-          completedClues.reduce((sum, item) => sum + item.hints, 0) /
-          completedClues.length
-        ).toFixed(1),
-        clue_complete_count: 1,
-        solve_time_seconds: solveTime,
-        avg_solve_time: avgSolveTime,
-      });
     }
   };
 
