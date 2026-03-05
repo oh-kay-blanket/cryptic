@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-// Main colors
-$lc-primary: #EF9E6C;
-$lc-primary--light: #FFCBAB;
-$lc-primary--v-light: #FFEEE3;
-$lc-primary--dark: #C94F03;
+// Main colors - aligned with logo (#e88a52 orange, #a798c9 purple)
+$lc-primary: #e88a52;
+$lc-primary--light: #f5b896;
+$lc-primary--v-light: #fde8dc;
+$lc-primary--dark: #a85525; // darker for WCAG AA link contrast (5.1:1)
 
-$lc-secondary: #b9ace2;
-$lc-secondary--light: #E1D8FF;
-$lc-secondary--v-light: #eae4ff;
-$lc-secondary--dark: #68589E;
+$lc-secondary: #a798c9;
+$lc-secondary--light: #d4cce6;
+$lc-secondary--v-light: #ebe7f3;
+$lc-secondary--dark: #7a6aab;
 
 $lc-hint0: $lc-primary;
 $lc-hint0--dark: $lc-primary--dark;
@@ -42,10 +42,18 @@ $lc-font--alt: 'Gloria Hallelujah', 'Helvetica', 'Arial', sans;
 
 // CSS Custom Properties for dynamic colors (used by JavaScript utilities)
 :root {
-  // Light mode colors - newspaper feel
-  --lc-highlight-text: #7457D6;
-  --lc-highlight-bg: #E1D8FF;
-  --lc-active-bg: #FFCBAB;
+  // Light mode colors - aligned with logo palette
+  --lc-primary: #e88a52;
+  --lc-primary-light: #f5b896;
+  --lc-primary-dark: #a85525;
+  --lc-secondary: #a798c9;
+  --lc-secondary-light: #d4cce6;
+  --lc-secondary-v-light: #ebe7f3;
+  --lc-secondary-dark: #7a6aab;
+  --lc-highlight-text: #7a5fb8; // saturated purple for readability
+  --lc-highlight-bg: #d4cce6; // secondary light
+  --lc-active-bg: #f5b896; // primary light
+  --lc-active-bg-hover: #e8a882; // slightly darker for hover
   --lc-text-primary: #1a1a1a; // softer black for newspaper feel
   --lc-text-secondary: #1a1a1a;
   --lc-text-muted: #ccc;
@@ -57,10 +65,18 @@ $lc-font--alt: 'Gloria Hallelujah', 'Helvetica', 'Arial', sans;
 
 // Dark mode colors
 :root.dark {
-  --lc-highlight-text: #9B8FE8; // desaturated lighter purple for dark mode
-  --lc-highlight-bg: #4A3F6B; // desaturated darker purple background
-  --lc-active-bg: #78462D; // darker orange for dark mode
-  --lc-text-primary: #E5E5E5; // softer off-white text (instead of pure white)
+  --lc-primary: #e88a52;
+  --lc-primary-light: #f5b896;
+  --lc-primary-dark: #a85525;
+  --lc-secondary: #a798c9;
+  --lc-secondary-light: #d4cce6;
+  --lc-secondary-v-light: #3d3654;
+  --lc-secondary-dark: #b8a8d9;
+  --lc-highlight-text: #b8a8d9; // lighter purple for dark backgrounds
+  --lc-highlight-bg: #4a4066; // muted purple background
+  --lc-active-bg: #905838; // warm orange for dark mode
+  --lc-active-bg-hover: #7a4a30; // slightly darker for hover
+  --lc-text-primary: #E5E5E5; // softer off-white text
   --lc-text-secondary: #D0D0D0; // slightly darker off-white
   --lc-text-muted: #888888; // true medium gray for muted text
   --lc-text-handwritten: #d0d0d0; // Gloria Hallelujah font color

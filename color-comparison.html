@@ -3,112 +3,361 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo Color Comparison</title>
+  <title>Color System Comparison</title>
   <style>
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
       padding: 20px;
+      background: #f5f5f5;
     }
     h1 { margin-top: 0; }
+    h2 { margin: 0 0 15px 0; font-size: 16px; color: #666; }
+    h3 { margin: 20px 0 10px 0; font-size: 14px; font-weight: 600; }
     .comparison {
       display: flex;
-      gap: 40px;
+      gap: 30px;
       margin-bottom: 40px;
     }
-    .mode {
+    .column {
       flex: 1;
-      padding: 30px;
+      background: white;
+      padding: 20px;
       border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .light { background: #FAF9F6; color: #1a1a1a; border: 1px solid #D4D2CD; }
-    .dark { background: #2a2a2a; color: #E5E5E5; }
+    .mode-section {
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .light-bg { background: #FAF9F6; border: 1px solid #D4D2CD; }
+    .dark-bg { background: #2a2a2a; color: #E5E5E5; }
     .row {
       display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
       align-items: center;
-      margin-bottom: 20px;
     }
     .swatch {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      margin-right: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      font-size: 12px;
+      font-size: 9px;
+      font-weight: 600;
       color: white;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      flex-shrink: 0;
     }
+    .swatch.light-text { color: #333; text-shadow: none; }
     .label {
-      font-size: 14px;
+      font-size: 12px;
+      flex: 1;
     }
-    .hex { font-family: monospace; font-weight: bold; }
-    h2 { margin-bottom: 20px; font-size: 18px; }
-    h3 { margin: 0 0 5px 0; font-size: 16px; }
-    .pair {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 25px;
+    .label .name { font-weight: 600; }
+    .label .hex { font-family: monospace; color: #888; font-size: 11px; }
+    .dark-bg .label .hex { color: #999; }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #999;
+      margin: 15px 0 8px 0;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
     }
-    .pair .swatch { margin-right: 0; }
+    .dark-bg .section-title { border-top-color: #444; }
+    .section-title:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .badge.old { background: #fee; color: #c00; }
+    .badge.new { background: #efe; color: #070; }
   </style>
 </head>
 <body>
-  <h1>Logo Color Comparison</h1>
+  <h1>Color System Comparison</h1>
 
   <div class="comparison">
-    <div class="mode light">
-      <h2>Light Mode</h2>
+    <!-- OLD COLORS -->
+    <div class="column">
+      <h2>Previous Colors <span class="badge old">OLD</span></h2>
 
-      <h3>Current</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #b9acd4;">#b9acd4</div>
-        <div class="swatch" style="background: #ef9e6c;">#ef9e6c</div>
+      <div class="mode-section light-bg">
+        <div class="section-title">Primary (Orange)</div>
+        <div class="row">
+          <div class="swatch" style="background: #EF9E6C;">#EF9E6C</div>
+          <div class="label"><div class="name">Primary</div><div class="hex">#EF9E6C</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #FFCBAB;">#FFCBAB</div>
+          <div class="label"><div class="name">Primary Light</div><div class="hex">#FFCBAB</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #FFEEE3;">#FFEEE3</div>
+          <div class="label"><div class="name">Primary V-Light</div><div class="hex">#FFEEE3</div></div>
+        </div>
+
+        <div class="section-title">Secondary (Purple)</div>
+        <div class="row">
+          <div class="swatch" style="background: #b9ace2;">#b9ace2</div>
+          <div class="label"><div class="name">Secondary</div><div class="hex">#b9ace2</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #E1D8FF;">#E1D8FF</div>
+          <div class="label"><div class="name">Secondary Light</div><div class="hex">#E1D8FF</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #eae4ff;">#eae4ff</div>
+          <div class="label"><div class="name">Secondary V-Light</div><div class="hex">#eae4ff</div></div>
+        </div>
+
+        <div class="section-title">UI Colors</div>
+        <div class="row">
+          <div class="swatch" style="background: #7457D6;">#7457D6</div>
+          <div class="label"><div class="name">Highlight Text</div><div class="hex">#7457D6</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #E1D8FF;">#E1D8FF</div>
+          <div class="label"><div class="name">Highlight BG</div><div class="hex">#E1D8FF</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #FFCBAB;">#FFCBAB</div>
+          <div class="label"><div class="name">Active BG</div><div class="hex">#FFCBAB</div></div>
+        </div>
       </div>
 
-      <h3>Option A (subtle tweak)</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #a798c9;">#a798c9</div>
-        <div class="swatch" style="background: #e88a52;">#e88a52</div>
-      </div>
-
-      <h3>Option B (bolder)</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #9585ba;">#9585ba</div>
-        <div class="swatch" style="background: #e07d42;">#e07d42</div>
+      <div class="mode-section dark-bg">
+        <div class="section-title">Dark Mode UI</div>
+        <div class="row">
+          <div class="swatch" style="background: #9B8FE8;">#9B8FE8</div>
+          <div class="label"><div class="name">Highlight Text</div><div class="hex">#9B8FE8</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch" style="background: #4A3F6B;">#4A3F6B</div>
+          <div class="label"><div class="name">Highlight BG</div><div class="hex">#4A3F6B</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch" style="background: #78462D;">#78462D</div>
+          <div class="label"><div class="name">Active BG</div><div class="hex">#78462D</div></div>
+        </div>
       </div>
     </div>
 
-    <div class="mode dark">
-      <h2>Dark Mode</h2>
+    <!-- NEW COLORS -->
+    <div class="column">
+      <h2>Updated Colors <span class="badge new">NEW</span></h2>
 
-      <h3>Current</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #b9acd4;">#b9acd4</div>
-        <div class="swatch" style="background: #ef9e6c;">#ef9e6c</div>
+      <div class="mode-section light-bg">
+        <div class="section-title">Primary (Orange)</div>
+        <div class="row">
+          <div class="swatch" style="background: #e88a52;">#e88a52</div>
+          <div class="label"><div class="name">Primary</div><div class="hex">#e88a52</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #f5b896;">#f5b896</div>
+          <div class="label"><div class="name">Primary Light</div><div class="hex">#f5b896</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #fde8dc;">#fde8dc</div>
+          <div class="label"><div class="name">Primary V-Light</div><div class="hex">#fde8dc</div></div>
+        </div>
+
+        <div class="section-title">Secondary (Purple)</div>
+        <div class="row">
+          <div class="swatch" style="background: #a798c9;">#a798c9</div>
+          <div class="label"><div class="name">Secondary</div><div class="hex">#a798c9</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #d4cce6;">#d4cce6</div>
+          <div class="label"><div class="name">Secondary Light</div><div class="hex">#d4cce6</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #ebe7f3;">#ebe7f3</div>
+          <div class="label"><div class="name">Secondary V-Light</div><div class="hex">#ebe7f3</div></div>
+        </div>
+
+        <div class="section-title">UI Colors</div>
+        <div class="row">
+          <div class="swatch" style="background: #7a5fb8;">#7a5fb8</div>
+          <div class="label"><div class="name">Highlight Text</div><div class="hex">#7a5fb8</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #d4cce6;">#d4cce6</div>
+          <div class="label"><div class="name">Highlight BG</div><div class="hex">#d4cce6</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch light-text" style="background: #f5b896;">#f5b896</div>
+          <div class="label"><div class="name">Active BG</div><div class="hex">#f5b896</div></div>
+        </div>
       </div>
 
-      <h3>Option A (subtle tweak)</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #a798c9;">#a798c9</div>
-        <div class="swatch" style="background: #e88a52;">#e88a52</div>
-      </div>
-
-      <h3>Option B (bolder)</h3>
-      <div class="pair">
-        <div class="swatch" style="background: #9585ba;">#9585ba</div>
-        <div class="swatch" style="background: #e07d42;">#e07d42</div>
+      <div class="mode-section dark-bg">
+        <div class="section-title">Dark Mode UI</div>
+        <div class="row">
+          <div class="swatch" style="background: #b8a8d9;">#b8a8d9</div>
+          <div class="label"><div class="name">Highlight Text</div><div class="hex">#b8a8d9</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch" style="background: #4a4066;">#4a4066</div>
+          <div class="label"><div class="name">Highlight BG</div><div class="hex">#4a4066</div></div>
+        </div>
+        <div class="row">
+          <div class="swatch" style="background: #905838;">#905838</div>
+          <div class="label"><div class="name">Active BG</div><div class="hex">#905838</div></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <p><strong>Summary:</strong></p>
+  <h2>Text Contrast Preview (addLetters style)</h2>
+  <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Purple highlight text on app backgrounds:</p>
+
+  <div class="comparison">
+    <div class="column">
+      <h2>Previous <span class="badge old">OLD</span></h2>
+      <div class="mode-section light-bg" style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 600; color: #7457D6; margin-bottom: 5px;">ANAGRAM</div>
+        <div style="font-size: 12px; color: #888;">Light mode: #7457D6 on #FAF9F6</div>
+      </div>
+      <div class="mode-section dark-bg" style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 600; color: #9B8FE8; margin-bottom: 5px;">ANAGRAM</div>
+        <div style="font-size: 12px; color: #888;">Dark mode: #9B8FE8 on #2a2a2a (5.0:1)</div>
+      </div>
+    </div>
+    <div class="column">
+      <h2>Updated <span class="badge new">NEW</span></h2>
+      <div class="mode-section light-bg" style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 600; color: #7a5fb8; margin-bottom: 5px;">ANAGRAM</div>
+        <div style="font-size: 12px; color: #888;">Light mode: #7a5fb8 on #FAF9F6</div>
+      </div>
+      <div class="mode-section dark-bg" style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 600; color: #b8a8d9; margin-bottom: 5px;">ANAGRAM</div>
+        <div style="font-size: 12px; color: #888;">Dark mode: #b8a8d9 on #2a2a2a (6.5:1)</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Orange Link Text on Dark (e.g., clue source)</h2>
+  <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Comparing amber (current) vs primary-derived options:</p>
+
+  <div class="comparison">
+    <div class="column">
+      <h2>Current Approach</h2>
+      <div class="mode-section dark-bg" style="text-align: center;">
+        <div style="font-size: 18px; color: #fbbf24; margin-bottom: 5px; text-decoration: underline;">— The Guardian</div>
+        <div style="font-size: 12px; color: #888;">#fbbf24 (amber-400) — 8.6:1 contrast</div>
+      </div>
+    </div>
+    <div class="column">
+      <h2>Primary-Derived Options</h2>
+      <div class="mode-section dark-bg">
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <div style="font-size: 18px; color: #e88a52; margin-bottom: 5px; text-decoration: underline;">— The Guardian</div>
+            <div style="font-size: 11px; color: #888;">#e88a52 (primary) — 5.5:1</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 18px; color: #f5a870; margin-bottom: 5px; text-decoration: underline;">— The Guardian</div>
+            <div style="font-size: 11px; color: #888;">#f5a870 (lighter) — 7.0:1</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 18px; color: #f5b896; margin-bottom: 5px; text-decoration: underline;">— The Guardian</div>
+            <div style="font-size: 11px; color: #888;">#f5b896 (primary-light) — 8.2:1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Dark Mode Active BG Options</h2>
+  <p style="color: #666; font-size: 14px; margin-bottom: 15px;">All options meet WCAG AA (4.5:1) with #E5E5E5 text:</p>
+
+  <div class="comparison">
+    <div class="column" style="flex: 0.5;">
+      <h2>Current</h2>
+      <div class="mode-section dark-bg" style="text-align: center; padding: 25px;">
+        <div style="display: inline-block; background: #6b4a32; padding: 12px 24px; border-radius: 6px; color: #E5E5E5; font-weight: 600;">Active Key</div>
+        <div style="font-size: 11px; color: #888; margin-top: 10px;">#6b4a32 — 6.4:1 (brown)</div>
+      </div>
+    </div>
+    <div class="column" style="flex: 1.5;">
+      <h2>Alternatives</h2>
+      <div class="mode-section dark-bg" style="padding: 25px;">
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <div style="display: inline-block; background: #8a5535; padding: 12px 24px; border-radius: 6px; color: #E5E5E5; font-weight: 600;">Active Key</div>
+            <div style="font-size: 11px; color: #888; margin-top: 8px;">#8a5535 — 4.9:1 (warmer orange)</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="display: inline-block; background: #905838; padding: 12px 24px; border-radius: 6px; color: #E5E5E5; font-weight: 600;">Active Key</div>
+            <div style="font-size: 11px; color: #888; margin-top: 8px;">#905838 — 4.6:1 (more orange)</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="display: inline-block; background: #7a5038; padding: 12px 24px; border-radius: 6px; color: #E5E5E5; font-weight: 600;">Active Key</div>
+            <div style="font-size: 11px; color: #888; margin-top: 8px;">#7a5038 — 5.5:1 (rich terracotta)</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="display: inline-block; background: #7d5540; padding: 12px 24px; border-radius: 6px; color: #E5E5E5; font-weight: 600;">Active Key</div>
+            <div style="font-size: 11px; color: #888; margin-top: 8px;">#7d5540 — 5.1:1 (subtle warmth)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Achievement Badges</h2>
+  <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Current amber "gold" vs primary orange options:</p>
+
+  <div class="comparison">
+    <div class="column">
+      <h2>Current (Amber/Gold)</h2>
+      <div style="display: flex; gap: 20px; justify-content: center; padding: 20px;">
+        <div class="mode-section light-bg" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 30px;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔥</div>
+        </div>
+        <div class="mode-section dark-bg" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 30px;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔥</div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 12px; color: #888;">Gradient: #fbbf24 → #f59e0b</p>
+    </div>
+    <div class="column">
+      <h2>Primary Orange Option</h2>
+      <div style="display: flex; gap: 20px; justify-content: center; padding: 20px;">
+        <div class="mode-section light-bg" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 30px;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #f5b896 0%, #e88a52 100%); box-shadow: 0 2px 8px rgba(232, 138, 82, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔥</div>
+        </div>
+        <div class="mode-section dark-bg" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 30px;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #f5b896 0%, #e88a52 100%); box-shadow: 0 2px 8px rgba(232, 138, 82, 0.4); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔥</div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 12px; color: #888;">Gradient: #f5b896 → #e88a52</p>
+    </div>
+  </div>
+
+  <h2>What Changed</h2>
   <ul>
-    <li><strong>Current:</strong> #b9acd4 + #ef9e6c — washed out on light backgrounds</li>
-    <li><strong>Option A:</strong> #a798c9 + #e88a52 — subtle darkening, more definition</li>
-    <li><strong>Option B:</strong> #9585ba + #e07d42 — bolder, more confident</li>
+    <li><strong>Primary orange:</strong> #EF9E6C → #e88a52 (more saturated, matches logo)</li>
+    <li><strong>Secondary purple:</strong> #b9ace2 → #a798c9 (slightly warmer, matches logo)</li>
+    <li><strong>All derivatives recalculated</strong> from new base colors</li>
+    <li><strong>Dark mode colors</strong> adjusted to complement new palette</li>
+  </ul>
+
+  <h2>Next Steps</h2>
+  <p>The SCSS variables are updated. You may still have hardcoded hex values in:</p>
+  <ul>
+    <li>JS files (changeColor.js, highlightLetters.js, etc.)</li>
+    <li>Inline styles in components</li>
+    <li>Other SCSS files using old hex values directly</li>
   </ul>
 </body>
 </html>

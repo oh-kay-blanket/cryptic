@@ -119,6 +119,32 @@ The hint system (`src/utils/clue/handleHint.js`) uses element refs and imperativ
 - Tailwind CSS configured via `gatsby-plugin-postcss`
 - Dark mode implemented via `.dark` class on `<html>` element
 
+## Design System
+
+**IMPORTANT**: Before making any style or color changes, read `DESIGN_SYSTEM.md` in the project root.
+
+### Quick Reference
+
+**Color Variables** (defined in `src/scss/base/_var.scss`):
+- Primary (orange): `$lc-primary`, `$lc-primary--light`, `$lc-primary--dark`
+- Secondary (purple): `$lc-secondary`, `$lc-secondary--light`, `$lc-secondary--dark`
+- Use CSS custom properties (e.g., `var(--lc-active-bg)`) for dark mode support in JS
+
+**Key Rules**:
+1. Never use hardcoded hex colors - always use SCSS variables or CSS custom properties
+2. All text must meet WCAG AA contrast (4.5:1 minimum)
+3. Use `$lc-text--light` (#666) for secondary text, NOT `--lc-text-muted` (#ccc)
+4. Achievement badges use amber/gold colors intentionally - don't change to primary orange
+5. Test all changes in both light and dark modes
+
+**Common Color Mappings**:
+| Element | Light Mode | Dark Mode |
+|---------|------------|-----------|
+| Orange backgrounds | `$lc-primary--light` | `var(--lc-active-bg)` |
+| Purple backgrounds | `$lc-secondary--light` | `var(--lc-highlight-bg)` |
+| Orange links | `$lc-primary--dark` | `$lc-primary--light` |
+| Purple links | `$lc-secondary--dark` | `var(--lc-highlight-text)` |
+
 ## Key Implementation Details
 
 ### Date Handling & Utilities
@@ -176,7 +202,7 @@ Google Analytics events tracked via `gatsby-plugin-google-gtag`:
 
 **Fixed Page Layout**: Daily clue pages and homepage add `fixed-page` class to `<body>` to prevent scrolling (removed on unmount).
 
-**Dark Mode Colors**: Use Tailwind with `dark:` prefix. Inline styles should use `!` to ensure specificity: `dark:!bg-[#4A3F6B]`
+**Dark Mode Colors**: Use CSS custom properties with Tailwind's `dark:` prefix. Example: `dark:!bg-[var(--lc-highlight-bg)]`. See `DESIGN_SYSTEM.md` for all color tokens.
 
 **Loading States**: Homepage implements context loading delay (100ms timeout) to prevent flicker when reading from localStorage.
 
