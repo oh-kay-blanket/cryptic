@@ -354,13 +354,9 @@ const Clues = ({ data, location }) => {
             "--hover-border": isDarkMode ? "#404040" : "#ddd",
             ...(completedClue
               ? {
-                  "--archive-bg": isDarkMode
-                    ? completedClue.how === "g"
-                      ? "rgb(120, 70, 45)"
-                      : "#4A3F6B"
-                    : completedClue.how === "g"
-                      ? "#FFCBAB"
-                      : "#eae4ff",
+                  "--archive-bg": completedClue.how === "g"
+                    ? "var(--lc-active-bg)"
+                    : "var(--lc-highlight-bg)",
                 }
               : {}),
           }}
@@ -420,9 +416,7 @@ const Clues = ({ data, location }) => {
               completedClue.how === "g"
                 ? {
                     // For completed clues: match the archive-release color
-                    backgroundColor: isDarkMode
-                      ? "rgb(120, 70, 45)"
-                      : "#FFCBAB",
+                    backgroundColor: "var(--lc-active-bg)",
                     color: isDarkMode ? "white" : "black",
                   }
                 : {}),
@@ -527,13 +521,13 @@ const Clues = ({ data, location }) => {
               onClick={() => setFilterModalOpen(true)}
               className={`filter-btn flex items-center gap-1 px-2 py-1.5 rounded border transition-colors ${
                 hasActiveFilters
-                  ? "bg-[#eae4ff] dark:bg-[#4A3F6B] border-[#b9ace2] dark:border-[#68589E] text-[#68589E] dark:text-[#9B8FE8]"
+                  ? "bg-[var(--lc-secondary-v-light)] border-[var(--lc-secondary)] text-[var(--lc-secondary-dark)]"
                   : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700"
             }`}
             >
               <FilterIcon />
               {activeFilterCount > 0 && (
-                <span className="filter-badge bg-[#68589E] text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
+                <span className="filter-badge bg-[var(--lc-secondary-dark)] text-white text-xs rounded-full px-1.5 py-0.5 min-w-[18px] text-center">
                   {activeFilterCount}
                 </span>
               )}
@@ -570,7 +564,7 @@ const Clues = ({ data, location }) => {
             </label>
             <Link
               to="/learn#learn-types"
-              className="flex items-center gap-1 text-xs text-[#68589E] dark:text-[#9B8FE8] underline"
+              className="flex items-center gap-1 text-xs text-[var(--lc-secondary-dark)] underline"
             >
               <BookIcon /> Learn types
             </Link>

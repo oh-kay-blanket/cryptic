@@ -41,7 +41,7 @@
 			margin-top: .5rem;
 			padding-top: .5rem;
 			border-top: 1px solid #d4d4d4;
-			color: #68589E;
+			color: $lc-secondary--dark;
 			font-size: .75rem;
 			text-decoration: none;
 
@@ -51,7 +51,7 @@
 
 			html.dark & {
 				border-top-color: #525252;
-				color: #9B8FE8;
+				color: var(--lc-highlight-text);
 			}
 		}
 	}

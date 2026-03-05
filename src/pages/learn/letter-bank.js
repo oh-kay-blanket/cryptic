@@ -94,7 +94,7 @@ const LetterBank = () => {
 		next: {
 			path: '/learn/reversal',
 			name: 'Reversal',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -111,7 +111,7 @@ const LetterBank = () => {
 		'over and over',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>{indicator.toLowerCase()}</li>
 	))
 
 	// Handle anchor link
@@ -146,7 +146,7 @@ const LetterBank = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Letter Bank <ClueTypeIcon type="letter-bank" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Letter Bank <ClueTypeIcon type="letter-bank" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Letters are rearranged like in an anagram, but the letters in the
 						source word(s) can be repeated—think of a "bank" of letters from
@@ -155,13 +155,13 @@ const LetterBank = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>Common letter bank indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Repeatedly retain host (11)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

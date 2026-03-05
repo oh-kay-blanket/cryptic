@@ -127,7 +127,7 @@ const Combination = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Combination <ClueTypeIcon type="combination" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Combination <ClueTypeIcon type="combination" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						It's common for a clue to employ more than one type of wordplay—a
 						single clue will often involve two, or sometimes even three (or
@@ -136,7 +136,7 @@ const Combination = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Example</h2>
+					<h2>Example</h2>
 					<div className='example-container'>
 						<p className='example'>
 							Republican rejecting one city in Nevada (4)

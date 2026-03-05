@@ -6,20 +6,33 @@
 	max-width: 1200px;
 	
 	h1 {
-		font-family: $lc-font--alt;
+		font-family: $lc-font--sans;
+		font-size: 2rem;
+		font-weight: 700;
 		color: $lc-text;
-		
-		// Dark mode
+
 		html.dark & {
 			color: #f5f5f5;
 		}
 	}
-	
+
+	p {
+		font-family: $lc-font--sans;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: $lc-text--light;
+
+		html.dark & {
+			color: #d4d4d4;
+		}
+	}
+
 	.resource-category {
 		h2 {
+			font-family: $lc-font--sans;
+			font-weight: 600;
 			color: $lc-text;
-			
-			// Dark mode
+
 			html.dark & {
 				color: #f5f5f5;
 			}
@@ -53,9 +66,10 @@
 	
 	.getting-started {
 		h2, h3 {
+			font-family: $lc-font--sans;
+			font-weight: 600;
 			color: $lc-text;
-			
-			// Dark mode
+
 			html.dark & {
 				color: #f5f5f5;
 			}
@@ -65,10 +79,10 @@
 			.step {
 				.step-number {
 					background-color: $lc-secondary--dark;
-					
+
 					// Dark mode
 					html.dark & {
-						background-color: #47387b;
+						background-color: var(--lc-highlight-bg);
 					}
 				}
 			}
@@ -77,9 +91,10 @@
 	
 	.contribute {
 		h2 {
+			font-family: $lc-font--sans;
+			font-weight: 600;
 			color: $lc-text;
-			
-			// Dark mode
+
 			html.dark & {
 				color: #f5f5f5;
 			}
@@ -87,17 +102,17 @@
 		
 		a {
 			background-color: $lc-secondary--dark;
-			
+
 			&:hover {
 				background-color: color.adjust($lc-secondary--dark, $lightness: -10%);
 			}
-			
+
 			// Dark mode
 			html.dark & {
-				background-color: #47387b;
-				
+				background-color: var(--lc-highlight-bg);
+
 				&:hover {
-					background-color: #3d2f65;
+					background-color: #3d3654;
 				}
 			}
 		}

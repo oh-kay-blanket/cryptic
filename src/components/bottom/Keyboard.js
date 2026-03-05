@@ -174,7 +174,7 @@ const Keyboard = ({ handleInput, onEnter, canCheckAnswer }) => {
 					onClick={canCheckAnswer ? onEnter : undefined}
 					id='enter-key'
 					className={canCheckAnswer
-						? 'bg-[#FFCBAB] dark:!bg-[rgb(120,70,45)] dark:!text-neutral-100'
+						? 'bg-[var(--lc-active-bg)] dark:!text-neutral-100'
 						: 'bg-neutral-200 dark:!bg-neutral-700 text-neutral-400 dark:!text-neutral-500 cursor-default'}
 					data-testid='keyboard-ENTER'
 				>

@@ -91,7 +91,7 @@ const Learn = () => {
             onClick={() => setIntroExpanded(!introExpanded)}
             aria-expanded={introExpanded}
           >
-            <h1 className="text-3xl font-bold my-4">
+            <h1>
               What are cryptic crosswords?
             </h1>
             <span className={`chevron ${introExpanded ? "expanded" : ""}`}>
@@ -155,7 +155,7 @@ const Learn = () => {
         </div>
 
         <div id="learn-types" className="learn-section">
-          <h2 className="text-2xl font-bold my-4">
+          <h2>
             Types of wordplay
           </h2>
           <ul className="learn-types no-dec">{types}</ul>

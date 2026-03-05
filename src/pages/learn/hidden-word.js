@@ -94,7 +94,7 @@ const HiddenWord = () => {
 		next: {
 			path: '/learn/homophone',
 			name: 'Homophone',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -117,7 +117,7 @@ const HiddenWord = () => {
 		'sheath',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>
+		<li className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>
 			{indicator.toLowerCase()}
 		</li>
 	))
@@ -154,20 +154,20 @@ const HiddenWord = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Hidden Word <ClueTypeIcon type="hidden-word" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Hidden Word <ClueTypeIcon type="hidden-word" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The answer is a string of letters embedded in the clue.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>Common hidden word indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Field in Far East (4)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

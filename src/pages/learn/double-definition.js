@@ -94,7 +94,7 @@ const DoubleDefinition = () => {
 		next: {
 			path: '/learn/hidden-word',
 			name: 'Hidden Word',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -134,14 +134,14 @@ const DoubleDefinition = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Double Definition <ClueTypeIcon type="double-definition" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Double Definition <ClueTypeIcon type="double-definition" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The clue can be split into two parts that each define the solution.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Tightens up verb forms (6)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

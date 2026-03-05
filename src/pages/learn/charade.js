@@ -94,7 +94,7 @@ const Charade = () => {
 		next: {
 			path: '/learn/container',
 			name: 'Container',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -134,7 +134,7 @@ const Charade = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Charade <ClueTypeIcon type="charade" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Charade <ClueTypeIcon type="charade" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						The solution is broken into parts that are clued separately and
 						arranged in order.
@@ -142,7 +142,7 @@ const Charade = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Come to AT&T objective (6)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

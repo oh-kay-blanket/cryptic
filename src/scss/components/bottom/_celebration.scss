@@ -121,7 +121,7 @@
 	}
 }
 
-// Dark mode adjustments
+// Dark mode adjustments - use lighter shades for visibility on dark backgrounds
 html.dark {
 	.celebration-particle {
 		&--primary {
@@ -129,7 +129,7 @@ html.dark {
 		}
 
 		&--secondary {
-			background: #c4b8f0;
+			background: $lc-secondary--light;
 		}
 	}
 }

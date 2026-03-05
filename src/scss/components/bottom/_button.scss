@@ -51,13 +51,13 @@
 
 		// Dark mode
 		html.dark & {
-			background-color: rgb(120, 70, 45); // desaturated orange from earlier work
-			border: 1px solid rgb(120, 70, 45);
+			background-color: var(--lc-active-bg);
+			border: 1px solid var(--lc-active-bg);
 
 			&:hover,
 			&:active {
-				background-color: rgb(110, 65, 42); // slightly darker for subtle hover
-				border: 1px solid rgb(110, 65, 42);
+				background-color: var(--lc-active-bg-hover);
+				border: 1px solid var(--lc-active-bg-hover);
 				filter: none; // remove brightness filter
 			}
 		}
@@ -69,13 +69,13 @@
 
 		// Dark mode
 		:global(.dark) & {
-			background-color: #4A3F6B; // desaturated purple from earlier work
-			border: 1px solid #4A3F6B;
+			background-color: var(--lc-highlight-bg);
+			border: 1px solid var(--lc-highlight-bg);
 
 			&:hover,
 			&:active {
-				background-color: #423859; // slightly darker for subtle hover
-				border: 1px solid #423859;
+				background-color: #3d3654; // slightly darker for subtle hover
+				border: 1px solid #3d3654;
 				filter: none; // remove brightness filter
 			}
 		}
@@ -172,8 +172,8 @@
 		}
 
 		&.primary {
-			background-color: #FFCBAB;
-			border-color: #FFCBAB;
+			background-color: $lc-primary--light;
+			border-color: $lc-primary--light;
 
 			&:hover,
 			&:active {

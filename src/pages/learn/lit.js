@@ -94,7 +94,7 @@ const Lit = () => {
 		next: {
 			path: '/learn/combination',
 			name: 'Combination',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -134,7 +134,7 @@ const Lit = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>& Lit. <ClueTypeIcon type="lit" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>& Lit. <ClueTypeIcon type="lit" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						& Lit. is short for “and literally so,” because the entire clue
 						functions as a definition.
@@ -142,7 +142,7 @@ const Lit = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>
 						& Lit. clues are always indicated by an exclamation mark (!) at the
 						end of the clue. The wordplay element can be any of the other clue
@@ -151,7 +151,7 @@ const Lit = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>I only appear manipulated! (6, 5)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

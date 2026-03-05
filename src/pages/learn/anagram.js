@@ -89,7 +89,7 @@ const Anagram = () => {
 		next: {
 			path: '/learn/charade',
 			name: 'Charade',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -116,7 +116,7 @@ const Anagram = () => {
 		'stirred',
 	]
 	const indicators = indicatorArr.map((indicator, index) => (
-		<li key={index} className='indicator dark:!bg-[#47387b] dark:!text-white'>
+		<li key={index} className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>
 			{indicator.toLowerCase()}
 		</li>
 	))
@@ -153,7 +153,7 @@ const Anagram = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Anagram <ClueTypeIcon type="anagram" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Anagram <ClueTypeIcon type="anagram" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Reorder the letters of a given word (or words) to make a new word
 						(or words).
@@ -161,7 +161,7 @@ const Anagram = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>
 						An indicator will tip you off to the presence of an anagram. Common
 						indicators include:
@@ -170,7 +170,7 @@ const Anagram = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>One unusual role in "The Matrix" (3)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

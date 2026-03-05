@@ -94,7 +94,7 @@ const Reversal = () => {
 		next: {
 			path: '/learn/spoonerism',
 			name: 'Spoonerism',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -114,7 +114,7 @@ const Reversal = () => {
 		'inverted',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>{indicator.toLowerCase()}</li>
 	))
 
 	// Handle anchor link
@@ -149,14 +149,14 @@ const Reversal = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Reversal <ClueTypeIcon type="reversal" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Reversal <ClueTypeIcon type="reversal" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Reverse the letters to make a new word or words.
 					</p>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>Common reversal indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 					<span style={{ fontSize: 0.8 + 'rem' }}>
@@ -166,7 +166,7 @@ const Reversal = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>
 							King with a golden touch is unhappy I'm returning (5)

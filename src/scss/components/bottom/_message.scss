@@ -75,7 +75,7 @@
 				color: $lc-text;
 
 				html.dark & {
-					background-color: rgb(120, 70, 45);
+					background-color: var(--lc-active-bg);
 					color: #f5f5f5;
 				}
 			}
@@ -85,7 +85,7 @@
 				color: $lc-text;
 
 				html.dark & {
-					background-color: #4A3F6B;
+					background-color: var(--lc-highlight-bg);
 					color: #f5f5f5;
 				}
 			}
@@ -124,7 +124,7 @@
 		display: block;
 		margin-top: 0.75rem;
 		font-size: 0.8rem;
-		color: #68589E;
+		color: $lc-secondary--dark;
 		text-decoration: none;
 
 		&:hover {
@@ -133,7 +133,7 @@
 
 		// Dark mode
 		html.dark & {
-			color: #9B8FE8;
+			color: var(--lc-highlight-text);
 		}
 	}
 }

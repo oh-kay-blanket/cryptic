@@ -12,9 +12,9 @@ const Button = ({ btnInfo }) => {
 
 		switch(style) {
 			case 'primary':
-				return 'dark:!bg-[rgb(120,70,45)] dark:!border-[rgb(120,70,45)] dark:hover:!bg-orange-600'
+				return 'dark:!bg-[var(--lc-active-bg)] dark:!border-[var(--lc-active-bg)] dark:hover:!bg-[var(--lc-active-bg-hover)]'
 			case 'alt':
-				return 'dark:!bg-[#4A3F6B] dark:!border-[#4A3F6B] dark:hover:!bg-purple-600'
+				return 'dark:!bg-[var(--lc-highlight-bg)] dark:!border-[var(--lc-highlight-bg)] dark:hover:!bg-[#3d3654]'
 			case 'secondary':
 				return 'dark:!border-neutral-300 dark:hover:!bg-neutral-700 dark:hover:!border-neutral-700'
 			case 'gray':

@@ -94,7 +94,7 @@ const Homophone = () => {
 		next: {
 			path: '/learn/initialism',
 			name: 'Initialism',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -104,7 +104,7 @@ const Homophone = () => {
 
 	const indicatorArr = ['sounds like', 'we hear', 'say', 'said', 'speak']
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>{indicator.toLowerCase()}</li>
 	))
 
 	// Handle anchor link
@@ -139,7 +139,7 @@ const Homophone = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Homophone <ClueTypeIcon type="homophone" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Homophone <ClueTypeIcon type="homophone" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Clued words and/or letter(s) sound like the solution when spoken
 						aloud.
@@ -147,13 +147,13 @@ const Homophone = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>Common homophone indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Group of lions was snoopy, we hear (5)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

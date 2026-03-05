@@ -276,10 +276,10 @@
 
   .achievement-description {
     font-size: 0.8rem;
-    color: var(--lc-text-muted);
+    color: $lc-text--light; // #666 - meets WCAG AA (5.7:1)
 
     .dark & {
-      color: #b3b3b3; // brighter than muted for better readability
+      color: #b3b3b3;
     }
   }
 }

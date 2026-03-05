@@ -109,11 +109,11 @@
         // Only apply hover styles on devices that support hover (not touch)
         @media (hover: hover) {
           &:hover:not(.cursor-default) {
-            background-color: #f5c1a1;
+            background-color: var(--lc-active-bg-hover);
           }
 
           html.dark &:hover:not(.cursor-default) {
-            background-color: rgb(110, 65, 42) !important;
+            background-color: var(--lc-active-bg-hover) !important;
           }
         }
       }

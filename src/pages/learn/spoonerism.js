@@ -94,7 +94,7 @@ const Spoonerism = () => {
 		next: {
 			path: '/learn/lit',
 			name: '& Lit.',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -134,7 +134,7 @@ const Spoonerism = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-3xl font-bold my-4 flex items-center gap-3'>Spoonerism <ClueTypeIcon type="spoonerism" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Spoonerism <ClueTypeIcon type="spoonerism" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Swap the sounds at beginnings of two words. Named for a British
 						Oxford don, Reverend William Archibald Spooner (1844–1930), who was
@@ -144,7 +144,7 @@ const Spoonerism = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Example</h2>
+					<h2>Example</h2>
 
 					<div className='example-container'>
 						<p className='example'>

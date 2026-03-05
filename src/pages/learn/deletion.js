@@ -94,7 +94,7 @@ const Deletion = () => {
 		next: {
 			path: '/learn/double-definition',
 			name: 'Double Def',
-			style: 'alt',
+			style: 'secondary',
 			img: ArrowRightIcon,
 			stack: true,
 		},
@@ -120,7 +120,7 @@ const Deletion = () => {
 		'a couple',
 	]
 	const indicators = indicatorArr.map((indicator) => (
-		<li className='indicator dark:!bg-[#47387b] dark:!text-white'>{indicator.toLowerCase()}</li>
+		<li className='indicator dark:!bg-[var(--lc-highlight-bg)] dark:!text-white'>{indicator.toLowerCase()}</li>
 	))
 
 	// Handle anchor link
@@ -155,7 +155,7 @@ const Deletion = () => {
 				{backButton}
 
 				<div className='learn-section'>
-					<h1 className='text-4xl font-bold my-4 flex items-center gap-3'>Deletion <ClueTypeIcon type="deletion" className="w-8 h-8" /></h1>
+					<h1 className='flex items-center gap-3'>Deletion <ClueTypeIcon type="deletion" className="w-8 h-8" /></h1>
 					<p className='my-2'>
 						Remove a letter, set of letters, or an entire word from the
 						beginning, middle, or end of a word.
@@ -163,13 +163,13 @@ const Deletion = () => {
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Indicators</h2>
+					<h2>Indicators</h2>
 					<p className='my-2'>Common deletion indicators include:</p>
 					<ul className='indicators'>{indicators}</ul>
 				</div>
 
 				<div className='learn-section'>
-					<h2 className='text-xl font-bold my-4'>Examples</h2>
+					<h2>Examples</h2>
 					<div className='example-container'>
 						<p className='example'>Different parent starts late (6)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>

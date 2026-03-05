@@ -1,9 +1,7 @@
 @use '../base/var' as *;
 
 .creators {
-	padding: 2rem 1rem;
-	max-width: 900px;
-	margin: 0 auto;
+	padding: 1rem; // Match .learn page
 
 	// Header section
 	.creators-header {
@@ -27,7 +25,6 @@
 			font-family: $lc-font--sans;
 			font-size: 1rem;
 			color: $lc-text--light;
-			max-width: 500px;
 
 			html.dark & {
 				color: #a3a3a3;
@@ -35,15 +32,11 @@
 		}
 	}
 
-	// Creators grid
+	// Creators grid - single column within .lc-container (700px max)
 	.creators-grid {
 		display: grid;
 		gap: 1.5rem;
 		margin-bottom: 3rem;
-
-		@media (min-width: 600px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
 	}
 
 	// Individual creator cards
@@ -71,7 +64,7 @@
 				border: 2px solid $lc-secondary--light;
 
 				html.dark & {
-					border-color: #47387b;
+					border-color: var(--lc-highlight-bg);
 				}
 			}
 		}
@@ -123,7 +116,7 @@
 				}
 
 				html.dark & {
-					color: #9B8FE8;
+					color: var(--lc-highlight-text);
 				}
 			}
 		}
@@ -135,11 +128,10 @@
 		border: 1px solid $lc-gray--dark;
 		border-radius: 0.5rem;
 		padding: 1.5rem;
-		max-width: 600px;
 
 		html.dark & {
 			background-color: #2d2640;
-			border-color: #47387b;
+			border-color: var(--lc-highlight-bg);
 		}
 
 		h2 {
@@ -193,10 +185,10 @@
 			}
 
 			html.dark & {
-				background-color: #47387b;
+				background-color: var(--lc-highlight-bg);
 
 				&:hover {
-					background-color: #5a4a94;
+					background-color: #5a4a7a;
 				}
 			}
 		}

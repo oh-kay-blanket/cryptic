@@ -130,13 +130,9 @@ const Clues = ({ data }) => {
               "--hover-border": isDarkMode ? "#404040" : "#ddd",
               ...(completedClue
                 ? {
-                    "--archive-bg": isDarkMode
-                      ? completedClue.how === "g"
-                        ? "rgb(120, 70, 45)"
-                        : "#4A3F6B"
-                      : completedClue.how === "g"
-                        ? "#FFCBAB"
-                        : "#eae4ff",
+                    "--archive-bg": completedClue.how === "g"
+                      ? "var(--lc-active-bg)"
+                      : "var(--lc-highlight-bg)",
                   }
                 : {}),
             }}
@@ -196,9 +192,7 @@ const Clues = ({ data }) => {
                 completedClue.how === "g"
                   ? {
                       // For completed clues: match the archive-release color
-                      backgroundColor: isDarkMode
-                        ? "rgb(120, 70, 45)"
-                        : "#FFCBAB",
+                      backgroundColor: "var(--lc-active-bg)",
                       color: isDarkMode ? "white" : "black",
                     }
                   : {}),

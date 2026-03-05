@@ -270,7 +270,7 @@
 
           // Dark mode
           :global(.dark) & {
-            color: #fbbf24; // amber-400 - good link color for dark mode
+            color: $lc-primary--light; // primary-light for better brand alignment
           }
         }
 
