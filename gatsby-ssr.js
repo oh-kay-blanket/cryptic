@@ -2,8 +2,6 @@ import React from "react";
 import { AuthProvider } from "./src/utils/AuthContext";
 import { UserProvider } from "./src/utils/UserContext";
 
-import "./src/scss/style.scss";
-
 export const wrapRootElement = ({ element }) => (
 	<AuthProvider>
 		<UserProvider>
@@ -11,9 +9,3 @@ export const wrapRootElement = ({ element }) => (
 		</UserProvider>
 	</AuthProvider>
 )
-
-// Disable Gatsby's automatic scroll restoration to prevent scroll jumps during navigation
-// Combined with body.fixed-page CSS, this ensures pages always start at top position
-export const shouldUpdateScroll = () => {
-	return false;
-}

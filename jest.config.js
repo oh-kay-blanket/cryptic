@@ -20,6 +20,16 @@ module.exports = {
 
     // Mock Gatsby module
     '^gatsby$': '<rootDir>/__mocks__/gatsby.js',
+
+    // Mock Supabase and related modules
+    '^../supabase$': '<rootDir>/__mocks__/supabaseMock.js',
+    '^./supabase$': '<rootDir>/__mocks__/supabaseMock.js',
+    '^../syncService$': '<rootDir>/__mocks__/syncServiceMock.js',
+    '^./syncService$': '<rootDir>/__mocks__/syncServiceMock.js',
+    '^../offlineQueue$': '<rootDir>/__mocks__/offlineQueueMock.js',
+    '^./offlineQueue$': '<rootDir>/__mocks__/offlineQueueMock.js',
+    '^../AuthContext$': '<rootDir>/__mocks__/AuthContextMock.js',
+    '^./AuthContext$': '<rootDir>/__mocks__/AuthContextMock.js',
   },
 
   // Coverage collection

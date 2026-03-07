@@ -1,6 +1,23 @@
-import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
+import React, { createContext, useState, useEffect, useMemo, useCallback, useContext, useRef } from "react";
 import { isSameDay, shouldResetStreak } from "./dateHelpers";
 import { checkNewAchievements, formatUnlockedAchievements } from "./achievements";
+import { AuthContext } from "./AuthContext";
+import {
+  fetchCloudData,
+  uploadLocalData,
+  mergeData,
+  hasLocalOnlyData,
+  syncCompletedClue,
+  syncProfile,
+  syncAchievement,
+} from "./syncService";
+import {
+  OperationType,
+  processQueue,
+  setupOfflineListeners,
+  isOnline,
+  enqueue,
+} from "./offlineQueue";
 
 export const UserContext = createContext({
   completedClues: [],
@@ -11,6 +28,7 @@ export const UserContext = createContext({
 });
 
 export const UserProvider = ({ children }) => {
+  const { user, isAuthenticated, loading: authLoading } = useContext(AuthContext);
   const [returnLearn, setReturnLearn] = useState(false);
   const [currentStats, setCurrentStats] = useState(null); // { hints: 0, guesses: 0 } when on clue page
   const [clueStartTime, setClueStartTime] = useState(null); // timestamp when clue was started
@@ -20,6 +38,10 @@ export const UserProvider = ({ children }) => {
   const [newlyUnlockedAchievements, setNewlyUnlockedAchievements] = useState([]); // achievements unlocked in current session
   const [cluesDataRef, setCluesDataRef] = useState(null); // clues data for achievement type checking
   const [openStatsWithTab, setOpenStatsWithTab] = useState(null); // 'stats' | 'achievements' | null - triggers stats modal opening
+  const [syncStatus, setSyncStatus] = useState('idle'); // 'idle' | 'syncing' | 'synced' | 'error'
+  const [showMergePrompt, setShowMergePrompt] = useState(false);
+  const [pendingMergeData, setPendingMergeData] = useState(null);
+  const lastSyncedUserId = useRef(null);
 
   // manage lcState
   const [lcState, setLcState] = useState(() => {
@@ -39,6 +61,7 @@ export const UserProvider = ({ children }) => {
       hasSeenOnboarding: false,
       hasSeenOnboardingPrompt: false,
       hasCompletedFirstClue: false,
+      hasSeenSyncAnnouncement: false,
       achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
     };
   });
@@ -52,7 +75,131 @@ export const UserProvider = ({ children }) => {
   let hasSeenOnboarding = lcState.hasSeenOnboarding;
   let hasSeenOnboardingPrompt = lcState.hasSeenOnboardingPrompt;
   let hasCompletedFirstClue = lcState.hasCompletedFirstClue;
+  let hasSeenSyncAnnouncement = lcState.hasSeenSyncAnnouncement;
   let achievements = lcState.achievements || { unlocked: {}, hasSeenAchievementsIntro: false };
+
+  // Sync handlers for offline queue
+  const syncHandlers = useMemo(() => ({
+    syncClue: syncCompletedClue,
+    syncProfile: syncProfile,
+    syncAchievement: syncAchievement,
+  }), []);
+
+  // Process offline queue when coming back online
+  useEffect(() => {
+    if (!isAuthenticated || !user?.id) return;
+
+    const handleOnline = async () => {
+      const { processed, failed } = await processQueue(syncHandlers, user.id);
+      if (processed > 0) {
+        console.log(`Processed ${processed} queued operations`);
+      }
+      if (failed > 0) {
+        console.warn(`${failed} operations failed and remain queued`);
+      }
+    };
+
+    const cleanup = setupOfflineListeners(handleOnline, null);
+    return cleanup;
+  }, [isAuthenticated, user?.id, syncHandlers]);
+
+  // Sync with cloud when user authenticates
+  useEffect(() => {
+    if (authLoading) return;
+
+    const syncWithCloud = async () => {
+      if (!isAuthenticated || !user?.id) {
+        lastSyncedUserId.current = null;
+        return;
+      }
+
+      // Don't re-sync if we've already synced for this user
+      if (lastSyncedUserId.current === user.id) return;
+
+      setSyncStatus('syncing');
+
+      try {
+        // Fetch cloud data
+        const { data: cloudData, error: fetchError } = await fetchCloudData(user.id);
+
+        if (fetchError) {
+          console.error('Error fetching cloud data:', fetchError);
+          setSyncStatus('error');
+          return;
+        }
+
+        // If user has no cloud data, upload local data
+        if (!cloudData?.profile && !cloudData?.completedClues?.length) {
+          // New account - upload local data to cloud
+          if (lcState.completedClues?.length > 0 || Object.keys(lcState.achievements?.unlocked || {}).length > 0) {
+            const { error: uploadError } = await uploadLocalData(user.id, lcState);
+            if (uploadError) {
+              console.error('Error uploading local data:', uploadError);
+              setSyncStatus('error');
+              return;
+            }
+          }
+          lastSyncedUserId.current = user.id;
+          setSyncStatus('synced');
+          return;
+        }
+
+        // Check if local data has clues not in cloud
+        if (hasLocalOnlyData(lcState, cloudData)) {
+          // Prompt user to merge
+          setPendingMergeData(cloudData);
+          setShowMergePrompt(true);
+        } else {
+          // No local-only data, just use cloud data
+          const mergedState = mergeData(lcState, cloudData);
+          setLcState((prevState) => ({
+            ...prevState,
+            ...mergedState,
+          }));
+        }
+
+        lastSyncedUserId.current = user.id;
+        setSyncStatus('synced');
+      } catch (error) {
+        console.error('Sync error:', error);
+        setSyncStatus('error');
+      }
+    };
+
+    syncWithCloud();
+  }, [isAuthenticated, user?.id, authLoading]);
+
+  // Handle merge prompt response
+  const handleMergeDecision = useCallback(async (shouldMerge) => {
+    if (!user?.id || !pendingMergeData) return;
+
+    setShowMergePrompt(false);
+
+    if (shouldMerge) {
+      // Merge local data with cloud
+      const mergedState = mergeData(lcState, pendingMergeData);
+      setLcState((prevState) => ({
+        ...prevState,
+        ...mergedState,
+      }));
+
+      // Upload merged data to cloud
+      const mergedLcState = { ...lcState, ...mergedState };
+      await uploadLocalData(user.id, mergedLcState);
+    } else {
+      // Discard local data, use cloud only
+      const cloudState = mergeData({
+        completedClues: [],
+        achievements: { unlocked: {} },
+      }, pendingMergeData);
+      setLcState((prevState) => ({
+        ...prevState,
+        ...cloudState,
+      }));
+    }
+
+    setPendingMergeData(null);
+  }, [user?.id, pendingMergeData, lcState]);
 
   // Listen for localStorage changes from other tabs
   useEffect(() => {
@@ -136,6 +283,34 @@ export const UserProvider = ({ children }) => {
     }
   }, [darkMode]);
 
+  // Sync completed clue to cloud (background, non-blocking)
+  const syncClueToCloud = useCallback(async (clue) => {
+    if (!isAuthenticated || !user?.id) return;
+
+    if (isOnline()) {
+      const { error } = await syncCompletedClue(user.id, clue);
+      if (error) {
+        enqueue({ type: OperationType.SYNC_CLUE, data: clue, userId: user.id });
+      }
+    } else {
+      enqueue({ type: OperationType.SYNC_CLUE, data: clue, userId: user.id });
+    }
+  }, [isAuthenticated, user?.id]);
+
+  // Sync profile to cloud (background, non-blocking)
+  const syncProfileToCloud = useCallback(async (state) => {
+    if (!isAuthenticated || !user?.id) return;
+
+    if (isOnline()) {
+      const { error } = await syncProfile(user.id, state);
+      if (error) {
+        enqueue({ type: OperationType.SYNC_PROFILE, data: state, userId: user.id });
+      }
+    } else {
+      enqueue({ type: OperationType.SYNC_PROFILE, data: state, userId: user.id });
+    }
+  }, [isAuthenticated, user?.id]);
+
   // Functions
   const addCompletedClue = (activeClue, stats, type, solveTime = null) => {
     const guesses = type === "g" ? stats.guesses + 1 : stats.guesses;
@@ -215,6 +390,30 @@ export const UserProvider = ({ children }) => {
 
       setLcState(newState);
 
+      // Sync to cloud in background
+      syncClueToCloud(completedClueEntry);
+
+      // Sync profile (for streak updates)
+      syncProfileToCloud(newState);
+
+      // Sync new achievements
+      if (newAchievements.length > 0) {
+        newAchievements.forEach((achievement) => {
+          if (isAuthenticated && user?.id) {
+            const achievementData = formattedAchievements[achievement.id];
+            if (isOnline()) {
+              syncAchievement(user.id, achievement.id, achievementData);
+            } else {
+              enqueue({
+                type: OperationType.SYNC_ACHIEVEMENT,
+                data: { achievementId: achievement.id, ...achievementData },
+                userId: user.id,
+              });
+            }
+          }
+        });
+      }
+
       // Set newly unlocked achievements for display
       if (newAchievements.length > 0) {
         setNewlyUnlockedAchievements(newAchievements);
@@ -268,40 +467,59 @@ export const UserProvider = ({ children }) => {
 
   // Whether or not to show type pills in clue container
   const setShowType = (newType) => {
-    setLcState({
+    const newState = {
       ...lcState,
       showType: newType,
-    });
+    };
+    setLcState(newState);
+    syncProfileToCloud(newState);
   };
 
   // Dark mode setting
   const setDarkMode = (newMode) => {
-    setLcState({
+    const newState = {
       ...lcState,
       darkMode: newMode,
-    });
+    };
+    setLcState(newState);
+    syncProfileToCloud(newState);
   };
 
   // Onboarding state
   const setHasSeenOnboarding = (value) => {
-    setLcState({
+    const newState = {
       ...lcState,
       hasSeenOnboarding: value,
-    });
+    };
+    setLcState(newState);
+    syncProfileToCloud(newState);
   };
 
   const setHasSeenOnboardingPrompt = (value) => {
-    setLcState({
+    const newState = {
       ...lcState,
       hasSeenOnboardingPrompt: value,
-    });
+    };
+    setLcState(newState);
+    syncProfileToCloud(newState);
   };
 
   const setHasCompletedFirstClue = (value) => {
-    setLcState({
+    const newState = {
       ...lcState,
       hasCompletedFirstClue: value,
-    });
+    };
+    setLcState(newState);
+    syncProfileToCloud(newState);
+  };
+
+  const setHasSeenSyncAnnouncement = (value) => {
+    const newState = {
+      ...lcState,
+      hasSeenSyncAnnouncement: value,
+    };
+    setLcState(newState);
+    // No need to sync to cloud - this is a local-only flag
   };
 
   // Refresh state from localStorage (used after migrations)
@@ -316,13 +534,17 @@ export const UserProvider = ({ children }) => {
 
   // Achievement functions
   const setHasSeenAchievementsIntro = useCallback((value) => {
-    setLcState((prevState) => ({
-      ...prevState,
-      achievements: {
-        ...prevState.achievements,
-        hasSeenAchievementsIntro: value,
-      },
-    }));
+    setLcState((prevState) => {
+      const newState = {
+        ...prevState,
+        achievements: {
+          ...prevState.achievements,
+          hasSeenAchievementsIntro: value,
+        },
+      };
+      // Note: We don't sync this immediately as it's a minor UI state
+      return newState;
+    });
   }, []);
 
   // Clear newly unlocked achievements (after displaying them)
@@ -341,6 +563,10 @@ export const UserProvider = ({ children }) => {
             ...updatedUnlocked[id],
             seenAt: now,
           };
+          // Sync achievement seen state
+          if (isAuthenticated && user?.id) {
+            syncAchievement(user.id, id, updatedUnlocked[id]);
+          }
         }
       });
       return {
@@ -351,7 +577,7 @@ export const UserProvider = ({ children }) => {
         },
       };
     });
-  }, []);
+  }, [isAuthenticated, user?.id]);
 
   const contextValue = useMemo(
     () => ({
@@ -378,6 +604,8 @@ export const UserProvider = ({ children }) => {
       setHasSeenOnboardingPrompt,
       hasCompletedFirstClue,
       setHasCompletedFirstClue,
+      hasSeenSyncAnnouncement,
+      setHasSeenSyncAnnouncement,
       triggerOnboarding,
       setTriggerOnboarding,
       timerPaused,
@@ -392,6 +620,10 @@ export const UserProvider = ({ children }) => {
       // Stats modal trigger
       openStatsWithTab,
       setOpenStatsWithTab,
+      // Sync status
+      syncStatus,
+      showMergePrompt,
+      handleMergeDecision,
     }),
     [
       completedClues,
@@ -406,6 +638,7 @@ export const UserProvider = ({ children }) => {
       hasSeenOnboarding,
       hasSeenOnboardingPrompt,
       hasCompletedFirstClue,
+      hasSeenSyncAnnouncement,
       triggerOnboarding,
       achievements,
       newlyUnlockedAchievements,
@@ -414,6 +647,9 @@ export const UserProvider = ({ children }) => {
       markAchievementsSeen,
       timerPaused,
       openStatsWithTab,
+      syncStatus,
+      showMergePrompt,
+      handleMergeDecision,
     ],
   );
 
