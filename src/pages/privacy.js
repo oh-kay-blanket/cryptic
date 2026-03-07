@@ -187,7 +187,7 @@ const Privacy = () => {
             please contact us at:
           </p>
           <p>
-            <a href="mailto:privacy@learncryptic.com">privacy@learncryptic.com</a>
+            <a href="mailto:learncrypticgame@gmail.com">learncrypticgame@gmail.com</a>
           </p>
         </div>
       </div>
