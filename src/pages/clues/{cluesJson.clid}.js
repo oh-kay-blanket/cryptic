@@ -5,7 +5,7 @@ import React, {
   useRef,
   useCallback,
 } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { UserContext } from "../../utils/UserContext";
 import Layout from "../../components/layout";
 import Bottom from "../../components/Bottom";
@@ -1077,12 +1077,8 @@ const CluePage = ({ data }) => {
   );
 
   // source HTML
-  const sourceInsert = activeClue.source.href ? (
-    <a target="_blank" rel="noreferrer" href={activeClue.source.href}>
-      {activeClue.source.value}
-    </a>
-  ) : (
-    <span>{activeClue.source.value}</span>
+  const sourceInsert = (
+    <Link to="/creators">{activeClue.source.value}</Link>
   );
 
   return (
