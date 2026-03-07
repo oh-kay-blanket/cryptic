@@ -593,7 +593,7 @@ const TopBar = () => {
               to='/creators'
               className='group flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
             >
-              <span className='group-hover:underline'>About us</span>
+              <span className='group-hover:underline'>About</span>
               <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
                 →
               </span>
