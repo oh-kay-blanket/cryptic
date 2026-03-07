@@ -1,15 +1,20 @@
 import React from "react";
+import { CookieConsentProvider } from "./src/utils/CookieConsentContext";
 import { AuthProvider } from "./src/utils/AuthContext";
 import { UserProvider } from "./src/utils/UserContext";
+import CookieConsentBanner from "./src/components/CookieConsentBanner";
 
 import "./src/scss/style.scss";
 
 export const wrapRootElement = ({ element }) => (
-	<AuthProvider>
-		<UserProvider>
-			{element}
-		</UserProvider>
-	</AuthProvider>
+	<CookieConsentProvider>
+		<AuthProvider>
+			<UserProvider>
+				{element}
+				<CookieConsentBanner />
+			</UserProvider>
+		</AuthProvider>
+	</CookieConsentProvider>
 )
 
 // Disable Gatsby's automatic scroll restoration to prevent scroll jumps during navigation

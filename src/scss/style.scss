@@ -11,6 +11,7 @@
 @use './pages/creators';
 @use './pages/resources';
 @use './pages/container-404';
+@use './pages/privacy';
 
 // Components
 @use './components/top-bar';
@@ -22,6 +23,7 @@
 @use './components/achievements';
 @use './components/post-solve-popup';
 @use './components/auth';
+@use './components/cookie-consent';
 
 // Bottom
 @use './components/bottom/bottom';
