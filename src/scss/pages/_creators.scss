@@ -49,6 +49,11 @@
 		border-radius: 0.5rem;
 		padding: 1.25rem;
 
+		// Mobile: stack image above text
+		@media (max-width: 480px) {
+			flex-direction: column;
+		}
+
 		html.dark & {
 			background-color: #262626;
 			border-color: #404040;
