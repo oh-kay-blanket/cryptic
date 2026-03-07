@@ -202,6 +202,11 @@ html.dark .modal-overlay {
     width: 85vw;
     max-width: 85vw;
   }
+
+  // Ensure flex children respect container width
+  > div {
+    max-width: 100%;
+  }
 }
 
 @keyframes modalFadeIn {
@@ -247,6 +252,17 @@ html.dark .modal-close:hover {
 // Theme picker background for newspaper feel
 .theme-picker-bg {
   background-color: $lc-gray--dark !important; // warm gray for newspaper feel
+  width: 100%;
+
+  // Make theme picker buttons fill container equally
+  label {
+    flex: 1;
+    min-width: 0;
+
+    > span {
+      width: 100%;
+    }
+  }
 }
 
 // Dark mode theme picker background

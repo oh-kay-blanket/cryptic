@@ -492,7 +492,7 @@ const TopBar = () => {
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
             Theme
           </h3>
-          <div className='flex'>
+          <div className='w-full'>
             <div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
               <label className='flex items-center cursor-pointer'>
                 <input
