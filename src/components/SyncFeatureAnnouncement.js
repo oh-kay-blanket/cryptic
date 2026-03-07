@@ -63,13 +63,13 @@ const SyncFeatureAnnouncement = ({ onSignIn, targetRef }) => {
         left = viewportWidth - padding - tooltipRect.width;
       }
 
-      // Calculate arrow offset to point at target center
+      // Calculate arrow offset to point at target center (in pixels)
       const arrowLeftPx = targetCenterX - left;
-      const arrowOffsetPercent = (arrowLeftPx / tooltipRect.width) * 100;
-      const clampedArrowOffset = Math.max(15, Math.min(85, arrowOffsetPercent));
+      // Clamp arrow to stay within tooltip bounds (with 15px padding from edges)
+      const clampedArrowPx = Math.max(15, Math.min(tooltipRect.width - 15, arrowLeftPx));
 
       setPosition({ top, left });
-      setArrowOffset(clampedArrowOffset);
+      setArrowOffset(clampedArrowPx);
     };
 
     calculatePosition();
@@ -109,7 +109,7 @@ const SyncFeatureAnnouncement = ({ onSignIn, targetRef }) => {
     >
       <div
         className="sync-tooltip-arrow"
-        style={{ left: `${arrowOffset}%` }}
+        style={{ left: `${arrowOffset}px` }}
       />
       <div className="sync-tooltip-content">
         <p className="sync-tooltip-title">New: Save your progress</p>
