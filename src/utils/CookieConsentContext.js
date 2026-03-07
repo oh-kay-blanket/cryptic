@@ -5,6 +5,7 @@ const GA_TRACKING_ID = "G-FMM13GJQK3";
 export const CookieConsentContext = createContext({
   hasConsent: null,
   consentTimestamp: null,
+  isHydrated: false,
   acceptCookies: () => {},
   declineCookies: () => {},
   withdrawConsent: () => {},
@@ -13,19 +14,22 @@ export const CookieConsentContext = createContext({
 export const CookieConsentProvider = ({ children }) => {
   const gaInitialized = useRef(false);
 
-  const [consentState, setConsentState] = useState(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("lcCookieConsent");
-      if (stored) {
-        try {
-          return JSON.parse(stored);
-        } catch (e) {
-          return { hasConsent: null, consentTimestamp: null };
-        }
+  // Always initialize with null to match SSR - read localStorage in useEffect to avoid hydration mismatch
+  const [consentState, setConsentState] = useState({ hasConsent: null, consentTimestamp: null });
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Read from localStorage after hydration to avoid SSR mismatch
+  useEffect(() => {
+    const stored = localStorage.getItem("lcCookieConsent");
+    if (stored) {
+      try {
+        setConsentState(JSON.parse(stored));
+      } catch (e) {
+        // Invalid stored value, keep as null
       }
     }
-    return { hasConsent: null, consentTimestamp: null };
-  });
+    setIsHydrated(true);
+  }, []);
 
   // Save to localStorage whenever consent state changes
   useEffect(() => {
@@ -138,11 +142,12 @@ export const CookieConsentProvider = ({ children }) => {
     () => ({
       hasConsent: consentState.hasConsent,
       consentTimestamp: consentState.consentTimestamp,
+      isHydrated,
       acceptCookies,
       declineCookies,
       withdrawConsent,
     }),
-    [consentState.hasConsent, consentState.consentTimestamp, acceptCookies, declineCookies, withdrawConsent]
+    [consentState.hasConsent, consentState.consentTimestamp, isHydrated, acceptCookies, declineCookies, withdrawConsent]
   );
 
   return (

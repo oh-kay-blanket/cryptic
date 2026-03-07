@@ -3,10 +3,10 @@ import { Link } from "gatsby";
 import { CookieConsentContext } from "../utils/CookieConsentContext";
 
 const CookieConsentBanner = () => {
-  const { hasConsent, acceptCookies, declineCookies } = useContext(CookieConsentContext);
+  const { hasConsent, isHydrated, acceptCookies, declineCookies } = useContext(CookieConsentContext);
 
-  // Only show banner when consent is undecided
-  if (hasConsent !== null) {
+  // Wait for hydration to avoid flash, then show only when consent is undecided
+  if (!isHydrated || hasConsent !== null) {
     return null;
   }
 
