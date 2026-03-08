@@ -1,11 +1,13 @@
 import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { UserProvider } from "./src/utils/UserContext";
 
 import "./src/scss/style.scss";
 
 export const wrapRootElement = ({ element }) => (
 	<UserProvider>
-	  	{element}
+		{element}
+		<SpeedInsights />
 	</UserProvider>
 )
 
