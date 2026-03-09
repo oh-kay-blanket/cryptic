@@ -142,10 +142,10 @@ export const formatTime = (seconds, short = false) => {
  * interpreting the time as a calendar event link.
  *
  * @param {number|null|undefined} seconds - Time in seconds
- * @returns {string} Formatted time string ("Xm Ys" for >= 60s, "Xs" for < 60s)
+ * @returns {string} Formatted time string ("Xm Ys" for >= 60s, "X sec" for < 60s)
  *
  * @example
- * formatTimeForShare(45) // "45s"
+ * formatTimeForShare(45) // "45 sec"
  * formatTimeForShare(90) // "1m 30s"
  * formatTimeForShare(60) // "1m"
  * formatTimeForShare(165) // "2m 45s"
@@ -161,7 +161,7 @@ export const formatTimeForShare = (seconds) => {
 	const ZWS = '\u200B'
 
 	if (seconds < 60) {
-		return `${seconds}${ZWS}s`
+		return `${seconds}${ZWS} sec`
 	}
 
 	const minutes = Math.floor(seconds / 60)
