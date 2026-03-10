@@ -235,7 +235,6 @@ export const achievements = [
     retroactiveCheck: ({ completedClues }) =>
       completedClues.some((c) => c.solveTime != null && c.solveTime < 15),
   },
-
   // TYPE ACHIEVEMENTS (first of each clue type)
   {
     id: 'type-anagram',
@@ -441,19 +440,20 @@ export const achievements = [
     id: 'type-combination',
     category: ACHIEVEMENT_CATEGORIES.TYPE,
     name: 'Combo Breaker',
-    description: 'Solve your first combination',
+    description: 'Solve a clue with multiple types',
     icon: 'combination',
     tier: 1,
     check: ({ justCompleted, cluesData }) => {
       if (!justCompleted || !cluesData) return false;
       const clue = cluesData.find((c) => c.clid === justCompleted.clid);
-      return clue?.type?.includes('combination');
+      // Type is stored as comma-separated string (e.g., "charade, container")
+      return clue?.type?.includes(',');
     },
     retroactiveCheck: ({ completedClues, cluesData }) => {
       if (!cluesData) return false;
       return completedClues.some((completed) => {
         const clue = cluesData.find((c) => c.clid === completed.clid);
-        return clue?.type?.includes('combination');
+        return clue?.type?.includes(',');
       });
     },
   },

@@ -118,6 +118,7 @@ describe('checkNewAchievements', () => {
 
       expect(unlocked.some((a) => a.id === 'skill-difficulty-3')).toBe(true);
     });
+
   });
 
   describe('type achievements', () => {
@@ -145,6 +146,33 @@ describe('checkNewAchievements', () => {
       const unlocked = checkNewAchievements(context, justCompleted, cluesData);
 
       expect(unlocked.some((a) => a.id === 'type-double-definition')).toBe(true);
+    });
+
+    it('should unlock "Combo Breaker" when solving a clue with multiple types', () => {
+      // Type is stored as comma-separated string (e.g., "charade, container")
+      const cluesData = [{ clid: 1, type: 'charade, container' }];
+      const context = {
+        ...baseContext,
+        completedClues: [{ clid: 1, hints: 0, guesses: 1 }],
+      };
+      const justCompleted = { clid: 1, hints: 0, guesses: 1 };
+
+      const unlocked = checkNewAchievements(context, justCompleted, cluesData);
+
+      expect(unlocked.some((a) => a.id === 'type-combination')).toBe(true);
+    });
+
+    it('should not unlock "Combo Breaker" when solving a clue with single type', () => {
+      const cluesData = [{ clid: 1, type: 'anagram' }];
+      const context = {
+        ...baseContext,
+        completedClues: [{ clid: 1, hints: 0, guesses: 1 }],
+      };
+      const justCompleted = { clid: 1, hints: 0, guesses: 1 };
+
+      const unlocked = checkNewAchievements(context, justCompleted, cluesData);
+
+      expect(unlocked.some((a) => a.id === 'type-combination')).toBe(false);
     });
   });
 

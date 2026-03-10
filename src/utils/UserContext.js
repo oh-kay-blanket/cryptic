@@ -42,6 +42,7 @@ export const UserProvider = ({ children }) => {
   const [showMergePrompt, setShowMergePrompt] = useState(false);
   const [pendingMergeData, setPendingMergeData] = useState(null);
   const lastSyncedUserId = useRef(null);
+  const hasCheckedComboAchievement = useRef(false);
 
   // manage lcState
   const [lcState, setLcState] = useState(() => {
@@ -84,6 +85,49 @@ export const UserProvider = ({ children }) => {
     syncProfile: syncProfile,
     syncAchievement: syncAchievement,
   }), []);
+
+  // Retroactive check for combo achievement (clues with multiple types)
+  // This runs atomically inside setLcState to avoid race conditions
+  useEffect(() => {
+    if (!cluesDataRef || hasCheckedComboAchievement.current) return;
+    hasCheckedComboAchievement.current = true;
+
+    setLcState((prevState) => {
+      const completedClues = prevState.completedClues || [];
+      const existingAchievements = prevState.achievements?.unlocked || {};
+
+      // Skip if already has combo achievement
+      if (existingAchievements['type-combination']) {
+        return prevState;
+      }
+
+      // Check if user has completed any clue with multiple types
+      const hasCompletedCombo = completedClues.some((completed) => {
+        const clue = cluesDataRef.find((c) => c.clid === completed.clid);
+        return clue?.type?.includes(',');
+      });
+
+      if (!hasCompletedCombo) {
+        return prevState;
+      }
+
+      // Unlock the combo achievement atomically
+      console.log('Retroactively unlocking combo achievement');
+      return {
+        ...prevState,
+        achievements: {
+          ...prevState.achievements,
+          unlocked: {
+            ...existingAchievements,
+            'type-combination': {
+              unlockedAt: new Date().toISOString(),
+              retroactive: true,
+            },
+          },
+        },
+      };
+    });
+  }, [cluesDataRef]);
 
   // Process offline queue when coming back online
   useEffect(() => {
