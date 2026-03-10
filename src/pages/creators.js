@@ -26,7 +26,7 @@ const Creators = ({ data }) => {
     <Layout>
       <div className='creators lc-container'>
         <div className='creators-header'>
-          <h1>Meet Our Creators</h1>
+          <h1>Meet your creators</h1>
           <p>
             Learn Cryptic is made possible by a small team of talented puzzle designers, software
             developers, and clue writers.

@@ -148,7 +148,7 @@ describe('checkNewAchievements', () => {
     });
   });
 
-  describe('fun achievements', () => {
+  describe('speed achievements', () => {
     it('should unlock "Speed Demon" when solving in under 30 seconds', () => {
       const context = {
         ...baseContext,
@@ -158,39 +158,31 @@ describe('checkNewAchievements', () => {
 
       const unlocked = checkNewAchievements(context, justCompleted);
 
-      expect(unlocked.some((a) => a.id === 'fun-speed-demon')).toBe(true);
+      expect(unlocked.some((a) => a.id === 'skill-speed-demon')).toBe(true);
     });
 
-    it('should unlock "Night Owl" when solving between midnight and 5am', () => {
-      const midnight = new Date();
-      midnight.setHours(2, 0, 0, 0);
-      const completedAt = midnight.toISOString();
-
+    it('should unlock "Quick Thinker" when solving in under 60 seconds', () => {
       const context = {
         ...baseContext,
-        completedClues: [{ clid: 1, hints: 0, guesses: 1, completedAt }],
+        completedClues: [{ clid: 1, hints: 0, guesses: 1, solveTime: 55 }],
       };
-      const justCompleted = { clid: 1, hints: 0, guesses: 1, completedAt };
+      const justCompleted = { clid: 1, hints: 0, guesses: 1, solveTime: 55 };
 
       const unlocked = checkNewAchievements(context, justCompleted);
 
-      expect(unlocked.some((a) => a.id === 'fun-night-owl')).toBe(true);
+      expect(unlocked.some((a) => a.id === 'skill-quick-thinker')).toBe(true);
     });
 
-    it('should unlock "Early Bird" when solving between 5am and 7am', () => {
-      const earlyMorning = new Date();
-      earlyMorning.setHours(6, 0, 0, 0);
-      const completedAt = earlyMorning.toISOString();
-
+    it('should unlock "Lightning Fast" when solving in under 15 seconds', () => {
       const context = {
         ...baseContext,
-        completedClues: [{ clid: 1, hints: 0, guesses: 1, completedAt }],
+        completedClues: [{ clid: 1, hints: 0, guesses: 1, solveTime: 10 }],
       };
-      const justCompleted = { clid: 1, hints: 0, guesses: 1, completedAt };
+      const justCompleted = { clid: 1, hints: 0, guesses: 1, solveTime: 10 };
 
       const unlocked = checkNewAchievements(context, justCompleted);
 
-      expect(unlocked.some((a) => a.id === 'fun-early-bird')).toBe(true);
+      expect(unlocked.some((a) => a.id === 'skill-lightning-fast')).toBe(true);
     });
   });
 

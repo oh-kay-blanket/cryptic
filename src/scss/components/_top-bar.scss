@@ -21,6 +21,11 @@
     align-items: center;
   }
 
+  .topbar-right {
+    display: flex;
+    align-items: center;
+  }
+
   .icon-btn {
     background: none;
     border: none;
@@ -40,9 +45,13 @@
     }
   }
 
-  .topbar-logo img {
-    max-width: 40px;
-    padding: 6px;
+  .topbar-logo {
+    margin-right: 1rem;
+
+    img {
+      max-width: 40px;
+      padding: 6px;
+    }
   }
 
   .current-stats {
@@ -58,6 +67,17 @@
       font-size: 0.75rem;
       padding: 4px 8px;
       border-radius: 4px;
+    }
+
+    // Compact stats on small screens
+    @media (max-width: 400px) {
+      margin-left: 0.25rem;
+      gap: 0.125rem;
+
+      .stat {
+        font-size: 0.625rem;
+        padding: 3px 5px;
+      }
     }
 
     .stat-time {
@@ -182,6 +202,11 @@ html.dark .modal-overlay {
     width: 85vw;
     max-width: 85vw;
   }
+
+  // Ensure flex children respect container width
+  > div {
+    max-width: 100%;
+  }
 }
 
 @keyframes modalFadeIn {
@@ -227,6 +252,17 @@ html.dark .modal-close:hover {
 // Theme picker background for newspaper feel
 .theme-picker-bg {
   background-color: $lc-gray--dark !important; // warm gray for newspaper feel
+  width: 100%;
+
+  // Make theme picker buttons fill container equally
+  label {
+    flex: 1;
+    min-width: 0;
+
+    > span {
+      width: 100%;
+    }
+  }
 }
 
 // Dark mode theme picker background

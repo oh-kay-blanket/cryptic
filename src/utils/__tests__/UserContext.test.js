@@ -16,6 +16,13 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import { UserContext, UserProvider } from '../UserContext'
 
+// Simple wrapper - AuthContext is mocked so we only need UserProvider
+const TestWrapper = ({ children }) => (
+	<UserProvider>
+		{children}
+	</UserProvider>
+)
+
 /**
  * Helper component to access context values in tests
  * This is a common testing pattern for Context
@@ -84,9 +91,9 @@ describe('UserContext', () => {
 
 			// Act: Render component with provider
 			render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			// Assert: Check default values
@@ -109,9 +116,9 @@ describe('UserContext', () => {
 
 			// Act: Render
 			render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			// Assert: Verify loaded state
@@ -140,9 +147,9 @@ describe('UserContext', () => {
 
 			// Act: Render
 			render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			// Assert: Streak should be maintained
@@ -169,9 +176,9 @@ describe('UserContext', () => {
 
 			// Act: Render
 			render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			// Assert: Streak should be reset to 0
@@ -194,9 +201,9 @@ describe('UserContext', () => {
 
 			// Act & Assert
 			render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			await waitFor(() => {
@@ -224,9 +231,9 @@ describe('UserContext', () => {
 
 			// Act: Render and complete today's clue
 			const { getByTestId } = render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			// Simulate completing today's clue
@@ -254,9 +261,9 @@ describe('UserContext', () => {
 
 			// Act: Complete today's clue
 			const { getByTestId } = render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			getByTestId('add-clue-btn').click()
@@ -307,9 +314,9 @@ describe('UserContext', () => {
 
 			// Act
 			const { getByTestId } = render(
-				<UserProvider>
+				<TestWrapper>
 					<CustomTest />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			getByTestId('add-old-clue').click()
@@ -334,9 +341,9 @@ describe('UserContext', () => {
 
 			// Act: Try to add same clue again
 			const { getByTestId } = render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			getByTestId('add-clue-btn').click()
@@ -359,9 +366,9 @@ describe('UserContext', () => {
 
 			// Act
 			const { getByTestId } = render(
-				<UserProvider>
+				<TestWrapper>
 					<TestComponent />
-				</UserProvider>
+				</TestWrapper>
 			)
 
 			getByTestId('add-clue-btn').click()

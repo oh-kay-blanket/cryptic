@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
+import { AuthContext } from '../utils/AuthContext';
 import { formatTime, isSameDay, stripTime } from '../utils/dateHelpers';
 import CalendarIcon from '../assets/icons/achievements/calendar.svg';
 import ClueIcon from '../assets/icons/achievements/clue.svg';
@@ -13,6 +14,10 @@ import {
   getAchievementProgress,
 } from '../utils/achievements';
 import AchievementIcon from './AchievementIcon';
+import AuthModal from './AuthModal';
+import UserMenu from './UserMenu';
+import MergePromptModal from './MergePromptModal';
+import SyncFeatureAnnouncement from './SyncFeatureAnnouncement';
 
 import logo from '../assets/img/logo-short.png';
 // Hand-drawn style icons
@@ -108,6 +113,22 @@ const MoonIcon = () => (
   </svg>
 );
 
+const UserIcon = () => (
+  <svg
+    width='20'
+    height='20'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className='text-neutral-500 dark:text-neutral-200'
+  >
+    {/* Head - hand-drawn imperfect circle */}
+    <path d='M12.2 3.9c1.5.1 2.8.7 3.7 1.7.9 1 1.3 2.3 1.2 3.6-.1 1.3-.7 2.5-1.6 3.4-1 .9-2.3 1.3-3.7 1.2-1.3-.1-2.6-.7-3.5-1.6-.9-1-1.3-2.3-1.2-3.6.1-1.3.7-2.5 1.6-3.4.9-.8 2.1-1.3 3.5-1.3' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+    {/* Shoulders - curved arc */}
+    <path d='M4.9 20.9c.2-2.1 1.1-4 2.5-5.3 1.4-1.3 3.2-2 5.1-1.9 1.9.1 3.6.9 4.9 2.2 1.3 1.3 2 3.1 2.1 5.1' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
+  </svg>
+);
+
 const Modal = ({ open, onClose, children }) => {
   useEffect(() => {
     if (open) {
@@ -157,6 +178,7 @@ const TopBar = () => {
     openStatsWithTab,
     setOpenStatsWithTab,
   } = useContext(UserContext);
+  const { isAuthenticated, isSupabaseConfigured, loading: authLoading } = useContext(AuthContext);
   const [helpOpen, setHelpOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [statsTab, setStatsTab] = useState('stats'); // 'stats' or 'achievements'
@@ -164,8 +186,10 @@ const TopBar = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [selectedAchievement, setSelectedAchievement] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState(null);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
+  const signinButtonRef = useRef(null);
 
   // Live timer update (stops when clue is solved or paused)
   useEffect(() => {
@@ -333,6 +357,9 @@ const TopBar = () => {
       <header className='top-bar bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700'>
         <div className='top-bar-container lc-container'>
           <div className='topbar-left'>
+            <Link to='/' onClick={clickTitle} className='topbar-logo'>
+              <img src={logo} alt='' />
+            </Link>
             <Link
               to='/clues'
               className='icon-btn hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg p-2 transition-colors'
@@ -430,17 +457,42 @@ const TopBar = () => {
               </div>
             )}
           </div>
-          <Link to='/' onClick={clickTitle} className='topbar-logo'>
-            <img src={logo} alt='' />
-          </Link>
+          <div className='topbar-right'>
+            {/* Show sign in button or user menu based on auth state */}
+            {isSupabaseConfigured && !authLoading && (
+              isAuthenticated ? (
+                <UserMenu />
+              ) : (
+                <button
+                  ref={signinButtonRef}
+                  className='signin-button'
+                  onClick={() => setAuthModalOpen(true)}
+                  aria-label='Sign in'
+                >
+                  <span className='signin-text'>Sign in</span>
+                  <span className='signin-icon'><UserIcon /></span>
+                </button>
+              )
+            )}
+          </div>
         </div>
       </header>
+      <AuthModal
+        open={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        initialMode='signin'
+      />
+      <MergePromptModal />
+      <SyncFeatureAnnouncement
+        targetRef={signinButtonRef}
+        onSignIn={() => setAuthModalOpen(true)}
+      />
       <Modal id='modal-info' open={helpOpen} onClose={() => setHelpOpen(false)}>
         <div className='mb-4 mt-4'>
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
             Theme
           </h3>
-          <div className='flex'>
+          <div className='w-full'>
             <div className='flex theme-picker-bg rounded-lg p-1 gap-1'>
               <label className='flex items-center cursor-pointer'>
                 <input
@@ -541,7 +593,7 @@ const TopBar = () => {
               to='/creators'
               className='group flex items-center text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors'
             >
-              <span className='group-hover:underline'>About us</span>
+              <span className='group-hover:underline'>About</span>
               <span className='ml-1.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors'>
                 →
               </span>
