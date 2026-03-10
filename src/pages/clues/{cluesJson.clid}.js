@@ -20,7 +20,7 @@ import handleHint from "../../utils/clue/handleHint";
 import highlightLetters from "../../utils/clue/highlightLetters";
 import changeColor from "../../utils/clue/changeColor";
 import { isTodayClue } from "../../utils/dateHelpers";
-import { HomophoneIcon } from "../../components/ClueTypeIcons";
+import { HomophoneIcon, SpoonerismIcon } from "../../components/ClueTypeIcons";
 
 // Hand-drawn eye icon components
 const EyeOpenIcon = () => (
@@ -32,8 +32,18 @@ const EyeOpenIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-500 dark:text-neutral-200"
   >
-    <path d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M12.1 8.2c1.1.1 2.1.6 2.8 1.4.7.8 1.1 1.8 1 2.9-.1 1-.5 2-1.3 2.7-.8.7-1.8 1.1-2.9 1-1-.1-2-.5-2.7-1.3-.7-.8-1-1.8-.9-2.9.1-1 .6-1.9 1.3-2.6.8-.7 1.7-1.1 2.7-1.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M12.1 8.2c1.1.1 2.1.6 2.8 1.4.7.8 1.1 1.8 1 2.9-.1 1-.5 2-1.3 2.7-.8.7-1.8 1.1-2.9 1-1-.1-2-.5-2.7-1.3-.7-.8-1-1.8-.9-2.9.1-1 .6-1.9 1.3-2.6.8-.7 1.7-1.1 2.7-1.2"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
@@ -46,9 +56,24 @@ const HintIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-600 dark:text-neutral-200"
   >
-    <path d="M9.1 17.9c2-.1 3.9.1 5.9-.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M10.2 21.8c1.2.1 2.5-.1 3.7.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M15.2 14.1c.2-1 .7-1.8 1.5-2.6.9-.9 1.4-2.1 1.4-3.4 0-2.8-2.4-5.2-5.3-5.6-2.9-.4-5.6 1.4-6.4 4.1-.5 1.7-.1 3.5 1 4.9.8 1 1.3 1.8 1.5 2.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M9.1 17.9c2-.1 3.9.1 5.9-.1"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M10.2 21.8c1.2.1 2.5-.1 3.7.1"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M15.2 14.1c.2-1 .7-1.8 1.5-2.6.9-.9 1.4-2.1 1.4-3.4 0-2.8-2.4-5.2-5.3-5.6-2.9-.4-5.6 1.4-6.4 4.1-.5 1.7-.1 3.5 1 4.9.8 1 1.3 1.8 1.5 2.6"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
@@ -61,8 +86,18 @@ const EyeClosedIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="text-neutral-500 dark:text-neutral-200"
   >
-    <path d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M3.1 3.2c5.9 5.8 11.7 11.8 17.6 17.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M2.2 12.1c1.8-2.4 4.1-4.5 6.8-5.8 1.9-.9 4.1-1.3 6.2-1 2.1.3 4.1 1.2 5.8 2.6 1.4 1.2 2.6 2.6 3.5 4.2-1.7 2.3-3.9 4.3-6.5 5.6-2 1-4.2 1.4-6.4 1.1-2.1-.3-4.1-1.2-5.8-2.5-1.4-1.2-2.7-2.6-3.6-4.2"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M3.1 3.2c5.9 5.8 11.7 11.8 17.6 17.6"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
@@ -190,7 +225,12 @@ const CluePage = ({ data }) => {
         setShowOnboardingGuide(true);
       }
       // Return visitors who haven't completed a clue yet and haven't seen the prompt: show prompt
-      else if (hasSeenOnboarding && !hasSeenOnboardingPrompt && completedClues && completedClues.length === 0) {
+      else if (
+        hasSeenOnboarding &&
+        !hasSeenOnboardingPrompt &&
+        completedClues &&
+        completedClues.length === 0
+      ) {
         hasShownOnboardingThisSession.current = true;
         setShowOnboardingPrompt(true);
       }
@@ -209,7 +249,7 @@ const CluePage = ({ data }) => {
 
   // Check if this clue has already been completed
   const completedClueData = completedClues?.find(
-    (c) => c.clid === dataClue.clid
+    (c) => c.clid === dataClue.clid,
   );
 
   // Track whether the clue was already completed when the page loaded,
@@ -275,7 +315,7 @@ const CluePage = ({ data }) => {
         }
       }, 0);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataClue.clid]);
 
   // Sync stats and start time to context for TopBar display
@@ -292,7 +332,13 @@ const CluePage = ({ data }) => {
       setClueSolvedTime(null);
       setTimerPaused(false);
     };
-  }, [setCurrentStats, setClueStartTime, setClueSolvedTime, setTimerPaused, completedClueData]);
+  }, [
+    setCurrentStats,
+    setClueStartTime,
+    setClueSolvedTime,
+    setTimerPaused,
+    completedClueData,
+  ]);
 
   // Pause/resume timer when onboarding guide shows/hides
   useEffect(() => {
@@ -306,7 +352,7 @@ const CluePage = ({ data }) => {
       pausedTimeRef.current += pausedDuration;
       pauseStartRef.current = null;
       // Adjust the start time forward to account for paused time (both display and solve time)
-      setClueStartTime((prev) => prev ? prev + pausedDuration : prev);
+      setClueStartTime((prev) => (prev ? prev + pausedDuration : prev));
       adjustStartTime(pausedDuration);
       setTimerPaused(false);
     }
@@ -319,7 +365,10 @@ const CluePage = ({ data }) => {
 
   // Determine if clue is solved (for follow-up prompt)
   const isSolution = activeClue.hints[nextHint]?.reveals;
-  const isCorrectAns = checkAns && input.join("").toLowerCase() === activeClue.solution.arr.join("").toLowerCase();
+  const isCorrectAns =
+    checkAns &&
+    input.join("").toLowerCase() ===
+      activeClue.solution.arr.join("").toLowerCase();
 
   // Show PostSolvePopup only when there are new achievements unlocked
   useEffect(() => {
@@ -327,7 +376,8 @@ const CluePage = ({ data }) => {
     if (wasCompletedOnLoad.current || showPostSolvePopup) return;
 
     // Check if the clue was just completed
-    const justCompleted = (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
+    const justCompleted =
+      (checkAns && isCorrectAns) || (isSolution && solutionRevealedViaHint);
 
     // Only show popup if there are achievements to display
     if (justCompleted && showMessage && newlyUnlockedAchievements.length > 0) {
@@ -339,8 +389,15 @@ const CluePage = ({ data }) => {
 
       return () => clearTimeout(timer);
     }
-  }, [checkAns, isCorrectAns, isSolution, solutionRevealedViaHint, showMessage, showPostSolvePopup, newlyUnlockedAchievements]);
-
+  }, [
+    checkAns,
+    isCorrectAns,
+    isSolution,
+    solutionRevealedViaHint,
+    showMessage,
+    showPostSolvePopup,
+    newlyUnlockedAchievements,
+  ]);
 
   // Calculate tooltip position based on hint refs
   const calculateTooltipPosition = useCallback((hintIndex) => {
@@ -381,7 +438,11 @@ const CluePage = ({ data }) => {
       const clueSection = document.getElementById("clueSectionRef");
       if (clueSection) {
         const rect = clueSection.getBoundingClientRect();
-        return { x: rect.left + rect.width / 2, y: rect.top + rect.height, placement: "above" };
+        return {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height,
+          placement: "above",
+        };
       }
       return null;
     }
@@ -736,7 +797,8 @@ const CluePage = ({ data }) => {
       const solSection = document.getElementById("solSectionRef");
       if (!solSection || !activeClue.solution.wordBreaks) return;
 
-      const containerWidth = solSection.parentElement?.clientWidth || window.innerWidth;
+      const containerWidth =
+        solSection.parentElement?.clientWidth || window.innerWidth;
       const boxSize = 30; // matches CSS .solution .letter width
       const totalWidth = activeClue.solution.arr.length * boxSize;
 
@@ -925,48 +987,46 @@ const CluePage = ({ data }) => {
       !!hint.addLetters &&
       !!hint.addLetters.value
     ) {
-      const lettersInsert = hint.addLetters.value.map((letter, childIndex) => (
-        <span
-          key={`${parentIndex}_${childIndex}`}
-          ref={activeClue.addLetters.ref.current[parentIndex][childIndex]}
-          className="letter"
-        >
-          {letter === 'homophone-icon' ? <HomophoneIcon className="homophone-add-icon" /> : letter}
-        </span>
-      ));
+      const lettersInsert = hint.addLetters.value
+        .filter((letter) => letter !== "spoonerism-icon")
+        .map((letter, childIndex) => (
+          <span
+            key={`${parentIndex}_${childIndex}`}
+            ref={activeClue.addLetters.ref.current[parentIndex][childIndex]}
+            className="letter"
+          >
+            {letter === "homophone-icon" ? (
+              <HomophoneIcon className="homophone-add-icon" />
+            ) : (
+              letter
+            )}
+          </span>
+        ));
 
-      const brCats = [
-        "container",
-        "reversal",
-        "ag-2",
-        "lb-2",
-        "hw-2",
-        "spoonerism",
-      ];
+      const brCats = ["container", "reversal", "ag-2", "lb-2", "hw-2"];
       const addBr = brCats.includes(hint.category);
       const br = (
         <span key={`br_${parentIndex}`} style={{ flexBasis: "100%" }}></span>
       );
 
-      const addSpoon = hint.category === "spoonerism";
-      const spoon = (
-        <>
-          <svg
-            key={`svg_${parentIndex}`}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="20px"
-            height="20px"
-            ref={activeClue.spoon}
-          >
-            <path d="M245.8 220.9c-14.5-17.6-21.8-39.2-21.8-60.8C224 80 320 0 416 0c53 0 96 43 96 96c0 96-80 192-160.2 192c-21.6 0-43.2-7.3-60.8-21.8L54.6 502.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L245.8 220.9z" />
-          </svg>
-          <span style={{ flexBasis: "100%" }}></span>
-        </>
-      );
-
       addBr && addInsert.push(br);
-      addSpoon && addInsert.push(spoon);
+      if (hint.category === "spoonerism") {
+        addInsert.push(
+          <span
+            key={`spicon_${parentIndex}`}
+            ref={activeClue.addLetters.ref.current[parentIndex][0]}
+            className="letter"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexBasis: "100%",
+              opacity: 0,
+            }}
+          >
+            <SpoonerismIcon className="spoonerism-add-icon" />
+          </span>,
+        );
+      }
       addInsert.push(
         <span
           key={`${parentIndex}_word`}
@@ -1023,7 +1083,7 @@ const CluePage = ({ data }) => {
           className="solution-break"
           style={{ flexBasis: "100%", height: 0 }}
           aria-hidden="true"
-        />
+        />,
       );
     }
 
@@ -1059,7 +1119,7 @@ const CluePage = ({ data }) => {
         >
           {input[index]}
         </span>
-      </span>
+      </span>,
     );
 
     return elements;
@@ -1078,9 +1138,7 @@ const CluePage = ({ data }) => {
   );
 
   // source HTML
-  const sourceInsert = (
-    <Link to="/creators">{activeClue.source.value}</Link>
-  );
+  const sourceInsert = <Link to="/creators">{activeClue.source.value}</Link>;
 
   return (
     <Layout>
@@ -1369,11 +1427,10 @@ const CluePage = ({ data }) => {
           onDismiss={() => setShowPostSolvePopup(false)}
           onViewAchievements={() => {
             setShowPostSolvePopup(false);
-            setOpenStatsWithTab('achievements');
+            setOpenStatsWithTab("achievements");
           }}
         />
       )}
-
     </Layout>
   );
 };

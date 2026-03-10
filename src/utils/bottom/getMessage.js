@@ -56,6 +56,8 @@ const getMessage = hint => {
 				case 'symbol':
 					return <><strong>{hint.value.toUpperCase()}</strong> can be <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'spoonerism':
+					return <><strong>{hint.value.toUpperCase()}</strong> indicates a spoonerism</>
+				case 'sp-2':
 					return <><strong>{hint.end.value[1].toUpperCase()}</strong> is a spoonerism of <strong>{hint.end.value[0].toUpperCase()}</strong></>
 				case 'dd-2':
 					return <>The solution means both <strong>{hint.value[0].toUpperCase()}</strong> and <strong>{hint.value[1].toUpperCase()}</strong></>
@@ -64,14 +66,14 @@ const getMessage = hint => {
 				default:
 					// One end point
 					if (hint.end.value.length === 1) {
-						return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong></> 
-						
+						return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong></>
+
 						// Two end points
 					} else {
-						return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong> and <strong>{hint.end.value[1].toUpperCase()}</strong></> 
+						return <><strong>{hint.value.toUpperCase()}</strong> incicates {aAn} {hint.category} at <strong>{hint.end.value[0].toUpperCase()}</strong> and <strong>{hint.end.value[1].toUpperCase()}</strong></>
 					}
 			}
-		default: 
+		default:
 			return hint.value
 	}
 }

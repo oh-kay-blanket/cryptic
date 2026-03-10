@@ -75,6 +75,12 @@ const usePrepClue = (dataClue) => {
 					{ ...obj, category: 'hp-2' },
 				]
 			}
+			if (obj.category === 'spoonerism') {
+				return [
+					{ ...obj, explainer: '' },
+					{ ...obj, category: 'sp-2' },
+				]
+			}
 			if (obj.category === 'initialism') {
 				return [
 					{ ...obj, explainer: '' },
@@ -131,7 +137,6 @@ const usePrepClue = (dataClue) => {
 	activeClue.solution.sectionRef = useRef() // solution section ref
 	activeClue.solution.length.ref = useRef() // solution length ref
 	activeClue.source.ref = useRef() // source ref
-	activeClue.spoon = useRef() // source ref
 	activeClue.addLetters = { ref: useRef([]) } // add letters ref
 
 	// hint target refs

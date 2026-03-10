@@ -2,10 +2,10 @@ import removeSpecial from "./removeSpecialChar"
 
 // adds letters that will be needed as either duplicates or are not within the original clue
 const addLetters = (activeClue, hint) => {
-	
-	if (hint && hint.type === 'indicator') { 
+
+	if (hint && hint.type === 'indicator') {
 		hint.addLetters = { ref: { current: [] } }
-		
+
 		if (!hint.end || !hint.end.value) {
 			hint.addLetters.value = []
 			return
@@ -44,6 +44,14 @@ const addLetters = (activeClue, hint) => {
 				hint.addLetters.value = ['homophone-icon', activeClue.solution.value]
 				break
 
+			case 'spoonerism':
+				hint.addLetters.value = ['spoonerism-icon']
+				break
+
+			case 'sp-2':
+				hint.addLetters.value = hint.end.value[1] ? hint.end.value[1].split('') : []
+				break
+
 			case 'hw-2':
 				hint.addLetters.value = hint.end.value[1] ? removeSpecial(hint.end.value[1]).split('') : []
 				break
@@ -57,10 +65,6 @@ const addLetters = (activeClue, hint) => {
 			case 'ag-2':
 			case 'reversal':
 				hint.addLetters.value = hint.end.value.length > 0 ? hint.end.value.map(endPt => endPt ? endPt.split('') : []).flat() : []
-				break
-
-			case 'spoonerism':
-				hint.addLetters.value = hint.end.value[1] ? hint.end.value[1].split('') : []
 				break
 
 			default:

@@ -4,7 +4,7 @@ import changeColor from './changeColor'
 import moveLetters from './moveLetters'
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
-	
+
 	const hint = activeClue.hints[nextHint]
 	const prevHint = activeClue.hints[nextHint - 1]
 
@@ -179,6 +179,15 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					changeColor(prevHint.addLetters.ref.current[1])
 					break
 
+				case 'spoonerism':
+					highlightLetters(hint.ref)
+					changeColor(hint.addLetters.ref.current[0])
+					break
+
+				case 'sp-2':
+					changeColor(hint.addLetters.ref.current)
+					break
+
 				case 'initialism':
 					highlightLetters(hint.ref)
 					changeColor(hint.end.ref)
@@ -251,12 +260,6 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 						'sequence',
 						true
 					)
-					break
-
-				case 'spoonerism':
-					highlightLetters(hint.ref)
-					changeColor(hint.addLetters.ref.current)
-					changeColor(activeClue.spoon)
 					break
 
 				default:
