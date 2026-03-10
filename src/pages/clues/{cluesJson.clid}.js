@@ -134,16 +134,16 @@ const CluePage = ({ data }) => {
   const pausedTimeRef = useRef(0); // Accumulated paused time in ms
   const pauseStartRef = useRef(null); // When current pause started
 
-  // Scroll to top to force mobile address bar to show, then add fixed-page class
+  // Reset scroll and lock page for fixed layout
+  // On iOS Safari, client-side navigation from a scrolled page (e.g. /clues)
+  // can leave a residual scroll offset. We must reset scroll on both html and
+  // body and apply fixed-page synchronously so overflow:hidden locks at offset 0.
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Scroll to top first
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
       window.scrollTo(0, 0);
-
-      // Delay adding fixed-page class to give browser time to show address bar
-      requestAnimationFrame(() => {
-        document.body.classList.add("fixed-page");
-      });
+      document.body.classList.add("fixed-page");
 
       return () => {
         document.body.classList.remove("fixed-page");
