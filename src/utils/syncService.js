@@ -339,6 +339,30 @@ export const syncCompletedClue = async (userId, clue) => {
 };
 
 /**
+ * Delete a completed clue from cloud
+ */
+export const deleteCompletedClue = async (userId, clid) => {
+  if (!isSupabaseConfigured() || !userId) {
+    return { error: { message: 'Not configured or not authenticated' } };
+  }
+
+  try {
+    const { error } = await supabase
+      .from('completed_clues')
+      .delete()
+      .eq('user_id', userId)
+      .eq('clid', clid);
+
+    if (error) throw error;
+
+    return { error: null };
+  } catch (error) {
+    console.error('Error deleting completed clue:', error);
+    return { error };
+  }
+};
+
+/**
  * Sync profile data to cloud
  */
 export const syncProfile = async (userId, lcState) => {

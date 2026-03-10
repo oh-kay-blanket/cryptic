@@ -192,7 +192,7 @@ const BookIcon = () => (
 
 const Clues = ({ data, location }) => {
   const cluesData = data.allCluesJson.nodes;
-  const { completedClues } = useContext(UserContext);
+  const { completedClues, removeCompletedClue } = useContext(UserContext);
 
   // Read initial filter values from URL parameters
   const getInitialFilter = (paramName, defaultValue) => {
@@ -480,6 +480,17 @@ const Clues = ({ data, location }) => {
                     >
                       {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
                     </span>
+                    <button
+                      className="tile-clear-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        removeCompletedClue(clue.clid);
+                      }}
+                      aria-label="Clear completion"
+                    >
+                      Clear
+                    </button>
                   </div>
                 )}
               </div>

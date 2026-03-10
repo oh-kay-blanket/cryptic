@@ -10,6 +10,7 @@ export const OperationType = {
   SYNC_CLUE: 'SYNC_CLUE',
   SYNC_PROFILE: 'SYNC_PROFILE',
   SYNC_ACHIEVEMENT: 'SYNC_ACHIEVEMENT',
+  DELETE_CLUE: 'DELETE_CLUE',
 };
 
 /**
@@ -49,6 +50,8 @@ export const enqueue = (operation) => {
 
     switch (op.type) {
       case OperationType.SYNC_CLUE:
+        return op.data.clid !== operation.data.clid;
+      case OperationType.DELETE_CLUE:
         return op.data.clid !== operation.data.clid;
       case OperationType.SYNC_ACHIEVEMENT:
         return op.data.achievementId !== operation.data.achievementId;
@@ -131,6 +134,9 @@ export const processQueue = async (syncHandlers, userId) => {
             operation.data.achievementId,
             operation.data
           );
+          break;
+        case OperationType.DELETE_CLUE:
+          result = await syncHandlers.deleteClue(userId, operation.data.clid);
           break;
         default:
           console.warn('Unknown operation type:', operation.type);

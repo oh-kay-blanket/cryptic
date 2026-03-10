@@ -10,6 +10,7 @@ import {
   syncCompletedClue,
   syncProfile,
   syncAchievement,
+  deleteCompletedClue,
 } from "./syncService";
 import {
   OperationType,
@@ -84,6 +85,7 @@ export const UserProvider = ({ children }) => {
     syncClue: syncCompletedClue,
     syncProfile: syncProfile,
     syncAchievement: syncAchievement,
+    deleteClue: deleteCompletedClue,
   }), []);
 
   // Retroactive check for combo achievement (clues with multiple types)
@@ -601,6 +603,43 @@ export const UserProvider = ({ children }) => {
     return recalculated;
   }, [lcState, syncProfileToCloud]);
 
+  // Remove a completed clue (for re-solving)
+  const removeCompletedClue = useCallback((clid) => {
+    setLcState((prevState) => {
+      const newCompletedClues = (prevState.completedClues || []).filter(
+        (c) => c.clid !== clid
+      );
+
+      // Recalculate streak from remaining clues
+      const recalculated = recalculateStreakFromClues(newCompletedClues);
+
+      const newState = {
+        ...prevState,
+        completedClues: newCompletedClues,
+        streak: recalculated.streak,
+        longestStreak: Math.max(prevState.longestStreak, recalculated.longestStreak),
+        lastSolved: recalculated.lastSolved || '',
+      };
+
+      // Sync deletion to cloud (fire-and-forget)
+      if (isAuthenticated && user?.id) {
+        if (isOnline()) {
+          deleteCompletedClue(user.id, clid).then(({ error }) => {
+            if (error) {
+              enqueue({ type: OperationType.DELETE_CLUE, data: { clid }, userId: user.id });
+            }
+          });
+        } else {
+          enqueue({ type: OperationType.DELETE_CLUE, data: { clid }, userId: user.id });
+        }
+        // Sync updated profile
+        syncProfileToCloud(newState);
+      }
+
+      return newState;
+    });
+  }, [isAuthenticated, user?.id, syncProfileToCloud]);
+
   // Achievement functions
   const setHasSeenAchievementsIntro = useCallback((value) => {
     setLcState((prevState) => {
@@ -652,6 +691,7 @@ export const UserProvider = ({ children }) => {
     () => ({
       completedClues,
       addCompletedClue,
+      removeCompletedClue,
       streak,
       longestStreak,
       showType,
@@ -697,6 +737,7 @@ export const UserProvider = ({ children }) => {
     }),
     [
       completedClues,
+      removeCompletedClue,
       streak,
       longestStreak,
       showType,
