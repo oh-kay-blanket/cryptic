@@ -1,4 +1,5 @@
 import { supabase, isSupabaseConfigured } from './supabase';
+import { recalculateStreakFromClues } from './dateHelpers';
 
 /**
  * Transform localStorage state to Supabase format
@@ -181,24 +182,58 @@ export const uploadLocalData = async (userId, lcState) => {
 
 /**
  * Merge local and cloud data
- * Strategy: Cloud is authoritative, but we keep local clues that don't exist in cloud
+ * Strategy: Cloud is authoritative for preferences, but we take the best of both for progress data
  */
 export const mergeData = (localState, cloudData) => {
   const { profile, completedClues: cloudClues, achievements: cloudAchievements } = cloudData;
 
-  // Start with cloud profile data (authoritative)
-  const mergedState = profile
-    ? cloudToLocal.profile(profile)
-    : {
-        showType: localState.showType ?? true,
-        darkMode: localState.darkMode ?? null,
-        hasSeenOnboarding: localState.hasSeenOnboarding ?? false,
-        hasSeenOnboardingPrompt: localState.hasSeenOnboardingPrompt ?? false,
-        hasCompletedFirstClue: localState.hasCompletedFirstClue ?? false,
-        streak: localState.streak ?? 0,
-        longestStreak: localState.longestStreak ?? 0,
-        lastSolved: localState.lastSolved || '',
-      };
+  // Start with cloud profile data for preferences
+  const cloudProfile = profile ? cloudToLocal.profile(profile) : null;
+
+  // For progress data (streak, longestStreak, lastSolved), take the best of both
+  const localLastSolved = localState.lastSolved ? new Date(localState.lastSolved) : null;
+  const cloudLastSolved = cloudProfile?.lastSolved ? new Date(cloudProfile.lastSolved) : null;
+
+  // Use the more recent lastSolved date
+  let bestLastSolved = '';
+  if (localLastSolved && cloudLastSolved) {
+    bestLastSolved = localLastSolved > cloudLastSolved ? localState.lastSolved : cloudProfile.lastSolved;
+  } else {
+    bestLastSolved = localState.lastSolved || cloudProfile?.lastSolved || '';
+  }
+
+  // Use the higher streak (if lastSolved matches, otherwise use the one with more recent lastSolved)
+  let bestStreak = 0;
+  const localStreak = localState.streak ?? 0;
+  const cloudStreak = cloudProfile?.streak ?? 0;
+  if (localLastSolved && cloudLastSolved) {
+    bestStreak = localLastSolved > cloudLastSolved ? localStreak : cloudStreak;
+  } else if (localLastSolved) {
+    bestStreak = localStreak;
+  } else if (cloudLastSolved) {
+    bestStreak = cloudStreak;
+  } else {
+    bestStreak = Math.max(localStreak, cloudStreak);
+  }
+
+  // Always take the higher longestStreak
+  const bestLongestStreak = Math.max(
+    localState.longestStreak ?? 0,
+    cloudProfile?.longestStreak ?? 0
+  );
+
+  const mergedState = {
+    // Preferences: cloud is authoritative, fall back to local
+    showType: cloudProfile?.showType ?? localState.showType ?? true,
+    darkMode: cloudProfile?.darkMode ?? localState.darkMode ?? null,
+    hasSeenOnboarding: cloudProfile?.hasSeenOnboarding ?? localState.hasSeenOnboarding ?? false,
+    hasSeenOnboardingPrompt: cloudProfile?.hasSeenOnboardingPrompt ?? localState.hasSeenOnboardingPrompt ?? false,
+    hasCompletedFirstClue: cloudProfile?.hasCompletedFirstClue ?? localState.hasCompletedFirstClue ?? false,
+    // Progress: best of both
+    streak: bestStreak,
+    longestStreak: bestLongestStreak,
+    lastSolved: bestLastSolved,
+  };
 
   // Merge completed clues - cloud is authoritative, but add any local-only clues
   const cloudClueIds = new Set(cloudClues.map((c) => c.clid));
@@ -209,6 +244,29 @@ export const mergeData = (localState, cloudData) => {
     ...cloudToLocal.completedClues(cloudClues),
     ...localOnlyClues,
   ];
+
+  // Recalculate streak from merged clues as a recovery mechanism
+  // This catches cases where profile data got out of sync with actual completions
+  const recalculated = recalculateStreakFromClues(mergedClues);
+
+  // Use the better of computed best values vs recalculated values
+  const finalStreak = Math.max(mergedState.streak, recalculated.streak);
+  const finalLongestStreak = Math.max(mergedState.longestStreak, recalculated.longestStreak);
+
+  // For lastSolved, prefer the more recent date
+  let finalLastSolved = mergedState.lastSolved;
+  if (recalculated.lastSolved) {
+    const mergedDate = mergedState.lastSolved ? new Date(mergedState.lastSolved) : null;
+    const recalcDate = new Date(recalculated.lastSolved);
+    if (!mergedDate || recalcDate > mergedDate) {
+      finalLastSolved = recalculated.lastSolved;
+    }
+  }
+
+  // Update merged state with final values
+  mergedState.streak = finalStreak;
+  mergedState.longestStreak = finalLongestStreak;
+  mergedState.lastSolved = finalLastSolved;
 
   // Merge achievements - union of cloud and local
   const cloudAchievementsFormatted = cloudToLocal.achievements(

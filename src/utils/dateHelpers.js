@@ -137,6 +137,98 @@ export const formatTime = (seconds, short = false) => {
 }
 
 /**
+ * Recalculates streak data from completed clues array
+ * Uses completedAt dates to determine consecutive solve days
+ *
+ * This is a recovery mechanism when streak data gets out of sync.
+ * Note: This uses completedAt (when user solved) as an approximation,
+ * since the clue's release date isn't stored in completedClues.
+ *
+ * @param {Array} completedClues - Array of completed clue objects with completedAt
+ * @returns {Object} { streak, longestStreak, lastSolved }
+ *
+ * @example
+ * const clues = [{ completedAt: '2024-01-15T10:00:00Z' }, ...]
+ * const { streak, longestStreak } = recalculateStreakFromClues(clues)
+ */
+export const recalculateStreakFromClues = (completedClues) => {
+	if (!completedClues || completedClues.length === 0) {
+		return { streak: 0, longestStreak: 0, lastSolved: '' }
+	}
+
+	// Get unique solve dates (by day), sorted descending (most recent first)
+	const solveDates = [...new Set(
+		completedClues
+			.filter(c => c.completedAt)
+			.map(c => stripTime(new Date(c.completedAt)).getTime())
+	)].sort((a, b) => b - a)
+
+	if (solveDates.length === 0) {
+		return { streak: 0, longestStreak: 0, lastSolved: '' }
+	}
+
+	const today = stripTime(new Date()).getTime()
+	const oneDay = 24 * 60 * 60 * 1000
+
+	// Calculate current streak (consecutive days ending at today or yesterday)
+	let streak = 0
+	let expectedDate
+
+	// Allow starting from today or yesterday
+	if (solveDates[0] === today || solveDates[0] === today - oneDay) {
+		expectedDate = solveDates[0]
+	} else {
+		// Most recent solve is more than 1 day ago, streak is 0
+		return {
+			streak: 0,
+			longestStreak: calculateLongestStreakFromDates(solveDates, oneDay),
+			lastSolved: new Date(solveDates[0]).toISOString()
+		}
+	}
+
+	for (const date of solveDates) {
+		if (date === expectedDate) {
+			streak++
+			expectedDate -= oneDay
+		} else if (date < expectedDate) {
+			// Gap found, stop counting current streak
+			break
+		}
+	}
+
+	const longestStreak = Math.max(streak, calculateLongestStreakFromDates(solveDates, oneDay))
+
+	return {
+		streak,
+		longestStreak,
+		lastSolved: new Date(solveDates[0]).toISOString()
+	}
+}
+
+/**
+ * Helper to calculate longest streak from sorted date array
+ * @private
+ */
+const calculateLongestStreakFromDates = (sortedDatesDesc, oneDay) => {
+	if (sortedDatesDesc.length === 0) return 0
+
+	let longest = 1
+	let current = 1
+
+	for (let i = 1; i < sortedDatesDesc.length; i++) {
+		// Dates are descending, so previous - current should equal oneDay for consecutive
+		if (sortedDatesDesc[i - 1] - sortedDatesDesc[i] === oneDay) {
+			current++
+			longest = Math.max(longest, current)
+		} else {
+			current = 1
+		}
+	}
+
+	return longest
+}
+
+/**
  * Formats time for sharing via SMS/text without triggering OS data detectors.
  * Uses "Xm Ys" format instead of "M:SS" to prevent iOS/Android from
  * interpreting the time as a calendar event link.
