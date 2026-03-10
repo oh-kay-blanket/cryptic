@@ -147,7 +147,7 @@
           pointer-events: none;
           user-select: none;
           color: transparent;
-          line-height: 25px;
+          line-height: 32px;
           opacity: 0;
           transition:
             opacity $lc-transition--short ease 0s,
@@ -169,6 +169,15 @@
         :global(.dark) & {
           fill: #737373; // neutral-500 - true medium gray for dark mode
         }
+      }
+
+      svg.dd-add-icon {
+        margin-left: 0.25em;
+      }
+
+      .word .dd-def {
+        min-width: auto;
+        white-space: nowrap;
       }
     }
 

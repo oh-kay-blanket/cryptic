@@ -15,6 +15,19 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 		if (nextHint === 0) {
 			underlineLetters(hint.ref)
 
+			// For double definition, also reveal the definition text and icon refs
+			const nextHintObj = activeClue.hints[1]
+			if (nextHintObj && nextHintObj.category === 'dd-2' && nextHintObj.addLetters) {
+				const solLen = nextHintObj.addLetters.solLength
+				const refs = nextHintObj.addLetters.ref.current
+				// Line 1: def text (index 0) and icon (index 1)
+				changeColor(refs[0])
+				changeColor(refs[1])
+				// Line 2: def text (index 2+solLen) and icon (index 3+solLen)
+				changeColor(refs[2 + solLen])
+				changeColor(refs[3 + solLen])
+			}
+
 			// Indicators
 		} else {
 			switch (hint.category) {
@@ -98,8 +111,15 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					)
 					break
 
-				case 'dd-2':
+				case 'dd-2': {
+					const solLen = hint.addLetters.solLength
+					const refs = hint.addLetters.ref.current
+					// Line 1 solution letters: indices 2 to 2+solLen-1
+					changeColor(refs.slice(2, 2 + solLen))
+					// Line 2 solution letters: indices 4+solLen to end
+					changeColor(refs.slice(4 + solLen))
 					break
+				}
 
 				case 'deletion':
 					highlightLetters(hint.ref)

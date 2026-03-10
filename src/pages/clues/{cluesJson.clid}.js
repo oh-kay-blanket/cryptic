@@ -20,7 +20,7 @@ import handleHint from "../../utils/clue/handleHint";
 import highlightLetters from "../../utils/clue/highlightLetters";
 import changeColor from "../../utils/clue/changeColor";
 import { isTodayClue } from "../../utils/dateHelpers";
-import { HomophoneIcon, SpoonerismIcon } from "../../components/ClueTypeIcons";
+import { HomophoneIcon, SpoonerismIcon, DoubleDefinitionIcon } from "../../components/ClueTypeIcons";
 
 // Hand-drawn eye icon components
 const EyeOpenIcon = () => (
@@ -987,6 +987,85 @@ const CluePage = ({ data }) => {
       !!hint.addLetters &&
       !!hint.addLetters.value
     ) {
+      // Special rendering for double definition
+      if (hint.category === "dd-2") {
+        const solLen = hint.addLetters.solLength;
+        const definitions = activeClue.definition;
+        const refs = activeClue.addLetters.ref.current[parentIndex];
+        const line2Offset = 2 + solLen;
+
+        // Line 1: definition 0, DD icon, solution letters
+        addInsert.push(
+          <span
+            key={`${parentIndex}_word1`}
+            ref={hint.addLetters.wordRef}
+            className="word"
+          >
+            <span
+              key={`${parentIndex}_0`}
+              ref={refs[0]}
+              className="dd-def letter"
+            >
+              {definitions[0]}
+            </span>
+            <span
+              key={`${parentIndex}_1`}
+              ref={refs[1]}
+              className="letter"
+            >
+              <DoubleDefinitionIcon className="dd-add-icon" />
+            </span>
+            {hint.addLetters.value.slice(2, 2 + solLen).map((letter, i) => (
+              <span
+                key={`${parentIndex}_${2 + i}`}
+                ref={refs[2 + i]}
+                className="letter"
+              >
+                {letter}
+              </span>
+            ))}
+          </span>,
+        );
+
+        // Line break
+        addInsert.push(
+          <span key={`dd_br_${parentIndex}`} style={{ flexBasis: "100%" }} />,
+        );
+
+        // Line 2: definition 1, DD icon, solution letters
+        addInsert.push(
+          <span
+            key={`${parentIndex}_word2`}
+            className="word"
+          >
+            <span
+              key={`${parentIndex}_${line2Offset}`}
+              ref={refs[line2Offset]}
+              className="dd-def letter"
+            >
+              {definitions[1]}
+            </span>
+            <span
+              key={`${parentIndex}_${line2Offset + 1}`}
+              ref={refs[line2Offset + 1]}
+              className="letter"
+            >
+              <DoubleDefinitionIcon className="dd-add-icon" />
+            </span>
+            {hint.addLetters.value.slice(line2Offset + 2).map((letter, i) => (
+              <span
+                key={`${parentIndex}_${line2Offset + 2 + i}`}
+                ref={refs[line2Offset + 2 + i]}
+                className="letter"
+              >
+                {letter}
+              </span>
+            ))}
+          </span>,
+        );
+        return;
+      }
+
       const lettersInsert = hint.addLetters.value
         .filter((letter) => letter !== "spoonerism-icon")
         .map((letter, childIndex) => (

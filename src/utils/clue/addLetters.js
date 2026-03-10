@@ -67,6 +67,20 @@ const addLetters = (activeClue, hint) => {
 				hint.addLetters.value = hint.end.value.length > 0 ? hint.end.value.map(endPt => endPt ? endPt.split('') : []).flat() : []
 				break
 
+			case 'dd-2': {
+				const solLetters = activeClue.solution.arr
+				hint.addLetters.value = [
+					'dd-def-0',
+					'dd-icon',
+					...solLetters,
+					'dd-def-1',
+					'dd-icon',
+					...solLetters,
+				]
+				hint.addLetters.solLength = solLetters.length
+				break
+			}
+
 			default:
 				break
 		}
