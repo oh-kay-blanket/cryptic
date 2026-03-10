@@ -314,11 +314,11 @@ describe('dateHelpers', () => {
 		// to prevent iOS/Android data detectors from recognizing durations
 		const ZWS = '\u200B'
 
-		it('should format times under 60 seconds with "s" suffix', () => {
-			expect(formatTimeForShare(0)).toBe(`0${ZWS}s`)
-			expect(formatTimeForShare(1)).toBe(`1${ZWS}s`)
-			expect(formatTimeForShare(45)).toBe(`45${ZWS}s`)
-			expect(formatTimeForShare(59)).toBe(`59${ZWS}s`)
+		it('should format times under 60 seconds with "sec" suffix', () => {
+			expect(formatTimeForShare(0)).toBe(`0${ZWS} sec`)
+			expect(formatTimeForShare(1)).toBe(`1${ZWS} sec`)
+			expect(formatTimeForShare(45)).toBe(`45${ZWS} sec`)
+			expect(formatTimeForShare(59)).toBe(`59${ZWS} sec`)
 		})
 
 		it('should format times at or above 60 seconds as Xm Ys', () => {

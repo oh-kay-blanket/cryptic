@@ -699,7 +699,7 @@ const TopBar = () => {
                       {bestTimeClue && (
                         <div className='stats-time-item'>
                           <div className='stats-time-value'>
-                            {bestTime < 60 ? <>{bestTime}<span className='stats-time-unit'>s</span></> : formatTime(bestTime)}
+                            {bestTime < 60 ? <>{bestTime}<span className='stats-time-unit'> seconds</span></> : formatTime(bestTime)}
                           </div>
                           <div className='stats-time-label'>
                             best{' '}
@@ -716,7 +716,7 @@ const TopBar = () => {
                       {avgSolveTime != null && (
                         <div className='stats-time-item'>
                           <div className='stats-time-value'>
-                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'>s</span></> : formatTime(avgSolveTime)}
+                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'> seconds</span></> : formatTime(avgSolveTime)}
                           </div>
                           <div className='stats-time-label'>average</div>
                         </div>
@@ -731,12 +731,12 @@ const TopBar = () => {
                   <div className='stats-performance-row'>
                     <div className='stats-perf-item'>
                       <span className='stats-perf-value'>{avgGuesses}</span>
-                      <span className='stats-perf-label'>avg guesses</span>
+                      <span className='stats-perf-label'>average guesses</span>
                     </div>
                     <div className='stats-perf-divider' />
                     <div className='stats-perf-item'>
                       <span className='stats-perf-value'>{avgHints}</span>
-                      <span className='stats-perf-label'>avg hints</span>
+                      <span className='stats-perf-label'>average hints</span>
                     </div>
                   </div>
                 </div>
