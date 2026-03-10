@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, useContext, useRef } from "react";
-import { isSameDay, shouldResetStreak } from "./dateHelpers";
+import { isSameDay, shouldResetStreak, recalculateStreakFromClues } from "./dateHelpers";
 import { checkNewAchievements, formatUnlockedAchievements } from "./achievements";
 import { AuthContext } from "./AuthContext";
 import {
@@ -532,6 +532,31 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  // Recalculate streak from completed clues (recovery mechanism)
+  const recalculateStreak = useCallback(() => {
+    const recalculated = recalculateStreakFromClues(lcState.completedClues);
+
+    const newState = {
+      ...lcState,
+      streak: Math.max(lcState.streak, recalculated.streak),
+      longestStreak: Math.max(lcState.longestStreak, recalculated.longestStreak),
+    };
+
+    // Update lastSolved if recalculated is more recent
+    if (recalculated.lastSolved) {
+      const currentDate = lcState.lastSolved ? new Date(lcState.lastSolved) : null;
+      const recalcDate = new Date(recalculated.lastSolved);
+      if (!currentDate || recalcDate > currentDate) {
+        newState.lastSolved = recalculated.lastSolved;
+      }
+    }
+
+    setLcState(newState);
+    syncProfileToCloud(newState);
+
+    return recalculated;
+  }, [lcState, syncProfileToCloud]);
+
   // Achievement functions
   const setHasSeenAchievementsIntro = useCallback((value) => {
     setLcState((prevState) => {
@@ -598,6 +623,7 @@ export const UserProvider = ({ children }) => {
       clueSolvedTime,
       setClueSolvedTime,
       refreshFromStorage,
+      recalculateStreak,
       hasSeenOnboarding,
       setHasSeenOnboarding,
       hasSeenOnboardingPrompt,
@@ -645,6 +671,7 @@ export const UserProvider = ({ children }) => {
       clearNewlyUnlockedAchievements,
       setHasSeenAchievementsIntro,
       markAchievementsSeen,
+      recalculateStreak,
       timerPaused,
       openStatsWithTab,
       syncStatus,

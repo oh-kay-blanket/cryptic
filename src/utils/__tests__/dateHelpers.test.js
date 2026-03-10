@@ -19,6 +19,7 @@ import {
 	isTodayClue,
 	daysBetween,
 	shouldResetStreak,
+	recalculateStreakFromClues,
 	formatTime,
 	formatTimeForShare,
 } from '../dateHelpers'
@@ -266,6 +267,130 @@ describe('dateHelpers', () => {
 
 			expect(shouldResetStreak(yesterday, 5)).toBe(false)
 			expect(shouldResetStreak(twoDaysAgo, 5)).toBe(true)
+		})
+	})
+
+	/**
+	 * FUNCTION: recalculateStreakFromClues()
+	 * Purpose: Recovery mechanism to recalculate streak from completed clues
+	 */
+	describe('recalculateStreakFromClues', () => {
+		beforeEach(() => {
+			jest.useFakeTimers()
+			jest.setSystemTime(new Date('2024-01-15T12:00:00'))
+		})
+
+		afterEach(() => {
+			jest.useRealTimers()
+		})
+
+		it('should return zeros for empty array', () => {
+			const result = recalculateStreakFromClues([])
+			expect(result.streak).toBe(0)
+			expect(result.longestStreak).toBe(0)
+			expect(result.lastSolved).toBe('')
+		})
+
+		it('should return zeros for null/undefined', () => {
+			expect(recalculateStreakFromClues(null).streak).toBe(0)
+			expect(recalculateStreakFromClues(undefined).streak).toBe(0)
+		})
+
+		it('should calculate streak of 1 when solved today only', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' }
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(1)
+			expect(result.longestStreak).toBe(1)
+		})
+
+		it('should calculate streak for consecutive days ending today', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-14T10:00:00' },
+				{ clid: '3', completedAt: '2024-01-13T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(3)
+			expect(result.longestStreak).toBe(3)
+		})
+
+		it('should calculate streak for consecutive days ending yesterday', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-14T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-13T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(2)
+		})
+
+		it('should return streak of 0 when most recent solve is too old', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-12T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-11T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(0)
+			expect(result.longestStreak).toBe(2)
+		})
+
+		it('should stop counting at gap in consecutive days', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-14T10:00:00' },
+				// Gap on Jan 13
+				{ clid: '3', completedAt: '2024-01-12T10:00:00' },
+				{ clid: '4', completedAt: '2024-01-11T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(2) // Only 15th and 14th
+			expect(result.longestStreak).toBe(2) // Both segments are 2 days
+		})
+
+		it('should calculate longest streak separate from current', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' },
+				// Gap
+				{ clid: '2', completedAt: '2024-01-10T10:00:00' },
+				{ clid: '3', completedAt: '2024-01-09T10:00:00' },
+				{ clid: '4', completedAt: '2024-01-08T10:00:00' },
+				{ clid: '5', completedAt: '2024-01-07T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(1) // Only today
+			expect(result.longestStreak).toBe(4) // Jan 7-10
+		})
+
+		it('should handle multiple solves on same day', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-15T14:00:00' },
+				{ clid: '3', completedAt: '2024-01-14T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(2) // 15th (counted once) and 14th
+		})
+
+		it('should filter out clues without completedAt', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-15T10:00:00' },
+				{ clid: '2' }, // No completedAt
+				{ clid: '3', completedAt: '2024-01-14T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			expect(result.streak).toBe(2)
+		})
+
+		it('should return most recent completedAt as lastSolved', () => {
+			const clues = [
+				{ clid: '1', completedAt: '2024-01-13T10:00:00' },
+				{ clid: '2', completedAt: '2024-01-15T14:00:00' },
+				{ clid: '3', completedAt: '2024-01-14T10:00:00' },
+			]
+			const result = recalculateStreakFromClues(clues)
+			// lastSolved should be normalized to start of day
+			expect(new Date(result.lastSolved).getDate()).toBe(15)
 		})
 	})
 
