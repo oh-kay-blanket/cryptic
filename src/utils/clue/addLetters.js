@@ -41,7 +41,7 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'homophone':
-				hint.addLetters.value = ['= ', activeClue.solution.value]
+				hint.addLetters.value = ['homophone-icon', activeClue.solution.value]
 				break
 
 			case 'hw-2':

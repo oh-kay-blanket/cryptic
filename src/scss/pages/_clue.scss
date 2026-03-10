@@ -158,8 +158,8 @@
 
       svg {
         fill: #ccc;
-        transform: rotate(45deg);
-        opacity: 0;
+        margin-right: 0.25em;
+        opacity: inherit;
         transition:
           opacity $lc-transition--short ease 0s,
           color $lc-transition--short ease 0s,

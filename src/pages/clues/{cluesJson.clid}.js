@@ -20,6 +20,7 @@ import handleHint from "../../utils/clue/handleHint";
 import highlightLetters from "../../utils/clue/highlightLetters";
 import changeColor from "../../utils/clue/changeColor";
 import { isTodayClue } from "../../utils/dateHelpers";
+import { HomophoneIcon } from "../../components/ClueTypeIcons";
 
 // Hand-drawn eye icon components
 const EyeOpenIcon = () => (
@@ -930,7 +931,7 @@ const CluePage = ({ data }) => {
           ref={activeClue.addLetters.ref.current[parentIndex][childIndex]}
           className="letter"
         >
-          {letter}
+          {letter === 'homophone-icon' ? <HomophoneIcon className="homophone-add-icon" /> : letter}
         </span>
       ));
 
