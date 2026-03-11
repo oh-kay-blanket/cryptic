@@ -446,28 +446,22 @@ html.dark .stats-calendar {
   min-width: 0;
 }
 
-.calendar-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #d4d4d4;
-  background-color: transparent;
+// ScoreGrid spacing inside calendar
+.calendar-day .score-grid {
   margin-bottom: 0.375rem;
-  transition: all 0.15s ease;
-
-  &.filled {
-    background-color: var(--lc-active-bg);
-    border-color: var(--lc-active-bg);
-  }
 }
 
-html.dark .calendar-dot {
-  border-color: #525252;
+// Empty placeholder matching sm ScoreGrid size (5*5px + 4*1px = 29w, 3*5px + 2*1px = 17h)
+.score-grid-empty {
+  width: 29px;
+  height: 17px;
+  border: 1.5px dashed #d4d4d4;
+  border-radius: 2px;
+  margin-bottom: 0.375rem;
+}
 
-  &.filled {
-    background-color: var(--lc-active-bg);
-    border-color: var(--lc-active-bg);
-  }
+html.dark .score-grid-empty {
+  border-color: #525252;
 }
 
 .calendar-label {
@@ -621,14 +615,16 @@ html.dark .stats-difficulty-section {
 
 // Stats Footer
 .stats-footer {
-  border-top: 1px solid #e5e5e5;
-  padding-top: 1rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
   font-size: 0.8125rem;
   color: #737373;
   text-align: center;
+  background-color: #f5f3ee;
+  border-radius: 6px;
 }
 
 html.dark .stats-footer {
-  border-top-color: #525252;
   color: #a3a3a3;
+  background-color: #2a2a2a;
 }

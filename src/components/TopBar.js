@@ -14,6 +14,7 @@ import {
   getAchievementProgress,
 } from '../utils/achievements';
 import AchievementIcon from './AchievementIcon';
+import ScoreGrid from './ScoreGrid';
 import AuthModal from './AuthModal';
 import UserMenu from './UserMenu';
 import MergePromptModal from './MergePromptModal';
@@ -336,14 +337,15 @@ const TopBar = () => {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
 
-      const solved = completedClues.some(clue => {
+      const match = completedClues.find(clue => {
         if (!clue.completedAt) return false;
         return isSameDay(new Date(clue.completedAt), date);
       });
 
       days.push({
         date,
-        solved,
+        solved: !!match,
+        stats: match ? { solveTime: match.solveTime, guesses: match.guesses || 0, hints: match.hints || 0 } : null,
         dayLabel: date.toLocaleDateString('en-US', { weekday: 'narrow' }),
       });
     }
@@ -683,7 +685,15 @@ const TopBar = () => {
                   <div className='calendar-row'>
                     {last7Days.map((day, index) => (
                       <div key={index} className='calendar-day'>
-                        <div className={`calendar-dot ${day.solved ? 'filled' : ''}`} />
+                        {day.solved && day.stats ? (
+                          <ScoreGrid
+                            solveTime={day.stats.solveTime}
+                            guesses={day.stats.guesses}
+                            hints={day.stats.hints}
+                          />
+                        ) : (
+                          <div className='score-grid-empty' />
+                        )}
                         <div className='calendar-label'>{day.dayLabel}</div>
                       </div>
                     ))}

@@ -1,0 +1,61 @@
+.score-grid {
+  display: flex;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    &--time {
+      background-color: #7bb886;
+    }
+
+    &--guesses {
+      background-color: var(--lc-primary);
+    }
+
+    &--hints {
+      background-color: var(--lc-secondary);
+    }
+
+    &--empty {
+      background-color: #e8e4df;
+    }
+  }
+
+  // Small size (calendar usage)
+  &--sm {
+    gap: 1px;
+
+    .score-grid__row {
+      gap: 1px;
+    }
+
+    .score-grid__cell {
+      width: 5px;
+      height: 5px;
+      border-radius: 0.5px;
+    }
+  }
+
+  // Medium size (future use)
+  &--md {
+    gap: 2px;
+
+    .score-grid__row {
+      gap: 2px;
+    }
+
+    .score-grid__cell {
+      width: 10px;
+      height: 10px;
+      border-radius: 1px;
+    }
+  }
+}
+
+// Dark mode empty cells
+html.dark .score-grid__cell--empty {
+  background-color: #3d3a37;
+}

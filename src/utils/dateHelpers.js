@@ -264,6 +264,26 @@ export const formatTimeForShare = (seconds) => {
 }
 
 /**
+ * Computes clamped score counts (0-5) for time, guesses, and hints.
+ * Used by both the share text builder and the visual ScoreGrid component.
+ *
+ * @param {object} params
+ * @param {number|null} params.solveTime - Solve time in seconds
+ * @param {number} params.guesses - Number of guesses
+ * @param {number} params.hints - Number of hints used
+ * @returns {{ time: number, guesses: number, hints: number }} Clamped counts (0-5)
+ */
+export const computeScoreCounts = ({ solveTime, guesses, hints }) => {
+	const SIZE = 5
+	const clamp = (n) => Math.min(Math.max(n, 0), SIZE)
+	return {
+		time: clamp(solveTime != null ? Math.ceil(solveTime / 30) : 0),
+		guesses: clamp(guesses),
+		hints: clamp(hints),
+	}
+}
+
+/**
  * Builds a grid-based share text for score sharing.
  * Three rows of 5 squares: time (green), guesses (orange), hints (purple).
  * Filled squares represent usage; fewer filled = better performance.
@@ -277,15 +297,14 @@ export const formatTimeForShare = (seconds) => {
  */
 export const buildShareText = ({ clid, solveTime, guesses, hints }) => {
 	const SIZE = 5
-	const buildRow = (filled, filledEmoji) => {
-		const count = Math.min(Math.max(filled, 0), SIZE)
-		return filledEmoji.repeat(count) + '⬜'.repeat(SIZE - count)
-	}
+	const counts = computeScoreCounts({ solveTime, guesses, hints })
 
-	const timeCount = solveTime != null ? Math.ceil(solveTime / 30) : 0
-	const timeRow = buildRow(timeCount, '🟩')
-	const guessRow = buildRow(guesses, '🟧')
-	const hintRow = buildRow(hints, '🟪')
+	const buildRow = (filled, filledEmoji) =>
+		filledEmoji.repeat(filled) + '⬜'.repeat(SIZE - filled)
+
+	const timeRow = buildRow(counts.time, '🟩')
+	const guessRow = buildRow(counts.guesses, '🟧')
+	const hintRow = buildRow(counts.hints, '🟪')
 
 	return `Learn Cryptic #${clid}\n${timeRow}\n${guessRow}\n${hintRow}`
 }
