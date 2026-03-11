@@ -622,11 +622,9 @@ const CluePage = ({ data }) => {
     setTooltipPosition(null);
   }, [showLogic]);
 
-  // Click outside to dismiss tooltip (only in regular hint mode, not showLogic)
+  // Click outside to dismiss tooltip
   useEffect(() => {
-    // In showLogic mode, don't set up click-outside-to-dismiss
-    // User advances with Next button instead
-    if (activeTooltipHint === null || showLogic) return;
+    if (activeTooltipHint === null) return;
 
     const handleClickOutside = () => {
       dismissTooltip();
@@ -641,7 +639,7 @@ const CluePage = ({ data }) => {
       clearTimeout(timeoutId);
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [activeTooltipHint, dismissTooltip, showLogic]);
+  }, [activeTooltipHint, dismissTooltip]);
 
   // Show tooltip during "Show logic" mode
   useEffect(() => {
