@@ -103,7 +103,7 @@ const Message = ({
         <div className="stats-row-wrapper">
           <div className="stats-row">
             {solveTime != null && (
-              <span className="stat-time dark:!bg-neutral-600">
+              <span className="stat-time">
                 {formatTime(solveTime)}
               </span>
             )}
@@ -234,7 +234,7 @@ const Message = ({
           <div className="stats-row-wrapper">
             <div className="stats-row">
               {stats.solveTime != null && (
-                <span className="stat-time dark:!bg-neutral-600">
+                <span className="stat-time">
                   {formatTime(stats.solveTime)}
                 </span>
               )}

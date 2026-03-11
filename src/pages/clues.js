@@ -447,13 +447,12 @@ const Clues = ({ data, location }) => {
                     {completedClue.solveTime != null && (
                       <span
                         style={{
-                          backgroundColor: "#e5e5e5",
+                          backgroundColor: "var(--lc-timer-bg)",
                           color: "var(--lc-text-primary)",
                           padding: "2px 6px",
                           borderRadius: "4px",
                           fontSize: "0.75rem",
                         }}
-                        className="dark:!bg-neutral-600"
                       >
                         {formatTime(completedClue.solveTime)}
                       </span>

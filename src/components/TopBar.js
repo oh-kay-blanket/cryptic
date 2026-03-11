@@ -417,14 +417,13 @@ const TopBar = () => {
                   <div className='current-stats-tooltip'>
                     <span
                       style={{
-                        backgroundColor: '#e5e5e5',
+                        backgroundColor: 'var(--lc-timer-bg)',
                         color: 'var(--lc-text-primary)',
                         padding: '2px 6px',
                         lineHeight: '1.5',
                         borderRadius: '4px',
                         fontSize: '0.875rem',
                       }}
-                      className='dark:!bg-neutral-600'
                     >
                       {formatTime(elapsedTime)}
                     </span>

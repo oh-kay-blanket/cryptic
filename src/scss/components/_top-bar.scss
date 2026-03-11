@@ -81,12 +81,8 @@
     }
 
     .stat-time {
-      background-color: #e5e5e5;
+      background-color: var(--lc-timer-bg);
       color: var(--lc-text-primary);
-
-      html.dark & {
-        background-color: #404040;
-      }
     }
 
     .stat-guesses {
