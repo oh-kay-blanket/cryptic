@@ -695,8 +695,16 @@ const TopBar = () => {
                   <div className='stats-time-section'>
                     <h3 className='stats-section-title'>Time</h3>
                     <div className='stats-time-grid'>
+                      {avgSolveTime != null && (
+                        <div className='stats-time-item stats-time-item--avg'>
+                          <div className='stats-time-value'>
+                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'> seconds</span></> : formatTime(avgSolveTime)}
+                          </div>
+                          <div className='stats-time-label'>average</div>
+                        </div>
+                      )}
                       {bestTimeClue && (
-                        <div className='stats-time-item'>
+                        <div className='stats-time-item stats-time-item--best'>
                           <div className='stats-time-value'>
                             {bestTime < 60 ? <>{bestTime}<span className='stats-time-unit'> seconds</span></> : formatTime(bestTime)}
                           </div>
@@ -712,14 +720,6 @@ const TopBar = () => {
                           </div>
                         </div>
                       )}
-                      {avgSolveTime != null && (
-                        <div className='stats-time-item'>
-                          <div className='stats-time-value'>
-                            {avgSolveTime < 60 ? <>{avgSolveTime}<span className='stats-time-unit'> seconds</span></> : formatTime(avgSolveTime)}
-                          </div>
-                          <div className='stats-time-label'>average</div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 )}
@@ -728,12 +728,11 @@ const TopBar = () => {
                 <div className='stats-performance-section'>
                   <h3 className='stats-section-title'>Performance</h3>
                   <div className='stats-performance-row'>
-                    <div className='stats-perf-item'>
+                    <div className='stats-perf-item stats-perf-item--guesses'>
                       <span className='stats-perf-value'>{avgGuesses}</span>
                       <span className='stats-perf-label'>average guesses</span>
                     </div>
-                    <div className='stats-perf-divider' />
-                    <div className='stats-perf-item'>
+                    <div className='stats-perf-item stats-perf-item--hints'>
                       <span className='stats-perf-value'>{avgHints}</span>
                       <span className='stats-perf-label'>average hints</span>
                     </div>
