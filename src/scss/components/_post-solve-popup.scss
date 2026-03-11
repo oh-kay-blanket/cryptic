@@ -78,11 +78,10 @@
   }
 
   .stat-time {
-    background-color: #e5e5e5;
+    background-color: var(--lc-timer-bg);
     color: #333;
 
     .dark & {
-      background-color: #525252;
       color: #f5f5f5;
     }
   }

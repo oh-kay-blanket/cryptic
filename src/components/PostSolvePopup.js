@@ -105,7 +105,7 @@ const PostSolvePopup = ({
           <p className='post-solve-title'>Nice work!</p>
           <div className='stats-row'>
             {solveTime != null && (
-              <span className='stat-time dark:!bg-neutral-600'>{formatTime(solveTime)}</span>
+              <span className='stat-time'>{formatTime(solveTime)}</span>
             )}
             <span className='stat-guesses'>
               {stats.guesses} {stats.guesses === 1 ? 'guess' : 'guesses'}
