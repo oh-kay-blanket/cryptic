@@ -4,7 +4,7 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
-import { isTodayClue, formatTime, formatTimeForShare } from '../utils/dateHelpers'
+import { isTodayClue, formatTime, buildShareText } from '../utils/dateHelpers'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 import { migrateAchievements } from '../utils/achievements'
 import AchievementsIntroModal from '../components/AchievementsIntroModal'
@@ -141,15 +141,12 @@ const Title = ({ data }) => {
 
 	// Share score function
 	const handleShareScore = async () => {
-		const guessText = `${todayGuesses} ${todayGuesses === 1 ? 'guess' : 'guesses'}`
-		const hintText = `${todayHints} ${todayHints === 1 ? 'hint' : 'hints'}`
-		const timeText = todaySolveTime != null ? formatTimeForShare(todaySolveTime) : null
-
-		const statsLine = timeText
-			? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
-			: `🟧 ${guessText} 🟪 ${hintText}`
-
-		const scoreText = `Learn Cryptic #${todayClue.clid}\n${statsLine}`
+		const scoreText = buildShareText({
+			clid: todayClue.clid,
+			solveTime: todaySolveTime,
+			guesses: todayGuesses,
+			hints: todayHints,
+		})
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 

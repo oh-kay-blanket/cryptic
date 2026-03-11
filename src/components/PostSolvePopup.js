@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { UserContext } from '../utils/UserContext';
-import { formatTime, formatTimeForShare, isTodayClue } from '../utils/dateHelpers';
+import { formatTime, isTodayClue, buildShareText } from '../utils/dateHelpers';
 import AchievementIcon from './AchievementIcon';
 
 // Hand-drawn share icon
@@ -66,15 +66,12 @@ const PostSolvePopup = ({
 
   // Share score function (for today's clue only)
   const handleShareScore = async () => {
-    const guessText = `${stats.guesses} ${stats.guesses === 1 ? 'guess' : 'guesses'}`;
-    const hintText = `${stats.hints} ${stats.hints === 1 ? 'hint' : 'hints'}`;
-    const timeText = solveTime != null ? formatTimeForShare(solveTime) : null;
-
-    const statsLine = timeText
-      ? `⬜ ${timeText} 🟧 ${guessText} 🟪 ${hintText}`
-      : `🟧 ${guessText} 🟪 ${hintText}`;
-
-    const scoreText = `Learn Cryptic #${activeClue.clid}\n${statsLine}`;
+    const scoreText = buildShareText({
+      clid: activeClue.clid,
+      solveTime,
+      guesses: stats.guesses,
+      hints: stats.hints,
+    });
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 

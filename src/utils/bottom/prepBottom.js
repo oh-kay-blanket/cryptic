@@ -1,5 +1,5 @@
 import React from 'react'
-import { isTodayClue, formatTimeForShare } from '../dateHelpers'
+import { isTodayClue, buildShareText } from '../dateHelpers'
 
 const prepBottom = (
 	activeClue,
@@ -25,16 +25,12 @@ const prepBottom = (
 	// Check if this is today's clue
 	const isTodaysClue = () => isTodayClue(activeClue)
 	const shareScore = async (solveTime = null) => {
-		// Build stats line - prioritize stats over metadata
-		const guessText = `${stats.guesses} ${stats.guesses === 1 ? 'guess' : 'guesses'}`
-		const hintText = `${stats.hints} ${stats.hints === 1 ? 'hint' : 'hints'}`
-		const timeText = solveTime != null ? formatTimeForShare(solveTime) : null
-
-		const statsLine = timeText
-			? `${timeText} ${guessText} ${hintText}`
-			: `${guessText} ${hintText}`
-
-		const scoreText = `${statsLine}\nLearn Cryptic #${activeClue.clid}\nlearncryptic.com`
+		const scoreText = buildShareText({
+			clid: activeClue.clid,
+			solveTime,
+			guesses: stats.guesses,
+			hints: stats.hints,
+		})
 
 		const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
@@ -44,20 +40,16 @@ const prepBottom = (
 					title: 'Clue Score',
 					text: scoreText,
 				})
-				console.log('Shared successfully')
 			} catch (err) {
 				if (err.name !== 'AbortError') {
-					console.error('Share failed:', err)
 					alert('Could not share your score.')
 				}
 			}
 		} else {
-			// Desktop or fallback
 			try {
 				await navigator.clipboard.writeText(scoreText)
 				alert('Score copied to clipboard!')
 			} catch (err) {
-				console.error('Clipboard copy failed:', err)
 				alert('Could not copy your score.')
 			}
 		}

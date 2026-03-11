@@ -262,3 +262,30 @@ export const formatTimeForShare = (seconds) => {
 		? `${minutes}${ZWS}m`
 		: `${minutes}${ZWS}m ${remainingSeconds}${ZWS}s`
 }
+
+/**
+ * Builds a grid-based share text for score sharing.
+ * Three rows of 5 squares: time (green), guesses (orange), hints (purple).
+ * Filled squares represent usage; fewer filled = better performance.
+ *
+ * @param {object} params
+ * @param {number} params.clid - Clue ID
+ * @param {number|null} params.solveTime - Solve time in seconds
+ * @param {number} params.guesses - Number of guesses
+ * @param {number} params.hints - Number of hints used
+ * @returns {string} Share text with emoji grid
+ */
+export const buildShareText = ({ clid, solveTime, guesses, hints }) => {
+	const SIZE = 5
+	const buildRow = (filled, filledEmoji) => {
+		const count = Math.min(Math.max(filled, 0), SIZE)
+		return filledEmoji.repeat(count) + '⬜'.repeat(SIZE - count)
+	}
+
+	const timeCount = solveTime != null ? Math.ceil(solveTime / 30) : 0
+	const timeRow = buildRow(timeCount, '🟩')
+	const guessRow = buildRow(guesses, '🟧')
+	const hintRow = buildRow(hints, '🟪')
+
+	return `Learn Cryptic #${clid}\n${timeRow}\n${guessRow}\n${hintRow}`
+}
