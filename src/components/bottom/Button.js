@@ -16,7 +16,7 @@ const Button = ({ btnInfo }) => {
 			case 'alt':
 				return 'dark:!bg-[var(--lc-highlight-bg)] dark:!border-[var(--lc-highlight-bg)] dark:hover:!bg-[#3d3654]'
 			case 'secondary':
-				return 'dark:!border-neutral-300 dark:hover:!bg-neutral-700 dark:hover:!border-neutral-700'
+				return 'dark:!border-neutral-300'
 			case 'gray':
 				return 'dark:!bg-neutral-600 dark:!border-neutral-600 dark:hover:!bg-neutral-700'
 			default:

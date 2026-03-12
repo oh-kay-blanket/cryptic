@@ -85,11 +85,16 @@
 		background: none;
 		border: 1px solid $lc-text;
 
-		&:hover,
 		&:active {
 			filter: brightness(.95);
-			background-color: $lc-gray;
-			border: 1px solid $lc-gray;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				filter: brightness(.95);
+				background-color: $lc-gray;
+				border: 1px solid $lc-gray;
+			}
 		}
 
 		// Dark mode
@@ -97,10 +102,11 @@
 			border: 1px solid #d1d5db; // gray-300
 			color: #f9fafb; // gray-50
 
-			&:hover,
-			&:active {
-				background-color: #374151; // gray-700
-				border: 1px solid #374151;
+			@media (hover: hover) {
+				&:hover {
+					background-color: #374151; // gray-700
+					border: 1px solid #374151;
+				}
 			}
 		}
 	}
