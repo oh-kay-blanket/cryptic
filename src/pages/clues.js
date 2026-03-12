@@ -208,6 +208,23 @@ const Clues = ({ data, location }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [hoveredClue, setHoveredClue] = useState(null);
   const [hoveredRelease, setHoveredRelease] = useState(null);
+  const [pinnedClue, setPinnedClue] = useState(null);
+
+  // Dismiss pinned clue when clicking outside
+  useEffect(() => {
+    if (!pinnedClue) return;
+
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.archive-clue')) {
+        setPinnedClue(null);
+        setHoveredClue(null);
+        setHoveredRelease(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [pinnedClue]);
 
   // Filter state - initialize from URL params if present
   const [difficultyFilter, setDifficultyFilter] = useState(() => getInitialFilter("difficulty", "all"));
@@ -331,7 +348,7 @@ const Clues = ({ data, location }) => {
       </div>
     );
 
-    const isHovered = hoveredClue === clue.clid;
+    const isHovered = hoveredClue === clue.clid || pinnedClue === clue.clid;
     const isReleaseHovered = hoveredRelease === clue.clid;
     const completionText =
       completedClue && completedClue.how === "g" ? "Solved" : "Not solved";
@@ -362,20 +379,28 @@ const Clues = ({ data, location }) => {
               : {}),
           }}
           onMouseEnter={() => {
-            setHoveredClue(clue.clid);
-            setHoveredRelease(clue.clid);
+            if (!pinnedClue) {
+              setHoveredClue(clue.clid);
+              setHoveredRelease(clue.clid);
+            }
           }}
           onMouseLeave={() => {
-            setHoveredClue(null);
-            setHoveredRelease(null);
+            if (pinnedClue !== clue.clid) {
+              setHoveredClue(null);
+              setHoveredRelease(null);
+            }
           }}
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            const newHoveredState = hoveredClue === clue.clid ? null : clue.clid;
-            setHoveredClue(newHoveredState);
-            if (!newHoveredState) {
+            if (pinnedClue === clue.clid) {
+              setPinnedClue(null);
+              setHoveredClue(null);
               setHoveredRelease(null);
+            } else {
+              setPinnedClue(clue.clid);
+              setHoveredClue(clue.clid);
+              setHoveredRelease(clue.clid);
             }
           }}
         >
@@ -399,8 +424,15 @@ const Clues = ({ data, location }) => {
         <Link
           to={`/clues/${clue.clid}`}
           className="archive-tile-link"
-          onClick={() => {
-            window.scrollTo(0, 0);
+          onClick={(e) => {
+            if (pinnedClue === clue.clid) {
+              e.preventDefault();
+              setPinnedClue(null);
+              setHoveredClue(null);
+              setHoveredRelease(null);
+            } else {
+              window.scrollTo(0, 0);
+            }
           }}
         >
           <div
@@ -417,9 +449,8 @@ const Clues = ({ data, location }) => {
               !!completedClue &&
               completedClue.how === "g"
                 ? {
-                    // For completed clues: match the archive-release color
-                    backgroundColor: "var(--lc-active-bg)",
-                    color: isDarkMode ? "white" : "black",
+                    // For completed clues: subtle warm gray
+                    backgroundColor: isDarkMode ? "#3d3a37" : "#eae7e2",
                   }
                 : {}),
               ...(!isHovered && isReleaseHovered &&
@@ -467,7 +498,7 @@ const Clues = ({ data, location }) => {
                         fontSize: "0.75rem",
                       }}
                     >
-                      {completedClue.guesses} {completedClue.guesses === 1 ? "guess" : "guesses"}
+                      {completedClue.guesses}g
                     </span>
                     <span
                       style={{
@@ -478,7 +509,7 @@ const Clues = ({ data, location }) => {
                         fontSize: "0.75rem",
                       }}
                     >
-                      {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
+                      {completedClue.hints}h
                     </span>
                     <button
                       className="tile-clear-btn"
