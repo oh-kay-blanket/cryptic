@@ -182,13 +182,13 @@
       }
 
       &.g .archive-release:before {
-        background-color: var(--archive-bg, $lc-primary--light);
-        border: 1px solid var(--archive-bg, $lc-primary--light);
+        background-color: var(--lc-active-bg);
+        border: 1px solid var(--lc-active-bg);
       }
 
       &.h .archive-release:before {
-        background-color: var(--archive-bg, $lc-secondary--v-light);
-        border: 1px solid var(--archive-bg, $lc-secondary--v-light);
+        background-color: var(--lc-active-bg);
+        border: 1px solid var(--lc-active-bg);
       }
     }
   }

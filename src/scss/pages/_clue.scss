@@ -277,9 +277,8 @@
           color: $lc-primary--dark;
           text-decoration: underline;
 
-          // Dark mode
           :global(.dark) & {
-            color: $lc-primary--light; // primary-light for better brand alignment
+            color: var(--lc-active-bg);
           }
         }
 
