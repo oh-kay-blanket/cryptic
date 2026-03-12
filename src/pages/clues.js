@@ -459,12 +459,13 @@ const Clues = ({ data, location }) => {
                 : {}),
             }}
           >
-            <div className="tile-img-stats">
-              {!isHovered &&
-                !!completedClue &&
-                completedClue.how === "g" &&
-                stats}
-            </div>
+            {!isHovered &&
+              !!completedClue &&
+              completedClue.how === "g" && (
+              <div className="tile-img-stats">
+                {stats}
+              </div>
+            )}
             {isHovered ? (
               <div className="tile-info">
                 {!!completedClue && completedClue.how === "g" ? (
