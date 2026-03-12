@@ -95,7 +95,7 @@ const Message = ({
   const message = checkAns ? (
     isCorrectAns ? (
       <div data-testid="message-success">
-        <strong>{input.join("").toUpperCase()}</strong> is correct!
+        <strong>{activeClue.solution.value.toUpperCase()}</strong> is correct!
         <div className="stats-row-wrapper">
           <div className="stats-row">
             {solveTime != null && (
@@ -130,7 +130,7 @@ const Message = ({
   ) : solutionRevealedViaHint && isSolution ? (
     <div data-testid="message-revealed">
       The answer is{" "}
-      <strong>{activeClue.solution.arr.join("").toUpperCase()}</strong>
+      <strong>{activeClue.solution.value.toUpperCase()}</strong>
     </div>
   ) : (
     getMessage(activeClue.hints[nextHint])
