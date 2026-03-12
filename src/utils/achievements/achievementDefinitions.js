@@ -54,14 +54,14 @@ export const achievements = [
     retroactiveCheck: ({ completedClues }) => completedClues.length >= 100,
   },
   {
-    id: 'volume-500',
+    id: 'volume-300',
     category: ACHIEVEMENT_CATEGORIES.VOLUME,
     name: 'Cryptic Expert',
-    description: 'Solve 500 clues',
+    description: 'Solve 300 clues',
     icon: 'clue',
     tier: 5,
-    check: ({ totalSolved }) => totalSolved >= 500,
-    retroactiveCheck: ({ completedClues }) => completedClues.length >= 500,
+    check: ({ totalSolved }) => totalSolved >= 300,
+    retroactiveCheck: ({ completedClues }) => completedClues.length >= 300,
   },
 
   // STREAK ACHIEVEMENTS
@@ -543,8 +543,8 @@ export const getAchievementProgress = (achievementId, context) => {
       return { current: totalSolved, target: 50 };
     case 'volume-100':
       return { current: totalSolved, target: 100 };
-    case 'volume-500':
-      return { current: totalSolved, target: 500 };
+    case 'volume-300':
+      return { current: totalSolved, target: 300 };
     default:
       return null;
   }
