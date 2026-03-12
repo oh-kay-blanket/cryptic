@@ -626,7 +626,10 @@ const CluePage = ({ data }) => {
   useEffect(() => {
     if (activeTooltipHint === null) return;
 
-    const handleClickOutside = () => {
+    const handleClickOutside = (e) => {
+      // Don't dismiss if click is inside the tooltip or on a bottom bar button
+      // (buttons like "Next" handle their own state transitions)
+      if (e.target.closest('.hint-tooltip') || e.target.closest('.show-btn')) return;
       dismissTooltip();
     };
 
