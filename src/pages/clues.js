@@ -8,7 +8,6 @@ import React, {
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
-import { formatTime } from "../utils/dateHelpers";
 import ClueTypeIcon from "../components/ClueTypeIcons";
 import ScoreGrid from "../components/ScoreGrid";
 
@@ -350,8 +349,6 @@ const Clues = ({ data, location }) => {
 
     const isHovered = hoveredClue === clue.clid || pinnedClue === clue.clid;
     const isReleaseHovered = hoveredRelease === clue.clid;
-    const completionText =
-      completedClue && completedClue.how === "g" ? "Solved" : "Not solved";
 
     return (
       <div
@@ -442,7 +439,7 @@ const Clues = ({ data, location }) => {
             style={{
               ...(isHovered
                 ? {
-                    backgroundColor: isDarkMode ? "#404040" : "#ddd",
+                    backgroundColor: isDarkMode ? "#2d2d2d" : "#fff",
                   }
                 : {}),
               ...(!isHovered && isReleaseHovered &&
@@ -470,59 +467,34 @@ const Clues = ({ data, location }) => {
             </div>
             {isHovered ? (
               <div className="tile-info">
-                <span className="text-md">
-                  {completionText} • Clue #{clue.clid} • by{" "}
-                  {clue.source?.value || "Unknown"}
-                </span>
-                {!!completedClue && completedClue.how === "g" && (
+                {!!completedClue && completedClue.how === "g" ? (
                   <div className="tile-info-stats">
-                    {completedClue.solveTime != null && (
-                      <span
-                        style={{
-                          backgroundColor: "var(--lc-timer-bg)",
-                          color: "var(--lc-text-primary)",
-                          padding: "2px 6px",
-                          borderRadius: "4px",
-                          fontSize: "0.75rem",
+                    <ScoreGrid
+                      solveTime={completedClue.solveTime}
+                      guesses={completedClue.guesses || 0}
+                      hints={completedClue.hints || 0}
+                      size="md"
+                      showLabels
+                    />
+                    <div className="tile-info-meta">
+                      <span>#{clue.clid} · by {clue.source?.value || "Unknown"}</span>
+                      <button
+                        className="tile-clear-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          removeCompletedClue(clue.clid);
                         }}
+                        aria-label="Clear completion"
                       >
-                        {formatTime(completedClue.solveTime)}
-                      </span>
-                    )}
-                    <span
-                      style={{
-                        backgroundColor: "var(--lc-active-bg)",
-                        color: "var(--lc-text-primary)",
-                        padding: "2px 6px",
-                        borderRadius: "4px",
-                        fontSize: "0.75rem",
-                      }}
-                    >
-                      {completedClue.guesses}g
-                    </span>
-                    <span
-                      style={{
-                        backgroundColor: "var(--lc-highlight-bg)",
-                        color: "var(--lc-text-primary)",
-                        padding: "2px 6px",
-                        borderRadius: "4px",
-                        fontSize: "0.75rem",
-                      }}
-                    >
-                      {completedClue.hints}h
-                    </span>
-                    <button
-                      className="tile-clear-btn"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        removeCompletedClue(clue.clid);
-                      }}
-                      aria-label="Clear completion"
-                    >
-                      Clear
-                    </button>
+                        Clear
+                      </button>
+                    </div>
                   </div>
+                ) : (
+                  <span className="text-md">
+                    Clue #{clue.clid} · by {clue.source?.value || "Unknown"}
+                  </span>
                 )}
               </div>
             ) : (
