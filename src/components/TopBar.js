@@ -383,7 +383,7 @@ const TopBar = () => {
             >
               <InfoIcon />
             </button>
-            {currentStats && (
+            {currentStats && clueSolvedTime == null && (
               <div
                 ref={currentStatsRef}
                 className='current-stats'
