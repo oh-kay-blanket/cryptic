@@ -55,13 +55,13 @@ const Message = ({
       if (stats.solveTime != null) {
         return stats.solveTime;
       }
-      // Otherwise calculate current solve time
-      if (getSolveTime) {
+      // Don't calculate a fresh time for pre-timer completed clues
+      if (!isReturningCompleted && getSolveTime) {
         return getSolveTime();
       }
     }
     return null;
-  }, [checkAns, isCorrectAns, getSolveTime, stats.solveTime]);
+  }, [checkAns, isCorrectAns, getSolveTime, stats.solveTime, isReturningCompleted]);
 
   // Share score function (for today's clue only)
   const handleShareScore = async () => {

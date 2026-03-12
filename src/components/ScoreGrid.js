@@ -16,9 +16,12 @@ const ScoreGrid = ({ solveTime, guesses, hints, size = 'sm', showLabels = false,
     return label;
   };
 
+  // Hide time row when no solve time data exists (pre-timer clues)
+  const rows = solveTime != null ? ROWS : ROWS.filter(r => r.key !== 'time');
+
   return (
     <div className={`score-grid score-grid--${size} ${showLabels ? 'score-grid--labeled' : ''} ${className}`.trim()}>
-      {ROWS.map(({ key, modifier, label }) => (
+      {rows.map(({ key, modifier, label }) => (
         <div key={key} className='score-grid__row'>
           {showLabels && <span className='score-grid__label'>{getLabel(key, label)}</span>}
           {Array.from({ length: SIZE }, (_, i) => (

@@ -325,7 +325,7 @@ const CluePage = ({ data }) => {
     if (!completedClueData) {
       setClueStartTime(Date.now());
     }
-    setClueSolvedTime(completedClueData?.solveTime ?? null);
+    setClueSolvedTime(completedClueData ? (completedClueData.solveTime ?? 0) : null);
     return () => {
       setCurrentStats(null);
       setClueStartTime(null);
