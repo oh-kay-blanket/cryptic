@@ -64,6 +64,13 @@
 				color: $lc-text--light;
 				outline: none;
 				-webkit-tap-highlight-color: transparent;
+				width: 4rem;
+				flex-shrink: 0;
+
+				svg {
+					width: 24px;
+					height: 24px;
+				}
 
 				html.dark & {
 					color: #a3a3a3;

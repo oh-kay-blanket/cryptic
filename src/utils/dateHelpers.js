@@ -302,9 +302,10 @@ export const buildShareText = ({ clid, solveTime, guesses, hints }) => {
 	const buildRow = (filled, filledEmoji) =>
 		filledEmoji.repeat(filled) + '⬜'.repeat(SIZE - filled)
 
-	const timeRow = buildRow(counts.time, '🟩')
-	const guessRow = buildRow(counts.guesses, '🟧')
-	const hintRow = buildRow(counts.hints, '🟪')
+	const timeLabel = solveTime != null ? formatTimeForShare(solveTime) : 'Time'
+	const timeRow = `${buildRow(counts.time, '🟩')} ${timeLabel}`
+	const guessRow = `${buildRow(counts.guesses, '🟧')} Guesses`
+	const hintRow = `${buildRow(counts.hints, '🟪')} Hints`
 
 	return `Learn Cryptic #${clid}\n${timeRow}\n${guessRow}\n${hintRow}`
 }
