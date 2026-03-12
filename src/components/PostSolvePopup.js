@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { UserContext } from '../utils/UserContext';
-import { formatTime, isTodayClue, buildShareText } from '../utils/dateHelpers';
+import { isTodayClue, buildShareText } from '../utils/dateHelpers';
 import AchievementIcon from './AchievementIcon';
+import ScoreGrid from './ScoreGrid';
 
 // Hand-drawn share icon
 const ShareIcon = () => (
@@ -104,15 +105,13 @@ const PostSolvePopup = ({
         <div className='post-solve-stats'>
           <p className='post-solve-title'>Nice work!</p>
           <div className='stats-row'>
-            {solveTime != null && (
-              <span className='stat-time'>{formatTime(solveTime)}</span>
-            )}
-            <span className='stat-guesses'>
-              {stats.guesses} {stats.guesses === 1 ? 'guess' : 'guesses'}
-            </span>
-            <span className='stat-hints'>
-              {stats.hints} {stats.hints === 1 ? 'hint' : 'hints'}
-            </span>
+            <ScoreGrid
+              solveTime={solveTime}
+              guesses={stats.guesses}
+              hints={stats.hints}
+              size='lg'
+              showLabels
+            />
             {isTodaysClue && (
               <button
                 onClick={handleShareScore}

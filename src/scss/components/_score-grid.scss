@@ -43,9 +43,43 @@
     --score-grid-cell: 10px;
     --score-grid-gap: 2px;
   }
+
+  &--lg {
+    --score-grid-cell: 14px;
+    --score-grid-gap: 3px;
+
+    .score-grid__cell {
+      border-radius: 2px;
+    }
+
+    @media (max-width: 389px) {
+      --score-grid-cell: 10px;
+      --score-grid-gap: 2px;
+    }
+  }
+
+  // Labeled variant
+  &--labeled {
+    .score-grid__row {
+      align-items: center;
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: #666;
+    width: 4rem;
+    text-align: right;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
 }
 
 // Dark mode empty cells
 html.dark .score-grid__cell--empty {
   background-color: #3d3a37;
+}
+
+html.dark .score-grid__label {
+  color: #a3a3a3;
 }

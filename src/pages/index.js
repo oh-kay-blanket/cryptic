@@ -4,7 +4,8 @@ import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
-import { isTodayClue, formatTime, buildShareText } from '../utils/dateHelpers'
+import { isTodayClue, buildShareText } from '../utils/dateHelpers'
+import ScoreGrid from '../components/ScoreGrid'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 import { migrateAchievements } from '../utils/achievements'
 import AchievementsIntroModal from '../components/AchievementsIntroModal'
@@ -232,15 +233,13 @@ const Title = ({ data }) => {
 						</div>
 						<p className='stats-label'>Today's clue</p>
 						<div className='stats-row'>
-							{todaySolveTime != null && (
-								<span className='stat-time'>{formatTime(todaySolveTime)}</span>
-							)}
-							<span className='stat-guesses'>
-								{todayGuesses} {todayGuesses === 1 ? 'guess' : 'guesses'}
-							</span>
-							<span className='stat-hints'>
-								{todayHints} {todayHints === 1 ? 'hint' : 'hints'}
-							</span>
+							<ScoreGrid
+								solveTime={todaySolveTime}
+								guesses={todayGuesses}
+								hints={todayHints}
+								size='lg'
+								showLabels
+							/>
 							<button
 								onClick={handleShareScore}
 								className='share-icon-btn'

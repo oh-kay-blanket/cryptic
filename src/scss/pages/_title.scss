@@ -86,42 +86,7 @@
 			position: relative;
 			display: inline-flex;
 			align-items: center;
-			gap: 0.5rem;
-
-			> span {
-				padding: 0.25rem 0.5rem;
-				font-size: 0.9rem;
-				border-radius: 4px;
-			}
-
-			.stat-time {
-				background-color: var(--lc-timer-bg);
-				color: $lc-text;
-
-				html.dark & {
-					color: #f5f5f5;
-				}
-			}
-
-			.stat-guesses {
-				background-color: $lc-primary--light;
-				color: $lc-text;
-
-				html.dark & {
-					background-color: var(--lc-active-bg);
-					color: #f5f5f5;
-				}
-			}
-
-			.stat-hints {
-				background-color: $lc-secondary--light;
-				color: $lc-text;
-
-				html.dark & {
-					background-color: var(--lc-highlight-bg);
-					color: #f5f5f5;
-				}
-			}
+			gap: 0.75rem;
 
 			.stats-tooltip {
 				position: absolute;

@@ -67,44 +67,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-
-  > span {
-    padding: 2px 6px;
-    line-height: 1.5;
-    border-radius: 4px;
-    font-size: 0.875rem;
-  }
-
-  .stat-time {
-    background-color: var(--lc-timer-bg);
-    color: #333;
-
-    .dark & {
-      color: #f5f5f5;
-    }
-  }
-
-  .stat-guesses {
-    background-color: $lc-primary--light;
-    color: #333;
-
-    .dark & {
-      background-color: var(--lc-active-bg);
-      color: #f5f5f5;
-    }
-  }
-
-  .stat-hints {
-    background-color: $lc-secondary--light;
-    color: #333;
-
-    .dark & {
-      background-color: var(--lc-highlight-bg);
-      color: #f5f5f5;
-    }
-  }
+  gap: 0.75rem;
 
   .share-icon-btn {
     display: flex;

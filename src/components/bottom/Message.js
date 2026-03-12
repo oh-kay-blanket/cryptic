@@ -3,7 +3,8 @@ import ButtonContainer from "./ButtonContainer";
 import Celebration from "./Celebration";
 
 import getMessage from "../../utils/bottom/getMessage";
-import { formatTime, isTodayClue, buildShareText } from "../../utils/dateHelpers";
+import { isTodayClue, buildShareText } from "../../utils/dateHelpers";
+import ScoreGrid from "../ScoreGrid";
 
 // Hand-drawn share icon
 const ShareIcon = () => (
@@ -97,17 +98,13 @@ const Message = ({
       <div data-testid="message-success">
         <div className="stats-row-wrapper">
           <div className="stats-row">
-            {solveTime != null && (
-              <span className="stat-time">
-                {formatTime(solveTime)}
-              </span>
-            )}
-            <span className="stat-guesses">
-              {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
-            </span>
-            <span className="stat-hints">
-              {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
-            </span>
+            <ScoreGrid
+              solveTime={solveTime}
+              guesses={stats.guesses}
+              hints={stats.hints}
+              size="lg"
+              showLabels
+            />
             {isTodaysClue && (
               <button
                 onClick={handleShareScore}
@@ -228,17 +225,13 @@ const Message = ({
         <div className="message-copy lc-container">
           <div className="stats-row-wrapper">
             <div className="stats-row">
-              {stats.solveTime != null && (
-                <span className="stat-time">
-                  {formatTime(stats.solveTime)}
-                </span>
-              )}
-              <span className="stat-guesses">
-                {stats.guesses} {stats.guesses === 1 ? "guess" : "guesses"}
-              </span>
-              <span className="stat-hints">
-                {stats.hints} {stats.hints === 1 ? "hint" : "hints"}
-              </span>
+              <ScoreGrid
+                solveTime={stats.solveTime}
+                guesses={stats.guesses}
+                hints={stats.hints}
+                size="lg"
+                showLabels
+              />
               {isTodaysClue && (
                 <button
                   onClick={handleShareScore}

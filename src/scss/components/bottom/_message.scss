@@ -51,43 +51,7 @@
 		.stats-row {
 			display: inline-flex;
 			align-items: center;
-			gap: 0.5rem;
-
-			> span {
-				padding: 2px 6px;
-				line-height: 1.5;
-				border-radius: 4px;
-				font-size: 0.875rem;
-			}
-
-			.stat-time {
-				background-color: var(--lc-timer-bg);
-				color: $lc-text;
-
-				html.dark & {
-					color: #f5f5f5;
-				}
-			}
-
-			.stat-guesses {
-				background-color: $lc-primary--light;
-				color: $lc-text;
-
-				html.dark & {
-					background-color: var(--lc-active-bg);
-					color: #f5f5f5;
-				}
-			}
-
-			.stat-hints {
-				background-color: $lc-secondary--light;
-				color: $lc-text;
-
-				html.dark & {
-					background-color: var(--lc-highlight-bg);
-					color: #f5f5f5;
-				}
-			}
+			gap: 0.75rem;
 
 			.share-icon-btn {
 				display: flex;
