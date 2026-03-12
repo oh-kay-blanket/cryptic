@@ -412,47 +412,21 @@ const TopBar = () => {
                   }
                 }}
               >
-                <span className='stat stat-time'>{formatTime(elapsedTime, true)}</span>
-                <span className='stat stat-guesses'>{currentStats.guesses}g</span>
-                <span className='stat stat-hints'>{currentStats.hints}h</span>
+                <span className='current-stats-time'>{formatTime(elapsedTime, true)}</span>
+                <ScoreGrid
+                  solveTime={elapsedTime}
+                  guesses={currentStats.guesses}
+                  hints={currentStats.hints}
+                />
                 {showCurrentStatsTooltip && (
                   <div className='current-stats-tooltip'>
-                    <span
-                      style={{
-                        backgroundColor: 'var(--lc-timer-bg)',
-                        color: 'var(--lc-text-primary)',
-                        padding: '2px 6px',
-                        lineHeight: '1.5',
-                        borderRadius: '4px',
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {formatTime(elapsedTime)}
-                    </span>
-                    <span
-                      style={{
-                        backgroundColor: 'var(--lc-active-bg)',
-                        color: 'var(--lc-text-primary)',
-                        padding: '2px 6px',
-                        lineHeight: '1.5',
-                        borderRadius: '4px',
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {currentStats.guesses} {currentStats.guesses === 1 ? 'guess' : 'guesses'}
-                    </span>
-                    <span
-                      style={{
-                        backgroundColor: 'var(--lc-highlight-bg)',
-                        color: 'var(--lc-text-primary)',
-                        padding: '2px 6px',
-                        lineHeight: '1.5',
-                        borderRadius: '4px',
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {currentStats.hints} {currentStats.hints === 1 ? 'hint' : 'hints'}
-                    </span>
+                    <ScoreGrid
+                      solveTime={elapsedTime}
+                      guesses={currentStats.guesses}
+                      hints={currentStats.hints}
+                      size='md'
+                      showLabels
+                    />
                   </div>
                 )}
               </div>
