@@ -10,6 +10,7 @@ import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
 import { formatTime } from "../utils/dateHelpers";
 import ClueTypeIcon from "../components/ClueTypeIcons";
+import ScoreGrid from "../components/ScoreGrid";
 
 // Custom dropdown component with icons
 const CustomDropdown = ({ value, onChange, options, placeholder, renderOption, openUpward = false, maxHeight = "max-h-48" }) => {
@@ -322,11 +323,11 @@ const Clues = ({ data, location }) => {
 
     const stats = completedClue && (
       <div className="tile-stats-cell">
-        {completedClue.solveTime != null && (
-          <span className="stat-time">{formatTime(completedClue.solveTime, true)}</span>
-        )}
-        <span className="stat-guesses">{completedClue.guesses}g</span>
-        <span className="stat-hints">{completedClue.hints}h</span>
+        <ScoreGrid
+          solveTime={completedClue.solveTime}
+          guesses={completedClue.guesses || 0}
+          hints={completedClue.hints || 0}
+        />
       </div>
     );
 
@@ -355,8 +356,8 @@ const Clues = ({ data, location }) => {
             ...(completedClue
               ? {
                   "--archive-bg": completedClue.how === "g"
-                    ? "var(--lc-active-bg)"
-                    : "var(--lc-highlight-bg)",
+                    ? "var(--lc-active-bg-light)"
+                    : "var(--lc-highlight-bg-light)",
                 }
               : {}),
           }}
@@ -378,10 +379,11 @@ const Clues = ({ data, location }) => {
             }
           }}
         >
-          <span>
+          <span className="archive-release-dow">
             {getRelease(clue.release).toLocaleString("en-us", {
               weekday: "short",
             })}
+            <DifficultyGrid difficulty={clue.difficulty} />
           </span>
           <span>
             <span>
@@ -430,7 +432,6 @@ const Clues = ({ data, location }) => {
             }}
           >
             <div className="tile-img-stats">
-              {!isHovered && <DifficultyGrid difficulty={clue.difficulty} />}
               {!isHovered &&
                 !!completedClue &&
                 completedClue.how === "g" &&

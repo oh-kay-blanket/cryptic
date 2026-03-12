@@ -60,6 +60,8 @@ $lc-font--alt: 'Gloria Hallelujah', 'Helvetica', 'Arial', sans;
   --lc-text-handwritten: #555; // Gloria Hallelujah font color
   --lc-timer-bg: #c4dcc8; // soft sage green for timer pills
   --lc-bg-muted: #E8E6E1; // warm off-white
+  --lc-active-bg-light: #f9d0b7; // light orange for subtle solved backgrounds
+  --lc-highlight-bg-light: #e0d9ec; // light purple for subtle hint backgrounds
   --archive-border-color: #D4D2CD; // warm gray borders
   --solution-letter-border: #1a1a1a;
 }
@@ -83,6 +85,8 @@ $lc-font--alt: 'Gloria Hallelujah', 'Helvetica', 'Arial', sans;
   --lc-text-handwritten: #d0d0d0; // Gloria Hallelujah font color
   --lc-timer-bg: #3a5c40; // muted forest green for timer pills
   --lc-bg-muted: #525252; // lighter muted background (neutral-600)
+  --lc-active-bg-light: #564039; // muted warm gray for subtle solved backgrounds
+  --lc-highlight-bg-light: #443b5d; // muted purple for subtle hint backgrounds
   --archive-border-color: #404040;
   --solution-letter-border: white;
 }

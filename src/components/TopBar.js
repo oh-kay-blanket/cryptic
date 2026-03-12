@@ -740,11 +740,11 @@ const TopBar = () => {
                   <div className='stats-performance-row'>
                     <div className='stats-perf-item stats-perf-item--guesses'>
                       <span className='stats-perf-value'>{avgGuesses}</span>
-                      <span className='stats-perf-label'>average guesses</span>
+                      <span className='stats-perf-label'>avg guesses</span>
                     </div>
                     <div className='stats-perf-item stats-perf-item--hints'>
                       <span className='stats-perf-value'>{avgHints}</span>
-                      <span className='stats-perf-label'>average hints</span>
+                      <span className='stats-perf-label'>avg hints</span>
                     </div>
                   </div>
                 </div>

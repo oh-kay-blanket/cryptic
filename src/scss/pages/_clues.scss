@@ -73,7 +73,7 @@
       width: 60px;
       margin-right: 8px;
       text-align: left;
-      padding-left: 8px;
+      padding: 0 8px;
       font-family: $lc-font--sans;
       flex-shrink: 0;
       position: relative; // Needed for absolute positioning of :before
@@ -81,10 +81,43 @@
       display: flex;
       flex-direction: column;
 
-      // Weekday - prominent
+      // Weekday + difficulty - prominent
       > span:first-child {
         font-size: 0.8rem;
         font-weight: 700;
+      }
+
+      .archive-release-dow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+
+        .difficulty-grid {
+          margin-top: -3px;
+        }
+
+        .difficulty-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 2px;
+          width: 10px;
+          height: 10px;
+
+          .difficulty-square {
+            width: 4px;
+            height: 4px;
+            border: 1px solid currentColor;
+            background-color: transparent;
+            opacity: 0.4;
+
+            &.filled {
+              background-color: currentColor;
+              opacity: 1;
+            }
+          }
+        }
       }
 
       // Date parts (month/day and year) - de-emphasized
@@ -225,10 +258,22 @@
           background-color: transparent;
 
           // Hand-drawn feel: slight rotations for each square
-          &:nth-child(1) { transform: rotate(-2deg); border-radius: 1px 2px 1px 1px; }
-          &:nth-child(2) { transform: rotate(3deg); border-radius: 2px 1px 1px 2px; }
-          &:nth-child(3) { transform: rotate(2deg); border-radius: 1px 1px 2px 1px; }
-          &:nth-child(4) { transform: rotate(-3deg); border-radius: 2px 1px 1px 1px; }
+          &:nth-child(1) {
+            transform: rotate(-2deg);
+            border-radius: 1px 2px 1px 1px;
+          }
+          &:nth-child(2) {
+            transform: rotate(3deg);
+            border-radius: 2px 1px 1px 2px;
+          }
+          &:nth-child(3) {
+            transform: rotate(2deg);
+            border-radius: 1px 1px 2px 1px;
+          }
+          &:nth-child(4) {
+            transform: rotate(-3deg);
+            border-radius: 2px 1px 1px 1px;
+          }
 
           &.filled {
             background-color: #444;
@@ -284,7 +329,6 @@
         display: flex;
         align-items: center;
         font-family: $lc-font--sans;
-        margin-left: 0.5rem;
         gap: 0.25rem;
 
         .stat-hints,

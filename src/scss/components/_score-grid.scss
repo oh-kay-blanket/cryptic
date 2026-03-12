@@ -1,12 +1,21 @@
 .score-grid {
+  --score-grid-cell: 6px;
+  --score-grid-gap: 1px;
+
   display: flex;
   flex-direction: column;
+  gap: var(--score-grid-gap);
 
   &__row {
     display: flex;
+    gap: var(--score-grid-gap);
   }
 
   &__cell {
+    width: var(--score-grid-cell);
+    height: var(--score-grid-cell);
+    border-radius: 1px;
+
     &--time {
       background-color: #7bb886;
     }
@@ -24,34 +33,15 @@
     }
   }
 
-  // Small size (calendar usage)
+  // Preset sizes
   &--sm {
-    gap: 1px;
-
-    .score-grid__row {
-      gap: 1px;
-    }
-
-    .score-grid__cell {
-      width: 5px;
-      height: 5px;
-      border-radius: 0.5px;
-    }
+    --score-grid-cell: 6px;
+    --score-grid-gap: 1px;
   }
 
-  // Medium size (future use)
   &--md {
-    gap: 2px;
-
-    .score-grid__row {
-      gap: 2px;
-    }
-
-    .score-grid__cell {
-      width: 10px;
-      height: 10px;
-      border-radius: 1px;
-    }
+    --score-grid-cell: 10px;
+    --score-grid-gap: 2px;
   }
 }
 
