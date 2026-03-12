@@ -95,7 +95,6 @@ const Message = ({
   const message = checkAns ? (
     isCorrectAns ? (
       <div data-testid="message-success">
-        <strong>{activeClue.solution.value.toUpperCase()}</strong> is correct!
         <div className="stats-row-wrapper">
           <div className="stats-row">
             {solveTime != null && (
