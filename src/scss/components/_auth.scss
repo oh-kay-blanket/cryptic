@@ -213,25 +213,25 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: $lc-gray--dark;
-  color: #525252;
-  font-family: $lc-font--sans;
+  background: transparent;
+  color: #737373;
+  font-family: $lc-font--alt;
   font-size: 0.875rem;
-  font-weight: 600;
-  border: none;
+  font-weight: 400;
+  border: 2px solid #737373;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: border-color 0.15s ease;
 
   &:hover {
-    background: $lc-gray;
+    border-color: $lc-text--light;
   }
 
   html.dark & {
-    background: #525252;
-    color: #d4d4d4;
+    color: #e5e5e5;
+    border-color: #e5e5e5;
 
     &:hover {
-      background: #5c5c5c;
+      border-color: #fff;
     }
   }
 }

@@ -60,15 +60,6 @@
     width: 100%;
     min-width: 0; // Allow content to shrink for text truncation
 
-    // Alternating row backgrounds
-    &:nth-child(even) {
-      background-color: #fafafa;
-
-      html.dark & {
-        background-color: #262626;
-      }
-    }
-
     .archive-release {
       width: 60px;
       margin-right: 8px;

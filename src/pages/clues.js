@@ -439,7 +439,7 @@ const Clues = ({ data, location }) => {
             style={{
               ...(isHovered
                 ? {
-                    backgroundColor: isDarkMode ? "#2d2d2d" : "#fff",
+                    backgroundColor: "transparent",
                   }
                 : {}),
               ...(!isHovered && isReleaseHovered &&

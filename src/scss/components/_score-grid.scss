@@ -41,7 +41,7 @@
 
   &--md {
     --score-grid-cell: 10px;
-    --score-grid-gap: 2px;
+    --score-grid-gap: 1px;
   }
 
   &--lg {
@@ -67,6 +67,7 @@
 
   &__label {
     font-size: 0.75rem;
+    line-height: 1;
     color: #666;
     width: 4rem;
     text-align: right;
