@@ -91,10 +91,6 @@
         &.eyecon button {
           display: flex;
           padding: 0;
-
-          svg {
-            filter: grayscale(1) brightness(0.7);
-          }
         }
       }
     }

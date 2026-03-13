@@ -38,11 +38,6 @@
     &:last-child {
       margin-right: 0;
     }
-
-    img,
-    svg {
-      filter: grayscale(1) brightness(0.7);
-    }
   }
 
   .topbar-logo {
