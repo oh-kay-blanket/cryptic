@@ -10,6 +10,10 @@
 # Cache
 .cache
 
+# Cypress artifacts
+cypress/videos
+cypress/screenshots
+
 # Environment files
 .env
 .env.local
