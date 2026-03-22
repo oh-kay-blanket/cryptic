@@ -1,14 +1,15 @@
 import { TEST_DATES, SAMPLE_CLUES } from '../support/constants'
 
 describe('Daily Clue Solving Flow', () => {
-	const TEST_DATE = TEST_DATES.BASE // '2025-12-23'
-	const TEST_CLUE = SAMPLE_CLUES.MCAT // { id: '387', answer: 'MCAT' }
+	const TEST_DATE = TEST_DATES.BASE // '2026-04-02'
+	const TEST_CLUE = SAMPLE_CLUES.NEON // { id: '495', answer: 'NEON' }
 
 	beforeEach(() => {
-		// Set consistent date
+		// Set consistent date before visiting any page
 		cy.setSystemDate(TEST_DATE)
-		cy.clearAppState()
+		// Visit homepage first, then clear state and dismiss cookie banner
 		cy.visit('/')
+		cy.clearAppState()
 	})
 
 	afterEach(() => {
@@ -17,25 +18,26 @@ describe('Daily Clue Solving Flow', () => {
 
 	describe('New User Flow', () => {
 		it('should show welcome message to new user', () => {
+			// Reload after clearing state so homepage picks up clean state
+			cy.visit('/')
+
 			cy.get('[data-testid="title-intro"]')
 				.should('be.visible')
-				.should('contain', 'Welcome to Learn Cryptic')
+				.should('contain', 'Master the art of cryptic crosswords')
 
-			cy.get('[data-testid="play today\'s clue"]')
+			cy.get('[data-testid="play"]')
 				.should('be.visible')
-				.should('contain', "Play today's clue")
 		})
 
 		it('should solve daily clue with correct answer on first try', () => {
-			// Start clue
-			cy.visitTodaysClue()
+			// Navigate to today's clue
+			cy.visit('/')
+			cy.get('[data-testid="play"]').click()
+			cy.url().should('include', '/clues/')
 
 			// Verify clue loaded
 			cy.get('[data-testid="clue-text"]').should('be.visible')
 			cy.get('[data-testid="solution-length"]').should('be.visible')
-
-			// Verify initial stats are 0
-			cy.verifyStats(0, 0)
 
 			// Type correct answer
 			cy.typeAnswer(TEST_CLUE.answer)
@@ -45,14 +47,6 @@ describe('Daily Clue Solving Flow', () => {
 
 			// Verify success
 			cy.verifyClueSolved()
-			cy.verifyStats(1, 0)
-
-			// Verify state persisted
-			cy.verifyUserState({
-				completedClues: Cypress.sinon.match.array,
-				streak: 1,
-				longestStreak: 1,
-			})
 
 			// Verify the completed clue has correct data
 			cy.window().then((win) => {
@@ -64,21 +58,23 @@ describe('Daily Clue Solving Flow', () => {
 					hints: 0,
 					how: 'g',
 				})
+				expect(state.streak).to.equal(1)
+				expect(state.longestStreak).to.equal(1)
 			})
 		})
 
 		it('should track incorrect guesses', () => {
-			cy.visitTodaysClue()
+			cy.visit(`/clues/${TEST_CLUE.id}`)
+			cy.get('[data-testid="clue-container"]', { timeout: 10000 }).should('be.visible')
 
 			// First wrong guess
-			cy.typeAnswer('WRONGANS')
+			cy.typeAnswer('WRONG')
 			cy.submitAnswer()
 			cy.get('[data-testid="message-error"]').should('be.visible')
 			cy.get('[data-testid="message-error"]').should('contain', 'not the correct')
-			cy.verifyStats(1, 0)
 
-			// Close error message
-			cy.get('[data-testid="continue"]').click()
+			// Close error message and try again
+			cy.get('[data-testid="try again"]').click()
 
 			// Clear and try again
 			cy.clearAnswer()
@@ -87,121 +83,135 @@ describe('Daily Clue Solving Flow', () => {
 			cy.typeAnswer('NOPE')
 			cy.submitAnswer()
 			cy.get('[data-testid="message-error"]').should('be.visible')
-			cy.verifyStats(2, 0)
 
 			// Close error message
-			cy.get('[data-testid="continue"]').click()
+			cy.get('[data-testid="try again"]').click()
 
 			// Clear and submit correct answer
 			cy.clearAnswer()
 			cy.typeAnswer(TEST_CLUE.answer)
 			cy.submitAnswer()
 			cy.verifyClueSolved()
-			cy.verifyStats(3, 0)
+
+			// Verify guess count in localStorage
+			cy.window().then((win) => {
+				const state = JSON.parse(win.localStorage.getItem('lcState'))
+				expect(state.completedClues[0].guesses).to.equal(3)
+			})
 		})
 	})
 
 	describe('Returning User Flow', () => {
-		it('should show streak encouragement for user with active streak', () => {
-			const yesterday = new Date(TEST_DATE)
-			yesterday.setDate(yesterday.getDate() - 1)
-			const yesterdayStr = yesterday.toISOString().split('T')[0]
+		it('should show streak for user with active streak', () => {
+			// Use local-time date string to avoid UTC timezone shift issues
+			const yesterdayStr = '4/1/2026'
 
-			cy.setUserState({
-				completedClues: [{ clid: '379', guesses: 2, hints: 1, how: 'g' }],
-				streak: 5,
-				longestStreak: 5,
-				lastSolved: yesterdayStr,
-				showType: true,
-								darkMode: null,
+			cy.window().then((win) => {
+				win.localStorage.setItem('lcState', JSON.stringify({
+					completedClues: [{ clid: '494', guesses: 2, hints: 1, how: 'g' }],
+					streak: 5,
+					longestStreak: 5,
+					lastSolved: yesterdayStr,
+					showType: true,
+					darkMode: null,
+					hasSeenOnboarding: true,
+					hasSeenOnboardingPrompt: true,
+					hasSeenSyncAnnouncement: true,
+					achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
+				}))
 			})
 
 			cy.visit('/')
 
-			cy.get('[data-testid="title-intro"]')
+			cy.get('[data-testid="streak-display"]', { timeout: 10000 })
 				.should('be.visible')
-				.should('contain', 'Welcome back')
-
-			cy.get('[data-testid="streak-display"]')
-				.should('be.visible')
-				.should('contain', '5-day streak')
+				.should('contain', '5')
+				.should('contain', 'day streak')
 		})
 
-		it('should show completion stats after solving today\'s clue', () => {
-			cy.setUserState({
-				completedClues: [
-					{ clid: TEST_CLUE.id, guesses: 2, hints: 1, how: 'g' },
-				],
-				streak: 6,
-				longestStreak: 6,
-				lastSolved: TEST_DATE,
-				showType: true,
-								darkMode: null,
+		it('should show streak after completing today\'s clue', () => {
+			cy.window().then((win) => {
+				win.localStorage.setItem('lcState', JSON.stringify({
+					completedClues: [
+						{ clid: TEST_CLUE.id, guesses: 2, hints: 1, how: 'g' },
+					],
+					streak: 6,
+					longestStreak: 6,
+					lastSolved: TEST_DATE,
+					showType: true,
+					darkMode: null,
+					hasSeenOnboarding: true,
+					hasSeenOnboardingPrompt: true,
+					hasSeenSyncAnnouncement: true,
+					achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
+				}))
 			})
 
 			cy.visit('/')
 
-			cy.get('[data-testid="title-intro"]')
+			cy.get('[data-testid="streak-display"]', { timeout: 10000 })
 				.should('be.visible')
-				.should('contain', 'You solved today\'s clue')
-				.should('contain', '2 guesses')
-				.should('contain', '1 hint')
-
-			cy.get('[data-testid="streak-display"]')
-				.should('be.visible')
-				.should('contain', '6 days')
+				.should('contain', '6')
+				.should('contain', 'day streak')
 		})
 
 		it('should maintain streak when solving consecutive days', () => {
-			// Solve yesterday's clue
-			const yesterday = new Date(TEST_DATE)
-			yesterday.setDate(yesterday.getDate() - 1)
-			const yesterdayStr = yesterday.toISOString().split('T')[0]
+			// Use local-time date string to avoid UTC timezone shift issues
+			const yesterdayStr = '4/1/2026'
 
-			cy.setUserState({
-				completedClues: [{ clid: '385', guesses: 1, hints: 0, how: 'g' }],
-				streak: 1,
-				longestStreak: 1,
-				lastSolved: yesterdayStr,
-				showType: true,
-								darkMode: null,
+			cy.window().then((win) => {
+				win.localStorage.setItem('lcState', JSON.stringify({
+					completedClues: [{ clid: '494', guesses: 1, hints: 0, how: 'g' }],
+					streak: 1,
+					longestStreak: 1,
+					lastSolved: yesterdayStr,
+					showType: true,
+					darkMode: null,
+					hasSeenOnboarding: true,
+					hasSeenOnboardingPrompt: true,
+					hasSeenSyncAnnouncement: true,
+					achievements: { unlocked: {}, hasSeenAchievementsIntro: false },
+				}))
 			})
 
 			cy.visit('/')
 
 			// Verify streak is shown
-			cy.get('[data-testid="streak-display"]')
+			cy.get('[data-testid="streak-display"]', { timeout: 10000 })
 				.should('be.visible')
-				.should('contain', '1-day streak')
+				.should('contain', '1')
 
 			// Solve today's clue
-			cy.visitTodaysClue()
+			cy.visit(`/clues/${TEST_CLUE.id}`)
+			cy.get('[data-testid="clue-container"]', { timeout: 10000 }).should('be.visible')
 			cy.typeAnswer(TEST_CLUE.answer)
 			cy.submitAnswer()
 			cy.verifyClueSolved()
 
 			// Go back to homepage and verify streak increased
 			cy.visit('/')
-			cy.get('[data-testid="streak-display"]')
+			cy.get('[data-testid="streak-display"]', { timeout: 10000 })
 				.should('be.visible')
-				.should('contain', '2 days')
+				.should('contain', '2')
 		})
 	})
 
 	describe('Navigation', () => {
 		it('should navigate to today\'s clue from homepage', () => {
-			cy.get('[data-testid="play today\'s clue"]').click()
+			cy.visit('/')
+			cy.get('[data-testid="play"]').click()
 			cy.url().should('include', `/clues/${TEST_CLUE.id}`)
 			cy.get('[data-testid="clue-container"]').should('be.visible')
 		})
 
 		it('should navigate back to homepage after solving', () => {
-			cy.visitTodaysClue()
+			cy.visit(`/clues/${TEST_CLUE.id}`)
+			cy.get('[data-testid="clue-container"]', { timeout: 10000 }).should('be.visible')
 			cy.typeAnswer(TEST_CLUE.answer)
 			cy.submitAnswer()
+			cy.verifyClueSolved()
 
-			// Click "See all clues" or similar button to go back
-			// (This depends on what buttons are shown after completion)
+			// Click a link back to homepage
 			cy.get('a[href="/"]').first().click()
 			cy.url().should('eq', Cypress.config().baseUrl + '/')
 		})

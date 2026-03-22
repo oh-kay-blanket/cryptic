@@ -7,13 +7,13 @@ export const ROUTES = {
 export const ANIMATION_DELAY = 2000 // ms to wait for hint animations
 
 export const TEST_DATES = {
-	BASE: '2025-12-23',
-	YESTERDAY: '2025-12-22',
-	TWO_DAYS_AGO: '2025-12-21',
+	BASE: '2026-04-02',
+	YESTERDAY: '2026-04-01',
+	TWO_DAYS_AGO: '2026-03-31',
 }
 
 export const SAMPLE_CLUES = {
-	MCAT: { id: '387', answer: 'MCAT', date: '12/23/2025' },
-	LOVETT: { id: '385', answer: 'LOVETT', date: '12/22/2025' },
-	BREWPUB: { id: '396', answer: 'BREWPUB', date: '12/21/2025' },
+	NEON: { id: '495', answer: 'NEON', date: '4/2/2026' },
+	CAEN: { id: '494', answer: 'CAEN', date: '4/1/2026' },
+	MULES: { id: '496', answer: 'MULES', date: '4/3/2026' },
 }
