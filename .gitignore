@@ -10,6 +10,9 @@
 # Cache
 .cache
 
+# Test coverage
+coverage
+
 # Cypress artifacts
 cypress/videos
 cypress/screenshots

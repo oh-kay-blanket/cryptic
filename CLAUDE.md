@@ -11,12 +11,12 @@ Learn Cryptic is an interactive educational web app for learning and practicing 
 ### Starting Development
 ```bash
 npm start
-# Runs csv-to-json conversion, cleans Gatsby cache, and starts dev server at localhost:8000
+# Runs csv-to-json conversion, ensures .cache dir exists, and starts dev server at localhost:8000
 ```
 
 ### Building for Production
 ```bash
-npm run build    # Build with path prefix
+npm run build    # Runs csv-to-json conversion, cleans Gatsby cache, and builds
 npm run serve    # Serve production build at localhost:9000
 ```
 
@@ -36,9 +36,15 @@ npm run convert-csv
 ```
 
 ### Deployment
+
+The app deploys to **Vercel** (configured via `vercel.json`).
+
+### E2E Testing
 ```bash
-npm run deploy
-# Deploys to gh-pages with CNAME for learncryptic.com
+npm run cy:open           # Open Cypress interactive runner
+npm run cy:run            # Run Cypress tests headlessly
+npm run test:e2e          # Start dev server + run Cypress
+npm run test:pre-deploy   # Run unit tests + build
 ```
 
 ## Architecture
@@ -67,14 +73,25 @@ npm run deploy
 
 ### User Context & State Management
 
-**Global State**: `src/utils/UserContext.js` provides a React Context wrapping the entire app (configured in `gatsby-browser.js`). It manages:
-- `completedClues`: Array of solved clues with stats (guesses, hints)
+**Global State**: `src/utils/UserContext.js` provides a React Context wrapping the entire app. The provider chain (configured in `gatsby-browser.js`) is: `CookieConsentProvider` > `AuthProvider` > `UserProvider`.
+
+**lcState** (persisted to localStorage):
+- `completedClues`: Array of solved clues with stats (guesses, hints, completedAt)
 - `streak` & `longestStreak`: Daily solving streaks
 - `lastSolved`: Last solve date for streak calculation
 - `showType`: Whether to display clue type pills
 - `darkMode`: User theme preference (null = system, true/false = explicit)
+- `hasSeenOnboarding` / `hasSeenOnboardingPrompt` / `hasCompletedFirstClue`: Onboarding state
+- `hasSeenSyncAnnouncement`: Whether user has dismissed sync feature banner
+- `achievements`: `{ unlocked: {}, hasSeenAchievementsIntro: false }` - achievement tracking
 
-**Persistence**: All user state syncs to localStorage as `lcState`. The Context listens for `storage` events to sync across tabs.
+**Additional Context State** (not persisted):
+- `currentStats`, `clueStartTime`, `clueSolvedTime`: Active clue session tracking
+- `triggerOnboarding`, `timerPaused`: Onboarding control
+- `newlyUnlockedAchievements`: Achievements unlocked in current session
+- `syncStatus`, `showMergePrompt`, `pendingMergeData`: Cloud sync state
+
+**Persistence**: All user state syncs to localStorage as `lcState`. The Context listens for `storage` events to sync across tabs. When authenticated, data also syncs to Supabase cloud via `syncService.js` with offline queue support (`offlineQueue.js`).
 
 **Streak Logic**: Streaks are calculated by comparing release dates. A streak continues if the user solves a clue within 1 day of their last solve. The streak resets after missing more than 1 day.
 
@@ -121,7 +138,7 @@ The hint system (`src/utils/clue/handleHint.js`) uses element refs and imperativ
 
 ## Design System
 
-**IMPORTANT**: Before making any style or color changes, read `DESIGN_SYSTEM.md` in the project root.
+**IMPORTANT**: Before making any style or color changes, read `docs/DESIGN_SYSTEM.md`.
 
 ### Quick Reference
 
@@ -157,6 +174,11 @@ The hint system (`src/utils/clue/handleHint.js`) uses element refs and imperativ
 - `isTodayClue(clue)`: Checks if a clue's release date is today
 - `daysBetween(date1, date2)`: Calculates days between two dates
 - `shouldResetStreak(lastSolvedDate, currentStreak)`: Determines if streak should reset (>1 day gap)
+- `formatTime(seconds, short)`: Formats seconds to "M:SS" or "X sec" display string
+- `formatTimeForShare(seconds)`: Formats time for SMS sharing (uses zero-width spaces to prevent OS data detectors)
+- `recalculateStreakFromClues(completedClues)`: Recovery mechanism to recalculate streak from completed clues array
+- `computeScoreCounts({ solveTime, guesses, hints })`: Computes clamped 0-5 counts for score display
+- `buildShareText({ clid, solveTime, guesses, hints })`: Builds emoji grid share text
 
 **Usage Example**:
 ```javascript
@@ -191,6 +213,16 @@ When modifying `clues.csv`:
 - Empty values are omitted from JSON output
 - Script handles both quoted and unquoted fields, with special handling for Unicode quotes
 
+### Authentication & Cloud Sync
+
+**Auth**: Supabase-based authentication (`src/utils/AuthContext.js`) with email/password. Auth modal in `src/components/AuthModal.js`. Password reset flow at `/auth/reset-password`.
+
+**Sync**: `src/utils/syncService.js` handles bidirectional sync of completed clues, profile data, and achievements with Supabase. `src/utils/offlineQueue.js` queues operations when offline and replays them when connectivity returns. Merge conflicts prompt user via `MergePromptModal`.
+
+### Achievement System
+
+Achievement definitions in `src/utils/achievements/achievementDefinitions.js`. Checked on clue completion via `checkAchievements.js`. Migration support for retroactive unlocking in `migrateAchievements.js`.
+
 ### Analytics Integration
 Google Analytics events tracked via `gatsby-plugin-google-gtag`:
 - `started_daily_clue`: When user loads today's clue page
@@ -202,7 +234,7 @@ Google Analytics events tracked via `gatsby-plugin-google-gtag`:
 
 **Fixed Page Layout**: Daily clue pages and homepage add `fixed-page` class to `<body>` to prevent scrolling (removed on unmount).
 
-**Dark Mode Colors**: Use CSS custom properties with Tailwind's `dark:` prefix. Example: `dark:!bg-[var(--lc-highlight-bg)]`. See `DESIGN_SYSTEM.md` for all color tokens.
+**Dark Mode Colors**: Use CSS custom properties with Tailwind's `dark:` prefix. Example: `dark:!bg-[var(--lc-highlight-bg)]`. See `docs/DESIGN_SYSTEM.md` for all color tokens.
 
 **Loading States**: Homepage implements context loading delay (100ms timeout) to prevent flicker when reading from localStorage.
 
@@ -223,6 +255,7 @@ Tests are located in `__tests__` directories next to the source files they test:
 ```
 src/utils/
 ├── dateHelpers.js
+├── UserContext.js
 └── __tests__/
     ├── dateHelpers.test.js
     └── UserContext.test.js
@@ -231,7 +264,18 @@ src/utils/clue/
 ├── useManageClue.js
 └── __tests__/
     └── useManageClue.test.js
+
+src/utils/achievements/
+├── checkAchievements.js
+├── migrateAchievements.js
+└── __tests__/
+    ├── checkAchievements.test.js
+    └── migrateAchievements.test.js
 ```
+
+**Cypress E2E Tests** are in `cypress/e2e/`:
+- `daily-clue.cy.js`: Daily clue solving flow
+- `hint-system.cy.js`: Hint system interactions
 
 ### Testing Patterns
 
