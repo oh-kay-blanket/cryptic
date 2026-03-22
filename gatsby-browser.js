@@ -1,8 +1,6 @@
 import React from "react";
 import { CookieConsentProvider } from "./src/utils/CookieConsentContext";
 import { AuthProvider } from "./src/utils/AuthContext";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import { UserProvider } from "./src/utils/UserContext";
 import CookieConsentBanner from "./src/components/CookieConsentBanner";
 
@@ -14,8 +12,6 @@ export const wrapRootElement = ({ element }) => (
 			<UserProvider>
 				{element}
 				<CookieConsentBanner />
-				<Analytics />
-				<SpeedInsights />
 			</UserProvider>
 		</AuthProvider>
 	</CookieConsentProvider>

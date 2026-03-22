@@ -81,11 +81,11 @@ module.exports = {
 							changefreq = 'weekly'
 						} else if (page.path === '/clues/') {
 							priority = 0.7
-							changefreq = 'daily'
+							changefreq = 'weekly'
 						} else if (page.path.startsWith('/clues/')) {
 							// Individual clue pages
 							priority = 0.6
-							changefreq = 'weekly'
+							changefreq = 'monthly'
 						} else if (page.path.startsWith('/learn/')) {
 							// Individual learn pages
 							priority = 0.7
