@@ -277,7 +277,7 @@ export const computeScoreCounts = ({ solveTime, guesses, hints }) => {
 	const SIZE = 5
 	const clamp = (n) => Math.min(Math.max(n, 0), SIZE)
 	return {
-		time: clamp(solveTime != null ? Math.ceil(solveTime / 30) : 0),
+		time: clamp(solveTime != null ? Math.ceil(solveTime / 45) : 0),
 		guesses: clamp(guesses),
 		hints: clamp(hints),
 	}
