@@ -8,11 +8,10 @@ import { isTodayClue, buildShareText } from '../utils/dateHelpers'
 import ScoreGrid from '../components/ScoreGrid'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 import { migrateAchievements } from '../utils/achievements'
-import AchievementsIntroModal from '../components/AchievementsIntroModal'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
-	const { completedClues, streak, refreshFromStorage, achievements: userAchievements, setOpenStatsWithTab } = useContext(UserContext)
+	const { completedClues, streak, refreshFromStorage } = useContext(UserContext)
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
@@ -35,10 +34,6 @@ const Title = ({ data }) => {
 
 	// Add loading state to prevent flicker
 	const [isContextLoaded, setIsContextLoaded] = useState(false)
-
-	// Achievements intro modal state
-	const [showAchievementsIntro, setShowAchievementsIntro] = useState(false)
-	const [retroactiveAchievements, setRetroactiveAchievements] = useState([])
 
 	useEffect(() => {
 		// Set context as loaded after a brief delay to ensure localStorage has been read
@@ -74,35 +69,8 @@ const Title = ({ data }) => {
 		const result = migrateAchievements(cluesData)
 		if (result && result.migrated) {
 			refreshFromStorage()
-			// Show intro modal if user has retroactive achievements and hasn't seen intro
-			if (result.newAchievements.length > 0) {
-				setRetroactiveAchievements(result.newAchievements)
-				setShowAchievementsIntro(true)
-			}
 		}
 	}, [cluesData, refreshFromStorage, isContextLoaded])
-
-	// Also check if we should show intro for users who got achievements on a different page
-	useEffect(() => {
-		if (!isContextLoaded) return
-		if (showAchievementsIntro) return // Already showing
-
-		// Check if user has achievements but hasn't seen intro
-		const hasAchievements = Object.keys(userAchievements?.unlocked || {}).length > 0
-		const hasSeenIntro = userAchievements?.hasSeenAchievementsIntro
-
-		if (hasAchievements && !hasSeenIntro && knownUser) {
-			// Get all unlocked achievements for display
-			const { achievements: allAchievements } = require('../utils/achievements')
-			const unlockedAchievements = allAchievements.filter(
-				(a) => userAchievements.unlocked?.[a.id]
-			)
-			if (unlockedAchievements.length > 0) {
-				setRetroactiveAchievements(unlockedAchievements)
-				setShowAchievementsIntro(true)
-			}
-		}
-	}, [isContextLoaded, userAchievements, knownUser, showAchievementsIntro])
 
 	// Hand-drawn icon components
 	const PlayIcon = (
@@ -356,16 +324,6 @@ const Title = ({ data }) => {
 				<img className='title-img' src={logo} alt='' />
 				{getTitleContent()}
 			</div>
-			{showAchievementsIntro && (
-				<AchievementsIntroModal
-					retroactiveAchievements={retroactiveAchievements}
-					onDismiss={() => setShowAchievementsIntro(false)}
-					onViewAll={() => {
-						setShowAchievementsIntro(false)
-						setOpenStatsWithTab('achievements')
-					}}
-				/>
-			)}
 		</Layout>
 	)
 }

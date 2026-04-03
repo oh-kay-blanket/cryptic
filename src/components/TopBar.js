@@ -18,7 +18,6 @@ import ScoreGrid from './ScoreGrid';
 import AuthModal from './AuthModal';
 import UserMenu from './UserMenu';
 import MergePromptModal from './MergePromptModal';
-import SyncFeatureAnnouncement from './SyncFeatureAnnouncement';
 
 import logo from '../assets/img/logo-short.png';
 // Hand-drawn style icons
@@ -190,7 +189,6 @@ const TopBar = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const currentStatsRef = useRef(null);
   const tooltipOpenedByClick = useRef(false);
-  const signinButtonRef = useRef(null);
 
   // Live timer update (stops when clue is solved or paused)
   useEffect(() => {
@@ -439,7 +437,6 @@ const TopBar = () => {
                 <UserMenu />
               ) : (
                 <button
-                  ref={signinButtonRef}
                   className='signin-button'
                   onClick={() => setAuthModalOpen(true)}
                   aria-label='Sign in'
@@ -458,10 +455,6 @@ const TopBar = () => {
         initialMode='signin'
       />
       <MergePromptModal />
-      <SyncFeatureAnnouncement
-        targetRef={signinButtonRef}
-        onSignIn={() => setAuthModalOpen(true)}
-      />
       <Modal id='modal-info' open={helpOpen} onClose={() => setHelpOpen(false)}>
         <div className='mb-4 mt-4'>
           <h3 className='text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3'>
