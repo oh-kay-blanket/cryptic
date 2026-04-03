@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import { UserContext } from '../utils/UserContext';
 import { AuthContext } from '../utils/AuthContext';
@@ -162,6 +162,18 @@ const Modal = ({ open, onClose, children }) => {
 };
 
 const TopBar = () => {
+  const clueData = useStaticQuery(graphql`
+    query TopBarClueQuery {
+      allCluesJson {
+        nodes {
+          clid
+          release
+        }
+      }
+    }
+  `);
+  const allClues = clueData.allCluesJson.nodes;
+
   const {
     setReturnLearn,
     completedClues = [],
@@ -335,15 +347,23 @@ const TopBar = () => {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
 
-      const match = completedClues.find(clue => {
-        if (!clue.completedAt) return false;
-        return isSameDay(new Date(clue.completedAt), date);
-      });
+      // Find which clue was released on this day
+      const dailyClue = allClues.find(clue =>
+        clue.release && isSameDay(new Date(clue.release), date)
+      );
+
+      // Look up the user's stats for that clue by ID,
+      // only if they solved it on its release day
+      const match = dailyClue && completedClues.find(
+        c => c.clid === dailyClue.clid
+      );
+      const solvedOnDay = match && match.completedAt &&
+        isSameDay(new Date(match.completedAt), date);
 
       days.push({
         date,
-        solved: !!match,
-        stats: match ? { solveTime: match.solveTime, guesses: match.guesses || 0, hints: match.hints || 0 } : null,
+        solved: !!solvedOnDay,
+        stats: solvedOnDay ? { solveTime: match.solveTime, guesses: match.guesses || 0, hints: match.hints || 0 } : null,
         dayLabel: date.toLocaleDateString('en-US', { weekday: 'narrow' }),
       });
     }

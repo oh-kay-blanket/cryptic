@@ -388,6 +388,7 @@ export const UserProvider = ({ children }) => {
         how: type,
         difficulty: activeClue.difficulty,
         completedAt: new Date().toISOString(),
+        release: activeClue.release,
       };
 
       // Only add solveTime if provided
