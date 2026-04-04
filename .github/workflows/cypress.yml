@@ -42,6 +42,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
+          browser: chrome
           config: baseUrl=http://localhost:9000
         env:
           CI: true
