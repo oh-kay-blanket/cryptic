@@ -117,10 +117,10 @@ Cypress.Commands.add('submitAnswer', () => {
 // Request a hint via the hint button (lightbulb icon with aria-label)
 Cypress.Commands.add('requestHint', () => {
 	cy.get('button[aria-label="Show hint"]').click()
-	// Wait for animation to complete
-	cy.wait(2000)
-	// Click continue to close the hint message
-	cy.get('[data-testid="continue"]').click()
+	// Wait for animation to complete and continue button to appear
+	cy.get('[data-testid="continue"]', { timeout: 10000 })
+		.should('be.visible')
+		.click()
 })
 
 // Reveal a specific letter

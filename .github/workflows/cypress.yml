@@ -32,17 +32,14 @@ jobs:
         env:
           CI: true
 
-      - name: Serve production build
-        run: npm run serve &
-
-      - name: Wait for server
-        run: npx wait-on http://localhost:9000 --timeout 60000
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
           install: false
           browser: chrome
+          start: npm run serve
+          wait-on: 'http://localhost:9000'
+          wait-on-timeout: 120
           config: baseUrl=http://localhost:9000
         env:
           CI: true
