@@ -177,6 +177,7 @@ const Keyboard = ({ handleInput, onEnter, canCheckAnswer }) => {
 						? 'bg-[var(--lc-active-bg)] dark:!text-neutral-100'
 						: 'bg-neutral-200 dark:!bg-neutral-700 text-neutral-400 dark:!text-neutral-500 cursor-default'}
 					data-testid='keyboard-ENTER'
+					data-can-submit={canCheckAnswer ? 'true' : 'false'}
 				>
 					<span>Enter</span>
 				</button>

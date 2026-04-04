@@ -95,7 +95,7 @@ Cypress.Commands.add('typeAnswer', (answer) => {
 
 	letters.forEach((letter) => {
 		cy.get(`[data-testid="keyboard-${letter}"]`).click()
-		cy.wait(100) // Small delay to account for state updates
+		cy.wait(150) // Small delay to account for state updates
 	})
 })
 
@@ -109,7 +109,9 @@ Cypress.Commands.add('clearAnswer', () => {
 
 // Submit answer via keyboard Enter
 Cypress.Commands.add('submitAnswer', () => {
-	cy.get('[data-testid="keyboard-ENTER"]').click()
+	cy.get('[data-testid="keyboard-ENTER"][data-can-submit="true"]', { timeout: 10000 })
+		.should('exist')
+		.click()
 })
 
 // Request a hint via the hint button (lightbulb icon with aria-label)
@@ -124,7 +126,9 @@ Cypress.Commands.add('requestHint', () => {
 // Reveal a specific letter
 Cypress.Commands.add('revealLetter', (index) => {
 	cy.get(`[data-testid="solution-square-${index}"]`).click()
-	cy.get('[data-testid="modal-reveal-confirm"]').click()
+	cy.get('[data-testid="modal-reveal-confirm"]', { timeout: 10000 })
+		.should('be.visible')
+		.click()
 
 	// Verify letter was revealed
 	cy.get(`[data-testid="solution-square-${index}"]`)
