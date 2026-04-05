@@ -8,6 +8,7 @@ import React, {
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
+import ScoreGrid from "../components/ScoreGrid";
 
 // Difficulty grid component
 const DifficultyGrid = ({ difficulty }) => (
@@ -26,12 +27,29 @@ const DifficultyGrid = ({ difficulty }) => (
 
 const Clues = ({ data }) => {
   const cluesData = data.allCluesJson.nodes;
-  const { completedClues } = useContext(UserContext);
+  const { completedClues, removeCompletedClue } = useContext(UserContext);
 
   // Track dark mode state
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [hoveredClue, setHoveredClue] = useState(null);
   const [hoveredRelease, setHoveredRelease] = useState(null);
+  const [pinnedClue, setPinnedClue] = useState(null);
+
+  // Dismiss pinned clue when clicking outside
+  useEffect(() => {
+    if (!pinnedClue) return;
+
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.archive-clue')) {
+        setPinnedClue(null);
+        setHoveredClue(null);
+        setHoveredRelease(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [pinnedClue]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -99,24 +117,23 @@ const Clues = ({ data }) => {
 
       const stats = completedClue && (
         <div className="tile-stats-cell">
-          <span className="stat-guesses">{completedClue.guesses}</span>
-          <span className="stat-hints">{completedClue.hints}</span>
+          <ScoreGrid
+            solveTime={completedClue.solveTime}
+            guesses={completedClue.guesses || 0}
+            hints={completedClue.hints || 0}
+          />
         </div>
       );
 
-      const isHovered = hoveredClue === clue.clid;
+      const isHovered = hoveredClue === clue.clid || pinnedClue === clue.clid;
       const isReleaseHovered = hoveredRelease === clue.clid;
-      const completionText =
-        completedClue && completedClue.how === "g" ? "Solved" : "Not solved";
 
       return (
         <div
           className={`archive-clue${
             !!completedClue && completedClue.how === "g" ? " completed" : ""
           } ${
-            !!completedClue && completedClue.how === "g"
-              ? completedClue.how
-              : ""
+            !!completedClue && completedClue.how === "g" ? completedClue.how : ""
           }`}
           key={clue.id}
         >
@@ -131,33 +148,42 @@ const Clues = ({ data }) => {
               ...(completedClue
                 ? {
                     "--archive-bg": completedClue.how === "g"
-                      ? "var(--lc-active-bg)"
-                      : "var(--lc-highlight-bg)",
+                      ? "var(--lc-active-bg-light)"
+                      : "var(--lc-highlight-bg-light)",
                   }
                 : {}),
             }}
             onMouseEnter={() => {
-              setHoveredClue(clue.clid);
-              setHoveredRelease(clue.clid);
+              if (!pinnedClue) {
+                setHoveredClue(clue.clid);
+                setHoveredRelease(clue.clid);
+              }
             }}
             onMouseLeave={() => {
-              setHoveredClue(null);
-              setHoveredRelease(null);
+              if (pinnedClue !== clue.clid) {
+                setHoveredClue(null);
+                setHoveredRelease(null);
+              }
             }}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              const newHoveredState = hoveredClue === clue.clid ? null : clue.clid;
-              setHoveredClue(newHoveredState);
-              if (!newHoveredState) {
+              if (pinnedClue === clue.clid) {
+                setPinnedClue(null);
+                setHoveredClue(null);
                 setHoveredRelease(null);
+              } else {
+                setPinnedClue(clue.clid);
+                setHoveredClue(clue.clid);
+                setHoveredRelease(clue.clid);
               }
             }}
           >
-            <span>
+            <span className="archive-release-dow">
               {getRelease(clue.release).toLocaleString("en-us", {
                 weekday: "short",
               })}
+              <DifficultyGrid difficulty={clue.difficulty} />
             </span>
             <span>
               <span>
@@ -173,8 +199,15 @@ const Clues = ({ data }) => {
           <Link
             to={`/clues/${clue.clid}`}
             className="archive-tile-link"
-            onClick={() => {
-              window.scrollTo(0, 0);
+            onClick={(e) => {
+              if (pinnedClue === clue.clid) {
+                e.preventDefault();
+                setPinnedClue(null);
+                setHoveredClue(null);
+                setHoveredRelease(null);
+              } else {
+                window.scrollTo(0, 0);
+              }
             }}
           >
             <div
@@ -184,16 +217,15 @@ const Clues = ({ data }) => {
               style={{
                 ...(isHovered
                   ? {
-                      backgroundColor: isDarkMode ? "#404040" : "#ddd",
+                      backgroundColor: "transparent",
                     }
                   : {}),
                 ...(!isHovered && isReleaseHovered &&
                 !!completedClue &&
                 completedClue.how === "g"
                   ? {
-                      // For completed clues: match the archive-release color
-                      backgroundColor: "var(--lc-active-bg)",
-                      color: isDarkMode ? "white" : "black",
+                      // For completed clues: subtle warm gray
+                      backgroundColor: isDarkMode ? "#3d3a37" : "#eae7e2",
                     }
                   : {}),
                 ...(!isHovered && isReleaseHovered &&
@@ -205,44 +237,43 @@ const Clues = ({ data }) => {
                   : {}),
               }}
             >
-              <div className="tile-img-stats">
-                {!isHovered && <DifficultyGrid difficulty={clue.difficulty} />}
-                {!isHovered &&
-                  !!completedClue &&
-                  completedClue.how === "g" &&
-                  stats}
-              </div>
+              {!isHovered &&
+                !!completedClue &&
+                completedClue.how === "g" && (
+                <div className="tile-img-stats">
+                  {stats}
+                </div>
+              )}
               {isHovered ? (
                 <div className="tile-info">
-                  <span className="text-md">
-                    {completionText} • Clue #{clue.clid} • by{" "}
-                    {clue.source?.value || "Unknown"}
-                  </span>
-                  {!!completedClue && completedClue.how === "g" && (
+                  {!!completedClue && completedClue.how === "g" ? (
                     <div className="tile-info-stats">
-                      <span
-                        style={{
-                          backgroundColor: "var(--lc-highlight-bg)",
-                          color: "var(--lc-text-primary)",
-                          padding: "2px 6px",
-                          borderRadius: "4px",
-                          fontSize: "0.75rem",
-                        }}
-                      >
-                        {completedClue.hints} {completedClue.hints === 1 ? "hint" : "hints"}
-                      </span>
-                      <span
-                        style={{
-                          backgroundColor: "var(--lc-active-bg)",
-                          color: "var(--lc-text-primary)",
-                          padding: "2px 6px",
-                          borderRadius: "4px",
-                          fontSize: "0.75rem",
-                        }}
-                      >
-                        {completedClue.guesses} {completedClue.guesses === 1 ? "guess" : "guesses"}
-                      </span>
+                      <ScoreGrid
+                        solveTime={completedClue.solveTime}
+                        guesses={completedClue.guesses || 0}
+                        hints={completedClue.hints || 0}
+                        size="md"
+                        showLabels
+                      />
+                      <div className="tile-info-meta">
+                        <span>#{clue.clid} · by {clue.source?.value || "Unknown"}</span>
+                        <button
+                          className="tile-clear-btn"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            removeCompletedClue(clue.clid);
+                          }}
+                          aria-label="Clear completion"
+                        >
+                          Clear
+                        </button>
+                      </div>
                     </div>
+                  ) : (
+                    <span className="text-md">
+                      Clue #{clue.clid} · by {clue.source?.value || "Unknown"}
+                    </span>
                   )}
                 </div>
               ) : (
@@ -257,7 +288,9 @@ const Clues = ({ data }) => {
 
   return (
     <Layout>
-      <div className="clues lc-container">{archiveTiles}</div>
+      <div className="clues lc-container">
+        <div className="clues-grid">{archiveTiles}</div>
+      </div>
     </Layout>
   );
 };
@@ -280,6 +313,7 @@ export const query = graphql`
         source {
           value
         }
+        type
         difficulty
         release
         clid
