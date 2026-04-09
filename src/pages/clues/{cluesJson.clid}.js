@@ -1389,7 +1389,7 @@ const CluePage = ({ data }) => {
               Reveal letter?
             </p>
             <button
-              className="bg-[var(--lc-secondary-light)] dark:!text-white"
+              className="bg-[var(--lc-secondary-light)] dark:!bg-[var(--lc-highlight-bg)] dark:!text-white"
               style={{
                 padding: "0.35rem 0.75rem",
                 borderRadius: "50px",
@@ -1433,7 +1433,7 @@ const CluePage = ({ data }) => {
             Reveal solution?
           </p>
           <button
-            className="bg-[var(--lc-secondary-light)] dark:!text-white"
+            className="bg-[var(--lc-secondary-light)] dark:!bg-[var(--lc-highlight-bg)] dark:!text-white"
             style={{
               padding: "0.35rem 0.75rem",
               borderRadius: "50px",
