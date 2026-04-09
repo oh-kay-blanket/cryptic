@@ -17,7 +17,7 @@ const addLetters = (activeClue, hint) => {
 			case 'letter bank':
 			case 'particle':
 			case 'symbol':
-				hint.addLetters.value = hint.end.value[0] ? hint.end.value[0].split('') : []
+				hint.addLetters.value = hint.end.value[0] ? removeSpecial(hint.end.value[0], true).split('') : []
 				break
 
 			case 'synonym':
@@ -25,7 +25,7 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'sy-2':
-				hint.addLetters.value = hint.end.value[0] ? hint.end.value[0].split('') : []
+				hint.addLetters.value = hint.end.value[0] ? removeSpecial(hint.end.value[0], true).split('') : []
 				break
 
 			case 'container':
@@ -33,11 +33,11 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'lb-2':
-				hint.addLetters.value = hint.end.value[1] ? [...hint.end.value[1], ...hint.end.value[1]] : []
+				hint.addLetters.value = hint.end.value[1] ? [...removeSpecial(hint.end.value[1], true), ...removeSpecial(hint.end.value[1], true)] : []
 				break
 
 			case 'direct':
-				hint.addLetters.value = hint.value.split('')
+				hint.addLetters.value = removeSpecial(hint.value, true).split('')
 				break
 
 			case 'homophone':
@@ -49,7 +49,7 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'sp-2':
-				hint.addLetters.value = hint.end.value[1] ? hint.end.value[1].split('') : []
+				hint.addLetters.value = hint.end.value[1] ? removeSpecial(hint.end.value[1], true).split('') : []
 				break
 
 			case 'hw-2':
@@ -64,7 +64,7 @@ const addLetters = (activeClue, hint) => {
 
 			case 'ag-2':
 			case 'reversal':
-				hint.addLetters.value = hint.end.value.length > 0 ? hint.end.value.map(endPt => endPt ? endPt.split('') : []).flat() : []
+				hint.addLetters.value = hint.end.value.length > 0 ? hint.end.value.map(endPt => endPt ? removeSpecial(endPt, true).split('') : []).flat() : []
 				break
 
 			case 'dd-2': {

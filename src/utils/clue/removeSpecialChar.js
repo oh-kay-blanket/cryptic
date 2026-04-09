@@ -1,8 +1,11 @@
 // remove special characters from ref
 
-const removeSpecial = (charArr) => {
-	
-	const specialChar = [' ', ',', '-', '_', ':', ':', '"', "'", '?', '!', '.', ';', '(', ')', '[', ']', '{', '}', '/', '\\']
+const removeSpecial = (charArr, keepSpaces = false) => {
+
+	const allSpecialChars = [' ', ',', '-', '_', ':', ':', '"', "'", '?', '!', '.', ';', '(', ')', '[', ']', '{', '}', '/', '\\']
+	const specialChar = keepSpaces
+		? allSpecialChars.filter(c => c !== ' ')
+		: allSpecialChars
 
 
 	if (typeof(charArr) === 'string') {
@@ -13,7 +16,7 @@ const removeSpecial = (charArr) => {
 	} else {
 
 		return charArr.filter(ref => {
-			
+
 			// remove any special characters from ref area
 			return !specialChar.includes(ref.current.textContent)
 		})

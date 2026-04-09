@@ -154,6 +154,23 @@ const fixLetters = (activeClue, hint, index) => {
 						prevHint.rightValue = prevHint.end.value[0].toUpperCase()
 						break
 				}
+
+				// Build normalized candidates for matching (punctuation-insensitive).
+				// For direct hints, also try each space-separated word individually
+				// so a multi-word direct like "Waldo's a" can match a split on just "Waldo's".
+				if (prevHint.category === 'direct') {
+					const words = prevHint.value
+						.toUpperCase()
+						.split(' ')
+						.map((w) => removeSpecial(w))
+						.filter((w) => w.length > 0)
+					prevHint.rightValueCandidates = [
+						removeSpecial(prevHint.rightValue),
+						...words,
+					]
+				} else {
+					prevHint.rightValueCandidates = [removeSpecial(prevHint.rightValue)]
+				}
 			})
 
 			// Find word that is split
@@ -162,18 +179,33 @@ const fixLetters = (activeClue, hint, index) => {
 			// Look at past hints to find which word is split
 			hint.fix.anchorSplit = prevHints.find((h, hIndex) => {
 
-				// Try to find a match
-				const foundSplit = possibleSplits.find(split => (h.rightValue === [hint.end.value[split[0]], hint.end.value[split[1]]].join('').toUpperCase() && !!hint.end.value[split[1]]));
+				// Try to find a match (normalized to ignore punctuation like apostrophes)
+				const foundSplit = possibleSplits.find((split) => {
+					if (!hint.end.value[split[1]]) return false
+					const joinedNorm = removeSpecial(
+						[hint.end.value[split[0]], hint.end.value[split[1]]].join('')
+					).toUpperCase()
+					return h.rightValueCandidates.includes(joinedNorm)
+				})
 
-				// If match found, add the data
-				const logSplits = foundSplit => {
+				if (foundSplit) {
 					hint.fix.joinIndex = [foundSplit[0], foundSplit[1]]
 					hint.fix.indicatorMatch = hIndex
-					return h.rightValue === [hint.end.value[foundSplit[0]], hint.end.value[foundSplit[1]]].join('').toUpperCase()
-				};
-
-				return foundSplit ? logSplits(foundSplit) : false;
+					return true
+				}
+				return false
 			})
+
+			// Safety guard: if no anchor split could be matched, bail out gracefully
+			// instead of crashing on undefined.category below.
+			if (!hint.fix.anchorSplit) {
+				console.warn(
+					'Container: unable to match split anchor for clue',
+					activeClue.clid,
+					hint
+				)
+				break
+			}
 
 			// Remove duplicate letter from special hints
 			const doubleHints = ['ag-2', 'lb-2', 'reversal']
