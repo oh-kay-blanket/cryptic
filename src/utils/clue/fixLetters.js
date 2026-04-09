@@ -78,15 +78,13 @@ const fixLetters = (activeClue, hint, index) => {
 	const prevHint = activeClue.hints[index - 1]
 
 	switch (hint.category) {
-		case 'ag-2':
+		case 'ag-2': {
+			// Use length matching how addLetters built the array (apostrophes
+			// and other special chars stripped via removeSpecial, spaces kept)
+			const ag2Len = removeSpecial(hint.end.value[0], true).length
 			hint.fix.anchor = prevHint.addLetters.ref.current // anchor letters
-			hint.fix.moving = hint.addLetters.ref.current.slice(
-				0,
-				hint.end.value[0].length
-			) // moving letters
-			hint.fix.endPt = hint.addLetters.ref.current.slice(
-				hint.end.value[0].length
-			) // staging area letters
+			hint.fix.moving = hint.addLetters.ref.current.slice(0, ag2Len) // moving letters
+			hint.fix.endPt = hint.addLetters.ref.current.slice(ag2Len) // staging area letters
 
 			// fix word with. Helps to place hints following this inline. Only run when there are hints following ag-2. Othewise it can mess with layout
 			// hint.fix.wordWidth = hint.fix.moving.reduce((total, ltr) => total + ltr.current.getBoundingClientRect().width, 0)
@@ -94,16 +92,14 @@ const fixLetters = (activeClue, hint, index) => {
 
 			positionLetters(hint)
 			break
+		}
 
-		case 'lb-2':
+		case 'lb-2': {
+			// Match addLetters which strips special chars from end.value[1]
+			const lb2Len = removeSpecial(hint.end.value[1], true).length
 			hint.fix.anchor = prevHint.addLetters.ref.current // anchor letters
-			hint.fix.moving = hint.addLetters.ref.current.slice(
-				0,
-				hint.end.value[1].length
-			) // moving letters
-			hint.fix.endPt = hint.addLetters.ref.current.slice(
-				hint.end.value[1].length
-			) // staging area letters
+			hint.fix.moving = hint.addLetters.ref.current.slice(0, lb2Len) // moving letters
+			hint.fix.endPt = hint.addLetters.ref.current.slice(lb2Len) // staging area letters
 			hint.fix.removeAnchor = false
 
 			// fix word with. Helps to place hints following this inline. Only run when there are hints following ag-2. Othewise it can mess with layout
@@ -112,6 +108,7 @@ const fixLetters = (activeClue, hint, index) => {
 
 			positionLetters(hint)
 			break
+		}
 
 		case 'hw-2':
 			let solIndex = removeSpecial(prevHint.end.value[0].toUpperCase()).indexOf(
@@ -279,7 +276,9 @@ const fixLetters = (activeClue, hint, index) => {
 			positionLetters(hint, hint.fix.anchorOther, hint.fix.movingOther)
 			break
 
-		case 'reversal':
+		case 'reversal': {
+			// Match addLetters which strips special chars from end.value[0]
+			const revLen = removeSpecial(hint.end.value[0], true).length
 			// push only used anchor to anchor
 			hint.fix.anchor = []
 			activeClue.hints.some((h) => {
@@ -294,10 +293,7 @@ const fixLetters = (activeClue, hint, index) => {
 				.map((h) => h.addLetters.ref.current)
 				.flat()
 				.reverse()
-			hint.fix.moving = hint.addLetters.ref.current.slice(
-				0,
-				hint.end.value[0].length
-			) // moving letters
+			hint.fix.moving = hint.addLetters.ref.current.slice(0, revLen) // moving letters
 			hint.fix.moving = hint.fix.moving
 				.filter((m) => m.current.textContent !== ' ')
 				.reverse()
@@ -310,12 +306,11 @@ const fixLetters = (activeClue, hint, index) => {
 			// const revIndex = activeClue.hints.findIndex(h=>h.category==='reversal')
 			// activeClue.hints.length > (revIndex + 1) && (hint.addLetters.wordRef.current.style.width = `${hint.fix.wordWidth + 8}px`)
 
-			hint.fix.endPt = hint.addLetters.ref.current.slice(
-				hint.end.value[0].length
-			) // staging area letters
+			hint.fix.endPt = hint.addLetters.ref.current.slice(revLen) // staging area letters
 
 			positionLetters(hint)
 			break
+		}
 
 		default:
 			break

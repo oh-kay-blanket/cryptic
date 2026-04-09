@@ -2,6 +2,7 @@ import underlineLetters from './underlineLetters'
 import highlightLetters from './highlightLetters'
 import changeColor from './changeColor'
 import moveLetters from './moveLetters'
+import removeSpecial from './removeSpecialChar'
 
 const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
@@ -38,29 +39,33 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					changeColor(hint.addLetters.ref.current)
 					break
 
-				case 'ag-2':
+				case 'ag-2': {
+					const ag2Len = removeSpecial(hint.end.value[0], true).length
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 					changeColor(
-						hint.addLetters.ref.current.slice(0, hint.end.value[0].length),
+						hint.addLetters.ref.current.slice(0, ag2Len),
 						'#0b0b0b'
 					)
 					moveLetters(
-						hint.addLetters.ref.current.slice(0, hint.end.value[0].length),
-						hint.addLetters.ref.current.slice(hint.end.value[0].length)
+						hint.addLetters.ref.current.slice(0, ag2Len),
+						hint.addLetters.ref.current.slice(ag2Len)
 					)
 					break
+				}
 
-				case 'lb-2':
+				case 'lb-2': {
+					const lb2Len = removeSpecial(hint.end.value[1], true).length
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 					changeColor(
-						hint.addLetters.ref.current.slice(0, hint.end.value[1].length),
+						hint.addLetters.ref.current.slice(0, lb2Len),
 						'#0b0b0b'
 					)
 					moveLetters(
-						hint.addLetters.ref.current.slice(0, hint.end.value[1].length),
-						hint.addLetters.ref.current.slice(hint.end.value[1].length)
+						hint.addLetters.ref.current.slice(0, lb2Len),
+						hint.addLetters.ref.current.slice(lb2Len)
 					)
 					break
+				}
 
 				case 'charade':
 				case 'symbol':
@@ -233,7 +238,8 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					changeColor(hint.addLetters.ref.current)
 					break
 
-				case 'reversal':
+				case 'reversal': {
+					const revLen = removeSpecial(hint.end.value[0], true).length
 					highlightLetters(hint.ref)
 					changeColor(prevHint.addLetters.ref.current, '#ccc')
 
@@ -253,10 +259,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 						.flat()
 						.reverse()
 
-					let moving = hint.addLetters.ref.current.slice(
-						0,
-						hint.end.value[0].length
-					)
+					let moving = hint.addLetters.ref.current.slice(0, revLen)
 					moving = moving.filter((m) => m.current.textContent !== ' ').reverse()
 
 					// Build arr of used anchors
@@ -271,16 +274,17 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 
 					changeColor(usedAnchor, '#ccc')
 					changeColor(
-						hint.addLetters.ref.current.slice(0, hint.end.value[0].length),
+						hint.addLetters.ref.current.slice(0, revLen),
 						'#222'
 					)
 					moveLetters(
-						hint.addLetters.ref.current.slice(0, hint.end.value[0].length),
-						hint.addLetters.ref.current.slice(hint.end.value[0].length),
+						hint.addLetters.ref.current.slice(0, revLen),
+						hint.addLetters.ref.current.slice(revLen),
 						'sequence',
 						true
 					)
 					break
+				}
 
 				default:
 					highlightLetters(hint.ref)
