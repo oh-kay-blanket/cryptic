@@ -81,7 +81,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					changeColor(hint.addLetters.ref.current)
 					break
 
-				case 'container':
+				case 'container': {
 					highlightLetters(hint.ref)
 
 					// make all previous addLetters gray
@@ -95,26 +95,21 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 						return false
 					})
 
+					const containerLen = hint.end.value.map(v => removeSpecial(v, true)).join('').length
+
 					// Make moving letters dark
 					changeColor(
-						hint.addLetters.ref.current.slice(
-							0,
-							hint.end.value.join('').split('').length
-						),
+						hint.addLetters.ref.current.slice(0, containerLen),
 						'#222'
 					)
 
 					moveLetters(
-						hint.addLetters.ref.current.slice(
-							0,
-							hint.end.value.join('').split('').length
-						),
-						hint.addLetters.ref.current.slice(
-							hint.end.value.join('').split('').length
-						),
+						hint.addLetters.ref.current.slice(0, containerLen),
+						hint.addLetters.ref.current.slice(containerLen),
 						false
 					)
 					break
+				}
 
 				case 'dd-2': {
 					const solLen = hint.addLetters.solLength

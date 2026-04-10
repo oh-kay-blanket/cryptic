@@ -29,7 +29,7 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'container':
-				hint.addLetters.value = hint.end.value.length > 0 ? [...hint.end.value.join("").split(''), ...hint.end.value.join(" ").split('')] : []
+				hint.addLetters.value = hint.end.value.length > 0 ? [...hint.end.value.map(v => removeSpecial(v, true)).join("").split(''), ...hint.end.value.map(v => removeSpecial(v, true)).join(" ").split('')] : []
 				break
 
 			case 'lb-2':

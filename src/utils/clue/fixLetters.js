@@ -224,7 +224,7 @@ const fixLetters = (activeClue, hint, index) => {
 			hint.end.value.forEach((hend, index) => {
 				if (!hint.fix.joinIndex.includes(index)) {
 					const thisMatch = prevHints.find(
-						(h, hIndex) => h.rightValue.toUpperCase() === hend.toUpperCase()
+						(h, hIndex) => removeSpecial(h.rightValue).toUpperCase() === removeSpecial(hend).toUpperCase()
 					)
 					if (thisMatch && doubleHints.includes(thisMatch.category)) {
 						hint.fix.anchorOther.push(
@@ -239,14 +239,16 @@ const fixLetters = (activeClue, hint, index) => {
 			})
 
 			// MOVING SPLIT
+			// Use removeSpecial to compute lengths, matching how addLetters
+			// strips punctuation when building the ref array.
 			const movingLStart = hint.end.value
 				.slice(0, hint.fix.joinIndex[0])
-				.join('').length
-			const movingLLength = hint.end.value[hint.fix.joinIndex[0]].length
+				.map(v => removeSpecial(v, true)).join('').length
+			const movingLLength = removeSpecial(hint.end.value[hint.fix.joinIndex[0]], true).length
 			const movingRStart = hint.end.value
 				.slice(0, hint.fix.joinIndex[1])
-				.join('').length
-			const movingRLength = hint.end.value[hint.fix.joinIndex[1]].length
+				.map(v => removeSpecial(v, true)).join('').length
+			const movingRLength = removeSpecial(hint.end.value[hint.fix.joinIndex[1]], true).length
 
 			hint.fix.movingSplit = [
 				...hint.addLetters.ref.current.slice(
@@ -259,13 +261,14 @@ const fixLetters = (activeClue, hint, index) => {
 				),
 			]
 
+			const containerCleanLen = hint.end.value.map(v => removeSpecial(v, true)).join('').length
 			hint.fix.movingOther = hint.addLetters.ref.current
-				.slice(0, hint.end.value.join('').split('').length)
+				.slice(0, containerCleanLen)
 				.filter((ref) => !hint.fix.movingSplit.includes(ref))
 
 			// Destination letters
 			hint.fix.endPt = hint.addLetters.ref.current.slice(
-				hint.end.value.join('').split('').length
+				containerCleanLen
 			)
 
 			// fix word with. Helps to place hints following this inline. Only run when there are hints following ag-2. Othewise it can mess with layout
