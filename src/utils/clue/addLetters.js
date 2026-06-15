@@ -21,6 +21,9 @@ const addLetters = (activeClue, hint) => {
 				break
 
 			case 'synonym':
+			case 'example - a':
+			case 'example - an':
+			case 'examples':
 				hint.addLetters.value = []
 				break
 

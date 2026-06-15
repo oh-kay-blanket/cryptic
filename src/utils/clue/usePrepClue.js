@@ -93,7 +93,7 @@ const usePrepClue = (dataClue) => {
 					{ ...obj, category: 'lb-2' },
 				]
 			}
-			if (obj.category === 'synonym') {
+			if (obj.category === 'synonym' || obj.category === 'example - a' || obj.category === 'example - an' || obj.category === 'examples') {
 				return [
 					{ ...obj, explainer: '' },
 					{ ...obj, category: 'sy-2' },

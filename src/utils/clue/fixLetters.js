@@ -132,7 +132,7 @@ const fixLetters = (activeClue, hint, index) => {
 		case 'container':
 			// Get valid previous hints
 			let prevHints = activeClue.hints.slice(1, index)
-			const skipCats = ['anagram', 'hidden word', 'letter bank', 'homophone', 'synonym']
+			const skipCats = ['anagram', 'hidden word', 'letter bank', 'homophone', 'synonym', 'example - a', 'example - an', 'examples']
 			prevHints = prevHints.filter(
 				(prevHint) => !skipCats.includes(prevHint.category)
 			)

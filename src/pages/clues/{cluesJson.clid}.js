@@ -718,6 +718,9 @@ const CluePage = ({ data }) => {
     homophone: "hp-2",
     "letter bank": "lb-2",
     synonym: "sy-2",
+    "example - a": "sy-2",
+    "example - an": "sy-2",
+    examples: "sy-2",
   };
 
   // Handle clicking on highlighted clue text to re-show hint tooltip
