@@ -718,6 +718,7 @@ const CluePage = ({ data }) => {
     homophone: "hp-2",
     "letter bank": "lb-2",
     synonym: "sy-2",
+    example: "sy-2",
     "example - a": "sy-2",
     "example - an": "sy-2",
     examples: "sy-2",

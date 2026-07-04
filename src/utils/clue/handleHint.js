@@ -74,6 +74,7 @@ const handleHint = (activeClue, nextHint, showMessage, checkAns, showLogic) => {
 					break
 
 				case 'synonym':
+				case 'example':
 				case 'example - a':
 				case 'example - an':
 				case 'examples':

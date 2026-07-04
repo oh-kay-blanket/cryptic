@@ -151,6 +151,12 @@ const getMessage = (hint) => {
               Find a synonym for <strong>{hint.value.toUpperCase()}</strong>
             </>
           );
+        case "example":
+          return (
+            <>
+              Find an example of <strong>{hint.value.toUpperCase()}</strong>
+            </>
+          );
         case "example - a":
           return (
             <>
