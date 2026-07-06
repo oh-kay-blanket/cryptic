@@ -10,18 +10,18 @@ const usePrepClue = (dataClue) => {
 
 	useEffect(() => console.log(activeClue), [dataClue])
 
-	// get solution letters
+	// get solution letters (split on spaces and hyphens, count only letters)
 	const getSolutionLetters = (solution) =>
-		solution.value.split(' ').map((word) => word.length)
+		solution.value.split(/[ -]/).map((word) => word.replace(/[^a-zA-Z]/g, '').length)
 	activeClue.solution.length = {
 		value: `(${getSolutionLetters(activeClue.solution).join(', ')})`,
 		arr: getSolutionLetters(activeClue.solution),
 	}
 
-	// build clue and solution arrays
+	// build clue and solution arrays (letters only for solution)
 	activeClue.clue.arr = activeClue.clue.value.split('')
 	activeClue.solution.arr = activeClue.solution.value.split('')
-	activeClue.solution.arr = activeClue.solution.arr.filter((ltr) => ltr !== ' ')
+	activeClue.solution.arr = activeClue.solution.arr.filter((ltr) => /[a-zA-Z]/.test(ltr))
 
 	// calculate word break indices for smart wrapping
 	// wordBreaks contains indices where a line break can be inserted (before that index)
@@ -113,12 +113,16 @@ const usePrepClue = (dataClue) => {
 		})
 		activeClue.hints[activeClue.hints.length - 1].reveals = true
 	} else {
+		// Check for explainer in existing hints (for double definitions)
+		const ddExplainer = activeClue.hints.find(h => h.explainer)?.explainer || false
+		// Clear out any explainer-only hints (no category/value)
+		activeClue.hints = activeClue.hints.filter(h => h.category || h.value)
 		activeClue.hints.unshift(
 			{ type: 'definition', value: activeClue.definition },
 			{
 				type: 'indicator',
 				category: 'dd-2',
-				explainer: false,
+				explainer: ddExplainer,
 				value: activeClue.definition,
 				reveals: true,
 				end: {
