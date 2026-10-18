@@ -171,7 +171,7 @@ const Deletion = () => {
 				<div className='learn-section'>
 					<h2>Examples</h2>
 					<div className='example-container'>
-						<p className='example'>Different parent starts late (6)</p>
+						<p className='example'>Different parent starts late (5)</p>
 						<div className='explanation dark:!bg-neutral-700 dark:!text-neutral-100'>
 							<ul className='mt-0 list-disc my-3'>
 								<li>

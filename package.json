@@ -8,7 +8,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "convert-csv": "node scripts/csv-to-json.js",
-    "start": "npm run convert-csv && mkdir -p .cache && gatsby develop",
+    "start": "npm run convert-csv && node -e \"fs.mkdirSync('.cache', { recursive: true })\" && gatsby develop",
     "build": "npm run convert-csv && gatsby clean && gatsby build",
     "serve": "gatsby serve",
     "cy:open": "cypress open",
