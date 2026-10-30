@@ -6,6 +6,8 @@ import React, {
   useCallback,
 } from "react";
 import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import creators from "../../assets/data/creators.json";
 import { UserContext } from "../../utils/UserContext";
 import Layout from "../../components/layout";
 import Bottom from "../../components/Bottom";
@@ -1221,8 +1223,52 @@ const CluePage = ({ data }) => {
     </span>
   );
 
+  // Get creator image by creator name/nom
+  const creatorImages = data.allFile?.nodes || [];
+  const getCreatorImage = (creatorName) => {
+    if (!creatorName) return null;
+    const creator = creators.find(
+      (c) => c.nom === creatorName || c.name === creatorName
+    );
+    const namesToMatch = [
+      creatorName,
+      creator?.nom,
+      creator?.name,
+    ].filter(Boolean);
+
+    for (const name of namesToMatch) {
+      const fileName = name
+        .toLowerCase()
+        .replace(/[,.']/g, "")
+        .replace(/\s+/g, "-");
+      const imageNode = creatorImages.find(
+        (node) =>
+          node.name?.toLowerCase() === fileName ||
+          node.name?.toLowerCase() === name.toLowerCase()
+      );
+      if (imageNode) {
+        return getImage(imageNode.childImageSharp);
+      }
+    }
+    return null;
+  };
+
+  const creatorImage = getCreatorImage(activeClue.source?.value);
+
   // source HTML
-  const sourceInsert = <Link to="/creators">{activeClue.source.value}</Link>;
+  const sourceInsert = (
+    <Link to="/creators" className="source-author">
+      {creatorImage && (
+        <GatsbyImage
+          image={creatorImage}
+          alt=""
+          className="source-author-image"
+          imgStyle={{ borderRadius: "50%" }}
+        />
+      )}
+      <span className="source-author-name">{activeClue.source.value}</span>
+    </Link>
+  );
 
   return (
     <Layout>
@@ -1300,7 +1346,8 @@ const CluePage = ({ data }) => {
               )}
             </div>
             <div id="sourceRef" ref={activeClue.source.ref} className="source">
-              by {sourceInsert}
+              <span className="source-by">by</span>
+              {sourceInsert}
             </div>
           </div>
           <div className="clue-difficulty">
@@ -1551,6 +1598,25 @@ export const query = graphql`
       nodes {
         clid
         type
+      }
+    }
+    allFile(
+      filter: {
+        sourceInstanceName: { eq: "images" }
+        relativeDirectory: { eq: "creators" }
+        extension: { in: ["jpg", "jpeg", "png"] }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(
+            width: 64
+            height: 64
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
       }
     }
   }
