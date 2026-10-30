@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import creators from '../assets/data/creators.json'
 import ButtonContainer from '../components/bottom/ButtonContainer'
 import logo from '../assets/img/logo.png'
 import { UserContext } from '../utils/UserContext'
@@ -31,6 +33,67 @@ const Title = ({ data }) => {
 	const todaySolveTime = completedGuess.find(
 		(clue) => clue.clid === todayClue.clid
 	)?.solveTime
+
+	// Creator image lookup
+	const creatorImages = data?.allFile?.nodes || []
+	const getCreatorImage = (creatorName) => {
+		if (!creatorName) return null
+		const creator = creators.find(
+			(c) => c.nom === creatorName || c.name === creatorName
+		)
+		const namesToMatch = [
+			creatorName,
+			creator?.nom,
+			creator?.name,
+		].filter(Boolean)
+
+		for (const name of namesToMatch) {
+			const fileName = name
+				.toLowerCase()
+				.replace(/[,.']/g, '')
+				.replace(/\s+/g, '-')
+			const imageNode = creatorImages.find(
+				(node) =>
+					node.name?.toLowerCase() === fileName ||
+					node.name?.toLowerCase() === name.toLowerCase()
+			)
+			if (imageNode) {
+				return getImage(imageNode.childImageSharp)
+			}
+		}
+		return null
+	}
+	const todayCreatorImage = getCreatorImage(todayClue?.source?.value)
+
+	const renderAuthor = () => {
+		if (!todayClue) return null
+		return (
+			<span className='clue-meta-author'>
+				<span>by</span>
+				<Link to='/creators' className='source-author'>
+					{todayCreatorImage && (
+						<GatsbyImage
+							image={todayCreatorImage}
+							alt=''
+							className='source-author-image'
+							imgStyle={{ borderRadius: '50%' }}
+						/>
+					)}
+					<span className='source-author-name'>{todayClue.source?.value}</span>
+				</Link>
+			</span>
+		)
+	}
+
+	const renderClueMeta = (dateText) => {
+		if (!todayClue) return null
+		return (
+			<div className='clue-meta'>
+				<span className='clue-meta-date'>{dateText}</span>
+				{renderAuthor()}
+			</div>
+		)
+	}
 
 	// Add loading state to prevent flicker
 	const [isContextLoaded, setIsContextLoaded] = useState(false)
@@ -216,6 +279,9 @@ const Title = ({ data }) => {
 								{ShareIcon}
 							</button>
 						</div>
+						<div className='clue-meta'>
+							{renderAuthor()}
+						</div>
 					</div>
 					<div className='title-actions'>
 						<ButtonContainer btnArr={[buttons.browse]} />
@@ -241,11 +307,7 @@ const Title = ({ data }) => {
 					<div className='title-actions'>
 						<p className='cta-text'>Keep it going</p>
 						<ButtonContainer btnArr={[buttons.play]} />
-						<p className='clue-meta'>
-							{formattedDate}
-							<br />
-							#{todayClue.clid} · by {todayClue.source?.value}
-						</p>
+						{renderClueMeta(formattedDate)}
 					</div>
 				</>
 			)
@@ -268,11 +330,7 @@ const Title = ({ data }) => {
 					<div className='title-actions'>
 						<p className='cta-text'>Start a new one today</p>
 						<ButtonContainer btnArr={[buttons.play]} />
-						<p className='clue-meta'>
-							{formattedDate}
-							<br />
-							#{todayClue.clid} · by {todayClue.source?.value}
-						</p>
+						{renderClueMeta(formattedDate)}
 					</div>
 				</>
 			)
@@ -291,11 +349,7 @@ const Title = ({ data }) => {
 					</div>
 					<div className='title-actions' data-testid='title-actions'>
 						<ButtonContainer btnArr={[buttons.play]} />
-						<p className='clue-meta'>
-							{formattedDate}
-							<br />
-							#{todayClue.clid} · by {todayClue.source?.value}
-						</p>
+						{renderClueMeta(formattedDate)}
 					</div>
 				</>
 			)
@@ -359,6 +413,25 @@ export const query = graphql`
 				type
 				source {
 					value
+				}
+			}
+		}
+		allFile(
+			filter: {
+				sourceInstanceName: { eq: "images" }
+				relativeDirectory: { eq: "creators" }
+				extension: { in: ["jpg", "jpeg", "png"] }
+			}
+		) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(
+						width: 64
+						height: 64
+						placeholder: BLURRED
+						formats: [AUTO, WEBP, AVIF]
+					)
 				}
 			}
 		}
