@@ -22,3 +22,8 @@ export const wrapRootElement = ({ element }) => (
 export const shouldUpdateScroll = () => {
 	return false;
 }
+
+// Disable Gatsby's automatic viewport Link prefetching to avoid excessive CDN requests
+export const disableCorePrefetching = () => {
+	return true;
+}

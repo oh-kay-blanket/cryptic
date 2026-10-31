@@ -5,7 +5,7 @@ import React, {
   useState,
   useEffect,
 } from "react";
-import { Link, graphql } from "gatsby";
+import { Link, navigate, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { UserContext } from "../utils/UserContext";
 import ClueTypeIcon from "../components/ClueTypeIcons";
@@ -418,8 +418,8 @@ const Clues = ({ data, location }) => {
           </span>
           <span>{getRelease(clue.release).getFullYear()}</span>
         </div>
-        <Link
-          to={`/clues/${clue.clid}`}
+        <a
+          href={`/clues/${clue.clid}/`}
           className="archive-tile-link"
           onClick={(e) => {
             if (pinnedClue === clue.clid) {
@@ -427,8 +427,18 @@ const Clues = ({ data, location }) => {
               setPinnedClue(null);
               setHoveredClue(null);
               setHoveredRelease(null);
-            } else {
+              return;
+            }
+            if (
+              e.button === 0 &&
+              !e.metaKey &&
+              !e.altKey &&
+              !e.ctrlKey &&
+              !e.shiftKey
+            ) {
+              e.preventDefault();
               window.scrollTo(0, 0);
+              navigate(`/clues/${clue.clid}/`);
             }
           }}
         >
@@ -502,7 +512,7 @@ const Clues = ({ data, location }) => {
               <span className="tile-name">{clue.clue.value}</span>
             )}
           </div>
-        </Link>
+        </a>
       </div>
     );
   });
