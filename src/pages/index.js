@@ -8,12 +8,21 @@ import { UserContext } from '../utils/UserContext'
 import Layout from '../components/layout'
 import { isTodayClue, buildShareText } from '../utils/dateHelpers'
 import ScoreGrid from '../components/ScoreGrid'
+import AchievementIcon from '../components/AchievementIcon'
 import { migrateCompletedCluesDifficulty } from '../utils/migrateCompletedClues'
 import { migrateAchievements } from '../utils/achievements'
+import { selectHomepageMotivation } from '../utils/homepageMotivation'
 
 const Title = ({ data }) => {
 	const cluesData = data.allCluesJson.nodes
-	const { completedClues, streak, refreshFromStorage } = useContext(UserContext)
+	const {
+		completedClues,
+		streak,
+		longestStreak,
+		achievements,
+		setOpenStatsWithTab,
+		refreshFromStorage,
+	} = useContext(UserContext)
 	const completedGuess = completedClues.filter((clue) => clue.how === 'g')
 	const knownUser = completedGuess && completedGuess.length > 0 ? true : false
 
@@ -319,16 +328,30 @@ const Title = ({ data }) => {
 				day: 'numeric',
 				year: 'numeric',
 			})
+			const motivation = selectHomepageMotivation({
+				completedClues,
+				achievements,
+				longestStreak,
+				todayClue,
+			})
 			return (
 				<>
 					<div className='title-intro text-center' data-testid='title-intro'>
-						<div className='streak-display' data-testid='streak-display'>
-							<span className='streak-number'>0</span>
-							<span className='streak-label'>day streak</span>
+						<div className='motivation-display' data-testid='motivation-display'>
+							<button
+								type='button'
+								className={`motivation-badge ${motivation.unlocked ? 'unlocked' : 'locked'}`}
+								onClick={() => setOpenStatsWithTab(motivation.tab || 'achievements')}
+								aria-label={`View ${motivation.title} in ${motivation.tab || 'achievements'}`}
+							>
+								<AchievementIcon icon={motivation.icon} />
+							</button>
+							<span className='motivation-title'>{motivation.title}</span>
+							<span className='motivation-subtitle'>{motivation.subtitle}</span>
 						</div>
 					</div>
 					<div className='title-actions'>
-						<p className='cta-text'>Start a new one today</p>
+						<p className='cta-text'>{motivation.cta}</p>
 						<ButtonContainer btnArr={[buttons.play]} />
 						{renderClueMeta(formattedDate)}
 					</div>
